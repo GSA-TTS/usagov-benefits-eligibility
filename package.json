@@ -1,0 +1,55 @@
+{
+  "name": "usagov-bears",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "run-s serve",
+    "serve:webpack": "webpack --mode development --watch",
+    "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve",
+    "serve": "npm-run-all --parallel serve:*",
+    "build:webpack": "webpack --mode production",
+    "build:eleventy": "ELEVENTY_ENV=production eleventy",
+    "build": "npm-run-all --parallel build:*",
+    "test": "jest --coverage",
+    "test:unit": "jest --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "autoprefixer": "^10.2.5",
+    "axe-core": "^4.2.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.1",
+    "core-js": "^3.11.1",
+    "css-loader": "^5.2.4",
+    "cssnano": "^5.0.2",
+    "jest": "^26.6.3",
+    "mini-css-extract-plugin": "^1.5.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-import": "^14.0.1",
+    "postcss-loader": "^5.2.0",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "uswds": "^2.11.1",
+    "webpack": "^5.36.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "browserslist": [
+    ">0.1%",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Samsung versions",
+    "Safari >= 9",
+    "ie 8-11",
+    "iOS >= 9"
+  ],
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/scripts/__mocks__/styleMock.js"
+    }
+  }
+}

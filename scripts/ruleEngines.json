@@ -1,0 +1,7 @@
+{
+  "development": [
+    "http://localhost:8081"
+  ],
+  "staging": [],
+  "production": []
+}
