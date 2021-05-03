@@ -1,0 +1,49 @@
+# This Github Action workflow:
+# - Builds the frontend and backend
+# - Comments on PRs with the Terraform plan that will be applied on merge
+# - Applies Terraform plan on relevant branches
+
+name: usagov-benefits-eligibility
+
+on:
+  push:
+    branches:
+      - develop
+      - release
+      - main
+  pull_request:
+    branches_ignore: []
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  test_frontend:
+    name: "test frontend"
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@v2
+        with:
+          path: ui/node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Test frontend
+        run: npm run test
+
+      - name: Build frontend
+        run: npm run build
