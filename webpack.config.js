@@ -14,8 +14,8 @@ module.exports = (options, { mode }) => {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: 'tz[name].css',
-        chunkFilename: 'tz[id].css',
+        filename: '[name].css',
+        chunkFilename: '[id].css',
       }),
       new CopyPlugin({
         patterns: [
