@@ -1,0 +1,24 @@
+{
+  "headers": [
+    {
+      "/*.html": {
+        "cache-control": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
+      "/page-data/*": {
+        "cache-control": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
+      "/static/*": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "/*": {
+        "cache-control": "public, max-age=0, must-revalidate"
+      }
+    }
+  ]
+}

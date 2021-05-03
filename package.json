@@ -11,7 +11,8 @@
     "build:eleventy": "ELEVENTY_ENV=production eleventy",
     "build": "npm-run-all --parallel build:*",
     "test": "jest --coverage",
-    "test:unit": "jest --watch"
+    "test:unit": "jest --watch",
+    "federalist": "npm run build"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
