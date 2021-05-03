@@ -47,9 +47,10 @@ module.exports = (options, { mode }) => {
         {
           test: /\.s[ac]ss$/i,
           use: [
-            mode === 'production'
+            /*mode === 'production'
               ? MiniCssExtractPlugin.loader
-              : 'style-loader',
+              : 'style-loader'*/
+            'style-loader',
             {
               loader: "css-loader",
               options: {
