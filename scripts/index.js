@@ -79,6 +79,6 @@ setTimeout(() => {
       }
     }, origin);
   }
-}, 250);
+}, 400);
 
 document.addEventListener('DOMContentLoaded', ready, false);
