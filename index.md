@@ -2,7 +2,7 @@
 layout: default.njk
 ---
 
-# hi there
+# BEARS
 
 <script src="assets/main.bundle.js"></script>
 
@@ -12,7 +12,3 @@ layout: default.njk
 </dl>
 
 <div class="iframe-container" aria-hidden="true"></div>
-
-<svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
-  <use xlink:href="./assets/img/sprite.svg#bug_report"></use>
-</svg>

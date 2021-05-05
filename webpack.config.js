@@ -6,7 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = (options, { mode }) => {
 
   return {
-    entry: './scripts/index.js',
+    entry: {
+      main: './scripts/index.js',
+      rules: './scripts/rules/index.js',
+    },
     output: {
       path: path.resolve(__dirname, 'assets'),
       filename: '[name].bundle.js'
@@ -25,7 +28,10 @@ module.exports = (options, { mode }) => {
       }),
     ],
     resolve: {
-      fallback: { "crypto": false }
+      fallback: {
+        "crypto": false,
+        "vm": false,
+      }
     },
     optimization: {
       minimize: false

@@ -1,6 +1,6 @@
 {
   "development": [
-    "http://localhost:8081"
+    "./rules/index.html"
   ],
   "staging": [],
   "production": []

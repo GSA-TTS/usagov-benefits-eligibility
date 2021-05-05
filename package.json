@@ -1,5 +1,5 @@
 {
-  "name": "usagov-bears",
+  "name": "usagov-benefits-eligibility",
   "version": "0.0.1",
   "description": "",
   "scripts": {
@@ -33,6 +33,7 @@
     "sass": "^1.32.11",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
+    "usagov-benefits-eligibility-rules": "git+https://github.com/GSA/usagov-benefits-eligibility-rules.git#main",
     "uswds": "^2.11.1",
     "webpack": "^5.36.0",
     "webpack-cli": "^4.6.0",

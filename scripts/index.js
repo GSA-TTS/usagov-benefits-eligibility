@@ -5,16 +5,17 @@ import "../styles/index.scss";
 import axe from "./a11y";
 import ruleEnginesPerEnv from './ruleEngines.json';
 
+const origin = window.location.origin;
 const rules = ruleEnginesPerEnv[process.env.NODE_ENV];
 const ruleEngines = {};
 
 axe();
 
 window.addEventListener("message", (event) => {
-  if (!rules.includes(event.origin)) {
+  // console.log(event);
+  if (event.origin !== origin) {
     return;
   }
-  //console.log(event);
   switch (event.data.event) {
   case 'isElegibleResult':
     const results = document.querySelector('#results');
@@ -66,8 +67,8 @@ const ready = () => {
 }
 
 setTimeout(() => {
-  for (const origin in ruleEngines) {
-    ruleEngines[origin].contentWindow.postMessage({
+  for (const urlOrigin in ruleEngines) {
+    ruleEngines[urlOrigin].contentWindow.postMessage({
       event: 'isElegible',
       facts: {
 	"Name of species or unknown": "Black bear",
