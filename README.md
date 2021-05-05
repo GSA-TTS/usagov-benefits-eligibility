@@ -10,7 +10,7 @@ we can keep eligibility information up to date.
  * `npm start`
     * Runs the static site generator eleventy and webpack in watch mode.
  * `npm run build`
-    * Runs the production webpack build and eleventy buld for the static site.
+    * Runs the production webpack build and eleventy build for the static site.
  * `npm run test`
     * Runs the unit and functional tests.
 
@@ -24,3 +24,13 @@ we can keep eligibility information up to date.
 ### Github Actions
 
 ## Design considerations
+
+ + Ideally we'd use cross origin iframes to limit the rules engine access similar to twitch's design https://dev.twitch.tv/docs/extensions/
+  + Federalist's setting `x-frame-options: SAMEORIGIN` prevents this design.
+  + Additional mitigations are provided via the `iframe` `allow` feature policy.
+  + A subdomain might be a further mitigation however this feature is deprecated.
+ 
+ %% Extensions Overview Diagram
+graph LR
+    BEARS --> | - postMessage - | Extension
+    Extension --> | - postMessage - | BEARS
