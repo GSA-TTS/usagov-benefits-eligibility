@@ -1,7 +1,9 @@
 {
   "name": "usagov-benefits-eligibility",
   "version": "0.0.1",
-  "description": "",
+  "description": "BEARS will be a proactive notification service that provides timely and personalized information about benefits eligibility, contextualized by life events.",
+  "license": "See license in CONTRIBUTING.md",
+  "repository": "https://github.com/GSA/usagov-benefits-eligibility",
   "scripts": {
     "start": "run-s serve",
     "serve:webpack": "webpack --mode development --watch",
@@ -12,7 +14,8 @@
     "build": "npm-run-all --parallel build:*",
     "test": "jest --coverage",
     "test:unit": "jest --watch",
-    "federalist": "npm run build:webpack && npm run build"
+    "federalist": "npm run build:webpack && npm run build",
+    "preinstall": "npx npm-force-resolutions"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
@@ -53,5 +56,8 @@
     "moduleNameMapper": {
       "\\.(css|scss)$": "<rootDir>/scripts/__mocks__/styleMock.js"
     }
+  },
+  "resolutions": {
+    "xmlhttprequest-ssl": "1.6.2"
   }
 }
