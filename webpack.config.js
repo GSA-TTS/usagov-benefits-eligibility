@@ -11,7 +11,7 @@ module.exports = (options, { mode }) => {
       rules: './scripts/rules/index.js',
     },
     output: {
-      path: path.resolve(__dirname, 'assets'),
+      path: path.resolve(__dirname, '_site', 'assets'),
       filename: '[name].bundle.js'
       //filename: 'main.bundle.js'
     },
@@ -23,7 +23,8 @@ module.exports = (options, { mode }) => {
       new CopyPlugin({
         patterns: [
           { from: 'node_modules/uswds/dist/img', to: 'img' },
-          { from: 'node_modules/uswds/dist/fonts', to: 'fonts' }
+          { from: 'node_modules/uswds/dist/fonts', to: 'fonts' },
+          { from: 'node_modules/uswds/dist/js', to: 'uswds' },
         ]
       }),
     ],
@@ -57,6 +58,12 @@ module.exports = (options, { mode }) => {
               ? MiniCssExtractPlugin.loader
               : 'style-loader'*/
             'style-loader',
+            /*{
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: '',
+              },
+            },*/
             {
               loader: "css-loader",
               options: {

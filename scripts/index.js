@@ -1,9 +1,11 @@
 import 'core-js';
 import 'regenerator-runtime/runtime';
+import 'uswds'
 
 import "../styles/index.scss";
 import axe from "./a11y";
 import ruleEnginesPerEnv from './ruleEngines.json';
+import { featurePolicy } from './config';
 
 const origin = window.location.origin;
 const rules = ruleEnginesPerEnv[process.env.NODE_ENV];
@@ -11,12 +13,20 @@ const ruleEngines = {};
 
 axe();
 
+const iframeReady = [];
+const iframeReadyCb = [];
+const addIframePromise = () => { iframeReady.push(new Promise((resolve) => { iframeReadyCb.push(resolve) })) };
+addIframePromise();
+
 window.addEventListener("message", (event) => {
   // console.log(event);
   if (event.origin !== origin) {
     return;
   }
   switch (event.data.event) {
+  case 'ready':
+    iframeReadyCb.pop()();
+    break;
   case 'isElegibleResult':
     const results = document.querySelector('#results');
     for (const event of event.data.events || []) {
@@ -29,44 +39,22 @@ window.addEventListener("message", (event) => {
 
 const ready = () => {
 
-  const featurePolicy = [
-    "accelerometer 'none'",
-    "ambient-light-sensor 'none'",
-    "autoplay 'none'",
-    "battery 'none'",
-    "camera 'none'",
-    "display-capture 'none'",
-    "document-domain 'none'",
-    "encrypted-media 'none'",
-    "fullscreen 'none'",
-    "geolocation 'none'",
-    "gyroscope 'none'",
-    "magnetometer 'none'",
-    "microphone 'none'",
-    "midi 'none'",
-    "navigation-override 'none'",
-    "payment 'none'",
-    "picture-in-picture 'none'",
-    "publickey-credentials-get 'none'",
-    "usb 'none'",
-    "wake-lock 'none'",
-    "screen-wake-lock 'none'",
-    "web-share 'none'",
-    "xr-spatial-tracking 'none'",
-  ];
   const iframeContainer = document.querySelector('.iframe-container');
+
   for (const rule of rules) {
     const iframe = document.createElement('iframe');
-    iframe.width = 0;
-    iframe.height = 0;
     iframe.allow = featurePolicy.join('; ');
     iframe.src = rule;
+    addIframePromise();
     iframeContainer.appendChild(iframe);
     ruleEngines[rule] = iframe;
   }
+  iframeReadyCb.pop()();
 }
 
-setTimeout(() => {
+document.addEventListener('DOMContentLoaded', ready, false);
+
+Promise.all(iframeReady).then(() => {
   for (const urlOrigin in ruleEngines) {
     ruleEngines[urlOrigin].contentWindow.postMessage({
       event: 'isElegible',
@@ -79,6 +67,4 @@ setTimeout(() => {
       }
     }, origin);
   }
-}, 400);
-
-document.addEventListener('DOMContentLoaded', ready, false);
+});

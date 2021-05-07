@@ -30,7 +30,9 @@ we can keep eligibility information up to date.
   + Additional mitigations are provided via the `iframe` `allow` feature policy.
   + A subdomain might be a further mitigation however this feature is deprecated.
  
- %% Extensions Overview Diagram
+```
+ %% Rules Engine Overview Diagram
 graph LR
     BEARS --> | - postMessage - | Extension
     Extension --> | - postMessage - | BEARS
+```
