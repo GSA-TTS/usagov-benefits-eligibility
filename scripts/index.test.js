@@ -1,4 +1,4 @@
-const index = require('./index');
+import index from './index';
 
 describe("index", () => {
   it('should be sane', () => {
