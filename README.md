@@ -26,6 +26,17 @@ we can keep eligibility information up to date.
  + .github/workflows/main.yml - Builds, tests the BEARS site.
  + .github/workflows/codeql-analysis.yml - Scans for code quality and security issues in the BEARS site and it's dependancies.
 
+### How to develop with 11ty
+
+`npm start` 11ty will detect updates to most files and automatically reload your browser. Any webpack related changes will not reload automatically.
+
+To update the rules engine: 
+ + Make your changes to the library.
+ + Update the package.json with a new version number.
+ + Build the package.
+ + Upload to github.
+ + Run `npm i` locally to update your `node_modules`.
+
 ### Federalist builds
  + https://federalistapp.18f.gov/sites/983/builds
 
@@ -35,7 +46,8 @@ we can keep eligibility information up to date.
   + Federalist's setting `x-frame-options: SAMEORIGIN` prevents this design.
   + Additional mitigations are provided via the `iframe` `allow` feature policy.
   + A subdomain might be a further mitigation however this feature is deprecated.
- 
+ + Rules engine is in a seperate github (repo)[https://github.com/GSA/usagov-benefits-eligibility-rules].
+
 ```
  %% Rules Engine Overview Diagram
 graph LR
