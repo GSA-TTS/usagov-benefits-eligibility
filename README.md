@@ -23,6 +23,12 @@ we can keep eligibility information up to date.
 
 ### Github Actions
 
+ + .github/workflows/main.yml - Builds, tests the BEARS site.
+ + .github/workflows/codeql-analysis.yml - Scans for code quality and security issues in the BEARS site and it's dependancies.
+
+### Federalist builds
+ + https://federalistapp.18f.gov/sites/983/builds
+
 ## Design considerations
 
  + Ideally we'd use cross origin iframes to limit the rules engine access similar to twitch's design https://dev.twitch.tv/docs/extensions/
