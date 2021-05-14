@@ -8,6 +8,7 @@
 # production
 /build
 /_site
+/dist
 
 # misc
 .DS_Store
@@ -21,4 +22,12 @@ yarn-debug.log*
 yarn-error.log*
 .env
 
-/assets
+# nuxt.js build output
+.nuxt
+
+# Nuxt generate
+dist
+
+/assets/fonts
+/assets/img
+/assets/js
