@@ -27,6 +27,7 @@ yarn-error.log*
 
 # Nuxt generate
 dist
+_site
 
 /assets/fonts
 /assets/img
