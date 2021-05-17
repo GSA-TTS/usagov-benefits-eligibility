@@ -31,3 +31,4 @@ dist
 /assets/fonts
 /assets/img
 /assets/js
+.eslintcache
