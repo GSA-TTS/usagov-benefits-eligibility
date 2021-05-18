@@ -33,7 +33,7 @@ export default {
       case 'ready':
         iframeReadyCb.pop()();
         break;
-      case 'isElegibleResult':
+      case 'isEligibleResult':
         for (const sentEvent of event.data.events || []) {
           results.innerText += `${sentEvent.type}: ${JSON.stringify(sentEvent.params, null, 2)}\n`;
         }
@@ -62,7 +62,7 @@ export default {
     Promise.all(iframeReady).then(() => {
       for (const urlOrigin in ruleEngines) {
         ruleEngines[urlOrigin].contentWindow.postMessage({
-          event: 'isElegible',
+          event: 'isEligible',
           facts: {
             "Name of species or unknown": "Black bear",
             "Diet (comma-separated list: berries, nuts, meat)": "nuts",

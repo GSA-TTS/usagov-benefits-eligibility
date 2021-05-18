@@ -3,11 +3,11 @@
 </template>
 
 <script>
-let config, isElegible;
+let config, isEligible;
 if (process.client) {
   const rules = require('usagov-benefits-eligibility-rules');
   config = rules.config;
-  isElegible = rules.isElegible;
+  isEligible = rules.isEligible;
 }
 
 export default {
@@ -22,10 +22,10 @@ export default {
       }
 
       switch (event.data.event) {
-      case 'isElegible':
-        if (typeof isElegible === 'function') {
-          isElegible(event.data).then(({ events }) => {
-            window.parent.postMessage({ event: 'isElegibleResult', events }, origin);
+      case 'isEligible':
+        if (typeof isEligible === 'function') {
+          isEligible(event.data).then(({ events }) => {
+            window.parent.postMessage({ event: 'isEligibleResult', events }, origin);
           });
         }
         break;
