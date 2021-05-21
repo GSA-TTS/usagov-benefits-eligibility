@@ -5,37 +5,35 @@ by life events. Before we can do notifications and potentially proactive notific
 figure out a way to get people to sign up and store their information. We also need to establish relationships with benefits programs so 
 we can keep eligibility information up to date. 
 
-### The following npm scripts are defined
+## Build Setup
 
- * `npm start`
-    * Runs the static site generator eleventy and webpack in watch mode.
- * `npm run build`
-    * Runs the production webpack build and eleventy build for the static site.
- * `npm run test`
-    * Runs the unit and functional tests.
+```bash
+# install dependencies
+$ npm install
 
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 ### Useful links
 
- + https://www.11ty.dev/
+ + https://nuxtjs.org
  + https://webpack.js.org/
  + https://jestjs.io/
-
-### Github Actions
+ 
+ ### Github Actions
 
  + .github/workflows/main.yml - Builds, tests the BEARS site.
  + .github/workflows/codeql-analysis.yml - Scans for code quality and security issues in the BEARS site and it's dependancies.
-
-### How to develop with 11ty
-
-`npm start` 11ty will detect updates to most files and automatically reload your browser. Any webpack related changes will not reload automatically.
-
-To update the rules engine: 
- + Make your changes to the library.
- + Update the package.json with a new version number.
- + Build the package.
- + Upload to github.
- + Run `npm i` locally to update your `node_modules`.
 
 ### Federalist builds
  + https://federalistapp.18f.gov/sites/983/builds
@@ -53,4 +51,3 @@ To update the rules engine:
 graph LR
     BEARS --> | - postMessage - | Extension
     Extension --> | - postMessage - | BEARS
-```
