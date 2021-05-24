@@ -97,9 +97,16 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,
+    extend(config, { isClient }) {
+      config.output.publicPath = './';
+    },
   },
 
   generate: {
     dir: '_site'
+  },
+
+  router: {
+    base: './',
   },
 }
