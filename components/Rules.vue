@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div ref="iframeContainer" class="iframe-container" />
+    <div ref="iframeContainer" class="iframe-container" aria-hidden="true" />
     <dl>
       <dt>Results</dt>
       <dd ref="results" />
