@@ -102,7 +102,7 @@ export default {
     extend(config, { isClient, isDev }) {
       if (!isDev) {
         const fontRule = config.module.rules.find(r => r.test.toString().includes('woff'));
-        fontRule.use[0].options.name = 'fonts/[name].[contenthash:7].[ext]';
+        fontRule.use[0].options.name = '_nuxt/fonts/[name].[contenthash:7].[ext]';
         config.output.publicPath = sitePrefix;
       }
     },
