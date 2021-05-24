@@ -1,6 +1,8 @@
 import path from 'path';
 import CopyPlugin from 'copy-webpack-plugin';
 
+const sitePrefix = process.env.SITE_PREFIX ? process.env.SITE_PREFIX : '/'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -98,9 +100,8 @@ export default {
   build: {
     extractCSS: true,
     extend(config, { isClient, isDev }) {
-      console.log('isDev', isDev, !isDev);
       if (!isDev) {
-        config.output.publicPath = './';
+        config.output.publicPath = sitePrefix;
       }
     },
   },
@@ -110,6 +111,6 @@ export default {
   },
 
   router: {
-    base: process.env.NODE_ENV !== 'production' ? undefined : './',
+    base: process.env.NODE_ENV !== 'production' ? undefined : sitePrefix,
   },
 }
