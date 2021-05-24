@@ -280,7 +280,7 @@
                 <div
                   class="grid-col-auto mobile-lg:grid-col-12 desktop:grid-col-auto">
                   <div class="usa-footer__contact-info">
-                    <a href="mailto:info@agency.gov">info@agency.gov</a>
+                    <a href="mailto:info@gsa.gov">info@gsa.gov</a>
                   </div>
                 </div>
               </div>
@@ -298,7 +298,7 @@
                 alt=""/>
             </div>
             <div class="grid-col-auto">
-              <p class="usa-footer__logo-heading">Name of Agency</p>
+              <p class="usa-footer__logo-heading">GSA</p>
             </div>
           </div>
         </div>
@@ -311,10 +311,10 @@
         aria-label="Agency identifier">
         <div class="usa-identifier__container">
           <div class="usa-identifier__identity" aria-label="Agency description">
-            <p class="usa-identifier__identity-domain">domain.gov</p>
+            <p class="usa-identifier__identity-domain">gsa.gov</p>
             <p class="usa-identifier__identity-disclaimer">
               An official website of the
-              <a href="javascript:void(0);">&lt;Parent agency&gt;</a>
+              <a href="javascript:void(0);">General Services Administration</a>
             </p>
           </div>
         </div>
@@ -327,7 +327,7 @@
             <li class="usa-identifier__required-links-item">
               <a
                 href="javascript:void(0);"
-                class="usa-identifier__required-link">About &lt;Parent shortname&gt;</a>
+                class="usa-identifier__required-link">About GSA</a>
             </li>
             <li class="usa-identifier__required-links-item">
               <a
@@ -379,7 +379,7 @@
 <script>
 export default {
   head: {
-    script: [{ src: "assets/js/uswds-init.min.js" }]
+    script: [{ src: "./assets/js/uswds-init.min.js" }]
   }
 };
 </script>
