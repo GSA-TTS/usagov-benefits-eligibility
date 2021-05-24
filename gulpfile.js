@@ -8,6 +8,9 @@ function defaultTask(cb) {
     .src('./node_modules/uswds/dist/fonts/**/*')
     .pipe(gulp.dest('./assets/fonts/'));
   gulp
+    .src('./node_modules/uswds/dist/fonts/**/*')
+    .pipe(gulp.dest('./static/fonts/'));
+  gulp
     .src('node_modules/uswds/dist/js/**/*')
     .pipe(gulp.dest('./assets/js/'));
   cb();
