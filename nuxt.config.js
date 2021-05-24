@@ -98,7 +98,7 @@ export default {
   build: {
     extractCSS: true,
     extend(config, { isClient, isDev }) {
-      console.log(isDev);
+      console.log('isDev', isDev, !isDev);
       if (!isDev) {
         config.output.publicPath = './';
       }
