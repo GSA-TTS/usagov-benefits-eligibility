@@ -108,4 +108,8 @@ export default {
   generate: {
     dir: '_site'
   },
+
+  router: {
+    base: process.env.NODE_ENV !== 'production' ? undefined : './',
+  },
 }
