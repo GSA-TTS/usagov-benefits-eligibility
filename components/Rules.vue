@@ -57,7 +57,11 @@ export default {
       iframeReadyCb.pop()();
     }
 
-    document.addEventListener('DOMContentLoaded', ready, false);
+    if (document.readyState !== 'loading') {
+      ready();
+    } else {
+      document.addEventListener('DOMContentLoaded', ready, false);
+    }
 
     Promise.all(iframeReady).then(() => {
       for (const urlOrigin in ruleEngines) {

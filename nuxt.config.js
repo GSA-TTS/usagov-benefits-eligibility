@@ -106,6 +106,9 @@ export default {
         config.output.publicPath = sitePrefix;
       }
     },
+    // optimization: {
+    //   minimize: false,
+    // },
   },
 
   generate: {
