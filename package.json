@@ -12,7 +12,7 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "test": "jest",
-    "federalist": "gulp && nuxt generate && sleep 10 && ls -lhR _site"
+    "federalist": "gulp && nuxt generate && pushd ./_site/_nuxt/css && perl -pi -e 's/url\\(\\/fonts/url\\(..\\/fonts/g' *.css && popd && ls -lhR _site"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",

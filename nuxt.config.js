@@ -101,8 +101,8 @@ export default {
     extractCSS: true,
     extend(config, { isClient, isDev }) {
       if (!isDev) {
-        const fontRule = config.module.rules.find(r => r.test.toString().includes('woff'));
-        fontRule.use[0].options.name = '_nuxt/fonts/[name].[contenthash:7].[ext]';
+        // const fontRule = config.module.rules.find(r => r.test.toString().includes('woff'));
+        // fontRule.use[0].options.name = '_nuxt/fonts/[name].[contenthash:7].[ext]';
         config.output.publicPath = sitePrefix;
       }
     },
