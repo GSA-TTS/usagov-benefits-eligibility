@@ -29,7 +29,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
 
       # - name: Cache node_modules
       #   id: cache-node_modules
@@ -46,4 +46,7 @@ jobs:
         run: npm run test
 
       - name: Build frontend
-        run: npm run build
+        run: npm run federalist:local
+
+      - name: Test accessibility with pa11y
+        run: npm run start & timeout 22 sh -c 'until nc -z $0 $1; do sleep 1; done' localhost 3000 && npm run test:pa11y
