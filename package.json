@@ -12,6 +12,7 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "test": "jest",
+    "test:pa11y": "pa11y-ci",
     "federalist:nuxtjsbug": "open https://github.com/nuxt/nuxt.js/issues/8973",
     "federalist:local": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/url\\(\\/fonts/url\\(..\\/fonts/g' *.css && cd ../../.. && ls -lhR _site",
     "federalist": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css && cd ../../.. && ls -lhR _site"
@@ -20,7 +21,7 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.1",
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^6.0.0",
@@ -38,6 +39,7 @@
     "gulp": "^4.0.2",
     "jest": "^26.6.3",
     "nuxt-i18n": "^6.27.0",
+    "pa11y-ci": "^2.4.1",
     "sass": "^1.32.12",
     "sass-loader": "^10.2.0",
     "usagov-benefits-eligibility-rules": "https://github.com/GSA/usagov-benefits-eligibility-rules.git#main",
