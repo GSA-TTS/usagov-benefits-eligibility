@@ -1,7 +1,9 @@
 <template>
   <div class="usa-card__container">
     <header class="usa-card__header padding-bottom-2">
-      <h3 class="usa-card__heading">{{ cardTitle }}</h3>
+      <component :is="cardTitleHeadingLevel" class="usa-card__heading">
+        {{ cardTitle }}
+      </component>
       <div
         v-if="cardTags && cardTags.length > 0"
         class="tags-container margin-top-1">
@@ -42,6 +44,11 @@ export default {
       type: String,
       required: true,
       default: "Card title not provided"
+    },
+    cardTitleHeadingLevel: {
+      type: String,
+      required: false,
+      default: "h3"
     },
     cardBody: {
       type: String,
