@@ -1,81 +1,36 @@
 <template>
   <div>
-    <!--<section class="usa-hero" aria-label="Introduction">
-        <div class="grid-container">
-          <div class="usa-hero__callout">
-            <h1 class="usa-hero__heading">
-              Find benefits to help you through life's most important events.
-            </h1>
-          </div>
-        </div>
-      </section>-->
-
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
-        <div class="tablet:grid-col-4">
-          <h2 class="font-heading-xl margin-top-0 tablet:margin-bottom-0">
-            Find benefits to help you through life's most important events.
-          </h2>
-        </div>
-        <div class="tablet:grid-col-8 usa-prose">
-          <p>
-            Answer a few questions, and we’ll help you identify benefits,
-            including financial help, services, and discounts, that you might
-            qualify for. Then will point you in the right direction to apply for
-            the benefits.
+        <div class="tablet:grid-col-10">
+          <h1 class="font-heading-3x margin-top-0">
+            Help during life's major events
+          </h1>
+          <p class="usa-intro">
+            Life’s big milestones can be challenging, but figuring out which
+            benefits might be available to help you through shouldn’t be. The
+            Benefits Eligibility Estimator helps you identify benefits and
+            support that you might qualify for and links you directly to the
+            federal agency for detailed information and the application. Get
+            started by choosing a life event and answering a few questions.
           </p>
-          <p>
-            If you know exactly what you are looking for, browse our Benefits by
-            Topic.
-          </p>
-          <p>What kind of help are you looking for?</p>
         </div>
       </div>
-    </section>
 
-    <section class="usa-graphic-list usa-section usa-section--dark">
-      <div class="grid-container">
-        <div class="usa-graphic-list__row grid-row grid-gap">
-          <div class="usa-media-block tablet:grid-col">
-            <img
-              class="usa-media-block__img"
-              src="../assets/img/circle-124.png"
-              alt="Alt text"/>
-            <div class="usa-media-block__body">
-              <h2 class="usa-graphic-list__heading">
-                Bereavement & Death Benefits.
-              </h2>
-              <ul>
-                <li>Burial help</li>
-                <li>Financial help</li>
-                <li>Insurance</li>
-              </ul>
-            </div>
-          </div>
-          <div class="usa-media-block tablet:grid-col">
-            <img
-              class="usa-media-block__img"
-              src="../assets/img/circle-124.png"
-              alt="Alt text"/>
-            <div class="usa-media-block__body">
-              <h2 class="usa-graphic-list__heading">Help for Older Adults</h2>
-              <ul>
-                <li>Health and medical</li>
-                <li>Housing and food</li>
-                <li>Financial help</li>
-              </ul>
-            </div>
-          </div>
+      <div class="grid-row grid-gap margin-top-4">
+        <div class="tablet:grid-col-10">
+          <ul v-if="lifeEvents.length > 0" class="usa-card-group">
+            <li v-for="event in lifeEvents" :key="event.slug" class="usa-card">
+              <Card
+                :card-body="event.summary"
+                :card-title="event.title"
+                primary-button-text="Estimate my possible benefits"
+                primary-button-link="/questionnaire"
+                secondary-button-text="See all benefits"
+                :secondary-button-link="event.slug"/>
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
-
-    <section id="test-section-id" class="usa-section">
-      <div class="grid-container">
-        <h2 class="font-heading-xl margin-y-0">
-          Example Rules Engine Results
-        </h2>
-        <Rules />
       </div>
     </section>
   </div>
@@ -84,6 +39,13 @@
 <script>
 export default {
   layout: "default",
+  async asyncData ({ $content }) {
+    const lifeEvents = await $content("life-events")
+      .sortBy("title")
+      .fetch();
+
+    return { lifeEvents };
+  },
   data () {
     return {};
   }
