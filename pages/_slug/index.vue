@@ -18,7 +18,7 @@
       <div class="grid-row grid-gap margin-top-4">
         <div class="tablet:grid-col-12">
           <h2 class="font-heading-xl margin-top-8">
-            Potential benefits following the death of a loved one
+            {{ lifeEvent.secondaryHeadline }}
           </h2>
           <ul
             v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
