@@ -19,7 +19,7 @@
 
       <div class="grid-row grid-gap margin-top-4">
         <div class="tablet:grid-col-10">
-          <ul v-if="lifeEvents.length > 0" class="usa-card-group">
+          <ul v-if="lifeEvents && lifeEvents.length > 0" class="usa-card-group">
             <li v-for="event in lifeEvents" :key="event.slug" class="usa-card">
               <Card
                 :card-body="event.summary"
@@ -48,7 +48,9 @@ export default {
     return { lifeEvents };
   },
   data () {
-    return {};
+    return {
+      lifeEvents: []
+    };
   }
 };
 </script>

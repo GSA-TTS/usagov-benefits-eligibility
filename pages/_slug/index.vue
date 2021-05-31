@@ -74,6 +74,12 @@ export default {
       .fetch();
 
     return { lifeEvent, lifeEventBenefits };
+  },
+  data () {
+    return {
+      lifeEvent: {},
+      lifeEventBenefits: []
+    };
   }
 };
 </script>
