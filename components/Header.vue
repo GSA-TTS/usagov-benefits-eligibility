@@ -93,9 +93,9 @@
     <header class="usa-header usa-header--extended">
       <div class="usa-navbar">
         <div id="extended-logo" class="usa-logo">
-          <em class="usa-logo__text"><a href="/" title="Home" aria-label="Home">{{
+          <em class="usa-logo__text"><nuxt-link to="/" title="Home" aria-label="Home">{{
               $t("projectName")
-            }}</a></em>
+            }}</nuxt-link></em>
         </div>
         <button class="usa-menu-btn">Menu</button>
       </div>
