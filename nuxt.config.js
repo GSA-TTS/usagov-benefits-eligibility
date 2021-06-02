@@ -114,10 +114,12 @@ export default {
   },
 
   generate: {
-    dir: '_site'
+    dir: '_site',
   },
 
   router: {
     base: process.env.NODE_ENV !== 'production' ? undefined : sitePrefix,
+    linkActiveClass: 'usa-current',
+    linkExactActiveClass: 'usa-current'
   },
 }
