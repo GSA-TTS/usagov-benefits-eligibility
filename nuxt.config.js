@@ -1,7 +1,7 @@
 import path from 'path';
 import CopyPlugin from 'copy-webpack-plugin';
 
-const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : '/'
+const sitePrefix = process.env.BASEURL ? `/${process.env.BASEURL}/` : '/'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
