@@ -26,7 +26,8 @@
             <li
               v-for="benefit in lifeEventBenefits"
               :key="benefit.title"
-              class="usa-card desktop:grid-col-6">
+              class="usa-card desktop:grid-col-6"
+              :aria-label="benefit.title">
               <Card
                 :card-body="benefit.summary"
                 :card-title="benefit.title"

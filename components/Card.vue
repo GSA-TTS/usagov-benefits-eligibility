@@ -17,7 +17,7 @@
       </p>
     </div>
     <div class="usa-card__footer">
-      <ul class="usa-button-group">
+      <ul class="usa-button-group" :aria-label="'Choices for ' + cardTitle">
         <li class="usa-button-group__item">
           <nuxt-link :to="primaryButtonLink" class="usa-button">
             {{ primaryButtonText }}

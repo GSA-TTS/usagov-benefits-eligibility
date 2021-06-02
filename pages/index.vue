@@ -20,7 +20,8 @@
       <div class="grid-row grid-gap margin-top-4">
         <div class="tablet:grid-col-10">
           <ul v-if="lifeEvents && lifeEvents.length > 0" class="usa-card-group">
-            <li v-for="event in lifeEvents" :key="event.slug" class="usa-card">
+            <li v-for="event in lifeEvents" :key="event.slug" class="usa-card"
+              :aria-label="event.title">
               <Card
                 :card-body="event.summary"
                 :card-title="event.title"
