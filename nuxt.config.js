@@ -9,14 +9,14 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'BEARS',
+    title: 'Benefits Eligibility Estimator',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Default meta tags are in nuxt.config.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -59,7 +59,7 @@ export default {
       fallbackLocale: 'en',
       messages: {
         en: {
-          projectName: 'Benefits Finder',
+          projectName: 'Benefits for Life Events',
           banner: {
             official: 'An official website of the United States government',
             know: 'Here’s how you know',
@@ -94,12 +94,14 @@ export default {
   axios: {},
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    nestedProperties: []
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,
-    extend(config, { isClient, isDev }) {
+    extend (config, { isClient, isDev }) {
       if (!isDev) {
         // const fontRule = config.module.rules.find(r => r.test.toString().includes('woff'));
         // fontRule.use[0].options.name = '_nuxt/fonts/[name].[contenthash:7].[ext]';
@@ -112,10 +114,12 @@ export default {
   },
 
   generate: {
-    dir: '_site'
+    dir: '_site',
   },
 
   router: {
     base: process.env.NODE_ENV !== 'production' ? undefined : sitePrefix,
+    linkActiveClass: 'usa-current',
+    linkExactActiveClass: 'usa-current'
   },
 }

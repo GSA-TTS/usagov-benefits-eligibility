@@ -3,6 +3,10 @@
 </template>
 
 <script>
+
+// TODO: ADD TESTS AND REMOVE TEST COVERAGE THRESHOLD OVERRIDE
+// FOR THIS COMPONENT IN /jest.config.s
+
 let config, isEligible;
 if (process.client) {
   const rules = require('usagov-benefits-eligibility-rules');
