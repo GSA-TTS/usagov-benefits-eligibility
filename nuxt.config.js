@@ -1,7 +1,7 @@
 import path from 'path';
 import CopyPlugin from 'copy-webpack-plugin';
 
-const sitePrefix = process.env.BASEURL ? `/${process.env.BASEURL}/` : '/'
+const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : '/'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -19,7 +19,7 @@ export default {
       { hid: 'description', name: 'description', content: 'Default meta tags are in nuxt.config.js' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: sitePrefix + 'favicon.ico' }
     ],
   },
 
