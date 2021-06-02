@@ -135,7 +135,7 @@
               </ul>
             </li>-->
             <li class="usa-nav__primary-item">
-              <a class="usa-nav__link" href="javascript:void(0)"><span>Simple link</span></a>
+              <nuxt-link :to="'/'" class="usa-nav__link" ><span>Life Events</span></nuxt-link>
             </li>
           </ul>
           <div class="usa-nav__secondary">

@@ -6,7 +6,7 @@ tags:
 lifeEvents: 
   - "bereavement"
 source:
-  name: "Veteran's Administration"
+  name: "Dept. of Veterans Affairs"
   link: "#"
 
 summary: "Survivors of service members who died in the line of duty from a service-related injury or illness may qualify for a tax-free monetary benefit."
