@@ -9,6 +9,10 @@
 </template>
 
 <script>
+
+// TODO: ADD TESTS AND REMOVE TEST COVERAGE THRESHOLD OVERRIDE
+// FOR THIS COMPONENT IN /jest.config.s
+
 import ruleEnginesPerEnv from '../services/ruleEngines.json';
 import { featurePolicy } from '../services/config';
 
