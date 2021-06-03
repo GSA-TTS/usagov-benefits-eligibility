@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import Results from '@/pages/Results.vue'
+import Results from '@/pages/results.vue'
 import beforeAllTests from '@/test/beforeAllTests';
 
 describe('Results', () => {
