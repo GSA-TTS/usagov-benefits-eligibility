@@ -27,7 +27,7 @@
                 :card-title="event.title"
                 card-title-heading-level="h2"
                 primary-button-text="Estimate my possible benefits"
-                primary-button-link="/questionnaire"
+                :primary-button-link="event.slug + '/questionnaire'"
                 secondary-button-text="See all benefits"
                 :secondary-button-link="event.slug"/>
             </li>

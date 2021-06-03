@@ -162,6 +162,13 @@
         </div>
       </nav>
     </header>
+    <div class="grid-container">
+      <div class="grid-row">
+        <div class="grid-col margin-top-2">
+            <Breadcrumb />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
