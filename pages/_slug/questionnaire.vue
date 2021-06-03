@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { toTitleCase, deSlugify } from "@/utilities/formatting.js"
+const _ = require('lodash');
 
 export default {
   layout: "default",
@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     lifeEventTitle () {
-      return toTitleCase(deSlugify(this.lifeEvent.slug))
+      return _.startCase(this.lifeEvent.slug)
     }
   },
 };

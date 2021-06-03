@@ -37,7 +37,7 @@
 
 <script>
 
-import { toTitleCase, deSlugify } from "@/utilities/formatting.js"
+const _ = require('lodash');
 
 export default {
   props: {
@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     crumbs () {
-      const fullPath = this.$route.fullPath;
+      const fullPath = _.escapeRegExp(this.$route.fullPath);
       const segments = fullPath.substring(1).split('/');
       const crumbs = [];
       let path = '';
@@ -56,7 +56,7 @@ export default {
         path = `${path}/${segment}`;
         const match = this.$router.match(path);
         crumbs.push({
-          title: toTitleCase(deSlugify(segment)),
+          title: _.startCase(segment),
           ...match,
         });
       });
