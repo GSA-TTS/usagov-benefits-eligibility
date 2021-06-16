@@ -10,4 +10,11 @@ source:
   link: "#"
 
 summary: "Survivors of service members may qualify for low-cost group life insurance."
+
+# eligibility
+was_veteran: true
+not_discharged_dishonorably: true
+relationship: ["spouse", "child", "parent"]
+age_in_years: 18
+
 ---

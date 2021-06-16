@@ -1,7 +1,7 @@
 import { shallowMount } from "@vue/test-utils";
 import beforeAllTests from '@/test/beforeAllTests';
 import { createContentMock } from '@/test/mockContent';
-import QuestionnairePage from '~/pages/_slug/questionnaire.vue'
+import BenefitsBrowser from '~/pages/_slug/benefits.vue';
 
 const THIS_LIFE_EVENT_SLUG = 'this-life-event';
 const LIFE_EVENTS_DIRECTORY = 'life-events';
@@ -16,14 +16,14 @@ const mockContent = {
   },
 }
 
-describe('QuestionnairePage', () => {
+describe('BenefitsBrowser', () => {
 
   beforeAll(async () => {
     await beforeAllTests();
   });
 
   it('is a Vue instance', () => {
-    const wrapper = shallowMount(QuestionnairePage);
+    const wrapper = shallowMount(BenefitsBrowser);
     expect(wrapper.vm).toBeTruthy();
   });
 
@@ -36,7 +36,7 @@ describe('QuestionnairePage', () => {
         }
       ]
     );
-    const asyncItems = await QuestionnairePage.asyncData({ $content, params: { slug: THIS_LIFE_EVENT_SLUG } });
+    const asyncItems = await BenefitsBrowser.asyncData({ $content, params: { slug: THIS_LIFE_EVENT_SLUG } });
 
     // console.log(asyncItems);
 
@@ -45,7 +45,7 @@ describe('QuestionnairePage', () => {
   });
 
   it('displays the computed questionnaire page title', async () => {
-    const wrapper = shallowMount(QuestionnairePage);
+    const wrapper = shallowMount(BenefitsBrowser);
     await wrapper.setData(mockContent);
 
     expect(wrapper.find('h1').text()).toBe('This Life Event Eligibility Estimator');
