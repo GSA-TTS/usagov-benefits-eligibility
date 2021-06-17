@@ -10,8 +10,9 @@
           </button>
         </h2>
         <div :id="'filters-' + filterGroup.key" class="usa-accordion__content padding-y-0 padding-left-0">
-          <template v-for="(criterion) in filterGroup.criteria_keys">
-            <filter-child :key="criterion.key" :filter-group-key="filterGroup.key" :criterion="criterion" />
+          <template v-for="(criterion, criterionIndex) in filterGroup.criteria_keys">
+            <filter-child :key="criterion.key" :filter-group-key="filterGroup.key" :criterion="criterion"
+              :criterion-index="criterionIndex" />
           </template>
         </div>
       </div>
@@ -28,9 +29,6 @@ export default {
     }
   },
   computed: {
-    allEligibilityCriteria () {
-      return this.$store.state.benefits.eligibilityCriteria;
-    },
   },
   methods: {
   }

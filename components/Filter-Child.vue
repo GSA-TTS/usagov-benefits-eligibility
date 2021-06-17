@@ -12,6 +12,42 @@
       </label>
     </div>
 
+    <fieldset v-if="mergedCriterion.type === 'yes/no'" :key="mergedCriterion.key" class="usa-fieldset margin-y-205">
+      <legend class="usa-legend">
+        {{ mergedCriterion.label }}
+        <span v-if="mergedCriterion.help" class="">
+          {{ mergedCriterion.help }}
+        </span>
+      </legend>
+
+      <div class="usa-radio">
+        <input
+          :id="'completed--questions-radio-' + criterionIndex + '-yes'"
+          :checked="answers[mergedCriterion.key] === true"
+          class="usa-radio__input"
+          type="radio"
+          @click="addAnswer(mergedCriterion.key, true)" />
+        <label
+          class="usa-radio__label"
+          :for="'completed--questions-radio-' + criterionIndex + '-yes'">Yes</label>
+      </div>
+      <div class="usa-radio">
+        <input
+          :id="'completed--questions-radio-' + criterionIndex + '-no'"
+          :checked="$store.state.questionGraph.answers[mergedCriterion.key] === false"
+          class="usa-radio__input"
+          type="radio"
+          @click="addAnswer(mergedCriterion.key, false)" />
+        <label
+          class="usa-radio__label"
+          :for="'completed--questions-radio-' + criterionIndex + '-no'">No</label>
+      </div>
+
+      <button
+            class="usa-button usa-button--unstyled"
+            @click="clearAnswer(mergedCriterion.key)">Clear</button>
+    </fieldset>
+
     <div v-if="mergedCriterion.type === 'one-of'" :key="mergedCriterion.key" class="padding-bottom-1 margin-y-3">
       <label class="usa-label text-bold margin-top-0" :for="'filter-' + filterGroupKey + '-' + mergedCriterion.key">{{ mergedCriterion.label }}</label>
       <select :id="'filter-' + filterGroupKey + '-' + mergedCriterion.key" class="usa-select" :name="'filter-' + filterGroupKey + '-' + mergedCriterion.key">
@@ -61,6 +97,7 @@
 
 import { createNamespacedHelpers } from 'vuex';
 const { mapGetters } = createNamespacedHelpers('benefits');
+const questionGraphMapState = createNamespacedHelpers('questionGraph').mapState;
 export default {
   props: {
     criterion: {
@@ -72,6 +109,10 @@ export default {
         }
       }
     },
+    criterionIndex: {
+      type: Number,
+      default: 0,
+    },
     filterGroupKey: {
       type: String,
       default: "filterGroup"
@@ -79,21 +120,24 @@ export default {
   },
   computed: {
     ...mapGetters(['getValueByEligibilityKey', 'getCriterionByEligibilityKey']),
+    ...questionGraphMapState(['answers']),
     mergedCriterion () {
       return { ...this.criterion, ...this.getCriterionByEligibilityKey(this.criterion.key) }
     },
     isCriterionActive () {
-      return this.getValueByEligibilityKey(this.criterion.key);
+      return false; // this.getValueByEligibilityKey(this.criterion.key);
     }
   },
   methods: {
-    updateEligibilityFilter (e) {
-      const localCriterion = {
-        key: this.mergedCriterion.key,
-        value: e.target.checked
-      };
-      this.$store.commit('benefits/updateEligibilityFilter', localCriterion);
-    }
+    addAnswer (questionId, answer) {
+      this.$store.commit('questionGraph/addAnswer', {
+        questionId,
+        answer,
+      });
+    },
+    clearAnswer (questionId) {
+      this.$store.commit('questionGraph/clearAnswer', { questionId });
+    },
   }
 };
 </script>

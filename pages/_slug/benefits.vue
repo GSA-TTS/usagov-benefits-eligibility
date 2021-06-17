@@ -11,7 +11,7 @@
 
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-3">
-          <Filters :life-event-criteria="lifeEvent.eligibility_criteria" />
+          <Filters :life-event-criteria="eligibilityCriteria" />
         </div>
         <div class="tablet:grid-col-9">
           <div v-if="$fetchState.pending" class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
@@ -52,7 +52,7 @@
                     }}</a>
                   </h3>
                 </template>
-                <template v-if="benefitInQueryMatchList(benefit)"
+                <template v-if="isBenefitMatching(benefit)"
                   #eligibility>
                   <span class="eligibility-chip eligibility-chip--likely">
                     <svg width="16" height="16" viewBox="0 0 16 16"
@@ -79,7 +79,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 const _ = require('lodash');
 
 export default {
@@ -92,18 +91,19 @@ export default {
         eligibility_criteria: () => []
       },
       lifeEventBenefits: [],
-      benefitsMatchingQuery: []
     };
   },
   async fetch () {
     const lifeEvent = await this.$content("life-events", this.$route.params.slug).fetch();
-    const lifeEventBenefits = await this.$content("benefits")
-      .where({
+    /* const questions = await this.$content("questions").where({
         lifeEvents: { $contains: this.$route.params.slug },
-      })
-      // .where(this.formatFiltersForQuery)
-      .sortBy("title")
-      .fetch();
+      }).fetch(); */
+    const lifeEventBenefits = this.$store.state.questionGraph.graph.getPossibleResults().map(r => ({
+      title: r.result.data.name,
+      summary: '',
+      link: r.result.data.url,
+      id: r.result.id,
+    }));
 
     this.lifeEvent = lifeEvent;
     this.lifeEventBenefits = lifeEventBenefits;
@@ -113,43 +113,23 @@ export default {
       return _.startCase(this.lifeEvent.slug)
     },
     eligibilityCriteria () {
-      return this.$store.state.benefits.eligibilityCriteria;
+      return [{
+        label: "General Information",
+        key: 'general',
+        open: true,
+        criteria_keys: this.$store.state.questionGraph.graph.getAllQuestions(this.$store.state.questionGraph.answers).map(q => ({
+          key: q.question.identifier,
+          label: q.question.question,
+          values: q.question.choices,
+          type: q.question.type,
+        })),
+      }];
     },
-    // ...mapGetters(['getActiveFilters']),
-    ...mapGetters({
-        getActiveFilters: 'benefits/getActiveFilters'
-    }),
-    currentFilters () {
-      return this.getActiveFilters;
+    benefitsMatching () {
+      return this.$store.state.questionGraph.graph.getPositiveResults(this.$store.state.questionGraph.answers);
     },
-    formatFiltersForQuery () {
-      const filters = [];
-      this.currentFilters.forEach((criterion) => {
-        filters.push({
-          [criterion.key]: true
-        });
-      });
-      return {
-        $or: filters
-      }
-      // this.getActiveFilters();
-    }
   },
   watch: {
-    async currentFilters (current, old) {
-      if (current.length > 0) {
-        const newBenefits = await this.$content("benefits")
-        .where({
-          lifeEvents: { $contains: this.$route.params.slug },
-        })
-        .where(this.formatFiltersForQuery)
-        .sortBy("title")
-        .fetch();
-        this.benefitsMatchingQuery = newBenefits;
-      } else {
-        this.benefitsMatchingQuery = [];
-      }
-    }
   },
   methods: {
     benefitInQueryMatchList (benefit) {
@@ -157,7 +137,13 @@ export default {
         return false;
       }
       return !!this.benefitsMatchingQuery.find(item => item.slug === benefit.slug)
-    }
+    },
+    isBenefitMatching (benefit) {
+      if (this.benefitsMatching.length < 1) {
+        return false;
+      }
+      return !!this.benefitsMatching.find(item => item.resultId === benefit.id);
+    },
   }
 };
 </script>

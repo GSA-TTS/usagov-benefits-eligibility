@@ -60,20 +60,10 @@ export const state = () => ({
       value: null
     }
   ],
-  // currentEligibilityCriteria: []
 })
 
 export const mutations = {
 
-  // add (state, text) {
-  //   state.currentEligibilityCriteria.push({
-  //     text,
-  //     done: false
-  //   })
-  // },
-  // remove (state, { criterion }) {
-  //   state.currentEligibilityCriteria.splice(state.list.indexOf(criterion), 1)
-  // },
   updateEligibilityFilter (state, criterion) {
     const existsAtIndex = state.eligibilityCriteria.findIndex(item => item.key === criterion.key);
     Object.assign(state.eligibilityCriteria[existsAtIndex], { value: criterion.value });
