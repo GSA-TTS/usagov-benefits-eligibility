@@ -15,14 +15,14 @@ eligibility_criteria:
       - key: lineOfDuty
   - label: "Burial Information"
     key: 'burial'
-    open: false
+    open: true
     criteria_keys:
       - key: unmarkedGrave
       - key: privateHeadstone
       - key: privateCemetery
   - label: "Beneficiary Information"
     key: 'beneficiary'
-    open: false
+    open: true
     criteria_keys:
       - key: relationship
       - key: age

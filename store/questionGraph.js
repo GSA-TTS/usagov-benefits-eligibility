@@ -1,7 +1,5 @@
-const questionGraph = require('../services/benefitsGraph').questionGraph;
 
 export const state = () => ({
-  graph: questionGraph,
   answers: {},
 })
 

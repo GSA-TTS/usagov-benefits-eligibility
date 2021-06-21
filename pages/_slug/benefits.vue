@@ -80,6 +80,7 @@
 
 <script>
 const _ = require('lodash');
+const questionGraph = require('../../services/benefitsGraph').questionGraph;
 
 export default {
   layout: "default",
@@ -91,6 +92,7 @@ export default {
         eligibility_criteria: () => []
       },
       lifeEventBenefits: [],
+      graph: questionGraph,
     };
   },
   async fetch () {
@@ -98,7 +100,7 @@ export default {
     /* const questions = await this.$content("questions").where({
         lifeEvents: { $contains: this.$route.params.slug },
       }).fetch(); */
-    const lifeEventBenefits = this.$store.state.questionGraph.graph.getPossibleResults().map(r => ({
+    const lifeEventBenefits = this.graph.getPossibleResults().map(r => ({
       title: r.result.data.name,
       summary: '',
       link: r.result.data.url,
@@ -117,7 +119,7 @@ export default {
         label: "Additional Questions",
         key: 'additional-questions',
         open: true,
-        criteria_keys: this.$store.state.questionGraph.graph.getRemainingQuestions(this.$store.state.questionGraph.answers).map(q => ({
+        criteria_keys: this.graph.getRemainingQuestions(this.$store.state.questionGraph.answers).map(q => ({
           key: q.question.identifier,
           label: q.question.question,
           values: q.question.choice,
@@ -126,7 +128,7 @@ export default {
       }];
     },
     benefitsMatching () {
-      return this.$store.state.questionGraph.graph.getPositiveResults(this.$store.state.questionGraph.answers);
+      return this.graph.getPositiveResults(this.$store.state.questionGraph.answers);
     },
   },
   watch: {
@@ -162,5 +164,4 @@ export default {
 .eligibility-chip svg {
   margin-right: .5rem;
 }
-
 </style>
