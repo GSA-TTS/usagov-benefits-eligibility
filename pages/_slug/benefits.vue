@@ -10,10 +10,10 @@
       </div>
 
       <div class="grid-row grid-gap">
-        <div class="tablet:grid-col-3">
+        <div class="tablet:grid-col-4">
           <Filters :life-event-criteria="lifeEvent.eligibility_criteria" :life-event-questions="eligibilityCriteria" />
         </div>
-        <div class="tablet:grid-col-9">
+        <div class="tablet:grid-col-8">
           <div v-if="$fetchState.pending" class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
             <div class="usa-alert__body">
               <p class="usa-alert__text">Fetching benefits...</p>
@@ -26,7 +26,7 @@
           </div>
           <ul
             v-else-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-            class="usa-card-group">
+            class="usa-card-group benefits-container">
             <li
               v-for="benefit in lifeEventBenefits"
               :key="benefit.title"
@@ -165,5 +165,9 @@ export default {
 }
 .eligibility-chip svg {
   margin-right: .5rem;
+}
+.benefits-container {
+  position: sticky;
+  top: 1rem;
 }
 </style>
