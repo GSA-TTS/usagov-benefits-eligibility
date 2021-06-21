@@ -10,24 +10,19 @@ eligibility_criteria:
     key: 'general'
     open: true
     criteria_keys:
-      - key: irrelevant_filter
-      - key: was_veteran
-        criteria_keys:
-          - key: not_discharged_dishonorably
-          - key: passed_on_active_duty
-            criteria_keys: 
-              - key: "deceased_veteran_served_forces"
+      - key: work
+      - key: veteran
+      - key: lineOfDuty
   - label: "Burial Information"
     key: 'burial'
     open: false
     criteria_keys:
-      - key: privately_purchased_headstone
-      - key: date_of_funeral
+      - key: unmarried
   - label: "Beneficiary Information"
     key: 'beneficiary'
     open: false
     criteria_keys:
       - key: relationship
-      - key: age_in_years
+      - key: age
 
 ---

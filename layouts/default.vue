@@ -10,9 +10,6 @@
 
 <script>
 export default {
-  head: {
-    script: [{ src: "~/assets/js/uswds-init.min.js" }]
-  }
 };
 </script>
 

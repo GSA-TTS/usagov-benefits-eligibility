@@ -11,7 +11,7 @@
 
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-3">
-          <Filters :life-event-criteria="eligibilityCriteria" />
+          <Filters :life-event-criteria="lifeEvent.eligibility_criteria" :life-event-questions="eligibilityCriteria" />
         </div>
         <div class="tablet:grid-col-9">
           <div v-if="$fetchState.pending" class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
@@ -114,10 +114,10 @@ export default {
     },
     eligibilityCriteria () {
       return [{
-        label: "General Information",
-        key: 'general',
+        label: "Additional Questions",
+        key: 'additional-questions',
         open: true,
-        criteria_keys: this.$store.state.questionGraph.graph.getAllQuestions(this.$store.state.questionGraph.answers).map(q => ({
+        criteria_keys: this.$store.state.questionGraph.graph.getRemainingQuestions(this.$store.state.questionGraph.answers).map(q => ({
           key: q.question.identifier,
           label: q.question.question,
           values: q.question.choices,

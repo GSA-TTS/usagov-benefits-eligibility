@@ -29,7 +29,7 @@
           </div>
         </header>
 
-        <div id="gov-banner" class="usa-banner__content usa-accordion__content">
+        <div id="gov-banner" class="usa-banner__content usa-accordion__content" hidden>
           <div class="grid-row grid-gap-lg">
             <div class="usa-banner__guidance tablet:grid-col-6">
               <img

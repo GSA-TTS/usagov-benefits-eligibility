@@ -7,6 +7,7 @@ class Node {
     this.id = id;
     this.data = data;
     this.edges = [];
+    this.path = [];
   }
 }
 
@@ -221,12 +222,14 @@ class QuestionGraph {
   getRemainingQuestions (data = {}) {
     const vis = new Set();
     const questionIds = new Set();
-    const q = [{ path: [this.head.id], item: this.head }];
+    const q = [{ path: [{ [this.head.id]: true }], item: this.head }];
 
     while (q.length) {
       const queueItem = q.shift();
       const item = queueItem.item;
       let answered = false;
+      let numberAnsweredInPath = 0;
+
       if (!vis.has(item.id)) {
         vis.add(item.id);
 
@@ -237,15 +240,17 @@ class QuestionGraph {
           const questionId = item.data;
 
           // console.log(questionId);
-          if (data[questionId] == null) { // && queueItem.path.length < 5) {
+          const path = queueItem.path.slice();
+          numberAnsweredInPath = path.reduce((memo, path) => Object.values(path)[0] ? ++memo : memo, 0);
+          answered = data[questionId] != null;
+          queueItem.path.push({ [item.id]: answered });
+          if (queueItem.path.length - numberAnsweredInPath < 3) {
             // console.log(questionId, queueItem.path);
             questionIds.add(questionId);
-          } else {
-            answered = true;
           }
         }
 
-        // console.log(queueItem);
+        // console.log(numberAnsweredInPath, queueItem.path, queueItem);
         for (const edge of item.edges) {
           const edgeRes = edge.question(data);
 
@@ -253,7 +258,7 @@ class QuestionGraph {
           // allow possibles
           if (edgeRes !== false) {
             const node = this.nodeMap.get(edge.toId);
-            q.push({ path: queueItem.path.slice().concat([answered, node.id]), item: node });
+            q.push({ path: queueItem.path.slice(), item: node });
           }
         }
       }

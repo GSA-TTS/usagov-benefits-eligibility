@@ -12,41 +12,36 @@
       </label>
     </div>
 
-    <fieldset v-if="mergedCriterion.type === 'yes/no'" :key="mergedCriterion.key" class="usa-fieldset margin-y-205">
-      <legend class="usa-legend">
-        {{ mergedCriterion.label }}
-        <span v-if="mergedCriterion.help" class="">
+    <div v-if="mergedCriterion.type === 'yes/no'" :key="mergedCriterion.key" class="padding-top-205">
+      <label :for="'filter-' + filterGroupKey + '-' + mergedCriterion.key">{{ mergedCriterion.label }}
+        <span v-if="mergedCriterion.help" class="usa-checkbox__label-description">
           {{ mergedCriterion.help }}
         </span>
-      </legend>
-
-      <div class="usa-radio">
-        <input
-          :id="'completed--questions-radio-' + criterionIndex + '-yes'"
-          :checked="answers[mergedCriterion.key] === true"
-          class="usa-radio__input"
-          type="radio"
-          @click="addAnswer(mergedCriterion.key, true)" />
-        <label
-          class="usa-radio__label"
-          :for="'completed--questions-radio-' + criterionIndex + '-yes'">Yes</label>
-      </div>
-      <div class="usa-radio">
-        <input
-          :id="'completed--questions-radio-' + criterionIndex + '-no'"
-          :checked="$store.state.questionGraph.answers[mergedCriterion.key] === false"
-          class="usa-radio__input"
-          type="radio"
-          @click="addAnswer(mergedCriterion.key, false)" />
-        <label
-          class="usa-radio__label"
-          :for="'completed--questions-radio-' + criterionIndex + '-no'">No</label>
-      </div>
-
-      <button
-            class="usa-button usa-button--unstyled"
-            @click="clearAnswer(mergedCriterion.key)">Clear</button>
-    </fieldset>
+      </label>
+      <ul :id="'button-group-' + filterGroupKey + '-' + mergedCriterion.key" class="usa-button-group usa-button-group--segmented">
+        <li class="usa-button-group__item">
+          <button
+            :class="{ 'usa-button': true, 'usa-button--outline': answers[mergedCriterion.key] !== true }"
+            @click="addAnswer(mergedCriterion.key, true)">
+              Yes
+          </button>
+        </li>
+        <li class="usa-button-group__item">
+          <button
+            :class="{ 'usa-button': true, 'usa-button--outline': answers[mergedCriterion.key] != null }"
+            @click="clearAnswer(mergedCriterion.key)">
+              Unknown
+          </button>
+        </li>
+        <li class="usa-button-group__item">
+          <button
+            :class="{ 'usa-button': true, 'usa-button--outline': answers[mergedCriterion.key] !== false }"
+            @click="addAnswer(mergedCriterion.key, false)">
+              No
+          </button>
+        </li>
+      </ul>
+    </div>
 
     <div v-if="mergedCriterion.type === 'one-of'" :key="mergedCriterion.key" class="padding-bottom-1 margin-y-3">
       <label class="usa-label text-bold margin-top-0" :for="'filter-' + filterGroupKey + '-' + mergedCriterion.key">{{ mergedCriterion.label }}</label>
