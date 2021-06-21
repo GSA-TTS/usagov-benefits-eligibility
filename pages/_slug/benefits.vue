@@ -120,7 +120,7 @@ export default {
         criteria_keys: this.$store.state.questionGraph.graph.getRemainingQuestions(this.$store.state.questionGraph.answers).map(q => ({
           key: q.question.identifier,
           label: q.question.question,
-          values: q.question.choices,
+          values: q.question.choice,
           type: q.question.type,
         })),
       }];

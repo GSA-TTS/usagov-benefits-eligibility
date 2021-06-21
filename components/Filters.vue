@@ -48,7 +48,7 @@ export default {
               // console.log(criterion, questionIndex);
               const questions = lifeEventQuestions.splice(questionIndex, 1);
               criteria.criteria_keys.splice(i, 1, questions[0]);
-              console.log(criteria.criteria_keys, lifeEventQuestions);
+              // console.log(criteria.criteria_keys, lifeEventQuestions);
             }
             if (criterion.criteria_keys) {
               mapCriteria(criterion.criteria_keys)
@@ -57,7 +57,8 @@ export default {
         }
       };
       mapCriteria(this.lifeEventCriteria);
-      return this.lifeEventCriteria.concat.apply(this.lifeEventCriteria, this.lifeEventQuestions)
+      // console.log(this.lifeEventCriteria.concat.apply(this.lifeEventCriteria, this.lifeEventQuestions));
+      return this.lifeEventCriteria.concat.apply(this.lifeEventCriteria, this.lifeEventQuestions);
     },
   },
   methods: {

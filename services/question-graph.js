@@ -245,7 +245,7 @@ class QuestionGraph {
           answered = data[questionId] != null;
           queueItem.path.push({ [item.id]: answered });
           if (queueItem.path.length - numberAnsweredInPath < 3) {
-            // console.log(questionId, queueItem.path);
+            console.log(questionId, queueItem.path);
             questionIds.add(questionId);
           }
         }

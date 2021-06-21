@@ -43,9 +43,10 @@
       </ul>
     </div>
 
-    <div v-if="mergedCriterion.type === 'one-of'" :key="mergedCriterion.key" class="padding-bottom-1 margin-y-3">
+    <div v-if="mergedCriterion.type === 'one-of' || mergedCriterion.type === 'multi-choice'" :key="mergedCriterion.key" class="padding-bottom-1 margin-y-3">
       <label class="usa-label text-bold margin-top-0" :for="'filter-' + filterGroupKey + '-' + mergedCriterion.key">{{ mergedCriterion.label }}</label>
-      <select :id="'filter-' + filterGroupKey + '-' + mergedCriterion.key" class="usa-select" :name="'filter-' + filterGroupKey + '-' + mergedCriterion.key">
+      <select :id="'filter-' + filterGroupKey + '-' + mergedCriterion.key" class="usa-select" :name="'filter-' + filterGroupKey + '-' + mergedCriterion.key"
+        @change="onChange(mergedCriterion.key, $event)">
         <option value>- Select -</option>
         <option v-for="option in mergedCriterion.values" :key="option" :value="option">{{ option }}</option>
       </select>
@@ -81,6 +82,7 @@
         </div>
       </div>
     </fieldset>
+
     <div v-if="isCriterionActive && criterion.criteria_keys && criterion.criteria_keys.length > 0" class="eligibility-filter__child">
       <template v-for="(childCriterion) in criterion.criteria_keys">
         <filter-child :key="childCriterion.key" :filter-group-key="mergedCriterion.key" :criterion="childCriterion" />
@@ -132,6 +134,10 @@ export default {
     },
     clearAnswer (questionId) {
       this.$store.commit('questionGraph/clearAnswer', { questionId });
+    },
+    onChange (questionId, event) {
+      const answer = event.target.value === '' ? null : event.target.value;
+      this.addAnswer(questionId, answer);
     },
   }
 };

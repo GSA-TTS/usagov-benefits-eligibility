@@ -17,7 +17,9 @@ eligibility_criteria:
     key: 'burial'
     open: false
     criteria_keys:
-      - key: unmarried
+      - key: unmarkedGrave
+      - key: privateHeadstone
+      - key: privateCemetery
   - label: "Beneficiary Information"
     key: 'beneficiary'
     open: false

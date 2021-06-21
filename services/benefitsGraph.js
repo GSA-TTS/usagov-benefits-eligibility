@@ -11,36 +11,13 @@ function isString (s) {
 }
 
 const benefitResultsCSV = `done,identifier,provider,agency,name,url
-x,parentBenefit,Federal Government,Social Security,Parent's benefits,https://www.ssa.gov/forms/ssa-7.html
-x,widowersBenefit,Federal Government,Social Security,Widow(er) or surviving divorced spouse benefits,https://www.ssa.gov/forms/ssa-10.html
-x,motherFatherBenefit,Federal Government,Social Security,Mother's or Father's benefits,https://www.ssa.gov/forms/ssa-5.html
-x,lumpSumBenefit,Federal Government,Social Security,Lump-Sum Death Benefit,https://www.ssa.gov/forms/ssa-8.html
-x,childBenefit,Federal Government,Social Security,Child Benefits,https://www.ssa.gov/forms/ssa-4.html
-x,burialAllowance,Federal Government,Veterans Affairs,Burial allowance,https://www.va.gov/burials-memorials/veterans-burial-allowance/
-x,burialNationalCemetery,Federal Government,Veterans Affairs,Burial in a national cemetery,https://www.va.gov/burials-memorials/eligibility/
 x,verteransHeadstone,Federal Government,Veterans Affairs,Veterans headstone or grave marker,https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/
-x,bereavementCounseling,Federal Government,Veterans Affairs,Bereavement counseling,http://www.vetcenter.va.gov/Bereavement_Counseling.asp
-x,vaLifeInsurance,Federal Government,Veterans Affairs,VA Life Insurance - SGLI,https://www.va.gov/life-insurance/
-x,dependencyIndemnityCompensation,Federal Government,Veterans Affairs,VA Dependency and Indemnity Compensation,https://www.va.gov/disability/dependency-indemnity-compensation/
-x,survivorsPension,Federal Government,Veterans Affairs,Survivors Pension,https://www.va.gov/pension/survivors-pension/
-x,healthCareBenefit,Federal Government,Veterans Affairs,Health care benefits,https://www.va.gov/health-care/family-caregiver-benefits/
-x,educationalBenefit,Federal Government,Veterans Affairs,Educational benefits,https://www.va.gov/education/survivor-dependent-benefits/
-x,homeLoan,Federal Government,Veterans Affairs,Home Loans,https://www.va.gov/housing-assistance/home-loans/surviving-spouse/
-x,monthOfDeath,Federal Government,Veterans Affairs,Veterans Month of Death Benefits,https://www.benefits.va.gov/BENEFITS/docs/VASurvivorsKit.pdf
-,groupLifeInsurance,Federal Government,Veterans Affairs,VA Family Servicemembers’ Group Life Insurance,
-,financialCounseling,Federal Government,Veterans Affairs,Beneficiary financial counseling services,
-,publicSafetyOfficerBenefitsDeath,Federal Government,Bureau of Justice Assitance,Public Safety Officers' Benefits - Death,https://psob.bja.ojp.gov/benefits/
-,publicSafetyOfficerBenefitsEducation,Federal Government,Bureau of Justice Assitance,Public Safety Officers' Benefits - Education,https://psob.bja.ojp.gov/benefits/
-,dodHomeownerAssistanceProgram,Federal Government,Department of Defense,DOD Homeowners Assistance Program,https://www.usace.army.mil/Missions/Military-Missions/Real-Estate/HAP/
-,dodSurvivorBenefitPlan,Federal Government,Department of Defense,DOD Survivor Benefit Plan,https://militarypay.defense.gov/Benefits/Survivor-Benefit-Program/
-,dodDeathGratuity,Federal Government,Department of Defense,DOD Death Gratuity,https://militarypay.defense.gov/Benefits/Death-Gratuity/
-x,dojDeathBenefit,Federal Government,DOJ - Bureau of Justice Assistance,PSOB - Death Benefits,https://psob.bja.ojp.gov/benefits/
-x,dojEducationBenefit,Federal Government,DOJ - Bureau of Justice Assistance,PSOB Education Benefits,https://psob.bja.ojp.gov/PSOB_Education2018.pdf`;
+`;
 
 const questionsCSV = `identifier,question,type,choices,dependencies
-relationship,What is your relationship to the deceased?,multi-choice,"Parent, Spouse, Divorced Spouse, Parent to Child of the deceased, Child, Dependent non-biological child",
-work,Was the deceased ever have a job?,yes/no,,
-lineOfDuty,Is the deceased a Service Member who died in the line of duty?,yes/no,,
+relationship,What is your relationship to the deceased?,multi-choice,"Spouse, Child, Other family member, Personal or official representative",
+work,Did the deceased work under Social Security?,yes/no,,
+lineOfDuty,Did the deceased die while on active duty?,yes/no,,
 serviceInjury,Is the deceased a Veteran who died from a service related injury / illness?,yes/no,,
 publicSafetyOfficer,Is the deceased a first responer / public safety officer?,yes/no,,"relationship = spouse, child"
 age,What is your age as the survivor?,number,,
@@ -57,126 +34,31 @@ studentAtVASchool,Are you a student at a VA approved school,yes/no,,relationship
 higherEducation,Are you enrolled in higher education?,yes/no,,relationship = child; age = 18-23; deceased = service member
 survivingSpouseDIC,Is surviving spouse receiving DIC benefits?,yes/no,,"relationship = child; age <18, 18-23 (higher education = yes); unmarried = yes; deceased = veteran, service member; "
 serviceMember,Is the deceased was an active service member?,yes/no,,
-veteran,Is the deceased a Veteran?,yes/no,,`;
+veteran,"Did the deceased serve in the active military, naval, or air service?",yes/no,,
+privateHeadstone,Is the headstone or grave marker privately purchased?,yes/no,,
+privateCemetery,Is the deceased burried in a private cemetery?,yes/no,,
+honorableDischarge,Was the deceased discharged or released from the service under conditions other than dishonorable?,yes/no,,
+unmarkedGrave,Is the deceased buried in an unmarked grave?,yes/no`;
 
 const edgesCSV = `from,to,when
 ,,
-work,relationship_work,work
 veteran,relationship_veteran,veteran
-serviceMember,relationship_serviceMember,serviceMember
+relationship_veteran,lineOfDuty_relationship_veteran,relationship == 'Spouse' || relationship == 'Child' || relationship == 'Other family member' || relationship == 'Personal or official representative'
+lineOfDuty_relationship_veteran,unmarkedGrave_lineOfDuty_relationship_veteran,lineOfDuty
+unmarkedGrave_lineOfDuty_relationship_veteran,privateHeadstone_lineOfDuty_relationship_veteran,unmarkedGrave == false
+privateHeadstone_lineOfDuty_relationship_veteran,verteransHeadstone,privateHeadstone
 ,,
-relationship_work,age_parent_work,relationship['Parent'] 
-age_parent_work,dependant_over62_parent_work,age > 62
-dependant_over62_parent_work,parentBenefit,dependant
+lineOfDuty_relationship_veteran,honorableDischarge_lineOfDuty_relationship_veteran,lineOfDuty == false
+honorableDischarge_lineOfDuty_relationship_veteran,unmarkedGrave_honorableDischarge_lineOfDuty_relationship_veteran,honorableDischarge
+honorableDischarge_lineOfDuty_relationship_veteran,privateHeadstone_honorableDischarge_lineOfDuty_relationship_veteran,unmarkedGrave == false
+privateHeadstone_honorableDischarge_lineOfDuty_relationship_veteran,verteransHeadstone,privateHeadstone
 ,,
-relationship_work,age_spouse_work,relationship['Spouse'] 
-age_spouse_work,widowersBenefit,age >= 60
-age_spouse_work,disabled_59-50_spouse_work,age < 60 && age >= 50
-disabled_59-50_spouse_work,widowersBenefit,disabled
-relationship_work,age_divorcedSpouse,relationship['Divorced Spouse']
-age_divorcedSpouse,married10Years,age >= 60
-married10Years,widowersBenefit,married10Years
-age_divorcedSpouse,disabled_59-50_divorcedSpouse,age < 60 && age >= 50
-disabled_59-50_divorcedSpouse,married10Years,disabled
+honorableDischarge_lineOfDuty_relationship_veteran,privateCemetery_honorableDischarge_lineOfDuty_relationship_veteran,unmarkedGrave == false
+privateCemetery_honorableDischarge_lineOfDuty_relationship_veteran,verteransHeadstone,privateCemetery
 ,,
-relationship_work,caringForChild_work,relationship['Spouse'] || relationship['Divorced Spouse'] ||  relationship['Parent to Child of the deceased']
-caringForChild_work,unmarried_caringForChild_work,caringForChild
-unmarried_caringForChild_work,motherFatherBenefit,unmarried
-,,
-relationship_work,publicSafetyOfficer_spouse_work,relationship['Spouse'] 
-publicSafetyOfficer_spouse_work,dojEducationBenefit,publicSafetyOfficer
-publicSafetyOfficer_spouse_work,dojDeathBenefit,publicSafetyOfficer
-relationship_work,publicSafetyOfficer_child_work,relationship['Child'] || relationship['Dependent non-biological child']
-publicSafetyOfficer_child_work,dojEducationBenefit,publicSafetyOfficer
-relationship_work,age_childDependant_work,relationship['Child'] || relationship['Dependent non-biological child']
-age_childDependant_work,publicSafetyOfficer_18_child_work,age <= 18
-publicSafetyOfficer_18_child_work,dojDeathBenefit,publicSafetyOfficer
-age_childDependant_work,fullTimeStudent_22_child_work,age <= 22
-fullTimeStudent_22_child_work,publicSafetyOfficer_student_22_child_work,fullTimeStudent
-publicSafetyOfficer_student_22_child_work,dojDeathBenefit,publicSafetyOfficer
-,,
-relationship_work,lumpSumBenefit,relationship['Spouse'] 
-relationship_work,noSurvivingSpouse_child_work,relationship['Child']
-noSurvivingSpouse_child_work,lumpSumBenefit,noSurvivingSpouse
-,,
-relationship_work,age_child_work,relationship['Child']
-age_child_work,unmarried_child_work,age < 18
-unmarried_child_work,childBenefit,unmarried
-age_child_work,fullTimeStudent_18_19_child,age >= 18 && age <= 19
-fullTimeStudent_18_19_child,unmarried_child_work,fullTimeStudent
-age_child_work,disabledBefore22,age > 19
-disabledBefore22,unmarried_child_work,disabledBefore22
-,,
-veteran,burialAllowance,veteran
-veteran,burialNationalCemetery,veteran
-veteran,verteransHeadstone,veteran
-veteran,bereavementCounseling,veteran
-veteran,vaLifeInsurance,veteran
-veteran,healthCareBenefit,veteran
-,,
-relationship_veteran,homeLoan,relationship['Spouse']
-relationship_veteran,monthOfDeath,relationship['Spouse']
-,,
-relationship_veteran,serviceInjury_spouseChild_veteran,relationship['Spouse'] || relationship['Child']
-serviceInjury_spouseChild_veteran,educationalBenefit,serviceInjury
-,,
-relationship_veteran,serviceInjury_parent_veteran,relationship['Parent'] 
-serviceInjury_parent_veteran,dependencyIndemnityCompensation,serviceInjury
-relationship_veteran,serviceInjury_spouse_veteran,relationship['Spouse'] 
-serviceInjury_spouse_veteran,dependencyIndemnityCompensation,serviceInjury
-relationship_veteran,age_child_veteran,relationship['Child']
-age_child_veteran,unmarried_under18_child_veteran,age < 18
-unmarried_under18_child_veteran,survivingSpouseDIC_child_veteran,unmarried
-survivingSpouseDIC_child_veteran,serviceInjury_noSurvivingBenefits_child_veteran,!survivingSpouseDIC
-serviceInjury_noSurvivingBenefits_child_veteran,dependencyIndemnityCompensation,serviceInjury
-age_child_veteran,studentAtVASchool_under23_child_veteran,age < 23
-studentAtVASchool_under23_child_veteran,unmarried_studentVA_under23_child_veteran,studentAtVASchool
-unmarried_studentVA_under23_child_veteran,survivingSpouseDIC_child_veteran,unmarried
-,,
-unmarried_under18_child_veteran,survivorsPension,unmarried
-unmarried_studentVA_under23_child_veteran,survivorsPension,unmarried
-relationship_veteran,unmarried_spouse_veteran,relationship['Spouse'] 
-unmarried_spouse_veteran,survivorsPension,unmarried
-age_child_veteran,disabledBefore18_over18_child_veteran,age > 18
-disabledBefore18_over18_child_veteran,unmarried_disabled_over18_child_veteran,disabledBefore18
-unmarried_disabled_over18_child_veteran,survivorsPension,unmarried
-age_child_veteran,studentAtVASchool_18-23_child_veteran,age <= 23 && age >=18
-studentAtVASchool_18-23_child_veteran,unmarried_student_18-23_child_veteran,studentAtVASchool
-unmarried_student_18-23_child_veteran,survivorsPension,unmarried
-,,
-serviceMember,dodDeathGratuity,serviceMember
-serviceMember,bereavementCounseling,serviceMember
-serviceMember,vaLifeInsurance,serviceMember
-,,
-relationship_serviceMember,dodHomeownerAssistanceProgram,relationship['Spouse'] 
-relationship_serviceMember,homeLoan,relationship['Spouse'] 
-,,
-relationship_serviceMember,lineOfDuty_parent_serviceMember,relationship['Parent'] 
-lineOfDuty_parent_serviceMember,dependencyIndemnityCompensation,lineOfDuty
-relationship_serviceMember,lineOfDuty_spouse_serviceMember,relationship['Spouse'] 
-lineOfDuty_spouse_serviceMember,dependencyIndemnityCompensation,lineOfDuty
-relationship_serviceMember,age_child_serviceMember,relationship['Child']
-age_child_serviceMember,unmarried_under18_child_serviceMember,age < 18
-unmarried_under18_child_serviceMember,survivingSpouseDIC_child_serviceMember,unmarried
-survivingSpouseDIC_child_serviceMember,lineOfDuty_noSurvivingBenefits_child_serviceMember,!survivingSpouseDIC
-lineOfDuty_noSurvivingBenefits_child_serviceMember,dependencyIndemnityCompensation,lineOfDuty
-age_child_serviceMember,higherEducation_18-23_child_serviceMember,age <= 23 && age >=18
-higherEducation_18-23_child_serviceMember,unmarried_higherEducation_18-23_child_serviceMember,higherEducation
-unmarried_higherEducation_18-23_child_serviceMember,survivingSpouseDIC_child_serviceMember,unmarried
-,,
-lineOfDuty_spouse_serviceMember,educationalBenefit,lineOfDuty
-relationship_serviceMember,lineOfDuty_child_serviceMember,relationship['Child']
-lineOfDuty_child_serviceMember,educationalBenefit,lineOfDuty
-,,
-relationship_serviceMember,age_spouse_serviceMember,relationship['Spouse'] 
-age_spouse_serviceMember,dodSurvivorBenefitPlan,age >= 55
-unmarried_under18_child_serviceMember,dodSurvivorBenefitPlan,unmarried
-age_child_serviceMember,disabledBefore18_over18_child_serviceMember,age >= 18
-disabledBefore18_over18_child_serviceMember,unmarried_disabled_over18_child_serviceMember,disabledBefore18
-unmarried_disabled_over18_child_serviceMember,dodSurvivorBenefitPlan,unmarried
-age_child_serviceMember,higherEducation_18-22_child_serviceMember,age <= 22 && age >=18
-higherEducation_18-22_child_serviceMember,unmarried_higherEducation_18-22_child_serviceMember,higherEducation
-unmarried_higherEducation_18-22_child_serviceMember,dodSurvivorBenefitPlan,unmarried`;
+unmarkedGrave_lineOfDuty_relationship_veteran,privateCemetery_unmarkedGrave_lineOfDuty_relationship_veteran,unmarkedGrave == false
+privateCemetery_unmarkedGrave_lineOfDuty_relationship_veteran,verteransHeadstone,privateCemetery
+`;
 
 function buildGraph (benefitResultsCSV, questionsCSV, edgesCSV) {
     const benefitJson = isString(benefitResultsCSV) ? csvjson.toObject(benefitResultsCSV, csvOptions) : benefitResultsCSV;
