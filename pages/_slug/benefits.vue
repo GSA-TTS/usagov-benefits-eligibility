@@ -92,7 +92,6 @@ export default {
         eligibility_criteria: () => []
       },
       lifeEventBenefits: [],
-      graph: questionGraph,
     };
   },
   async fetch () {
@@ -113,6 +112,9 @@ export default {
   computed: {
     lifeEventTitle () {
       return _.startCase(this.lifeEvent.slug)
+    },
+    graph () {
+      return questionGraph;
     },
     eligibilityCriteria () {
       return [{
