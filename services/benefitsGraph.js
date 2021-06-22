@@ -15,7 +15,7 @@ x,verteransHeadstone,Federal Government,Veterans Affairs,Veterans headstone or g
 `;
 
 const questionsCSV = `identifier,question,type,choices,dependencies
-relationship,What is your relationship to the deceased?,multi-choice,"Spouse, Child, Other family member, Personal or official representative",
+relationship,What is your relationship to the deceased?,multi-choice,"Spouse, Child, Other family member, Personal or official representative, None",
 work,Did the deceased work under Social Security?,yes/no,,
 lineOfDuty,Did the deceased die while on active duty?,yes/no,,
 serviceInjury,Is the deceased a Veteran who died from a service related injury / illness?,yes/no,,

@@ -91,7 +91,6 @@ export default {
         title: '',
         eligibility_criteria: () => []
       },
-      lifeEventBenefits: [],
     };
   },
   async fetch () {
@@ -99,15 +98,7 @@ export default {
     /* const questions = await this.$content("questions").where({
         lifeEvents: { $contains: this.$route.params.slug },
       }).fetch(); */
-    const lifeEventBenefits = this.graph.getPossibleResults().map(r => ({
-      title: r.result.data.name,
-      summary: r.result.data.summary || '',
-      link: r.result.data.url,
-      id: r.result.id,
-    }));
-
     this.lifeEvent = lifeEvent;
-    this.lifeEventBenefits = lifeEventBenefits;
   },
   computed: {
     lifeEventTitle () {
@@ -131,6 +122,14 @@ export default {
     },
     benefitsMatching () {
       return this.graph.getPositiveResults(this.$store.state.questionGraph.answers);
+    },
+    lifeEventBenefits () {
+      return this.graph.getPossibleResults(this.$store.state.questionGraph.answers).map(r => ({
+        title: r.result.data.name,
+        summary: r.result.data.summary || '',
+        link: r.result.data.url,
+        id: r.result.id,
+      }));
     },
   },
   watch: {

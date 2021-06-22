@@ -42,22 +42,25 @@ export default {
             mapCriteria(c);
           }
         } else {
-          for (let i = 0; i < criteria.criteria_keys.length; i++) {
-            const criterion = criteria.criteria_keys[i];
+          const criteriaList = criteria.criteria_keys ? criteria.criteria_keys : [];
+          for (let i = 0; i < criteriaList.length; i++) {
+            const criterion = criteriaList[i];
             const questionIndex = lifeEventQuestions.findIndex(q => criterion.key === q.key);
             if (questionIndex !== -1) {
               // console.log(criterion, questionIndex);
               const questions = lifeEventQuestions.splice(questionIndex, 1);
-              criteria.criteria_keys.splice(i, 1, questions[0]);
+              criteriaList.splice(i, 1, questions[0]);
               // console.log(criteria.criteria_keys, lifeEventQuestions);
             }
-            if (criterion.criteria_keys) {
-              mapCriteria(criterion.criteria_keys)
+            if (criteriaList) {
+              mapCriteria(criteriaList);
             }
           }
         }
       };
-      mapCriteria(this.lifeEventCriteria);
+      if (this.lifeEventCriteria) {
+        mapCriteria(this.lifeEventCriteria);
+      }
       // console.log(this.lifeEventCriteria.concat.apply(this.lifeEventCriteria, this.lifeEventQuestions));
       return this.lifeEventCriteria.concat.apply(this.lifeEventCriteria, this.lifeEventQuestions);
     },
