@@ -12,7 +12,7 @@
         <div :id="'filters-' + filterGroup.key" class="usa-accordion__content padding-0">
           <template v-for="(criterion, criterionIndex) in filterGroup.criteria_keys">
             <filter-child v-if="!!criterion.label" :key="criterion.key" :filter-group-key="filterGroup.key"
-:criterion="criterion"
+              :criterion="criterion"
               :criterion-index="criterionIndex" />
           </template>
         </div>
@@ -47,10 +47,8 @@ export default {
             const criterion = criteriaList[i];
             const questionIndex = lifeEventQuestions.findIndex(q => criterion.key === q.key);
             if (questionIndex !== -1) {
-              // console.log(criterion, questionIndex);
               const questions = lifeEventQuestions.splice(questionIndex, 1);
               criteriaList.splice(i, 1, questions[0]);
-              // console.log(criteria.criteria_keys, lifeEventQuestions);
             }
             if (criteriaList) {
               mapCriteria(criteriaList);
@@ -61,8 +59,7 @@ export default {
       if (this.lifeEventCriteria) {
         mapCriteria(this.lifeEventCriteria);
       }
-      // console.log(this.lifeEventCriteria.concat.apply(this.lifeEventCriteria, this.lifeEventQuestions));
-      return this.lifeEventCriteria.concat.apply(this.lifeEventCriteria, this.lifeEventQuestions);
+      return Array.isArray(this.lifeEventCriteria) ? this.lifeEventCriteria.concat.apply(this.lifeEventCriteria, this.lifeEventQuestions) : [];
     },
   },
   methods: {
