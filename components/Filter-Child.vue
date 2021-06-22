@@ -1,5 +1,5 @@
 <template>
-  <div class="eligibility-filter padding-left-205">
+  <div class="eligibility-filter padding-x-205">
     <div v-if="mergedCriterion.type === 'boolean'" :key="mergedCriterion.key" class="usa-checkbox margin-y-205">
       <input :id="'filter-' + filterGroupKey + '-' + mergedCriterion.key"
         class="usa-checkbox__input usa-checkbox__input" type="checkbox"
@@ -12,13 +12,13 @@
       </label>
     </div>
 
-    <div v-if="mergedCriterion.type === 'yes/no'" :key="mergedCriterion.key" class="padding-top-205">
+    <div v-if="mergedCriterion.type === 'yes/no'" :key="mergedCriterion.key" class="padding-y-205">
       <label :for="'filter-' + filterGroupKey + '-' + mergedCriterion.key">{{ mergedCriterion.label }}
         <span v-if="mergedCriterion.help" class="usa-checkbox__label-description">
           {{ mergedCriterion.help }}
         </span>
       </label>
-      <ul :id="'button-group-' + filterGroupKey + '-' + mergedCriterion.key" class="usa-button-group usa-button-group--segmented">
+      <ul :id="'button-group-' + filterGroupKey + '-' + mergedCriterion.key" class="usa-button-group usa-button-group--segmented margin-top-105">
         <li class="usa-button-group__item">
           <button
             :class="{ 'usa-button': true, 'usa-button--outline': answers[mergedCriterion.key] !== true }"
@@ -148,4 +148,9 @@ export default {
   border-left: 2px solid #dee1e2;
   margin-left: .25rem;
 }
+
+.eligibility-filter + .eligibility-filter {
+  border-top: 1px solid #dee1e2;
+}
+
 </style>
