@@ -56,10 +56,9 @@ export default {
           }
         }
       };
-      if (this.lifeEventCriteria) {
-        mapCriteria(this.lifeEventCriteria);
-      }
-      return Array.isArray(this.lifeEventCriteria) ? this.lifeEventCriteria.concat.apply(this.lifeEventCriteria, this.lifeEventQuestions) : [];
+      const lifeEventCriteria = Array.isArray(this.lifeEventCriteria) ? this.lifeEventCriteria.slice() : [];
+      mapCriteria(lifeEventCriteria);
+      return lifeEventCriteria.concat.apply(lifeEventCriteria, this.lifeEventQuestions);
     },
   },
   methods: {
