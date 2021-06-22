@@ -6,25 +6,30 @@ lede: "You may be eligible for certain benefits after losing a loved one. Please
 secondaryHeadline: "Potential benefits following the death of a loved one"
 
 eligibility_criteria:
-  - label: "General Information"
+  - label: 'General Information'
     key: 'general'
     open: true
     criteria_keys:
       - key: work
       - key: veteran
       - key: lineOfDuty
-  - label: "Burial Information"
+      - key: relationship
+  - label: 'Burial Information'
     key: 'burial'
     open: true
     criteria_keys:
       - key: unmarkedGrave
       - key: privateHeadstone
       - key: privateCemetery
-  - label: "Beneficiary Information"
+  - label: 'Beneficiary Information'
     key: 'beneficiary'
     open: true
     criteria_keys:
-      - key: relationship
       - key: age
-
+  - label: "Veteran's Information"
+    key: 'vetInfo'
+    open: true
+    criteria_keys:
+      - key: lineOfDuty
+      - key: honorableDischarge
 ---

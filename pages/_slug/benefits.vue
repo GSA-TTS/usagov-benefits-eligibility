@@ -101,7 +101,7 @@ export default {
       }).fetch(); */
     const lifeEventBenefits = this.graph.getPossibleResults().map(r => ({
       title: r.result.data.name,
-      summary: '',
+      summary: r.result.data.summary || '',
       link: r.result.data.url,
       id: r.result.id,
     }));

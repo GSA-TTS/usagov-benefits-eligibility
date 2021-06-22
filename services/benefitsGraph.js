@@ -10,8 +10,8 @@ function isString (s) {
     return typeof s === "string";
 }
 
-const benefitResultsCSV = `done,identifier,provider,agency,name,url
-x,verteransHeadstone,Federal Government,Veterans Affairs,Veterans headstone or grave marker,https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/
+const benefitResultsCSV = `done,identifier,provider,agency,name,summary,url
+x,verteransHeadstone,Federal Government,Veterans Affairs,Veterans headstone or grave marker,Deceased active-duty service members and veterans may be eligible for a memorial headstone or grave marker.,https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/
 `;
 
 const questionsCSV = `identifier,question,type,choices,dependencies
