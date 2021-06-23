@@ -1,4 +1,5 @@
 ---
+identifier: "lumpSumDeathBenefit"
 title: "Lump-Sum Death Benefit"
 headline: "Need text here"
 tags: 

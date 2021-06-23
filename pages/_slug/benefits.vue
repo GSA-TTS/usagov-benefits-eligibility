@@ -80,32 +80,52 @@
 
 <script>
 const _ = require('lodash');
-const questionGraph = require('../../services/benefitsGraph').questionGraph;
+const buildGraph = require('../../services/benefitsGraph').buildGraph;
 
 export default {
   layout: "default",
   data () {
+    /* istanbul ignore next */
     return {
       lifeEvent: {
         slug: '',
         title: '',
-        eligibility_criteria: () => []
+        eligibility_criteria: () => [],
       },
+      questions: () => [],
+      benefits: () => [],
+      edges: () => [],
+      graphCache: null,
     };
   },
   async fetch () {
     const lifeEvent = await this.$content("life-events", this.$route.params.slug).fetch();
-    /* const questions = await this.$content("questions").where({
-        lifeEvents: { $contains: this.$route.params.slug },
-      }).fetch(); */
-    this.lifeEvent = lifeEvent;
+    const edges = await this.$content("question-graphs", this.$route.params.slug).fetch();
+    this.questions = await this.$content("questions", this.$route.params.slug).fetch();
+    /* istanbul ignore next */
+    this.edges = Array.isArray(edges) ? edges[0] : edges;
+    this.benefits = await this.$content("benefits").where({
+      lifeEvents: { $contains: this.$route.params.slug }
+    }).fetch();
+    /* istanbul ignore next */
+    this.lifeEvent = Array.isArray(lifeEvent) ? lifeEvent[0] : lifeEvent;
+    this.graphCache = buildGraph(this.benefits, this.questions, this.edges.body);
   },
   computed: {
     lifeEventTitle () {
       return _.startCase(this.lifeEvent.slug)
     },
     graph () {
-      return questionGraph;
+        if (this.graphCache) {
+          return this.graphCache;
+        } else {
+          /* istanbul ignore next */
+          return {
+            getRemainingQuestions: () => [],
+            getPositiveResults: () => [],
+            getPossibleResults: () => [],
+          };
+        }
     },
     eligibilityCriteria () {
       return [{
@@ -125,8 +145,8 @@ export default {
     },
     lifeEventBenefits () {
       return this.graph.getPossibleResults(this.$store.state.questionGraph.answers).map(r => ({
-        title: r.result.data.name,
-        summary: r.result.data.summary || '',
+        title: r.result.data.title,
+        summary: /* istanbul ignore next */ r.result.data.summary || '',
         link: r.result.data.url,
         id: r.result.id,
       }));
@@ -135,12 +155,6 @@ export default {
   watch: {
   },
   methods: {
-    benefitInQueryMatchList (benefit) {
-      if (this.benefitsMatchingQuery.length < 1) {
-        return false;
-      }
-      return !!this.benefitsMatchingQuery.find(item => item.slug === benefit.slug)
-    },
     isBenefitMatching (benefit) {
       if (this.benefitsMatching.length < 1) {
         return false;

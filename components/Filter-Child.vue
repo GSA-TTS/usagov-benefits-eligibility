@@ -83,23 +83,17 @@
       </div>
     </fieldset>
 
-    <div v-if="isCriterionActive && criterion.criteria_keys && criterion.criteria_keys.length > 0" class="eligibility-filter__child">
-      <template v-for="(childCriterion) in criterion.criteria_keys">
-        <filter-child :key="childCriterion.key" :filter-group-key="mergedCriterion.key" :criterion="childCriterion" />
-      </template>
-    </div>
   </div>
 </template>
 <script>
 
 import { createNamespacedHelpers } from 'vuex';
-const { mapGetters } = createNamespacedHelpers('benefits');
 const questionGraphMapState = createNamespacedHelpers('questionGraph').mapState;
 export default {
   props: {
     criterion: {
       type: Object,
-      default: () => {
+      default: /* istanbul ignore next */ () => {
         return {
           type: "boolean",
           key: "key_name"
@@ -116,14 +110,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getValueByEligibilityKey', 'getCriterionByEligibilityKey']),
     ...questionGraphMapState(['answers']),
     mergedCriterion () {
-      return { ...this.criterion, ...this.getCriterionByEligibilityKey(this.criterion.key) }
+      return { ...this.criterion }
     },
-    isCriterionActive () {
-      return false; // this.getValueByEligibilityKey(this.criterion.key);
-    }
   },
   methods: {
     addAnswer (questionId, answer) {
@@ -136,6 +126,7 @@ export default {
       this.$store.commit('questionGraph/clearAnswer', { questionId });
     },
     onChange (questionId, event) {
+      /* istanbul ignore next */
       const answer = event.target.value === '' ? null : event.target.value;
       this.addAnswer(questionId, answer);
     },

@@ -1,4 +1,5 @@
 ---
+identifier: "dependencyAndIndemnityCompensation"
 title: "Dependency and Indemnity Compensation"
 headline: "Need text here"
 tags: 

@@ -26,11 +26,11 @@ export default {
   props: {
     lifeEventCriteria: {
       type: Array,
-      default: () => []
+      default: /* istanbul ignore next */ () => [],
     },
     lifeEventQuestions: {
       type: Array,
-      default: () => []
+      default: /* istanbul ignore next */ () => [],
     },
   },
   computed: {
@@ -42,6 +42,7 @@ export default {
             mapCriteria(c);
           }
         } else {
+          /* istanbul ignore next */
           const criteriaList = criteria.criteria_keys ? criteria.criteria_keys : [];
           for (let i = 0; i < criteriaList.length; i++) {
             const criterion = criteriaList[i];
@@ -49,9 +50,6 @@ export default {
             if (questionIndex !== -1) {
               const questions = lifeEventQuestions.splice(questionIndex, 1);
               criteriaList.splice(i, 1, questions[0]);
-            }
-            if (criteriaList) {
-              mapCriteria(criteriaList);
             }
           }
         }

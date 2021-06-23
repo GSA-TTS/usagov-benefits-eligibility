@@ -1,10 +1,9 @@
 ---
-identifier: 'work'
-question: 'Did the deceased work under Social Security?'
+identifier: 'lineOfDuty'
+question: 'Did the deceased die while on active duty?'
 type: 'yes/no'
 choices: ''
 dependencies: ''
 lifeEvents: 
   - "bereavement"
 ---
-

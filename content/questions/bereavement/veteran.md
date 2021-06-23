@@ -1,6 +1,6 @@
 ---
 identifier: 'veteran'
-question: 'Is the deceased a Veteran?'
+question: 'Did the deceased serve in the active military, naval, or air service?'
 type: 'yes/no'
 choices: ''
 dependencies: ''

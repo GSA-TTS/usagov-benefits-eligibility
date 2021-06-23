@@ -1,6 +1,9 @@
 ---
+identifier: "verteransHeadstone"
 title: "Veteran's Medallion"
 headline: "Burial marker for veterans"
+provider: "Federal Government"
+agency: "Veterans Affairs"
 tags: 
   - "burial honors"
 lifeEvents: 
@@ -9,7 +12,7 @@ source:
   name: "Dept. of Veterans Affairs"
   link: "#"
 
-summary: "Some veterans who are buried in a private cemetery, including veterans of the National Guard, may be eligible for a headstone medallion or grave marker and Presidential Memorial Certificate."
+summary: "Deceased active-duty service members and veterans may be eligible for a memorial headstone or grave marker."
 
 # eligibility
 was_veteran: true
