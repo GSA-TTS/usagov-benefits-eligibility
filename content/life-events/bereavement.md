@@ -1,33 +1,31 @@
 ---
 # yaml front matter here
-title: "Death of a loved one"
+title: "Burial and Death Benefits"
 summary: "If you have lost a loved one, you may qualify for help, including help with burial costs, financial support, and more."
 lede: "You may be eligible for certain benefits after losing a loved one. Please answer the following questions to help us estimate what benefits might be available to help you during this time, including burial support and memorials for veterans and financial support for surviving spouses and children. We work closely with federal agencies to make our estimates accurate, but no benefits are guaranteed until you apply for them directly with each agency."
-secondaryHeadline: "Potential benefits following the death of a loved one"
+secondaryHeadline: "Benefits following the death of a family member"
 
-eligibility_criteria:
-  - label: "General Information"
-    key: 'general'
-    open: true
-    criteria_keys:
-      - key: irrelevant_filter
-      - key: was_veteran
-        criteria_keys:
-          - key: not_discharged_dishonorably
-          - key: passed_on_active_duty
-            criteria_keys: 
-              - key: "deceased_veteran_served_forces"
-  - label: "Burial Information"
-    key: 'burial'
-    open: false
-    criteria_keys:
-      - key: privately_purchased_headstone
-      - key: date_of_funeral
-  - label: "Beneficiary Information"
-    key: 'beneficiary'
-    open: false
-    criteria_keys:
-      - key: relationship
-      - key: age_in_years
+eligibilityCriteria:
+  - label: "About the person who died"
+    description: "Please check all the boxes that best describe the person who died."
+    criteriaGroupKey: deceased
+    criteriaKeys:
+      - deceased_served_in_active_military
+      - deceased_paid_into_SS
+      - deceased_died_of_COVID
+      - deceased_death_location_is_US
+      - deceased_buried_in_unmarked_grave
+      - deceased_headstone_is_privately_purchased
+      - deceased_buried_in_private_cemetery
+      - deceased_spouse_child_buried_in_veterans_cemetery
+      - deceased_death_circumstance
+
+  - label: "Applicant Information"
+    description: "Please check all the boxes that best describe you (the person who will be applying for benefits)."
+    criteriaGroupKey: applicant
+    criteriaKeys:
+      - applicant_relationship
+      - applicant_paid_funeral_expenses
+      - applicant_funeral_reimbursment
 
 ---

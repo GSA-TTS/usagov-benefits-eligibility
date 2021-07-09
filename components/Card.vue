@@ -4,7 +4,6 @@
       <component :is="cardTitleHeadingLevel" class="usa-card__heading">
         {{ cardTitle }}
       </component>
-      <slot name="eligibility"></slot>
       <div
         v-if="cardTags && cardTags.length > 0"
         class="tags-container margin-top-1">
@@ -12,10 +11,11 @@
       </div>
     </header>
     <div class="usa-card__body">
-      <p>
+      <slot name="source"></slot>
+      <p class="font-sans-md">
         {{ cardBody }}
       </p>
-      <slot name="source"></slot>
+      <slot name="eligibility"></slot>
     </div>
     <div class="usa-card__footer">
       <ul class="usa-button-group" :aria-label="'Choices for ' + cardTitle">
