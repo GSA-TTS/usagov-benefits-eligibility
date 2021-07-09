@@ -6,7 +6,6 @@ const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : '/
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Benefits Eligibility Estimator',
