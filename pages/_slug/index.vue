@@ -3,14 +3,12 @@
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
-          <client-only>
-            <h1 v-if="lifeEvent.title" class="font-heading-3x margin-top-0">
-              {{ lifeEvent.title }}
-            </h1>
-            <p v-if="lifeEvent.lede" class="usa-intro">
-              {{ lifeEvent.lede }}
-            </p>
-          </client-only>
+          <h1 v-if="lifeEvent.title" class="font-heading-3x margin-top-0">
+            {{ lifeEvent.title }}
+          </h1>
+          <p v-if="lifeEvent.lede" class="usa-intro">
+            {{ lifeEvent.lede }}
+          </p>
           <nuxt-link :to="lifeEvent.slug + '/benefits'" class="usa-button usa-button--big">
             Estimate my possible benefits
           </nuxt-link>
@@ -22,38 +20,36 @@
           <h2 class="font-heading-xl margin-top-8">
             {{ lifeEvent.secondaryHeadline }}
           </h2>
-          <client-only>
-            <ul
-              v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-              class="usa-card-group">
-              <li
-                v-for="benefit in lifeEventBenefits"
-                :key="benefit.title"
-                class="usa-card desktop:grid-col-6"
-                :aria-label="benefit.title">
-                <Card
-                  :card-body="benefit.summary"
-                  :card-title="benefit.title"
-                  primary-button-text="How to apply"
-                  :primary-button-link="benefit.link"
-                  :card-tags="benefit.tags">
-                  <template
-                    v-if="
-                      benefit.source && benefit.source.name && benefit.source.link
-                    "
-                    #source>
-                    <h4
-                      class="font-sans-xs text-normal text-base-dark margin-bottom-0">
-                      Provided by the
-                      <a class="usa-link" :href="benefit.source.link">{{
-                        benefit.source.name
-                      }}</a>
-                    </h4>
-                  </template>
-                </Card>
-              </li>
-            </ul>
-          </client-only>
+          <ul
+            v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
+            class="usa-card-group">
+            <li
+              v-for="benefit in lifeEventBenefits"
+              :key="benefit.title"
+              class="usa-card desktop:grid-col-6"
+              :aria-label="benefit.title">
+              <Card
+                :card-body="benefit.summary"
+                :card-title="benefit.title"
+                primary-button-text="How to apply"
+                :primary-button-link="benefit.link"
+                :card-tags="benefit.tags">
+                <template
+                  v-if="
+                    benefit.source && benefit.source.name && benefit.source.link
+                  "
+                  #source>
+                  <h4
+                    class="font-sans-xs text-normal text-base-dark margin-bottom-0">
+                    Provided by the
+                    <a class="usa-link" :href="benefit.source.link">{{
+                      benefit.source.name
+                    }}</a>
+                  </h4>
+                </template>
+              </Card>
+            </li>
+          </ul>
         </div>
       </div>
 
