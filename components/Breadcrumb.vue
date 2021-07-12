@@ -1,5 +1,5 @@
 <template>
-  <nav v-if="$route.fullPath !=='/'" class="usa-breadcrumb" aria-label="Breadcrumbs,,">
+  <nav v-show="$route.fullPath !=='/'" class="usa-breadcrumb" aria-label="Breadcrumbs,,">
     <ol class="usa-breadcrumb__list"
       vocab="http://schema.org/"
       typeof="BreadcrumbList">
