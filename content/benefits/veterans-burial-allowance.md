@@ -14,14 +14,14 @@ summary: "Text to come"
 # eligibility
 eligibility:
 - criteriaKey: deceased_served_in_active_military
-  values: [true]
+  values: [true, false]
 
 - criteriaKey: applicant_relationship
   values: ['spouse', 'child', 'family member', 'personal or official representative']
 - criteriaKey: applicant_paid_funeral_expenses
-  values: [true]
+  values: [true, false]
 - criteriaKey: applicant_funeral_reimbursment
-  values: [true]
+  values: [true, false]
 - criteriaKey: deceased_death_circumstance
   label: "One of the following circumstances apply to the deceased: died as a result of a service-connected disability; died while receiving or traveling to receive VA care; or died while eligible, pending to receive, or receiving VA compensation or pension."
 ---

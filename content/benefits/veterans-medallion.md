@@ -14,11 +14,11 @@ summary: "Some veterans who are buried in a private cemetery, including veterans
 # eligibility
 eligibility:
 - criteriaKey: deceased_served_in_active_military
-  values: [true]
+  values: [true, false]
 - criteriaKey: deceased_headstone_is_privately_purchased
-  values: [true]
+  values: [true, false]
 - criteriaKey: applicant_relationship
   values: ['spouse', 'child', 'family member', 'personal or official representative']
 - criteriaKey: deceased_buried_in_private_cemetery
-  values: [true]
+  values: [true, false]
 ---

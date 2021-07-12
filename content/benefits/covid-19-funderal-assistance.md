@@ -14,11 +14,11 @@ summary: "Text to come"
 # eligibility
 eligibility:
 - criteriaKey: deceased_died_of_COVID
-  values: [true]
+  values: [true, false]
 - criteriaKey: deceased_death_location_is_US
-  values: [true]
+  values: [true, false]
 - criteriaKey: applicant_paid_funeral_expenses
-  values: [true]
+  values: [true, false]
 
 
 ---

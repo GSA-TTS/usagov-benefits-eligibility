@@ -7,17 +7,20 @@ Key eligibility criteria (meets at least {{ totalEligibleCriteria }} of {{ benef
       <li v-for="criterion in benefitEligibilityCriteria" :key="criterion.criteriaKey" class="usa-icon-list__item">
         <div :class="[
           'usa-icon-list__icon',
-          { 'text-success text-bold': isCriterionSelected(criterion) },
-          { 'text-base-light': !isCriterionSelected(criterion) },
+          { 'text-success text-bold': doesCriterionMatchSelection(criterion) === true },
+          { 'text-base-light': doesCriterionMatchSelection(criterion) === null},
+          { 'text-secondary-vivid text-bols': doesCriterionMatchSelection(criterion) === false },
         ]">
           <svg class="usa-icon" aria-hidden="true" role="img">
-            <use v-if="isCriterionSelected(criterion)" xlink:href="~/assets/img/sprite.svg#check_circle"/>
+            <use v-if="doesCriterionMatchSelection(criterion) == true" xlink:href="~/assets/img/sprite.svg#check_circle"/>
+            <use v-else-if="doesCriterionMatchSelection(criterion) == false" xlink:href="~/assets/img/sprite.svg#highlight_off"/>
             <use v-else xlink:href="~/assets/img/sprite.svg#help_outline"/>
           </svg>
         </div>
         <div :class="['usa-icon-list__content',
-          { 'text-success text-bold': isCriterionSelected(criterion) },
-          { 'text-base-dark': !isCriterionSelected(criterion) }]">
+          { 'text-success text-bold': doesCriterionMatchSelection(criterion) === true},
+          { 'text-base-dark': doesCriterionMatchSelection(criterion) === null },
+          { 'text-secondary-vivid text-bold': doesCriterionMatchSelection(criterion) === false }]">
           <span v-if="criterion.label">
            {{ criterion.label }}
           </span>
@@ -58,7 +61,7 @@ export default {
       if (this.benefitEligibilityCriteria && this.benefitEligibilityCriteria.length < 1) {
         return "X"
       } else {
-        const matchingCriteria = this.benefitEligibilityCriteria.filter(criterion => this.isCriterionSelected(criterion));
+        const matchingCriteria = this.benefitEligibilityCriteria.filter(criterion => this.doesCriterionMatchSelection(criterion));
         return matchingCriteria.length;
       }
     },
@@ -69,6 +72,17 @@ export default {
   methods: {
     isCriterionSelected (criterion) {
       return !!this.getCriterionByEligibilityKey(criterion.criteriaKey).response
+    },
+    doesCriterionMatchSelection (criterion) {
+      if (!this.isCriterionSelected(criterion) || !criterion.values) {
+        return null
+      }
+      return !!criterion.values.find(val => val === this.getCriterionByEligibilityKey(criterion.criteriaKey).response)
+      // if we don't need to signify false:
+      // if (this.isCriterionSelected && criterion.values) {
+      //   return criterion.values.includes(this.getCriterionByEligibilityKey(criterion.criteriaKey).response)
+      // }
+      // return null
     },
     formatArrayWithSeparator (array, lastSeparator = 'or') {
       return array

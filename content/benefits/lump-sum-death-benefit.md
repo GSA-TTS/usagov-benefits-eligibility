@@ -14,7 +14,7 @@ summary: "The surviving spouse of a deceased who was receiving Social Security b
 # eligibility
 eligibility:
 - criteriaKey: deceased_paid_into_SS
-  values: [true]
+  values: [true, false]
 - criteriaKey: applicant_relationship
   values: ['spouse', 'child', 'other family member']
 
