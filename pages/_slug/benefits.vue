@@ -14,18 +14,18 @@
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8">
-          <div v-if="$fetchState.pending" class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
+          <div v-show="$fetchState.pending" class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
             <div class="usa-alert__body">
               <p class="usa-alert__text">Fetching benefits...</p>
             </div>
           </div>
-          <div v-else-if="$fetchState.error" class="usa-alert usa-alert--error usa-alert--slim">
+          <div v-show="$fetchState.error" class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
               <p class="usa-alert__text">Error while fetching benefits</p>
             </div>
           </div>
           <ul
-            v-else-if="lifeEventBenefits && lifeEventBenefits.length > 0"
+            v-show="lifeEventBenefits && lifeEventBenefits.length > 0"
             class="usa-card-group">
             <li
               v-for="benefit in lifeEventBenefits"
@@ -58,11 +58,6 @@
               </Card>
             </li>
           </ul>
-          <div v-else class="usa-alert usa-alert--error usa-alert--slim">
-            <div class="usa-alert__body">
-              <p class="usa-alert__text">Sorry, no benefits could be found.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
