@@ -1,15 +1,15 @@
 <template>
   <client-only>
-    <nav v-if="$route.fullPath !=='/'" class="usa-breadcrumb" aria-label="Breadcrumbs,,">
+    <nav v-if="trimmedFullPath !=='/'" class="usa-breadcrumb" aria-label="Breadcrumbs,,">
       <ol class="usa-breadcrumb__list"
         vocab="http://schema.org/"
         typeof="BreadcrumbList">
         <li class="usa-breadcrumb__list-item"
-        property="itemListElement" typeof="ListItem">
-            <nuxt-link class="usa-breadcrumb__link" property="item" typeof="WebPage"
-              to="/">
-              <span property="name">Home</span>
-            </nuxt-link>
+          property="itemListElement" typeof="ListItem">
+          <nuxt-link class="usa-breadcrumb__link" property="item" typeof="WebPage"
+            to="/">
+            <span property="name">Home</span>
+          </nuxt-link>
           <meta property="position" content="1" />
         </li>
         <li v-for="(crumb, index) in crumbs"
@@ -17,20 +17,20 @@
           class="usa-breadcrumb__list-item"
           property="itemListElement"
           typeof="ListItem">
-          <template v-if="$route.fullPath === crumb.path">
+          <template v-if="trimmedFullPath === crumb.path">
             <span property="name">{{
-              $route.fullPath === crumb.path && title !== null ? title : crumb.title
+              trimmedFullPath === crumb.path && title !== null ? title : crumb.title
             }}</span>
           </template>
           <template v-else>
             <nuxt-link class="usa-breadcrumb__link" property="item" typeof="WebPage"
               :to="crumb.path">
               <span property="name">{{
-                $route.fullPath === crumb.path && title !== null ? title : crumb.title
+                trimmedFullPath === crumb.path && title !== null ? title : crumb.title
               }}</span>
             </nuxt-link>
-            <meta property="position" :content="index + 2" />
           </template>
+          <meta property="position" :content="index + 2" />
         </li>
       </ol>
     </nav>
@@ -49,9 +49,11 @@ export default {
     },
   },
   computed: {
+    trimmedFullPath () {
+      return _.trimEnd(_.escapeRegExp(this.$route.fullPath), '/')
+    },
     crumbs () {
-      const fullPath = _.escapeRegExp(this.$route.fullPath);
-      const segments = fullPath.substring(1).split('/');
+      const segments = this.trimmedFullPath.substring(1).split('/');
       const crumbs = [];
       let path = '';
       segments.forEach((segment, index) => {
