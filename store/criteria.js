@@ -5,7 +5,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  populate (state, criteriaArray) {
+  populate (state, criteriaArray = []) {
     for (const criterion of criteriaArray) {
       criterion.response = null;
       Vue.set(state.eligibilityCriteria, criterion.criteriaKey, criterion);

@@ -1,6 +1,7 @@
 import path from 'path';
 import glob from 'glob';
 import Vue from 'vue';
+import Vuex from 'vuex';
 import { config } from '@vue/test-utils'
 
 export default function beforeAllTests () {
@@ -12,5 +13,6 @@ export default function beforeAllTests () {
     }
     config.stubs.NuxtLink = { template: '<a><slot /></a>' }
     config.stubs.NuxtContent = { template: '<div><slot /></div>' }
-
+    config.stubs.ClientOnly = { template: '<div><slot /></div>' }
+    Vue.use(Vuex);
 }

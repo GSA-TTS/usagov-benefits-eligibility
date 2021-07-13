@@ -48,17 +48,4 @@ describe('Breadcrumb', () => {
     expect(wrapper.vm.crumbs[2].path).toBe('/foo/bar/baz');
 
   });
-
-  test('builds no crumbs if on root-level path', async () => {
-    const wrapper = mount(Breadcrumb, {
-      router,
-      localVue,
-      global: {
-        plugins: [router]
-      }
-    });
-    router.push('/')
-    await wrapper.vm.$nextTick();
-    expect(wrapper.html()).toBeFalsy();
-  });
 });

@@ -53,6 +53,7 @@ export default {
       return _.trimEnd(_.escapeRegExp(this.$route.fullPath), '/')
     },
     crumbs () {
+      if (this.trimmedFullPath === '') { return [] }
       const segments = this.trimmedFullPath.substring(1).split('/');
       const crumbs = [];
       let path = '';

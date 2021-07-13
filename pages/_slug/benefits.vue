@@ -14,18 +14,18 @@
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8">
-          <div v-show="$fetchState.pending" class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
+          <div v-if="$fetchState.pending" class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
             <div class="usa-alert__body">
               <p class="usa-alert__text">Fetching benefits...</p>
             </div>
           </div>
-          <div v-show="$fetchState.error" class="usa-alert usa-alert--error usa-alert--slim">
+          <div v-if="$fetchState.error" class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
               <p class="usa-alert__text">Error while fetching benefits</p>
             </div>
           </div>
           <ul
-            v-show="lifeEventBenefits && lifeEventBenefits.length > 0"
+            v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
             class="usa-card-group">
             <li
               v-for="benefit in lifeEventBenefits"
@@ -66,7 +66,6 @@
 
 <script>
 import EligibilityList from '~/components/EligibilityList.vue';
-// import { mapGetters } from 'vuex'
 
 export default {
   components: { EligibilityList },
@@ -76,10 +75,9 @@ export default {
       lifeEvent: {
         slug: '',
         title: '',
-        eligibility_criteria: () => []
+        eligibilityCriteria: []
       },
       lifeEventBenefits: [],
-      benefitsMatchingQuery: [],
     };
   },
   async fetch () {
@@ -91,7 +89,7 @@ export default {
       .sortBy("title")
       .fetch();
 
-    const allEligibilityCriteria = (await this.$content("criteria/eligibility").fetch()).body;
+    const allEligibilityCriteria = (await this.$content("criteria").fetch()).body;
     this.$store.commit("criteria/populate", allEligibilityCriteria);
 
     this.lifeEvent = lifeEvent;
@@ -101,29 +99,9 @@ export default {
     lifeEventTitle () {
       return this.lifeEvent.secondaryHeadline;
     },
-    eligibilityCriteria () {
-      return this.$store.state.benefits.eligibilityCriteria;
-    },
   },
   methods: {
   },
 
 };
 </script>
-<style scoped>
-.eligibility-chip {
-  display: flex;
-  font-size: 15px;
-  line-height: 15px;
-  font-weight: 600;
-  margin: 1.25rem 0;
-  align-items: center;
-}
-.eligibility-chip--likely {
-  color: #00a91c
-}
-.eligibility-chip svg {
-  margin-right: .5rem;
-}
-
-</style>
