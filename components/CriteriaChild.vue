@@ -1,20 +1,20 @@
 <template>
   <div class="eligibility-criterion">
-    <div v-if="criterionType === 'boolean'" :key="criterionKey" class="usa-checkbox">
-      <input :id="'criteria-' + criteriaGroupKey + '-' + criterionKey"
+    <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
+      <input :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         class="usa-checkbox__input usa-checkbox__input" type="checkbox"
-        :name="criteriaGroupKey + '-' + criterionKey" :value="criterionKey" :data-section="criteriaGroupKey"
+        :name="criteriaGroupKey + '-' + criteriaKey" :value="criteriaKey" :data-section="criteriaGroupKey"
         @change="updateEligibilityChecked" />
-      <label class="usa-checkbox__label" :for="'criteria-' + criteriaGroupKey + '-' + criterionKey">{{ criterionLabel }}
+      <label class="usa-checkbox__label" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}
       </label>
     </div>
 
-    <div v-if="criterionType === 'select'" :key="criterionKey" class="">
-      <label class="usa-label text-bold margin-top-0" :for="'criteria-' + criteriaGroupKey + '-' + criterionKey">{{ criterionLabel }}</label>
-      <select :id="'criteria-' + criteriaGroupKey + '-' + criterionKey" class="usa-select" :name="'criteria-' + criteriaGroupKey + '-' + criterionKey"
+    <div v-if="type === 'select'" :key="criteriaKey" class="">
+      <label class="usa-label text-bold margin-top-0" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}</label>
+      <select :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey" class="usa-select" :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
 @change="updateEligibilitySelected">
         <option value>- Select -</option>
-        <option v-for="option in criterionValues" :key="option" :value="option">{{ option }}</option>
+        <option v-for="option in values" :key="option" :value="option">{{ option }}</option>
       </select>
     </div>
 </div>
@@ -23,19 +23,19 @@
 
 export default {
   props: {
-    criterionKey: {
+    criteriaKey: {
       type: String,
       default: "No key provided"
     },
-    criterionLabel: {
+    label: {
       type: String,
       default: "No label provided"
     },
-    criterionType: {
+    type: {
       type: String,
       default: "No type provided"
     },
-    criterionValues: {
+    values: {
       type: Array,
       default: () => []
     },
@@ -48,14 +48,14 @@ export default {
   methods: {
     updateEligibilityChecked (e) {
       const localCriterion = {
-        criteriaKey: this.criterionKey,
+        criteriaKey: this.criteriaKey,
         response: e.target.checked
       };
       this.$store.commit('criteria/updateResponse', localCriterion);
     },
     updateEligibilitySelected (e) {
       const localCriterion = {
-        criteriaKey: this.criterionKey,
+        criteriaKey: this.criteriaKey,
         response: e.target.value
       };
       this.$store.commit('criteria/updateResponse', localCriterion);

@@ -12,10 +12,10 @@
           <template v-for="(criterion) in criteriaGroup.criteriaKeys">
             <CriteriaChild
               :key="criterion"
-              :criterion-key="criterion"
-              :criterion-label="getCriterionByEligibilityKey(criterion).label"
-              :criterion-values="getCriterionByEligibilityKey(criterion).values.split('; ')"
-              :criterion-type="getCriterionByEligibilityKey(criterion).type"
+              :criteria-key="criterion"
+              :label="getCriterionByEligibilityKey(criterion).label"
+              :values="getCriterionByEligibilityKey(criterion).values.split('; ')"
+              :type="getCriterionByEligibilityKey(criterion).type"
               :criteria-group-key="criteriaGroup.criteriaGroupKey"/>
           </template>
         </div>

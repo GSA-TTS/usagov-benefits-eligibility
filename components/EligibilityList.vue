@@ -9,7 +9,7 @@ Key eligibility criteria (meets at least {{ totalEligibleCriteria }} of {{ benef
           'usa-icon-list__icon',
           { 'text-success text-bold': doesCriterionMatchSelection(criterion) === true },
           { 'text-base-light': doesCriterionMatchSelection(criterion) === null},
-          { 'text-secondary-vivid text-bols': doesCriterionMatchSelection(criterion) === false },
+          { 'text-secondary-vivid text-bold': doesCriterionMatchSelection(criterion) === false },
         ]">
           <svg class="usa-icon" aria-hidden="true" role="img">
             <use v-if="doesCriterionMatchSelection(criterion) == true" xlink:href="~/assets/img/sprite.svg#check_circle"/>
@@ -59,7 +59,7 @@ export default {
   computed: {
     totalEligibleCriteria () {
       if (this.benefitEligibilityCriteria && this.benefitEligibilityCriteria.length < 1) {
-        return "X"
+        return "0"
       } else {
         const matchingCriteria = this.benefitEligibilityCriteria.filter(criterion => this.doesCriterionMatchSelection(criterion));
         return matchingCriteria.length;
@@ -78,16 +78,9 @@ export default {
         return null
       }
       return !!criterion.values.find(val => val === this.getCriterionByEligibilityKey(criterion.criteriaKey).response)
-      // if we don't need to signify false:
-      // if (this.isCriterionSelected && criterion.values) {
-      //   return criterion.values.includes(this.getCriterionByEligibilityKey(criterion.criteriaKey).response)
-      // }
-      // return null
     },
     formatArrayWithSeparator (array, lastSeparator = 'or') {
-      return array
-        .join(", ")
-        .replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);
+      return array.join(", ").replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);
     }
   }
 };
