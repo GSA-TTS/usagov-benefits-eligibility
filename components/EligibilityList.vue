@@ -27,7 +27,7 @@ Key eligibility criteria (meets at least {{ totalEligibleCriteria }} of {{ benef
           <span v-else>
             {{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}
           </span>
-          <span v-if="getCriterionByEligibilityKey(criterion.criteriaKey).type=='select'">
+          <span v-if="getCriterionByEligibilityKey(criterion.criteriaKey).type=='select' && criterion.values ">
             is {{ formatArrayWithSeparator(criterion.values) }}.
           </span>
         </div>
@@ -79,7 +79,7 @@ export default {
       }
       return !!criterion.values.find(val => val === this.getCriterionByEligibilityKey(criterion.criteriaKey).response)
     },
-    formatArrayWithSeparator (array, lastSeparator = 'or') {
+    formatArrayWithSeparator (array = [], lastSeparator = 'or') {
       return array.join(", ").replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);
     }
   }

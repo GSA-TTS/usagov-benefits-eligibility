@@ -24,7 +24,6 @@ eligibilityCriteria:
       - deceased_headstone_is_privately_purchased
       - deceased_buried_in_private_cemetery
       - deceased_spouse_child_buried_in_veterans_cemetery
-      - deceased_death_circumstance
  
   - label: "About the applicant"
     description: "Please check all the boxes that best describe you (the person who will be applying for benefits)."
