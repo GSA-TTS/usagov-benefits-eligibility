@@ -16,6 +16,8 @@ eligibility:
 - criteriaKey: deceased_paid_into_SS
   values: [true, false]
 - criteriaKey: applicant_relationship
-  values: ['spouse', 'child', 'other family member']
+  values: 
+    - "spouse"
+    - "child"
 
 ---
