@@ -15,7 +15,7 @@ eligibilityCriteria:
 
   - label: "Criteria related to military service"
     description: "Please check all the boxes that best describe the person who died."
-    criteriaGroupKey: deceased
+    criteriaGroupKey: military
     criteriaKeys:
       - deceased_served_in_active_military
       - deceased_died_while_on_active_duty
