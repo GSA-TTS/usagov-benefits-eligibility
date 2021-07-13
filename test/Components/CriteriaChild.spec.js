@@ -9,7 +9,7 @@ const MOCK_CRITERIA = [
     criteriaKey: "criteriaKey1",
     label: "Benefit criteria label 1.",
     type: "boolean",
-    values: [true, false],
+    values: [true],
     criteriaGroupKey: "group1"
   },
   {

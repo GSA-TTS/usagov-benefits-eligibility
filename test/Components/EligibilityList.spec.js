@@ -9,13 +9,15 @@ const MOCK_CRITERIA = [
     criteriaKey: "criteriaKey1",
     label: "Benefit criteria label 1.",
     type: "boolean",
-    values: [true, false]
+    values: [true],
+    acceptableValues: [true]
   },
   {
     criteriaKey: "criteriaKey2",
     label: "Benefit criteria label 2.",
     type: "select",
-    values: ["one", "two", "three"]
+    values: ["one", "two", "three"],
+    acceptableValues: ["one"]
   }
 ]
 
