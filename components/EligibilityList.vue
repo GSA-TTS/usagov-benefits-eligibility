@@ -28,7 +28,7 @@ Key eligibility criteria (meets at least {{ totalEligibleCriteria }} of {{ benef
             {{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}
           </span>
           <span v-if="getCriterionByEligibilityKey(criterion.criteriaKey).type=='select' && criterion.values ">
-            is {{ formatArrayWithSeparator(criterion.values) }}.
+            {{ formatArrayWithSeparator(criterion.values) }}.
           </span>
         </div>
       </li>

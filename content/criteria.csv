@@ -10,5 +10,5 @@ deceased_buried_in_private_cemetery,The deceased is buried in a private cemetery
 deceased_spouse_child_buried_in_veterans_cemetery,"The deceased is a spouse or a child of a Veteran and is buried in a national, state, tribal, Veterans or military post cemetery.",boolean,true
 applicant_paid_funeral_expenses,You paid for the funeral/burial expenses.,boolean,true
 applicant_funeral_reimbursment,You were NOT reimbursed for the funeral cost by any organization or government agency.,boolean,true
-applicant_relationship,Your (applicant's) relationship to the deceased.,select,spouse; child; other family member; personal or official representative
+applicant_relationship,Your (applicant's) relationship to the deceased is,select,spouse; child; other family member; personal or official representative
 deceased_death_circumstance,One of the following circumstances apply to the deceased,select,"died as a result of a service-connected disability; died while receiving or traveling to receive VA care; died while eligible, pending to receive, or receiving VA compensation or pension"
