@@ -34,9 +34,6 @@ export default {
     }
   },
   computed: {
-    allEligibilityCriteria () {
-      return this.$store.state.criteria.eligibilityCriteria;
-    },
     ...mapGetters({
       getCriterionByEligibilityKey: 'criteria/getCriterionByEligibilityKey',
     })

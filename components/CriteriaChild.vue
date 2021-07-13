@@ -2,9 +2,9 @@
   <div class="eligibility-criterion">
     <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
       <input :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
-        class="usa-checkbox__input usa-checkbox__input" type="checkbox"
-        :name="criteriaGroupKey + '-' + criteriaKey" :value="criteriaKey" :data-section="criteriaGroupKey"
-        @change="updateEligibilityChecked" />
+        :checked="getCriterionByEligibilityKey(criteriaKey).response" class="usa-checkbox__input usa-checkbox__input"
+        type="checkbox" :name="criteriaGroupKey + '-' + criteriaKey" :value="criteriaKey"
+        :data-section="criteriaGroupKey" @change="updateEligibilityChecked" />
       <label class="usa-checkbox__label" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}
       </label>
     </div>
@@ -20,6 +20,7 @@
 </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -44,7 +45,11 @@ export default {
       default: "criteriaGroup"
     },
   },
-  computed: { },
+  computed: {
+    ...mapGetters({
+      getCriterionByEligibilityKey: 'criteria/getCriterionByEligibilityKey',
+    })
+  },
   methods: {
     updateEligibilityChecked (e) {
       const localCriterion = {

@@ -31,8 +31,4 @@ export const getters = {
     };
   },
 
-//   getValueByEligibilityKey: state => (key) => {
-//     return !!state.eligibilityCriteria.find(criterion => criterion.key === key).value;
-//   },
-
 }

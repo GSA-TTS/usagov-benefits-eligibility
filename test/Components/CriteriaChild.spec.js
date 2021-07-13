@@ -66,27 +66,30 @@ describe('CriteriaChild', () => {
 
   });
 
-  test('updates when a criteria response changes', async () => {
+  test('updates when a checkbox criteria response changes', async () => {
     const wrapper = shallowMount(CriteriaChild, {
       propsData: { ...MOCK_CRITERIA[0] },
-
-      store
+      store,
     });
+    store.commit("criteria/populate", [...MOCK_CRITERIA]);
+    await wrapper.vm.$nextTick();
+    await wrapper.find(".usa-checkbox__input").setChecked();
+    // wrapper.find(".usa-checkbox__input").trigger('change')
+    // console.log(wrapper.html())
+    expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy();
 
-    const trueCriteria = {
-      criteriaKey: "criteriaKey1",
-      response: true
-    };
+  });
+  test('updates when a select criteria response changes', async () => {
+    const wrapper = shallowMount(CriteriaChild, {
+      propsData: { ...MOCK_CRITERIA[1] },
+      store,
+    });
 
     store.commit("criteria/populate", [...MOCK_CRITERIA]);
     await wrapper.vm.$nextTick();
-    console.log(wrapper.html())
-    wrapper.find(".usa-checkbox__input").trigger('click')
-    // store.commit("criteria/updateResponse", { ...trueCriteria });
-    await wrapper.vm.$nextTick();
-    console.log(wrapper.html())
-    // expect(wrapper.findAll(".usa-icon-list__content.text-success")).toHaveLength(1);
-
+    const choices = wrapper.find("select").findAll("option");
+    await choices.at(2).setSelected();
+    expect(wrapper.find("option:checked").element.value).toBe("two");
   });
 
 });
