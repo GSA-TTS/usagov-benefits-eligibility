@@ -1,13 +1,14 @@
 import Vue from "vue";
 
 export const state = () => ({
-  eligibilityCriteria: {}
+  eligibilityCriteria: {},
+  preloadedResponses: {},
 });
 
 export const mutations = {
   populate (state, criteriaArray = []) {
     for (const criterion of criteriaArray) {
-      criterion.response = null;
+      criterion.response = state.preloadedResponses[criterion] != null ? state.preloadedResponses[criterion] : null;
       Vue.set(state.eligibilityCriteria, criterion.criteriaKey, criterion);
     }
   },
@@ -15,10 +16,15 @@ export const mutations = {
   updateResponse (state, { criteriaKey, response }) {
     // TODO: make sure the response matches one of the available criterion values
 
-    // state.eligibilityCriteria[criteriaKey].response = selectedValue
     Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response);
-
-  }
+  },
+  preloadedResponse (state, { criteriaKey, response }) {
+    if (state.eligibilityCriteria[criteriaKey] !== null) {
+      Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response)
+    } else {
+      Vue.set(state.preloadedResponses, criteriaKey, response);
+    }
+  },
 }
 export const getters = {
   getCriterionByEligibilityKey: state => (criteriaKey) => {
@@ -29,6 +35,15 @@ export const getters = {
       values: '',
       type: 'missing'
     };
+  },
+  getResponses: (state) => {
+    const responses = {};
+    for (const criteriaKey in state.eligibilityCriteria) {
+      if (state.eligibilityCriteria[criteriaKey] && state.eligibilityCriteria[criteriaKey].response !== null) {
+        responses[criteriaKey] = state.eligibilityCriteria[criteriaKey].response;
+      }
+    }
+    return responses;
   },
 
 //   getValueByEligibilityKey: state => (key) => {

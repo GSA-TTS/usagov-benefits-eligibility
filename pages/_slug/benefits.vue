@@ -11,6 +11,12 @@
 
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-5 desktop:grid-col-4">
+          <results-link />
+        </div>
+      </div>
+
+      <div class="grid-row grid-gap">
+        <div class="tablet:grid-col-5 desktop:grid-col-4">
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8">

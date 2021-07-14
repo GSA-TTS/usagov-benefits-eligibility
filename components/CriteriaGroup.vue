@@ -9,14 +9,15 @@
             {{ criteriaGroup.description }}
         </p>
         <div :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey" class="">
-          <template v-for="(criterion) in criteriaGroup.criteriaKeys">
+          <template v-for="(criterion) in getCriteriaMap(criteriaGroup.criteriaKeys)">
             <CriteriaChild
-              :key="criterion"
-              :criterion-key="criterion"
-              :criterion-label="getCriterionByEligibilityKey(criterion).label"
-              :criterion-values="getCriterionByEligibilityKey(criterion).values.split('; ')"
-              :criterion-type="getCriterionByEligibilityKey(criterion).type"
-              :criteria-group-key="criteriaGroup.criteriaGroupKey"/>
+              :key="criterion.criteriaKey"
+              :criterion-key="criterion.criteriaKey"
+              :criterion-label="criterion.label"
+              :criterion-values="criterion.values.split('; ')"
+              :criterion-type="criterion.type"
+              :criteria-group-key="criteriaGroup.criteriaGroupKey"
+              :criteria-response="criterion.response" />
           </template>
         </div>
       </div>
@@ -41,6 +42,12 @@ export default {
       getCriterionByEligibilityKey: 'criteria/getCriterionByEligibilityKey',
     })
   },
-  methods: { }
+  methods: {
+    getCriteriaMap (criteriaKeys) {
+      return criteriaKeys.map((criterion) => {
+        return this.getCriterionByEligibilityKey(criterion);
+      });
+    },
+  },
 };
 </script>

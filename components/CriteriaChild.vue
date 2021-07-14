@@ -3,8 +3,8 @@
     <div v-if="criterionType === 'boolean'" :key="criterionKey" class="usa-checkbox">
       <input :id="'criteria-' + criteriaGroupKey + '-' + criterionKey"
         class="usa-checkbox__input usa-checkbox__input" type="checkbox"
-        :name="criteriaGroupKey + '-' + criterionKey" :value="criterionKey" :data-section="criteriaGroupKey"
-        @change="updateEligibilityChecked" />
+        :name="criteriaGroupKey + '-' + criterionKey" :checked="criteriaResponse" :value="criterionKey"
+        :data-section="criteriaGroupKey" @change="updateEligibilityChecked" />
       <label class="usa-checkbox__label" :for="'criteria-' + criteriaGroupKey + '-' + criterionKey">{{ criterionLabel }}
       </label>
     </div>
@@ -14,7 +14,10 @@
       <select :id="'criteria-' + criteriaGroupKey + '-' + criterionKey" class="usa-select" :name="'criteria-' + criteriaGroupKey + '-' + criterionKey"
 @change="updateEligibilitySelected">
         <option value>- Select -</option>
-        <option v-for="option in criterionValues" :key="option" :value="option">{{ option }}</option>
+        <option v-for="option in criterionValues" :key="option" :value="option"
+          :selected="criteriaResponse === option">
+            {{ option }}
+        </option>
       </select>
     </div>
 </div>
@@ -42,6 +45,10 @@ export default {
     criteriaGroupKey: {
       type: String,
       default: "criteriaGroup"
+    },
+    criteriaResponse: {
+      type: [Boolean, String],
+      default: false,
     },
   },
   computed: { },
