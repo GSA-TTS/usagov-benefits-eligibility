@@ -1,25 +1,22 @@
 import Vue from "vue";
+import stringToHash from "../services/stringToHash";
 
 export const state = () => ({
   eligibilityCriteria: {},
+  hashToCriteria: {},
   preloadedResponses: {},
 });
 
 export const mutations = {
-  populate (state, criteriaArray = []) {
-    for (const criterion of criteriaArray) {
-      criterion.response = state.preloadedResponses[criterion] != null ? state.preloadedResponses[criterion] : null;
-      Vue.set(state.eligibilityCriteria, criterion.criteriaKey, criterion);
-    }
-  },
   // payload must include a criteriaKey and the new response / selected value
   updateResponse (state, { criteriaKey, response }) {
     // TODO: make sure the response matches one of the available criterion values
 
     Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response);
   },
-  preloadedResponse (state, { criteriaKey, response }) {
-    if (state.eligibilityCriteria[criteriaKey] !== null) {
+  preloadedResponse (state, { criteriaKeyHash, response }) {
+    const criteriaKey = state.hashToCriteria[criteriaKeyHash];
+    if (state.eligibilityCriteria[criteriaKey] != null) {
       Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response)
     } else {
       Vue.set(state.preloadedResponses, criteriaKey, response);
@@ -36,11 +33,12 @@ export const getters = {
       type: 'missing'
     };
   },
-  getResponses: (state) => {
+  getHashResponses: (state) => {
     const responses = {};
     for (const criteriaKey in state.eligibilityCriteria) {
-      if (state.eligibilityCriteria[criteriaKey] && state.eligibilityCriteria[criteriaKey].response !== null) {
-        responses[criteriaKey] = state.eligibilityCriteria[criteriaKey].response;
+      const criteria = state.eligibilityCriteria[criteriaKey];
+      if (criteria && criteria.response) {
+        responses[criteria.criteriaKeyHash] = criteria.response;
       }
     }
     return responses;
@@ -51,3 +49,16 @@ export const getters = {
 //   },
 
 }
+
+export const actions = {
+  async populate ({ state }, criteriaArray = []) {
+    for (const criterion of criteriaArray) {
+      const criteriaKey = criterion.criteriaKey;
+      const hash = await stringToHash(criteriaKey);
+      criterion.response = state.preloadedResponses[criteriaKey] != null ? state.preloadedResponses[criteriaKey] : null;
+      criterion.criteriaKeyHash = hash;
+      Vue.set(state.eligibilityCriteria, criteriaKey, criterion);
+      state.hashToCriteria[hash] = criteriaKey;
+    }
+  },
+};

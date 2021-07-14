@@ -1,46 +1,35 @@
 <template>
-  <div>
-    <span>
-      <a class="usa-link" :href="url">{{ url }}</a>
-      <button class="usa-button margin-top-2 margin-bottom-2" :disabled="!enabled" @click="copy()">
-        <svg class="usa-icon" aria-hidden="true" focusable="false"
-          role="img">
-            <use xlink:href="~/assets/img/sprite.svg#content_copy" />
-        </svg>
-        Save Results
-      </button>
-    </span>
-    <section v-show="alert" class="usa-site-alert usa-site-alert--info margin-top-2 margin-bottom-2" aria-label="Site alert,">
-      <div class="usa-alert">
-        <div class="usa-alert__body">
-          <h3 class="usa-alert__heading">Results Saved</h3>
-          <p class="usa-alert__text">
-            The results locations has been saved to your clipboard.
-          </p>
-        </div>
-    </div>
-    </section>
-  </div>
+  <span>
+    <button class="usa-button margin-bottom-2" :disabled="!enabled" @click="copy()">
+      <svg class="usa-icon" aria-hidden="true" focusable="false"
+        role="img">
+          <use xlink:href="~/assets/img/sprite.svg#content_copy" />
+      </svg>
+      Copy Link
+    </button>
+  </span>
 </template>
 <script>
 export default {
-  data: () => {
-    return {
-      alert: false,
-    };
-  },
   computed: {
     /* eslint vue/return-in-computed-property: "off" */
     url () {
       if (process.client) {
         const params = new URLSearchParams();
-        const responses = this.$store.getters['criteria/getResponses'];
+        const responses = this.$store.getters['criteria/getHashResponses'];
 
         if (!this.enabled) {
           return;
         }
         for (const criteriaKey in responses) {
-          params.append(criteriaKey, responses[criteriaKey]);
+          if (responses[criteriaKey]) {
+            const valueMap = {
+              [responses[criteriaKey]]: responses[criteriaKey],
+              true: 1,
+              false: 0,
+            };
+            params.append(criteriaKey, valueMap[responses[criteriaKey]]);
+          }
         }
         const baseUrl = window.location.href.replace(window.location.search, '');
         return `${baseUrl}?${params.toString()}`;
@@ -48,12 +37,18 @@ export default {
     },
     enabled () {
       if (process.client) {
-        const responses = this.$store.getters['criteria/getResponses'];
+        const responses = this.$store.getters['criteria/getHashResponses'];
         if (Object.keys(responses).length > 0) {
           return true;
         }
       }
       return false;
+    },
+  },
+  watch: {
+    url (value) {
+      const url = value || window.location.href.replace(window.location.search, '');
+      history.replaceState(null, document.title, url);
     },
   },
   beforeMount () {
@@ -66,9 +61,11 @@ export default {
         "true": true,
         // eslint-disable-next-line quote-props
         "false": false,
+        1: true,
+        0: false,
       };
       this.$store.commit("criteria/preloadedResponse", {
-        criteriaKey: key,
+        criteriaKeyHash: key,
         response: valueMap[value],
       });
     }
@@ -76,10 +73,7 @@ export default {
   methods: {
     async copy () {
       await navigator.clipboard.writeText(this.url);
-      this.alert = true;
-      setTimeout(() => {
-        this.alert = false;
-      }, 10 * 1000);
+      this.$emit('copied');
     },
   },
 };
