@@ -53,8 +53,9 @@ export default {
   },
   beforeMount () {
     const params = new URLSearchParams(window.location.search);
-    for (const key of params.keys()) {
-      const value = params.get(key);
+    /* eslint prefer-const: "OFF" */
+    for (let [key, value] of params) {
+      value = value || true;
       const valueMap = {
         [value]: value,
         // eslint-disable-next-line quote-props
@@ -65,7 +66,7 @@ export default {
         0: false,
       };
       this.$store.commit("criteria/preloadedResponse", {
-        criteriaKeyHash: key,
+        criteriaKeyHash: key.toLowerCase(),
         response: valueMap[value],
       });
     }
