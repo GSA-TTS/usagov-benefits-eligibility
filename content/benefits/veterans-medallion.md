@@ -7,7 +7,7 @@ lifeEvents:
 - "bereavement"
 source:
   name: "Dept. of Veterans Affairs"
-  link: "#"
+  link: "https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/"
 
 summary: "Some veterans who are buried in a private cemetery, including veterans of the National Guard, may be eligible for a headstone medallion or grave marker and Presidential Memorial Certificate."
 
