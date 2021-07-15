@@ -2,7 +2,7 @@
 title: "FEMA COVID-19 Funeral Assistance"
 headline: "Need text here"
 tags: 
-- "financial support"
+- "burial assistance"
 lifeEvents: 
 - "bereavement"
 source:
