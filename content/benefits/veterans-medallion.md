@@ -18,7 +18,7 @@ eligibility:
 - criteriaKey: deceased_headstone_is_privately_purchased
   acceptableValues: [true]
 - criteriaKey: applicant_relationship
-  acceptableValues: ["spouse", "child", "family member", "personal or official representative"]
+  acceptableValues: ["spouse", "child", "other family member", "personal or official representative"]
 - criteriaKey: deceased_buried_in_private_cemetery
   acceptableValues: [true]
 ---
