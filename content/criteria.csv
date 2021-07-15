@@ -1,6 +1,6 @@
 criteriaKey,label,type,values
 deceased_paid_into_SS,The deceased paid into Social Security via employment.,boolean,true
-deceased_served_in_active_military,"The deceased served in the active military, naval, or air service and",select,"was discharged under conditions other than dischonorable"; "died while on active duty"
+deceased_served_in_active_military,"The deceased served in the active military, naval, or air service and",select,was discharged under conditions other than dischonorable; died while on active duty
 deceased_died_of_COVID,"The deceased died, or likely died, of COVID-19.",boolean,true
 deceased_death_location_is_US,"The deceased died in the U.S., including its territories.",boolean,true
 deceased_buried_in_unmarked_grave,The deceased is buried in an unmarked grave.,boolean,true
