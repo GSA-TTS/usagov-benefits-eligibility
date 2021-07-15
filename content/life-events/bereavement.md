@@ -19,7 +19,6 @@ eligibilityCriteria:
     criteriaGroupKey: military
     criteriaKeys:
       - deceased_served_in_active_military
-      - deceased_spouse_child_buried_in_veterans_cemetery
       - deceased_buried_in_unmarked_grave
       - deceased_headstone_is_privately_purchased
       - deceased_buried_in_private_cemetery
