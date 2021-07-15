@@ -2,7 +2,7 @@
 title: "Veteran’s Medallion"
 headline: "Burial marker for veterans"
 tags: 
-- "burial honors"
+- "memorial item"
 lifeEvents: 
 - "bereavement"
 source:
