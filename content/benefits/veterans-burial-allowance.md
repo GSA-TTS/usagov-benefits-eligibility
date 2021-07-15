@@ -14,7 +14,7 @@ summary: "Text to come"
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
 - criteriaKey: deceased_served_in_active_military
-  acceptableValues: [true]
+  acceptableValues: ["was discharged under conditions other than dischonorable", "died while on active duty"]
 - criteriaKey: applicant_relationship
   acceptableValues: ["spouse", "child", "other family member", "personal or official representative"]
 - criteriaKey: applicant_paid_funeral_expenses
@@ -22,6 +22,6 @@ eligibility:
 - criteriaKey: applicant_funeral_reimbursment
   acceptableValues: [true]
 - criteriaKey: deceased_death_circumstance
-  label: "One of the following circumstances apply to the deceased: died as a result of a service-connected disability; died while receiving or traveling to receive VA care; or died while eligible, pending to receive, or receiving VA compensation or pension."
+  label: "One of the following circumstances apply to the deceased: died as a result of a service-connected disability; died while receiving or traveling to receive VA care; died while eligible, pending to receive, or receiving VA compensation or pension."
 ---
 
