@@ -45,13 +45,13 @@ const mockContent = {
         criteriaKey: "criteriaKey1",
         label: "Benefit criteria label 1.",
         type: "boolean",
-        values: [true, false]
+        values: [true]
       },
       {
         criteriaKey: "criteriaKey2",
         label: "Benefit criteria label 2.",
         type: "boolean",
-        values: [true, false]
+        values: [true]
       }
     ]
   },

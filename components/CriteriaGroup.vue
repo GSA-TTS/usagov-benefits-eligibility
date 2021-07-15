@@ -12,12 +12,12 @@
           <template v-for="(criterion) in getCriteriaMap(criteriaGroup.criteriaKeys)">
             <CriteriaChild
               :key="criterion.criteriaKey"
-              :criterion-key="criterion.criteriaKey"
-              :criterion-label="criterion.label"
-              :criterion-values="criterion.values.split('; ')"
-              :criterion-type="criterion.type"
+              :criteria-key="criterion.criteriaKey"
+              :label="criterion.label"
+              :values="criterion.values.split('; ')"
+              :type="criterion.type"
               :criteria-group-key="criteriaGroup.criteriaGroupKey"
-              :criteria-response="criterion.response" />
+              :response="criterion.response" />
           </template>
         </div>
       </div>
@@ -35,17 +35,14 @@ export default {
     }
   },
   computed: {
-    allEligibilityCriteria () {
-      return this.$store.state.criteria.eligibilityCriteria;
-    },
     ...mapGetters({
       getCriterionByEligibilityKey: 'criteria/getCriterionByEligibilityKey',
     })
   },
   methods: {
     getCriteriaMap (criteriaKeys) {
-      return criteriaKeys.map((criterion) => {
-        return this.getCriterionByEligibilityKey(criterion);
+      return criteriaKeys.map((criterionKey) => {
+        return this.getCriterionByEligibilityKey(criterionKey);
       });
     },
   },

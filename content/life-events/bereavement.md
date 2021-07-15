@@ -10,17 +10,22 @@ eligibilityCriteria:
     description: "Please check all the boxes that best describe the person who died."
     criteriaGroupKey: deceased
     criteriaKeys:
-      - deceased_served_in_active_military
       - deceased_paid_into_SS
       - deceased_died_of_COVID
+
+  - label: "Criteria related to military service"
+    description: "Please check all the boxes that best describe the person who died."
+    criteriaGroupKey: military
+    criteriaKeys:
+      - deceased_served_in_active_military
+      - deceased_died_while_on_active_duty
       - deceased_death_location_is_US
       - deceased_buried_in_unmarked_grave
       - deceased_headstone_is_privately_purchased
       - deceased_buried_in_private_cemetery
       - deceased_spouse_child_buried_in_veterans_cemetery
-      - deceased_death_circumstance
-
-  - label: "Applicant Information"
+ 
+  - label: "About the applicant"
     description: "Please check all the boxes that best describe you (the person who will be applying for benefits)."
     criteriaGroupKey: applicant
     criteriaKeys:
