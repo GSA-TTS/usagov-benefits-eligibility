@@ -16,7 +16,7 @@ eligibility:
 - criteriaKey: deceased_served_in_active_military
   acceptableValues: [true]
 - criteriaKey: applicant_relationship
-  acceptableValues: ["spouse", "child", "family member", "personal or official representative"]
+  acceptableValues: ["spouse", "child", "other family member", "personal or official representative"]
 - criteriaKey: applicant_paid_funeral_expenses
   acceptableValues: [true]
 - criteriaKey: applicant_funeral_reimbursment
