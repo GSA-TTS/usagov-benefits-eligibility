@@ -14,7 +14,8 @@ export default {
   computed: {
     /* eslint vue/return-in-computed-property: "off" */
     url () {
-      if (process.client) {
+      /* istanbul ignore next */ if ( process.client ||
+        process.env.NODE_ENV === 'test') {
         const params = new URLSearchParams();
         const responses = this.$store.getters['criteria/getHashResponses'];
 
@@ -36,7 +37,8 @@ export default {
       }
     },
     enabled () {
-      if (process.client) {
+      /* istanbul ignore next */ if (process.client ||
+        process.env.NODE_ENV === 'test') {
         const responses = this.$store.getters['criteria/getHashResponses'];
         if (Object.keys(responses).length > 0) {
           return true;
@@ -52,7 +54,7 @@ export default {
     },
   },
   beforeMount () {
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(window.location.search || this.search);
     /* eslint prefer-const: "OFF" */
     for (let [key, value] of params) {
       value = value || true;

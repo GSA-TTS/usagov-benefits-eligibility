@@ -1,9 +1,0 @@
-{
-  "development": [
-    "./rules"
-  ],
-  "staging": [],
-  "production": [
-    "./rules"
-  ]
-}

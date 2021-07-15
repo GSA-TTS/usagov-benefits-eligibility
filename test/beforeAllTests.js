@@ -15,4 +15,5 @@ export default function beforeAllTests () {
     config.stubs.NuxtContent = { template: '<div><slot /></div>' }
     config.stubs.ClientOnly = { template: '<div><slot /></div>' }
     Vue.use(Vuex);
+    process.server = true;
 }

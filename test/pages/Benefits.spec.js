@@ -3,7 +3,7 @@ import beforeAllTests from '@/test/beforeAllTests';
 import { createContentMock } from '@/test/mockContent';
 import Vuex from 'vuex';
 import BenefitsBrowser from '~/pages/_slug/benefits.vue';
-import { state as criteriaState, mutations, getters } from '~/store/criteria';
+import { state as criteriaState, mutations, getters, actions } from '~/store/criteria';
 
 const THIS_LIFE_EVENT_SLUG = 'this-life-event';
 const LIFE_EVENTS_DIRECTORY = 'life-events';
@@ -86,6 +86,7 @@ describe('BenefitsBrowser', () => {
         criteria: {
           namespaced: true,
           state: criteriaState,
+          actions,
           mutations,
           getters
         },
@@ -125,11 +126,45 @@ describe('BenefitsBrowser', () => {
 
     await wrapper.vm.$options.fetch.apply(wrapper.vm);
     wrapper.vm.lifeEvent = mockContent.lifeEvent;
-    store.commit("criteria/populate", [...mockContent.criteria.body]);
+    await store.dispatch("criteria/populate", [...mockContent.criteria.body]);
     await wrapper.vm.$nextTick();
     // console.log(wrapper.html())
     expect(wrapper.find('h1').text()).toBe('test life event secondary headline');
     expect(wrapper.vm.lifeEventTitle).toBe('test life event secondary headline');
   });
 
+  it('should display an alert when the results are copied', async () => {
+    jest.useFakeTimers();
+    const $content = createContentMock(
+      [
+        {
+          collectionName: LIFE_EVENTS_DIRECTORY,
+          items: [{ ...mockContent.lifeEvent }]
+        },
+        {
+          collectionName: BENEFITS_DIRECTORY,
+          items: [{ ...mockContent.benefit }],
+        },
+        {
+          collectionName: CRITERIA_DIRECTORY,
+          items: [{ ...mockContent.criteria }]
+        }
+      ]
+    );
+    const wrapper = shallowMount(BenefitsBrowser, {
+      mocks: vueMocks({ $content }),
+      store
+    });
+
+    await wrapper.vm.$options.fetch.apply(wrapper.vm);
+    wrapper.vm.lifeEvent = mockContent.lifeEvent;
+    await store.dispatch("criteria/populate", [...mockContent.criteria.body]);
+    await wrapper.vm.$nextTick();
+    wrapper.vm.doCopiedAlert();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.find('section.usa-site-alert').attributes('style')).toBe('');
+    jest.runAllTimers();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.find('section.usa-site-alert').attributes('style')).toMatch(/display.*none/);
+  });
 });

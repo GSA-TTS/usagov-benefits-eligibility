@@ -1,11 +1,11 @@
 <template>
   <div class="eligibility-criterion">
-    <div v-if="type === 'boolean'" :key="criterionKey" class="usa-checkbox">
-      <input :id="'criteria-' + criteriaGroupKey + '-' + criterionKey"
+    <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
+      <input :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         class="usa-checkbox__input usa-checkbox__input" type="checkbox"
-        :name="criteriaGroupKey + '-' + criterionKey" :checked="response" :value="criterionKey"
+        :name="criteriaGroupKey + '-' + criteriaKey" :checked="response" :value="criteriaKey"
         :data-section="criteriaGroupKey" @change="updateEligibilityChecked" />
-      <label class="usa-checkbox__label" :for="'criteria-' + criteriaGroupKey + '-' + criterionKey">{{ label }}
+      <label class="usa-checkbox__label" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}
       </label>
     </div>
 

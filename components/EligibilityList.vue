@@ -44,7 +44,7 @@ export default {
     benefitEligibilityCriteria: {
           type: Array,
           required: false,
-          default: () => {
+          default: /* istanbul ignore next */ () => {
             return [
               {
                 criteriaKey: "error",

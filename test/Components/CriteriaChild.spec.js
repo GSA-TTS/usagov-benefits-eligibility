@@ -2,7 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import CriteriaChild from '@/components/CriteriaChild.vue'
 import Vuex from 'vuex';
 import beforeAllTests from '@/test/beforeAllTests';
-import { state as criteriaState, mutations, getters } from '~/store/criteria';
+import { state as criteriaState, mutations, getters, actions } from '~/store/criteria';
 
 const MOCK_CRITERIA = [
   {
@@ -35,8 +35,9 @@ describe('CriteriaChild', () => {
         criteria: {
           namespaced: true,
           state: criteriaState,
+          actions,
           mutations,
-          getters
+          getters,
         },
       },
     });
@@ -71,7 +72,7 @@ describe('CriteriaChild', () => {
       propsData: { ...MOCK_CRITERIA[0] },
       store,
     });
-    store.commit("criteria/populate", [...MOCK_CRITERIA]);
+    await store.dispatch("criteria/populate", [...MOCK_CRITERIA]);
     await wrapper.vm.$nextTick();
     await wrapper.find(".usa-checkbox__input").setChecked();
     // wrapper.find(".usa-checkbox__input").trigger('change')
@@ -85,7 +86,7 @@ describe('CriteriaChild', () => {
       store,
     });
 
-    store.commit("criteria/populate", [...MOCK_CRITERIA]);
+    await store.dispatch("criteria/populate", [...MOCK_CRITERIA]);
     await wrapper.vm.$nextTick();
     const choices = wrapper.find("select").findAll("option");
     await choices.at(2).setSelected();

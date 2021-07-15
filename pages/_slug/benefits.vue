@@ -8,7 +8,7 @@
           </h1>
         </div>
         <div class="tablet:grid-col-2 desktop:grid-col-2 margin-top-3 margin-bottom-4">
-          <results-link @copied="doCopiedAlert" />
+          <results-button @copied="doCopiedAlert" />
         </div>
       </div>
 

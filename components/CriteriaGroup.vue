@@ -31,7 +31,7 @@ export default {
   props: {
     lifeEventCriteria: {
       type: Array,
-      default: () => []
+      default: /* istanbul ignore next */ () => []
     }
   },
   computed: {

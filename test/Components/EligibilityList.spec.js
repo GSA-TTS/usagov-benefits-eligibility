@@ -2,7 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import EligibilityList from '@/components/EligibilityList.vue'
 import Vuex from 'vuex';
 import beforeAllTests from '@/test/beforeAllTests';
-import { state as criteriaState, mutations, getters } from '~/store/criteria';
+import { state as criteriaState, mutations, getters, actions } from '~/store/criteria';
 
 const MOCK_CRITERIA = [
   {
@@ -35,6 +35,7 @@ describe('EligibilityList', () => {
         criteria: {
           namespaced: true,
           state: criteriaState,
+          actions,
           mutations,
           getters
         },
@@ -68,10 +69,11 @@ describe('EligibilityList', () => {
     expect(wrapper.findAll("li")).toHaveLength(2);
   });
 
-  test('updates when a criteria response changes', async () => {
+  test.only('updates when a criteria response changes', async () => {
+    await store.dispatch("criteria/populate", [...MOCK_CRITERIA]);
     const wrapper = shallowMount(EligibilityList, {
       propsData: {
-        benefitEligibilityCriteria: MOCK_CRITERIA
+        benefitEligibilityCriteria: Object.values(store.state.criteria.eligibilityCriteria)
       },
       store
     });
@@ -82,7 +84,7 @@ describe('EligibilityList', () => {
     };
 
     await wrapper.vm.$nextTick();
-    store.commit("criteria/populate", [...MOCK_CRITERIA]);
+
     store.commit("criteria/updateResponse", { ...trueCriteria });
     await wrapper.vm.$nextTick();
     // console.log(wrapper.html())
