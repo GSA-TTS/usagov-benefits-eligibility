@@ -55,9 +55,6 @@ describe('LifeEventPage', () => {
   it('displays benefits in cards', async () => {
     const wrapper = shallowMount(LifeEventPage);
     await wrapper.setData(mockContent);
-
-    // console.log(wrapper.html());
-
     expect(wrapper.find('.usa-card-group').exists()).toBeTruthy();
     expect(wrapper.findAll('.usa-card').length).toBe(mockContent.lifeEventBenefits.length);
 
@@ -77,9 +74,6 @@ describe('LifeEventPage', () => {
       ]
     );
     const asyncItems = await LifeEventPage.asyncData({ $content, params: { slug: THIS_LIFE_EVENT_SLUG } });
-
-    // console.log(asyncItems);
-
     expect(asyncItems.lifeEventBenefits).toHaveLength(1);
     expect($content).toHaveBeenCalledWith(LIFE_EVENTS_DIRECTORY, THIS_LIFE_EVENT_SLUG);
     expect($content).toHaveBeenCalledWith(BENEFITS_DIRECTORY);

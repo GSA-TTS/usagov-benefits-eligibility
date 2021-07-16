@@ -127,7 +127,6 @@ describe('BenefitsBrowser', () => {
     wrapper.vm.lifeEvent = mockContent.lifeEvent;
     store.commit("criteria/populate", [...mockContent.criteria.body]);
     await wrapper.vm.$nextTick();
-    // console.log(wrapper.html())
     expect(wrapper.find('h1').text()).toBe('test life event secondary headline');
     expect(wrapper.vm.lifeEventTitle).toBe('test life event secondary headline');
   });

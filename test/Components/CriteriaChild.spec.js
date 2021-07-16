@@ -74,8 +74,6 @@ describe('CriteriaChild', () => {
     store.commit("criteria/populate", [...MOCK_CRITERIA]);
     await wrapper.vm.$nextTick();
     await wrapper.find(".usa-checkbox__input").setChecked();
-    // wrapper.find(".usa-checkbox__input").trigger('change')
-    // console.log(wrapper.html())
     expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy();
 
   });

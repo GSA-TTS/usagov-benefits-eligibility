@@ -85,7 +85,6 @@ describe('EligibilityList', () => {
     store.commit("criteria/populate", [...MOCK_CRITERIA]);
     store.commit("criteria/updateResponse", { ...trueCriteria });
     await wrapper.vm.$nextTick();
-    // console.log(wrapper.html())
     expect(wrapper.findAll(".usa-icon-list__content.text-success")).toHaveLength(1);
 
   });

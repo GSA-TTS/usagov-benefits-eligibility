@@ -29,9 +29,6 @@ describe('LifeEventsPage', () => {
   it('displays a list of one life event', async () => {
     const wrapper = shallowMount(LifeEventsPage);
     await wrapper.setData(mockContent);
-
-    // console.log(wrapper.html());
-
     expect(wrapper.find('.usa-card-group').exists()).toBeTruthy();
     expect(wrapper.findAll('.usa-card').length).toBe(1);
 
