@@ -2,7 +2,7 @@
 title: "Lump-Sum Death Benefit"
 headline: "Need text here"
 tags: 
-- "burial expense assistance"
+- "financial assistance"
 lifeEvents: 
 - "bereavement"
 source:
