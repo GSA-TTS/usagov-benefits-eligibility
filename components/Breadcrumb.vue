@@ -50,7 +50,7 @@ export default {
   },
   computed: {
     trimmedFullPath () {
-      return _.trimEnd(_.escapeRegExp(this.$route.fullPath), '/')
+      return _.trimEnd(_.escapeRegExp(this.$route.fullPath.replace(window.location.search, '')), '/')
     },
     crumbs () {
       if (this.trimmedFullPath === '') { return [] }
