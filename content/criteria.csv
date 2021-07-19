@@ -14,3 +14,4 @@ applicant_paid_funeral_expenses,You paid for the funeral/burial expenses.,boolea
 applicant_funeral_reimbursment,You were NOT reimbursed for the funeral cost by any organization or government agency.,boolean,true
 applicant_relationship,Your (applicant's) relationship to the deceased is,select,spouse; child; other family member; personal or official representative
 applicant_date_of_birth,"My (applicant's) date of birth",boolean,true 
+applicant_citizen_status,"Your (applicant's) citizenship status is",select, U.S. citizen; non-citizen national; qualified alien
