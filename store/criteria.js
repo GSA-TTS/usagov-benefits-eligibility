@@ -22,6 +22,13 @@ export const mutations = {
       Vue.set(state.preloadedResponses, criteriaKey, response);
     }
   },
+  populateCriterion (state, { criterion, hash }) {
+    const criteriaKey = criterion.criteriaKey;
+    criterion.response = state.preloadedResponses[criteriaKey] != null ? state.preloadedResponses[criteriaKey] : null;
+    criterion.criteriaKeyHash = hash;
+    Vue.set(state.eligibilityCriteria, criteriaKey, criterion);
+    Vue.set(state.hashToCriteria, hash, criteriaKey);
+  },
 }
 export const getters = {
   getCriterionByEligibilityKey: state => (criteriaKey) => {
@@ -47,14 +54,11 @@ export const getters = {
 }
 
 export const actions = {
-  async populate ({ state }, criteriaArray = []) {
+  async populate ({ commit, state }, criteriaArray = []) {
     for (const criterion of criteriaArray) {
       const criteriaKey = criterion.criteriaKey;
       const hash = await stringToHash(criteriaKey);
-      criterion.response = state.preloadedResponses[criteriaKey] != null ? state.preloadedResponses[criteriaKey] : null;
-      criterion.criteriaKeyHash = hash;
-      Vue.set(state.eligibilityCriteria, criteriaKey, criterion);
-      state.hashToCriteria[hash] = criteriaKey;
+      commit('populateCriterion', { criterion, hash })
     }
   },
 };
