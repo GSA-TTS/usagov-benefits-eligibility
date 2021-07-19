@@ -16,7 +16,7 @@ eligibility:
 - criteriaKey: deceased_paid_into_SS
   acceptableValues: [true]
 - criteriaKey: deceased_date_of_death
-  label: "Deceased died within the last two years."
+  label: "The deceased died within the last two years."
 - criteriaKey: applicant_relationship
   acceptableValues: [spouse, child]
 
