@@ -19,12 +19,12 @@ export const mutations = {
     if (state.eligibilityCriteria[criteriaKey] != null) {
       Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response)
     } else {
-      Vue.set(state.preloadedResponses, criteriaKey, response);
+      Vue.set(state.preloadedResponses, criteriaKeyHash, response);
     }
   },
   populateCriterion (state, { criterion, hash }) {
     const criteriaKey = criterion.criteriaKey;
-    criterion.response = state.preloadedResponses[criteriaKey] != null ? state.preloadedResponses[criteriaKey] : null;
+    criterion.response = state.preloadedResponses[hash] != null ? state.preloadedResponses[hash] : null;
     criterion.criteriaKeyHash = hash;
     Vue.set(state.eligibilityCriteria, criteriaKey, criterion);
     Vue.set(state.hashToCriteria, hash, criteriaKey);
