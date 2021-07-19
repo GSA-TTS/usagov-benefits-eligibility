@@ -7,6 +7,24 @@
             {{ lifeEventTitle }}
           </h1>
         </div>
+        <div class="tablet:grid-col-2 desktop:grid-col-2 margin-top-3 margin-bottom-4">
+          <results-button @copied="doCopiedAlert" />
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="tablet:grid-col">
+          <section v-show="alert" class="usa-site-alert usa-site-alert--info margin-bottom-2" aria-label="Site alert,">
+            <div class="usa-alert">
+              <div class="usa-alert__body">
+                <h3 class="usa-alert__heading">Results Saved</h3>
+                <p class="usa-alert__text">
+                  The results location has been copied to your clipboard.
+                </p>
+              </div>
+          </div>
+          </section>
+        </div>
       </div>
 
       <div class="grid-row grid-gap">
@@ -72,6 +90,7 @@ export default {
   layout: "default",
   data () {
     return {
+      alert: false,
       lifeEvent: {
         slug: '',
         title: '',
@@ -90,7 +109,7 @@ export default {
       .fetch();
 
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body;
-    this.$store.commit("criteria/populate", allEligibilityCriteria);
+    await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
 
     this.lifeEvent = lifeEvent;
     this.lifeEventBenefits = lifeEventBenefits;
@@ -101,6 +120,10 @@ export default {
     },
   },
   methods: {
+    doCopiedAlert () {
+      this.alert = true;
+      setTimeout(() => { this.alert = false; }, 20 * 1000);
+    },
   },
 
 };

@@ -1,24 +1,27 @@
 import Vue from "vue";
+import stringToHash from "../services/stringToHash";
 
 export const state = () => ({
-  eligibilityCriteria: {}
+  eligibilityCriteria: {},
+  hashToCriteria: {},
+  preloadedResponses: {},
 });
 
 export const mutations = {
-  populate (state, criteriaArray = []) {
-    for (const criterion of criteriaArray) {
-      criterion.response = null;
-      Vue.set(state.eligibilityCriteria, criterion.criteriaKey, criterion);
-    }
-  },
   // payload must include a criteriaKey and the new response / selected value
   updateResponse (state, { criteriaKey, response }) {
     // TODO: make sure the response matches one of the available criterion values
 
-    // state.eligibilityCriteria[criteriaKey].response = selectedValue
     Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response);
-
-  }
+  },
+  preloadedResponse (state, { criteriaKeyHash, response }) {
+    const criteriaKey = state.hashToCriteria[criteriaKeyHash];
+    if (state.eligibilityCriteria[criteriaKey] != null) {
+      Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response)
+    } else {
+      Vue.set(state.preloadedResponses, criteriaKey, response);
+    }
+  },
 }
 export const getters = {
   getCriterionByEligibilityKey: state => (criteriaKey) => {
@@ -30,5 +33,28 @@ export const getters = {
       type: 'missing'
     };
   },
+  getHashResponses: (state) => {
+    const responses = {};
+    for (const criteriaKey in state.eligibilityCriteria) {
+      const criteria = state.eligibilityCriteria[criteriaKey];
+      if (criteria && criteria.response) {
+        responses[criteria.criteriaKeyHash] = criteria.response;
+      }
+    }
+    return responses;
+  },
 
 }
+
+export const actions = {
+  async populate ({ state }, criteriaArray = []) {
+    for (const criterion of criteriaArray) {
+      const criteriaKey = criterion.criteriaKey;
+      const hash = await stringToHash(criteriaKey);
+      criterion.response = state.preloadedResponses[criteriaKey] != null ? state.preloadedResponses[criteriaKey] : null;
+      criterion.criteriaKeyHash = hash;
+      Vue.set(state.eligibilityCriteria, criteriaKey, criterion);
+      state.hashToCriteria[hash] = criteriaKey;
+    }
+  },
+};

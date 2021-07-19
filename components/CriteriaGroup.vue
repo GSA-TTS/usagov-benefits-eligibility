@@ -9,14 +9,15 @@
             {{ criteriaGroup.description }}
         </p>
         <div :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey" class="">
-          <template v-for="(criterion) in criteriaGroup.criteriaKeys">
+          <template v-for="(criterion) in getCriteriaMap(criteriaGroup.criteriaKeys)">
             <CriteriaChild
-              :key="criterion"
-              :criteria-key="criterion"
-              :label="getCriterionByEligibilityKey(criterion).label"
-              :values="getCriterionByEligibilityKey(criterion).values.split('; ')"
-              :type="getCriterionByEligibilityKey(criterion).type"
-              :criteria-group-key="criteriaGroup.criteriaGroupKey"/>
+              :key="criterion.criteriaKey"
+              :criteria-key="criterion.criteriaKey"
+              :label="criterion.label"
+              :values="criterion.values.split('; ')"
+              :type="criterion.type"
+              :criteria-group-key="criteriaGroup.criteriaGroupKey"
+              :response="criterion.response" />
           </template>
         </div>
       </div>
@@ -30,7 +31,7 @@ export default {
   props: {
     lifeEventCriteria: {
       type: Array,
-      default: () => []
+      default: /* istanbul ignore next */ () => []
     }
   },
   computed: {
@@ -38,6 +39,12 @@ export default {
       getCriterionByEligibilityKey: 'criteria/getCriterionByEligibilityKey',
     })
   },
-  methods: { }
+  methods: {
+    getCriteriaMap (criteriaKeys) {
+      return criteriaKeys.map((criterionKey) => {
+        return this.getCriterionByEligibilityKey(criterionKey);
+      });
+    },
+  },
 };
 </script>
