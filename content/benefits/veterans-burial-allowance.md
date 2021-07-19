@@ -16,7 +16,7 @@ eligibility:
 - criteriaKey: deceased_served_in_active_military
   acceptableValues: ["was discharged under conditions other than dischonorable"]
 - criteriaKey: deceased_death_circumstance
-  acceptableValues: ["died as a result of a service-connected disability", "died while receiving or traveling to receive VA care", "died while eligible, pending to receive, or receiving VA compensation or pension"]
+  acceptableValues: ["(1) died as a result of a service-connected disability", "(2) died while receiving or traveling to receive VA care", "(3) died while eligible, pending to receive or receiving VA compensation / pension"]
 - criteriaKey: deceased_date_of_funeral
   label: "Veteran’s burial or cremation was within the last two years."
 - criteriaKey: applicant_paid_funeral_expenses
