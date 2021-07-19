@@ -17,8 +17,9 @@ eligibility:
   acceptableValues: ["was discharged under conditions other than dischonorable", "died while on active duty"]
 - criteriaKey: deceased_headstone_is_privately_purchased
   acceptableValues: [true]
-- criteriaKey: applicant_relationship
-  acceptableValues: ["spouse", "child", "other family member", "personal or official representative"]
 - criteriaKey: deceased_buried_in_private_cemetery
   acceptableValues: [true]
+- criteriaKey: applicant_relationship
+  acceptableValues: ["spouse", "child", "other family member", "personal or official representative"]
+
 ---
