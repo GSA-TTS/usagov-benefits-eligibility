@@ -3,7 +3,7 @@
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
-          <h1 class="font-heading-3x margin-top-0">
+          <h1 class="font-heading-3xl margin-top-0">
             Help during life's major events
           </h1>
           <p class="usa-intro">
@@ -27,7 +27,7 @@
                 :card-title="event.title"
                 card-title-heading-level="h2"
                 primary-button-text="Estimate my possible benefits"
-                primary-button-link="/questionnaire"
+                :primary-button-link="event.slug + '/benefits'"
                 secondary-button-text="See all benefits"
                 :secondary-button-link="event.slug"/>
             </li>

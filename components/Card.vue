@@ -12,9 +12,10 @@
     </header>
     <div class="usa-card__body">
       <slot name="source"></slot>
-      <p>
+      <p class="font-sans-md">
         {{ cardBody }}
       </p>
+      <slot name="eligibility"></slot>
     </div>
     <div class="usa-card__footer">
       <ul class="usa-button-group" :aria-label="'Choices for ' + cardTitle">

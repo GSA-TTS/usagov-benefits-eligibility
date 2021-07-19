@@ -9,7 +9,7 @@
           <p v-if="lifeEvent.lede" class="usa-intro">
             {{ lifeEvent.lede }}
           </p>
-          <nuxt-link :to="'/questionnaire'" class="usa-button usa-button--big">
+          <nuxt-link :to="lifeEvent.slug + '/benefits'" class="usa-button usa-button--big">
             Estimate my possible benefits
           </nuxt-link>
         </div>
