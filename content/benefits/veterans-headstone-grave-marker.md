@@ -19,8 +19,8 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: deceased_headstone_is_privately_purchased
   acceptableValues: [true]
-- criteriaKey: deceased_spouse_child_buried_in_veterans_cemetery
-  acceptableValues: [true]
+- criteriaKey: deceased_spouse_child_of_veteran
+  label: "The deceased is a spouse or a child of a Veteran and is buried in a national, state, tribal, Veterans or military post cemetery."
 - criteriaKey: applicant_relationship
   acceptableValues: ["spouse", "child", "other family member", "personal or official representative"]
 
