@@ -20,7 +20,11 @@
     <div class="usa-card__footer">
       <ul class="usa-button-group" :aria-label="'Choices for ' + cardTitle">
         <li class="usa-button-group__item">
-          <nuxt-link :to="primaryButtonLink" class="usa-button">
+          <a v-if="isRemoteLink(primaryButtonLink)" :href="primaryButtonLink" :target="primaryButtonTarget"
+            class="usa-button">
+            {{ primaryButtonText }}
+          </a>
+          <nuxt-link v-else :to="primaryButtonLink" class="usa-button">
             {{ primaryButtonText }}
           </nuxt-link>
         </li>
@@ -66,6 +70,11 @@ export default {
       required: true,
       default: "#"
     },
+    primaryButtonTarget: {
+      type: String,
+      required: false,
+      default: '_self'
+    },
     secondaryButtonText: {
       type: String,
       required: false,
@@ -86,6 +95,11 @@ export default {
   },
   data () {
     return {};
-  }
+  },
+  methods: {
+    isRemoteLink (link) {
+      return link?.startsWith('https://');
+    },
+  },
 };
 </script>

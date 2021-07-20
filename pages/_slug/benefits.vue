@@ -60,6 +60,7 @@
                 card-title-heading-level="h2"
                 primary-button-text="How to apply"
                 :primary-button-link="benefit.link"
+                primary-button-target="_blank"
                 :card-tags="benefit.tags">
                 <template
                   v-if="
@@ -69,7 +70,7 @@
                   <h3
                     class="font-sans-xs text-normal text-base-dark margin-bottom-0">
                     Provided by the
-                    <a class="usa-link" :href="benefit.source.link">{{
+                    <a class="usa-link" :href="benefit.source.link" target="_blank">{{
                       benefit.source.name
                     }}</a>
                   </h3>
