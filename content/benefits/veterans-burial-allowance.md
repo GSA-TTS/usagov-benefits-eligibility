@@ -6,7 +6,7 @@ tags:
 lifeEvents: 
 - "bereavement"
 source:
-  name: "Dept. of Veterans Affairs"
+  name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/burials-memorials/veterans-burial-allowance/"
 
 summary: "Assistance may be available to help with burial, funeral, and transportation costs of a deceased veteran."
