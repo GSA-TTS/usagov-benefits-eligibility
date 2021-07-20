@@ -13,6 +13,7 @@ eligibilityCriteria:
       - deceased_paid_into_SS
       - deceased_died_of_COVID
       - deceased_death_location_is_US
+      - deceased_public_safety_officer
 
   - label: "About the military service"
     description: "Please select options and check all the boxes that best describe the person who died."
