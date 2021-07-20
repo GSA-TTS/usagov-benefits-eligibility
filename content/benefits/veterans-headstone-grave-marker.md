@@ -2,14 +2,14 @@
 title: "Veteran’s Headstone and Grave Marker"
 headline: "Veteran’s Headstone and Grave Marker"
 tags: 
-- "memorial item"
+- "memorial"
 lifeEvents: 
 - "bereavement"
 source:
   name: "Dept. of Veterans Affairs"
   link: "https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/"
 
-summary: "Text to come"
+summary: "A headstone, grave or niche marker, or medallion may be available to honor a veteran, service member, or eligible family member."
 
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
