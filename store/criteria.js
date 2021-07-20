@@ -30,7 +30,14 @@ export const mutations = {
     Vue.set(state.hashToCriteria, hash, criteriaKey);
   },
 }
+
 export const getters = {
+  doesCriterionMatchSelection: (state, getters) => (criterion) => {
+    if (!getters.isCriterionSelected(criterion) || !criterion.acceptableValues) {
+      return null;
+    }
+    return !!criterion.acceptableValues.find(val => val === getters.getCriterionByEligibilityKey(criterion.criteriaKey).response);
+  },
   getCriterionByEligibilityKey: state => (criteriaKey) => {
     return state.eligibilityCriteria[criteriaKey] ||
     {
@@ -50,7 +57,17 @@ export const getters = {
     }
     return responses;
   },
-
+  getTotalEligibleCriteria: (state, getters) => (benefitEligibilityCriteria = []) => {
+    if (benefitEligibilityCriteria && benefitEligibilityCriteria.length < 1) {
+      return 0;
+    } else {
+      const matchingCriteria = benefitEligibilityCriteria.filter(criterion => getters.doesCriterionMatchSelection(criterion));
+      return matchingCriteria.length;
+    }
+  },
+  isCriterionSelected: (state, getters) => (criterion) => {
+    return !!getters.getCriterionByEligibilityKey(criterion.criteriaKey).response;
+  },
 }
 
 export const actions = {

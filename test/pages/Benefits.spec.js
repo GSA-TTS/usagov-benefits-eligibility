@@ -161,9 +161,52 @@ describe('BenefitsBrowser', () => {
     await wrapper.vm.$nextTick();
     wrapper.vm.doCopiedAlert();
     await wrapper.vm.$nextTick();
-    expect(wrapper.find('section.usa-site-alert').attributes('style')).toBe('');
+    expect(wrapper.find('alert-stub').attributes('style')).toBe('');
     jest.runAllTimers();
     await wrapper.vm.$nextTick();
-    expect(wrapper.find('section.usa-site-alert').attributes('style')).toMatch(/display.*none/);
+    expect(wrapper.find('alert-stub').attributes('style')).toMatch(/display.*none/);
+  });
+
+  it('should sort the results', async () => {
+    const $content = createContentMock(
+      [
+        {
+          collectionName: LIFE_EVENTS_DIRECTORY,
+          items: [{ ...mockContent.lifeEvent }]
+        },
+        {
+          collectionName: BENEFITS_DIRECTORY,
+          items: [{ ...mockContent.benefit }],
+        },
+        {
+          collectionName: CRITERIA_DIRECTORY,
+          items: [{ ...mockContent.criteria }]
+        }
+      ]
+    );
+    const wrapper = shallowMount(BenefitsBrowser, {
+      mocks: vueMocks({ $content }),
+      store
+    });
+    wrapper.vm.lifeEventBenefits = [
+      {
+        title: 'two',
+        eligibility: [{}, {}, {}],
+      },
+      {
+        title: 'one',
+        eligibility: [{}, {}, {}],
+      },
+      {
+        title: 'three',
+        eligibility: [{}, {}, {}],
+      },
+    ];
+    jest.spyOn(wrapper.vm, 'getTotalEligibleCriteria').mockReturnValueOnce(3).mockReturnValueOnce(1).mockReturnValueOnce(2);
+    await wrapper.find('#benefitSort').findAll('option').at(1).setSelected();
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,three,two');
+    await wrapper.find('#benefitSort').findAll('option').at(0).setSelected();
+    expect(wrapper.vm.getTotalEligibleCriteria).toHaveBeenCalled();
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,two,three')
   });
 });

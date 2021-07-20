@@ -1,8 +1,9 @@
 <template>
   <div class="eligibility-list-container border border-base-lighter border-width-2px radius-md margin-top-4">
     <h3 class="bg-base-lighter margin-0 padding-x-2 padding-y-1 font-sans-md">
-Key eligibility criteria (meets at least {{ totalEligibleCriteria }} of {{ benefitEligibilityCriteria.length }}).
+Key eligibility criteria (meets at least {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of {{ benefitEligibilityCriteria.length }}).
 </h3>
+    <client-only>
     <ul class="usa-icon-list padding-x-205 padding-top-205 padding-bottom-1">
       <li v-for="criterion in benefitEligibilityCriteria" :key="criterion.criteriaKey" class="usa-icon-list__item">
         <div :class="[
@@ -33,7 +34,10 @@ Key eligibility criteria (meets at least {{ totalEligibleCriteria }} of {{ benef
         </div>
       </li>
     </ul>
-    <p class="text-white bg-base-darker font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm"><strong>Estimate only.</strong> Please review the full requirements at "How to apply."</p>
+    </client-only>
+    <p class="text-white bg-base-darker font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
+      <strong>Estimate only.</strong> Please review the full requirements at "How to apply."
+    </p>
   </div>
 </template>
 <script>
@@ -57,28 +61,14 @@ export default {
     return {};
   },
   computed: {
-    totalEligibleCriteria () {
-      if (this.benefitEligibilityCriteria && this.benefitEligibilityCriteria.length < 1) {
-        return "0"
-      } else {
-        const matchingCriteria = this.benefitEligibilityCriteria.filter(criterion => this.doesCriterionMatchSelection(criterion));
-        return matchingCriteria.length;
-      }
-    },
     ...mapGetters({
+      doesCriterionMatchSelection: 'criteria/doesCriterionMatchSelection',
       getCriterionByEligibilityKey: 'criteria/getCriterionByEligibilityKey',
+      getTotalEligibleCriteria: 'criteria/getTotalEligibleCriteria',
+      isCriterionSelected: 'criteria/isCriterionSelected',
     })
   },
   methods: {
-    isCriterionSelected (criterion) {
-      return !!this.getCriterionByEligibilityKey(criterion.criteriaKey).response
-    },
-    doesCriterionMatchSelection (criterion) {
-      if (!this.isCriterionSelected(criterion) || !criterion.acceptableValues) {
-        return null
-      }
-      return !!criterion.acceptableValues.find(val => val === this.getCriterionByEligibilityKey(criterion.criteriaKey).response)
-    },
     formatArrayWithSeparator (array = [], lastSeparator = 'or') {
       return array.join(", ").replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);
     }

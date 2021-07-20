@@ -3,27 +3,31 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 class="font-heading-2xl margin-top-3 margin-bottom-4">
+          <h1 class="font-heading-2xl margin-top-3">
             {{ lifeEventTitle }}
           </h1>
         </div>
-        <div class="tablet:grid-col-2 desktop:grid-col-2 margin-top-3 margin-bottom-4">
+        <div class="tablet:grid-col-2 desktop:grid-col-2 margin-top-3 text-right">
           <results-button @copied="doCopiedAlert" />
         </div>
       </div>
-
       <div class="grid-row">
         <div class="tablet:grid-col">
-          <section v-show="alert" class="usa-site-alert usa-site-alert--info margin-bottom-2" aria-label="Site alert,">
-            <div class="usa-alert">
-              <div class="usa-alert__body">
-                <h3 class="usa-alert__heading">Results Saved</h3>
-                <p class="usa-alert__text">
-                  The link to this page has been copied to your clipboard.
-                </p>
-              </div>
-          </div>
-          </section>
+          <Alert v-show="alert" heading="Results Saved">
+            The link to this page has been copied to your clipboard.
+          </Alert>
+        </div>
+      </div>
+
+      <div class="grid-row grid-gap">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 margin-bottom-3"></div>
+        <div class="tablet:grid-col-7 desktop:grid-col-8 margin-bottom-3 text-right">
+          <label class="usa-label display-inline" for="benefitSort">Sort by:</label>
+          <select id="benefitSort" class="usa-select margin-left-auto width-card display-inline-block" name="options"
+              @change="sortChange">
+            <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
+            <option value="title" :selected="sort === 'title'">Alphabetical</option>
+          </select>
         </div>
       </div>
 
@@ -83,6 +87,8 @@
 </template>
 
 <script>
+import _ from 'lodash';
+import { mapGetters, mapState } from 'vuex';
 import EligibilityList from '~/components/EligibilityList.vue';
 
 export default {
@@ -97,6 +103,7 @@ export default {
         eligibilityCriteria: []
       },
       lifeEventBenefits: [],
+      sort: '',
     };
   },
   async fetch () {
@@ -118,13 +125,40 @@ export default {
     lifeEventTitle () {
       return this.lifeEvent.secondaryHeadline;
     },
+    ...mapGetters({
+      getTotalEligibleCriteria: 'criteria/getTotalEligibleCriteria',
+    }),
+    ...mapState({
+      eligibilityCriteria: state => state.criteria.eligibilityCriteria,
+    }),
+  },
+  watch: {
+    eligibilityCriteria: {
+      handler (newEligibilityCriteria) {
+        this.sortBenefits();
+      },
+      deep: true,
+    },
   },
   methods: {
     doCopiedAlert () {
       this.alert = true;
       setTimeout(() => { this.alert = false; }, 20 * 1000);
     },
+    sortChange (event) {
+      this.sort = event.target.value;
+      this.sortBenefits();
+    },
+    sortBenefits () {
+      if (this.sort === "title") {
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [this.sort]);
+      } else {
+        const forceToBottom = 2048;
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, (benefit) => {
+          return 1 - this.getTotalEligibleCriteria(benefit.eligibility) / (benefit.eligibility?.length || forceToBottom);
+        });
+      }
+    },
   },
-
 };
 </script>
