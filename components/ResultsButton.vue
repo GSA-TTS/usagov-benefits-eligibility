@@ -1,11 +1,11 @@
 <template>
   <span>
-    <button class="usa-button margin-bottom-2" :disabled="!enabled" @click="copy()">
+    <button class="usa-button margin-bottom-2" @click="copy()">
       <svg class="usa-icon" aria-hidden="true" focusable="false"
         role="img">
           <use xlink:href="~/assets/img/sprite.svg#content_copy" />
       </svg>
-      Copy Link
+      Copy page link
     </button>
   </span>
 </template>
@@ -14,14 +14,11 @@ export default {
   computed: {
     /* eslint vue/return-in-computed-property: "off" */
     url () {
-      /* istanbul ignore next */ if ( process.client ||
+      /* istanbul ignore next */ if (process.client ||
         process.env.NODE_ENV === 'test') {
         const params = new URLSearchParams();
         const responses = this.$store.getters['criteria/getHashResponses'];
 
-        if (!this.enabled) {
-          return;
-        }
         for (const criteriaKey in responses) {
           if (responses[criteriaKey]) {
             const valueMap = {
@@ -36,25 +33,15 @@ export default {
         return `${baseUrl}?${params.toString()}`;
       }
     },
-    enabled () {
-      /* istanbul ignore next */ if (process.client ||
-        process.env.NODE_ENV === 'test') {
-        const responses = this.$store.getters['criteria/getHashResponses'];
-        if (Object.keys(responses).length > 0) {
-          return true;
-        }
-      }
-      return false;
-    },
   },
   watch: {
     url (value) {
-      const url = value || window.location.href.replace(window.location.search, '');
+      const url = value || /* istanbul ignore next */ window.location.href.replace(window.location.search, '');
       history.replaceState(null, document.title, url);
     },
   },
   beforeMount () {
-    const params = new URLSearchParams(window.location.search || this.search);
+    const params = new URLSearchParams(this.search || window.location.search);
     /* eslint prefer-const: "OFF" */
     for (let [key, value] of params) {
       value = value || true;
