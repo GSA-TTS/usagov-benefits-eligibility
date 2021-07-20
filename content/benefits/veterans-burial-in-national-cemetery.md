@@ -6,7 +6,7 @@ tags:
 lifeEvents: 
 - "bereavement"
 source:
-  name: "Dept. of Veterans Affairs"
+  name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/burials-memorials/eligibility/"
 
 summary: Veterans, service members, and some family members may be eligible for burial in a VA national cemetery."
