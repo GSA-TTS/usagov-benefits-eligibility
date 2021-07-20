@@ -7,7 +7,7 @@
             {{ lifeEventTitle }}
           </h1>
         </div>
-        <div class="tablet:grid-col-2 desktop:grid-col-2 margin-top-3">
+        <div class="tablet:grid-col-2 desktop:grid-col-2 margin-top-3 text-right">
           <results-button @copied="doCopiedAlert" />
         </div>
       </div>
