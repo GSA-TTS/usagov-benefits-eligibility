@@ -14,7 +14,7 @@ export default {
   computed: {
     /* eslint vue/return-in-computed-property: "off" */
     url () {
-      /* istanbul ignore next */ if ( process.client ||
+      /* istanbul ignore next */ if (process.client ||
         process.env.NODE_ENV === 'test') {
         const params = new URLSearchParams();
         const responses = this.$store.getters['criteria/getHashResponses'];

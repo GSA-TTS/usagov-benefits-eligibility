@@ -3,6 +3,7 @@
     <h3 class="bg-base-lighter margin-0 padding-x-2 padding-y-1 font-sans-md">
 Key eligibility criteria (meets at least {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of {{ benefitEligibilityCriteria.length }}).
 </h3>
+    <client-only>
     <ul class="usa-icon-list padding-x-205 padding-top-205 padding-bottom-1">
       <li v-for="criterion in benefitEligibilityCriteria" :key="criterion.criteriaKey" class="usa-icon-list__item">
         <div :class="[
@@ -33,7 +34,10 @@ Key eligibility criteria (meets at least {{ getTotalEligibleCriteria(benefitElig
         </div>
       </li>
     </ul>
-    <p class="text-white bg-base-darker font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm"><strong>Estimate only.</strong> Please review the full requirements at "How to apply."</p>
+    </client-only>
+    <p class="text-white bg-base-darker font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
+      <strong>Estimate only.</strong> Please review the full requirements at "How to apply."
+    </p>
   </div>
 </template>
 <script>

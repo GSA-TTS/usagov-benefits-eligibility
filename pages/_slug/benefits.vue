@@ -21,9 +21,9 @@
 
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-5 desktop:grid-col-4 margin-bottom-3"></div>
-        <div class="tablet:grid-col-7 desktop:grid-col-8 margin-bottom-3">
-          <label class="usa-label" for="benefitSort">Sort by:</label>
-          <select id="benefitSort" class="usa-select" name="options"
+        <div class="tablet:grid-col-7 desktop:grid-col-8 margin-bottom-3 text-right">
+          <label class="usa-label display-inline" for="benefitSort">Sort by:</label>
+          <select id="benefitSort" class="usa-select margin-left-auto width-card display-inline-block" name="options"
               @change="sortChange">
             <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
             <option value="title" :selected="sort === 'title'">Alphabetical</option>
