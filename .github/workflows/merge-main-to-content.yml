@@ -1,6 +1,6 @@
 # This Github Action workflow:
 
-name: mrege-main-to-content
+name: merge-main-to-content
 
 on:
   schedule:

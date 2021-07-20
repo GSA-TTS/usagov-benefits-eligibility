@@ -19,7 +19,7 @@
               <div class="usa-alert__body">
                 <h3 class="usa-alert__heading">Results Saved</h3>
                 <p class="usa-alert__text">
-                  The results location has been copied to your clipboard.
+                  The link to this page has been copied to your clipboard.
                 </p>
               </div>
           </div>
