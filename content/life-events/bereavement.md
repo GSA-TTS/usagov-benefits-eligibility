@@ -14,8 +14,8 @@ eligibilityCriteria:
       - deceased_died_of_COVID
       - deceased_death_location_is_US
 
-  - label: "About military service"
-    description: "Please check all the boxes that best describe the person who died."
+  - label: "About the military service"
+    description: "Please select options and check all the boxes that best describe the person who died."
     criteriaGroupKey: military
     criteriaKeys:
       - deceased_served_in_active_military
@@ -24,7 +24,7 @@ eligibilityCriteria:
       - deceased_buried_in_private_cemetery
  
   - label: "About the applicant"
-    description: "Please check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_relationship
