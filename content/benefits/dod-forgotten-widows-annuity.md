@@ -18,6 +18,6 @@ eligibility:
 - criteriaKey: deceased_served_in_active_military
   acceptableValues: ["had retired from the service"]
 - criteriaKey: applicant_relationship
-  acceptableValues: [spouse, child]
+  acceptableValues: [spouse]
 
 ---
