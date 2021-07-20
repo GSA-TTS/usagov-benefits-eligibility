@@ -2,7 +2,7 @@
 title: "Public Safety Officers' Educational Assistance Program"
 headline: "Public Safety Officers' Educational Assistance Program"
 tags: 
-- "education assistance"
+- "educational assistance"
 lifeEvents: 
 - "bereavement"
 source:
