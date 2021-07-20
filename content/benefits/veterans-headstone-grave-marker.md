@@ -6,7 +6,7 @@ tags:
 lifeEvents: 
 - "bereavement"
 source:
-  name: "Dept. of Veterans Affairs"
+  name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/"
 
 summary: "A headstone, grave or niche marker, or medallion may be available to honor a veteran, service member, or eligible family member."
