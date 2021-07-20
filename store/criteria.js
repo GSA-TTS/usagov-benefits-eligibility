@@ -57,7 +57,7 @@ export const getters = {
     }
     return responses;
   },
-  getTotalEligibleCriteria: (state, getters) => (benefitEligibilityCriteria) => {
+  getTotalEligibleCriteria: (state, getters) => (benefitEligibilityCriteria = []) => {
     if (benefitEligibilityCriteria && benefitEligibilityCriteria.length < 1) {
       return 0;
     } else {

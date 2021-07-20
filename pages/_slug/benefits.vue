@@ -153,8 +153,9 @@ export default {
       if (this.sort === "title") {
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [this.sort]);
       } else {
+        const forceToBottom = 2048;
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, (benefit) => {
-          return 1000 - this.getTotalEligibleCriteria(benefit.eligibility);
+          return 1 - this.getTotalEligibleCriteria(benefit.eligibility) / (benefit.eligibility?.length || forceToBottom);
         });
       }
     },
