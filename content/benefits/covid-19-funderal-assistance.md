@@ -7,9 +7,9 @@ lifeEvents:
 - "bereavement"
 source:
   name: "Federal Emergency Management Agency"
-  link: "https://www.fema.gov/disasters/coronavirus/economic/funeral-assistance#resources"
+  link: "https://www.fema.gov/disasters/coronavirus/economic/funeral-assistance"
 
-summary: "Text to come"
+summary: "Financial assistance may be available to help with the burial and funeral costs for people who died of COVID-19."
 
 link: "https://www.fema.gov/disasters/coronavirus/economic/funeral-assistance#resources"
 
@@ -19,8 +19,12 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: deceased_death_location_is_US
   acceptableValues: [true]
+- criteriaKey: deceased_date_of_funeral
+  label: "The deceased's funeral/burial was after January 20, 2020."
 - criteriaKey: applicant_paid_funeral_expenses
   acceptableValues: [true]
+- criteriaKey: applicant_citizen_status
+  acceptableValues: ["U.S. citizen", "non-citizen national", "qualified alien"]
 
 
 ---
