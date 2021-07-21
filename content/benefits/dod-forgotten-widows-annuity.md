@@ -9,7 +9,7 @@ source:
   name: "Department of Defense"
   link: "https://militarypay.defense.gov/Portals/3/Documents/acmss.pdf"
 
-summary: "The surviving spouse of a deceased person who qualified for Social Security benefits may be eligible for a $255 financial assistance."
+summary: "Commonly referred to as the Annuity for Forgotten Widows, qualified surviving spouses of members of the Uniformed Services may be eligible for financial support."
 
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
