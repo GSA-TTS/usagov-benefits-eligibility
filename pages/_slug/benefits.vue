@@ -13,7 +13,7 @@
       </div>
       <div class="grid-row">
         <div class="tablet:grid-col">
-          <Alert v-show="alert" heading="Results Saved">
+          <Alert v-show="alert">
             The link to this page has been copied to your clipboard.
           </Alert>
         </div>
