@@ -156,7 +156,9 @@ export default {
       } else {
         const forceToBottom = 2048;
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, (benefit) => {
-          return 1 - this.getTotalEligibleCriteria(benefit.eligibility) / (benefit.eligibility?.length || forceToBottom);
+          const matches = this.getTotalEligibleCriteria(benefit.eligibility);
+          const inverseMatchRatio = 1 - matches / (benefit.eligibility?.length || forceToBottom);
+          return `${inverseMatchRatio.toString()}${benefit.title}`;
         });
       }
     },
