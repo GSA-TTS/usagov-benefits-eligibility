@@ -207,6 +207,6 @@ describe('BenefitsBrowser', () => {
     expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,three,two');
     await wrapper.find('#benefitSort').findAll('option').at(0).setSelected();
     expect(wrapper.vm.getTotalEligibleCriteria).toHaveBeenCalled();
-    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,two,three')
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,three,one')
   });
 });
