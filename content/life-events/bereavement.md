@@ -28,8 +28,9 @@ eligibilityCriteria:
     description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
     criteriaGroupKey: applicant
     criteriaKeys:
-      - applicant_relationship
       - applicant_paid_funeral_expenses
       - applicant_funeral_reimbursment
+      - applicant_relationship
+      - applicant_care_for_deceaseds_child
 
 ---
