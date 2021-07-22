@@ -13,6 +13,7 @@ deceased_date_of_funeral,"The deceased's funeral/burial was on the following dat
 deceased_death_circumstance,One of the following circumstances apply to the deceased:,select,(1) died as a result of a service-connected disability; (2) died while receiving or traveling to receive VA care; (3) died while eligible, pending to receive or receiving VA compensation / pension
 applicant_paid_funeral_expenses,You paid for the funeral/burial expenses.,boolean,true
 applicant_funeral_reimbursment,You were NOT reimbursed for the funeral/burial cost by any organization or government agency.,boolean,true
-applicant_relationship,Your relationship to the deceased is,select,spouse; child; other family member; personal or official representative
-applicant_date_of_birth,"Your date of birth",boolean,true 
+applicant_relationship,Your relationship to the deceased is,select,spouse; child; parent; other family member; personal or official representative
+applicant_date_of_birth,"Your date of birth is",boolean,true 
 applicant_citizen_status,"Your citizenship status is",select, U.S. citizen; non-citizen national; qualified alien
+applicant_marital_status,"Your marital status is",select,married; unmarried; divorced
