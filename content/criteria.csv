@@ -17,3 +17,4 @@ applicant_relationship,Your relationship to the deceased is,select,spouse; child
 applicant_date_of_birth,"Your date of birth is",boolean,true 
 applicant_citizen_status,"Your citizenship status is",select, U.S. citizen; non-citizen national; qualified alien
 applicant_marital_status,"Your marital status is",select,married; unmarried; divorced
+applicant_care_for_deceaseds_child,"I'm caring for the deceased's child who is under age 16 or is disabled.",boolean,true
