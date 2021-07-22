@@ -4,7 +4,7 @@ deceased_died_of_COVID,"The deceased died or likely died of COVID-19.",boolean,t
 deceased_death_location_is_US,"The deceased died in the U.S., including its territories.",boolean,true
 deceased_public_safety_officer,"The deceased was a public safety officer who died in the line of duty.",boolean,true
 deceased_date_of_death,"The deceased died on the following date",boolean,true
-deceased_served_in_active_military,"The deceased served in the active military, naval, or air service and",select,was discharged under conditions other than dishonorable; died while on active duty; had retired from the service
+deceased_served_in_active_military,"The deceased served in the active military, naval, or air service and",select,was discharged under conditions other than dishonorable; died while on active duty; had retired from the service, none of the above
 deceased_buried_in_unmarked_grave,The deceased is buried in an unmarked grave.,boolean,true
 deceased_headstone_is_privately_purchased,The deceased's headstone or grave marker is privately purchased.,boolean,true
 deceased_buried_in_private_cemetery,The deceased is buried in a private cemetery.,boolean,true
