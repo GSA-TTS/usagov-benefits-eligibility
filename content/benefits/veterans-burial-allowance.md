@@ -26,7 +26,7 @@ eligibility:
 - criteriaKey: applicant_funeral_reimbursment
   acceptableValues: [true]
 - criteriaKey: applicant_relationship
-  acceptableValues: ["spouse", "child", "other family member", "personal or official representative"]
+  acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]
 
 
 ---
