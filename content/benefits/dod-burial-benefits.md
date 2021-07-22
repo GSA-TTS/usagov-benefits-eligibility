@@ -16,6 +16,6 @@ eligibility:
 - criteriaKey: deceased_served_in_active_military
   acceptableValues: ["died while on active duty"]
 - criteriaKey: applicant_relationship
-  acceptableValues: ["spouse", "child", "other family member"]
+  acceptableValues: ["spouse", "child", "parent", "other family member"]
   
 ---
