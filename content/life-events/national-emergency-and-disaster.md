@@ -5,7 +5,7 @@ summary: "National emergency and disaster life event description here."
 secondaryHeadline: "National Emergency and Disaster Benefits"
 
 eligibilityCriteria:
-    - label: "About the applicant"
+  - label: "About the applicant"
     description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
     criteriaGroupKey: applicant
     criteriaKeys:
