@@ -209,4 +209,50 @@ describe('BenefitsBrowser', () => {
     expect(wrapper.vm.getTotalEligibleCriteria).toHaveBeenCalled();
     expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,three,one')
   });
+
+  it('should filter tags', async () => {
+    const $content = createContentMock(
+      [
+        {
+          collectionName: LIFE_EVENTS_DIRECTORY,
+          items: [{ ...mockContent.lifeEvent }]
+        },
+        {
+          collectionName: BENEFITS_DIRECTORY,
+          items: [{ ...mockContent.benefit }],
+        },
+        {
+          collectionName: CRITERIA_DIRECTORY,
+          items: [{ ...mockContent.criteria }]
+        }
+      ]
+    );
+    const wrapper = shallowMount(BenefitsBrowser, {
+      mocks: vueMocks({ $content }),
+      store
+    });
+    wrapper.vm.lifeEventBenefits = wrapper.vm.allLifeEventBenefits = [
+      {
+        title: 'two',
+        eligibility: [{}, {}, {}],
+        tags: ['tagOne'],
+      },
+      {
+        title: 'one',
+        eligibility: [{}, {}, {}],
+        tags: ['tagOne', 'tagTwo'],
+      },
+      {
+        title: 'three',
+        eligibility: [{}, {}, {}],
+        tags: ['tagThree']
+      },
+    ];
+    wrapper.vm.tagClick('tagOne');
+    expect(wrapper.vm.filter).toBe('tagOne');
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,two');
+    wrapper.vm.clearFilter();
+    expect(wrapper.vm.filter).toBe('');
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,three,two');
+  });
 });

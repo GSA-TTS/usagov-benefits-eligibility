@@ -160,6 +160,7 @@ export default {
     },
   },
   beforeDestroy () {
+    /* istanbul ignore next */
     this.$root.$off('tag:click', this.tagClick);
   },
   mounted () {
