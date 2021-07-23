@@ -5,7 +5,7 @@ summary: "National emergency and disaster life event description here."
 secondaryHeadline: "National Emergency and Disaster Benefits"
 
 eligibilityCriteria:
-  - label: "About the person who died"
+  - label: "Did national emergency or disater cause loss of life?"
     description: "Please check all the boxes that best describe the person who died."
     criteriaGroupKey: deceased
     criteriaKeys:
