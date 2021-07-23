@@ -5,7 +5,7 @@ tags:
 - "burial assistance"
 lifeEvents: 
 - "bereavement"
-- "national-emergency-and-disaster"
+- "national emergency and disaster"
 source:
   name: "Federal Emergency Management Agency"
   link: "https://www.fema.gov/disasters/coronavirus/economic/funeral-assistance"
