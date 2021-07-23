@@ -34,14 +34,19 @@
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-5 desktop:grid-col-4">
           <div v-if="filter">
-            <div>Currently viewing <Tag :name="filter" /></div>
-            <button class="usa-button usa-button--accent-cool margin-bottom-3 margin-top-1" @click="clearFilter">
-              <svg class="usa-icon" aria-hidden="true" focusable="false"
-                role="img">
-                <use xlink:href="~/assets/img/sprite.svg#close" />
-              </svg>
-              Clear filter
-              </button>
+            <div class="margin-bottom-3">
+              Currently viewing
+              <span class="usa-tag bg-green">
+                {{ filter }}
+                <button class="usa-button usa-button--unstyled usa-button--inverse text-white" title="Remove this filter" aria-label="Remove this filter"
+                  @click="clearFilter">
+                  <svg class="usa-icon" aria-hidden="true" focusable="false"
+                    role="img" style="top: .15rem">
+                    <use xlink:href="~/assets/img/sprite.svg#close" />
+                  </svg>
+                </button>
+              </span>
+            </div>
           </div>
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
@@ -182,7 +187,6 @@ export default {
       }
     },
     tagClick (tag) {
-      console.log(tag);
       this.lifeEventBenefits = _.filter(this.allLifeEventBenefits, (benefit) => {
         return benefit.tags.includes(tag);
       });
