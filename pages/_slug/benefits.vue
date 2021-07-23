@@ -33,6 +33,16 @@
 
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-5 desktop:grid-col-4">
+          <div v-if="filter">
+            <div>Currently viewing <Tag :name="filter" /></div>
+            <button class="usa-button usa-button--accent-cool margin-bottom-3 margin-top-1" @click="clearFilter">
+              <svg class="usa-icon" aria-hidden="true" focusable="false"
+                role="img">
+                <use xlink:href="~/assets/img/sprite.svg#close" />
+              </svg>
+              Clear filter
+              </button>
+          </div>
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8">
@@ -48,7 +58,7 @@
           </div>
           <ul
             v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-            class="usa-card-group">
+            class="usa-card-group" aria-live="polite">
             <li
               v-for="benefit in lifeEventBenefits"
               :key="benefit.title"
@@ -58,6 +68,7 @@
                 :card-body="benefit.summary"
                 :card-title="benefit.title"
                 card-title-heading-level="h2"
+                :card-tags-emit-click="true"
                 primary-button-text="How to apply"
                 :primary-button-link="benefit.link"
                 primary-button-target="_blank"
@@ -103,8 +114,10 @@ export default {
         title: '',
         eligibilityCriteria: []
       },
+      allLifeEventBenefits: [],
       lifeEventBenefits: [],
       sort: '',
+      filter: '',
     };
   },
   async fetch () {
@@ -120,7 +133,7 @@ export default {
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
 
     this.lifeEvent = lifeEvent;
-    this.lifeEventBenefits = lifeEventBenefits;
+    this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits;
   },
   computed: {
     lifeEventTitle () {
@@ -140,6 +153,12 @@ export default {
       },
       deep: true,
     },
+  },
+  beforeDestroy () {
+    this.$root.$off('tag:click', this.tagClick);
+  },
+  mounted () {
+    this.$root.$on('tag:click', this.tagClick);
   },
   methods: {
     doCopiedAlert () {
@@ -161,6 +180,19 @@ export default {
           return `${inverseMatchRatio.toString()}${benefit.title}`;
         });
       }
+    },
+    tagClick (tag) {
+      console.log(tag);
+      this.lifeEventBenefits = _.filter(this.allLifeEventBenefits, (benefit) => {
+        return benefit.tags.includes(tag);
+      });
+      this.filter = tag;
+      this.sortBenefits();
+    },
+    clearFilter () {
+      this.filter = '';
+      this.lifeEventBenefits = this.allLifeEventBenefits;
+      this.sortBenefits();
     },
   },
 };

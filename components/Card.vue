@@ -7,7 +7,8 @@
       <div
         v-if="cardTags && cardTags.length > 0"
         class="tags-container margin-top-1">
-        <Tag v-for="tag in cardTags" :key="tag" :name="tag" />
+        <Tag v-for="tag in cardTags" :key="tag" :name="tag"
+          :click="cardTagsEmitClick" />
       </div>
     </header>
     <div class="usa-card__body">
@@ -84,6 +85,11 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+    cardTagsEmitClick: {
+      type: Boolean,
+      required: false,
+      default: false
     },
     cardTags: {
       type: Array,

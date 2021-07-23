@@ -1,5 +1,9 @@
 <template>
-  <span :class="['usa-tag', computedTagClass]">{{ name }}</span>
+  <span>
+    <span v-if="click" role="button" class="usa-tag bg-green"
+      style="cursor: pointer" @click="onClick">{{ name }}</span>
+    <span v-else class="usa-tag bg-green">{{ name }}</span>
+  </span>
 </template>
 <script>
 export default {
@@ -8,32 +12,20 @@ export default {
       type: String,
       required: true,
       default: "tag name not provided"
-    }
+    },
+    click: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data () {
-    return {
-      // TODO: Define colors universally
-      availableTagColors: [
-        "base-dark",
-        "violet",
-        "orange",
-        "accent-warm",
-        "green",
-        "indigo",
-        "cyan",
-        "magenta"
-      ]
-    };
+    return {};
   },
-  computed: {
-    computedTagClass () {
-      return (
-        "bg-" +
-        this.availableTagColors[
-          Math.floor(Math.random() * this.availableTagColors.length)
-        ]
-      );
-    }
-  }
+  methods: {
+    onClick () {
+      this.$root.$emit('tag:click', this.name);
+    },
+  },
 };
 </script>
