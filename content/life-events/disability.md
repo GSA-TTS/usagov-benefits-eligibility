@@ -2,6 +2,7 @@
 # yaml front matter here
 title: "Disability"
 summary: "Whether you are newly disabled or have a lifelong challenge, assistance may be available, including financial help."
+lede: "Whether you are newly disabled or have a lifelong challenge, assistance may be available, including financial help."
 secondaryHeadline: "Disability Benefits"
 
 eligibilityCriteria:
