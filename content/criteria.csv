@@ -19,3 +19,4 @@ applicant_citizen_status,"Your citizenship status is",select, U.S. citizen; non-
 applicant_marital_status,"Your marital status is",select,married; unmarried; divorced
 applicant_care_for_deceaseds_child,"You are caring for the deceased's child who is under age 16 or is disabled.",boolean,true
 applicant_declared_disaster,"Your residence is in a declared disater area.",boolean,true
+applicant_disability,"You have a medically determinable physical or mental impairment (including an emotional or learning problem).",boolean,true
