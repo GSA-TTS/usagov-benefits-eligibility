@@ -4,9 +4,7 @@ headline: "Medicaid"
 tags: 
 - "healthcare"
 lifeEvents: 
-- "late adulthood"
-- "retirement"
-- "disability"
+- "loss of income an low income"
 - "pregnancy and new baby"
 source:
   name: "Centers for Medicare and Medicaid"
