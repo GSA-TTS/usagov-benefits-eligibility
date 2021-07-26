@@ -10,6 +10,7 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_paid_into_SS
+      - applicant_income
       - applicant_disability
       - applicant_ability_to_work
       - applicant_citizen_status
