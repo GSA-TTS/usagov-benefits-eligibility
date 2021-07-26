@@ -22,3 +22,4 @@ applicant_declared_disaster,"Your residence is in a declared disaster area.",boo
 applicant_disability,"You have a medically determinable physical or mental impairment (including an emotional or learning problem).",boolean,true
 applicant_ability_to_work,"You are unable to work on regular basis because of a disability.",boolean,true
 applicant_paid_into_SS,"You qualify for Social Security benefits (You worked long enough and paid Social Security taxes on your earnings).",boolean,true
+applicant_income,"You have limited income and resources.",boolean,true
