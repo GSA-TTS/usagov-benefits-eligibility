@@ -1,7 +1,7 @@
 ---
 # yaml front matter here
 title: "Loss of job and low income"
-summary: "Loss of job and low income life event description."
+summary: "There may be benefits available to help you with a recent job loss or is you have low income, including financial help and retraining."
 secondaryHeadline: "Loss of Job and Low Income Benefits"
 
 eligibilityCriteria:
