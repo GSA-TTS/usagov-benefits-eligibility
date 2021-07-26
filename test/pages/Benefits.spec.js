@@ -38,6 +38,11 @@ const mockContent = {
     tags: ["burial honors"],
     title: "Benefit One Title",
     toc: [],
+    eligibility: [
+      { criteriaKey: "criteriaKey1", acceptableValues: ["one"] },
+      { criteriaKey: "criteriaKey2", acceptableValues: ["two"] },
+      { criteriaKey: "virtualKey1", acceptableValues: [true] },
+    ],
   },
   criteria: {
     body: [
@@ -201,12 +206,18 @@ describe('BenefitsBrowser', () => {
         title: 'three',
         eligibility: [{}, {}, {}],
       },
+      {
+        title: 'four',
+        eligibility: [{}, {}, {}],
+      },
     ];
-    jest.spyOn(wrapper.vm, 'getTotalEligibleCriteria').mockReturnValueOnce(3).mockReturnValueOnce(1).mockReturnValueOnce(2);
+    jest.spyOn(wrapper.vm, 'getTotalEligibleCriteria').mockReturnValueOnce(3).mockReturnValueOnce(1).mockReturnValueOnce(2).mockReturnValueOnce(3);
+    jest.spyOn(wrapper.vm, 'getTotalIneligibleCriteria').mockReturnValueOnce(1).mockReturnValueOnce(0).mockReturnValueOnce(0).mockReturnValueOnce(0);
+    jest.spyOn(wrapper.vm, 'getVirtualCriteria').mockReturnValue({});
     await wrapper.find('#benefitSort').findAll('option').at(1).setSelected();
-    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,three,two');
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('four,one,three,two');
     await wrapper.find('#benefitSort').findAll('option').at(0).setSelected();
     expect(wrapper.vm.getTotalEligibleCriteria).toHaveBeenCalled();
-    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,three,one')
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,three,one,four')
   });
 });

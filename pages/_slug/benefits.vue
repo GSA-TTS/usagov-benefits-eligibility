@@ -128,6 +128,7 @@ export default {
     },
     ...mapGetters({
       getTotalEligibleCriteria: 'criteria/getTotalEligibleCriteria',
+      getTotalIneligibleCriteria: 'criteria/getTotalIneligibleCriteria',
     }),
     ...mapState({
       eligibilityCriteria: state => state.criteria.eligibilityCriteria,
@@ -146,6 +147,21 @@ export default {
       this.alert = true;
       setTimeout(() => { this.alert = false; }, 20 * 1000);
     },
+    getVirtualCriteria () {
+      const lifeEventCriteria = Object.fromEntries(this.lifeEvent.eligibilityCriteria
+        .map(ec => ec.criteriaKeys)
+        .flat()
+        .map(criteriaKey => [criteriaKey, true]));
+      const virtualCriteria = {};
+      for (const benefit of this.lifeEventBenefits) {
+        for (const criteria of benefit.eligibility) {
+          if (!lifeEventCriteria[criteria.criteriaKey]) {
+            virtualCriteria[criteria.criteriaKey] = true;
+          }
+        }
+      }
+      return virtualCriteria;
+    },
     sortChange (event) {
       this.sort = event.target.value;
       this.sortBenefits();
@@ -155,11 +171,14 @@ export default {
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [this.sort]);
       } else {
         const forceToBottom = 2048;
-        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, (benefit) => {
-          const matches = this.getTotalEligibleCriteria(benefit.eligibility);
-          const inverseMatchRatio = 1 - matches / (benefit.eligibility?.length || forceToBottom);
-          return `${inverseMatchRatio.toString()}${benefit.title}`;
+        const virtualCriteria = this.getVirtualCriteria();
+        this.lifeEventBenefits.forEach((benefit) => {
+          const matches = benefit.matches = this.getTotalEligibleCriteria(benefit.eligibility);
+          const ineligible = this.getTotalIneligibleCriteria(benefit.eligibility) > 0;
+          const virtualBenefitEligibility = benefit.virtualBenefitEligibility = (benefit.eligibility || []).filter(c => virtualCriteria[c.criteriaKey]).length;
+          benefit.inverseMatchRatio = (1 - (matches / (benefit.eligibility.length - virtualBenefitEligibility))) + (ineligible ? forceToBottom : 0);
         });
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ['inverseMatchRatio', 'title']);
       }
     },
   },
