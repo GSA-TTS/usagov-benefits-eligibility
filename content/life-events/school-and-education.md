@@ -2,6 +2,7 @@
 # yaml front matter here
 title: "School and education"
 summary: "Find out what help is available as you pursue your education, including loans, grants, and guidance."
+lede: "Find out what help is available as you pursue your education, including loans, grants, and guidance."
 secondaryHeadline: "School and Education Benefits"
 
 eligibilityCriteria:
