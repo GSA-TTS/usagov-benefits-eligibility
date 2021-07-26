@@ -10,6 +10,7 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_disability
+      - applicant_ability_to_work
       - applicant_citizen_status
       - applicant_marital_status
 
