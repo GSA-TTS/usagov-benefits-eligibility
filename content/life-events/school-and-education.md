@@ -1,7 +1,7 @@
 ---
 # yaml front matter here
 title: "School and education"
-summary: "School and education life event desciption here."
+summary: "Find out what help is available as you pursue your education, including loans, grants, and guidance."
 secondaryHeadline: "School and Education Benefits"
 
 eligibilityCriteria:
