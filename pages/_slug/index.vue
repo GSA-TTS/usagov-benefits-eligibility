@@ -1,61 +1,123 @@
 <template>
   <div>
-    <section class="grid-container usa-section">
+    <section class="grid-container">
       <div class="grid-row grid-gap">
-        <div class="tablet:grid-col-10">
-          <h1 v-if="lifeEvent.title" class="font-heading-3x margin-top-0">
+        <div class="tablet:grid-col">
+          <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7">
             {{ lifeEvent.title }}
           </h1>
           <p v-if="lifeEvent.lede" class="usa-intro">
             {{ lifeEvent.lede }}
           </p>
-          <nuxt-link :to="lifeEvent.slug + '/benefits'" class="usa-button usa-button--big">
-            Estimate my possible benefits
-          </nuxt-link>
+          <p v-else-if="lifeEvent.summary" class="usa-intro">
+            {{ lifeEvent.summary }}
+          </p>
+        </div>
+        <div
+          class="tablet:grid-col-2 desktop:grid-col-2 margin-top-3 text-right">
+          <results-button @copied="doCopiedAlert" />
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="tablet:grid-col">
+          <Alert v-show="alert">
+            The link to this page has been copied to your clipboard.
+          </Alert>
         </div>
       </div>
 
-      <div class="grid-row grid-gap margin-top-4">
-        <div class="tablet:grid-col-12">
-          <h2 class="font-heading-xl margin-top-8">
+      <div class="grid-row grid-gap">
+        <div class="grid-col margin-y-3">
+          <h1 v-if="lifeEventTitle" class="font-heading-xl margin-top-1">
             {{ lifeEvent.secondaryHeadline }}
-          </h2>
+          </h1>
+        </div>
+        <div class="grid-col margin-y-3 text-right">
+          <label
+            class="usa-label display-inline margin-right-1"
+            for="benefitSort">Showing {{ lifeEventBenefits.length }} related benefits sorted
+            by:</label>
+          <select
+            id="benefitSort"
+            class="usa-select margin-left-auto width-card display-inline-block"
+            name="options"
+            @change="sortChange">
+            <option value="relevance" :selected="sort === 'relevance'">
+              Relevance
+            </option>
+            <option value="title" :selected="sort === 'title'">
+              Title (A-Z)
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-row grid-gap">
+        <div class="tablet:grid-col-5 desktop:grid-col-4">
+          <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
+        </div>
+        <div class="tablet:grid-col-7 desktop:grid-col-8">
+          <div
+            v-if="$fetchState.pending"
+            class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
+            <div class="usa-alert__body">
+              <p class="usa-alert__text">Fetching benefits...</p>
+            </div>
+          </div>
+          <div
+            v-if="$fetchState.error"
+            class="usa-alert usa-alert--error usa-alert--slim">
+            <div class="usa-alert__body">
+              <p class="usa-alert__text">Error while fetching benefits.</p>
+            </div>
+          </div>
+          <div
+            v-if="lifeEventBenefits && lifeEventBenefits.length == 0"
+            class="usa-alert usa-alert--error usa-alert--slim">
+            <div class="usa-alert__body">
+              <p class="usa-alert__text">No matching benefits found.</p>
+            </div>
+          </div>
+
           <ul
             v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
             class="usa-card-group">
             <li
               v-for="benefit in lifeEventBenefits"
               :key="benefit.title"
-              class="usa-card desktop:grid-col-6"
+              class="usa-card desktop:grid-col-12 flex-auto"
               :aria-label="benefit.title">
               <Card
                 :card-body="benefit.summary"
                 :card-title="benefit.title"
+                card-title-heading-level="h2"
                 primary-button-text="How to apply"
-                :primary-button-link="benefit.link"
+                :primary-button-link="
+                  benefit.source ? benefit.source.link : '#'
+                "
+                primary-button-target="_blank"
                 :card-tags="benefit.tags">
                 <template
                   v-if="
                     benefit.source && benefit.source.name && benefit.source.link
                   "
                   #source>
-                  <h4
+                  <h3
                     class="font-sans-xs text-normal text-base-dark margin-bottom-0">
                     Provided by the
-                    <a class="usa-link" :href="benefit.source.link">{{
-                      benefit.source.name
-                    }}</a>
-                  </h4>
+                    <a
+                      class="usa-link"
+                      :href="benefit.source ? benefit.source.link : '#'"
+                      target="_blank">{{ benefit.source.name }}</a>
+                  </h3>
+                </template>
+                <template #eligibility>
+                  <EligibilityList
+                    :benefit-eligibility-criteria="benefit.eligibility"/>
                 </template>
               </Card>
             </li>
           </ul>
-        </div>
-      </div>
-
-      <div class="grid-row grid-gap">
-        <div class="tablet:grid-col-8">
-          <nuxt-content :document="lifeEvent" />
         </div>
       </div>
     </section>
@@ -63,24 +125,89 @@
 </template>
 
 <script>
+import _ from "lodash";
+import { mapGetters, mapState } from "vuex";
+import EligibilityList from "~/components/EligibilityList.vue";
+
 export default {
+  components: { EligibilityList },
   layout: "default",
-  async asyncData ({ $content, params }) {
-    const lifeEvent = await $content("life-events", params.slug).fetch();
-    const lifeEventBenefits = await $content("benefits")
+  data () {
+    return {
+      alert: false,
+      lifeEvent: {
+        slug: "",
+        title: "",
+        lede: "",
+        summary: "",
+        eligibilityCriteria: []
+      },
+      lifeEventBenefits: [],
+      sort: ""
+    };
+  },
+  async fetch () {
+    const lifeEvent = await this.$content(
+      "life-events",
+      this.$route.params.slug
+    ).fetch();
+    const lifeEventBenefits = await this.$content("benefits")
       .where({
-        lifeEvents: { $contains: params.slug }
+        lifeEvents: { $contains: this.$route.params.slug }
       })
       .sortBy("title")
       .fetch();
 
-    return { lifeEvent, lifeEventBenefits };
+    const allEligibilityCriteria = (await this.$content("criteria").fetch())
+      .body;
+    await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
+
+    this.lifeEvent = lifeEvent;
+    this.lifeEventBenefits = lifeEventBenefits;
   },
-  data () {
-    return {
-      lifeEvent: {},
-      lifeEventBenefits: []
-    };
+  computed: {
+    lifeEventTitle () {
+      return this.lifeEvent.secondaryHeadline;
+    },
+    ...mapGetters({
+      getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria"
+    }),
+    ...mapState({
+      eligibilityCriteria: state => state.criteria.eligibilityCriteria
+    })
+  },
+  watch: {
+    eligibilityCriteria: {
+      handler (newEligibilityCriteria) {
+        this.sortBenefits();
+      },
+      deep: true
+    }
+  },
+  methods: {
+    doCopiedAlert () {
+      this.alert = true;
+      setTimeout(() => {
+        this.alert = false;
+      }, 20 * 1000);
+    },
+    sortChange (event) {
+      this.sort = event.target.value;
+      this.sortBenefits();
+    },
+    sortBenefits () {
+      if (this.sort === "title") {
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [this.sort]);
+      } else {
+        const forceToBottom = 2048;
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, (benefit) => {
+          const matches = this.getTotalEligibleCriteria(benefit.eligibility);
+          const inverseMatchRatio =
+            1 - matches / (benefit.eligibility?.length || forceToBottom);
+          return `${inverseMatchRatio.toString()}${benefit.title}`;
+        });
+      }
+    }
   }
 };
 </script>

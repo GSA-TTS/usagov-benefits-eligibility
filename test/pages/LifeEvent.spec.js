@@ -1,10 +1,13 @@
 import { shallowMount } from "@vue/test-utils";
-import LifeEventPage from '@/pages/_slug/index.vue'
 import beforeAllTests from '@/test/beforeAllTests';
 import { createContentMock } from '@/test/mockContent';
+import Vuex from 'vuex';
+import LifeEventPage from '~/pages/_slug/index.vue';
+import { state as criteriaState, mutations, getters, actions } from '~/store/criteria';
 
 const THIS_LIFE_EVENT_SLUG = 'this-life-event';
 const LIFE_EVENTS_DIRECTORY = 'life-events';
+const CRITERIA_DIRECTORY = 'criteria';
 const BENEFITS_DIRECTORY = 'benefits';
 
 const mockContent = {
@@ -13,69 +16,197 @@ const mockContent = {
     title: 'test life event title',
     summary: 'test life event summary',
     lede: 'test life event lede',
-    secondaryHeadline: 'test life event secondary headline'
+    secondaryHeadline: 'test life event secondary headline',
+    eligibilityCriteria: [
+      {
+        label: "first group label",
+        description: "first group description",
+        criteriaGroupKey: 'group1',
+        criteriaKeys: ['criteriaKey1', 'criteriaKey2']
+      }
+    ]
   },
-  lifeEventBenefits: [
-    {
-      title: 'test benefit title',
-      summary: 'test benefit summary',
-      link: '#test-benefit-link',
-      tags: ['test-tag'],
-      lifeEvents: [THIS_LIFE_EVENT_SLUG],
-      source: {
-        name: 'test source name',
-        link: '#test-source-link'
+  benefit: {
+    slug: THIS_LIFE_EVENT_SLUG,
+    agency: "Benefit Agency",
+    headline: "Benefit One",
+    identifier: "benefitOne",
+    lifeEvents: ["bereavement", THIS_LIFE_EVENT_SLUG],
+    provider: "Federal Government",
+    source: { name: "Dept. of Benefit One", link: "#" },
+    summary: "Benefit one summary.",
+    tags: ["burial honors"],
+    title: "Benefit One Title",
+    toc: [],
+  },
+  criteria: {
+    body: [
+      {
+        criteriaKey: "criteriaKey1",
+        label: "Benefit criteria label 1.",
+        type: "boolean",
+        values: [true]
+      },
+      {
+        criteriaKey: "criteriaKey2",
+        label: "Benefit criteria label 2.",
+        type: "boolean",
+        values: [true]
       }
+    ]
+  },
+}
+
+const vueMocks = (mocks) => {
+  return Object.assign({}, {
+    $fetchState: {
+      pending: false,
+      error: false,
     },
-    {
-      title: 'test benefit title 2',
-      summary: 'test benefit summary 2',
-      link: '#test-benefit-link-2',
-      tags: ['test-tag-2'],
-      lifeEvents: ['not-this-life-event'],
-      source: {
-        name: 'test source name',
-        link: '#test-source-link'
-      }
-    }
-  ]
+    $route: {
+      path: `/${THIS_LIFE_EVENT_SLUG}`,
+      params: {
+        slug: THIS_LIFE_EVENT_SLUG,
+      },
+    },
+  }, mocks);
 };
 
-describe('LifeEventPage', () => {
+describe('Life Event page', () => {
+  let store;
 
   beforeAll(async () => {
     await beforeAllTests();
   });
 
+  beforeEach(() => {
+    criteriaState.namespaced = true;
+    store = new Vuex.Store({
+      modules: {
+        criteria: {
+          namespaced: true,
+          state: criteriaState,
+          actions,
+          mutations,
+          getters
+        },
+      },
+    });
+  })
+
   it('is a Vue instance', () => {
-    const wrapper = shallowMount(LifeEventPage);
+    const wrapper = shallowMount(LifeEventPage, {
+      mocks: vueMocks(),
+      store
+    });
     expect(wrapper.vm).toBeTruthy();
   });
 
-  it('displays benefits in cards', async () => {
-    const wrapper = shallowMount(LifeEventPage);
-    await wrapper.setData(mockContent);
-    expect(wrapper.find('.usa-card-group').exists()).toBeTruthy();
-    expect(wrapper.findAll('.usa-card').length).toBe(mockContent.lifeEventBenefits.length);
-
-  });
-
-  it('asyncData() fetches the given data', async () => {
+  it('displays the page content', async () => {
     const $content = createContentMock(
       [
         {
-          collectionName: BENEFITS_DIRECTORY,
-          items: mockContent.lifeEventBenefits
-        },
-        {
           collectionName: LIFE_EVENTS_DIRECTORY,
           items: [{ ...mockContent.lifeEvent }]
+        },
+        {
+          collectionName: BENEFITS_DIRECTORY,
+          items: [{ ...mockContent.benefit }],
+        },
+        {
+          collectionName: CRITERIA_DIRECTORY,
+          items: [{ ...mockContent.criteria }]
         }
       ]
     );
-    const asyncItems = await LifeEventPage.asyncData({ $content, params: { slug: THIS_LIFE_EVENT_SLUG } });
-    expect(asyncItems.lifeEventBenefits).toHaveLength(1);
-    expect($content).toHaveBeenCalledWith(LIFE_EVENTS_DIRECTORY, THIS_LIFE_EVENT_SLUG);
-    expect($content).toHaveBeenCalledWith(BENEFITS_DIRECTORY);
+    const wrapper = shallowMount(LifeEventPage, {
+      mocks: vueMocks({ $content }),
+      store
+    });
+
+    await wrapper.vm.$options.fetch.apply(wrapper.vm);
+    wrapper.vm.lifeEvent = mockContent.lifeEvent;
+    await store.dispatch("criteria/populate", [...mockContent.criteria.body]);
+    await wrapper.vm.$nextTick();
+    expect(wrapper.find('h1').text()).toBe('test life event title');
+    expect(wrapper.vm.lifeEventTitle).toBe('test life event secondary headline');
+  });
+
+  it('should display an alert when the results are copied', async () => {
+    jest.useFakeTimers();
+    const $content = createContentMock(
+      [
+        {
+          collectionName: LIFE_EVENTS_DIRECTORY,
+          items: [{ ...mockContent.lifeEvent }]
+        },
+        {
+          collectionName: BENEFITS_DIRECTORY,
+          items: [{ ...mockContent.benefit }],
+        },
+        {
+          collectionName: CRITERIA_DIRECTORY,
+          items: [{ ...mockContent.criteria }]
+        }
+      ]
+    );
+    const wrapper = shallowMount(LifeEventPage, {
+      mocks: vueMocks({ $content }),
+      store
+    });
+
+    await wrapper.vm.$options.fetch.apply(wrapper.vm);
+    wrapper.vm.lifeEvent = mockContent.lifeEvent;
+    await store.dispatch("criteria/populate", [...mockContent.criteria.body]);
+    await wrapper.vm.$nextTick();
+    wrapper.vm.doCopiedAlert();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.find('alert-stub').attributes('style')).toBe('');
+    jest.runAllTimers();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.find('alert-stub').attributes('style')).toMatch(/display.*none/);
+  });
+
+  it('should sort the results', async () => {
+    const $content = createContentMock(
+      [
+        {
+          collectionName: LIFE_EVENTS_DIRECTORY,
+          items: [{ ...mockContent.lifeEvent }]
+        },
+        {
+          collectionName: BENEFITS_DIRECTORY,
+          items: [{ ...mockContent.benefit }],
+        },
+        {
+          collectionName: CRITERIA_DIRECTORY,
+          items: [{ ...mockContent.criteria }]
+        }
+      ]
+    );
+    const wrapper = shallowMount(LifeEventPage, {
+      mocks: vueMocks({ $content }),
+      store
+    });
+    wrapper.vm.lifeEventBenefits = [
+      {
+        title: 'two',
+        eligibility: [{}, {}, {}],
+      },
+      {
+        title: 'one',
+        eligibility: [{}, {}, {}],
+      },
+      {
+        title: 'three',
+        eligibility: [{}, {}, {}],
+      },
+    ];
+    jest.spyOn(wrapper.vm, 'getTotalEligibleCriteria').mockReturnValueOnce(3).mockReturnValueOnce(1).mockReturnValueOnce(2);
+    await wrapper.find('#benefitSort').findAll('option').at(1).setSelected();
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,three,two');
+    await wrapper.find('#benefitSort').findAll('option').at(0).setSelected();
+    expect(wrapper.vm.getTotalEligibleCriteria).toHaveBeenCalled();
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,three,one')
   });
 });
