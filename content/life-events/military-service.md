@@ -1,7 +1,7 @@
 ---
 # yaml front matter here
 title: "Military service"
-summary: "Military service life event description here."
+summary: "Service members and veterans have man benefits available to them, including educational assistance, home loans, and life insurance."
 secondaryHeadline: "Military Service Benefits"
 
 eligibilityCriteria:
