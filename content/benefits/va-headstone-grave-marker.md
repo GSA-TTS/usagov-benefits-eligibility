@@ -11,8 +11,6 @@ source:
 
 summary: "A headstone, grave or niche marker, or medallion may be available to honor a veteran, service member, or eligible family member."
 
-link: "https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/"
-
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
 - criteriaKey: deceased_served_in_active_military
