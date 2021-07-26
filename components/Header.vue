@@ -135,7 +135,19 @@
               </ul>
             </li>-->
             <li class="usa-nav__primary-item">
-              <nuxt-link :to="'/'" class="usa-nav__link" ><span>Life Events</span></nuxt-link>
+              <nuxt-link :to="'/'" class="usa-nav__link">
+                <span>Benefits by life event</span>
+              </nuxt-link>
+            </li>
+            <li class="usa-nav__primary-item">
+              <a class="usa-nav__link">
+                <span>Benefits by category</span>
+              </a>
+            </li>
+            <li class="usa-nav__primary-item">
+              <a class="usa-nav__link">
+                <span>Benefits by agency</span>
+              </a>
             </li>
           </ul>
           <div class="usa-nav__secondary">
@@ -162,13 +174,6 @@
         </div>
       </nav>
     </header>
-    <div class="grid-container">
-      <div class="grid-row">
-        <div class="grid-col margin-top-0">
-            <Breadcrumb />
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
