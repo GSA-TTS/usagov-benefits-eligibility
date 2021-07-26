@@ -9,7 +9,7 @@ eligibilityCriteria:
     description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
     criteriaGroupKey: applicant
     criteriaKeys:
-      - deceased_paid_into_SS
+      - applicant_paid_into_SS
       - applicant_disability
       - applicant_ability_to_work
       - applicant_citizen_status
