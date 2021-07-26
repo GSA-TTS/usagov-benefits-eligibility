@@ -5,15 +5,6 @@ summary: "Service members and veterans have man benefits available to them, incl
 secondaryHeadline: "Military Service Benefits"
 
 eligibilityCriteria:
-  - label: "About the person who died"
-    description: "Please check all the boxes that best describe the person who died."
-    criteriaGroupKey: deceased
-    criteriaKeys:
-      - deceased_paid_into_SS
-      - deceased_died_of_COVID
-      - deceased_death_location_is_US
-      - deceased_public_safety_officer
-
   - label: "About the military service"
     description: "Please select options and check all the boxes that best describe the person who died."
     criteriaGroupKey: military
