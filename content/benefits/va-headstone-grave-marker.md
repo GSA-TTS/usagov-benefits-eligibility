@@ -5,6 +5,7 @@ tags:
 - "memorial"
 lifeEvents: 
 - "bereavement"
+- "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/"
