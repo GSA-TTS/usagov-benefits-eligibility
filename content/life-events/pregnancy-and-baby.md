@@ -1,7 +1,7 @@
 ---
 # yaml front matter here
 title: "Pregnancy and new baby"
-summary: "Pregnancy and new baby life event descritpion here."
+summary: "Discover what benefits are available during pregnancy and when you have a new child, either through birth or adoption."
 secondaryHeadline: "Pregnancy and New Baby Benefits"
 
 eligibilityCriteria:
