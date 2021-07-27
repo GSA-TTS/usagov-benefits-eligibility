@@ -17,4 +17,10 @@ eligibilityCriteria:
       - applicant_citizen_status
 
 
+  - label: "About your military service"
+    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    criteriaGroupKey: applicant
+    criteriaKeys:
+      - applicant_served_in_active_military
+
 ---
