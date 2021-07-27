@@ -38,6 +38,11 @@ const mockContent = {
     tags: ["burial honors"],
     title: "Benefit One Title",
     toc: [],
+    eligibility: [
+      { criteriaKey: "criteriaKey1", acceptableValues: [true] },
+      { criteriaKey: "criteriaKey2", acceptableValues: [true] },
+      { criteriaKey: "virtualCriteriaKey1" },
+    ],
   },
   criteria: {
     body: [
@@ -256,9 +261,9 @@ describe('Life Event page', () => {
     ];
     wrapper.vm.tagClick('tagOne');
     expect(wrapper.vm.filter).toBe('tagOne');
-    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,two');
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,one');
     wrapper.vm.clearFilter();
     expect(wrapper.vm.filter).toBe('');
-    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('one,three,two');
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,one,three');
   });
 });
