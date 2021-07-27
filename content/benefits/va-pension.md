@@ -6,6 +6,7 @@ tags:
 lifeEvents: 
 - "retirement"
 - "military-service"
+- "disability"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/pension/how-to-apply/"
