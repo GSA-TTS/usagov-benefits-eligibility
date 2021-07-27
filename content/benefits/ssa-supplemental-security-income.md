@@ -4,10 +4,10 @@ headline: "Supplemental Security Income"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "late adulthood"
+- "late-adulthood"
 - "retirement"
 - "disability"
-- "loss of job and low income"
+- "loss-of-job-and-low-income"
 source:
   name: "Social Security Administration"
   link: "https://www.ssa.gov/ssi/text-apply-ussi.htm"
