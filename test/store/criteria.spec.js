@@ -54,5 +54,19 @@ describe('criteria', () => {
       const ret = getters.getCriterionByEligibilityKey(storeState)('bad_key');
       expect(ret.key).toMatch(/error-missing-key--/)
     });
+    describe('getTotalEligibleCriteria', () => {
+      it('should return 0 when there are no criteria', () => {
+        const storeState = state();
+        const ret = getters.getTotalEligibleCriteria(storeState, getters)();
+        expect(ret).toBe(0);
+      });
+    });
+    describe('getTotalIneligibleCriteria', () => {
+      it('should return 0 when there are no criteria', () => {
+        const storeState = state();
+        const ret = getters.getTotalIneligibleCriteria(storeState, getters)();
+        expect(ret).toBe(0);
+      });
+    });
   });
 });
