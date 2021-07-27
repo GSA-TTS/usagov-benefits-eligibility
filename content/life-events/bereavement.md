@@ -15,7 +15,7 @@ eligibilityCriteria:
       - deceased_death_location_is_US
       - deceased_public_safety_officer
 
-  - label: "About the military service"
+  - label: "About the deceased's military service"
     description: "Please select options and check all the boxes that best describe the person who died."
     criteriaGroupKey: military
     criteriaKeys:

@@ -18,7 +18,7 @@ eligibility:
 - criteriaKey: applicant_relationship
   acceptableValues: [child]
 - criteriaKey: applicant_date_of_birth
-  label: "You are 18 years old or younger (19 years old or younger if you are a full-time student in an elementary or secondary school)."
+  label: "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school)."
 - criteriaKey: applicant_marital_status
   acceptableValues: [unmarried]
 

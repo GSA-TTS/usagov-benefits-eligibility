@@ -17,6 +17,8 @@ eligibility:
   acceptableValues: [true] 
 - criteriaKey: applicant_care_for_deceaseds_child
   acceptableValues: [true]
+- criteriaKey: applicant_marital_status
+  acceptableValues: ["unmarried", "widowed"]
 
 
 ---

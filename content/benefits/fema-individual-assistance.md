@@ -4,7 +4,7 @@ headline: "Disaster Recovery - Individual Assistance"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "national emergency and disaster"
+- "national-emergency-and-disaster"
 source:
   name: "Federal Emergency Management Agency"
   link: "https://www.disasterassistance.gov/"

@@ -4,8 +4,8 @@ headline: "Medicaid"
 tags: 
 - "healthcare"
 lifeEvents: 
-- "loss of income an low income"
-- "pregnancy and new baby"
+- "loss-of-job-and-low-income"
+- "pregnancy-and-baby"
 source:
   name: "Centers for Medicare and Medicaid"
   link: "https://www.medicaid.gov/"
