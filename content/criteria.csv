@@ -24,4 +24,4 @@ applicant_ability_to_work,"You are unable to work on regular basis because of a 
 applicant_paid_into_SS,"You qualify for Social Security benefits (You worked long enough and paid Social Security taxes on your earnings).",boolean,true
 applicant_income,"You have limited income and resources.",boolean,true
 applicant_high-school_diploma,"You are qualified to obtain a college or career school education (You have a high school diploma or a GED certificate).",boolean,true
-applicant_degree_cerificate_program,"You are enrolled or accepted for enrollment as a regular student in an eligible degree or certificate program.",boolean,true
+applicant_degree_cerificate_program,"You are enrolled or accepted for enrollment as a regular student in a degree or certificate program.",boolean,true
