@@ -58,7 +58,7 @@ export default {
       fallbackLocale: 'en',
       messages: {
         en: {
-          projectName: 'Benefits for Life Events',
+          projectName: 'Benefits Eligibility Awareness Resource',
           banner: {
             official: 'An official website of the United States government',
             know: 'Here’s how you know',

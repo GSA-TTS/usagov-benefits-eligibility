@@ -17,7 +17,3 @@ eligibilityCriteria:
       
 
 ---
-
-# Retirement
-
-Lorem ipsum dolor sit amet.

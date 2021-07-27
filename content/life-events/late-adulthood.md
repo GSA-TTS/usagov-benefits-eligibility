@@ -15,8 +15,3 @@ eligibilityCriteria:
       - applicant_marital_status
 
 ---
-
-
-# Later adulthood
-
-Lorem ipsum dolor sit amet.
