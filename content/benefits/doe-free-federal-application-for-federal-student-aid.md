@@ -1,10 +1,10 @@
 ---
-title: "SFederal Student Aid"
+title: "Federal Student Aid"
 headline: "Federal Student Aid"
 tags: 
 - "educational assistance"
 lifeEvents: 
-- "school and education"
+- "school-and-education"
 source:
   name: "U.S. Department of Education"
   link: "https://studentaid.gov/"
@@ -19,3 +19,4 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
   acceptableValues: ["U.S. citizen", "non-citizen national", "qualified alien"]
+---
