@@ -20,6 +20,6 @@ eligibility:
 - criteriaKey: applicant_disability
   acceptableValues: [true]
 - criteriaKey: applicant_served_in_active_military
-  acceptableValues: ["was discharged under conditions other than dishonorable"]
+  acceptableValues: ["were discharged under conditions other than dishonorable"]
 
 ---
