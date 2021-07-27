@@ -184,7 +184,7 @@ describe('Life Event page', () => {
         }
       ]
     );
-    const wrapper = shallowMount(BenefitsBrowser, {
+    const wrapper = shallowMount(LifeEventPage, {
       mocks: vueMocks({ $content }),
       store
     });
