@@ -19,7 +19,7 @@ eligibility:
 - criteriaKey: applicant_disability
   acceptableValues: [true]
 - criteriaKey: applicant_date_of_birth
-  label: "You are 65 years old or older, or you are disabled."
+  label: "You are at least 65 years old, or you are disabled."
 - criteriaKey: applicant_income
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
