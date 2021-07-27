@@ -19,5 +19,7 @@ eligibility:
   acceptableValues: [spouse]
 - criteriaKey: applicant_date_of_birth
   label: "You are at least 60 years old (or at least 50 years old if disabled)."
+- criteriaKey: applicant_marital_status
+  acceptableValues: ["widowed", "divorced"]  
 
 ---
