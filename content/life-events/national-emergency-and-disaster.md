@@ -1,7 +1,8 @@
 ---
 # yaml front matter here
 title: "National emergency and disaster"
-summary: "National emergency and disaster life event description here."
+summary: "If you have experience a national emergency or a disaster, help may be available, including temporary housing and financial help."
+lede: "If you have experience a national emergency or a disaster, help may be available, including temporary housing and financial help."
 secondaryHeadline: "National Emergency and Disaster Benefits"
 
 eligibilityCriteria:
