@@ -65,6 +65,14 @@ export const getters = {
       return matchingCriteria.length;
     }
   },
+  getTotalIneligibleCriteria: (state, getters) => (benefitEligibilityCriteria = []) => {
+    if (benefitEligibilityCriteria && benefitEligibilityCriteria.length < 1) {
+      return 0;
+    } else {
+      const matchingCriteria = benefitEligibilityCriteria.filter(criterion => getters.doesCriterionMatchSelection(criterion) === false);
+      return matchingCriteria.length;
+    }
+  },
   isCriterionSelected: (state, getters) => (criterion) => {
     return !!getters.getCriterionByEligibilityKey(criterion.criteriaKey).response;
   },
