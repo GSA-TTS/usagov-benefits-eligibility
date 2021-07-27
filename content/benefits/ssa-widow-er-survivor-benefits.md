@@ -18,6 +18,6 @@ eligibility:
 - criteriaKey: applicant_relationship
   acceptableValues: [spouse]
 - criteriaKey: applicant_date_of_birth
-  label: "You are 60 years old or older (50 years old or older if disabled)."
+  label: "You are at least 60 years (or at least 50 years old if disabled)."
 
 ---
