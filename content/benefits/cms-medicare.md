@@ -4,7 +4,7 @@ headline: "Medicare"
 tags: 
 - "healthcare"
 lifeEvents: 
-- "late adulthood"
+- "late-adulthood"
 - "retirement"
 - "disability"
 source:
