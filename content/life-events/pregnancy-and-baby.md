@@ -11,7 +11,6 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_income
-      - applicant_care_for_deceaseds_child
       - applicant_citizen_status
 
 
