@@ -2,7 +2,7 @@
   <div>
     <footer class="usa-footer usa-footer--slim">
       <div class="grid-container usa-footer__return-to-top">
-        <nuxt-link :to="{ path: this.$route.fullPath, hash: '#' }" href="~#">Return to top</nuxt-link>
+        <nuxt-link :to="{ path: getUrl(), hash: '#' }" href="~#">Return to top</nuxt-link>
       </div>
       <div class="usa-footer__primary-section">
         <div class="usa-footer__primary-container grid-row">
@@ -151,6 +151,11 @@
 export default {
   data () {
     return {};
-  }
+  },
+  methods: {
+    getUrl () {
+      return this.$route?.fullPath;
+    },
+  },
 };
 </script>
