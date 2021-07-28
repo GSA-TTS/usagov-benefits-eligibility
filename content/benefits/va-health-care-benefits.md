@@ -16,7 +16,7 @@ eligibility:
 - criteriaKey: deceased_served_in_active_military
   acceptableValues: ["was discharged under conditions other than dishonorable", "died while on active duty"]
 - criteriaKey: applicant_relationship
-  acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]
+  acceptableValues: ["spouse", "child"]
 - criteriaKey: applicant_marital_status
   acceptableValues: ["unmarried", "widowed"]
 
