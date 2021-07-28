@@ -2,6 +2,7 @@
 # yaml front matter here
 title: "Disability"
 summary: "Disability life event description here."
+lede: "Disability life event description here."
 secondaryHeadline: "Disability Benefits"
 
 eligibilityCriteria:
