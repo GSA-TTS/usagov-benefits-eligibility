@@ -51,7 +51,7 @@
             <div class="grid-col-auto">
               <img
                 class="usa-footer__logo-img"
-                src="~assets/img/logo-img.png"
+                src="~assets/img/logo-img-usagov.png"
                 alt=""/>
             </div>
             <div class="grid-col-auto">
@@ -150,7 +150,6 @@
 <script>
 export default {
   data () {
-debugger;
     return {};
   }
 };
