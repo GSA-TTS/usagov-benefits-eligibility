@@ -57,12 +57,19 @@
           <div v-if="filter">
             <div class="margin-bottom-3">
               Currently viewing
-              <span class="usa-tag bg-green">
+              <span
+                class="usa-tag bg-accent-cool-darker margin-left-05 display-inline-flex padding-y-2px padding-right-0">
                 {{ filter }}
-                <button class="usa-button usa-button--unstyled usa-button--inverse text-white" title="Remove this filter" aria-label="Remove this filter"
+                <button
+                  class="usa-button usa-button--unstyled usa-button--inverse margin-left-1 border-left border-accent-cool-light padding-x-05"
+                  title="Remove this filter"
+                  aria-label="Remove this filter"
                   @click="clearFilter">
-                  <svg class="usa-icon" aria-hidden="true" focusable="false"
-                    role="img" style="top: .15rem">
+                  <svg
+                    class="usa-icon text-white text-middle"
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img">
                     <use xlink:href="~/assets/img/sprite.svg#close" />
                   </svg>
                 </button>
@@ -150,6 +157,7 @@ export default {
   layout: "default",
   data () {
     return {
+      filter: "",
       alert: false,
       lifeEvent: {
         slug: "",
@@ -187,7 +195,7 @@ export default {
     },
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-      getTotalIneligibleCriteria: 'criteria/getTotalIneligibleCriteria',
+      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria"
     }),
     ...mapState({
       eligibilityCriteria: state => state.criteria.eligibilityCriteria
@@ -203,10 +211,10 @@ export default {
   },
   beforeDestroy () {
     /* istanbul ignore next */
-    this.$root.$off('tag:click', this.tagClick);
+    this.$root.$off("tag:click", this.tagClick);
   },
   mounted () {
-    this.$root.$on('tag:click', this.tagClick);
+    this.$root.$on("tag:click", this.tagClick);
   },
   methods: {
     doCopiedAlert () {
@@ -216,10 +224,12 @@ export default {
       }, 20 * 1000);
     },
     getVirtualCriteria () {
-      const lifeEventCriteria = Object.fromEntries(this.lifeEvent.eligibilityCriteria
-        .map(ec => ec.criteriaKeys)
-        .flat()
-        .map(criteriaKey => [criteriaKey, true]));
+      const lifeEventCriteria = Object.fromEntries(
+        this.lifeEvent.eligibilityCriteria
+          .map(ec => ec.criteriaKeys)
+          .flat()
+          .map(criteriaKey => [criteriaKey, true])
+      );
       const virtualCriteria = {};
       for (const benefit of this.lifeEventBenefits) {
         for (const criteria of benefit.eligibility) {
@@ -241,12 +251,23 @@ export default {
         const forceToBottom = 2048;
         const virtualCriteria = this.getVirtualCriteria();
         this.lifeEventBenefits.forEach((benefit) => {
-          const matches = benefit.matches = this.getTotalEligibleCriteria(benefit.eligibility);
-          const ineligible = this.getTotalIneligibleCriteria(benefit.eligibility) > 0;
-          const virtualBenefitEligibility = benefit.virtualBenefitEligibility = (benefit.eligibility || []).filter(c => virtualCriteria[c.criteriaKey]).length;
-          benefit.inverseMatchRatio = (1 - (matches / (benefit.eligibility.length - virtualBenefitEligibility))) + (ineligible ? forceToBottom : 0);
+          const matches = (benefit.matches = this.getTotalEligibleCriteria(
+            benefit.eligibility
+          ));
+          const ineligible =
+            this.getTotalIneligibleCriteria(benefit.eligibility) > 0;
+          const virtualBenefitEligibility = (benefit.virtualBenefitEligibility = (
+            benefit.eligibility || []
+          ).filter(c => virtualCriteria[c.criteriaKey]).length);
+          benefit.inverseMatchRatio =
+            1 -
+            matches / (benefit.eligibility.length - virtualBenefitEligibility) +
+            (ineligible ? forceToBottom : 0);
         });
-        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ['inverseMatchRatio', 'title']);
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [
+          "inverseMatchRatio",
+          "title"
+        ]);
       }
     },
     tagClick (tag) {
@@ -257,10 +278,10 @@ export default {
       this.sortBenefits();
     },
     clearFilter () {
-      this.filter = '';
+      this.filter = "";
       this.lifeEventBenefits = this.allLifeEventBenefits;
       this.sortBenefits();
-    },
+    }
   }
 };
 </script>

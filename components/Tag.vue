@@ -1,8 +1,12 @@
 <template>
   <span>
-    <span v-if="click" role="button" class="usa-tag bg-green"
-      style="cursor: pointer" @click="onClick">{{ name }}</span>
-    <span v-else class="usa-tag bg-green">{{ name }}</span>
+    <span
+      v-if="click"
+      role="button"
+      class="usa-tag bg-accent-cool-darker"
+      style="cursor: pointer"
+      @click="onClick">{{ name }}</span>
+    <span v-else class="usa-tag bg-accent-cool-darker">{{ name }}</span>
   </span>
 </template>
 <script>
@@ -16,16 +20,16 @@ export default {
     click: {
       type: Boolean,
       required: false,
-      default: false,
-    },
+      default: false
+    }
   },
   data () {
     return {};
   },
   methods: {
     onClick () {
-      this.$root.$emit('tag:click', this.name);
-    },
-  },
+      this.$root.$emit("tag:click", this.name);
+    }
+  }
 };
 </script>
