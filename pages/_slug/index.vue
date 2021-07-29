@@ -167,6 +167,7 @@ export default {
         eligibilityCriteria: []
       },
       lifeEventBenefits: [],
+      allLifeEventBenefits: [],
       sort: ""
     };
   },
