@@ -54,6 +54,28 @@
 
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-5 desktop:grid-col-4">
+          <div v-if="filter">
+            <div class="margin-bottom-3">
+              Currently viewing
+              <span
+                class="usa-tag bg-accent-cool-darker margin-left-05 display-inline-flex padding-y-2px padding-right-0">
+                {{ filter }}
+                <button
+                  class="usa-button usa-button--unstyled usa-button--inverse margin-left-1 border-left border-accent-cool-light padding-x-05"
+                  title="Remove this filter"
+                  aria-label="Remove this filter"
+                  @click="clearFilter">
+                  <svg
+                    class="usa-icon text-white text-middle"
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img">
+                    <use xlink:href="~/assets/img/sprite.svg#close" />
+                  </svg>
+                </button>
+              </span>
+            </div>
+          </div>
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8">
@@ -91,6 +113,7 @@
                 :card-body="benefit.summary"
                 :card-title="benefit.title"
                 card-title-heading-level="h2"
+                :card-tags-emit-click="true"
                 primary-button-text="How to apply"
                 :primary-button-link="
                   benefit.source ? benefit.source.link : '#'
@@ -134,6 +157,7 @@ export default {
   layout: "default",
   data () {
     return {
+      filter: "",
       alert: false,
       lifeEvent: {
         slug: "",
@@ -143,6 +167,7 @@ export default {
         eligibilityCriteria: []
       },
       lifeEventBenefits: [],
+      allLifeEventBenefits: [],
       sort: ""
     };
   },
@@ -163,7 +188,7 @@ export default {
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
 
     this.lifeEvent = lifeEvent;
-    this.lifeEventBenefits = lifeEventBenefits;
+    this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits;
   },
   computed: {
     lifeEventTitle () {
@@ -171,7 +196,7 @@ export default {
     },
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-      getTotalIneligibleCriteria: 'criteria/getTotalIneligibleCriteria',
+      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria"
     }),
     ...mapState({
       eligibilityCriteria: state => state.criteria.eligibilityCriteria
@@ -185,6 +210,13 @@ export default {
       deep: true
     }
   },
+  beforeDestroy () {
+    /* istanbul ignore next */
+    this.$root.$off("tag:click", this.tagClick);
+  },
+  mounted () {
+    this.$root.$on("tag:click", this.tagClick);
+  },
   methods: {
     doCopiedAlert () {
       this.alert = true;
@@ -193,10 +225,12 @@ export default {
       }, 20 * 1000);
     },
     getVirtualCriteria () {
-      const lifeEventCriteria = Object.fromEntries(this.lifeEvent.eligibilityCriteria
-        .map(ec => ec.criteriaKeys)
-        .flat()
-        .map(criteriaKey => [criteriaKey, true]));
+      const lifeEventCriteria = Object.fromEntries(
+        this.lifeEvent.eligibilityCriteria
+          .map(ec => ec.criteriaKeys)
+          .flat()
+          .map(criteriaKey => [criteriaKey, true])
+      );
       const virtualCriteria = {};
       for (const benefit of this.lifeEventBenefits) {
         for (const criteria of benefit.eligibility) {
@@ -218,13 +252,36 @@ export default {
         const forceToBottom = 2048;
         const virtualCriteria = this.getVirtualCriteria();
         this.lifeEventBenefits.forEach((benefit) => {
-          const matches = benefit.matches = this.getTotalEligibleCriteria(benefit.eligibility);
-          const ineligible = this.getTotalIneligibleCriteria(benefit.eligibility) > 0;
-          const virtualBenefitEligibility = benefit.virtualBenefitEligibility = (benefit.eligibility || []).filter(c => virtualCriteria[c.criteriaKey]).length;
-          benefit.inverseMatchRatio = (1 - (matches / (benefit.eligibility.length - virtualBenefitEligibility))) + (ineligible ? forceToBottom : 0);
+          const matches = (benefit.matches = this.getTotalEligibleCriteria(
+            benefit.eligibility
+          ));
+          const ineligible =
+            this.getTotalIneligibleCriteria(benefit.eligibility) > 0;
+          const virtualBenefitEligibility = (benefit.virtualBenefitEligibility = (
+            benefit.eligibility || []
+          ).filter(c => virtualCriteria[c.criteriaKey]).length);
+          benefit.inverseMatchRatio =
+            1 -
+            matches / (benefit.eligibility.length - virtualBenefitEligibility) +
+            (ineligible ? forceToBottom : 0);
         });
-        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ['inverseMatchRatio', 'title']);
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [
+          "inverseMatchRatio",
+          "title"
+        ]);
       }
+    },
+    tagClick (tag) {
+      this.lifeEventBenefits = _.filter(this.allLifeEventBenefits, (benefit) => {
+        return benefit.tags.includes(tag);
+      });
+      this.filter = tag;
+      this.sortBenefits();
+    },
+    clearFilter () {
+      this.filter = "";
+      this.lifeEventBenefits = this.allLifeEventBenefits;
+      this.sortBenefits();
     }
   }
 };

@@ -38,6 +38,11 @@ const mockContent = {
     tags: ["burial honors"],
     title: "Benefit One Title",
     toc: [],
+    eligibility: [
+      { criteriaKey: "criteriaKey1", acceptableValues: [true] },
+      { criteriaKey: "criteriaKey2", acceptableValues: [true] },
+      { criteriaKey: "virtualCriteriaKey1" },
+    ],
   },
   criteria: {
     body: [
@@ -214,5 +219,51 @@ describe('Life Event page', () => {
     await wrapper.find('#benefitSort').findAll('option').at(0).setSelected();
     expect(wrapper.vm.getTotalEligibleCriteria).toHaveBeenCalled();
     expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,three,one,four')
+  });
+
+  it('should filter tags', async () => {
+    const $content = createContentMock(
+      [
+        {
+          collectionName: LIFE_EVENTS_DIRECTORY,
+          items: [{ ...mockContent.lifeEvent }]
+        },
+        {
+          collectionName: BENEFITS_DIRECTORY,
+          items: [{ ...mockContent.benefit }],
+        },
+        {
+          collectionName: CRITERIA_DIRECTORY,
+          items: [{ ...mockContent.criteria }]
+        }
+      ]
+    );
+    const wrapper = shallowMount(LifeEventPage, {
+      mocks: vueMocks({ $content }),
+      store
+    });
+    wrapper.vm.lifeEventBenefits = wrapper.vm.allLifeEventBenefits = [
+      {
+        title: 'two',
+        eligibility: [{}, {}, {}],
+        tags: ['tagOne'],
+      },
+      {
+        title: 'one',
+        eligibility: [{}, {}, {}],
+        tags: ['tagOne', 'tagTwo'],
+      },
+      {
+        title: 'three',
+        eligibility: [{}, {}, {}],
+        tags: ['tagThree']
+      },
+    ];
+    wrapper.vm.tagClick('tagOne');
+    expect(wrapper.vm.filter).toBe('tagOne');
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,one');
+    wrapper.vm.clearFilter();
+    expect(wrapper.vm.filter).toBe('');
+    expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,one,three');
   });
 });

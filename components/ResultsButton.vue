@@ -1,6 +1,6 @@
 <template>
   <span>
-    <button class="usa-button margin-bottom-2" @click="copy()">
+    <button class="usa-button margin-bottom-2 margin-right-0" @click="copy()">
       <svg class="usa-icon" aria-hidden="true" focusable="false"
         role="img">
           <use xlink:href="~/assets/img/sprite.svg#content_copy" />
