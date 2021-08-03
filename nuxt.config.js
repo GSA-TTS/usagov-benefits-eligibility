@@ -9,6 +9,12 @@ const getLifeEvents = function () {
 
 const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : '/'
 
+const SITE_URLPREFIX = process.env.SITE_URLPREFIX || 'https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov';
+const SITE_PREFIX = process.env.SITE_PREFIX || '/site/gsa/usagov-benefits-eligibility';
+
+console.log("SITE_URLPREFIX:", SITE_URLPREFIX);
+console.log("SITE_PREFIX:", SITE_PREFIX);
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -106,7 +112,7 @@ export default {
   },
 
   sitemap: {
-    hostname: 'https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov/site/gsa/usagov-benefits-eligibility/',
+    hostname: `${SITE_URLPREFIX}${SITE_PREFIX}`,
     routes: getLifeEvents().map(le => `/${le}`),
   },
 
