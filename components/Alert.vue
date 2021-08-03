@@ -1,5 +1,5 @@
 <template>
-    <section class="usa-site-alert usa-site-alert--info margin-bottom-2" aria-label="Site alert,">
+    <section class="usa-site-alert usa-site-alert--info margin-bottom-2" aria-label="Site alert," role="alert">
         <div class="usa-alert">
             <div class="usa-alert__body">
                 <h3 v-if="heading" class="usa-alert__heading">{{ heading }}</h3>
