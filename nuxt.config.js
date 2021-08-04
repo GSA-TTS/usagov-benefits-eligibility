@@ -1,7 +1,19 @@
+import fs from 'fs';
 import path from 'path';
 import CopyPlugin from 'copy-webpack-plugin';
 
+const getLifeEvents = function () {
+  const files = fs.readdirSync('./content/life-events/');
+  return files.map(f => f.replace(/.md$/gi, ''));
+};
+
 const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : '/'
+
+const SITE_URLPREFIX = process.env.SITE_URLPREFIX || 'https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov';
+const SITE_PREFIX = process.env.SITE_PREFIX || '/site/gsa/usagov-benefits-eligibility';
+
+console.log("SITE_URLPREFIX:", SITE_URLPREFIX);
+console.log("SITE_PREFIX:", SITE_PREFIX);
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -48,6 +60,7 @@ export default {
     // '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/sitemap',
     'nuxt-i18n'
   ],
 
@@ -96,6 +109,11 @@ export default {
   content: {
     nestedProperties: [],
     csv: {}
+  },
+
+  sitemap: {
+    hostname: `${SITE_URLPREFIX}${SITE_PREFIX}`,
+    routes: getLifeEvents().map(le => `/${le}`),
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
