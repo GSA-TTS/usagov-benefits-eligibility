@@ -150,9 +150,9 @@
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item">
-              <a class="usa-nav__link">
+              <nuxt-link to="/agencies" class="usa-nav__link">
                 <span>Benefits by agency</span>
-              </a>
+              </nuxt-link>
             </li>
           </ul>
           <div class="usa-nav__secondary">
