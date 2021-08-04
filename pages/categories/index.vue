@@ -15,15 +15,16 @@
         <div class="tablet:grid-col-10 life-event-tags">
           <ul v-if="lifeEventTags && lifeEventTags.length > 0" class="usa-card-group">
             <li
-              v-for="tag in lifeEventTags"
-              :key="tag"
+              v-for="tag in mapTags(lifeEventTags)"
+              :key="tag.slug"
               class="usa-card desktop:grid-col-6"
               :aria-label="tag">
               <Card
-                :card-title="tag"
+                :card-title="tag.title"
                 card-title-heading-level="h2"
+                :card-body="tag.summary"
                 primary-button-text="See possible benefits"
-                :primary-button-link="`/categories/${kebabCase(tag)}`"/>
+                :primary-button-link="`/categories/${tag.slug}`"/>
             </li>
           </ul>
         </div>
@@ -38,6 +39,11 @@ import _ from 'lodash';
 export default {
   layout: "default",
   async asyncData ({ $content }) {
+    const contentCategories = await $content('categories').fetch();
+    const categories = {};
+    for (const c of contentCategories) {
+      categories[_.lowerCase(c.slug)] = c;
+    }
     const lifeEventTags = _.chain(
       await $content("benefits")
         .only(['tags'])
@@ -49,23 +55,27 @@ export default {
       .sort()
       .value();
 
-    return { lifeEventTags };
+    return { lifeEventTags, categories };
   },
   data () {
     return {
-      lifeEventTags: []
+      lifeEventTags: [],
+      categories: {},
     };
   },
   methods: {
-    kebabCase (tag) {
-      return _.kebabCase(tag);
+    mapTags (tags) {
+      return tags.map((tag) => {
+        if (this.categories[tag]) {
+          return this.categories[tag];
+        } else {
+          return {
+            title: _.upperFirst(tag),
+            slug: _.kebabCase(tag),
+          }
+        }
+      });
     },
   },
 };
 </script>
-
-<style>
-  .life-event-tags .usa-card__heading {
-    text-transform: capitalize;
-  }
-</style>

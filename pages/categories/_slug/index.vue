@@ -6,6 +6,15 @@
           <h1 v-if="benefitCategory" class="font-heading-3xl margin-top-7">
             {{ benefitCategory }}
           </h1>
+          <p v-if="category && category.lede" class="usa-intro">
+            {{ category.lede }}
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-row grid-gap">
+        <div class="tablet:grid-col margin-bottom-3">
+          Showing {{ lifeEventBenefits.length }} benefits
         </div>
       </div>
 
@@ -49,7 +58,8 @@
                 :primary-button-link="
                   benefit.source ? benefit.source.link : '#'
                 "
-                primary-button-target="_blank">
+                primary-button-target="_blank"
+                :card-tags="mapLifeEvents(benefit.lifeEvents)">
                 <template
                   v-if="
                     benefit.source && benefit.source.name && benefit.source.link
@@ -86,6 +96,7 @@ export default {
     return {
         benefitCategory: '',
         lifeEventBenefits: [],
+        category: {},
     };
   },
   async fetch () {
@@ -98,8 +109,15 @@ export default {
       .fetch();
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body;
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
+    // eslint-disable-next-line node/handle-callback-err
+    this.category = await this.$content(`categories/${this.$route.params.slug}`).fetch().catch((err) => {});
 
     this.lifeEventBenefits = lifeEventBenefits;
+  },
+  methods: {
+    mapLifeEvents (lifeEvents) {
+      return lifeEvents.map(le => _.lowerCase(le));
+    }
   },
 };
 </script>

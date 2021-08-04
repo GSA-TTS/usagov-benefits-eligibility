@@ -31,8 +31,8 @@ describe('pages/categories/index.vue', () => {
       fetch: () => {
         return Promise.resolve({
           benefits: [
-            { title: 'One', summary: 'One summary' },
-            { title: 'Two', summary: 'Two summary' },
+            { title: 'One', summary: 'One summary', lifeEvents: ['Three', 'Four'] },
+            { title: 'Two', summary: 'Two summary', lifeEvents: [] },
           ],
           criteria: [],
         }[contentRequest]);
