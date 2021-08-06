@@ -5,6 +5,7 @@ tags:
 - "educational assistance"
 lifeEvents: 
 - "bereavement"
+- "school-and-education"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/education/survivor-dependent-benefits/"
