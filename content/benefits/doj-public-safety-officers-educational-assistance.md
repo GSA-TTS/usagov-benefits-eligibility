@@ -5,6 +5,7 @@ tags:
 - "educational assistance"
 lifeEvents: 
 - "bereavement"
+- "school-and-education"
 source:
   name: "U.S. Department of Justice"
   link: "https://psob.bja.ojp.gov/PSOB_Education2018.pdf"
