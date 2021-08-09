@@ -18,7 +18,7 @@
               v-for="tag in mapTags(lifeEventTags)"
               :key="tag.slug"
               class="usa-card desktop:grid-col-6"
-              :aria-label="tag">
+              :aria-label="tag.title">
               <Card
                 :card-title="tag.title"
                 card-title-heading-level="h2"
