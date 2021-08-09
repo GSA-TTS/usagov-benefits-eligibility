@@ -6,6 +6,9 @@
           <h1 v-if="benefitAgency" class="font-heading-3xl margin-top-7">
             {{ benefitAgency }}
           </h1>
+          <p v-if="agency && agency.lede" class="usa-intro">
+            {{ agency.lede }}
+          </p>
         </div>
       </div>
 
@@ -93,6 +96,7 @@ export default {
     return {
         benefitAgency: '',
         lifeEventBenefits: [],
+        agency: {},
     };
   },
   async fetch () {
@@ -108,6 +112,8 @@ export default {
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
     this.lifeEventBenefits = lifeEventBenefits.filter(benefit => benefit?.source?.name && agencyRegex.test(benefit.source.name));
     this.benefitAgency = this.lifeEventBenefits[0]?.source?.name;
+    // eslint-disable-next-line node/handle-callback-err
+    this.agency = await this.$content(`agencies/${this.$route.params.slug}`).fetch().catch((err) => {});
   },
   methods: {
     mapLifeEvents (lifeEvents) {
