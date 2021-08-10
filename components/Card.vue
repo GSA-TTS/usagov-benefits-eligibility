@@ -58,8 +58,8 @@ export default {
     },
     cardBody: {
       type: String,
-      required: true,
-      default: "Card body not provided"
+      required: false,
+      default: ""
     },
     primaryButtonText: {
       type: String,

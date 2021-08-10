@@ -134,20 +134,25 @@
                 </li>
               </ul>
             </li>-->
-            <li class="usa-nav__primary-item">
-              <nuxt-link :to="'/'" class="usa-nav__link">
+            <li v-if="isLifeEventPage" class="usa-nav__primary-item">
+              <nuxt-link to="/" class="usa-nav__link">
+                <span>Benefits by life event</span>
+              </nuxt-link>
+            </li>
+            <li v-else class="usa-nav__primary-item">
+              <nuxt-link to="/" exact class="usa-nav__link">
                 <span>Benefits by life event</span>
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item">
-              <a class="usa-nav__link">
+              <nuxt-link to="/categories" class="usa-nav__link">
                 <span>Benefits by category</span>
-              </a>
+              </nuxt-link>
             </li>
             <li class="usa-nav__primary-item">
-              <a class="usa-nav__link">
+              <nuxt-link to="/agencies" class="usa-nav__link">
                 <span>Benefits by agency</span>
-              </a>
+              </nuxt-link>
             </li>
           </ul>
           <div class="usa-nav__secondary">
@@ -180,7 +185,20 @@
 <script>
 export default {
   data () {
-    return {};
+    return {
+      isLifeEventPage: this.doesRouteMatchLifeEventPages(),
+    };
+  },
+  watch: {
+    $route () {
+      this.isLifeEventPage = this.doesRouteMatchLifeEventPages();
+    }
+  },
+  methods: {
+    doesRouteMatchLifeEventPages () {
+      /* istanbul ignore next */
+      return this.$route && this.$route.matched && this.$route.matched[0] && this.$route.matched[0].path && this.$route.matched[0].path === '/:slug';
+    }
   }
 };
 </script>
