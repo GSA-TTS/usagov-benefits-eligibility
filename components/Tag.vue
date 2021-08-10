@@ -1,5 +1,4 @@
 <template>
-  <span>
     <span
       v-if="click"
       role="button"
@@ -7,7 +6,6 @@
       style="cursor: pointer"
       @click="onClick">{{ name }}</span>
     <span v-else class="usa-tag bg-accent-cool-darker">{{ name }}</span>
-  </span>
 </template>
 <script>
 export default {

@@ -2,9 +2,12 @@
   <div
     class="eligibility-list-container border border-base-lighter border-width-2px radius-md margin-top-4">
     <h3 class="bg-base-lighter margin-0 padding-x-2 padding-y-1 font-sans-md">
-      Key eligibility criteria (meets at least
-      {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of
-      {{ benefitEligibilityCriteria.length }}).
+      Key eligibility criteria
+        <span v-if="showMatchingCount">
+          (meets at least
+          {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of
+          {{ benefitEligibilityCriteria.length }}).
+        </span>
     </h3>
     <client-only>
       <ul class="usa-icon-list padding-x-205 padding-top-205 padding-bottom-1">
@@ -28,7 +31,8 @@
                   doesCriterionMatchSelection(criterion) === false
               }
             ]">
-            <svg class="usa-icon" aria-hidden="true" role="img">
+            <svg v-if="showIcons" class="usa-icon" aria-hidden="true"
+              role="img">
               <use
                 v-if="doesCriterionMatchSelection(criterion) == true"
                 xlink:href="~/assets/img/sprite.svg#check_circle"/>
@@ -93,6 +97,16 @@ export default {
           }
         ];
       }
+    },
+    showIcons: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    showMatchingCount: {
+      type: Boolean,
+      required: false,
+      default: true,
     }
   },
   data () {
