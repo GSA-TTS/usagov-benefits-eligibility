@@ -103,7 +103,7 @@ export default {
     const slug = this.$route.params.slug.startsWith('u-s-')
       ? _.lowerCase(this.$route.params.slug).replace(/^u s /, 'u.s. ')
       : _.lowerCase(this.$route.params.slug);
-    const agencyRegex = new RegExp(slug, 'i');
+    const agencyRegex = new RegExp(_.escapeRegExp(slug), 'i');
     const lifeEventBenefits = await this.$content("benefits")
       .sortBy("title")
       .fetch();
