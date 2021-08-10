@@ -46,7 +46,6 @@
     "pa11y-ci": "^2.4.1",
     "sass": "^1.32.12",
     "sass-loader": "^10.2.0",
-    "usagov-benefits-eligibility-rules": "https://github.com/GSA/usagov-benefits-eligibility-rules.git#main",
     "uswds": "^2.11.2",
     "vue-axe": "^2.4.4",
     "vue-jest": "^3.0.4"
