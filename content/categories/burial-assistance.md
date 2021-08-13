@@ -1,5 +1,5 @@
 ---
 title: "Burial assistance"
-summary: "Burial assistance summary"
-lede: "Burial assistance lede"
+summary: "Financial or transportation assistance, in addition to burial in a VA national cemetery."
+lede: "Financial or transportation assistance, in addition to burial in a VA national cemetery."
 ---
