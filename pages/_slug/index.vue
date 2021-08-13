@@ -6,6 +6,11 @@
           <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7">
             {{ lifeEvent.title }}
           </h1>
+          <ol class="usa-intro">
+            <li>Answer a few questions</li>
+            <li>Review a custom list of potential benefits</li>
+            <li>Find out how to apply</li>
+          </ol>
           <p v-if="lifeEvent.lede" class="usa-intro">
             {{ lifeEvent.lede }}
           </p>
