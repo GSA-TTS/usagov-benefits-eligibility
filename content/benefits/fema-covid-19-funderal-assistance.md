@@ -7,7 +7,7 @@ lifeEvents:
 - "bereavement"
 - "national-emergency-and-disaster"
 source:
-  name: "Federal Emergency Management Agency"
+  name: "FEMA"
   link: "https://www.fema.gov/disasters/coronavirus/economic/funeral-assistance"
 
 summary: "Financial assistance may be available to help with the burial and funeral costs for people who died of COVID-19."
