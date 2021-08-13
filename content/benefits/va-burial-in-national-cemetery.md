@@ -2,7 +2,7 @@
 title: "Burial in VA National Cemetery"
 headline: "Burial in VA National Cemetery"
 tags: 
-- "burial assistance"
+- "burial and funeral assistance"
 lifeEvents: 
 - "bereavement"
 source:
