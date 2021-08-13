@@ -2,7 +2,7 @@
 title: "Burial Benefits"
 headline: "Burial Benefits"
 tags: 
-- "burial assistance"
+- "burial and funeral assistance"
 lifeEvents: 
 - "bereavement"
 source:
