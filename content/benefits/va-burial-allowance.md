@@ -2,7 +2,7 @@
 title: "Veteran’s Burial Allowance"
 headline: "Burial marker for veterans"
 tags: 
-- "burial assistance"
+- "burial and funeral assistance"
 lifeEvents: 
 - "bereavement"
 source:
