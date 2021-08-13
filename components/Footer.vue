@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div class="grid-container">
+      <div class="grid-row">
+        <div class="grid-col">
+          <nuxt-content :document="disclaimer" />
+        </div>
+      </div>
+    </div>
     <footer class="usa-footer usa-footer--slim">
       <div class="grid-container usa-footer__return-to-top">
         <nuxt-link :to="{ path: getUrl(), hash: '#' }">Return to top</nuxt-link>
@@ -13,15 +20,6 @@
                   class="mobile-lg:grid-col-6 desktop:grid-col-auto usa-footer__primary-content">
                   <a class="usa-footer__primary-link" href="https://usa.gov">USA.gov</a>
                 </li>
-                <!-- <li class="mobile-lg:grid-col-6 desktop:grid-col-auto usa-footer__primary-content">
-                  <a class="usa-footer__primary-link" href="javascript:void(0);">Primary link</a>
-                </li>
-                <li class="mobile-lg:grid-col-6 desktop:grid-col-auto usa-footer__primary-content">
-                  <a class="usa-footer__primary-link" href="javascript:void(0);">Primary link</a>
-                </li>
-                <li class="mobile-lg:grid-col-6 desktop:grid-col-auto usa-footer__primary-content">
-                  <a class="usa-footer__primary-link" href="javascript:void(0);">Primary link</a>
-                </li> -->
               </ul>
             </nav>
           </div>
@@ -150,7 +148,12 @@
 <script>
 export default {
   data () {
-    return {};
+    return {
+      disclaimer: {},
+    };
+  },
+  async fetch () {
+    this.disclaimer = await this.$content('disclaimer').fetch();
   },
   methods: {
     getUrl () {
