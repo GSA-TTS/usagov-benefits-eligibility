@@ -1,5 +1,5 @@
 <template>
-    <section class="usa-site-alert usa-site-alert--info margin-bottom-2" aria-label="Site alert," role="alert">
+    <section class="usa-site-alert usa-site-alert--info margin-bottom-2" :aria-label="'Site alert, ' + heading + ' ' + ariaAlertText" role="alert">
         <div class="usa-alert">
             <div class="usa-alert__body">
                 <h3 v-if="heading" class="usa-alert__heading">{{ heading }}</h3>
@@ -14,10 +14,15 @@
 <script>
 export default {
     props: {
-        // eslint-disable-next-line vue/require-default-prop
         heading: {
             type: String,
             required: false,
+            default: '',
+        },
+        ariaAlertText: {
+            type: String,
+            required: false,
+            default: '',
         },
     },
 };
