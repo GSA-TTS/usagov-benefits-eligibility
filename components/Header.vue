@@ -203,7 +203,7 @@ export default {
       return this.$route && this.$route.matched && this.$route.matched[0] && this.$route.matched[0].path && this.$route.matched[0].path === '/:slug';
     },
     doSearch (evt) {
-      this.$router.push({ path: 'search', query: { q: this.$refs.search.value } });
+      this.$router.push({ path: '/search/', query: { q: this.$refs.search.value } });
       evt.preventDefault();
     },
   }
