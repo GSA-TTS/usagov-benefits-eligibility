@@ -173,7 +173,7 @@
                 type="search"
                 name="search"
                 :value="query"/>
-              <button class="usa-button" @click="doSearch">
+              <button class="usa-button" type="submit" @click="doSearch">
                 <span class="usa-sr-only">Search</span>
               </button>
             </form>

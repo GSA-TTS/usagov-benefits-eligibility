@@ -27,7 +27,7 @@
    data () {
      /* istanbul ignore next */
      return {
-       query: this.$route?.query?.q || '',
+       query: '',
        results: {
          federal_register_documents: [],
          graphic_best_bets: [],
@@ -48,6 +48,7 @@
    },
    async fetch () {
      if (process.client) {
+       this.query = this.$route?.query?.q || '';
        this.results = (await this.$axios({
          url: process.env.searchGovUrl,
          params: {
