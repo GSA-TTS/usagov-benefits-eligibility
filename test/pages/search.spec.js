@@ -17,6 +17,7 @@ describe('Search page', () => {
       mocks: {
         $route: { query: { search: 'example search' } },
         $axios,
+        $fetchState: {},
       },
     });
     const data = wrapper.vm.$options.data.apply(wrapper.vm);

@@ -19,7 +19,7 @@
           </ol>
         </div>
         <div
-          class="tablet:grid-col-2 desktop:grid-col-2 margin-top-3 text-right">
+          class="tablet:grid-col-2 desktop:grid-col-2 margin-top-7 text-right">
           <results-button @copied="doCopiedAlert" />
         </div>
       </div>

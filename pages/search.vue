@@ -7,9 +7,35 @@
           </h1>
         </div>
       </div>
-      <div class="grid-row grid-gap">
+      <div v-if="results.web.results.length > 0" class="grid-row grid-gap">
         <div class="tablet:grid-col">
           <p>Showing {{ results.web.results.length }} of {{ results.web.total }}</p>
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="tablet:grid-col-7 desktop:grid-col-8">
+          <div
+            v-if="$fetchState.pending"
+            class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim margin-bottom-3">
+            <div class="usa-alert__body">
+              <p class="usa-alert__text">Fetching search results...</p>
+            </div>
+          </div>
+          <div
+            v-if="$fetchState.error"
+            class="usa-alert usa-alert--error usa-alert--slim margin-bottom-3">
+            <div class="usa-alert__body">
+              <p class="usa-alert__text">Error while fetching search results.</p>
+            </div>
+          </div>
+          <div
+            v-if="results.web.results.length === 0 && !$fetchState.pending"
+            class="usa-alert usa-alert--error usa-alert--slim margin-bottom-3">
+            <div class="usa-alert__body">
+              <p class="usa-alert__text">No search results found.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -27,7 +53,7 @@
    data () {
      /* istanbul ignore next */
      return {
-       query: '',
+       query: this.$route?.query?.q || '',
        results: {
          federal_register_documents: [],
          graphic_best_bets: [],
@@ -59,5 +85,6 @@
        }))?.data || this.results;
      }
    },
+   fetchOnServer: false,
  };
 </script>
