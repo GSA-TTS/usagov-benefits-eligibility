@@ -12,6 +12,11 @@
           <p v-else-if="lifeEvent.summary" class="usa-intro">
             {{ lifeEvent.summary }}
           </p>
+          <ol class="usa-intro">
+            <li>Answer a few questions</li>
+            <li>Review a custom list of potential benefits</li>
+            <li>Find out how to apply</li>
+          </ol>
         </div>
         <div
           class="tablet:grid-col-2 desktop:grid-col-2 margin-top-3 text-right">

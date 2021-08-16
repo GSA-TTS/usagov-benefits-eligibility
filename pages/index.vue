@@ -7,13 +7,13 @@
             Help during life's major events
           </h1>
           <p class="usa-intro">
-            Life’s big milestones can be challenging, but figuring out which
-            benefits might be available to help you through shouldn’t be. We
-            help you identify benefits and support that you might qualify for
-            and link you directly to the federal agency for detailed information
-            and the application. Get started by choosing a life event and
-            answering a few questions.
+            Life’s big milestones can be challenging, but figuring out which benefits might be available to help shouldn’t be.
           </p>
+          <ol class="usa-intro">
+            <li>Select a life event</li>
+            <li>Answer a few questions</li>
+            <li>Get a custom list of potential benefits</li>
+          </ol>
         </div>
       </div>
 

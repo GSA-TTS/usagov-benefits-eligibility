@@ -146,7 +146,7 @@
             </li>
             <li class="usa-nav__primary-item">
               <nuxt-link to="/categories" class="usa-nav__link">
-                <span>Benefits by category</span>
+                <span>Benefits by topic</span>
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item">
