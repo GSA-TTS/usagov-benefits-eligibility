@@ -2,7 +2,7 @@
 title: "Veteran’s Headstone and Grave Marker"
 headline: "Veteran’s Headstone and Grave Marker"
 tags: 
-- "memorial"
+- "burial and funeral assistance"
 lifeEvents: 
 - "bereavement"
 source:

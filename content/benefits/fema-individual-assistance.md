@@ -6,7 +6,7 @@ tags:
 lifeEvents: 
 - "national-emergency-and-disaster"
 source:
-  name: "Federal Emergency Management Agency"
+  name: "FEMA"
   link: "https://www.disasterassistance.gov/"
 
 summary: "Federal Emergency Management Agency provides disaster survivors with assistance that supports your disaster recovery."
