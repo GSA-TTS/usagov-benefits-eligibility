@@ -20,7 +20,7 @@
       </div>
       <div class="grid-row">
         <div class="tablet:grid-col">
-          <Alert v-show="alert">
+          <Alert v-show="alert" aria-alert-text="The link to this page has been copied to your clipboard">
             The link to this page has been copied to your clipboard.
           </Alert>
         </div>
