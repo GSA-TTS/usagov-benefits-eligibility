@@ -7,9 +7,22 @@ describe('Header', () => {
     await beforeAllTests();
   });
 
-  test('is a Vue instance', () => {
+  it('should be a Vue instance', () => {
     const wrapper = shallowMount(Header);
     expect(wrapper.vm).toBeTruthy();
+  });
+
+  it('should put the query string into the search box and go to the search page when the search button is pressed', async () => {
+    const $router = { push: jest.fn() };
+    const wrapper = shallowMount(Header, {
+      mocks: {
+        $route: { query: { search: 'example search' } },
+        $router
+      },
+    });
+    expect(wrapper.vm).toBeTruthy();
+    await wrapper.find('button.usa-button').trigger('click');
+    expect($router.push).toHaveBeenCalled();
   });
 
   it('should change links based on routes', () => {

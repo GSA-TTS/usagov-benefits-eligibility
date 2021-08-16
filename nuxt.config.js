@@ -12,8 +12,10 @@ const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : '/
 const SITE_URLPREFIX = process.env.SITE_URLPREFIX || 'https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov';
 const SITE_PREFIX = process.env.SITE_PREFIX || '/site/gsa/usagov-benefits-eligibility';
 
-console.log("SITE_URLPREFIX:", SITE_URLPREFIX);
-console.log("SITE_PREFIX:", SITE_PREFIX);
+if (process.env.NODE_ENV !== 'test') {
+  console.log("SITE_URLPREFIX:", SITE_URLPREFIX);
+  console.log("SITE_PREFIX:", SITE_PREFIX);
+}
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -56,9 +58,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    // '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/content
+    '@nuxtjs/axios',
     '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-i18n'
@@ -102,6 +102,11 @@ export default {
     },
   },
 
+  env: {
+    searchGovUrl: 'https://search.usa.gov/api/v2/search/i14y',
+    searchGovAccessKey: '5S6Psw6bydi_cmKJXx_v0k0Bo2WIk1aJdZzTgtDVjIg=',
+    searchGovAffiliate: 'bears-mvp',
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 

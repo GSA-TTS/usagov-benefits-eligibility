@@ -168,10 +168,12 @@
               <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
               <input
                 id="extended-search-field-small"
+                ref="search"
                 class="usa-input"
                 type="search"
-                name="search"/>
-              <button class="usa-button" type="submit">
+                name="search"
+                :value="query"/>
+              <button class="usa-button" @click="doSearch">
                 <span class="usa-sr-only">Search</span>
               </button>
             </form>
@@ -187,6 +189,7 @@ export default {
   data () {
     return {
       isLifeEventPage: this.doesRouteMatchLifeEventPages(),
+      query: this.$route?.query?.q || '',
     };
   },
   watch: {
@@ -198,7 +201,11 @@ export default {
     doesRouteMatchLifeEventPages () {
       /* istanbul ignore next */
       return this.$route && this.$route.matched && this.$route.matched[0] && this.$route.matched[0].path && this.$route.matched[0].path === '/:slug';
-    }
+    },
+    doSearch (evt) {
+      this.$router.push({ path: 'search', query: { q: this.$refs.search.value } });
+      evt.preventDefault();
+    },
   }
 };
 </script>
