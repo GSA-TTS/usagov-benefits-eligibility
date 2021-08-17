@@ -2,8 +2,8 @@
 # yaml front matter here
 title: "Retiring"
 summary: "Find out what financial, health care, and other benefits may be available as you enter this next phase of your life."
-lede: "Find out what financial, health care, and other benefits may be available as you enter this next phase of your life."
-secondaryHeadline: "Retirement Benefits"
+lede: ""
+secondaryHeadline: "Retirement benefits"
 
 eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
 
