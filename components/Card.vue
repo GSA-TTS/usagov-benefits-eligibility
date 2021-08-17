@@ -7,8 +7,8 @@
       <div
         v-if="cardTags && cardTags.length > 0"
         class="tags-container margin-top-1">
-        <Tag v-for="tag in cardTags" :key="tag" :name="tag"
-          :click="cardTagsEmitClick" />
+        <Tag v-for="tag in cardTags" :key="tag.name" :name="tag.name"
+          :click="cardTagsEmitClick" :title="tag.title" />
       </div>
     </header>
     <div class="usa-card__body">
@@ -22,10 +22,12 @@
       <ul class="usa-button-group" :aria-label="'Choices for ' + cardTitle">
         <li class="usa-button-group__item">
           <a v-if="isRemoteLink(primaryButtonLink)" :href="primaryButtonLink" :target="primaryButtonTarget"
-            class="usa-button">
+            :aria-label="primaryButtonAriaLabel"
+            class="usa-button usa-button--outline">
             {{ primaryButtonText }}
           </a>
-          <nuxt-link v-else :to="primaryButtonLink" class="usa-button">
+          <nuxt-link v-else :to="primaryButtonLink" :aria-label="primaryButtonAriaLabel"
+            class="usa-button">
             {{ primaryButtonText }}
           </nuxt-link>
         </li>
@@ -75,6 +77,11 @@ export default {
       type: String,
       required: false,
       default: '_self'
+    },
+    primaryButtonAriaLabel: {
+      type: String,
+      required: false,
+      default: ''
     },
     secondaryButtonText: {
       type: String,

@@ -3,7 +3,7 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7">
+          <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7 text-primary">
             {{ lifeEvent.title }}
           </h1>
           <p v-if="lifeEvent.lede" class="usa-intro">
@@ -18,22 +18,11 @@
             <li>Find out how to apply</li>
           </ol>
         </div>
-        <div
-          class="tablet:grid-col-2 desktop:grid-col-2 margin-top-7 text-right">
-          <results-button @copied="doCopiedAlert" />
-        </div>
-      </div>
-      <div class="grid-row">
-        <div class="tablet:grid-col">
-          <Alert v-show="alert" aria-alert-text="The link to this page has been copied to your clipboard">
-            The link to this page has been copied to your clipboard.
-          </Alert>
-        </div>
       </div>
 
       <div class="grid-row grid-gap">
         <div class="grid-col margin-y-3">
-          <h1 v-if="lifeEventTitle" class="font-heading-xl margin-top-1">
+          <h1 v-if="lifeEventTitle" class="font-heading-xl margin-top-1 text-primary">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
         </div>
@@ -63,13 +52,15 @@
             <div class="margin-bottom-3">
               Currently viewing
               <span
-                class="usa-tag bg-accent-cool-darker margin-left-05 display-inline-flex padding-y-2px padding-right-0">
-                {{ filter }}
+                class="usa-tag bg-accent-cool-darker margin-left-05 display-inline-flex margin-left-0 padding-0 usa-button-group__item">
                 <button
-                  class="usa-button usa-button--unstyled usa-button--inverse margin-left-1 border-left border-accent-cool-light padding-x-05"
-                  title="Remove this filter"
+                  class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-1 border-left border-accent-cool-light padding-x-05"
+                  style="padding: .25rem"
+                  :title="`Remove the ${filter} filter`"
                   aria-label="Remove this filter"
+                  data-position="top"
                   @click="clearFilter">
+                  {{ filter }}
                   <svg
                     class="usa-icon text-white text-middle"
                     aria-hidden="true"
@@ -81,7 +72,23 @@
               </span>
             </div>
           </div>
+          <div class="margin-bottom-4">
+            <ul class="usa-icon-list usa-icon-list--size-md">
+              <li class="usa-icon-list__item">
+                <div class="usa-icon-list__icon text-blue">
+                  <svg class="usa-icon usa-icon--size-3" aria-hidden="true" focusable="false"
+                    role="img">
+                    <use xlink:href="~/assets/img/sprite.svg#info"/>
+                  </svg>
+                </div>
+                <div class="usa-icon-list__content">
+                  {{ lifeEvent.eligibilityCriteriaDescription }}
+                </div>
+              </li>
+            </ul>
+          </div>
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
+          <share-results />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8">
           <div
@@ -120,11 +127,12 @@
                 card-title-heading-level="h2"
                 :card-tags-emit-click="true"
                 primary-button-text="How to apply"
+                :primary-button-aria-label="`How to apply for ${benefit.title}`"
                 :primary-button-link="
                   benefit.source ? benefit.source.link : '#'
                 "
                 primary-button-target="_blank"
-                :card-tags="benefit.tags">
+                :card-tags="mapTags(benefit.tags)">
                 <template
                   v-if="
                     benefit.source && benefit.source.name && benefit.source.link
@@ -223,12 +231,6 @@ export default {
     this.$root.$on("tag:click", this.tagClick);
   },
   methods: {
-    doCopiedAlert () {
-      this.alert = true;
-      setTimeout(() => {
-        this.alert = false;
-      }, 20 * 1000);
-    },
     getVirtualCriteria () {
       const lifeEventCriteria = Object.fromEntries(
         this.lifeEvent.eligibilityCriteria
@@ -245,6 +247,9 @@ export default {
         }
       }
       return virtualCriteria;
+    },
+    mapTags (tags) {
+      return (tags || []).map(tag => ({ name: tag, title: `View ${tag} benefits` }));
     },
     sortChange (event) {
       this.sort = event.target.value;

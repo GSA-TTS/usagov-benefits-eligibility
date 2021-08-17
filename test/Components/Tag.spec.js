@@ -19,7 +19,7 @@ describe('Tag', () => {
     });
     const spy = jest.fn();
     wrapper.vm.$root.$on('tag:click', spy);
-    wrapper.find('.usa-tag').trigger('click');
+    wrapper.find('.usa-tag button').trigger('click');
     expect(spy).toHaveBeenCalled();
     wrapper.vm.$root.$off('tag:click', spy);
   });
