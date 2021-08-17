@@ -4,7 +4,7 @@ headline: "Burial Benefits"
 tags: 
 - "burial and funeral assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "Department of Defense"
   link: "https://www.dcms.uscg.mil/Portals/10/CG-1/PSC/PSD/docs/SurvivorsGuide2015.pdf?ver=2017-03-24-132033-397"
