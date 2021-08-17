@@ -4,7 +4,7 @@ headline: "Education Benefits"
 tags: 
 - "educational assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 - "school-and-education"
 source:
   name: "U.S. Department of Veteran Affairs"
