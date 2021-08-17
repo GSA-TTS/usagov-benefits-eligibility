@@ -4,7 +4,7 @@ headline: "Survivor Benefit Plan"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "Department of Defense"
   link: "https://militarypay.defense.gov/Benefits/Survivor-Benefit-Program/"
