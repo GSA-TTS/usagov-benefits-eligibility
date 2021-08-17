@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import Vuex from 'vuex';
-import ResultsButton from '@/components/ResultsButton.vue'
+import ShareResults from '@/components/ShareResults.vue'
 import beforeAllTests from '@/test/beforeAllTests';
 import { state as criteriaState, mutations, getters, actions } from '~/store/criteria';
 
@@ -21,7 +21,7 @@ const MOCK_CRITERIA = [
   }
 ];
 
-describe('ResultsButton', () => {
+describe('ShareResults', () => {
   let store;
 
   beforeAll(async () => {
@@ -49,14 +49,14 @@ describe('ResultsButton', () => {
 
   it('is a Vue instance', async () => {
     await store.dispatch("criteria/populate", [...MOCK_CRITERIA]);
-    const wrapper = mount(ResultsButton, { store });
+    const wrapper = mount(ShareResults, { store });
     expect(wrapper.vm).toBeTruthy();
   });
 
   it('should have an enabled button when there are critera filled out and populate the clipboard when clicked', async () => {
     await store.dispatch("criteria/populate", [...MOCK_CRITERIA]);
     window.navigator.clipboard = { writeText: jest.fn() };
-    const wrapper = mount(ResultsButton, { store });
+    const wrapper = mount(ShareResults, { store });
     const trueCriteria = {
       criteriaKey: "criteriaKey1",
       response: true
@@ -71,7 +71,7 @@ describe('ResultsButton', () => {
 
   it('should load url search params into the store', async () => {
     await store.dispatch("criteria/populate", [...MOCK_CRITERIA]);
-    const wrapper = mount(ResultsButton, {
+    const wrapper = mount(ShareResults, {
       data: () => ({
         search: '?ae35859=1&77edd0d',
       }),
@@ -79,5 +79,22 @@ describe('ResultsButton', () => {
     });
     await wrapper.vm.$nextTick();
     expect(store.state.criteria.eligibilityCriteria.criteriaKey1.response).toBe(true);
+  });
+
+  it('should display tooltip when the url is copied', async () => {
+    jest.useFakeTimers();
+    await store.dispatch("criteria/populate", [...MOCK_CRITERIA]);
+    const wrapper = mount(ShareResults, {
+      data: () => ({
+        search: '?ae35859=1&77edd0d',
+      }),
+      store
+    });
+    await wrapper.vm.$nextTick();
+    await wrapper.vm.copy();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.find('.usa-tooltip')).toBeDefined();
+    jest.runAllTimers();
+    jest.useRealTimers();
   });
 });

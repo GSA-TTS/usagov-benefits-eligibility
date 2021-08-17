@@ -31,15 +31,18 @@
                   doesCriterionMatchSelection(criterion) === false
               }
             ]">
-            <svg v-if="showIcons" class="usa-icon" aria-hidden="true"
+            <svg v-if="showIcons" class="usa-icon" :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img">
+              <title v-if="doesCriterionMatchSelection(criterion) == true" :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`">This criteria matched</title>
+              <title v-else-if="doesCriterionMatchSelection(criterion) == false" :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`">This criteria removed this benefit</title>
+              <title v-else :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`">This criteria has not matched</title>
               <use
                 v-if="doesCriterionMatchSelection(criterion) == true"
                 xlink:href="~/assets/img/sprite.svg#check_circle"/>
               <use
                 v-else-if="doesCriterionMatchSelection(criterion) == false"
                 xlink:href="~/assets/img/sprite.svg#highlight_off"/>
-              <use v-else xlink:href="~/assets/img/sprite.svg#help_outline" />
+              <use v-else xlink:href="~/assets/img/sprite.svg#check_circle_outline" />
             </svg>
           </div>
           <div

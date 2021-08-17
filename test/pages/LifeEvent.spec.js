@@ -137,41 +137,6 @@ describe('Life Event page', () => {
     expect(wrapper.vm.lifeEventTitle).toBe('test life event secondary headline');
   });
 
-  it('should display an alert when the results are copied', async () => {
-    jest.useFakeTimers();
-    const $content = createContentMock(
-      [
-        {
-          collectionName: LIFE_EVENTS_DIRECTORY,
-          items: [{ ...mockContent.lifeEvent }]
-        },
-        {
-          collectionName: BENEFITS_DIRECTORY,
-          items: [{ ...mockContent.benefit }],
-        },
-        {
-          collectionName: CRITERIA_DIRECTORY,
-          items: [{ ...mockContent.criteria }]
-        }
-      ]
-    );
-    const wrapper = shallowMount(LifeEventPage, {
-      mocks: vueMocks({ $content }),
-      store
-    });
-
-    await wrapper.vm.$options.fetch.apply(wrapper.vm);
-    wrapper.vm.lifeEvent = mockContent.lifeEvent;
-    await store.dispatch("criteria/populate", [...mockContent.criteria.body]);
-    await wrapper.vm.$nextTick();
-    wrapper.vm.doCopiedAlert();
-    await wrapper.vm.$nextTick();
-    expect(wrapper.find('alert-stub').attributes('style')).toBe('');
-    jest.runAllTimers();
-    await wrapper.vm.$nextTick();
-    expect(wrapper.find('alert-stub').attributes('style')).toMatch(/display.*none/);
-  });
-
   it('should sort the results', async () => {
     const $content = createContentMock(
       [

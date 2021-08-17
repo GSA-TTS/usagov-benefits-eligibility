@@ -5,12 +5,12 @@
         class="usa-checkbox__input usa-checkbox__input" type="checkbox"
         :name="criteriaGroupKey + '-' + criteriaKey" :checked="response" :value="criteriaKey"
         :data-section="criteriaGroupKey" @change="updateEligibilityChecked" />
-      <label class="usa-checkbox__label" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}
+      <label class="usa-checkbox__label font-sans-sm" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}
       </label>
     </div>
 
     <div v-if="type === 'select'" :key="criteriaKey" class="">
-      <label class="usa-label text-bold margin-top-0" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}</label>
+      <label class="usa-label margin-top-0" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}</label>
       <select :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey" class="usa-select" :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         @change="updateEligibilitySelected">
         <option value>- Select -</option>

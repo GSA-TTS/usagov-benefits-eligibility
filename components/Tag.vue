@@ -1,10 +1,16 @@
 <template>
     <span
       v-if="click"
-      role="button"
-      class="usa-tag bg-accent-cool-darker"
-      style="cursor: pointer"
-      @click="onClick">{{ name }}</span>
+      class="usa-tag bg-accent-cool-darker margin-left-05 usa-button-group__item margin-left-0 padding-0 display-inline-block">
+      <button
+        style="padding: .25rem"
+        class="usa-tooltip usa-button usa-button--outline usa-button--inverse usa-button--unstyled text-uppercase"
+        :title="title"
+        data-position="right"
+        @click="onClick">
+        {{ name }}
+      </button>
+    </span>
     <span v-else class="usa-tag bg-accent-cool-darker">{{ name }}</span>
 </template>
 <script>
@@ -19,7 +25,12 @@ export default {
       type: Boolean,
       required: false,
       default: false
-    }
+    },
+    title: {
+      type: String,
+      required: false,
+      default: ''
+    },
   },
   data () {
     return {};
