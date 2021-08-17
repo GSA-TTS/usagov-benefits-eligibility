@@ -5,9 +5,11 @@ summary: "If you have lost a loved one, you may qualify for help, including help
 lede: "You may be eligible for certain benefits after losing a loved one. We work closely with federal agencies to make our estimates accurate, please apply for them directly with each agency to find out if you are eligible."
 secondaryHeadline: "Death and Burial Benefits"
 
+eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+
 eligibilityCriteria:
   - label: "About the person who died"
-    description: "Please check all the boxes that best describe the person who died."
+    description: ""
     criteriaGroupKey: deceased
     criteriaKeys:
       - deceased_paid_into_SS
@@ -16,7 +18,7 @@ eligibilityCriteria:
       - deceased_public_safety_officer
 
   - label: "About the deceased's military service"
-    description: "Please select options and check all the boxes that best describe the person who died."
+    description: ""
     criteriaGroupKey: military
     criteriaKeys:
       - deceased_served_in_active_military
@@ -25,7 +27,7 @@ eligibilityCriteria:
       - deceased_buried_in_private_cemetery
  
   - label: "About the applicant"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_relationship
