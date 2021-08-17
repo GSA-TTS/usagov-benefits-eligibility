@@ -5,9 +5,11 @@ summary: "Find out what help is available as you pursue your education, includin
 lede: "Find out what help is available as you pursue your education, including loans, grants, and guidance."
 secondaryHeadline: "School and Education Benefits"
 
+eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+
 eligibilityCriteria:
   - label: "About the applicant"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_high-school_diploma
