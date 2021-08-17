@@ -4,7 +4,7 @@ headline: "Life Insurance"
 tags: 
 - "life insurance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.benefits.va.gov/INSURANCE/sglivgli.asp"
