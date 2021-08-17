@@ -5,9 +5,11 @@ summary: "As you get older and your needs change, there may be benefits availabl
 lede: "As you get older and your needs change, there may be benefits available to help you with expenses, health care, and other new challenges."
 secondaryHeadline: "Late Adulthood Benefits"
 
+eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+
 eligibilityCriteria:
   - label: "About the applicant"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_disability
