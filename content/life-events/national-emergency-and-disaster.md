@@ -5,15 +5,17 @@ summary: "If you have experience a national emergency or a disaster, help may be
 lede: "If you have experience a national emergency or a disaster, help may be available, including temporary housing and financial help."
 secondaryHeadline: "National Emergency and Disaster Benefits"
 
+eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+
 eligibilityCriteria:
   - label: "About the applicant"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_declared_disaster
       
   - label: "Did national emergency or disater cause loss of life?"
-    description: "Please check all the boxes that best describe the person who died."
+    description: ""
     criteriaGroupKey: deceased
     criteriaKeys:
       - deceased_died_of_COVID
