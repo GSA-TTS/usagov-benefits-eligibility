@@ -2,8 +2,8 @@
 # yaml front matter here
 title: "Military service"
 summary: "Service members and veterans have many benefits available to them, including educational assistance, home loans, and life insurance."
-lede: "Service members and veterans have many benefits available to them, including educational assistance, home loans, and life insurance."
-secondaryHeadline: "Military Service Benefits"
+lede: ""
+secondaryHeadline: "Military service benefits"
 
 eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
 
