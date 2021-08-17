@@ -4,7 +4,7 @@ headline: "Home Loan Program"
 tags: 
 - "housing"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/housing-assistance/home-loans/surviving-spouse/"
