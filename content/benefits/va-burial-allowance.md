@@ -4,7 +4,7 @@ headline: "Burial marker for veterans"
 tags: 
 - "burial and funeral assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/burials-memorials/veterans-burial-allowance/"
