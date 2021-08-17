@@ -1,9 +1,9 @@
 ---
 # yaml front matter here
-title: "Getting older"
+title: "Getting older benefits"
 summary: "As you get older and your needs change, there may be benefits available to help you with expenses, health care, and other new challenges."
-lede: "As you get older and your needs change, there may be benefits available to help you with expenses, health care, and other new challenges."
-secondaryHeadline: "Late Adulthood Benefits"
+lede: ""
+secondaryHeadline: ""
 
 eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
 
