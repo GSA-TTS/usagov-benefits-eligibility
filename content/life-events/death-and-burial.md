@@ -1,9 +1,9 @@
 ---
 # yaml front matter here
-title: "Death and burial benefits"
+title: "Death and burial"
 summary: "If you have lost a loved one, you may qualify for help, including help with burial or funeral costs, financial support, and more."
 lede: ""
-secondaryHeadline: ""
+secondaryHeadline: "Death and burial benefits"
 
 eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
 
