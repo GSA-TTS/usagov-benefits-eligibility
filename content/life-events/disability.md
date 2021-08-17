@@ -1,9 +1,9 @@
 ---
 # yaml front matter here
-title: "Disability"
+title: "Disability benefits"
 summary: "Whether you are newly disabled or have a lifelong challenge, assistance may be available, including financial help."
-lede: "Whether you are newly disabled or have a lifelong challenge, assistance may be available, including financial help."
-secondaryHeadline: "Disability Benefits"
+lede: ""
+secondaryHeadline: ""
 
 eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
 
