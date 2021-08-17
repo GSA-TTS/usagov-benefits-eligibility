@@ -4,7 +4,7 @@ headline: "Dependency and Indemnity Compensation"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/disability/dependency-indemnity-compensation/"
