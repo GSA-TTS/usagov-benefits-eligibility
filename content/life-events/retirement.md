@@ -5,9 +5,11 @@ summary: "Find out what financial, health care, and other benefits may be availa
 lede: "Find out what financial, health care, and other benefits may be available as you enter this next phase of your life."
 secondaryHeadline: "Retirement Benefits"
 
+eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+
 eligibilityCriteria:
   - label: "About the applicant"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_disability
@@ -16,7 +18,7 @@ eligibilityCriteria:
       - applicant_citizen_status
 
   - label: "About your military service"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_served_in_active_military
