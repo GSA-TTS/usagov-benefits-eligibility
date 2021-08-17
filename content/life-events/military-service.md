@@ -5,15 +5,17 @@ summary: "Service members and veterans have many benefits available to them, inc
 lede: "Service members and veterans have many benefits available to them, including educational assistance, home loans, and life insurance."
 secondaryHeadline: "Military Service Benefits"
 
+eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+
 eligibilityCriteria:
   - label: "About your military service"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: military
     criteriaKeys:
       - applicant_served_in_active_military
  
   - label: "About the applicant"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_disability
