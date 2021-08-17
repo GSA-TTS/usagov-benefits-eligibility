@@ -5,9 +5,11 @@ summary: "There may be benefits available to help you with a recent job loss or 
 lede: "There may be benefits available to help you with a recent job loss or is you have low income, including financial help and retraining."
 secondaryHeadline: "Loss of Job and Low Income Benefits"
 
+eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+
 eligibilityCriteria:
   - label: "About the applicant"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_paid_into_SS
