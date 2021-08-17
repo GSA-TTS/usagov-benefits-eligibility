@@ -4,7 +4,7 @@ headline: "Death Gratuity"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "Department of Defense"
   link: "https://militarypay.defense.gov/Benefits/Death-Gratuity/"
