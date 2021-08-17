@@ -4,7 +4,7 @@ headline: "Health Care Benefits"
 tags: 
 - "healthcare"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/health-care/family-caregiver-benefits/"
