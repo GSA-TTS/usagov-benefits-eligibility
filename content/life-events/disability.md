@@ -5,9 +5,11 @@ summary: "Whether you are newly disabled or have a lifelong challenge, assistanc
 lede: "Whether you are newly disabled or have a lifelong challenge, assistance may be available, including financial help."
 secondaryHeadline: "Disability Benefits"
 
+eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+
 eligibilityCriteria:
   - label: "About the person who died"
-    description: "Please check all the boxes that best describe the person who died."
+    description: ""
     criteriaGroupKey: deceased
     criteriaKeys:
       - deceased_paid_into_SS
@@ -16,7 +18,7 @@ eligibilityCriteria:
       - deceased_public_safety_officer
 
   - label: "About the military service"
-    description: "Please select options and check all the boxes that best describe the person who died."
+    description: ""
     criteriaGroupKey: military
     criteriaKeys:
       - deceased_served_in_active_military
@@ -25,7 +27,7 @@ eligibilityCriteria:
       - deceased_buried_in_private_cemetery
  
   - label: "About the applicant"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_relationship
@@ -35,7 +37,7 @@ eligibilityCriteria:
 
 
   - label: "About your military service"
-    description: "Please select options and check all the boxes that best describe you (the person who will be applying for benefits)."
+    description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_served_in_active_military
