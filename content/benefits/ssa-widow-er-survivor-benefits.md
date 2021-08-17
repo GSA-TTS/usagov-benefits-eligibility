@@ -4,7 +4,7 @@ headline: "Surviving Widow(er) Benefits"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "Social Security Administration"
   link: "https://www.ssa.gov/forms/ssa-10.html"
