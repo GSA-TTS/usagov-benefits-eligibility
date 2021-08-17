@@ -4,7 +4,7 @@ headline: "Surviving Mothers/Fathers Benefits"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "Social Security Administration"
   link: "https://www.ssa.gov/forms/ssa-5.html"
