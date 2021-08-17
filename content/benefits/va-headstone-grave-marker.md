@@ -4,7 +4,7 @@ headline: "Veteran’s Headstone and Grave Marker"
 tags: 
 - "burial and funeral assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/"
