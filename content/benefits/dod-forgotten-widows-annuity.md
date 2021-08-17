@@ -4,7 +4,7 @@ headline: "Annuity for Certain Military Surviving Spouses"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "Department of Defense"
   link: "https://militarypay.defense.gov/Portals/3/Documents/acmss.pdf"
