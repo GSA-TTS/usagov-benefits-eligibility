@@ -4,7 +4,7 @@ headline: "Public Safety Officers' Death Benefits"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "bereavement"
+- "death-and-burial"
 source:
   name: "U.S. Department of Justice"
   link: "https://psob.bja.ojp.gov/PSOB_FactSheet2019.pdf"
