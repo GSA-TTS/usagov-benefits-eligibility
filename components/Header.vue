@@ -14,12 +14,12 @@
             </div>
             <div class="grid-col-fill tablet:grid-col-auto">
               <p class="usa-banner__header-text">{{ $t("banner.official") }}</p>
-              <p class="usa-banner__header-action" aria-hidden="true">
+              <p class="usa-banner__header-action print:display-none" aria-hidden="true">
                 {{ $t("banner.know") }}
               </p>
             </div>
             <button
-              class="usa-accordion__button usa-banner__button"
+              class="usa-accordion__button usa-banner__button print:display-none"
               aria-expanded="false"
               aria-controls="gov-banner">
               <span class="usa-banner__button-text">{{

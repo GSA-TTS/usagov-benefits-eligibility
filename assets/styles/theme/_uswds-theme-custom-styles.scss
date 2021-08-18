@@ -22,3 +22,25 @@ i.e.
 .text-success {
    color: color('success')
 }
+
+@media print {
+   .break-inside-avoid {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      position: relative;
+      display: block;
+      }
+   .break-before-always {
+      page-break-before: always;
+      break-before: page;
+   }
+   .print\:text-left {
+      text-align: left;
+   }
+   .print\:display-none {
+      display: none;
+   }
+   .print\:display-block {
+      display: block;
+   }
+}
