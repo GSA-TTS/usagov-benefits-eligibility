@@ -46,4 +46,13 @@ i.e.
    .print\:display-block {
       display: block;
    }
+   .print\:text-black {
+      color: color('black');
+   }
+   .print\:bg-white {
+      @include u-bg('white');
+   }
+   .print\:text-base-darker {
+      color: color('base-darker');
+   }
 }

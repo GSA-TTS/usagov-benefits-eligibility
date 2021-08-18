@@ -57,6 +57,10 @@
                   doesCriterionMatchSelection(criterion) === null
               },
               {
+                'print:text-base-darker':
+                  doesCriterionMatchSelection(criterion) === null
+              },
+              {
                 'text-secondary-vivid text-bold':
                   doesCriterionMatchSelection(criterion) === false
               }
@@ -79,7 +83,7 @@
       </ul>
     </client-only>
     <p
-      class="text-white bg-base-darker font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
+      class="text-white bg-base-darker print:text-black print:bg-white font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
       <strong>Additional eligibility criteria may apply.</strong> Please review
       the full requirements at "How to apply."
     </p>
