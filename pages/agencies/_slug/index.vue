@@ -59,7 +59,7 @@
                   benefit.source ? benefit.source.link : '#'
                 "
                 primary-button-target="_blank"
-                :card-tags="mapLifeEvents(benefit.lifeEvents)">
+                :card-tags="mapTags(mapLifeEvents(benefit.lifeEvents))">
                 <template
                   v-if="
                     benefit.source && benefit.source.name && benefit.source.link
@@ -90,8 +90,10 @@
 
 <script>
 import _ from 'lodash';
+import mapTags from "~/mixins/MapTags";
 
 export default {
+  mixins: [mapTags],
   data () {
     return {
         benefitAgency: '',
