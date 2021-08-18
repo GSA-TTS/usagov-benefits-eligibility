@@ -133,7 +133,7 @@ describe('Life Event page', () => {
     wrapper.vm.lifeEvent = mockContent.lifeEvent;
     await store.dispatch("criteria/populate", [...mockContent.criteria.body]);
     await wrapper.vm.$nextTick();
-    expect(wrapper.find('h1').text()).toBe('test life event title');
+    expect(wrapper.find('h1').text()).toBe('test life event secondary headline');
     expect(wrapper.vm.lifeEventTitle).toBe('test life event secondary headline');
   });
 

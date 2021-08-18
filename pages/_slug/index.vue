@@ -4,13 +4,10 @@
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
           <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7 text-primary">
-            {{ lifeEvent.title }}
+            {{ lifeEvent.secondaryHeadline }}
           </h1>
           <p v-if="lifeEvent.lede" class="usa-intro">
             {{ lifeEvent.lede }}
-          </p>
-          <p v-else-if="lifeEvent.summary" class="usa-intro">
-            {{ lifeEvent.summary }}
           </p>
           <ol class="usa-process-list">
             <li class="usa-process-list__item padding-bottom-4">
@@ -34,9 +31,6 @@
 
       <div class="grid-row grid-gap">
         <div class="grid-col margin-y-3">
-          <h1 v-if="lifeEventTitle" class="font-heading-xl margin-top-1 text-primary">
-            {{ lifeEvent.secondaryHeadline }}
-          </h1>
         </div>
         <div class="grid-col margin-y-3 text-right">
           <label

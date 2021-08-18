@@ -1,6 +1,6 @@
 <template>
   <div class="margin-bottom-4">
-    <h4>Getting help from a friend?</h4>
+    <h3>Getting help from a friend?</h3>
     <p class="usa-prose">
       Copy a link to this page with the criteria you
       selected above. Make sure to share it only with
@@ -9,7 +9,8 @@
     <div class="margin-bottom-1">
       <span :class="{ 'usa-tooltip': alert, 'display-inline-block': true, 'width-full': true }">
         <input class="usa-input" type="text" readonly
-          :value="url" title="URL copied to clipboard" data-position="top"/>
+          aria-label="URL of website with responses saved"
+          :value="url" data-position="top"/>
           <span :class="{ 'usa-tooltip__body': true, 'is-set': alert, 'usa-tooltip__body--top':true, 'is-visible': alert }" role="tooltip" :aria-hidden="!alert"
             style="left: 15%; top: -4rem;">
             URL copied to clipboard
