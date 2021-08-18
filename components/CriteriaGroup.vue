@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-for="criteriaGroup in lifeEventCriteria">
-      <div :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`" :key="criteriaGroup.criteriaGroupKey" class="margin-bottom-4 border-bottom border-base-lighter border-width-2px">
+      <div :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`" :key="criteriaGroup.criteriaGroupKey" class="margin-bottom-4 border-bottom border-base-lighter border-width-2px break-inside-avoid">
         <h2 class="font-heading-lg font-family-sans text-bold margin-top-0">
             {{ criteriaGroup.label }}
         </h2>

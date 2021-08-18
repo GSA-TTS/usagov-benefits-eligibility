@@ -21,11 +21,14 @@
     <div class="usa-card__footer">
       <ul class="usa-button-group" :aria-label="'Choices for ' + cardTitle">
         <li class="usa-button-group__item">
-          <a v-if="isRemoteLink(primaryButtonLink)" :href="primaryButtonLink" :target="primaryButtonTarget"
+          <span v-if="isRemoteLink(primaryButtonLink)">
+          <a :href="primaryButtonLink" :target="primaryButtonTarget"
             :aria-label="primaryButtonAriaLabel"
             class="usa-button usa-button--outline">
             {{ primaryButtonText }}
           </a>
+          <span class="display-none print:display-inline margin-left-1">{{ primaryButtonLink }}</span>
+          </span>
           <nuxt-link v-else :to="primaryButtonLink" :aria-label="primaryButtonAriaLabel"
             class="usa-button">
             {{ primaryButtonText }}

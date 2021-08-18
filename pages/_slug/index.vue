@@ -30,9 +30,9 @@
       </div>
 
       <div class="grid-row grid-gap">
-        <div class="grid-col margin-y-3">
+        <div class="grid-col margin-y-3 print:display-none">
         </div>
-        <div class="grid-col margin-y-3 text-right">
+        <div class="grid-col margin-y-3 text-right print:text-left">
           <label
             class="usa-label display-inline margin-right-1"
             for="benefitSort">Showing {{ lifeEventBenefits.length }} related benefits sorted
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <div class="grid-row grid-gap">
+      <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto">
           <div v-if="filter">
             <div class="margin-bottom-3">
@@ -96,7 +96,7 @@
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
           <share-results />
         </div>
-        <div class="tablet:grid-col-7 desktop:grid-col-8">
+        <div class="tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <div
             v-if="$fetchState.pending"
             class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
@@ -121,11 +121,11 @@
 
           <ul
             v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-            class="usa-card-group">
+            class="usa-card-group print:display-block">
             <li
               v-for="benefit in lifeEventBenefits"
               :key="benefit.title"
-              class="usa-card desktop:grid-col-12 flex-auto"
+              class="usa-card desktop:grid-col-12 flex-auto print:display-block break-before-always"
               :aria-label="benefit.title">
               <Card
                 :card-body="benefit.summary"
