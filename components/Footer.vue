@@ -2,7 +2,7 @@
   <div>
     <div class="grid-container">
       <div class="grid-row">
-        <div class="tablet:grid-col-7 desktop:grid-col-8">
+        <div class="grid-col">
           <nuxt-content :document="disclaimer" />
         </div>
       </div>

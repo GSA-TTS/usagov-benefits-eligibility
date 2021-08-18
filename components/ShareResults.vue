@@ -16,12 +16,12 @@
           </span>
         </span>
     </div>
-    <button class="usa-button usa-button--outline text-middle" @click="copy">
-      <svg class="usa-icon" aria-hidden="true" focusable="false"
+    <button class="usa-button usa-button--outline" @click="copy">
+      <svg class="usa-icon text-middle" aria-hidden="true" focusable="false"
         role="img">
         <use xlink:href="~/assets/img/sprite.svg#share"/>
       </svg>
-      Share my selection
+      <span class="text-middle">Share my selection</span>
     </button>
 </div>
 </template>

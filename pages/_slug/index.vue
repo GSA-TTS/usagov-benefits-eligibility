@@ -12,10 +12,22 @@
           <p v-else-if="lifeEvent.summary" class="usa-intro">
             {{ lifeEvent.summary }}
           </p>
-          <ol class="usa-intro">
-            <li>Answer a few questions</li>
-            <li>Review a custom list of potential benefits</li>
-            <li>Find out how to apply</li>
+          <ol class="usa-process-list">
+            <li class="usa-process-list__item padding-bottom-4">
+              <p class="usa-process-list__heading font-sans-m line-height-sans-1">
+                Answer a few questions
+              </p>
+            </li>
+            <li class="usa-process-list__item padding-bottom-4">
+              <p class="usa-process-list__heading font-sans-m line-height-sans-1">
+                Review a custom list of potential benefits
+              </p>
+            </li>
+            <li class="usa-process-list__item">
+              <p class="usa-process-list__heading font-sans-m line-height-sans-1">
+                Find out how to apply
+              </p>
+            </li>
           </ol>
         </div>
       </div>
@@ -47,12 +59,12 @@
       </div>
 
       <div class="grid-row grid-gap">
-        <div class="tablet:grid-col-5 desktop:grid-col-4">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto">
           <div v-if="filter">
             <div class="margin-bottom-3">
               Currently viewing
               <span
-                class="usa-tag bg-accent-cool-darker margin-left-05 display-inline-flex margin-left-0 padding-0 usa-button-group__item">
+                class="usa-tag bg-primary margin-left-05 display-inline-flex margin-left-0 padding-0 usa-button-group__item">
                 <button
                   class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-1 border-left border-accent-cool-light padding-x-05"
                   style="padding: .25rem"
@@ -60,7 +72,7 @@
                   aria-label="Remove this filter"
                   data-position="top"
                   @click="clearFilter">
-                  {{ filter }}
+                  <span class="text-middle">{{ filter }}</span>
                   <svg
                     class="usa-icon text-white text-middle"
                     aria-hidden="true"
@@ -75,7 +87,7 @@
           <div class="margin-bottom-4">
             <ul class="usa-icon-list usa-icon-list--size-md">
               <li class="usa-icon-list__item">
-                <div class="usa-icon-list__icon text-blue">
+                <div class="usa-icon-list__icon text-primary">
                   <svg class="usa-icon usa-icon--size-3" aria-hidden="true" focusable="false"
                     role="img">
                     <use xlink:href="~/assets/img/sprite.svg#info"/>
@@ -164,9 +176,11 @@
 import _ from "lodash";
 import { mapGetters, mapState } from "vuex";
 import EligibilityList from "~/components/EligibilityList.vue";
+import mapTags from "~/mixins/MapTags";
 
 export default {
   components: { EligibilityList },
+  mixins: [mapTags],
   layout: "default",
   data () {
     return {
@@ -248,9 +262,6 @@ export default {
       }
       return virtualCriteria;
     },
-    mapTags (tags) {
-      return (tags || []).map(tag => ({ name: tag, title: `View ${tag} benefits` }));
-    },
     sortChange (event) {
       this.sort = event.target.value;
       this.sortBenefits();
@@ -293,6 +304,6 @@ export default {
       this.lifeEventBenefits = this.allLifeEventBenefits;
       this.sortBenefits();
     }
-  }
+  },
 };
 </script>
