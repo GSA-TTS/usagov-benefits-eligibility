@@ -1,16 +1,37 @@
 <template>
-  <span>
-    <button class="usa-button margin-bottom-2 margin-right-0" @click="copy()">
+  <div class="margin-bottom-4">
+    <h4>Getting help from a friend?</h4>
+    <p class="usa-prose">
+      Copy a link to this page with the criteria you
+      selected above. Make sure to share it only with
+      those you trust as your answers will be visible.
+    </p>
+    <div class="margin-bottom-1">
+      <span :class="{ 'usa-tooltip': alert, 'display-inline-block': true, 'width-full': true }">
+        <input class="usa-input" type="text" readonly
+          :value="url" title="URL copied to clipboard" data-position="top"/>
+          <span :class="{ 'usa-tooltip__body': true, 'is-set': alert, 'usa-tooltip__body--top':true, 'is-visible': alert }" role="tooltip" :aria-hidden="!alert"
+            style="left: 15%; top: -4rem;">
+            URL copied to clipboard
+          </span>
+        </span>
+    </div>
+    <button class="usa-button usa-button--outline text-middle" @click="copy">
       <svg class="usa-icon" aria-hidden="true" focusable="false"
         role="img">
-          <use xlink:href="~/assets/img/sprite.svg#content_copy" />
+        <use xlink:href="~/assets/img/sprite.svg#share"/>
       </svg>
-      Copy page link
+      Share my selection
     </button>
-  </span>
+</div>
 </template>
 <script>
 export default {
+  data () {
+    return {
+      alert: false,
+    };
+  },
   computed: {
     /* eslint vue/return-in-computed-property: "off" */
     url () {
@@ -30,7 +51,8 @@ export default {
           }
         }
         const baseUrl = window.location.href.replace(window.location.search, '');
-        return `${baseUrl}?${params.toString()}`;
+        const diredBaseUrl = baseUrl.endsWith('/') || baseUrl.endsWith('?') ? baseUrl : `${baseUrl}/`;
+        return `${diredBaseUrl}?${params.toString()}`;
       }
     },
   },
@@ -63,7 +85,10 @@ export default {
   methods: {
     async copy () {
       await navigator.clipboard.writeText(this.url);
-      this.$emit('copied');
+      this.alert = true;
+      setTimeout(() => {
+        this.alert = false;
+      }, 30 * 1000)
     },
   },
 };

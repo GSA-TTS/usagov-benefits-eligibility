@@ -13,7 +13,7 @@
     <div class="usa-summary-box__text">
       <ul class="usa-list">
         <li>
-          We provide an estimated list of benefits that might be appropriate for you, but the only way to find out your eligibility is to apply.
+          We provide an estimated list of federal benefits that might be appropriate for you, but the only way to find out your eligibility is to apply.
         </li>
         <li>
             Your state, city, or employer may offer other benefits. Be sure to check these out for a full picture of the help available to you.

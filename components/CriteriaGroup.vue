@@ -1,11 +1,11 @@
 <template>
   <div>
     <template v-for="criteriaGroup in lifeEventCriteria">
-      <div :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey" :key="criteriaGroup.criteriaGroupKey" class="margin-bottom-4">
-        <h2 class="font-heading-lg font-family-sans text-normal margin-top-0">
+      <div :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`" :key="criteriaGroup.criteriaGroupKey" class="margin-bottom-4 border-bottom border-base-lighter border-width-2px">
+        <h2 class="font-heading-lg font-family-sans text-bold margin-top-0">
             {{ criteriaGroup.label }}
         </h2>
-        <p class="line-height-sans-4">
+        <p class="line-height-sans-4 font-sans-sm">
             {{ criteriaGroup.description }}
         </p>
         <div :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey" class="">
