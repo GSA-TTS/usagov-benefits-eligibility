@@ -91,4 +91,7 @@ export default {
   margin-right:1.25em;
   vertical-align: middle;
 }
+.usa-select:last-child {
+  margin-bottom: 1.25rem;
+}
 </style>
