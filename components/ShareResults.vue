@@ -1,5 +1,5 @@
 <template>
-  <div class="margin-bottom-4">
+  <div class="margin-bottom-4 print:display-none">
     <h3>Getting help from a friend?</h3>
     <p class="usa-prose">
       Copy a link to this page with the criteria you

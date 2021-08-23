@@ -24,7 +24,7 @@
           <span v-if="isRemoteLink(primaryButtonLink)">
           <a :href="primaryButtonLink" :target="primaryButtonTarget"
             :aria-label="primaryButtonAriaLabel"
-            class="usa-button usa-button--outline">
+            class="usa-button usa-button--outline print:display-none">
             {{ primaryButtonText }}
           </a>
           <span class="display-none print:display-inline margin-left-1">{{ primaryButtonLink }}</span>
@@ -40,7 +40,7 @@
           class="usa-button-group__item">
           <nuxt-link
             :to="secondaryButtonLink"
-            class="usa-button usa-button--outline">
+            class="usa-button usa-button--outline print:display-none">
             {{ secondaryButtonText }}
           </nuxt-link>
         </li>

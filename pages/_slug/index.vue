@@ -9,7 +9,7 @@
           <p v-if="lifeEvent.lede" class="usa-intro">
             {{ lifeEvent.lede }}
           </p>
-          <ol class="usa-process-list">
+          <ol class="usa-process-list print:display-none">
             <li class="usa-process-list__item padding-bottom-4">
               <p class="usa-process-list__heading font-sans-m line-height-sans-1">
                 Answer a few questions
@@ -29,10 +29,10 @@
         </div>
       </div>
 
-      <div class="grid-row grid-gap">
+      <div class="grid-row grid-gap print:display-none">
         <div class="grid-col margin-y-3 print:display-none">
         </div>
-        <div class="grid-col margin-y-3 text-right print:text-left">
+        <div class="grid-col margin-y-3 text-right">
           <label
             class="usa-label display-inline margin-right-1"
             for="benefitSort">Showing {{ lifeEventBenefits.length }} related benefits sorted
@@ -54,6 +54,7 @@
 
       <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto">
+          <h2 class="display-none print:display-block">Eligibility criteria</h2>
           <div v-if="filter">
             <div class="margin-bottom-3">
               Currently viewing
@@ -78,7 +79,7 @@
               </span>
             </div>
           </div>
-          <div class="margin-bottom-4">
+          <div class="margin-bottom-4 print:display-none">
             <ul class="usa-icon-list usa-icon-list--size-md">
               <li class="usa-icon-list__item">
                 <div class="usa-icon-list__icon text-primary">
@@ -97,6 +98,12 @@
           <share-results />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8 print:display-block">
+          <div class="grid-row grid-gap display-none print:display-block break-before-always">
+            <div class="grid-col">
+              <h2>Benefits</h2>
+              Showing {{ lifeEventBenefits.length }} related benefits sorted by {{ sort }}.
+            </div>
+          </div>
           <div
             v-if="$fetchState.pending"
             class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
@@ -125,7 +132,7 @@
             <li
               v-for="benefit in lifeEventBenefits"
               :key="benefit.title"
-              class="usa-card desktop:grid-col-12 flex-auto print:display-block break-before-always"
+              class="usa-card desktop:grid-col-12 flex-auto print:display-block break-before-always-nfc"
               :aria-label="benefit.title">
               <Card
                 :card-body="benefit.summary"
@@ -155,7 +162,8 @@
                 </template>
                 <template #eligibility>
                   <EligibilityList
-                    :benefit-eligibility-criteria="benefit.eligibility"/>
+                    :benefit-eligibility-criteria="benefit.eligibility"
+                    :benefit-source="benefit.source ? benefit.source.link : ''"/>
                 </template>
               </Card>
             </li>
@@ -189,7 +197,7 @@ export default {
       },
       lifeEventBenefits: [],
       allLifeEventBenefits: [],
-      sort: ""
+      sort: "relevance",
     };
   },
   async fetch () {

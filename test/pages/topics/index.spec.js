@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
-import Page from '@/pages/categories/index.vue'
+import Page from '@/pages/topics/index.vue'
 import beforeAllTests from '@/test/beforeAllTests';
 
-describe('pages/categories/index.vue', () => {
+describe('pages/topics/index.vue', () => {
   beforeAll(async () => {
     await beforeAllTests();
   });

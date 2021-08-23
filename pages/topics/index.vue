@@ -4,7 +4,7 @@
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
           <h1 class="font-heading-3xl margin-top-0 text-primary">
-            Benefits by category
+            Benefits by topic
           </h1>
           <p class="usa-intro">
           </p>
@@ -24,7 +24,7 @@
                 card-title-heading-level="h2"
                 :card-body="tag.summary"
                 primary-button-text="See possible benefits"
-                :primary-button-link="`/categories/${tag.slug}`"/>
+                :primary-button-link="`/topics/${tag.slug}`"/>
             </li>
           </ul>
         </div>

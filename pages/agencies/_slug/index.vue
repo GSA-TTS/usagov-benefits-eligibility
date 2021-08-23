@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="grid-row grid-gap">
+      <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col-7 desktop:grid-col-8">
           <div
             v-if="$fetchState.pending"
@@ -44,11 +44,11 @@
 
           <ul
             v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-            class="usa-card-group">
+            class="usa-card-group print:display-block">
             <li
               v-for="benefit in lifeEventBenefits"
               :key="benefit.title"
-              class="usa-card desktop:grid-col-12 flex-auto"
+              class="usa-card desktop:grid-col-12 flex-auto print:display-block break-before-always"
               :aria-label="benefit.title">
               <Card
                 :card-body="benefit.summary"
@@ -77,7 +77,8 @@
                 <template #eligibility>
                   <EligibilityList
                     :benefit-eligibility-criteria="benefit.eligibility"
-                    :show-icons="false" :show-matching-count="false"/>
+                    :show-icons="false" :show-matching-count="false"
+                    :benefit-source="benefit.source ? benefit.source.link : ''"/>
                 </template>
               </Card>
             </li>
