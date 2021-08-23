@@ -22,7 +22,7 @@
         role="img">
         <use xlink:href="~/assets/img/sprite.svg#share"/>
       </svg>
-      <span class="text-middle">Share my selection</span>
+      <span class="text-middle">Share my selections</span>
     </button>
 </div>
 </template>

@@ -11,7 +11,7 @@
         {{ name }}
       </button>
     </span>
-    <span v-else class="usa-tag bg-accent-cool-darker">{{ name }}</span>
+    <span v-else class="usa-tag bg-primary">{{ name }}</span>
 </template>
 <script>
 export default {
