@@ -3,7 +3,7 @@
     class="eligibility-list-container border border-base-lighter border-width-2px radius-md margin-top-4">
     <h3 class="bg-base-lighter margin-0 padding-x-2 padding-y-1 font-sans-md">
       Key eligibility criteria
-        <span v-if="showMatchingCount">
+        <span class="print:display-none" v-if="showMatchingCount">
           (meets at least
           {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of
           {{ benefitEligibilityCriteria.length }}).
@@ -84,8 +84,8 @@
     </client-only>
     <p
       class="text-white bg-base-darker print:text-black print:bg-white font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
-      <strong>Additional eligibility criteria may apply.</strong> Please review
-      the full requirements at "How to apply."
+      <strong>Additional eligibility criteria may apply.</strong>
+      Please review the full requirements at <span class="print:display-none">"How to apply."</span><span class="display-none print:display-inline">{{ benefitSource }}</span>
     </p>
   </div>
 </template>
@@ -104,6 +104,11 @@ export default {
           }
         ];
       }
+    },
+    benefitSource: {
+      type: String,
+      required: false,
+      default: '',
     },
     showIcons: {
       type: Boolean,

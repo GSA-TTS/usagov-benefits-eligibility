@@ -97,9 +97,9 @@
               $t("projectName")
             }}</nuxt-link></em>
         </div>
-        <button class="usa-menu-btn">Menu</button>
+        <button class="usa-menu-btn print:display-none">Menu</button>
       </div>
-      <nav aria-label="Primary navigation" class="usa-nav">
+      <nav aria-label="Primary navigation" class="usa-nav print:display-none">
         <div class="usa-nav__inner">
           <button class="usa-nav__close">
             <img
@@ -145,7 +145,7 @@
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item">
-              <nuxt-link to="/categories" class="usa-nav__link">
+              <nuxt-link to="/topics" class="usa-nav__link">
                 <span>Benefits by topic</span>
               </nuxt-link>
             </li>

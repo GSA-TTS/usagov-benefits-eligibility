@@ -28,7 +28,8 @@ i.e.
       page-break-inside: avoid;
       break-inside: avoid;
       display: block;
-      }
+   }
+   .break-before-always-nfc:not(:first-child),
    .break-before-always {
       page-break-before: always;
       break-before: page;
