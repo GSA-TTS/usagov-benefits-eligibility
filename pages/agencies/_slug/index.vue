@@ -85,6 +85,12 @@
           </ul>
         </div>
       </div>
+
+      <div class="grid-row grid-gap margin-top-2">
+        <div class="grid-col">
+          <print />
+        </div>
+      </div>
     </section>
   </div>
 </template>
