@@ -23,6 +23,32 @@ Theme palette colors
 ----------------------------------------
 */
 
+// ######################
+// COLORS FROM STYLEGUIDE
+// ######################
+//NOTE: Many of the primary/supporting color variables are used for other colors in a redundant manner
+
+// Primary Colors
+$dark-blue: #11385B; //NOTE not currently in our code
+$aqua-blue: #02bfe7; //highlights action items and key areas (buttons, borders, etc)
+$white: #ffffff; //site background, text on dark
+
+// Supporting Colors
+$dark-gray: #4b4b4d; //footer primary
+$light-gray: #d9d9d9; //footer secondary
+$beige: #ebe6de; //leftnav
+$red: #c61f0c; //h1, leftnav current item, featurebox h2
+$blue: #154285; //standard links, h2, leftnav header
+$black: #000000; //standard text, h3
+
+// Other Colors
+$h3: $dark-gray;
+$button-text: $black;
+$aqua-darker: #00a6d2; //hover
+$lang-toggle: $dark-blue;
+$AZ-button: $blue;
+$AZ-button-disabled: #859cba;
+
 // Base colors
 $theme-color-base-family: "gray-cool";
 $theme-color-base-lightest: "gray-5";
