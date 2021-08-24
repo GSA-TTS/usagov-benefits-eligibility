@@ -3,7 +3,7 @@
       v-if="click"
       class="usa-tag bg-primary margin-left-05 usa-button-group__item margin-left-0 padding-0 display-inline-block">
       <button
-        style="padding: .25rem"
+        style="padding: .25rem; text-decoration: none;"
         class="usa-tooltip usa-button usa-button--outline usa-button--inverse usa-button--unstyled text-uppercase"
         :title="title"
         data-position="right"
