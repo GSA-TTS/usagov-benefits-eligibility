@@ -3,7 +3,7 @@
     class="eligibility-list-container border border-base-lighter border-width-2px radius-md margin-top-4">
     <h3 class="bg-base-lighter margin-0 padding-x-2 padding-y-1 font-sans-md">
       Key eligibility criteria
-        <span class="print:display-none" v-if="showMatchingCount">
+        <span v-if="showMatchingCount" class="print:display-none">
           (meets at least
           {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of
           {{ benefitEligibilityCriteria.length }}).

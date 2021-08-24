@@ -95,7 +95,7 @@
         <div id="extended-logo" class="usa-logo" style="max-width: 60%">
           <em class="usa-logo__text display-flex" style="align-items: center;">
             <nuxt-link to="/" title="USAGov Logo" aria-label="USAGov Logo">
-              <img class="square-10 margin-right-2" src="~/assets/img/logo-img-usagov.png" alt="USAGov Logo">
+              <img class="circle-5 desktop:circle-10 margin-right-2" src="~/assets/img/logo-img-usagov.png" alt="USAGov Logo">
             </nuxt-link>
             <nuxt-link to="/" title="Home" aria-label="Home">
               {{ $t("projectName") }}
