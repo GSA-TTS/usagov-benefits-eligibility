@@ -92,10 +92,15 @@
     <div class="usa-overlay" />
     <header class="usa-header usa-header--extended">
       <div class="usa-navbar">
-        <div id="extended-logo" class="usa-logo">
-          <em class="usa-logo__text"><nuxt-link to="/" title="Home" aria-label="Home">{{
-              $t("projectName")
-            }}</nuxt-link></em>
+        <div id="extended-logo" class="usa-logo" style="max-width: 60%">
+          <em class="usa-logo__text display-flex" style="align-items: center;">
+            <nuxt-link to="/" title="USAGov Logo" aria-label="USAGov Logo">
+              <img class="square-10 margin-right-2" src="~/assets/img/logo-img-usagov.png" alt="USAGov Logo">
+            </nuxt-link>
+            <nuxt-link to="/" title="Home" aria-label="Home">
+              {{ $t("projectName") }}
+            </nuxt-link>
+          </em>
         </div>
         <button class="usa-menu-btn print:display-none">Menu</button>
       </div>
@@ -156,14 +161,6 @@
             </li>
           </ul>
           <div class="usa-nav__secondary">
-            <ul class="usa-nav__secondary-links">
-              <li class="usa-nav__secondary-item">
-                <nuxt-link :to="switchLocalePath('es')">Español</nuxt-link>
-              </li>
-              <li class="usa-nav__secondary-item">
-                <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-              </li>
-            </ul>
             <form class="usa-search usa-search--small" role="search">
               <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
               <input
