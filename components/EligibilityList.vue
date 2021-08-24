@@ -18,6 +18,7 @@
           <div
             :class="[
               'usa-icon-list__icon',
+              'print:display-none',
               {
                 'text-success text-bold':
                   doesCriterionMatchSelection(criterion) === true
@@ -45,6 +46,35 @@
               <use v-else xlink:href="~/assets/img/sprite.svg#check_circle_outline" />
             </svg>
           </div>
+          <div
+            :class="[
+              'usa-icon-list__icon',
+              'display-none',
+              'print:display-inline',
+              {
+                'text-success text-bold':
+                  doesCriterionMatchSelection(criterion) === true
+              },
+              {
+                'text-base-light':
+                  doesCriterionMatchSelection(criterion) === null
+              },
+              {
+                'text-secondary-vivid text-bold':
+                  doesCriterionMatchSelection(criterion) === false
+              }
+            ]">
+            <svg v-if="showIcons" class="usa-icon" role="img">
+              <use
+                v-if="doesCriterionMatchSelection(criterion) == true"
+                xlink:href="~/assets/img/sprite.svg#check_circle"/>
+              <use
+                v-else-if="doesCriterionMatchSelection(criterion) == false"
+                xlink:href="~/assets/img/sprite.svg#highlight_off"/>
+              <use v-else xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
+            </svg>
+          </div>
+
           <div
             :class="[
               'usa-icon-list__content',
