@@ -99,7 +99,7 @@
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <div class="grid-row grid-gap display-none print:display-block break-before-always">
-            <div class="grid-col">
+            <div class="grid-col margin-bottom-3">
               <h2>Benefits</h2>
               Showing {{ lifeEventBenefits.length }} related benefits sorted by {{ sort }}.
             </div>
