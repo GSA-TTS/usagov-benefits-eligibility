@@ -4,7 +4,7 @@
       role="img">
       <use xlink:href="~/assets/img/sprite.svg#print"/>
     </svg>
-    <span class="text-middle">Print <span v-if="selections">my selections</span></span>
+    <span class="text-middle">Print <span v-if="showSelections">my selections</span></span>
   </button>
 </template>
 
