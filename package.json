@@ -24,7 +24,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "@lokidb/loki": "^2.1.0",
