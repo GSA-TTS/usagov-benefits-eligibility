@@ -5,7 +5,7 @@ summary: "Discover what benefits are available during pregnancy and when you hav
 lede: ""
 secondaryHeadline: "Pregnancy and new baby benefits"
 
-eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 eligibilityCriteria:
   - label: "About the applicant"
