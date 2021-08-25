@@ -5,7 +5,7 @@ summary: "Find out what help is available as you pursue your education, includin
 lede: ""
 secondaryHeadline: "School and education benefits"
 
-eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 eligibilityCriteria:
   - label: "About the applicant"
