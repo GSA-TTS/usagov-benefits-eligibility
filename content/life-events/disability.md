@@ -5,7 +5,7 @@ summary: "Whether you are newly disabled or have a lifelong challenge, assistanc
 lede: ""
 secondaryHeadline: "Disability benefits"
 
-eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 eligibilityCriteria:
   - label: "About the person who died"

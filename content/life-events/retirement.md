@@ -1,11 +1,11 @@
 ---
 # yaml front matter here
-title: "Retiring"
+title: "Retirement"
 summary: "Find out what financial, health care, and other benefits may be available as you enter this next phase of your life."
 lede: ""
 secondaryHeadline: "Retirement benefits"
 
-eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 eligibilityCriteria:
   - label: "About the applicant"

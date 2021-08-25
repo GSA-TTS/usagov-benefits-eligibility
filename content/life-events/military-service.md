@@ -5,7 +5,7 @@ summary: "Service members and veterans have many benefits available to them, inc
 lede: ""
 secondaryHeadline: "Military service benefits"
 
-eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 eligibilityCriteria:
   - label: "About your military service"
