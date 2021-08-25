@@ -3,7 +3,7 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7 text-primary">
+          <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
           <p v-if="lifeEvent.lede" class="usa-intro">
@@ -126,12 +126,11 @@
             </div>
           </div>
 
-          <ul
-            v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-            class="usa-card-group print:display-block">
+          <transition-group v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
+            class="usa-card-group print:display-block" name="benefit-list" tag="ul">
             <li
               v-for="benefit in lifeEventBenefits"
-              :key="benefit.title"
+              :key="benefit.slug"
               class="usa-card desktop:grid-col-12 flex-auto print:display-block break-before-always-nfc"
               :aria-label="benefit.title">
               <Card
@@ -167,7 +166,7 @@
                 </template>
               </Card>
             </li>
-          </ul>
+          </transition-group>
         </div>
       </div>
     </section>
@@ -309,3 +308,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.benefit-list-move {
+  transition: transform 2s;
+}
+</style>
