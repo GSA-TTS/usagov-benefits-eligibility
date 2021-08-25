@@ -5,7 +5,7 @@ summary: "There may be benefits available to help you with a recent job loss or 
 lede: ""
 secondaryHeadline: "Loss of job and low income benefits"
 
-eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 eligibilityCriteria:
   - label: "About the applicant"
