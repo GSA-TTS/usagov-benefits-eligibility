@@ -3,7 +3,7 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7">
+          <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7 text-primary">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
           <p v-if="lifeEvent.lede" class="usa-intro">
@@ -139,7 +139,6 @@
                 card-title-heading-level="h2"
                 :card-tags-emit-click="true"
                 primary-button-text="How to apply"
-                :primary-button-aria-label="`How to apply for ${benefit.title}`"
                 :primary-button-link="
                   benefit.source ? benefit.source.link : '#'
                 "
