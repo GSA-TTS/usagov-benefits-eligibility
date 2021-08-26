@@ -26,7 +26,7 @@ eligibilityCriteria:
       - deceased_headstone_is_privately_purchased
       - deceased_buried_in_private_cemetery
  
-  - label: "About you"
+  - label: "About you (the person applying for benefits)"
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
