@@ -17,7 +17,7 @@
           </span>
         </span>
     </div>
-    <button class="usa-button usa-button--outline" @click="copy">
+    <button class="usa-button usa-button--outline bg-white" @click="copy">
       <svg class="usa-icon text-middle" aria-hidden="true" focusable="false"
         role="img">
         <use xlink:href="~/assets/img/sprite.svg#share"/>
