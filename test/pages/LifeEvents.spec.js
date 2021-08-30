@@ -10,10 +10,20 @@ const mockContent = {
       title: 'testTitle',
       summary: 'test summary',
     }
-  ]
+  ],
+  landingPage: [{
+    title: 'landing title',
+    summary: 'landing summary',
+    processListSteps: [
+      "one",
+      "two",
+      "three",
+    ],
+  }],
 };
 
 const LIFE_EVENTS_DIRECTORY = 'life-events';
+const LANDING_PAGE_FILE = 'landing-page';
 
 describe('LifeEventsPage', () => {
 
@@ -36,10 +46,16 @@ describe('LifeEventsPage', () => {
 
   it('asyncData() fetches the given data', async () => {
     const $content = createContentMock(
-      [{
-        collectionName: LIFE_EVENTS_DIRECTORY,
-        items: mockContent.lifeEvents
-      }]
+      [
+        {
+          collectionName: LIFE_EVENTS_DIRECTORY,
+          items: mockContent.lifeEvents
+        },
+        {
+          collectionName: LANDING_PAGE_FILE,
+          items: mockContent.landingPage
+        }
+      ]
     );
     const asyncItems = await LifeEventsPage.asyncData({ $content });
 

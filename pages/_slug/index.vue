@@ -151,7 +151,7 @@
                   #source>
                   <h3
                     class="font-sans-xs text-normal text-base-dark margin-bottom-0">
-                    Provided by the
+                    Provided by
                     <a
                       class="usa-link"
                       :href="benefit.source ? benefit.source.link : '#'"
