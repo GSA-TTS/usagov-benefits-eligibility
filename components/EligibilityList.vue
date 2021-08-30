@@ -4,7 +4,7 @@
     <h3 class="bg-base-lighter margin-0 padding-x-2 padding-y-1 font-sans-md">
       Key eligibility criteria
         <span v-if="showMatchingCount" class="print:display-none">
-          (meets at least
+          (You must meet all criteria. You currently meet
           {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of
           {{ benefitEligibilityCriteria.length }}).
         </span>

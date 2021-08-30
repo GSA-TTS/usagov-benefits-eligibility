@@ -4,25 +4,15 @@
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
           <h1 class="font-heading-3xl margin-top-0 text-primary">
-            Help during life's major events
+            {{ landingPage.title }}
           </h1>
           <p class="usa-intro">
-            Life’s big milestones can be challenging, but figuring out which benefits might be available to help shouldn’t be.
+            {{ landingPage.summary }}
           </p>
           <ol class="usa-process-list">
-            <li class="usa-process-list__item padding-bottom-4">
+            <li v-for="step in landingPage.processListSteps" :key="step" class="usa-process-list__item padding-bottom-4">
               <p class="usa-process-list__heading font-sans-m line-height-sans-1">
-                Answer a few questions
-              </p>
-            </li>
-            <li class="usa-process-list__item padding-bottom-4">
-              <p class="usa-process-list__heading font-sans-m line-height-sans-1">
-                Review a custom list of potential benefits
-              </p>
-            </li>
-            <li class="usa-process-list__item">
-              <p class="usa-process-list__heading font-sans-m line-height-sans-1">
-                Find out how to apply
+                {{ step }}
               </p>
             </li>
           </ol>
@@ -58,12 +48,14 @@ export default {
     const lifeEvents = await $content("life-events")
       .sortBy("title")
       .fetch();
+    const landingPage = await $content("landing-page").fetch();
 
-    return { lifeEvents };
+    return { lifeEvents, landingPage };
   },
   data () {
     return {
-      lifeEvents: []
+      lifeEvents: [],
+      landingPage: {},
     };
   }
 };

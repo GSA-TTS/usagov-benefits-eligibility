@@ -7,6 +7,7 @@
             Benefits by topic
           </h1>
           <p class="usa-intro">
+            If you know the specific type of benefit you are looking for, select it below.
           </p>
         </div>
       </div>

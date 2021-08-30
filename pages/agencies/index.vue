@@ -7,6 +7,7 @@
             Benefits by agency
           </h1>
           <p class="usa-intro">
+            If you know the federal agency that provides a specific benefit, select it below.
           </p>
         </div>
       </div>
