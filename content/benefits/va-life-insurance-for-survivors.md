@@ -1,6 +1,6 @@
 ---
-title: "Life Insurance"
-headline: "Life Insurance"
+title: "Life Insurance (payout for survivors following veteran's death)"
+headline: "Life Insurance (payout for survivors following veteran's death)"
 tags: 
 - "life insurance"
 lifeEvents: 
@@ -9,7 +9,7 @@ source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.benefits.va.gov/INSURANCE/sglivgli.asp"
 
-summary: "You might be a beneficiary of a Veteran's or Service member's life insurance policy that offers financial security."
+summary: "Financial payment from a veteran's or service member's life insurance policy may be available."
 
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.

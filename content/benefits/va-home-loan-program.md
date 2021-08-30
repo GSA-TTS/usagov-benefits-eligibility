@@ -9,7 +9,7 @@ source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/housing-assistance/home-loans/surviving-spouse/"
 
-summary: "You might be eligible to get a VA-backed home loan as the surviving spouse of a Veteran."
+summary: "A VA-backed home loan may be available to the surviving spouse of a veteran."
 
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
