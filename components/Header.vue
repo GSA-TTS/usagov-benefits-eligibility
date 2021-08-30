@@ -61,8 +61,9 @@
                     {{ $t("banner.dropdown.secure") }}
                   </strong>
                   <br />
-                  A <strong>lock</strong> (
-                  <span class="icon-lock">
+                    {{ $t("banner.dropdown.secureDetailsLockPrefix") }} <strong>{{ $t("banner.dropdown.secureDetailsLockStrong") }}</strong>
+                    (
+                    <span class="icon-lock">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="52"
@@ -77,10 +78,9 @@
                       <path
                         fill="#000000"
                         fill-rule="evenodd"
-                        d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>
-                  ) or <strong>https://</strong> means you’ve safely connected
-                  to the .gov website. Share sensitive information only on
-                  official, secure websites.
+                        d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg>
+                    </span>
+                    ) {{ $t("banner.dropdown.secureDetailsLockPostfix") }}
                 </p>
               </div>
             </div>
