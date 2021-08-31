@@ -27,13 +27,13 @@
               :key="event.slug"
               class="usa-card desktop:grid-col-6"
               :aria-label="event.title">
-              <a class="display-block height-full margin-x-1" style="text-decoration: none; outline-offset: .25rem;" :href="event.slug">
+              <nuxt-link class="display-block height-full margin-x-1" style="text-decoration: none; outline-offset: .25rem;" :to="event.slug">
                 <Card
                   :card-body="event.summary"
                   :card-title="event.title"
                   :card-container-classes="['hover:border-base-light', 'margin-x-0']"
                   card-title-heading-level="h2"/>
-              </a>
+              </nuxt-link>
             </li>
           </ul>
         </div>
