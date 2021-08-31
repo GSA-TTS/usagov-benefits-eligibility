@@ -20,12 +20,13 @@
               :key="agency.slug"
               class="usa-card desktop:grid-col-6"
               :aria-label="agency.title">
-              <Card
-                card-title-heading-level="h2"
-                :card-title="agency.title"
-                :card-body="agency.summary"
-                primary-button-text="See possible benefits"
-                :primary-button-link="`/agencies/${agency.slug}`"/>
+              <a :href="`/agencies/${agency.slug}`" class="display-block height-full margin-x-1" style="text-decoration:none; outline-offset: .25rem;">
+                <Card
+                  card-title-heading-level="h2"
+                  :card-title="agency.title"
+                  :card-body="agency.summary"
+                  :card-container-classes="['hover:border-base-light', 'margin-x-0']"/>
+              </a>
             </li>
           </ul>
         </div>

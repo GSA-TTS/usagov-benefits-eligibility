@@ -1,5 +1,5 @@
 <template>
-  <div class="usa-card__container">
+  <div :class="['usa-card__container'].concat(cardContainerClasses)">
     <header class="usa-card__header padding-bottom-2">
       <component :is="cardTitleHeadingLevel" :id="'usa-card-heading-' + _uid" class="usa-card__heading">
         {{ cardTitle }}
@@ -19,7 +19,7 @@
       <slot name="eligibility"></slot>
     </div>
     <div class="usa-card__footer">
-      <ul class="usa-button-group" :aria-label="'Choices for ' + cardTitle">
+      <ul v-if="primaryButtonLink !== '#'" class="usa-button-group" :aria-label="'Choices for ' + cardTitle">
         <li class="usa-button-group__item">
           <span v-if="isRemoteLink(primaryButtonLink)">
             <a :href="primaryButtonLink" :target="primaryButtonTarget"
@@ -67,14 +67,19 @@ export default {
       required: false,
       default: ""
     },
+    cardContainerClasses: {
+      type: Array,
+      required: false,
+      default: () => []
+    },
     primaryButtonText: {
       type: String,
-      required: true,
-      default: "Primary Button Text not provided"
+      required: false,
+      default: ""
     },
     primaryButtonLink: {
       type: String,
-      required: true,
+      required: false,
       default: "#"
     },
     primaryButtonTarget: {
