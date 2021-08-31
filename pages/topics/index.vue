@@ -20,12 +20,13 @@
               :key="tag.slug"
               class="usa-card desktop:grid-col-6"
               :aria-label="tag.title">
-              <Card
-                :card-title="tag.title"
-                card-title-heading-level="h2"
-                :card-body="tag.summary"
-                primary-button-text="See possible benefits"
-                :primary-button-link="`/topics/${tag.slug}`"/>
+              <a :href="`/topics/${tag.slug}`" class="display-block height-full margin-x-1" style="text-decoration: none; outline-offset: .25rem;">
+                <Card
+                  :card-title="tag.title"
+                  card-title-heading-level="h2"
+                  :card-container-classes="['hover:border-base-light', 'margin-x-0']"
+                  :card-body="tag.summary"/>
+              </a>
             </li>
           </ul>
         </div>

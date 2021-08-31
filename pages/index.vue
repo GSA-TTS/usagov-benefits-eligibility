@@ -27,12 +27,13 @@
               :key="event.slug"
               class="usa-card desktop:grid-col-6"
               :aria-label="event.title">
-              <Card
-                :card-body="event.summary"
-                :card-title="event.title"
-                card-title-heading-level="h2"
-                primary-button-text="Find possible benefits"
-                :primary-button-link="event.slug"/>
+              <a class="display-block height-full margin-x-1" style="text-decoration: none; outline-offset: .25rem;" :href="event.slug">
+                <Card
+                  :card-body="event.summary"
+                  :card-title="event.title"
+                  :card-container-classes="['hover:border-base-light', 'margin-x-0']"
+                  card-title-heading-level="h2"/>
+              </a>
             </li>
           </ul>
         </div>
