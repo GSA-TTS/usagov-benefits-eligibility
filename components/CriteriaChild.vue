@@ -94,6 +94,6 @@ export default {
   margin-bottom: 1.25rem;
 }
 .usa-checkbox {
-    background: none;
+  background: none;
 }
 </style>
