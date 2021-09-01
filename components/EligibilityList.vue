@@ -1,7 +1,7 @@
 <template>
   <div
     class="eligibility-list-container border border-base-lighter border-width-2px radius-md margin-top-4">
-    <h3 class="bg-base-lighter margin-0 padding-x-2 padding-y-1 font-sans-md">
+    <h3 :class="['margin-0', 'padding-x-2', 'padding-y-1', 'font-sans-md'].concat(headingClasses)">
       Key eligibility criteria
         <span v-if="showMatchingCount" class="print:display-none">
           (You must meet all criteria. You currently meet
@@ -139,6 +139,11 @@ export default {
       type: String,
       required: false,
       default: '',
+    },
+    headingClasses: {
+      type: Array,
+      required: false,
+      default: () => ['bg-base-lighter'],
     },
     showIcons: {
       type: Boolean,
