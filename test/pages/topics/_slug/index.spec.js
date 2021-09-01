@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
-import Page from '@/pages/categories/_slug/index.vue'
+import Page from '@/pages/topics/_slug/index.vue'
 import beforeAllTests from '@/test/beforeAllTests';
 
-describe('pages/categories/_slug/index.vue', () => {
+describe('pages/topics/_slug/index.vue', () => {
   let $fetchState;
 
   beforeAll(async () => {

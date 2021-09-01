@@ -1,0 +1,22 @@
+.usa-footer {
+  &__primary-section {
+    background-color: $dark-gray;
+  }
+
+  &__secondary-section {
+    background-color: $light-gray;
+  }
+
+  &__primary-link, &__secondary-link > a, &__secondary-link > a:visited, &__secondary-link > a:hover {
+    color: color('white');
+  }
+
+  &__primary-link:hover {
+    cursor: unset;
+    text-decoration: none;
+  }
+
+  .usa-list--unstyled > li {
+    @include u-margin-bottom(1);
+  }
+}

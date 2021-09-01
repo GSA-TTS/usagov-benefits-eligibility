@@ -85,10 +85,12 @@ export default {
   margin: 1rem 0 1.25rem;
   line-height: 1.1;
   padding-left: 2.5rem;
-  text-indent: -2.5rem;
 }
 .usa-checkbox__label::before, .usa-radio__label::before {
   margin-right:1.25em;
   vertical-align: middle;
+}
+.usa-select:last-child {
+  margin-bottom: 1.25rem;
 }
 </style>

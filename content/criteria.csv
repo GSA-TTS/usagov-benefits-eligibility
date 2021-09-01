@@ -1,5 +1,5 @@
 criteriaKey,label,type,values
-deceased_paid_into_SS,"The deceased qualified for Social Security benefits (The deceased worked long enough and paid Social Security taxes on their earnings).",boolean,true
+deceased_paid_into_SS,"The deceased qualified for Social Security benefits. (The deceased worked long enough and paid Social Security taxes on their earnings.)",boolean,true
 deceased_died_of_COVID,"The deceased died or likely died of COVID-19.",boolean,true
 deceased_death_location_is_US,"The deceased died in the U.S., including its territories.",boolean,true
 deceased_public_safety_officer,"The deceased was a public safety officer who died in the line of duty.",boolean,true
@@ -25,4 +25,4 @@ applicant_paid_into_SS,"You qualify for Social Security benefits (You worked lon
 applicant_income,"You have limited income and resources.",boolean,true
 applicant_high-school_diploma,"You are qualified to obtain a college or career school education (You have a high school diploma or a GED certificate).",boolean,true
 applicant_degree_cerificate_program,"You are enrolled or accepted for enrollment as a regular student in a degree or certificate program.",boolean,true
-applicant_served_in_active_military,"You served in the active military, naval, or air service and",select,currently are an active-duty member; were discharged under conditions other than dishonorable; had retired from the service
+applicant_served_in_active_military,"You served in the active military, naval or air service and",select,currently are an active-duty member; were discharged under conditions other than dishonorable; had retired from the service

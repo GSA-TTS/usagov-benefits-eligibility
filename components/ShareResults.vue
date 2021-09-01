@@ -1,5 +1,5 @@
 <template>
-  <div class="margin-bottom-4">
+  <div class="margin-bottom-4 print:display-none">
     <h3>Getting help from a friend?</h3>
     <p class="usa-prose">
       Copy a link to this page with the criteria you
@@ -17,13 +17,18 @@
           </span>
         </span>
     </div>
-    <button class="usa-button usa-button--outline" @click="copy">
-      <svg class="usa-icon text-middle" aria-hidden="true" focusable="false"
-        role="img">
-        <use xlink:href="~/assets/img/sprite.svg#share"/>
-      </svg>
-      <span class="text-middle">Share my selection</span>
-    </button>
+    <div class="margin-bottom-1">
+      <button class="usa-button usa-button--outline width-card-lg" @click="copy">
+        <svg class="usa-icon text-middle" aria-hidden="true" focusable="false"
+          role="img">
+          <use xlink:href="~/assets/img/sprite.svg#share"/>
+        </svg>
+        <span class="text-middle">Share my selections</span>
+      </button>
+    </div>
+    <div class="margin-bottom-1">
+      <print :show-selections="true" />
+    </div>
 </div>
 </template>
 <script>

@@ -5,7 +5,7 @@ summary: "If you have lost a loved one, you may qualify for help, including assi
 lede: ""
 secondaryHeadline: "Death and burial benefits"
 
-eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 eligibilityCriteria:
   - label: "About the person who died"
@@ -26,7 +26,7 @@ eligibilityCriteria:
       - deceased_headstone_is_privately_purchased
       - deceased_buried_in_private_cemetery
  
-  - label: "About the applicant"
+  - label: "About you (the person applying for benefits)"
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:

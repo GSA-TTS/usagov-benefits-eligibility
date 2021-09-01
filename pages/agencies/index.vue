@@ -3,10 +3,11 @@
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
-          <h1 class="font-heading-3xl margin-top-0">
+          <h1 class="font-heading-3xl margin-top-0 text-primary">
             Benefits by agency
           </h1>
           <p class="usa-intro">
+            If you know the federal agency that provides a specific benefit, select it below.
           </p>
         </div>
       </div>
@@ -19,12 +20,13 @@
               :key="agency.slug"
               class="usa-card desktop:grid-col-6"
               :aria-label="agency.title">
-              <Card
-                card-title-heading-level="h2"
-                :card-title="agency.title"
-                :card-body="agency.summary"
-                primary-button-text="See possible benefits"
-                :primary-button-link="`/agencies/${agency.slug}`"/>
+              <nuxt-link :to="`/agencies/${agency.slug}`" class="display-block height-full margin-x-1" style="text-decoration:none; outline-offset: .25rem;">
+                <Card
+                  card-title-heading-level="h2"
+                  :card-title="agency.title"
+                  :card-body="agency.summary"
+                  :card-container-classes="['hover:border-base-light', 'margin-x-0']"/>
+              </nuxt-link>
             </li>
           </ul>
         </div>
