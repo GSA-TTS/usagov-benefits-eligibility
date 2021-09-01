@@ -9,7 +9,7 @@
           <p v-if="lifeEvent.lede" class="usa-intro">
             {{ lifeEvent.lede }}
           </p>
-          <ol class="usa-process-list">
+          <ol class="usa-process-list print:display-none">
             <li class="usa-process-list__item padding-bottom-4">
               <p class="usa-process-list__heading font-sans-m line-height-sans-1">
                 Answer a few questions
@@ -29,8 +29,8 @@
         </div>
       </div>
 
-      <div class="grid-row grid-gap">
-        <div class="grid-col margin-y-3">
+      <div class="grid-row grid-gap print:display-none">
+        <div class="grid-col margin-y-3 print:display-none">
         </div>
         <div class="grid-col margin-y-3 text-right">
           <label
@@ -52,8 +52,9 @@
         </div>
       </div>
 
-      <div class="grid-row grid-gap">
+      <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto bg-primary-lighter padding-2 radius-md">
+          <h2 class="display-none print:display-block">Eligibility criteria</h2>
           <div v-if="filter">
             <div class="margin-bottom-3">
               Currently viewing
@@ -78,7 +79,7 @@
               </span>
             </div>
           </div>
-          <div class="margin-bottom-4">
+          <div class="margin-bottom-4 print:display-none">
             <ul class="usa-icon-list usa-icon-list--size-md">
               <li class="usa-icon-list__item">
                 <div class="usa-icon-list__icon text-primary">
@@ -96,7 +97,13 @@
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
           <share-results />
         </div>
-        <div class="tablet:grid-col-7 desktop:grid-col-8">
+        <div class="tablet:grid-col-7 desktop:grid-col-8 print:display-block">
+          <div class="grid-row grid-gap display-none print:display-block break-before-always">
+            <div class="grid-col margin-bottom-3">
+              <h2>Benefits</h2>
+              Showing {{ lifeEventBenefits.length }} related benefits sorted by {{ sort }}.
+            </div>
+          </div>
           <div
             v-if="$fetchState.pending"
             class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
@@ -119,13 +126,12 @@
             </div>
           </div>
 
-          <ul
-            v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-            class="usa-card-group">
+          <transition-group v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
+            class="usa-card-group print:display-block" name="benefit-list" tag="ul">
             <li
               v-for="benefit in lifeEventBenefits"
-              :key="benefit.title"
-              class="usa-card desktop:grid-col-12 flex-auto"
+              :key="benefit.slug"
+              class="usa-card desktop:grid-col-12 flex-auto print:display-block break-before-always-nfc"
               :aria-label="benefit.title">
               <Card
                 :card-body="benefit.summary"
@@ -133,7 +139,6 @@
                 card-title-heading-level="h2"
                 :card-tags-emit-click="true"
                 primary-button-text="How to apply"
-                :primary-button-aria-label="`How to apply for ${benefit.title}`"
                 :primary-button-link="
                   benefit.source ? benefit.source.link : '#'
                 "
@@ -146,7 +151,7 @@
                   #source>
                   <h3
                     class="font-sans-xs text-normal text-base-dark margin-bottom-0">
-                    Provided by the
+                    Provided by
                     <a
                       class="usa-link"
                       :href="benefit.source ? benefit.source.link : '#'"
@@ -155,11 +160,12 @@
                 </template>
                 <template #eligibility>
                   <EligibilityList
-                    :benefit-eligibility-criteria="benefit.eligibility"/>
+                    :benefit-eligibility-criteria="benefit.eligibility"
+                    :benefit-source="benefit.source ? benefit.source.link : ''"/>
                 </template>
               </Card>
             </li>
-          </ul>
+          </transition-group>
         </div>
       </div>
     </section>
@@ -189,7 +195,7 @@ export default {
       },
       lifeEventBenefits: [],
       allLifeEventBenefits: [],
-      sort: ""
+      sort: "relevance",
     };
   },
   async fetch () {
@@ -301,3 +307,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.benefit-list-move {
+  transition: transform 2s;
+}
+</style>

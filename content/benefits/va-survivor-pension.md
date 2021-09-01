@@ -9,7 +9,7 @@ source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/pension/survivors-pension/"
 
-summary: "A VA Survivors Pension offers monthly payments to qualified surviving spouses and unmarried dependent children of wartime Veterans who meet certain income and net worth limits."
+summary: "Monthly payments may be available to qualified surviving spouses and unmarried dependent children of wartime veterans who meet certain income and net worth limits."
 
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.

@@ -5,10 +5,10 @@ summary: "If you have experience a national emergency or a disaster, help may be
 lede: ""
 secondaryHeadline: "National emergency and disaster benefits"
 
-eligibilityCriteriaDescription: "Please check all the boxes and select the options that best describe your situation."
+eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 eligibilityCriteria:
-  - label: "About the applicant"
+  - label: "About you (the person applying for benefits)"
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:

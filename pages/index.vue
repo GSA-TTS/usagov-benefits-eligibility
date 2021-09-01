@@ -3,16 +3,18 @@
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
-          <h1 class="font-heading-3xl margin-top-0">
-            Help during life's major events
+          <h1 class="font-heading-3xl margin-top-0 text-primary">
+            {{ landingPage.title }}
           </h1>
           <p class="usa-intro">
-            Life’s big milestones can be challenging, but figuring out which benefits might be available to help shouldn’t be.
+            {{ landingPage.summary }}
           </p>
-          <ol class="usa-intro">
-            <li>Select a life event</li>
-            <li>Answer a few questions</li>
-            <li>Get a custom list of potential benefits</li>
+          <ol class="usa-process-list">
+            <li v-for="step in landingPage.processListSteps" :key="step" class="usa-process-list__item padding-bottom-4">
+              <p class="usa-process-list__heading font-sans-m line-height-sans-1">
+                {{ step }}
+              </p>
+            </li>
           </ol>
         </div>
       </div>
@@ -25,12 +27,13 @@
               :key="event.slug"
               class="usa-card desktop:grid-col-6"
               :aria-label="event.title">
-              <Card
-                :card-body="event.summary"
-                :card-title="event.title"
-                card-title-heading-level="h2"
-                primary-button-text="Find possible benefits"
-                :primary-button-link="event.slug"/>
+              <nuxt-link class="display-block height-full margin-x-1" style="text-decoration: none; outline-offset: .25rem;" :to="event.slug">
+                <Card
+                  :card-body="event.summary"
+                  :card-title="event.title"
+                  :card-container-classes="['hover:border-base-light', 'margin-x-0']"
+                  card-title-heading-level="h2"/>
+              </nuxt-link>
             </li>
           </ul>
         </div>
@@ -46,12 +49,14 @@ export default {
     const lifeEvents = await $content("life-events")
       .sortBy("title")
       .fetch();
+    const landingPage = await $content("landing-page").fetch();
 
-    return { lifeEvents };
+    return { lifeEvents, landingPage };
   },
   data () {
     return {
-      lifeEvents: []
+      lifeEvents: [],
+      landingPage: {},
     };
   }
 };

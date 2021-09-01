@@ -9,7 +9,7 @@ source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/disability/dependency-indemnity-compensation/"
 
-summary: "You may be eligible to get a tax-free financial assistance called VA Dependency and Indemnity Compensation (VA DIC), if you are a surviving family member of a service member or a Veteran."
+summary: "Tax-free financial assistance may be available to surviving family members of a service member or a veteran."
 
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.

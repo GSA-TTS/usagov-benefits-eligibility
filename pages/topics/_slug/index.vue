@@ -3,7 +3,7 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 v-if="benefitCategory" class="font-heading-3xl margin-top-7">
+          <h1 v-if="benefitCategory" class="font-heading-3xl margin-top-7 text-primary">
             {{ benefitCategory }}
           </h1>
           <p v-if="category && category.lede" class="usa-intro">
@@ -12,13 +12,13 @@
         </div>
       </div>
 
-      <div class="grid-row grid-gap">
+      <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col margin-bottom-3">
           Showing {{ lifeEventBenefits.length }} benefits
         </div>
       </div>
 
-      <div class="grid-row grid-gap">
+      <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col-7 desktop:grid-col-8">
           <div
             v-if="$fetchState.pending"
@@ -44,11 +44,11 @@
 
           <ul
             v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-            class="usa-card-group">
+            class="usa-card-group print:display-block">
             <li
               v-for="benefit in lifeEventBenefits"
               :key="benefit.title"
-              class="usa-card desktop:grid-col-12 flex-auto"
+              class="usa-card desktop:grid-col-12 flex-auto print:display-block break-before-always"
               :aria-label="benefit.title">
               <Card
                 :card-body="benefit.summary"
@@ -77,11 +77,18 @@
                 <template #eligibility>
                   <EligibilityList
                     :benefit-eligibility-criteria="benefit.eligibility"
-                    :show-icons="false" :show-matching-count="false"/>
+                    :show-icons="false" :show-matching-count="false"
+                    :benefit-source="benefit.source ? benefit.source.link : ''"/>
                 </template>
               </Card>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div class="grid-row grid-gap margin-top-2">
+        <div class="grid-col">
+          <print />
         </div>
       </div>
     </section>

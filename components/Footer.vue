@@ -11,134 +11,139 @@
       <div class="grid-container usa-footer__return-to-top">
         <nuxt-link :to="{ path: getUrl(), hash: '#' }">Return to top</nuxt-link>
       </div>
-      <div class="usa-footer__primary-section">
+      <div class="usa-footer__primary-section padding-bottom-7">
         <div class="usa-footer__primary-container grid-row">
-          <div class="mobile-lg:grid-col-8">
-            <nav class="usa-footer__nav" aria-label="Footer navigation">
-              <ul class="grid-row grid-gap">
-                <li
-                  class="mobile-lg:grid-col-6 desktop:grid-col-auto usa-footer__primary-content">
-                  <a class="usa-footer__primary-link" href="https://usa.gov">USA.gov</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="mobile-lg:grid-col-4">
-            <address class="usa-footer__address">
-              <div class="grid-row grid-gap">
-                <div
-                  class="grid-col-auto mobile-lg:grid-col-12 desktop:grid-col-auto">
-                  <div class="usa-footer__contact-info">
-                    <a href="tel:1-844-872-4681">(844)-USAGOV1</a>
-                  </div>
+          <div class="mobile-lg:grid-col-8 desktop:grid-col-12">
+            <nav class="usa-footer__nav" aria-label="Footer navigation,,">
+              <div class="grid-row grid-gap-4">
+                <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
+                  <section
+                    class="
+                      usa-footer__primary-content
+                      usa-footer__primary-content--collapsible
+                    ">
+                    <h4 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">About USA.gov</h4>
+                    <ul class="usa-list usa-list--unstyled">
+                      <li class="usa-footer__secondary-link">
+                        <a class="margin-bottom-3" href="https://www.usa.gov/about">About Us and Site Notices</a>
+                      </li>
+
+                      <li class="usa-footer__secondary-link">
+                        <a href="https://www.usa.gov/media">For the Media</a>
+                      </li>
+
+                      <li class="usa-footer__secondary-link">
+                        <a href="https://www.usa.gov/developer">For Developers</a>
+                      </li>
+
+                      <li class="usa-footer__secondary-link">
+                        <a href="https://www.usa.gov/site-issue-report-form">Report a Website Issue</a>
+                      </li>
+
+                      <li class="usa-footer__secondary-link">
+                        <a href="https://www.usa.gov/#tpcs">All Topics and Services</a>
+                      </li>
+                    </ul>
+                  </section>
                 </div>
-                <div
-                  class="grid-col-auto mobile-lg:grid-col-12 desktop:grid-col-auto">
-                  <div class="usa-footer__contact-info">
-                    <a href="https://www.usa.gov/contact">Contact</a>
-                  </div>
+
+                <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
+                  <section
+                    class="
+                      usa-footer__primary-content
+                      usa-footer__primary-content--collapsible
+                    ">
+                    <h4 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">Ask USA.gov a Question</h4>
+                    <ul class="usa-list usa-list--unstyled">
+                      <li class="usa-footer__secondary-link">
+                        <a href="https://www.usa.gov/phone">Call 1-844-USAGOV1 (1-844-872-4681)</a>
+                      </li>
+
+                      <li class="usa-footer__secondary-link">
+                        <a href="https://usa.gov/espanol/contactenos">En Español</a>
+                      </li>
+                    </ul>
+                  </section>
+                </div>
+
+                <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
+                  <section
+                    class="
+                      usa-footer__primary-content
+                      usa-footer__primary-content--collapsible
+                    ">
+                    <h4 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">Sign Up to Receive Email Updates</h4>
+                    <ul class="usa-list usa-list--unstyled">
+                      <li class="usa-footer__secondary-link">
+                        <form action="https://connect.usa.gov/subscribe" method="get">
+                          <label class="usa-label text-white margin-top-1" for="email-2">Enter your email</label>
+                          <input id="email-2" name="email" type="email"
+                            class="usa-input margin-bottom-3 width-mobile">
+                          <button class="usa-button width-card" type="submit">Sign Up</button>
+                        </form>
+                      </li>
+                    </ul>
+                  </section>
                 </div>
               </div>
-            </address>
+            </nav>
           </div>
         </div>
       </div>
-      <div class="usa-footer__secondary-section">
-        <div class="grid-container">
-          <div class="usa-footer__logo grid-row grid-gap-2">
+  <div class="usa-footer__secondary-section padding-y-1">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <div class="mobile-lg:grid-col-6"></div>
+        <div class="usa-footer__contact-links mobile-lg:grid-col-6">
+          <div class="usa-footer__social-links grid-row grid-gap-1 padding-bottom-0">
             <div class="grid-col-auto">
-              <img
-                class="usa-footer__logo-img"
-                src="~assets/img/logo-img-usagov.png"
-                alt=""/>
+              <a
+                class="usa-social-link usa-social-link--facebook"
+                href="https://www.facebook.com/USAgov">
+                <span>Facebook</span>
+              </a>
             </div>
+
             <div class="grid-col-auto">
-              <p class="usa-footer__logo-heading">USA.gov</p>
+              <a
+                class="usa-social-link usa-social-link--twitter"
+                href="https://twitter.com/USAgov">
+                <span>Twitter</span>
+              </a>
+            </div>
+
+            <div class="grid-col-auto">
+              <a
+                class="usa-social-link usa-social-link--youtube"
+                href="https://www.youtube.com/usagov1">
+                <span>YouTube</span>
+              </a>
+            </div>
+
+            <div class="grid-col-auto">
+              <a
+                class="usa-social-link usa-social-link--instagram"
+                href="https://www.instagram.com/usagov/">
+                <span>Instagram</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
     </footer>
 
-    <div class="usa-identifier">
+    <div class="usa-identifier bg-black">
       <section
         class="usa-identifier__section usa-identifier__section--masthead"
         aria-label="Agency identifier">
         <div class="usa-identifier__container">
           <div class="usa-identifier__identity" aria-label="Agency description">
-            <p class="usa-identifier__identity-domain">usa.gov</p>
-            <p class="usa-identifier__identity-disclaimer">
+            <p class="usa-identifier__identity-disclaimer text-normal margin-y-3">
               USAGov is the Official Guide to Government Information and Services
             </p>
           </div>
-        </div>
-      </section>
-      <nav
-        class="usa-identifier__section usa-identifier__section--required-links"
-        aria-label="Important links">
-        <div class="usa-identifier__container">
-          <ul class="usa-identifier__required-links-list">
-            <li class="usa-identifier__required-links-item">
-              <a
-                href="https://www.usa.gov/about"
-                class="usa-identifier__required-link">About USA.gov</a>
-            </li>
-            <li class="usa-identifier__required-links-item">
-              <a
-                href="https://www.usa.gov/accessibility"
-                class="usa-identifier__required-link">Accessibility support</a>
-            </li>
-            <li class="usa-identifier__required-links-item">
-              <a
-                href="https://www.usa.gov/media"
-                class="usa-identifier__required-link usa-link">For the Media</a>
-            </li>
-            <li class="usa-identifier__required-links-item">
-              <a
-                href="https://www.usa.gov/developer"
-                class="usa-identifier__required-link usa-link">For Developers</a>
-            </li>
-            <li class="usa-identifier__required-links-item">
-              <a
-                href="https://www.usa.gov/site-issue-report-form"
-                class="usa-identifier__required-link usa-link">Report a Website Issue</a>
-            </li>
-            <!--<li class="usa-identifier__required-links-item">
-              <a
-                href=""
-                class="usa-identifier__required-link usa-link">FOIA requests</a>
-            </li>
-            <li class="usa-identifier__required-links-item">
-              <a
-                href="javascript:void(0);"
-                class="usa-identifier__required-link usa-link">No FEAR Act data</a>
-            </li>
-            <li class="usa-identifier__required-links-item">
-              <a
-                href="javascript:void(0);"
-                class="usa-identifier__required-link usa-link">Office of the Inspector General</a>
-            </li>
-            <li class="usa-identifier__required-links-item">
-              <a
-                href="javascript:void(0);"
-                class="usa-identifier__required-link usa-link">Performance reports</a>
-            </li>-->
-            <li class="usa-identifier__required-links-item">
-              <a
-                href="https://www.usa.gov/policies"
-                class="usa-identifier__required-link usa-link">Privacy policy</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <section
-        class="usa-identifier__section usa-identifier__section--usagov"
-        aria-label="U.S. government information and services">
-        <div class="usa-identifier__container">
-          <div class="usa-identifier__usagov-description">
-            Looking for U.S. government information and services?
-          </div>
-          <a href="https://www.usa.gov/" class="usa-link">Visit USA.gov</a>
         </div>
       </section>
     </div>
