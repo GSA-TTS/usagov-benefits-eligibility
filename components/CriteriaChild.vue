@@ -93,4 +93,7 @@ export default {
 .usa-select:last-child {
   margin-bottom: 1.25rem;
 }
+.usa-checkbox {
+    background: none;
+}
 </style>
