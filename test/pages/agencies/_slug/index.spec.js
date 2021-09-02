@@ -74,4 +74,18 @@ describe('pages/agencies/_slug/index.vue', () => {
     await wrapper2.vm.$options.fetch.apply(wrapper2.vm);
     expect(wrapper2.vm.benefitAgency).toBe('U.S. One Two');
   });
+
+  it('should expand and collapse all accordian cards', async () => {
+    const wrapper = shallowMount(Page, {
+      mocks: { $fetchState }
+    });
+    const openAllSpy = jest.fn();
+    const closeAllSpy = jest.fn();
+    wrapper.vm.$refs.accordion.openAll = openAllSpy;
+    wrapper.vm.$refs.accordion.closeAll = closeAllSpy;
+    await wrapper.find('.usa-button.open-all').trigger('click');
+    expect(openAllSpy).toHaveBeenCalled();
+    await wrapper.find('.usa-button.close-all').trigger('click');
+    expect(closeAllSpy).toHaveBeenCalled();
+  });
 });

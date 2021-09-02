@@ -20,7 +20,7 @@
             v-if="benefit && benefit.tags.length > 0"
             class="tags-container margin-top-1">
             <Tag v-for="tag in mapTags(benefit.tags)" :key="tag.name" :name="tag.name"
-              :click="true" :title="tag.title" />
+              :click="tagClick" :title="tag.title" />
           </div>
           <template v-if="benefit.source && benefit.source.name && benefit.source.link">
             <h3
@@ -36,7 +36,9 @@
           <EligibilityList
               :benefit-eligibility-criteria="benefit.eligibility"
               :benefit-source="benefit.source ? benefit.source.link : ''"
-              :heading-classes="['bg-primary', 'text-white']"/>
+              :heading-classes="['bg-primary', 'text-white']"
+              :show-icons="showIcons"
+              :show-matching-count="showMatchingCount"/>
           <ul v-if="benefit.source && benefit.source.link" class="usa-button-group" style="padding-left: 0;"
             :aria-label="`Choices for ${benefit.title}`">
             <li class="usa-button-group__item">
@@ -68,6 +70,11 @@ if (process.client) {
 export default {
   mixins: [mapTags],
   props: {
+    expanded: {
+      type: Boolean,
+      requierd: false,
+      default: false,
+    },
     lifeEventBenefits: {
       type: Array,
       required: true,
@@ -75,8 +82,23 @@ export default {
     },
     lifeEventCriteria: {
       type: Array,
-      required: true,
+      required: false,
       default: /* istanbul ignore next */ () => [],
+    },
+    showMatchingCount: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    showIcons: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    tagClick: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
   },
   data () {
@@ -104,13 +126,13 @@ export default {
   updated () {
     /* istanbul ignore next */
     if (!this.accordionInit && this.lifeEventBenefits.length > 0) {
-      this.toggleAccordion(false);
+      this.toggleAccordion(this.expanded);
       this.accordionInit = true;
     }
   },
   mounted () {
     if (this.lifeEventBenefits.length > 0) {
-      this.toggleAccordion(false);
+      this.toggleAccordion(this.expanded);
     }
   },
   methods: {

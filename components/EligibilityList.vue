@@ -10,11 +10,12 @@
         </span>
     </h3>
     <client-only>
-      <ul class="usa-icon-list padding-x-205 padding-top-205 padding-bottom-1">
+      <ul class="usa-icon-list grid-row padding-x-205 padding-top-205 padding-bottom-1">
         <li
           v-for="criterion in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
-          class="usa-icon-list__item">
+          class="usa-icon-list__item grid-col-6 padding-bottom-2"
+          style="padding-top: 0;">
           <div
             :class="[
               'usa-icon-list__icon',
@@ -43,7 +44,7 @@
               <use
                 v-else-if="doesCriterionMatchSelection(criterion) == false"
                 xlink:href="~/assets/img/sprite.svg#highlight_off"/>
-              <use v-else xlink:href="~/assets/img/sprite.svg#check_circle_outline" />
+              <use v-else xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
             </svg>
           </div>
           <div

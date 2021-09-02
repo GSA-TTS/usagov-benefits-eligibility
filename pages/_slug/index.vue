@@ -102,7 +102,7 @@
             </ul>
           </div>
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
-          <share-results />
+          <share-results @print="openAll()" />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <div class="grid-row grid-gap display-none print:display-block break-before-always">
