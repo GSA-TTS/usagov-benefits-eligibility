@@ -1,5 +1,5 @@
 <template>
-  <button class="usa-button usa-button--outline width-card-lg print:display-none" @click="print">
+  <button class="usa-button usa-button--outline width-card-lg print:display-none bg-white" @click="print">
     <svg class="usa-icon text-middle" aria-hidden="true" focusable="false"
       role="img">
       <use xlink:href="~/assets/img/sprite.svg#print"/>
