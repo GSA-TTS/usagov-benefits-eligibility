@@ -15,7 +15,7 @@
           v-for="criterion in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
           class="usa-icon-list__item grid-col-6 padding-bottom-2"
-          style="padding-top: 0;">
+          style="padding-top: 0; padding-left: 1.25rem;">
           <div
             :class="[
               'usa-icon-list__icon',

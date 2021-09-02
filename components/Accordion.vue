@@ -143,13 +143,9 @@ export default {
       this.toggleAccordion(true);
     },
     getCriteriaMatchLanguage (eligibilityCriteria) {
-      const answerableEligibilityCriteria = eligibilityCriteria.filter((c) => {
-        return (!!c.acceptableValues && c.acceptableValues.length > 0) &&
-          this.lifeEventCriteriaKeys.includes(c.criteriaKey);
-      });
       if (eligibilityCriteria.some(c => this.doesCriterionMatchSelection(c) === false)) {
         return '(you are not eligible)';
-      } else if (this.getTotalEligibleCriteria(eligibilityCriteria) / answerableEligibilityCriteria.length > 0.5) {
+      } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
         return '(you might be eligible)';
       }
       return '';

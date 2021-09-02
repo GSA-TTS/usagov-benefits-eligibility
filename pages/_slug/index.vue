@@ -92,7 +92,7 @@
                 <div class="usa-icon-list__icon text-primary">
                   <svg class="usa-icon usa-icon--size-3" aria-hidden="true" focusable="false"
                     role="img">
-                    <use xlink:href="~/assets/img/sprite.svg#error"/>
+                    <use xlink:href="~/assets/img/sprite.svg#priority_high"/>
                   </svg>
                 </div>
                 <div class="usa-icon-list__content">
