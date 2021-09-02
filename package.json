@@ -23,7 +23,7 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/sitemap": "^2.4.0",
-    "core-js": "^3.9.1",
+    "core-js": "^3.17.0",
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
@@ -43,10 +43,10 @@
     "gulp": "^4.0.2",
     "jest": "^27.1.0",
     "lodash": "^4.17.21",
-    "nuxt-i18n": "^6.27.0",
+    "nuxt-i18n": "^6.28.1",
     "pa11y-ci": "^2.4.2",
     "path-parse": ">=1.0.7",
-    "sass": "^1.32.12",
+    "sass": "^1.38.2",
     "sass-loader": "^10.2.0",
     "uswds": "^2.12.1",
     "vue-axe": "^2.4.4",

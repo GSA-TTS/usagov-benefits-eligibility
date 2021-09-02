@@ -53,7 +53,7 @@
       </div>
 
       <div class="grid-row grid-gap print:display-block">
-        <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto bg-primary-lighter padding-2 radius-md">
           <h2 class="display-none print:display-block">Eligibility criteria</h2>
           <div v-if="filter">
             <div class="margin-bottom-3">
@@ -85,7 +85,7 @@
                 <div class="usa-icon-list__icon text-primary">
                   <svg class="usa-icon usa-icon--size-3" aria-hidden="true" focusable="false"
                     role="img">
-                    <use xlink:href="~/assets/img/sprite.svg#info"/>
+                    <use xlink:href="~/assets/img/sprite.svg#error"/>
                   </svg>
                 </div>
                 <div class="usa-icon-list__content">
