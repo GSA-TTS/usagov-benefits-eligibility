@@ -32,6 +32,9 @@
                 :href="benefit.source ? benefit.source.link : '#'"
                 target="_blank">{{ benefit.source.name }}</a>
             </h3>
+            <p class="usa-prose" style="max-width: unset;">
+              {{ benefit.summary }}
+            </p>
           </template>
           <EligibilityList
               :benefit-eligibility-criteria="benefit.eligibility"
