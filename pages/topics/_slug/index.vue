@@ -19,6 +19,16 @@
       </div>
 
       <div class="grid-row grid-gap print:display-block">
+        <div class="tablet:grid-col margin-bottom-3">
+          <div>
+            <button class="usa-button usa-button--unstyled open-all" @click="openAll">Open All</button>
+            /
+            <button class="usa-button usa-button--unstyled close-all" @click="closeAll">Close All</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col-7 desktop:grid-col-8">
           <div
             v-if="$fetchState.pending"
@@ -42,53 +52,14 @@
             </div>
           </div>
 
-          <ul
-            v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-            class="usa-card-group print:display-block">
-            <li
-              v-for="benefit in lifeEventBenefits"
-              :key="benefit.title"
-              class="usa-card desktop:grid-col-12 flex-auto print:display-block break-before-always"
-              :aria-label="benefit.title">
-              <Card
-                :card-body="benefit.summary"
-                :card-title="benefit.title"
-                card-title-heading-level="h2"
-                primary-button-text="How to apply"
-                :primary-button-link="
-                  benefit.source ? benefit.source.link : '#'
-                "
-                primary-button-target="_blank"
-                :card-tags="mapTags(mapLifeEvents(benefit.lifeEvents))">
-                <template
-                  v-if="
-                    benefit.source && benefit.source.name && benefit.source.link
-                  "
-                  #source>
-                  <h3
-                    class="font-sans-xs text-normal text-base-dark margin-bottom-0">
-                    Provided by the
-                    <a
-                      class="usa-link"
-                      :href="benefit.source ? benefit.source.link : '#'"
-                      target="_blank">{{ benefit.source.name }}</a>
-                  </h3>
-                </template>
-                <template #eligibility>
-                  <EligibilityList
-                    :benefit-eligibility-criteria="benefit.eligibility"
-                    :show-icons="false" :show-matching-count="false"
-                    :benefit-source="benefit.source ? benefit.source.link : ''"/>
-                </template>
-              </Card>
-            </li>
-          </ul>
+          <accordion ref="accordion" :life-event-benefits="lifeEventBenefits" :expanded="true"
+            :show-icons="false" :show-matching-count="false" :tag-click="false"/>
         </div>
       </div>
 
       <div class="grid-row grid-gap margin-top-2">
         <div class="grid-col">
-          <print />
+          <print @print="openAll()" />
         </div>
       </div>
     </section>
@@ -126,7 +97,13 @@ export default {
   methods: {
     mapLifeEvents (lifeEvents) {
       return lifeEvents.map(le => _.lowerCase(le));
-    }
+    },
+    openAll () {
+      this.$refs.accordion.openAll();
+    },
+    closeAll () {
+      this.$refs.accordion.closeAll();
+    },
   },
 };
 </script>

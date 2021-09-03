@@ -30,7 +30,14 @@
       </div>
 
       <div class="grid-row grid-gap print:display-none">
-        <div class="grid-col margin-y-3 print:display-none">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-3 print:display-none">
+        </div>
+        <div class="tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-3 print:display-none">
+          <div>
+            <button class="usa-button usa-button--unstyled open-all" @click="openAll">Open All</button>
+            /
+            <button class="usa-button usa-button--unstyled close-all" @click="closeAll">Close All</button>
+          </div>
         </div>
         <div class="grid-col margin-y-3 text-right">
           <label
@@ -85,7 +92,7 @@
                 <div class="usa-icon-list__icon text-primary">
                   <svg class="usa-icon usa-icon--size-3" aria-hidden="true" focusable="false"
                     role="img">
-                    <use xlink:href="~/assets/img/sprite.svg#error"/>
+                    <use xlink:href="~/assets/img/sprite.svg#priority_high"/>
                   </svg>
                 </div>
                 <div class="usa-icon-list__content">
@@ -95,7 +102,7 @@
             </ul>
           </div>
           <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
-          <share-results />
+          <share-results @print="openAll()" />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <div class="grid-row grid-gap display-none print:display-block break-before-always">
@@ -125,47 +132,7 @@
               <p class="usa-alert__text">No matching benefits found.</p>
             </div>
           </div>
-
-          <transition-group v-if="lifeEventBenefits && lifeEventBenefits.length > 0"
-            class="usa-card-group print:display-block" name="benefit-list" tag="ul">
-            <li
-              v-for="benefit in lifeEventBenefits"
-              :key="benefit.slug"
-              class="usa-card desktop:grid-col-12 flex-auto print:display-block break-before-always-nfc"
-              :aria-label="benefit.title">
-              <Card
-                :card-body="benefit.summary"
-                :card-title="benefit.title"
-                card-title-heading-level="h2"
-                :card-tags-emit-click="true"
-                primary-button-text="How to apply"
-                :primary-button-link="
-                  benefit.source ? benefit.source.link : '#'
-                "
-                primary-button-target="_blank"
-                :card-tags="mapTags(benefit.tags)">
-                <template
-                  v-if="
-                    benefit.source && benefit.source.name && benefit.source.link
-                  "
-                  #source>
-                  <h3
-                    class="font-sans-xs text-normal text-base-dark margin-bottom-0">
-                    Provided by
-                    <a
-                      class="usa-link"
-                      :href="benefit.source ? benefit.source.link : '#'"
-                      target="_blank">{{ benefit.source.name }}</a>
-                  </h3>
-                </template>
-                <template #eligibility>
-                  <EligibilityList
-                    :benefit-eligibility-criteria="benefit.eligibility"
-                    :benefit-source="benefit.source ? benefit.source.link : ''"/>
-                </template>
-              </Card>
-            </li>
-          </transition-group>
+          <accordion ref="accordion" :life-event-benefits="lifeEventBenefits" :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
       </div>
     </section>
@@ -175,11 +142,9 @@
 <script>
 import _ from "lodash";
 import { mapGetters, mapState } from "vuex";
-import EligibilityList from "~/components/EligibilityList.vue";
 import mapTags from "~/mixins/MapTags";
 
 export default {
-  components: { EligibilityList },
   mixins: [mapTags],
   layout: "default",
   data () {
@@ -261,6 +226,12 @@ export default {
         }
       }
       return virtualCriteria;
+    },
+    closeAll () {
+      this.$refs.accordion.closeAll();
+    },
+    openAll () {
+      this.$refs.accordion.openAll();
     },
     sortChange (event) {
       this.sort = event.target.value;

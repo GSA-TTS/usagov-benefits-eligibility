@@ -27,7 +27,7 @@
       </button>
     </div>
     <div class="margin-bottom-1">
-      <print :show-selections="true" />
+      <print :show-selections="true" @print="$emit('print')" />
     </div>
 </div>
 </template>

@@ -19,6 +19,7 @@
     },
     methods: {
       print () {
+        this.$emit('print');
         window.print();
       },
     },

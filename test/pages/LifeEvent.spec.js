@@ -99,7 +99,7 @@ describe('Life Event page', () => {
     });
   })
 
-  it('is a Vue instance', () => {
+  it('should be a Vue instance', () => {
     const wrapper = shallowMount(LifeEventPage, {
       mocks: vueMocks(),
       store
@@ -107,7 +107,7 @@ describe('Life Event page', () => {
     expect(wrapper.vm).toBeTruthy();
   });
 
-  it('displays the page content', async () => {
+  it('should display the page content', async () => {
     const $content = createContentMock(
       [
         {
@@ -230,5 +230,53 @@ describe('Life Event page', () => {
     wrapper.vm.clearFilter();
     expect(wrapper.vm.filter).toBe('');
     expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('two,one,three');
+  });
+
+  it('should expand and collapse all accordian cards', async () => {
+    const $content = createContentMock(
+      [
+        {
+          collectionName: LIFE_EVENTS_DIRECTORY,
+          items: [{ ...mockContent.lifeEvent }]
+        },
+        {
+          collectionName: BENEFITS_DIRECTORY,
+          items: [{ ...mockContent.benefit }],
+        },
+        {
+          collectionName: CRITERIA_DIRECTORY,
+          items: [{ ...mockContent.criteria }]
+        }
+      ]
+    );
+    const wrapper = shallowMount(LifeEventPage, {
+      mocks: vueMocks({ $content }),
+      store
+    });
+    wrapper.vm.lifeEventBenefits = wrapper.vm.allLifeEventBenefits = [
+      {
+        title: 'two',
+        eligibility: [{}, {}, {}],
+        tags: ['tagOne'],
+      },
+      {
+        title: 'one',
+        eligibility: [{}, {}, {}],
+        tags: ['tagOne', 'tagTwo'],
+      },
+      {
+        title: 'three',
+        eligibility: [{}, {}, {}],
+        tags: ['tagThree']
+      },
+    ];
+    const openAllSpy = jest.fn();
+    const closeAllSpy = jest.fn();
+    wrapper.vm.$refs.accordion.openAll = openAllSpy;
+    wrapper.vm.$refs.accordion.closeAll = closeAllSpy;
+    await wrapper.find('.usa-button.open-all').trigger('click');
+    expect(openAllSpy).toHaveBeenCalled();
+    await wrapper.find('.usa-button.close-all').trigger('click');
+    expect(closeAllSpy).toHaveBeenCalled();
   });
 });
