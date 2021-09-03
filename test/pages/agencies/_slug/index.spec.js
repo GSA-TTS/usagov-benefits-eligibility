@@ -29,6 +29,9 @@ describe('pages/agencies/_slug/index.vue', () => {
       where: () => contentMock,
       fetch: () => {
         return Promise.resolve({
+          agencies: {
+            relatedKeys: ['one'],
+          },
           benefits: [
             { title: 'One', summary: 'One summary', source: { name: 'One two three' }, lifeEvents: ['Three', 'Four'] },
             { title: 'Two', summary: 'Two summary', source: { name: 'One two three' }, lifeEvents: [] },

@@ -3,11 +3,11 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 v-if="benefitCategory" class="font-heading-3xl margin-top-7 text-primary">
-            {{ benefitCategory }}
+          <h1 v-if="benefitTopic" class="font-heading-3xl margin-top-7 text-primary">
+            {{ benefitTopic }}
           </h1>
-          <p v-if="category && category.lede" class="usa-intro">
-            {{ category.lede }}
+          <p v-if="topic && topic.lede" class="usa-intro">
+            {{ topic.lede }}
           </p>
         </div>
       </div>
@@ -63,6 +63,10 @@
         </div>
       </div>
     </section>
+
+    <cross-sell
+      title="Other topics that might be relevant to you."
+      :cards="topic.related"/>
   </div>
 </template>
 
@@ -74,13 +78,19 @@ export default {
   mixins: [mapTags],
   data () {
     return {
-        benefitCategory: '',
+        benefitTopic: '',
         lifeEventBenefits: [],
-        category: {},
+        topic: {
+          title: '',
+          summary: '',
+          lede: '',
+          relatedKeys: [],
+          related: [],
+        },
     };
   },
   async fetch () {
-    this.benefitCategory = _.capitalize(_.lowerCase(this.$route.params.slug));
+    this.benefitTopic = _.capitalize(_.lowerCase(this.$route.params.slug));
     const lifeEventBenefits = await this.$content("benefits")
       .where({
         tags: { $contains: _.lowerCase(this.$route.params.slug) }
@@ -90,7 +100,12 @@ export default {
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body;
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
     // eslint-disable-next-line node/handle-callback-err
-    this.category = await this.$content(`categories/${this.$route.params.slug}`).fetch().catch((err) => {});
+    this.topic = await this.$content("topics", this.$route.params.slug).fetch().catch((err) => {});
+
+    this.topic.related = [];
+    for (const related of (this.topic.relatedKeys || [])) {
+      this.topic.related.push(await this.$content("topics", related).fetch());
+    }
 
     this.lifeEventBenefits = lifeEventBenefits;
   },

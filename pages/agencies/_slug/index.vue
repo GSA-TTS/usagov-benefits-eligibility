@@ -63,6 +63,9 @@
         </div>
       </div>
     </section>
+    <cross-sell
+      title="Other agencies that might be relevant to you."
+      :cards="agency.related"/>
   </div>
 </template>
 
@@ -76,7 +79,13 @@ export default {
     return {
         benefitAgency: '',
         lifeEventBenefits: [],
-        agency: {},
+        agency: {
+          title: '',
+          summary: '',
+          lede: '',
+          relatedKeys: [],
+          related: [],
+        },
     };
   },
   async fetch () {
@@ -93,7 +102,12 @@ export default {
     this.lifeEventBenefits = lifeEventBenefits.filter(benefit => benefit?.source?.name && agencyRegex.test(benefit.source.name));
     this.benefitAgency = this.lifeEventBenefits[0]?.source?.name;
     // eslint-disable-next-line node/handle-callback-err
-    this.agency = await this.$content(`agencies/${this.$route.params.slug}`).fetch().catch((err) => {});
+    this.agency = await this.$content("agencies", this.$route.params.slug).fetch().catch((err) => {});
+
+    this.agency.related = [];
+    for (const related of (this.agency.relatedKeys || [])) {
+      this.agency.related.push(await this.$content("agencies", related).fetch());
+    }
   },
   methods: {
     mapLifeEvents (lifeEvents) {

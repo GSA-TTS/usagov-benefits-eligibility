@@ -136,6 +136,9 @@
         </div>
       </div>
     </section>
+    <cross-sell
+      title="Other benefits that might be relevant to you."
+      :cards="lifeEvent.related"/>
   </div>
 </template>
 
@@ -156,7 +159,9 @@ export default {
         title: "",
         lede: "",
         summary: "",
-        eligibilityCriteria: []
+        eligibilityCriteria: [],
+        relatedKeys: [],
+        related: [],
       },
       lifeEventBenefits: [],
       allLifeEventBenefits: [],
@@ -178,6 +183,11 @@ export default {
     const allEligibilityCriteria = (await this.$content("criteria").fetch())
       .body;
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
+
+    lifeEvent.related = [];
+    for (const related of (lifeEvent.relatedKeys || [])) {
+      lifeEvent.related.push(await this.$content("life-events", related).fetch());
+    }
 
     this.lifeEvent = lifeEvent;
     this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits;
