@@ -19,7 +19,7 @@ describe('pages/topics/_slug/index.vue', () => {
     });
     expect(wrapper.vm).toBeTruthy();
     const results = wrapper.vm.$options.data();
-    expect(results.benefitCategory).toBe('');
+    expect(results.benefitTopic).toBe('');
     expect(results.lifeEventBenefits).toBeTruthy();
   });
 
@@ -35,6 +35,9 @@ describe('pages/topics/_slug/index.vue', () => {
             { title: 'Two', summary: 'Two summary', lifeEvents: [] },
           ],
           criteria: [],
+          topics: {
+            relatedKeys: ['one'],
+          },
         }[contentRequest]);
       },
     };
@@ -59,7 +62,7 @@ describe('pages/topics/_slug/index.vue', () => {
       },
     });
     await wrapper.vm.$options.fetch.apply(wrapper.vm);
-    expect(wrapper.vm.benefitCategory).toBe('One two three');
+    expect(wrapper.vm.benefitTopic).toBe('One two three');
     expect(wrapper.vm.lifeEventBenefits.map(b => b.title).join()).toBe('One,Two');
   });
 

@@ -24,7 +24,7 @@ describe('pages/topics/index.vue', () => {
             { tags: ['one', 'two', 'three', 'four'] },
             { tags: ['one', 'two', 'three', 'four', 'five'] }
           ],
-          categories: [
+          topics: [
             { slug: 'one', title: 'One title', summary: 'One summary' },
             { slug: 'three', title: 'Three title', summary: 'Three summary' },
           ],
@@ -43,7 +43,7 @@ describe('pages/topics/index.vue', () => {
   it('should merge tags with categories', () => {
     const wrapper = shallowMount(Page, {
       data: () => ({
-        categories: {
+        topics: {
           one: { slug: 'one', title: 'One title', summary: 'One summary' },
           three: { slug: 'three', title: 'Three title', summary: 'Three summary' },
         }

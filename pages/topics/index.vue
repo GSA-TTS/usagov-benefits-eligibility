@@ -41,10 +41,10 @@ import _ from 'lodash';
 export default {
   layout: "default",
   async asyncData ({ $content }) {
-    const contentCategories = await $content('categories').fetch();
-    const categories = {};
-    for (const c of contentCategories) {
-      categories[_.lowerCase(c.slug)] = c;
+    const contentTopics = await $content('topics').fetch();
+    const topics = {};
+    for (const c of contentTopics) {
+      topics[_.lowerCase(c.slug)] = c;
     }
     const lifeEventTags = _.chain(
       await $content("benefits")
@@ -57,19 +57,19 @@ export default {
       .sort()
       .value();
 
-    return { lifeEventTags, categories };
+    return { lifeEventTags, topics };
   },
   data () {
     return {
       lifeEventTags: [],
-      categories: {},
+      topics: {},
     };
   },
   methods: {
     mapTags (tags) {
       return tags.map((tag) => {
-        if (this.categories[tag]) {
-          return this.categories[tag];
+        if (this.topics[tag]) {
+          return this.topics[tag];
         } else {
           return {
             title: _.upperFirst(tag),
