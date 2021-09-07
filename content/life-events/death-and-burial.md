@@ -35,5 +35,8 @@ eligibilityCriteria:
       - applicant_paid_funeral_expenses
       - applicant_funeral_reimbursment
 
+relatedKeys:
+ - disability
+ - late-adulthood
 
 ---
