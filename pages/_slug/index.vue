@@ -3,7 +3,7 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 v-if="lifeEventTitle" class="font-heading-3xl margin-top-7 text-primary">
+          <h1 v-if="lifeEventTitle" class="font-heading-1xl margin-top-6 text-secondary">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
           <p v-if="lifeEvent.lede" class="usa-intro">
@@ -20,7 +20,7 @@
                 Review a custom list of potential benefits
               </p>
             </li>
-            <li class="usa-process-list__item">
+            <li class="usa-process-list__item padding-bottom-0">
               <p class="usa-process-list__heading font-sans-m line-height-sans-1">
                 Find out how to apply
               </p>
@@ -30,16 +30,16 @@
       </div>
 
       <div class="grid-row grid-gap print:display-none">
-        <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-3 print:display-none">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none">
         </div>
-        <div class="tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-3 print:display-none">
+        <div class="tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-2 print:display-none">
           <div>
             <button class="usa-button usa-button--unstyled open-all" @click="openAll">Open All</button>
             /
             <button class="usa-button usa-button--unstyled close-all" @click="closeAll">Close All</button>
           </div>
         </div>
-        <div class="grid-col margin-y-3 text-right">
+        <div class="grid-col margin-y-2 text-right">
           <label
             class="usa-label display-inline margin-right-1"
             for="benefitSort">Showing {{ lifeEventBenefits.length }} related benefits sorted

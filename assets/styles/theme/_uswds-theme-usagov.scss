@@ -20,3 +20,18 @@
     @include u-margin-bottom(1);
   }
 }
+
+.usa-button-group__item, .usa-search, .usa-footer {
+  .usa-button {
+    background-color: color('cyan-30v');
+    color: $black;
+    &:hover {
+      background-color: #00a6d2;
+      text-decoration: underline;
+    }
+  }
+}
+
+h1.text-secondary{
+  color: #c61f0c;
+}

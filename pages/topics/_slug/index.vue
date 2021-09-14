@@ -3,7 +3,7 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 v-if="benefitTopic" class="font-heading-3xl margin-top-7 text-primary">
+          <h1 v-if="benefitTopic" class="font-heading-1xl margin-top-5 text-secondary">
             {{ benefitTopic }}
           </h1>
           <p v-if="topic && topic.lede" class="usa-intro">
