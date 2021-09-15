@@ -60,13 +60,13 @@
       </div>
 
       <div class="grid-row grid-gap print:display-block">
-        <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto bg-primary-lighter padding-2 radius-md">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade padding-2 radius-md">
           <h2 class="display-none print:display-block">Eligibility criteria</h2>
           <div v-if="filter">
             <div class="margin-bottom-3">
               Currently viewing
               <span
-                class="usa-tag bg-primary margin-left-05 display-inline-flex margin-left-0 padding-0 usa-button-group__item">
+                class="usa-tag bg-secondary margin-left-05 display-inline-flex margin-left-0 padding-0 usa-button-group__item">
                 <button
                   class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-1 border-left border-accent-cool-light padding-x-05"
                   style="padding: .25rem"
