@@ -50,6 +50,25 @@ h1.text-secondary{
   background-color: #ebe6de;
 }
 
-.usa-search--small [type=submit], .usa-search--small .usa-search__submit {
-  background-image: url('~assets/img/search-dark.svg');
+.usa-search [type=submit] {
+  @include u-padding-x(1);
+}
+
+/* .usa-tag {
+  background-color: color('gray-cool-5');
+  .usa-tooltip {
+    .usa-button--outline.usa-button--inverse.usa-button--unstyled {
+      color: color('gray-90');
+    }
+  }
+} */
+
+.usa-accordion {
+  .usa-tag {
+    background-color: color('gray-cool-5');
+  }
+  .usa-button--outline.usa-button--inverse.usa-button--unstyled {
+    background-color: color('gray-cool-5');
+    color: #1b1b1b;
+  }
 }

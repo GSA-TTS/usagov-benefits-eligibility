@@ -66,10 +66,10 @@
             <div class="margin-bottom-3">
               Currently viewing
               <span
-                class="usa-tag bg-secondary margin-left-05 display-inline-flex margin-left-0 padding-0 usa-button-group__item">
+                class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
                 <button
-                  class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-1 border-left border-accent-cool-light padding-x-05"
-                  style="padding: .25rem"
+                  class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
+                  style="padding: .25rem; text-decoration: none;"
                   :title="`Remove the ${filter} filter`"
                   aria-label="Remove this filter"
                   data-position="top"
