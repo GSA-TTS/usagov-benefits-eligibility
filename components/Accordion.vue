@@ -46,7 +46,7 @@
             :aria-label="`Choices for ${benefit.title}`">
             <li class="usa-button-group__item">
                 <a :href="benefit.source.link" target="_blank"
-                  :aria-labelledby="`acc-h-${benefit.slug}-${cid}`"
+                  :aria-label="`How to apply for ${ benefit.title }`"
                   class="usa-button print:display-none">
                   How to Apply
                 </a>
