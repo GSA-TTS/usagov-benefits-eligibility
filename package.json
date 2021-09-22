@@ -25,7 +25,8 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "axios": "^0.21.4",
     "core-js": "^3.17.0",
-    "nuxt": "^2.15.8"
+    "nuxt": "^2.15.8",
+    "prismjs": ">=1.25.0"
   },
   "devDependencies": {
     "@lokidb/loki": "^2.1.0",
@@ -45,6 +46,8 @@
     "jest": "^27.1.0",
     "lodash": "^4.17.21",
     "nuxt-i18n": "^6.28.1",
+    "set-value": ">=4.0.1",
+    "tmpl": ">=1.0.5",
     "pa11y-ci": "^2.4.2",
     "path-parse": ">=1.0.7",
     "sass": "^1.38.2",
