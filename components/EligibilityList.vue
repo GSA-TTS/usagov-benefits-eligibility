@@ -96,18 +96,20 @@
                   doesCriterionMatchSelection(criterion) === false
               }
             ]">
-            <span v-if="criterion.label">
-              {{ criterion.label }}
-            </span>
-            <span v-else>
-              {{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}
-            </span>
-            <span
+            <span>
+              <template v-if="criterion.label">
+                {{ criterion.label }}
+              </template>
+              <template v-else>
+                {{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}
+              </template>
+              <template
               v-if="
-                getCriterionByEligibilityKey(criterion.criteriaKey).type ==
+                getCriterionByEligibilityKey(criterion.criteriaKey).type ===
                   'select' && criterion.acceptableValues
               ">
-              {{ formatArrayWithSeparator(criterion.acceptableValues) }}.
+                {{ formatArrayWithSeparator(criterion.acceptableValues) }}.
+              </template>
             </span>
           </div>
         </li>
