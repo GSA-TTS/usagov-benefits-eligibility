@@ -161,7 +161,7 @@
             </li>
           </ul>
           <div class="usa-nav__secondary">
-            <form class="usa-search usa-search--small" role="search">
+            <form class="usa-search" role="search">
               <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
               <input
                 id="extended-search-field-small"
@@ -172,6 +172,11 @@
                 :value="query"/>
               <button class="usa-button" type="submit" @click="doSearch">
                 <span class="usa-sr-only">Search</span>
+                <svg class="usa-icon text-middle usa-icon--size-3" aria-hidden="true" focusable="false"
+                  role="img">
+                  <use xlink:href="~/assets/img/sprite.svg#search"/>
+                </svg>
+                <!-- <span class="text-middle">Share my selections</span> -->
               </button>
             </form>
           </div>

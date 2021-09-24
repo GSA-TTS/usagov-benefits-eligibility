@@ -3,7 +3,7 @@
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
-          <h1 class="font-heading-3xl margin-top-0 text-primary">
+          <h1 class="font-heading-1xl margin-top-0 text-secondary">
             Benefits by topic
           </h1>
           <p class="usa-intro">

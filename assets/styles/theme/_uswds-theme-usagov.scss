@@ -20,3 +20,56 @@
     @include u-margin-bottom(1);
   }
 }
+
+.usa-button-group__item, .usa-search, .usa-footer {
+  .usa-button {
+    background-color: color('cyan-30v');
+    color: $black;
+    &:hover {
+      background-color: #00a6d2;
+      text-decoration: underline;
+    }
+  }
+}
+
+h1.text-secondary{
+  color: #c61f0c;
+}
+
+.usa-nav__primary > .usa-nav__primary-item > a {
+  color: #154285;
+}
+
+.usa-header--extended .usa-nav__primary-item > .usa-current::after, .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover::after {
+  background-color: #02bfe7;
+  height: 0.5rem;
+  top: 2.5rem;
+}
+
+.shade {
+  background-color: #ebe6de;
+}
+
+.usa-search [type=submit] {
+  @include u-padding-x(1);
+}
+
+/* .usa-tag {
+  background-color: color('gray-cool-5');
+  .usa-tooltip {
+    .usa-button--outline.usa-button--inverse.usa-button--unstyled {
+      color: color('gray-90');
+    }
+  }
+} */
+
+.usa-accordion {
+  .usa-tag {
+    background-color: color('gray-cool-5');
+    color: #1b1b1b;
+  }
+  .usa-button--outline.usa-button--inverse.usa-button--unstyled {
+    background-color: color('gray-cool-5');
+    color: #1b1b1b;
+  }
+}

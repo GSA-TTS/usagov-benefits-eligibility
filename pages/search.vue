@@ -2,7 +2,7 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 class="font-heading-3xl margin-top-7">
+          <h1 class="font-heading-1xl margin-top-5">
             Search results for "{{ query }}"
           </h1>
         </div>
