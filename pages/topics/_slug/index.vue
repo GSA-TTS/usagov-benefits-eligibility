@@ -66,7 +66,8 @@
 
     <cross-sell
       title="Other topics that might be relevant to you."
-      :cards="topic.related"/>
+      :cards="topic.related"
+      class="print:display-none"/>
   </div>
 </template>
 

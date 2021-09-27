@@ -1,7 +1,8 @@
 <template>
   <transition-group class="usa-accordion usa-accordion--bordered" name="benefit-list" tag="div"
     aria-multiselectable="true">
-      <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`" class="break-inside-avoid margin-bottom-2">
+      <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`" class="break-inside-avoid margin-bottom-2"
+      v-bind:class="{ 'print:display-none' : getCriteriaMatchLanguage(benefit.eligibility) == '' }">
         <h2 :id="`acc-h-${benefit.slug}-${cid}`" class="usa-accordion__heading">
           <button
             ref="accordionButtons"
@@ -147,8 +148,10 @@ export default {
     },
     getCriteriaMatchLanguage (eligibilityCriteria) {
       if (eligibilityCriteria.some(c => this.doesCriterionMatchSelection(c) === false)) {
+        // this.hasBenefits = 'false';
         return '(you are not eligible)';
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
+        // this.hasBenefits = 'false';
         return '(you might be eligible)';
       }
       return '';

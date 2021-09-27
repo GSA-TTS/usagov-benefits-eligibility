@@ -7,7 +7,7 @@
         </div>
       </div>
     </div>
-    <footer class="usa-footer usa-footer--slim">
+    <footer class="usa-footer usa-footer--slim print:display-none">
       <div class="grid-container usa-footer__return-to-top">
         <nuxt-link :to="{ path: getUrl(), hash: '#' }">Return to top</nuxt-link>
       </div>
