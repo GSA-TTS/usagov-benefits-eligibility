@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="grid-row grid-gap print:display-none">
+      <div role="complementary" class="grid-row grid-gap print:display-none">
         <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none">
         </div>
         <div class="tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-2 print:display-none">

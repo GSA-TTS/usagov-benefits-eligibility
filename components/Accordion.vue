@@ -20,7 +20,9 @@
             v-if="benefit && benefit.tags.length > 0"
             class="tags-container margin-top-1">
             <Tag v-for="tag in mapTags(benefit.tags)" :key="tag.name" :name="tag.name"
-              :click="tagClick" :title="tag.title" />
+              :click="tagClick"
+              :title="tag.title"
+              :aria-label="tag.title"/>
           </div>
           <template v-if="benefit.source && benefit.source.name && benefit.source.link">
             <h3
