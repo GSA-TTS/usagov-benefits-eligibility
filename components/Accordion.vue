@@ -148,10 +148,8 @@ export default {
     },
     getCriteriaMatchLanguage (eligibilityCriteria) {
       if (eligibilityCriteria.some(c => this.doesCriterionMatchSelection(c) === false)) {
-        // this.hasBenefits = 'false';
         return '(you are not eligible)';
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
-        // this.hasBenefits = 'false';
         return '(you might be eligible)';
       }
       return '';
