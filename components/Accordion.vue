@@ -1,7 +1,8 @@
 <template>
-  <transition-group class="usa-accordion usa-accordion--bordered" name="benefit-list" tag="div"
-    aria-multiselectable="true">
-      <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`" class="break-inside-avoid margin-bottom-2">
+  <transition-group id="acc-id" class="usa-accordion usa-accordion--bordered" name="benefit-list"
+    tag="div" aria-multiselectable="true" aria-live="polite">
+      <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`"
+        class="break-inside-avoid margin-bottom-2">
         <h2 :id="`acc-h-${benefit.slug}-${cid}`" class="usa-accordion__heading">
           <button
             ref="accordionButtons"

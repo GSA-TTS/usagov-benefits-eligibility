@@ -4,7 +4,7 @@
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
           <h1 class="font-heading-1xl margin-top-0 text-secondary">
-            Benefits by topic
+            Benefits by type
           </h1>
           <p class="usa-intro">
             If you know the specific type of benefit you are looking for, select it below.
@@ -20,7 +20,7 @@
               :key="tag.slug"
               class="usa-card desktop:grid-col-6"
               :aria-label="tag.title">
-              <nuxt-link :to="`/topics/${tag.slug}`" class="display-block height-full margin-x-1" style="text-decoration: none; outline-offset: .25rem;">
+              <nuxt-link :to="`/types/${tag.slug}`" class="display-block height-full margin-x-1" style="text-decoration: none; outline-offset: .25rem;">
                 <Card
                   :card-title="tag.title"
                   card-title-heading-level="h2"
@@ -41,7 +41,7 @@ import _ from 'lodash';
 export default {
   layout: "default",
   async asyncData ({ $content }) {
-    const contentTopics = await $content('topics').fetch();
+    const contentTopics = await $content('types').fetch();
     const topics = {};
     for (const c of contentTopics) {
       topics[_.lowerCase(c.slug)] = c;
@@ -63,6 +63,12 @@ export default {
     return {
       lifeEventTags: [],
       topics: {},
+    };
+  },
+  /* istanbul ignore next */
+  head () {
+    return {
+      title: 'Benefits by type',
     };
   },
   methods: {

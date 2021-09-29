@@ -16,7 +16,7 @@ const MOCK_CRITERIA = [
     criteriaKey: "criteriaKey2",
     label: "Benefit criteria label 2.",
     type: "select",
-    values: ["one", "two", "three"],
+    values: ["one", "two", "three", "four", "five", "six", "seven", "eight"],
     criteriaGroupKey: "group2"
   }
 ]
