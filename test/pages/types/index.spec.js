@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
-import Page from '@/pages/topics/index.vue'
+import Page from '@/pages/types/index.vue'
 import beforeAllTests from '@/test/beforeAllTests';
 
-describe('pages/topics/index.vue', () => {
+describe('pages/types/index.vue', () => {
   beforeAll(async () => {
     await beforeAllTests();
   });
@@ -24,7 +24,7 @@ describe('pages/topics/index.vue', () => {
             { tags: ['one', 'two', 'three', 'four'] },
             { tags: ['one', 'two', 'three', 'four', 'five'] }
           ],
-          topics: [
+          types: [
             { slug: 'one', title: 'One title', summary: 'One summary' },
             { slug: 'three', title: 'Three title', summary: 'Three summary' },
           ],
@@ -43,14 +43,14 @@ describe('pages/topics/index.vue', () => {
   it('should merge tags with categories', () => {
     const wrapper = shallowMount(Page, {
       data: () => ({
-        topics: {
+        types: {
           one: { slug: 'one', title: 'One title', summary: 'One summary' },
           three: { slug: 'three', title: 'Three title', summary: 'Three summary' },
         }
       })
     });
     const results = wrapper.vm.mapTags(['one', 'two', 'three']);
-    expect(results[0].title).toBe('One title');
+    expect(results[0].title).toBe('One');
     expect(results[1].title).toBe('Two');
   });
 });

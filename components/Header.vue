@@ -150,8 +150,8 @@
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item">
-              <nuxt-link to="/topics" class="usa-nav__link">
-                <span>Benefits by topic</span>
+              <nuxt-link to="/types" class="usa-nav__link">
+                <span>Benefits by type</span>
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item">
@@ -161,6 +161,11 @@
             </li>
           </ul>
           <div class="usa-nav__secondary">
+            <ul class="usa-nav__secondary-links">
+              <li class="usa-nav__secondary-item">
+                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
+              </li>
+            </ul>
             <form class="usa-search" role="search">
               <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
               <input

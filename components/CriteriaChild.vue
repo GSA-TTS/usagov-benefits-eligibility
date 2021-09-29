@@ -9,7 +9,7 @@
       </label>
     </div>
 
-    <div v-if="type === 'select'" :key="criteriaKey" class="">
+    <div v-if="type === 'select' && values.length >= 7" :key="criteriaKey">
       <label class="usa-label margin-top-0" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}</label>
       <select :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey" class="usa-select" :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         @change="updateEligibilitySelected">
@@ -19,6 +19,23 @@
             {{ option }}
         </option>
       </select>
+    </div>
+
+    <div v-if="type === 'select' && values.length < 7">
+        <fieldset class="usa-fieldset">
+          <legend class="usa-legend usa-legend">{{ label }}</legend>
+          <div v-for="option, i in values" :key="option" class="usa-radio shade">
+            <input
+              :id="`criteria-${criteriaGroupKey}-${criteriaKey}-${i}`"
+              class="usa-radio__input"
+              type="radio"
+              :name="criteriaGroupKey + '-' + criteriaKey"
+              :value="option"
+              :checked="(response === option) || (!response && i === 0)"
+              @change="updateEligibilitySelected"/>
+              <label class="usa-radio__label" :for="`criteria-${criteriaGroupKey}-${criteriaKey}-${i}`">{{ option }}</label>
+          </div>
+        </fieldset>
     </div>
 </div>
 </template>

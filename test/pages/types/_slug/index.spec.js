@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
-import Page from '@/pages/topics/_slug/index.vue'
+import Page from '@/pages/types/_slug/index.vue'
 import beforeAllTests from '@/test/beforeAllTests';
 
-describe('pages/topics/_slug/index.vue', () => {
+describe('pages/types/_slug/index.vue', () => {
   let $fetchState;
 
   beforeAll(async () => {
@@ -35,7 +35,7 @@ describe('pages/topics/_slug/index.vue', () => {
             { title: 'Two', summary: 'Two summary', lifeEvents: [] },
           ],
           criteria: [],
-          topics: {
+          types: {
             relatedKeys: ['one'],
           },
         }[contentRequest]);
