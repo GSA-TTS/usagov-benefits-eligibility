@@ -1,8 +1,7 @@
 <template>
   <transition-group class="usa-accordion usa-accordion--bordered" name="benefit-list" tag="div"
     aria-multiselectable="true">
-      <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`" class="break-inside-avoid margin-bottom-2"
-      v-bind:class="{ 'print:display-none' : getCriteriaMatchLanguage(benefit.eligibility) == '' }">
+      <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`" class="break-inside-avoid margin-bottom-2">
         <h2 :id="`acc-h-${benefit.slug}-${cid}`" class="usa-accordion__heading">
           <button
             ref="accordionButtons"
@@ -166,6 +165,11 @@ export default {
 
 <style scoped>
 .benefit-list-move {
-  transition: transform 2s;
+  transition: transform 1s;
+}
+@media print {
+  .usa-accordion--bordered .usa-accordion__content.usa-prose {
+    display:block !important
+  }
 }
 </style>
