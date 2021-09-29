@@ -11,7 +11,7 @@
 
     <div v-if="type === 'select'" :key="criteriaKey">
       <label class="usa-label margin-top-0" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}</label>
-      <select :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey" class="usa-select" :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
+      <select :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey" :class="{'usa-select': true, 'usa-select-empty': !response }" :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         @change="updateEligibilitySelected">
         <option value>- Select -</option>
         <option v-for="option in values" :key="option" :value="option"
@@ -101,7 +101,7 @@ export default {
   .eligibility-criterion input[type=checkbox]:not(:checked) ~ label {
     display: none;
   }
-  .eligibility-criterion select[value=""] {
+  .usa-select-empty {
     display: none;
   }
 }
