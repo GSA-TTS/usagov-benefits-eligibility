@@ -76,7 +76,7 @@
                     aria-label="Remove this filter"
                     data-position="top"
                     @click="clearFilter">
-                    <span class="text-middle">{{ filter }}</span>
+                    <span class="text-middle text-white">{{ filter }}</span>
                     <svg
                       class="usa-icon text-white text-middle"
                       aria-hidden="true"
