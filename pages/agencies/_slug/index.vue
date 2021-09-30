@@ -109,6 +109,7 @@ export default {
       this.agency.related.push(await this.$content("agencies", related).fetch());
     }
   },
+  /* istanbul ignore next */
   head () {
     return {
       title: this.benefitAgency,
