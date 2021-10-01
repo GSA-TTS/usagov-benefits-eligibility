@@ -108,7 +108,7 @@
           <div class="grid-row grid-gap print:display-block break-before-always">
             <div class="grid-col margin-bottom-3">
               <h2 class="display-none print:display-block">Benefits</h2>
-              <h2 class="print:display-none">View results</h2>
+              <h2 class="print:display-none margin-bottom-0">View results</h2>
               <span class="display-none print:display-block">
                 Showing {{ lifeEventBenefits.length }} related benefits sorted by {{ sort }}.
               </span>
