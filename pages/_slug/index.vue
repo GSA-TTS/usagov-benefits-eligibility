@@ -41,6 +41,7 @@
         </div>
         <div class="grid-col margin-y-2 text-right">
           <label
+            role="status"
             class="usa-label display-inline margin-right-1"
             for="benefitSort">Showing {{ lifeEventBenefits.length }} related benefits sorted
             by:</label>
@@ -65,7 +66,7 @@
           <h2 class="padding-left-2 print:display-none">Answer questions</h2>
           <div>
             <div v-if="filter">
-              <div class="margin-bottom-3">
+              <div class="margin-bottom-3" role="alert">
                 Currently viewing
                 <span
                   class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
