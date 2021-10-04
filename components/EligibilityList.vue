@@ -80,7 +80,7 @@
             </svg>
             <svg v-else class="usa-icon" :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img">
-              <use xlink:href="~/assets/img/sprite.svg#check_circle"/>
+              <use xlink:href="~/assets/img/sprite.svg#radio_button_unchecked"/>
             </svg>
           </div>
 

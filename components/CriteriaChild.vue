@@ -104,5 +104,8 @@ export default {
   .usa-select-empty {
     display: none;
   }
+  .criteria-group-empty {
+    display: none;
+  }
 }
 </style>
