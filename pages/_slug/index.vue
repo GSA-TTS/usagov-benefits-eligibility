@@ -61,9 +61,8 @@
       </div>
 
       <div class="grid-row grid-gap print:display-block">
-        <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade radius-md ">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade padding-2 radius-md ">
           <h2 class="display-none print:display-block">Eligibility criteria</h2>
-          <h2 class="padding-left-2 print:display-none">Answer questions</h2>
           <div>
             <div v-if="filter">
               <div class="margin-bottom-3" role="alert">
@@ -106,13 +105,10 @@
           </div>
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8 print:display-block">
-          <div class="grid-row grid-gap print:display-block break-before-always">
+          <div class="grid-row grid-gap display-none print:display-block break-before-always">
             <div class="grid-col margin-bottom-3">
               <h2 class="display-none print:display-block">Benefits</h2>
-              <h2 class="print:display-none margin-bottom-0">View results</h2>
-              <span class="display-none print:display-block">
-                Showing {{ lifeEventBenefits.length }} related benefits sorted by {{ sort }}.
-              </span>
+              Showing {{ lifeEventBenefits.length }} related benefits sorted by {{ sort }}.
             </div>
           </div>
           <div
