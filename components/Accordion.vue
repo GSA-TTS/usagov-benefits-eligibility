@@ -1,6 +1,7 @@
 <template>
-  <transition-group id="acc-id" class="usa-accordion usa-accordion--bordered" name="benefit-list"
-    tag="div" aria-multiselectable="true" aria-live="polite">
+  <transition-group id="acc-id" ref="accordion" class="usa-accordion usa-accordion--bordered"
+    name="benefit-list" tag="div" aria-multiselectable="true"
+    aria-live="polite">
       <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`"
         class="break-inside-avoid margin-bottom-2">
         <h2 :id="`acc-h-${benefit.slug}-${cid}`" class="usa-accordion__heading">
@@ -147,6 +148,10 @@ export default {
     },
     openAll () {
       this.toggleAccordion(true);
+    },
+    focus () {
+      this.closeAll();
+      this.$refs.accordion.$el.querySelector('.usa-accordion__button').focus();
     },
     getCriteriaMatchLanguage (eligibilityCriteria) {
       if (eligibilityCriteria.some(c => this.doesCriterionMatchSelection(c) === false)) {

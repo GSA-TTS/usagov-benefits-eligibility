@@ -63,3 +63,10 @@ i.e.
       bottom: 6rem;
    }
 }
+
+.usa-social-link-a11y > img {
+   display: block;
+   margin: 0 auto;
+   width: 65%;
+   transform: translate(0, 25%);
+}
