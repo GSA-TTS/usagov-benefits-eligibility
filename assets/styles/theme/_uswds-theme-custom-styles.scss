@@ -70,3 +70,9 @@ i.e.
    width: 65%;
    transform: translate(0, 25%);
 }
+
+@media (min-width: 64em) {
+   .usa-navbar.position-relative > .usa-nav__secondary {
+     bottom: 3rem;
+   }
+}
