@@ -285,6 +285,7 @@ export default {
       });
       this.filter = tag;
       this.sortBenefits();
+      setTimeout(() => (this.$nextTick(() => this.$refs.accordion.focus())), 250);
     },
     clearFilter () {
       this.filter = "";
