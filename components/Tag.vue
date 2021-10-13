@@ -6,6 +6,7 @@
         style="padding: 1px 8px; text-decoration: none;"
         class="usa-tooltip usa-button usa-button--outline usa-button--inverse usa-button--unstyled text-uppercase font-sans-2xs"
         :title="title"
+        :aria-label="ariaLabel"
         data-position="right"
         @click="onClick">
         {{ name }}
@@ -16,6 +17,11 @@
 <script>
 export default {
   props: {
+    ariaLabel: {
+      type: String,
+      required: false,
+      default: ""
+    },
     name: {
       type: String,
       required: true,

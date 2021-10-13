@@ -29,18 +29,19 @@
         </div>
       </div>
 
-      <div class="grid-row grid-gap print:display-none">
+      <div role="complementary" class="grid-row grid-gap print:display-none">
         <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none">
         </div>
         <div class="tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-2 print:display-none">
           <div>
-            <button class="usa-button usa-button--unstyled open-all" @click="openAll">Open All</button>
+            <button class="usa-button usa-button--unstyled open-all" aria-controls="acc-id" @click="openAll">Open All</button>
             /
-            <button class="usa-button usa-button--unstyled close-all" @click="closeAll">Close All</button>
+            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">Close All</button>
           </div>
         </div>
         <div class="grid-col margin-y-2 text-right">
           <label
+            role="status"
             class="usa-label display-inline margin-right-1"
             for="benefitSort">Showing {{ lifeEventBenefits.length }} related benefits sorted
             by:</label>
@@ -60,54 +61,53 @@
       </div>
 
       <div class="grid-row grid-gap print:display-block">
-        <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade padding-2 radius-md">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade padding-2 radius-md ">
           <h2 class="display-none print:display-block">Eligibility criteria</h2>
-          <div v-if="filter">
-            <div class="margin-bottom-3">
-              Currently viewing
-              <span
-                class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
-                <button
-                  class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
-                  style="padding: .25rem; text-decoration: none;"
-                  :title="`Remove the ${filter} filter`"
-                  aria-label="Remove this filter"
-                  data-position="top"
-                  @click="clearFilter">
-                  <span class="text-middle">{{ filter }}</span>
-                  <svg
-                    class="usa-icon text-white text-middle"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img">
-                    <use xlink:href="~/assets/img/sprite.svg#close" />
-                  </svg>
-                </button>
-              </span>
+          <div>
+            <div v-if="filter">
+              <div class="margin-bottom-3" role="alert">
+                Currently viewing
+                <span
+                  class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
+                  <button
+                    class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
+                    style="padding: .25rem; text-decoration: none;"
+                    :title="`Remove the ${filter} filter`"
+                    :aria-label="`Remove the ${filter} filter`"
+                    data-position="top"
+                    @click="clearFilter">
+                    <span class="text-middle text-white">{{ filter }}</span>
+                    <svg
+                      class="usa-icon text-white text-middle"
+                      aria-hidden="true"
+                      focusable="false"
+                      role="img">
+                      <use xlink:href="~/assets/img/sprite.svg#close" />
+                    </svg>
+                  </button>
+                </span>
+              </div>
             </div>
+            <div class="margin-bottom-4 display-flex print:display-none">
+              <div class="text-primary">
+                <svg class="usa-icon usa-icon--size-3" aria-labelledby="eligibility-section-criteria-icon-title" focusable="false"
+                  role="img">
+                  <title id="eligibility-section-criteria-icon-title">Important information</title>
+                  <use xlink:href="~/assets/img/sprite.svg#priority_high"/>
+                </svg>
+              </div>
+              <div class="font-body-md usa-icon-list">
+                {{ lifeEvent.eligibilityCriteriaDescription }}
+              </div>
+            </div>
+            <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
+            <share-results @print="openAll()" />
           </div>
-          <div class="margin-bottom-4 print:display-none">
-            <ul class="usa-icon-list usa-icon-list--size-md">
-              <li class="usa-icon-list__item">
-                <div class="usa-icon-list__icon text-primary">
-                  <svg class="usa-icon usa-icon--size-3" aria-hidden="true" focusable="false"
-                    role="img">
-                    <use xlink:href="~/assets/img/sprite.svg#priority_high"/>
-                  </svg>
-                </div>
-                <div class="usa-icon-list__content">
-                  {{ lifeEvent.eligibilityCriteriaDescription }}
-                </div>
-              </li>
-            </ul>
-          </div>
-          <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
-          <share-results @print="openAll()" />
         </div>
         <div class="tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <div class="grid-row grid-gap display-none print:display-block break-before-always">
             <div class="grid-col margin-bottom-3">
-              <h2>Benefits</h2>
+              <h2 class="display-none print:display-block">Benefits</h2>
               Showing {{ lifeEventBenefits.length }} related benefits sorted by {{ sort }}.
             </div>
           </div>
@@ -192,6 +192,12 @@ export default {
 
     this.lifeEvent = lifeEvent;
     this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits;
+  },
+  /* istanbul ignore next */
+  head () {
+    return {
+      title: this.lifeEvent.secondaryHeadline,
+    };
   },
   computed: {
     lifeEventTitle () {
@@ -280,11 +286,13 @@ export default {
       });
       this.filter = tag;
       this.sortBenefits();
+      setTimeout(() => (this.$nextTick(() => this.$refs.accordion.focus())), 250);
     },
     clearFilter () {
       this.filter = "";
       this.lifeEventBenefits = this.allLifeEventBenefits;
       this.sortBenefits();
+      this.$nextTick(() => this.$refs.accordion.focus());
     }
   },
 };

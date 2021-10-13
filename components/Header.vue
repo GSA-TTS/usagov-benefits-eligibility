@@ -91,7 +91,7 @@
 
     <div class="usa-overlay" />
     <header class="usa-header usa-header--extended">
-      <div class="usa-navbar">
+      <div class="usa-navbar position-relative">
         <div id="extended-logo" class="usa-logo" style="max-width: 60%">
           <em class="usa-logo__text display-flex" style="align-items: center;">
             <nuxt-link to="/" title="USAGov Logo" aria-label="USAGov Logo">
@@ -103,64 +103,13 @@
           </em>
         </div>
         <button class="usa-menu-btn print:display-none">Menu</button>
-      </div>
-      <nav aria-label="Primary navigation" class="usa-nav print:display-none">
-        <div class="usa-nav__inner">
-          <button class="usa-nav__close">
-            <img
-              src="../assets/img/usa-icons/close.svg"
-              role="img"
-              alt="close"/>
-          </button>
-          <ul class="usa-nav__primary usa-accordion">
-            <!--<li class="usa-nav__primary-item">
-              <button class="usa-accordion__button usa-nav__link  usa-current" aria-expanded="false" aria-controls="extended-nav-section-one"><span>Current section</span></button>
-              <ul id="extended-nav-section-one" class="usa-nav__submenu">
-                <li class="usa-nav__submenu-item">
-                  <a href="#" class=""> Navigation link</a>
-                </li>
-                <li class="usa-nav__submenu-item">
-                  <a href="#" class=""> Navigation link</a>
-                </li>
-                <li class="usa-nav__submenu-item">
-                  <a href="#" class=""> Navigation link</a>
-                </li>
-              </ul>
-            </li>-->
-            <!--<li class="usa-nav__primary-item">
-              <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="extended-nav-section-two"><span>Section</span></button>
-              <ul id="extended-nav-section-two" class="usa-nav__submenu">
-                <li class="usa-nav__submenu-item">
-                  <a href="#" class=""> Navigation link</a>
-                </li><li class="usa-nav__submenu-item">
-                  <a href="#" class=""> Navigation link</a>
-                </li><li class="usa-nav__submenu-item">
-                  <a href="#" class=""> Navigation link</a>
-                </li>
-              </ul>
-            </li>-->
-            <li v-if="isLifeEventPage" class="usa-nav__primary-item">
-              <nuxt-link to="/" class="usa-nav__link">
-                <span>Benefits by life event</span>
-              </nuxt-link>
-            </li>
-            <li v-else class="usa-nav__primary-item">
-              <nuxt-link to="/" exact class="usa-nav__link">
-                <span>Benefits by life event</span>
-              </nuxt-link>
-            </li>
-            <li class="usa-nav__primary-item">
-              <nuxt-link to="/topics" class="usa-nav__link">
-                <span>Benefits by topic</span>
-              </nuxt-link>
-            </li>
-            <li class="usa-nav__primary-item">
-              <nuxt-link to="/agencies" class="usa-nav__link">
-                <span>Benefits by agency</span>
-              </nuxt-link>
-            </li>
-          </ul>
-          <div class="usa-nav__secondary">
+
+          <div class="usa-nav__secondary mobile:display-none mobile-lg:display-none tablet:display-none tablet-lg:display-none desktop:display-block">
+            <ul class="usa-nav__secondary-links">
+              <li class="usa-nav__secondary-item">
+                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
+              </li>
+            </ul>
             <form class="usa-search" role="search">
               <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
               <input
@@ -180,6 +129,37 @@
               </button>
             </form>
           </div>
+      </div>
+      <nav aria-label="Primary navigation" class="usa-nav print:display-none">
+        <div class="usa-nav__inner">
+          <button class="usa-nav__close">
+            <img
+              src="../assets/img/usa-icons/close.svg"
+              role="img"
+              alt="close"/>
+          </button>
+          <ul class="usa-nav__primary usa-accordion">
+            <li v-if="isLifeEventPage" class="usa-nav__primary-item">
+              <nuxt-link to="/" class="usa-nav__link">
+                <span>Benefits by life event</span>
+              </nuxt-link>
+            </li>
+            <li v-else class="usa-nav__primary-item">
+              <nuxt-link to="/" exact class="usa-nav__link">
+                <span>Benefits by life event</span>
+              </nuxt-link>
+            </li>
+            <li class="usa-nav__primary-item">
+              <nuxt-link to="/types" class="usa-nav__link">
+                <span>Benefits by type</span>
+              </nuxt-link>
+            </li>
+            <li class="usa-nav__primary-item">
+              <nuxt-link to="/agencies" class="usa-nav__link">
+                <span>Benefits by agency</span>
+              </nuxt-link>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>

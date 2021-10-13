@@ -67,6 +67,12 @@ export default {
       contentAgencies: {},
     };
   },
+  /* istanbul ignore next */
+  head () {
+    return {
+      title: 'Benefits by agency',
+    };
+  },
   methods: {
     kebabCase: _.kebabCase,
     mapAgencies (agencies) {

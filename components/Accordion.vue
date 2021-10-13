@@ -1,7 +1,9 @@
 <template>
-  <transition-group class="usa-accordion usa-accordion--bordered" name="benefit-list" tag="div"
-    aria-multiselectable="true">
-      <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`" class="break-inside-avoid margin-bottom-2">
+  <transition-group id="acc-id" ref="accordion" class="usa-accordion usa-accordion--bordered"
+    name="benefit-list" tag="div" aria-multiselectable="true"
+    aria-live="polite">
+      <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`"
+        class="break-inside-avoid margin-bottom-2">
         <h2 :id="`acc-h-${benefit.slug}-${cid}`" class="usa-accordion__heading">
           <button
             ref="accordionButtons"
@@ -20,7 +22,9 @@
             v-if="benefit && benefit.tags.length > 0"
             class="tags-container margin-top-1">
             <Tag v-for="tag in mapTags(benefit.tags)" :key="tag.name" :name="tag.name"
-              :click="tagClick" :title="tag.title" />
+              :click="tagClick"
+              :title="tag.title"
+              :aria-label="tag.title"/>
           </div>
           <template v-if="benefit.source && benefit.source.name && benefit.source.link">
             <h3
@@ -46,7 +50,7 @@
             :aria-label="`Choices for ${benefit.title}`">
             <li class="usa-button-group__item">
                 <a :href="benefit.source.link" target="_blank"
-                  :aria-labelledby="`acc-h-${benefit.slug}-${cid}`"
+                  :aria-label="`How to apply for ${ benefit.title }`"
                   class="usa-button print:display-none">
                   How to Apply
                 </a>
@@ -144,6 +148,10 @@ export default {
     },
     openAll () {
       this.toggleAccordion(true);
+    },
+    focus () {
+      this.closeAll();
+      this.$refs.accordion.$el.querySelector('.usa-accordion__button').focus();
     },
     getCriteriaMatchLanguage (eligibilityCriteria) {
       if (eligibilityCriteria.some(c => this.doesCriterionMatchSelection(c) === false)) {

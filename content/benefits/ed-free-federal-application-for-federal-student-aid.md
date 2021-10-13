@@ -1,8 +1,9 @@
 ---
-title: "Federal Student Aid"
-headline: "Federal Student Aid"
+title: "Financial Aid for Higher Education"
+headline: "Financial Aid for Higher Education"
 tags: 
 - "educational assistance"
+- "financial assistance"
 lifeEvents: 
 - "school-and-education"
 source:

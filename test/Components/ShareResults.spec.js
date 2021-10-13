@@ -94,6 +94,8 @@ describe('ShareResults', () => {
     await wrapper.vm.copy();
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.usa-tooltip')).toBeDefined();
+    wrapper.vm.blur();
+    await wrapper.vm.$nextTick();
     jest.runAllTimers();
     jest.useRealTimers();
   });

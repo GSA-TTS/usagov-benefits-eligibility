@@ -21,9 +21,9 @@
       <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col margin-bottom-3">
           <div>
-            <button class="usa-button usa-button--unstyled open-all" @click="openAll">Open All</button>
+            <button class="usa-button usa-button--unstyled open-all" aria-controls="acc-id" @click="openAll">Open All</button>
             /
-            <button class="usa-button usa-button--unstyled close-all" @click="closeAll">Close All</button>
+            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">Close All</button>
           </div>
         </div>
       </div>
@@ -101,14 +101,20 @@ export default {
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body;
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
     // eslint-disable-next-line node/handle-callback-err
-    this.topic = await this.$content("topics", this.$route.params.slug).fetch().catch((err) => {});
+    this.topic = await this.$content("types", this.$route.params.slug).fetch().catch((err) => {});
 
     this.topic.related = [];
     for (const related of (this.topic.relatedKeys || [])) {
-      this.topic.related.push(await this.$content("topics", related).fetch());
+      this.topic.related.push(await this.$content("types", related).fetch());
     }
 
     this.lifeEventBenefits = lifeEventBenefits;
+  },
+  /* istanbul ignore next */
+  head () {
+    return {
+      title: this.benefitTopic,
+    };
   },
   methods: {
     mapLifeEvents (lifeEvents) {

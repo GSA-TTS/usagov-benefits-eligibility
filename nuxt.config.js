@@ -22,14 +22,14 @@ export default {
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Benefits Eligibility Estimator',
+    title: 'Benefit finder',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Default meta tags are in nuxt.config.js' }
+      { hid: 'description', name: 'description', content: 'Answer a few questions. Review a custom list of potential benefits. Find out how to apply.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: sitePrefix + 'favicon.ico' }

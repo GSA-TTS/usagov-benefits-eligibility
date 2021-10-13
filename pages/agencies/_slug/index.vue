@@ -21,9 +21,9 @@
       <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col margin-bottom-3">
           <div>
-            <button class="usa-button usa-button--unstyled open-all" @click="openAll">Open All</button>
+            <button class="usa-button usa-button--unstyled open-all" aria-controls="acc-id" @click="openAll">Open All</button>
             /
-            <button class="usa-button usa-button--unstyled close-all" @click="closeAll">Close All</button>
+            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">Close All</button>
           </div>
         </div>
       </div>
@@ -109,6 +109,12 @@ export default {
     for (const related of (this.agency.relatedKeys || [])) {
       this.agency.related.push(await this.$content("agencies", related).fetch());
     }
+  },
+  /* istanbul ignore next */
+  head () {
+    return {
+      title: this.benefitAgency,
+    };
   },
   methods: {
     mapLifeEvents (lifeEvents) {
