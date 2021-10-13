@@ -10,7 +10,7 @@
     </div>
 
     <div v-if="type === 'select'" :key="criteriaKey">
-      <label class="usa-label margin-top-0" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}</label>
+      <label :class="{'usa-label': true, 'margin-top-0': true, 'usa-select-empty': !response }" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}</label>
       <select :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey" :class="{'usa-select': true, 'usa-select-empty': !response }" :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         @change="updateEligibilitySelected">
         <option value>- Select -</option>
