@@ -4,8 +4,8 @@ headline: "COVID-19 Funeral Assistance"
 tags: 
 - "burial and funeral assistance"
 lifeEvents: 
-- "death-and-burial"
-- "national-emergency-and-disaster"
+- death-and-burial
+- national-emergency-and-disaster
 source:
   name: "FEMA"
   link: "https://www.fema.gov/disasters/coronavirus/economic/funeral-assistance"
