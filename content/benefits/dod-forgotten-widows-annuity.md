@@ -6,7 +6,7 @@ tags:
 lifeEvents: 
 - "death-and-burial"
 source:
-  name: department-of-defense
+  name: "Department of Defense"
   link: "https://militarypay.defense.gov/Portals/3/Documents/acmss.pdf"
 
 summary: "Commonly referred to as the Annuity for Forgotten Widows, qualified surviving spouses of members of the Uniformed Services may be eligible for financial support."
