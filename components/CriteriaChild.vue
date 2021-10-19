@@ -10,8 +10,8 @@
     </div>
 
     <div v-if="type === 'select'" :key="criteriaKey">
-      <label class="usa-label margin-top-0" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}</label>
-      <select :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey" class="usa-select" :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
+      <label :class="{'usa-label': true, 'margin-top-0': true, 'usa-select-empty': !response }" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}</label>
+      <select :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey" :class="{'usa-select': true, 'usa-select-empty': !response }" :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         @change="updateEligibilitySelected">
         <option value>- Select -</option>
         <option v-for="option in values" :key="option" :value="option"
@@ -50,7 +50,7 @@ export default {
     response: {
       type: [Boolean, String],
       default: false,
-    },
+    }
   },
   computed: {
     ...mapGetters({
@@ -74,6 +74,7 @@ export default {
     }
   }
 };
+
 </script>
 <style type="scss" scoped>
 
@@ -95,5 +96,16 @@ export default {
 }
 .usa-checkbox {
   background: none;
+}
+@media print {
+  .eligibility-criterion input[type=checkbox]:not(:checked) ~ label {
+    display: none;
+  }
+  .usa-select-empty {
+    display: none;
+  }
+  .criteria-group-empty {
+    display: none;
+  }
 }
 </style>

@@ -65,7 +65,8 @@
     </section>
     <cross-sell
       title="Other agencies that might be relevant to you."
-      :cards="agency.related"/>
+      :cards="agency.related"
+      class="print:display-none"/>
   </div>
 </template>
 

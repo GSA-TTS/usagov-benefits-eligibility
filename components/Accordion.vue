@@ -173,6 +173,11 @@ export default {
 
 <style scoped>
 .benefit-list-move {
-  transition: transform 2s;
+  transition: transform 1s;
+}
+@media print {
+  .usa-accordion--bordered .usa-accordion__content.usa-prose {
+    display:block !important
+  }
 }
 </style>

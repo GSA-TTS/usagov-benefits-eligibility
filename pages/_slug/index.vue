@@ -138,7 +138,8 @@
     </section>
     <cross-sell
       title="Other benefits that might be relevant to you."
-      :cards="lifeEvent.related"/>
+      :cards="lifeEvent.related"
+      class="print:display-none"/>
   </div>
 </template>
 
