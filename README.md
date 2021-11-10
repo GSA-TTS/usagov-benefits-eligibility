@@ -20,15 +20,29 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# federalist build
+$ npm run federalist
+
+# federalist local build
+$ npm run federalist:local
+
+# specs
+$ npm run test
+$ npm run tset:watch
+
+# you may want to look at additional scripts available in the package.json
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 ### Useful links
 
- + https://nuxtjs.org
+ + https://nuxtjs.org/
  + https://webpack.js.org/
  + https://jestjs.io/
+ + https://federalistapp.18f.gov/
+ + https://federalist.18f.gov/documentation/
  
  ### Github Actions
 
@@ -40,14 +54,6 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Design considerations
 
- + Ideally we'd use cross origin iframes to limit the rules engine access similar to twitch's design https://dev.twitch.tv/docs/extensions/
-  + Federalist's setting `x-frame-options: SAMEORIGIN` prevents this design.
-  + Additional mitigations are provided via the `iframe` `allow` feature policy.
-  + A subdomain might be a further mitigation however this feature is deprecated.
- + Rules engine is in a seperate github (repo)[https://github.com/GSA/usagov-benefits-eligibility-rules].
-
-```
- %% Rules Engine Overview Diagram
-graph LR
-    BEARS --> | - postMessage - | Extension
-    Extension --> | - postMessage - | BEARS
+ + Some items we only render client-side this is because the data relationships are not fully captured by nuxtjs and by moving them client-side Vuejs is able to track those relationships.
+ + The current print philosophy is that print is a different artifact than a web page, be sure to test printing after any website changes.
+ + There are some integration issues between USWDS components and Vuejs. The current approach tries to use each framework by it's public API's as much as possible.
