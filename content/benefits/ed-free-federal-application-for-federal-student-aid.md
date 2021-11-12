@@ -20,4 +20,6 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
   acceptableValues: [true]
+- criteriaKey: applicant_ss_number
+  acceptableValues: [true]
 ---
