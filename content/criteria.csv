@@ -26,4 +26,4 @@ applicant_income,"You have limited income and resources.",boolean,true
 applicant_high-school_diploma,"You have a high school diploma or equivalent.",boolean,true
 applicant_degree_cerificate_program,"You are enrolled or accepted as a student in an eligible degree or certificate program.",boolean,true
 applicant_served_in_active_military,"You served in the active military, naval or air service and",select,currently are an active-duty member; were discharged under conditions other than dishonorable; had retired from the service
-applicant_ss_number,"You have a valid Social Security number",boolean,true
+applicant_ss_number,"You have a valid Social Security number.",boolean,true
