@@ -20,7 +20,7 @@ eligibility:
 - criteriaKey: applicant_disability
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
-  acceptableValues: ["U.S. citizen", "non-citizen national", "qualified alien"]
+  acceptableValues: [true]
 
 
 ---
