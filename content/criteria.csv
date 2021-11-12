@@ -15,7 +15,7 @@ applicant_paid_funeral_expenses,"You paid for the funeral/burial expenses.",bool
 applicant_funeral_reimbursment,"You were NOT reimbursed for the funeral/burial cost by any organization or government agency.",boolean,true
 applicant_relationship,"Your relationship to the deceased is",select,spouse; child; parent; other family member; personal or official representative
 applicant_date_of_birth,"Your date of birth is",boolean,true 
-applicant_citizen_status,"Your citizenship status is",select, U.S. citizen; non-citizen national; qualified alien
+applicant_citizen_status,"You are a U.S. citizen or eligible non-citizen.",boolean,true 
 applicant_marital_status,"Your marital status is",select,now married; unmarried; widowed; divorced
 applicant_care_for_deceaseds_child,"You are caring for the deceased's child who is under age 16 or is disabled.",boolean,true
 applicant_declared_disaster,"Your residence is in a declared disaster area.",boolean,true
@@ -24,5 +24,5 @@ applicant_ability_to_work,"You are unable to work on regular basis because of a 
 applicant_paid_into_SS,"You qualify for Social Security benefits (You worked long enough and paid Social Security taxes on your earnings).",boolean,true
 applicant_income,"You have limited income and resources.",boolean,true
 applicant_high-school_diploma,"You have a high school diploma or equivalent.",boolean,true
-applicant_degree_cerificate_program,"You are enrolled or accepted for enrollment as a regular student in a degree or certificate program.",boolean,true
+applicant_degree_cerificate_program,"You are enrolled or accepted as a student in an eligible degree or certificate program.",boolean,true
 applicant_served_in_active_military,"You served in the active military, naval or air service and",select,currently are an active-duty member; were discharged under conditions other than dishonorable; had retired from the service
