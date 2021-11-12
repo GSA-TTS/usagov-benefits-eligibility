@@ -19,5 +19,5 @@ eligibility:
 - criteriaKey: applicant_degree_cerificate_program
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
-  acceptableValues: ["U.S. citizen", "non-citizen national", "qualified alien"]
+  acceptableValues: [true]
 ---
