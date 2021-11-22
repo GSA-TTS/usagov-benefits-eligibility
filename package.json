@@ -22,7 +22,7 @@
   "dependencies": {
     "ansi-html": "gebhardtr/ansi-html#25ca3089b6cb0ff785b76e21643e51f2d3570f0b",
     "ansi-regex": ">=5.0.1",
-    "@nuxt/content": "^1.14.0",
+    "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/sitemap": "^2.4.0",
     "axios": "^0.24.0",
