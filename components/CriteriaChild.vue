@@ -1,11 +1,13 @@
 <template>
   <div class="eligibility-criterion">
     <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
+      <!-- TODO: FSP@10x: try and use updateEligibilityChecked method -->
       <input :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         class="usa-checkbox__input usa-checkbox__input" type="checkbox"
         :name="criteriaGroupKey + '-' + criteriaKey" :checked="response" :value="criteriaKey"
         :data-section="criteriaGroupKey" @change="updateEligibilityChecked" />
-      <label class="usa-checkbox__label font-sans-sm" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ label }}
+      <label class="usa-checkbox__label font-sans-sm" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">
+        {{ label }}
       </label>
     </div>
 

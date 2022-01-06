@@ -11,6 +11,7 @@
     </h3>
     <client-only>
       <ul class="usa-icon-list grid-row padding-x-205 padding-top-205 padding-bottom-1">
+            <!-- TODO: FSP@10x: In order to allow for users to select eligibility from card, we'll need to replace the existing svg icons with checkboxes. -->
         <li
           v-for="criterion in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
@@ -33,7 +34,31 @@
                   doesCriterionMatchSelection(criterion) === false
               }
             ]">
-            <svg v-if="showIcons" class="usa-icon" :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
+            <div class="usa-checkbox">
+                <input
+                  :id="criterion.criteriaKey"
+                  class="usa-checkbox__input"
+                  type="checkbox"
+                  :name="criterion.criteriaKey"
+                  :value="criterion.criteriaKey"
+                  :checked="response" />
+                <label class="usa-checkbox__label" :for="criterion.criteriaKey">
+                  <template v-if="criterion.label">
+                    {{ criterion.label }}
+                  </template>
+                  <template v-else>
+                    {{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}
+                  </template>
+                  <template
+                  v-if="
+                    getCriterionByEligibilityKey(criterion.criteriaKey).type ===
+                      'select' && criterion.acceptableValues
+                  ">
+                    {{ formatArrayWithSeparator(criterion.acceptableValues) }}.
+                  </template>
+                </label>
+            </div>
+            <!-- <svg v-if="showIcons" class="usa-icon" :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img">
               <title v-if="doesCriterionMatchSelection(criterion) == true" :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`">This criteria matched</title>
               <title v-else-if="doesCriterionMatchSelection(criterion) == false" :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`">This criteria removed this benefit</title>
@@ -118,7 +143,7 @@
               ">
                 {{ formatArrayWithSeparator(criterion.acceptableValues) }}.
               </template>
-            </span>
+            </span> -->
           </div>
         </li>
       </ul>
