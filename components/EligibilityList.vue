@@ -41,7 +41,8 @@
                   type="checkbox"
                   :name="criterion.criteriaKey"
                   :value="criterion.criteriaKey"
-                  :checked="response" />
+                  :checked="isChecked"
+                  @change="updateEligibilityChecked(criterion.criteriaKey)" />
                 <label class="usa-checkbox__label" :for="criterion.criteriaKey">
                   <template v-if="criterion.label">
                     {{ criterion.label }}
@@ -193,7 +194,9 @@ export default {
     }
   },
   data () {
-    return {};
+    return {
+      isChecked: false
+    };
   },
   computed: {
     ...mapGetters({
@@ -208,7 +211,15 @@ export default {
       return array
         .join(", ")
         .replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);
-    }
+    },
+     updateEligibilityChecked (key) {
+       this.isChecked = !this.isChecked
+      const localCriterion = {
+        criteriaKey: key,
+        response: this.isChecked
+      };
+      this.$store.commit('criteria/updateResponse', localCriterion);
+    },
   }
 };
 </script>
