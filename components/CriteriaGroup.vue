@@ -11,7 +11,6 @@
             {{ criteriaGroup.description }}
         </p>
         <div :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey" class="">
-          <!-- TODO: FSP@10x: This is the criteria checkboxes on left -->
           <template v-for="(criterion) in getCriteriaMap(criteriaGroup.criteriaKeys)">
             <CriteriaChild
               :key="criterion.criteriaKey"
