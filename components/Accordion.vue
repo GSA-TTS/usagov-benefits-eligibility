@@ -40,12 +40,10 @@
               {{ benefit.summary }}
             </p>
           </template>
-          <!-- FSP@10x: This is the right column Eligibility Cards -->
           <EligibilityList
               :benefit-eligibility-criteria="benefit.eligibility"
               :benefit-source="benefit.source ? benefit.source.link : ''"
               :heading-classes="['bg-primary', 'text-white']"
-              :show-icons="showIcons"
               :show-matching-count="showMatchingCount"/>
           <ul v-if="benefit.source && benefit.source.link" class="usa-button-group" style="padding-left: 0;"
             :aria-label="`Choices for ${benefit.title}`">

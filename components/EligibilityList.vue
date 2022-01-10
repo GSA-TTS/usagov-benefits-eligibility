@@ -95,11 +95,6 @@ export default {
       required: false,
       default: () => ['bg-base-lighter'],
     },
-    showIcons: {
-      type: Boolean,
-      required: false,
-      default: true,
-    },
     showMatchingCount: {
       type: Boolean,
       required: false,
