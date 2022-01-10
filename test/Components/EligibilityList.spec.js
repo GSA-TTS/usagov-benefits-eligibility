@@ -1,8 +1,13 @@
-import { shallowMount } from '@vue/test-utils'
-import EligibilityList from '@/components/EligibilityList.vue'
-import Vuex from 'vuex';
-import beforeAllTests from '@/test/beforeAllTests';
-import { state as criteriaState, mutations, getters, actions } from '~/store/criteria';
+import { shallowMount } from "@vue/test-utils";
+import EligibilityList from "@/components/EligibilityList.vue";
+import Vuex from "vuex";
+import beforeAllTests from "@/test/beforeAllTests";
+import {
+  state as criteriaState,
+  mutations,
+  getters,
+  actions
+} from "~/store/criteria";
 
 const MOCK_CRITERIA = [
   {
@@ -19,9 +24,9 @@ const MOCK_CRITERIA = [
     values: ["one", "two", "three"],
     acceptableValues: ["one"]
   }
-]
+];
 
-describe('EligibilityList', () => {
+describe("EligibilityList", () => {
   let store;
 
   beforeAll(async () => {
@@ -38,28 +43,30 @@ describe('EligibilityList', () => {
           actions,
           mutations,
           getters
-        },
-      },
+        }
+      }
     });
-  })
-  test('is a Vue instance', () => {
+  });
+  test("is a Vue instance", () => {
     const wrapper = shallowMount(EligibilityList, {
       propsData: {
         benefitEligibilityCriteria: []
       },
       store
     });
-    expect(wrapper.vm).toBeTruthy();
+    expect(wrapper.vm).toBeTruthy()();
   });
 
-  test('displays an error if there are no criteria passed in', () => {
+  test("displays an error if there are no criteria passed in", () => {
     const wrapper = shallowMount(EligibilityList, {
       store
     });
-    expect(wrapper.find(".usa-icon-list__content").text()).toBe('Key named "error" not found');
+    expect(wrapper.find(".usa-icon-list__content").text()).toBe(
+      'Key named "error" not found'
+    );
   });
 
-  test('displays the eligibilityCriteria', () => {
+  test("displays the eligibilityCriteria", () => {
     const wrapper = shallowMount(EligibilityList, {
       propsData: {
         benefitEligibilityCriteria: MOCK_CRITERIA
@@ -69,11 +76,13 @@ describe('EligibilityList', () => {
     expect(wrapper.findAll("li")).toHaveLength(2);
   });
 
-  test.only('updates when a criteria response changes', async () => {
+  test.only("updates when a criteria response changes", async () => {
     await store.dispatch("criteria/populate", [...MOCK_CRITERIA]);
     const wrapper = shallowMount(EligibilityList, {
       propsData: {
-        benefitEligibilityCriteria: Object.values(store.state.criteria.eligibilityCriteria)
+        benefitEligibilityCriteria: Object.values(
+          store.state.criteria.eligibilityCriteria
+        )
       },
       store
     });
@@ -87,8 +96,7 @@ describe('EligibilityList', () => {
 
     store.commit("criteria/updateResponse", { ...trueCriteria });
     await wrapper.vm.$nextTick();
-    expect(wrapper.findAll(".usa-icon-list__content.text-success")).toHaveLength(1);
-
+    await wrapper.find(".usa-checkbox__input").setChecked();
+    expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy();
   });
-
 });
