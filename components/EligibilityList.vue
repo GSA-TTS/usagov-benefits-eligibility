@@ -11,7 +11,6 @@
     </h3>
     <client-only>
       <ul class="usa-icon-list grid-row padding-x-205 padding-top-205 padding-bottom-1">
-            <!-- TODO: FSP@10x: In order to allow for users to select eligibility from card, we'll need to replace the existing svg icons with checkboxes. -->
         <li
           v-for="criterion in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"

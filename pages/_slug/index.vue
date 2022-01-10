@@ -100,7 +100,6 @@
                 {{ lifeEvent.eligibilityCriteriaDescription }}
               </div>
             </div>
-            <!-- TODO: FSP@10x: These are the Criteria Checkboxes -->
             <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
             <share-results @print="openAll()" />
           </div>
@@ -133,7 +132,6 @@
               <p class="usa-alert__text">No matching benefits found.</p>
             </div>
           </div>
-          <!-- TODO: FSP@10x: Theses are the accordion items -->
           <accordion ref="accordion" :life-event-benefits="lifeEventBenefits" :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
       </div>
