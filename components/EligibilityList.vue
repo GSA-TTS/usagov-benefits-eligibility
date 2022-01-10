@@ -41,8 +41,8 @@
                   type="checkbox"
                   :name="criterion.criteriaKey"
                   :value="criterion.criteriaKey"
-                  :checked="isChecked"
-                  @change="updateEligibilityChecked(criterion.criteriaKey)" />
+                  :checked="doesCriterionMatchSelection(criterion) == true"
+                  @change="updateEligibilityChecked($event, criterion.criteriaKey)"/>
                 <label class="usa-checkbox__label" :for="criterion.criteriaKey">
                   <template v-if="criterion.label">
                     {{ criterion.label }}
@@ -59,92 +59,6 @@
                   </template>
                 </label>
             </div>
-            <!-- <svg v-if="showIcons" class="usa-icon" :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
-              role="img">
-              <title v-if="doesCriterionMatchSelection(criterion) == true" :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`">This criteria matched</title>
-              <title v-else-if="doesCriterionMatchSelection(criterion) == false" :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`">This criteria removed this benefit</title>
-              <title v-else :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`">This criteria has not matched</title>
-              <use
-                v-if="doesCriterionMatchSelection(criterion) == true"
-                xlink:href="~/assets/img/sprite.svg#check_circle"/>
-              <use
-                v-else-if="doesCriterionMatchSelection(criterion) == false"
-                xlink:href="~/assets/img/sprite.svg#highlight_off"/>
-              <use v-else xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
-            </svg>
-            <svg v-else class="usa-icon" :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
-              role="img">
-              <use xlink:href="~/assets/img/sprite.svg#check_circle"/>
-            </svg>
-          </div>
-          <div
-            :class="[
-              'usa-icon-list__icon',
-              'display-none',
-              'print:display-inline',
-              {
-                'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true
-              },
-              {
-                'text-base-light':
-                  doesCriterionMatchSelection(criterion) === null
-              },
-              {
-                'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false
-              }
-            ]">
-            <svg v-if="showIcons" class="usa-icon" role="img">
-              <use
-                v-if="doesCriterionMatchSelection(criterion) == true"
-                xlink:href="~/assets/img/sprite.svg#check_circle"/>
-              <use
-                v-else-if="doesCriterionMatchSelection(criterion) == false"
-                xlink:href="~/assets/img/sprite.svg#highlight_off"/>
-              <use v-else xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
-            </svg>
-            <svg v-else class="usa-icon" :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
-              role="img">
-              <use xlink:href="~/assets/img/sprite.svg#radio_button_unchecked"/>
-            </svg>
-          </div>
-
-          <div
-            :class="[
-              'usa-icon-list__content',
-              {
-                'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true
-              },
-              {
-                'text-base-dark':
-                  doesCriterionMatchSelection(criterion) === null
-              },
-              {
-                'print:text-base-darker':
-                  doesCriterionMatchSelection(criterion) === null
-              },
-              {
-                'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false
-              }
-            ]">
-            <span>
-              <template v-if="criterion.label">
-                {{ criterion.label }}
-              </template>
-              <template v-else>
-                {{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}
-              </template>
-              <template
-              v-if="
-                getCriterionByEligibilityKey(criterion.criteriaKey).type ===
-                  'select' && criterion.acceptableValues
-              ">
-                {{ formatArrayWithSeparator(criterion.acceptableValues) }}.
-              </template>
-            </span> -->
           </div>
         </li>
       </ul>
@@ -212,17 +126,17 @@ export default {
         .join(", ")
         .replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);
     },
-     updateEligibilityChecked (key) {
-       this.isChecked = !this.isChecked
+     updateEligibilityChecked (event, key) {
       const localCriterion = {
         criteriaKey: key,
-        response: this.isChecked
+        response: event.target.checked
       };
       this.$store.commit('criteria/updateResponse', localCriterion);
     },
   }
 };
 </script>
+
 <style scoped>
 .usa-icon-list {
   max-width: none;
