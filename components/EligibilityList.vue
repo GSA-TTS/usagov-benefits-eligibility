@@ -33,7 +33,8 @@
                   doesCriterionMatchSelection(criterion) === false
               }
             ]">
-            <div class="usa-checkbox">
+            <div v-if="getCriterionByEligibilityKey(criterion.criteriaKey).type ===
+                      'boolean'" class="usa-checkbox">
                 <input
                   :id="criterion.criteriaKey"
                   class="usa-checkbox__input"
@@ -42,6 +43,32 @@
                   :value="criterion.criteriaKey"
                   :checked="doesCriterionMatchSelection(criterion) == true"
                   @change="updateEligibilityChecked($event, criterion.criteriaKey)"/>
+                <label class="usa-checkbox__label" :for="criterion.criteriaKey">
+                  <template v-if="criterion.label">
+                    {{ criterion.label }}
+                  </template>
+                  <template v-else>
+                    {{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}
+                  </template>
+                  <template
+                  v-if="
+                    getCriterionByEligibilityKey(criterion.criteriaKey).type ===
+                      'select' && criterion.acceptableValues
+                  ">
+                    {{ formatArrayWithSeparator(criterion.acceptableValues) }}.
+                  </template>
+                </label>
+            </div>
+            <div v-else-if="getCriterionByEligibilityKey(criterion.criteriaKey).type ===
+                      'select'" class="usa-checkbox">
+                <input
+                  :id="criterion.criteriaKey"
+                  class="usa-checkbox__input"
+                  type="checkbox"
+                  :name="criterion.criteriaKey"
+                  :value="criterion.criteriaKey"
+                  :checked="doesCriterionMatchSelection(criterion) == true"
+                  @change="updateEligibilitySelected(criterion.criteriaKey, criterion.acceptableValues)"/>
                 <label class="usa-checkbox__label" :for="criterion.criteriaKey">
                   <template v-if="criterion.label">
                     {{ criterion.label }}
@@ -127,6 +154,16 @@ export default {
       };
       this.$store.commit('criteria/updateResponse', localCriterion);
     },
+     updateEligibilitySelected (key, acceptableValues) {
+      const localCriterion = {
+        criteriaKey: key,
+        response: acceptableValues[0]
+      };
+      this.$store.commit('criteria/updateResponse', localCriterion);
+    },
+    showStuff (key) {
+      console.log(this.getCriterionByEligibilityKey(key))
+    }
   }
 };
 </script>

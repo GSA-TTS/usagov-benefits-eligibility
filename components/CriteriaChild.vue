@@ -1,6 +1,6 @@
 <template>
   <div class="eligibility-criterion">
-    <div v-if="criteriaToShow" :key="criteriaKey" class="usa-checkbox">
+    <div v-if="checkboxCriteriaToShow" :key="criteriaKey" class="usa-checkbox">
       <input :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         class="usa-checkbox__input usa-checkbox__input" type="checkbox"
         :name="criteriaGroupKey + '-' + criteriaKey" :checked="response" :value="criteriaKey"
@@ -54,13 +54,16 @@ export default {
     }
   },
   computed: {
-    criteriaToShow () {
+    checkboxCriteriaToShow () {
       if (this.$route.params.slug === "disability") {
         return "type === 'boolean'" && (this.criteriaKey !== 'applicant_date_of_birth' && this.criteriaKey !== "applicant_served_in_active_military")
         } else {
-          return "type === boolean"
+          return "type === 'boolean'"
         }
     },
+    // selectionCriteriaToShow () {
+    //   return "type === 'select'"
+    // },
     ...mapGetters({
       getCriterionByEligibilityKey: 'criteria/getCriterionByEligibilityKey',
     })
