@@ -1,6 +1,6 @@
 <template>
   <div class="eligibility-criterion">
-    <div v-if="checkboxCriteriaToShow" :key="criteriaKey" class="usa-checkbox">
+    <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
       <input :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         class="usa-checkbox__input usa-checkbox__input" type="checkbox"
         :name="criteriaGroupKey + '-' + criteriaKey" :checked="response" :value="criteriaKey"
