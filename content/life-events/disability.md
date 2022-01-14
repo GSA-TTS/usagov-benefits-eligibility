@@ -17,7 +17,5 @@ eligibilityCriteria:
       - applicant_disability
       - applicant_ability_to_work
       - applicant_citizen_status
-      - applicant_date_of_birth
-      - applicant_served_in_active_military
 
 ---
