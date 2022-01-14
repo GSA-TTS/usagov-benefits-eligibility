@@ -68,7 +68,7 @@
                   :name="criterion.criteriaKey"
                   :value="criterion.criteriaKey"
                   :checked="doesCriterionMatchSelection(criterion) == true"
-                  @change="updateEligibilitySelected(criterion.criteriaKey, criterion.acceptableValues)"/>
+                  @change="updateEligibilitySelected($event, criterion.criteriaKey, criterion.acceptableValues)"/>
                 <label class="usa-checkbox__label" :for="criterion.criteriaKey">
                   <template v-if="criterion.label">
                     {{ criterion.label }}
@@ -154,12 +154,21 @@ export default {
       };
       this.$store.commit('criteria/updateResponse', localCriterion);
     },
-     updateEligibilitySelected (key, acceptableValues) {
-      const localCriterion = {
+     updateEligibilitySelected (event, key, acceptableValues) {
+       if (event.target.checked === false) {
+        const localCriterion = {
         criteriaKey: key,
-        response: acceptableValues[0]
+        response: null
       };
       this.$store.commit('criteria/updateResponse', localCriterion);
+      } else {
+        const localCriterion = {
+          criteriaKey: key,
+          response: acceptableValues[0]
+        };
+        this.$store.commit('criteria/updateResponse', localCriterion);
+
+      }
     },
     showStuff (key) {
       console.log(this.getCriterionByEligibilityKey(key))
