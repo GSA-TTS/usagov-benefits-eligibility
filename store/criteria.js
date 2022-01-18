@@ -47,6 +47,15 @@ export const getters = {
       type: 'missing'
     };
   },
+  getResponseByEligibilityKey: state => (criteriaKey) => {
+    return state.eligibilityCriteria[criteriaKey].response ||
+    {
+      key: `error-missing-key--${criteriaKey}`,
+      label: `Key named "${criteriaKey}" not found`,
+      values: '',
+      type: 'missing'
+    };
+  },
   getHashResponses: (state) => {
     const responses = {};
     for (const criteriaKey in state.eligibilityCriteria) {
