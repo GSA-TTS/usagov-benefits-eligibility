@@ -19,7 +19,6 @@
           <div
             :class="[
               'usa-icon-list__icon',
-              'print:display-none',
               {
                 'text-success text-bold':
                   doesCriterionMatchSelection(criterion) === true
@@ -61,8 +60,8 @@
             </div>
             <div v-else-if="getCriterionByEligibilityKey(criterion.criteriaKey).type ===
                       'select'">
-                <label :class="{'usa-label': true, 'margin-top-0': true, 'usa-select-empty': !response }" :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey">{{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}</label>
-                <select :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey" :class="{'usa-select': true, 'usa-select-empty': !response }" :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
+                <label :class="{'usa-label': true, 'margin-top-0': true }" :for="'criteria' + '-' + criterion.criteriaKey">{{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}</label>
+                <select :id="'criteria' + '-' + criterion.criteriaKey" :class="{'usa-select': true }" :name="'criteria' + '-' + criterion.criteriaKey"
                   @change="updateEligibilitySelected($event, criterion.criteriaKey)">
                   <option value>- Select -</option>
                   <option v-for="option in criterion.acceptableValues" :key="option" :value="option"
@@ -114,11 +113,6 @@ export default {
       default: true,
     }
   },
-  data () {
-    return {
-      isChecked: false,
-    };
-  },
   computed: {
     ...mapGetters({
       doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
@@ -159,4 +153,5 @@ export default {
 .usa-icon-list {
   max-width: none;
 }
+
 </style>
