@@ -54,16 +54,6 @@ export default {
     }
   },
   computed: {
-    checkboxCriteriaToShow () {
-      if (this.$route.params.slug === "disability") {
-        return "type === 'boolean'" && (this.criteriaKey !== 'applicant_date_of_birth' && this.criteriaKey !== "applicant_served_in_active_military")
-        } else {
-          return "type === 'boolean'"
-        }
-    },
-    // selectionCriteriaToShow () {
-    //   return "type === 'select'"
-    // },
     ...mapGetters({
       getCriterionByEligibilityKey: 'criteria/getCriterionByEligibilityKey',
     })
