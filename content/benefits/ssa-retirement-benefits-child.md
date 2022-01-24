@@ -21,6 +21,6 @@ eligibility:
 - criteriaKey: applicant_child_parents_benefits
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
-  acceptableValues: [true]]
+  acceptableValues: [true]
   
 ---
