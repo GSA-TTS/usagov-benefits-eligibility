@@ -12,7 +12,7 @@
     <client-only>
       <ul class="usa-icon-list grid-row padding-x-205 padding-top-205 padding-bottom-1">
         <li
-          v-for="criterion in benefitEligibilityCriteria"
+          v-for="(criterion, index) in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
           class="usa-icon-list__item grid-col-6 padding-bottom-2"
           style="padding-top: 0; padding-left: 1.25rem;">
@@ -60,8 +60,8 @@
             </div>
             <div v-else-if="getCriterionByEligibilityKey(criterion.criteriaKey).type ===
                       'select'">
-                <label :class="{'usa-label': true, 'margin-top-0': true }" :for="'criteria' + '-' + criterion.criteriaKey">{{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}</label>
-                <select :id="'criteria' + '-' + criterion.criteriaKey" :class="{'usa-select': true }" :name="'criteria' + '-' + criterion.criteriaKey"
+                <label :class="{'usa-label': true, 'margin-top-0': true }" :for="'criteria' + '-' + criterion.criteriaKey + '-'+ index">{{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}</label>
+                <select :id="'criteria' + '-' + criterion.criteriaKey + '-'+ index" :class="{'usa-select': true }" :name="'criteria' + '-' + criterion.criteriaKey"
                   @change="updateEligibilitySelected($event, criterion.criteriaKey)">
                   <option value>- Select -</option>
                   <option v-for="option in criterion.acceptableValues" :key="option" :value="option"
