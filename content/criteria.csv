@@ -28,4 +28,4 @@ applicant_degree_cerificate_program,"You are enrolled or accepted as a student i
 applicant_served_in_active_military,"You served in the active military, naval or air service and",select,currently are an active-duty member; were discharged under conditions other than dishonorable; had retired from the service
 applicant_ss_number,"You have a valid Social Security number.",boolean,true
 applicant_child_parents_benefits,"Your parent is receiving retirement or diability benefits.",boolean,true
-applicant_spouses_benefits,"Your spouse is receiving retirement or disability benefits.",boolean,true
+applicant_spouses_benefits,"Your spouse (or parent of your child) is receiving retirement or disability benefits.",boolean,true
