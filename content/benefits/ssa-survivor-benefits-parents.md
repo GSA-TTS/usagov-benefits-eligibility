@@ -19,5 +19,7 @@ eligibility:
   acceptableValues: [parent]
 - criteriaKey: deceased_date_of_death
   label: "You are at least 62 years old and were dependent on the deceased for at least half of your support."
-
+- criteriaKey: applicant_citizen_status
+  acceptableValues: [true]
+  
 ---
