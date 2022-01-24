@@ -12,9 +12,10 @@ eligibilityCriteria:
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
+      - applicant_paid_into_SS
+      - applicant_marital_status
       - applicant_disability
       - applicant_income
-      - applicant_marital_status
       - applicant_citizen_status
 
   - label: "About your military service"
