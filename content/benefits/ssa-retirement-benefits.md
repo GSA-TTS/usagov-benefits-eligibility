@@ -4,7 +4,7 @@ headline: "Retirement Benefits"
 tags: 
 - "financial assistance"
 lifeEvents: 
-- "returement"
+- "retirement"
 - "late-adulthood"
 source:
   name: "Social Security Administration"
