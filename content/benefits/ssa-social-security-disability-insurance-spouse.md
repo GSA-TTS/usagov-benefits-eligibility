@@ -16,7 +16,7 @@ eligibility:
 - criteriaKey: applicant_date_of_birth
   label: "You are at least 62 years old."
 - criteriaKey: applicant_marital_status
-  acceptableValues: ["unmarried", "now married", "divorced"]
+  acceptableValues: ["now married", "divorced"]
 - criteriaKey: applicant_spouses_benefits
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
