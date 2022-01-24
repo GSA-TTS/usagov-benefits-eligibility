@@ -94,9 +94,20 @@ describe("EligibilityList", () => {
 
     await wrapper.vm.$nextTick();
 
+    // test checkbox
     store.commit("criteria/updateResponse", { ...trueCriteria });
     await wrapper.vm.$nextTick();
-    await wrapper.find(".usa-checkbox__input").setChecked();
-    expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy();
+    expect(wrapper.find(".usa-checkbox__input").element.checked).toBe(true);
+
+    // test select
+    const selectCriteria = {
+      criteriaKey: "criteriaKey2",
+      response: "one"
+    };
+    store.commit("criteria/updateResponse", { ...selectCriteria });
+    await wrapper.vm.$nextTick();
+    const choices = wrapper.find("select").findAll("option");
+    await choices.at(1).setSelected();
+    expect(wrapper.find("option:checked").element.value).toBe("one");
   });
 });
