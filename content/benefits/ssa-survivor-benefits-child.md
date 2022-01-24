@@ -21,5 +21,7 @@ eligibility:
   label: "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school)."
 - criteriaKey: applicant_marital_status
   acceptableValues: [unmarried]
-
+- criteriaKey: applicant_citizen_status
+  acceptableValues: [true]
+  
 ---
