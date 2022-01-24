@@ -19,6 +19,7 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: applicant_marital_status
   acceptableValues: ["unmarried", "widowed"]
-
+- criteriaKey: applicant_citizen_status
+  acceptableValues: [true]
 
 ---
