@@ -1,6 +1,6 @@
 ---
-title: "Child Supplemental Security Income"
-headline: "Child Supplemental Security Income"
+title: "Supplemental Security Income for Child"
+headline: "Supplemental Security Income for Child"
 tags: 
 - "financial assistance"
 lifeEvents: 
