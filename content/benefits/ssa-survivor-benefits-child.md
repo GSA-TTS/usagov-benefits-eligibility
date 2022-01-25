@@ -1,6 +1,6 @@
 ---
-title: "Surviving Child Benefits"
-headline: "Surviving Child Benefits"
+title: "Survivors Benefits for Child"
+headline: "Survivors Benefits for Child"
 tags: 
 - "financial assistance"
 lifeEvents: 
