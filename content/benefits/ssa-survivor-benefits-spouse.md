@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/forms/ssa-10.html"
+  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h2"
 
 summary: "Social Security survivors benefits are paid to a surviving spouse of eligible workers, and under certain circumstances, to a surviving divorced spouse of eligible workers."
 
