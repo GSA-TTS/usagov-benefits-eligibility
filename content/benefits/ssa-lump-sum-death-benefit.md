@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/survivors/ifyou.html"
+  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h7"
 
 summary: "The surviving spouse of a deceased person who qualified for Social Security benefits may be eligible for a $255 financial assistance."
 
