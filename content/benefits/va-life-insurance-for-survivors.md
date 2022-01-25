@@ -5,6 +5,7 @@ tags:
 - "life insurance"
 lifeEvents: 
 - "death-and-burial"
+- "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.benefits.va.gov/INSURANCE/sglivgli.asp"
