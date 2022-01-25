@@ -1,6 +1,6 @@
 ---
-title: "Surviving Mothers/Fathers Benefits"
-headline: "Surviving Mothers/Fathers Benefits"
+title: "Survivors Benefits for Mothers/Fathers"
+headline: "Survivors Benefits for Mothers/Fathers"
 tags: 
 - "financial assistance"
 lifeEvents: 
