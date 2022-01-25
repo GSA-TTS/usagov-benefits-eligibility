@@ -14,11 +14,13 @@ eligibilityCriteria:
     criteriaKeys:
       - applicant_served_in_active_military
       - applicant_disability
+      - applicant_marital_status
   
   - label: "Did you loose a loved one who served in military?"
     description: ""
     criteriaGroupKey: military
     criteriaKeys:
+      - applicant_relationship
       - deceased_served_in_active_military
       - deceased_buried_in_unmarked_grave
       - deceased_headstone_is_privately_purchased
