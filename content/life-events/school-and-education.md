@@ -21,7 +21,8 @@ eligibilityCriteria:
     criteriaGroupKey: deceased
     criteriaKeys:
       - applicant_relationship
-      - deceased_public_safety_officer
       - deceased_served_in_active_military
+      - deceased_public_safety_officer
+      
 
 ---
