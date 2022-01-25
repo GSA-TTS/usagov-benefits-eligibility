@@ -1,6 +1,6 @@
 ---
-title: "Social Security Disability Insurance for Mothers/Farthers"
-headline: "Social Security Disability Insurance for Mothers/Farthers"
+title: "Social Security Disability Insurance for Mothers/Fathers"
+headline: "Social Security Disability Insurance for Mothers/Fathers"
 tags: 
 - "financial assistance"
 lifeEvents: 
