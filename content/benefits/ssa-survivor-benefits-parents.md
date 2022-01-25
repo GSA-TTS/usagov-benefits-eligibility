@@ -1,6 +1,6 @@
 ---
-title: "Surviving Parents Benefits"
-headline: "Surviving Parents Benefits"
+title: "Survivors Benefits for Parents"
+headline: "Survivors Benefits for Parents"
 tags: 
 - "financial assistance"
 lifeEvents: 
