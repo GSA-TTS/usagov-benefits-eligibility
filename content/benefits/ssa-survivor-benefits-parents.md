@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/forms/ssa-7.html"
+  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h5"
 
 summary: "Social Security survivors benefits are paid to parents of eligible workers."
 
