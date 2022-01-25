@@ -1,6 +1,6 @@
 ---
-title: "Supplemental Security Income for Adult"
-headline: "Supplemental Security Income for Adult"
+title: "Supplemental Security Income (SSI) for Adult"
+headline: "Supplemental Security Income (SSI) for Adult"
 tags: 
 - "financial assistance"
 lifeEvents: 
@@ -10,7 +10,7 @@ source:
   name: "Social Security Administration"
   link: "https://www.ssa.gov/benefits/ssi/adults.html"
 
-summary: "Provides cash to older, blind, and disabled people to help meet basic needs for food, clothing, and shelter."
+summary: "Provides financial assistance to older, blind, and people with disabilities to help meet basic needs for food, clothing, and shelter."
 
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
