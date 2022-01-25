@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/forms/ssa-4.html"
+  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h4"
 
 summary: "Social Security survivors benefits are paid to a child, stepchild, grandchild, or adopted child of eligible workers."
 
