@@ -20,7 +20,7 @@ applicant_marital_status,"Your marital status is",select,now married; unmarried;
 applicant_care_for_child,"You are caring for the child who is under age 16 or is disabled.",boolean,true
 applicant_declared_disaster,"Your residence is in a declared disaster area.",boolean,true
 applicant_disability,"You have a medically determinable physical or mental impairment (including an emotional or learning problem).",boolean,true
-applicant_ability_to_work,"You are unable to work on regular basis because of a disability.",boolean,true
+applicant_ability_to_work,"You are unable to work for a year or more because of a disability or your disability is expected to result in death.",boolean,true
 applicant_paid_into_SS,"You qualify for Social Security benefits (You worked long enough and paid Social Security taxes on your earnings).",boolean,true
 applicant_income,"You have limited income and resources.",boolean,true
 applicant_high-school_diploma,"You have a high school diploma or equivalent.",boolean,true
