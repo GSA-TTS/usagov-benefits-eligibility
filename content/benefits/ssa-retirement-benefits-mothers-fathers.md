@@ -6,6 +6,7 @@ tags:
 lifeEvents: 
 - "retirement"
 - "late-adulthood"
+- "loss-of-job-and-low-income"
 source:
   name: "Social Security Administration"
   link: "https://www.ssa.gov/benefits/retirement/"
