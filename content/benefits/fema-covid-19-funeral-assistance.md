@@ -21,7 +21,7 @@ eligibility:
 - criteriaKey: deceased_date_of_funeral
   label: "The deceased's funeral/burial was after January 20, 2020."
 - criteriaKey: applicant_citizen_status
-  acceptableValues: ["U.S. citizen", "non-citizen national", "qualified alien"]
+  acceptableValues: [true]
 - criteriaKey: applicant_paid_funeral_expenses
   acceptableValues: [true]
 
