@@ -20,4 +20,11 @@ eligibilityCriteria:
       - applicant_served_in_active_military
       - applicant_citizen_status
 
+  - label: "Did you recently loose a family member?"
+    description: ""
+    criteriaGroupKey: deceased
+    criteriaKeys:
+      - applicant_relationship
+      - deceased_paid_into_SS
+
 ---
