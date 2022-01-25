@@ -1,6 +1,6 @@
 ---
-title: "Adult Supplemental Security Income"
-headline: "Adult Supplemental Security Income"
+title: "Supplemental Security Income for Adult"
+headline: "Supplemental Security Income for Adult"
 tags: 
 - "financial assistance"
 lifeEvents: 
