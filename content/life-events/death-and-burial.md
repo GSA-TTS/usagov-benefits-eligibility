@@ -31,7 +31,7 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_relationship
-      - applicant_care_for_deceaseds_child
+      - applicant_care_for_child
       - applicant_paid_funeral_expenses
       - applicant_funeral_reimbursment
 

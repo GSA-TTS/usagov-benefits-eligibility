@@ -5,6 +5,7 @@ tags:
 - "financial assistance"
 lifeEvents: 
 - "death-and-burial"
+- "military-service"
 source:
   name: "Department of Defense"
   link: "https://militarypay.defense.gov/Benefits/Survivor-Benefit-Program/"

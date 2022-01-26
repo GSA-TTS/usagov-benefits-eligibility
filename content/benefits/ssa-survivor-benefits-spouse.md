@@ -1,13 +1,13 @@
 ---
-title: "Surviving Widow(er) Benefits"
-headline: "Surviving Widow(er) Benefits"
+title: "Survivors Benefits for Spouse"
+headline: "Survivors Benefits for Spouse"
 tags: 
 - "financial assistance"
 lifeEvents: 
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/forms/ssa-10.html"
+  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h2"
 
 summary: "Social Security survivors benefits are paid to a surviving spouse of eligible workers, and under certain circumstances, to a surviving divorced spouse of eligible workers."
 
@@ -18,8 +18,10 @@ eligibility:
 - criteriaKey: applicant_relationship
   acceptableValues: [spouse]
 - criteriaKey: applicant_date_of_birth
-  label: "You are at least 60 years old (or at least 50 years old if disabled)."
+  label: "You are at least 60 years old."
 - criteriaKey: applicant_marital_status
-  acceptableValues: ["widowed", "divorced"]  
+  acceptableValues: ["widowed", "divorced"]
+- criteriaKey: applicant_citizen_status
+  acceptableValues: [true]
 
 ---

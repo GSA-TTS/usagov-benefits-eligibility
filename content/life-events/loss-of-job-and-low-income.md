@@ -16,7 +16,8 @@ eligibilityCriteria:
       - applicant_income
       - applicant_disability
       - applicant_ability_to_work
+      - applicant_marital_status
+      - applicant_care_for_child
       - applicant_citizen_status
-
 
 ---

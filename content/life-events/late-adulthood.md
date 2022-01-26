@@ -12,8 +12,11 @@ eligibilityCriteria:
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
+      - applicant_paid_into_SS
+      - applicant_income
       - applicant_disability
-      - applicant_citizen_status
       - applicant_marital_status
+      - applicant_citizen_status
+      
 
 ---

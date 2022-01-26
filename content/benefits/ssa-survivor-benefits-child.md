@@ -1,24 +1,26 @@
 ---
-title: "Lump-Sum Death Benefit"
-headline: "Need text here"
+title: "Survivors Benefits for Child"
+headline: "Survivors Benefits for Child"
 tags: 
 - "financial assistance"
 lifeEvents: 
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h7"
+  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h4"
 
-summary: "The surviving spouse of a deceased person who qualified for Social Security benefits may be eligible for a $255 financial assistance."
+summary: "Social Security survivors benefits are paid to a child, stepchild, grandchild, or adopted child of eligible workers."
 
 eligibility:
 # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
 - criteriaKey: deceased_paid_into_SS
   acceptableValues: [true]
-- criteriaKey: deceased_date_of_death
-  label: "The deceased died within the last two years."
 - criteriaKey: applicant_relationship
-  acceptableValues: [spouse, child]
+  acceptableValues: [child]
+- criteriaKey: applicant_date_of_birth
+  label: "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school)."
+- criteriaKey: applicant_marital_status
+  acceptableValues: [unmarried]
 - criteriaKey: applicant_citizen_status
   acceptableValues: [true]
   
