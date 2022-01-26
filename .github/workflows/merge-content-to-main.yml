@@ -1,10 +1,12 @@
+---
 # This Github Action workflow:
 
 name: merge-content-to-main
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron:  '0 23 * * *'
+    - cron: '0 23 * * *'
 
 jobs:
   nightly-merge:
@@ -12,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
 
-    - name: Nightly Content Merge
-      uses: robotology/gh-action-nightly-merge@v1.3.1
-      with:
-        stable_branch: 'content'
-        development_branch: 'main'
-        allow_ff: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Nightly Content Merge
+        uses: robotology/gh-action-nightly-merge@v1.3.1
+        with:
+          stable_branch: 'content'
+          development_branch: 'main'
+          allow_ff: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
