@@ -25,7 +25,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "ansi-html": "github:gebhardtr/ansi-html#25ca3089b6cb0ff785b76e21643e51f2d3570f0b",
     "ansi-regex": ">=5.0.1",
-    "axios": "^0.24.0",
+    "axios": "^0.25.0",
     "core-js": "^3.20.3",
     "glob-parent": ">=6.0.2",
     "nth-check": ">=2.0.1",
