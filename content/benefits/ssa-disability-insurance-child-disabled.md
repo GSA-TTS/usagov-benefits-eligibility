@@ -20,6 +20,8 @@ eligibility:
   acceptableValues: ["unmarried"]
 - criteriaKey: applicant_disability
   acceptableValues: [true]
+- criteriaKey: applicant_ability_to_work
+  acceptableValues: [true]
 - criteriaKey: applicant_child_parents_benefits
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
