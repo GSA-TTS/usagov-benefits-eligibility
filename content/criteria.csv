@@ -17,13 +17,15 @@ applicant_relationship,"Your relationship to the deceased is",select,spouse; chi
 applicant_date_of_birth,"Your date of birth is",boolean,true 
 applicant_citizen_status,"You are a U.S. citizen or eligible non-citizen.",boolean,true 
 applicant_marital_status,"Your marital status is",select,now married; unmarried; widowed; divorced
-applicant_care_for_deceaseds_child,"You are caring for the deceased's child who is under age 16 or is disabled.",boolean,true
+applicant_care_for_child,"You are caring for the child who is under age 16 or is disabled.",boolean,true
 applicant_declared_disaster,"Your residence is in a declared disaster area.",boolean,true
 applicant_disability,"You have a medically determinable physical or mental impairment (including an emotional or learning problem).",boolean,true
-applicant_ability_to_work,"You are unable to work on regular basis because of a disability.",boolean,true
+applicant_ability_to_work,"You are unable to work for a year or more because of a disability or your disability is expected to result in death.",boolean,true
 applicant_paid_into_SS,"You qualify for Social Security benefits (You worked long enough and paid Social Security taxes on your earnings).",boolean,true
 applicant_income,"You have limited income and resources.",boolean,true
 applicant_high-school_diploma,"You have a high school diploma or equivalent.",boolean,true
 applicant_degree_cerificate_program,"You are enrolled or accepted as a student in an eligible degree or certificate program.",boolean,true
 applicant_served_in_active_military,"You served in the active military, naval or air service and",select,currently are an active-duty member; were discharged under conditions other than dishonorable; had retired from the service
 applicant_ss_number,"You have a valid Social Security number.",boolean,true
+applicant_child_parents_benefits,"Your parent is receiving retirement or disability benefits.",boolean,true
+applicant_spouses_benefits,"Your spouse (or parent of your child) is receiving retirement or disability benefits.",boolean,true

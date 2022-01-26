@@ -5,6 +5,7 @@ tags:
 - "financial assistance"
 lifeEvents: 
 - "death-and-burial"
+- "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: "https://www.va.gov/pension/survivors-pension/"
