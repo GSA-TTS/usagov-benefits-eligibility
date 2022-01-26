@@ -1,5 +1,5 @@
 ---
-title: "Retirement Benefits for Mothers/Farthers"
+title: "Retirement Benefits for Mothers/Fathers"
 headline: "Retirement Benefits for Mothers/Fathers"
 tags: 
 - "financial assistance"
