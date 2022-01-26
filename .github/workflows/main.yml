@@ -46,7 +46,7 @@ jobs:
 
       - name: Test accessibility with pa11y
         run: |
-          npm run start \
-          && timeout 22 \
+          npm run start & \
+          timeout 22 \
           sh -c 'until nc -z $0 $1; do sleep 1; done' localhost 3000 \
           && npm run test:pa11y
