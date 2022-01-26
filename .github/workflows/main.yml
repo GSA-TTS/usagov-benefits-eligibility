@@ -1,3 +1,4 @@
+---
 # This Github Action workflow:
 # - Builds the frontend and backend
 # - Comments on PRs with the Terraform plan that will be applied on merge
@@ -6,6 +7,7 @@
 name: usagov-benefits-eligibility
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - develop
@@ -14,7 +16,8 @@ on:
   pull_request:
     branches_ignore: []
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one or more jobs that can run
+# sequentially or in parallel
 jobs:
 
   test_frontend:
@@ -31,13 +34,6 @@ jobs:
         with:
           node-version: 14
 
-      # - name: Cache node_modules
-      #   id: cache-node_modules
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: node_modules
-      #     key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
-
       - name: Install dependencies
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
@@ -49,4 +45,8 @@ jobs:
         run: npm run federalist:local
 
       - name: Test accessibility with pa11y
-        run: npm run start & timeout 22 sh -c 'until nc -z $0 $1; do sleep 1; done' localhost 3000 && npm run test:pa11y
+        run: |
+          npm run start \
+          && timeout 22 \
+          sh -c 'until nc -z $0 $1; do sleep 1; done' localhost 3000 \
+          && npm run test:pa11y
