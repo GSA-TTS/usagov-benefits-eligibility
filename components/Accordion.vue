@@ -56,7 +56,51 @@
             </li>
           </ul>
         </div>
+        <template
+          v-if="benefit.source && benefit.source.name && benefit.source.link"
+        >
+          <h3
+            class="font-sans-xs text-normal text-base-dark margin-bottom-0"
+            style="font-size: 1rem;"
+          >
+            Provided by
+            <a
+              class="usa-link"
+              :href="benefit.source ? benefit.source.link : '#'"
+              target="_blank"
+              >{{ benefit.source.name }}</a
+            >
+          </h3>
+          <p class="usa-prose" style="max-width: unset;">
+            {{ benefit.summary }}
+          </p>
+        </template>
+        <EligibilityList
+          :benefit-eligibility-criteria="benefit.eligibility"
+          :benefit-source="benefit.source ? benefit.source.link : ''"
+          :heading-classes="['bg-primary', 'text-white']"
+          :show-icons="showIcons"
+          :show-matching-count="showMatchingCount"
+        />
+        <ul
+          v-if="benefit.source && benefit.source.link"
+          class="usa-button-group"
+          style="padding-left: 0;"
+          :aria-label="`Choices for ${benefit.title}`"
+        >
+          <li class="usa-button-group__item">
+            <a
+              :href="benefit.source.link"
+              target="_blank"
+              :aria-label="`How to apply for ${benefit.title}`"
+              class="usa-button print:display-none"
+            >
+              How to Apply
+            </a>
+          </li>
+        </ul>
       </div>
+    </div>
   </transition-group>
 </template>
 
@@ -79,95 +123,99 @@ export default {
     expanded: {
       type: Boolean,
       requierd: false,
-      default: false,
+      default: false
     },
     lifeEventBenefits: {
       type: Array,
       required: true,
-      default: /* istanbul ignore next */ () => [],
+      default: /* istanbul ignore next */ () => []
     },
     lifeEventCriteria: {
       type: Array,
       required: false,
-      default: /* istanbul ignore next */ () => [],
+      default: /* istanbul ignore next */ () => []
     },
     showMatchingCount: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     showIcons: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     tagClick: {
       type: Boolean,
       required: false,
-      default: true,
-    },
+      default: true
+    }
   },
-  data () {
+  data() {
     return {
       accordionInit: false,
-      cid: _.uniqueId('c'),
-      lifeEventCriteriaKeys: [],
+      cid: _.uniqueId("c"),
+      lifeEventCriteriaKeys: []
     };
   },
   computed: {
-  ...mapGetters({
-    doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
-    getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-  }),
+    ...mapGetters({
+      doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
+      getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria"
+    })
   },
-  beforeCreate () {
-    this.cid = _.uniqueId('c');
+  beforeCreate() {
+    this.cid = _.uniqueId("c");
   },
-  created () {
+  created() {
     this.lifeEventCriteriaKeys = _.chain(this.lifeEventCriteria)
       .map(c => c.criteriaKeys)
       .flatten()
       .values();
   },
-  updated () {
+  updated() {
     /* istanbul ignore next */
     if (!this.accordionInit && this.lifeEventBenefits.length > 0) {
       this.toggleAccordion(this.expanded);
       this.accordionInit = true;
     }
   },
-  mounted () {
+  mounted() {
     if (this.lifeEventBenefits.length > 0) {
       this.toggleAccordion(this.expanded);
     }
   },
   methods: {
-    closeAll () {
+    closeAll() {
       this.toggleAccordion(false);
     },
-    openAll () {
+    openAll() {
       this.toggleAccordion(true);
     },
-    focus () {
+    focus() {
       this.closeAll();
-      this.$refs.accordion.$el.querySelector('.usa-accordion__button').focus();
+      this.$refs.accordion.$el.querySelector(".usa-accordion__button").focus();
     },
-    getCriteriaMatchLanguage (eligibilityCriteria) {
-      if (eligibilityCriteria.some(c => this.doesCriterionMatchSelection(c) === false)) {
-        return '(you are not eligible)';
+    getCriteriaMatchLanguage(eligibilityCriteria) {
+      if (
+        eligibilityCriteria.some(
+          c => this.doesCriterionMatchSelection(c) === false
+        )
+      ) {
+        return "(you are not eligible)";
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
-        return '(you might be eligible)';
+        return "(you might be eligible)";
       }
-      return '';
+      return "";
     },
-    toggleAccordion (expanded) {
+    toggleAccordion(expanded) {
       for (const button of this.$refs.accordionButtons) {
         /* istanbul ignore next */
         accordion?.toggle(button, expanded);
       }
-    },
-  },
-}
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -176,7 +224,7 @@ export default {
 }
 @media print {
   .usa-accordion--bordered .usa-accordion__content.usa-prose {
-    display:block !important
+    display: block !important;
   }
 }
 </style>

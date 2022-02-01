@@ -1,21 +1,31 @@
 <template>
   <div
-    class="eligibility-list-container border border-base-lighter border-width-2px radius-md margin-top-4">
-    <h3 :class="['margin-0', 'padding-x-2', 'padding-y-1', 'font-sans-md'].concat(headingClasses)">
+    class="eligibility-list-container border border-base-lighter border-width-2px radius-md margin-top-4"
+  >
+    <h3
+      :class="
+        ['margin-0', 'padding-x-2', 'padding-y-1', 'font-sans-md'].concat(
+          headingClasses
+        )
+      "
+    >
       Key eligibility criteria
-        <span v-if="showMatchingCount" class="print:display-none">
-          (You must meet all criteria. You currently meet
-          {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of
-          {{ benefitEligibilityCriteria.length }}).
-        </span>
+      <span v-if="showMatchingCount" class="print:display-none">
+        (You must meet all criteria. You currently meet
+        {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of
+        {{ benefitEligibilityCriteria.length }}).
+      </span>
     </h3>
     <client-only>
-      <ul class="usa-icon-list grid-row padding-x-205 padding-top-205 padding-bottom-1">
+      <ul
+        class="usa-icon-list grid-row padding-x-205 padding-top-205 padding-bottom-1"
+      >
         <li
           v-for="(criterion, index) in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
           class="usa-icon-list__item grid-col-6 padding-bottom-2"
-          style="padding-top: 0; padding-left: 1.25rem;">
+          style="padding-top: 0; padding-left: 1.25rem;"
+        >
           <div
             :class="[
               'usa-icon-list__icon',
@@ -75,9 +85,14 @@
       </ul>
     </client-only>
     <p
-      class="text-white bg-base-darker print:text-black print:bg-white font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
+      class="text-white bg-base-darker print:text-black print:bg-white font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm"
+    >
       <strong>Additional eligibility criteria may apply.</strong>
-      Please review the full requirements at <span class="print:display-none">"How to apply."</span><span class="display-none print:display-inline">{{ benefitSource }}</span>
+      Please review the full requirements at
+      <span class="print:display-none">"How to apply."</span
+      ><span class="display-none print:display-inline">{{
+        benefitSource
+      }}</span>
     </p>
   </div>
 </template>
@@ -100,17 +115,17 @@ export default {
     benefitSource: {
       type: String,
       required: false,
-      default: '',
+      default: ""
     },
     headingClasses: {
       type: Array,
       required: false,
-      default: () => ['bg-base-lighter'],
+      default: () => ["bg-base-lighter"]
     },
     showMatchingCount: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     }
   },
   computed: {
@@ -123,7 +138,7 @@ export default {
     }),
   },
   methods: {
-    formatArrayWithSeparator (array = [], lastSeparator = "or") {
+    formatArrayWithSeparator(array = [], lastSeparator = "or") {
       return array
         .join(", ")
         .replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);

@@ -1,5 +1,5 @@
 criteriaKey,label,type,values
-deceased_paid_into_SS,"The deceased qualified for Social Security benefits. (The deceased worked long enough and paid Social Security taxes on their earnings.)",boolean,true
+deceased_paid_into_SS,"The deceased worked and paid Social Security taxes on their earnings.",boolean,true
 deceased_died_of_COVID,"The deceased died or likely died of COVID-19.",boolean,true
 deceased_death_location_is_US,"The deceased died in the U.S., including its territories.",boolean,true
 deceased_public_safety_officer,"The deceased was a public safety officer who died in the line of duty.",boolean,true
@@ -21,7 +21,7 @@ applicant_care_for_child,"You are caring for the child who is under age 16 or is
 applicant_declared_disaster,"Your residence is in a declared disaster area.",boolean,true
 applicant_disability,"You have a medically determinable physical or mental impairment (including an emotional or learning problem).",boolean,true
 applicant_ability_to_work,"You are unable to work for a year or more because of a disability or your disability is expected to result in death.",boolean,true
-applicant_paid_into_SS,"You qualify for Social Security benefits (You worked long enough and paid Social Security taxes on your earnings).",boolean,true
+applicant_paid_into_SS,"You worked and paid Social Security taxes on your earnings.",boolean,true
 applicant_income,"You have limited income and resources.",boolean,true
 applicant_high-school_diploma,"You have a high school diploma or equivalent.",boolean,true
 applicant_degree_cerificate_program,"You are enrolled or accepted as a student in an eligible degree or certificate program.",boolean,true
