@@ -31,13 +31,19 @@ module.exports = {
         }
       }
     ],
-    // "vue/html-closing-bracket-newline": [
-    //   "error",
-    //   {
-    //     singleline: "never",
-    //     multiline: "never"
-    //   }
-    // ],
+    "vue/html-closing-bracket-newline": [
+      "off",
+      {
+        singleline: "never",
+        multiline: "never"
+      }
+    ],
+    "vue/multi-word-component-names": [
+      "error",
+      {
+        ignores: ["Accordion"]
+      }
+    ],
     "vue/html-self-closing": [
       "error",
       {
