@@ -81,7 +81,7 @@
               </label>
             </div>
             <div
-              v-else-if="
+              v-if="
                 getCriterionByEligibilityKey(criterion.criteriaKey).type ===
                   'select'
               "
