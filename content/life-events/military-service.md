@@ -15,7 +15,8 @@ eligibilityCriteria:
       - applicant_served_in_active_military
       - applicant_disability
       - applicant_marital_status
-  
+      - applicant_zombie
+
   - label: "Did you loose a loved one who served in military?"
     description: ""
     criteriaGroupKey: military
@@ -25,6 +26,4 @@ eligibilityCriteria:
       - deceased_buried_in_unmarked_grave
       - deceased_headstone_is_privately_purchased
       - deceased_buried_in_private_cemetery
-
-
 ---
