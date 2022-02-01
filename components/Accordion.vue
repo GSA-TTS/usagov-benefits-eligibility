@@ -1,60 +1,48 @@
 <template>
-  <transition-group id="acc-id" ref="accordion" class="usa-accordion usa-accordion--bordered"
-    name="benefit-list" tag="div" aria-multiselectable="true"
-    aria-live="polite">
-      <div v-for="benefit in lifeEventBenefits" :key="`acc-key-${benefit.slug}`"
-        class="break-inside-avoid margin-bottom-2">
-        <h2 :id="`acc-h-${benefit.slug}-${cid}`" class="usa-accordion__heading">
-          <button
-            ref="accordionButtons"
-            class="usa-accordion__button"
-            aria-expanded="false"
-            :aria-controls="`acc-content-${benefit.slug}`">
-            {{ benefit.title }}
-            <span class="text-normal">
-              {{ getCriteriaMatchLanguage(benefit.eligibility) }}
-            </span>
-          </button>
-        </h2>
-        <div :id="`acc-content-${benefit.slug}`" ref="accordionContents"
-          class="usa-accordion__content usa-prose">
-          <div
-            v-if="benefit && benefit.tags.length > 0"
-            class="tags-container margin-top-1">
-            <Tag v-for="tag in mapTags(benefit.tags)" :key="tag.name" :name="tag.name"
-              :click="tagClick"
-              :title="tag.title"
-              :aria-label="tag.title"/>
-          </div>
-          <template v-if="benefit.source && benefit.source.name && benefit.source.link">
-            <h3
-              class="font-sans-xs text-normal text-base-dark margin-bottom-0"
-              style="font-size: 1rem;">
-              Provided by
-              <a
-                class="usa-link"
-                :href="benefit.source ? benefit.source.link : '#'"
-                target="_blank">{{ benefit.source.name }}</a>
-            </h3>
-            <p class="usa-prose" style="max-width: unset;">
-              {{ benefit.summary }}
-            </p>
-          </template>
-          <EligibilityList
-              :benefit-eligibility-criteria="benefit.eligibility"
-              :benefit-source="benefit.source ? benefit.source.link : ''"
-              :heading-classes="['bg-primary', 'text-white']"
-              :show-matching-count="showMatchingCount"/>
-          <ul v-if="benefit.source && benefit.source.link" class="usa-button-group" style="padding-left: 0;"
-            :aria-label="`Choices for ${benefit.title}`">
-            <li class="usa-button-group__item">
-                <a :href="benefit.source.link" target="_blank"
-                  :aria-label="`How to apply for ${ benefit.title }`"
-                  class="usa-button print:display-none">
-                  How to Apply
-                </a>
-            </li>
-          </ul>
+  <transition-group
+    id="acc-id"
+    ref="accordion"
+    class="usa-accordion usa-accordion--bordered"
+    name="benefit-list"
+    tag="div"
+    aria-multiselectable="true"
+    aria-live="polite"
+  >
+    <div
+      v-for="benefit in lifeEventBenefits"
+      :key="`acc-key-${benefit.slug}`"
+      class="break-inside-avoid margin-bottom-2"
+    >
+      <h2 :id="`acc-h-${benefit.slug}-${cid}`" class="usa-accordion__heading">
+        <button
+          ref="accordionButtons"
+          class="usa-accordion__button"
+          aria-expanded="false"
+          :aria-controls="`acc-content-${benefit.slug}`"
+        >
+          {{ benefit.title }}
+          <span class="text-normal">
+            {{ getCriteriaMatchLanguage(benefit.eligibility) }}
+          </span>
+        </button>
+      </h2>
+      <div
+        :id="`acc-content-${benefit.slug}`"
+        ref="accordionContents"
+        class="usa-accordion__content usa-prose"
+      >
+        <div
+          v-if="benefit && benefit.tags.length > 0"
+          class="tags-container margin-top-1"
+        >
+          <Tag
+            v-for="tag in mapTags(benefit.tags)"
+            :key="tag.name"
+            :name="tag.name"
+            :click="tagClick"
+            :title="tag.title"
+            :aria-label="tag.title"
+          />
         </div>
         <template
           v-if="benefit.source && benefit.source.name && benefit.source.link"
@@ -79,7 +67,6 @@
           :benefit-eligibility-criteria="benefit.eligibility"
           :benefit-source="benefit.source ? benefit.source.link : ''"
           :heading-classes="['bg-primary', 'text-white']"
-          :show-icons="showIcons"
           :show-matching-count="showMatchingCount"
         />
         <ul
@@ -100,6 +87,49 @@
           </li>
         </ul>
       </div>
+      <template
+        v-if="benefit.source && benefit.source.name && benefit.source.link"
+      >
+        <h3
+          class="font-sans-xs text-normal text-base-dark margin-bottom-0"
+          style="font-size: 1rem;"
+        >
+          Provided by
+          <a
+            class="usa-link"
+            :href="benefit.source ? benefit.source.link : '#'"
+            target="_blank"
+            >{{ benefit.source.name }}</a
+          >
+        </h3>
+        <p class="usa-prose" style="max-width: unset;">
+          {{ benefit.summary }}
+        </p>
+      </template>
+      <EligibilityList
+        :benefit-eligibility-criteria="benefit.eligibility"
+        :benefit-source="benefit.source ? benefit.source.link : ''"
+        :heading-classes="['bg-primary', 'text-white']"
+        :show-icons="showIcons"
+        :show-matching-count="showMatchingCount"
+      />
+      <ul
+        v-if="benefit.source && benefit.source.link"
+        class="usa-button-group"
+        style="padding-left: 0;"
+        :aria-label="`Choices for ${benefit.title}`"
+      >
+        <li class="usa-button-group__item">
+          <a
+            :href="benefit.source.link"
+            target="_blank"
+            :aria-label="`How to apply for ${benefit.title}`"
+            class="usa-button print:display-none"
+          >
+            How to Apply
+          </a>
+        </li>
+      </ul>
     </div>
   </transition-group>
 </template>
