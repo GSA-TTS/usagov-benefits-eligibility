@@ -48,17 +48,22 @@
     </div>
 
     <div v-if="type === 'radio'" :key="criteriaKey">
-      <RadioInput />
+      <RadioButton
+        :criteria-key="criteriaKey"
+        :values="values"
+        :response="response"
+        :label="label"
+      />
     </div>
   </div>
 </template>
 <script>
 import { mapGetters } from "vuex";
-import RadioInput from "./RadioInput";
+import RadioButton from "./RadioButton";
 
 export default {
   components: {
-    RadioInput
+    RadioButton
   },
   props: {
     criteriaKey: {
