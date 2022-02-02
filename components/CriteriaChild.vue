@@ -48,22 +48,33 @@
     </div>
 
     <div v-if="type === 'radio'" :key="criteriaKey">
-      <RadioButton
-        :criteria-key="criteriaKey"
-        :values="values"
-        :response="response"
-        :label="label"
-      />
+      <fieldset class="usa-fieldset">
+        <legend class="usa-legend usa-legend">{{ label }}</legend>
+        <div v-for="(value, index) in values" :key="index" class="usa-radio">
+          <input
+            :id="`${criteriaKey}-${value}`"
+            class="usa-radio__input"
+            type="radio"
+            :name="`${criteriaKey}-${value}`"
+            :value="value"
+            :checked="response === value"
+            @change="updateEligibilitySelected"
+          />
+          <label class="usa-radio__label" :for="`${criteriaKey}-${value}`">{{
+            value
+          }}</label>
+        </div>
+      </fieldset>
     </div>
   </div>
 </template>
 <script>
 import { mapGetters } from "vuex";
-import RadioButton from "./RadioButton";
+// import RadioButton from "./RadioButton";
 
 export default {
   components: {
-    RadioButton
+    // RadioButton
   },
   props: {
     criteriaKey: {
@@ -135,6 +146,9 @@ export default {
 }
 .usa-checkbox {
   background: none;
+}
+.usa-radio {
+  background: transparent;
 }
 @media print {
   .eligibility-criterion input[type="checkbox"]:not(:checked) ~ label {

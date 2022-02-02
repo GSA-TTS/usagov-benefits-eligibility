@@ -70,14 +70,6 @@
                     getCriterionByEligibilityKey(criterion.criteriaKey).label
                   }}
                 </template>
-                <template
-                  v-if="
-                    getCriterionByEligibilityKey(criterion.criteriaKey).type ===
-                      'select' && criterion.acceptableValues
-                  "
-                >
-                  {{ formatArrayWithSeparator(criterion.acceptableValues) }}.
-                </template>
               </label>
             </div>
             <div
@@ -115,6 +107,67 @@
                 </option>
               </select>
             </div>
+
+            <div
+              v-if="
+                getCriterionByEligibilityKey(criterion.criteriaKey).type ===
+                  'radio'
+              "
+            >
+              <fieldset class="usa-fieldset">
+                <legend class="usa-legend usa-legend">
+                  {{
+                    getCriterionByEligibilityKey(criterion.criteriaKey).label
+                  }}
+                </legend>
+
+                <div
+                  v-for="(value, i) in criterion.acceptableValues"
+                  :key="`${value}-${i}`"
+                  class="usa-radio"
+                >
+                  <div v-once class="usa-radio">
+                    <input
+                      :id="`${criterion.criteriaKey}-${value}-${i}-na`"
+                      class="usa-radio__input"
+                      type="radio"
+                      :name="`${criterion.criteriaKey}-${value}-${i}`"
+                      value="not applicable"
+                      :checked="
+                        getResponseByEligibilityKey(criterion.criteriaKey) ===
+                          value
+                      "
+                      @click="resetEligibilitySelected(criterion.criteriaKey)"
+                    />
+                    <label
+                      class="usa-radio__label"
+                      :for="`${criterion.criteriaKey}-${value}-${i}-na`"
+                      >not applicable</label
+                    >
+                  </div>
+
+                  <input
+                    :id="`${criterion.criteriaKey}-${value}-${i}`"
+                    class="usa-radio__input"
+                    type="radio"
+                    :name="`${criterion.criteriaKey}-${value}-${i}`"
+                    :value="value"
+                    :checked="
+                      getResponseByEligibilityKey(criterion.criteriaKey) ===
+                        value
+                    "
+                    @click="
+                      updateEligibilitySelected($event, criterion.criteriaKey)
+                    "
+                  />
+                  <label
+                    class="usa-radio__label"
+                    :for="`${criterion.criteriaKey}-${value}-${i}`"
+                    >{{ value }}</label
+                  >
+                </div>
+              </fieldset>
+            </div>
           </div>
         </li>
       </ul>
@@ -133,8 +186,10 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
+// import RadioButton from "../components/RadioButton.vue";
 
 export default {
+  // components: { RadioButton },
   props: {
     benefitEligibilityCriteria: {
       type: Array,
@@ -189,6 +244,13 @@ export default {
       const localCriterion = {
         criteriaKey: key,
         response: event.target.value
+      };
+      this.$store.commit("criteria/updateResponse", localCriterion);
+    },
+    resetEligibilitySelected(key) {
+      const localCriterion = {
+        criteriaKey: key,
+        response: "not applicable"
       };
       this.$store.commit("criteria/updateResponse", localCriterion);
     },
