@@ -67,6 +67,7 @@
           :benefit-eligibility-criteria="benefit.eligibility"
           :benefit-source="benefit.source ? benefit.source.link : ''"
           :heading-classes="['bg-primary', 'text-white']"
+          :show-icons="showIcons"
           :show-matching-count="showMatchingCount"
         />
         <ul
@@ -87,49 +88,6 @@
           </li>
         </ul>
       </div>
-      <template
-        v-if="benefit.source && benefit.source.name && benefit.source.link"
-      >
-        <h3
-          class="font-sans-xs text-normal text-base-dark margin-bottom-0"
-          style="font-size: 1rem;"
-        >
-          Provided by
-          <a
-            class="usa-link"
-            :href="benefit.source ? benefit.source.link : '#'"
-            target="_blank"
-            >{{ benefit.source.name }}</a
-          >
-        </h3>
-        <p class="usa-prose" style="max-width: unset;">
-          {{ benefit.summary }}
-        </p>
-      </template>
-      <EligibilityList
-        :benefit-eligibility-criteria="benefit.eligibility"
-        :benefit-source="benefit.source ? benefit.source.link : ''"
-        :heading-classes="['bg-primary', 'text-white']"
-        :show-icons="showIcons"
-        :show-matching-count="showMatchingCount"
-      />
-      <ul
-        v-if="benefit.source && benefit.source.link"
-        class="usa-button-group"
-        style="padding-left: 0;"
-        :aria-label="`Choices for ${benefit.title}`"
-      >
-        <li class="usa-button-group__item">
-          <a
-            :href="benefit.source.link"
-            target="_blank"
-            :aria-label="`How to apply for ${benefit.title}`"
-            class="usa-button print:display-none"
-          >
-            How to Apply
-          </a>
-        </li>
-      </ul>
     </div>
   </transition-group>
 </template>
@@ -138,7 +96,6 @@
 import _ from "lodash";
 import { mapGetters } from "vuex";
 import mapTags from "~/mixins/MapTags";
-
 let USWDS;
 let accordion;
 /* istanbul ignore if */
@@ -146,7 +103,6 @@ if (process.client) {
   USWDS = require("../node_modules/uswds/src/js/components");
   accordion = USWDS.accordion;
 }
-
 export default {
   mixins: [mapTags],
   props: {
@@ -247,7 +203,6 @@ export default {
   }
 };
 </script>
-
 <style scoped>
 .benefit-list-move {
   transition: transform 1s;
