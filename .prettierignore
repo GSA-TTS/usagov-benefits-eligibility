@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+
+
+# testing
+/coverage
+
+# production
+/build
+/_site
+/dist
+/static
+
+# nuxt.js build output
+.nuxt
+
+# Nuxt generate
+dist
+_site
+
+/assets/fonts
+/assets/img
+/assets/js
+.eslintcache
+package-lock.json
