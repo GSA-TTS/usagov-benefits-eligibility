@@ -24,29 +24,29 @@
           v-for="(criterion, index) in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
           class="usa-icon-list__item grid-col-6 padding-bottom-2"
-          style="padding-top: 0; padding-left: 1.25rem;"
+          style="padding-top: 0; padding-left: 1.25rem"
         >
           <div
             :class="[
               'usa-icon-list__icon',
               {
                 'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true
+                  doesCriterionMatchSelection(criterion) === true,
               },
               {
                 'text-base-light':
-                  doesCriterionMatchSelection(criterion) === null
+                  doesCriterionMatchSelection(criterion) === null,
               },
               {
                 'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false
-              }
+                  doesCriterionMatchSelection(criterion) === false,
+              },
             ]"
           >
             <div
               v-if="
                 getCriterionByEligibilityKey(criterion.criteriaKey).type ===
-                  'boolean'
+                'boolean'
               "
               class="usa-checkbox"
             >
@@ -75,7 +75,7 @@
             <div
               v-if="
                 getCriterionByEligibilityKey(criterion.criteriaKey).type ===
-                  'select'
+                'select'
               "
             >
               <label
@@ -100,7 +100,7 @@
                   :value="option"
                   :selected="
                     getResponseByEligibilityKey(criterion.criteriaKey) ===
-                      option
+                    option
                   "
                 >
                   {{ option }}
@@ -111,7 +111,7 @@
             <div
               v-if="
                 getCriterionByEligibilityKey(criterion.criteriaKey).type ===
-                  'radio'
+                'radio'
               "
             >
               <fieldset class="usa-fieldset">
@@ -126,7 +126,7 @@
                   :key="`${value}-${i}`"
                   class="usa-radio"
                 >
-                  <div v-once class="usa-radio">
+                  <!-- <div v-once class="usa-radio">
                     <input
                       :id="`${criterion.criteriaKey}-${value}-${i}-na`"
                       class="usa-radio__input"
@@ -144,7 +144,7 @@
                       :for="`${criterion.criteriaKey}-${value}-${i}-na`"
                       >not applicable</label
                     >
-                  </div>
+                  </div> -->
 
                   <input
                     :id="`${criterion.criteriaKey}-${value}-${i}`"
@@ -154,7 +154,7 @@
                     :value="value"
                     :checked="
                       getResponseByEligibilityKey(criterion.criteriaKey) ===
-                        value
+                      value
                     "
                     @click="
                       updateEligibilitySelected($event, criterion.criteriaKey)
@@ -197,26 +197,26 @@ export default {
       default: /* istanbul ignore next */ () => {
         return [
           {
-            criteriaKey: "error"
-          }
+            criteriaKey: "error",
+          },
         ];
-      }
+      },
     },
     benefitSource: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     headingClasses: {
       type: Array,
       required: false,
-      default: () => ["bg-base-lighter"]
+      default: () => ["bg-base-lighter"],
     },
     showMatchingCount: {
       type: Boolean,
       required: false,
-      default: true
-    }
+      default: true,
+    },
   },
   computed: {
     ...mapGetters({
@@ -224,8 +224,8 @@ export default {
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       isCriterionSelected: "criteria/isCriterionSelected",
-      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey"
-    })
+      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey",
+    }),
   },
   methods: {
     formatArrayWithSeparator(array = [], lastSeparator = "or") {
@@ -236,28 +236,28 @@ export default {
     updateEligibilityChecked(event, key) {
       const localCriterion = {
         criteriaKey: key,
-        response: event.target.checked
+        response: event.target.checked,
       };
       this.$store.commit("criteria/updateResponse", localCriterion);
     },
     updateEligibilitySelected(event, key) {
       const localCriterion = {
         criteriaKey: key,
-        response: event.target.value
+        response: event.target.value,
       };
       this.$store.commit("criteria/updateResponse", localCriterion);
     },
     resetEligibilitySelected(key) {
       const localCriterion = {
         criteriaKey: key,
-        response: "not applicable"
+        response: "not applicable",
       };
       this.$store.commit("criteria/updateResponse", localCriterion);
     },
     showStuff(key) {
       console.log(this.getCriterionByEligibilityKey(key));
-    }
-  }
+    },
+  },
 };
 </script>
 

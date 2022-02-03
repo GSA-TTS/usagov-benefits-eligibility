@@ -25,7 +25,7 @@ applicant_paid_into_SS,You worked and paid Social Security taxes on your earning
 applicant_income,You have limited income and resources.,boolean,TRUE,
 applicant_high-school_diploma,You have a high school diploma or equivalent.,boolean,TRUE,
 applicant_degree_cerificate_program,You are enrolled or accepted as a student in an eligible degree or certificate program.,boolean,TRUE,
-applicant_served_in_active_military,"You served in the active military, naval or air service and",select,currently are an active-duty member; were discharged under conditions other than dishonorable; had retired from the service,
+applicant_served_in_active_military,"You served in the active military, naval or air service and",radio,currently are an active-duty member; were discharged under conditions other than dishonorable; had retired from the service,
 applicant_ss_number,You have a valid Social Security number.,boolean,TRUE,
 applicant_child_parents_benefits,Your parent is receiving retirement or disability benefits.,boolean,TRUE,
 applicant_spouses_benefits,Your spouse (or parent of your child) is receiving retirement or disability benefits.,boolean,TRUE,

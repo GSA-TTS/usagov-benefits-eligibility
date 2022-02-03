@@ -22,5 +22,5 @@ eligibility:
   - criteriaKey: applicant_relationship
     acceptableValues: [spouse]
   - criteriaKey: applicant_zombie
-    acceptableValues: ["turning"]
+    acceptableValues: ["turning", "no brain eating"]
 ---
