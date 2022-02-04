@@ -5,14 +5,9 @@ name: MegaLinter
 
 on:
   workflow_dispatch:
-  # Trigger mega-linter at every push. Action will also be visible from
-  # Comment this line to trigger action only on pull-requests (noit
-  # recommended if you don't pay for GH Actions)
-  push:
-  # Pull Requests to main
+  # run when PRs are created
   pull_request:
     branches: [master, main]
-
 
 # Comment env block if you do not want to apply fixes
 env:
