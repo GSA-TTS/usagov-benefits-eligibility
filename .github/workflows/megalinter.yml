@@ -52,6 +52,8 @@ jobs:
           # All available variables are described in documentation
           # https://megalinter.github.io/configuration/
 
+          DISABLE_LINTERS: SPELL_MISSPELL, SPELL_CSPELL
+
           # Validates all source when push on main, else just the git diff
           # with main. Override with true if you always want to lint all
           # sources
