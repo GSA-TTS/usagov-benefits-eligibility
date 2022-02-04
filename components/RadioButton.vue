@@ -1,13 +1,12 @@
 <template>
   <fieldset class="usa-fieldset">
     <legend class="usa-legend usa-legend">{{ label }}</legend>
-    {{ response }}
     <div v-for="value in values" :key="value" class="usa-radio">
       <input
         :id="`${criteriaKey}-${value}`"
         class="usa-radio__input"
         type="radio"
-        :name="criteriaKey"
+        :name="`${criteriaKey}-${value}`"
         :value="value"
         :checked="response === value"
         @change="updateEligibilitySelected"
@@ -42,8 +41,14 @@ export default {
     response: {
       type: [String, Object],
       default: "No response provided"
+    },
+    // TODO: may be helpful?
+    location: {
+      type: String,
+      default: "No location provided"
     }
   },
+
   // data() {
   //   return {
   //     uniqueId: _.uniqueId("radio-")
@@ -54,18 +59,24 @@ export default {
   // },
   methods: {
     updateEligibilitySelected(e) {
-      const localCriterion = {
+      const payload = {
         criteriaKey: this.criteriaKey,
         response: e.target.value
-      };
-      this.$store.commit("criteria/updateResponse", localCriterion);
+      }
+      this.$store.commit("criteria/updateResponse", payload)
     }
   }
-};
+}
 </script>
 
 <style scoped>
 .usa-radio {
   background: transparent;
+}
+
+.usa-fieldset,
+.usa-legend,
+.usa-legend {
+  font-weight: inherit;
 }
 </style>

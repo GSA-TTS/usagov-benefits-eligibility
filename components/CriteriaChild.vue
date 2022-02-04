@@ -24,7 +24,7 @@
         :class="{
           'usa-label': true,
           'margin-top-0': true,
-          'usa-select-empty': !response
+          'usa-select-empty': !response,
         }"
         :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
         >{{ label }}</label
@@ -48,81 +48,71 @@
     </div>
 
     <div v-if="type === 'radio'" :key="criteriaKey">
-      <fieldset class="usa-fieldset">
-        <legend class="usa-legend usa-legend">{{ label }}</legend>
-        <div v-for="(value, index) in values" :key="index" class="usa-radio">
-          <input
-            :id="`${criteriaKey}-${value}`"
-            class="usa-radio__input"
-            type="radio"
-            :name="`${criteriaKey}-${value}`"
-            :value="value"
-            :checked="response === value"
-            @change="updateEligibilitySelected"
-          />
-          <label class="usa-radio__label" :for="`${criteriaKey}-${value}`">{{
-            value
-          }}</label>
-        </div>
-      </fieldset>
+      <RadioButton
+        :criteria-key="criteriaKey"
+        :label="label"
+        :values="values"
+        :response="response"
+        :location="leftRail"
+      />
     </div>
   </div>
 </template>
 <script>
 import { mapGetters } from "vuex";
-// import RadioButton from "./RadioButton";
+import RadioButton from "./RadioButton";
 
 export default {
   components: {
-    // RadioButton
+    RadioButton,
   },
   props: {
     criteriaKey: {
       type: String,
-      default: "No key provided"
+      default: "No key provided",
     },
     label: {
       type: String,
-      default: "No label provided"
+      default: "No label provided",
     },
     type: {
       type: String,
-      default: "No type provided"
+      default: "No type provided",
     },
     values: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     criteriaGroupKey: {
       type: String,
-      default: "criteriaGroup"
+      default: "criteriaGroup",
     },
     response: {
       type: [Boolean, String],
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     ...mapGetters({
-      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey"
-    })
+      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
+    }),
   },
   methods: {
     updateEligibilityChecked(e) {
       const localCriterion = {
         criteriaKey: this.criteriaKey,
-        response: e.target.checked
+        response: e.target.checked,
       };
       this.$store.commit("criteria/updateResponse", localCriterion);
     },
     updateEligibilitySelected(e) {
       const localCriterion = {
         criteriaKey: this.criteriaKey,
-        response: e.target.value
+        response: e.target.value,
       };
       this.$store.commit("criteria/updateResponse", localCriterion);
-    }
-  }
+    },
+  },
 };
 </script>
 <style type="scss" scoped>
