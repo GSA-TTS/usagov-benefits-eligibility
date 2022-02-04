@@ -55,6 +55,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Design considerations
 
-- Some items we only render client-side this is because the data relationships are not fully captured by [Nuxt.js](<(https://nuxtjs.org)>) and by moving them client-side [Vue.js](https://vuejs.org/) is able to track those relationships.
+- Some items we only render client-side this is because the data relationships are 
+  not fully captured by [Nuxt.js](<(https://nuxtjs.org)>) and by moving them client-side [Vue.js](https://vuejs.org/) is able to track those relationships.
 - The current print philosophy is that print is a different artifact than a web page, be sure to test printing after any website changes.
 - There are some integration issues between [USWDS](https://designsystem.digital.gov/) components and [Vue.js](https://vuejs.org/). The current approach tries to use each framework by it's public API's as much as possible.
