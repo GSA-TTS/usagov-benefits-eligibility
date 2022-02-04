@@ -31,16 +31,16 @@
               'usa-icon-list__icon',
               {
                 'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true,
+                  doesCriterionMatchSelection(criterion) === true
               },
               {
                 'text-base-light':
-                  doesCriterionMatchSelection(criterion) === null,
+                  doesCriterionMatchSelection(criterion) === null
               },
               {
                 'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false,
-              },
+                  doesCriterionMatchSelection(criterion) === false
+              }
             ]"
           >
             <div
@@ -114,7 +114,16 @@
                 'radio'
               "
             >
-              <fieldset class="usa-fieldset">
+              <RadioButton
+                :criteria-key="criterion.criteriaKey"
+                :label="
+                  getCriterionByEligibilityKey(criterion.criteriaKey).label
+                "
+                :values="criterion.acceptableValues"
+                :response="getResponseByEligibilityKey(criterion.criteriaKey)"
+                location="benefitCard"
+              />
+              <!-- <fieldset class="usa-fieldset">
                 <legend class="usa-legend usa-legend">
                   {{
                     getCriterionByEligibilityKey(criterion.criteriaKey).label
@@ -126,26 +135,6 @@
                   :key="`${value}-${i}`"
                   class="usa-radio"
                 >
-                  <!-- <div v-once class="usa-radio">
-                    <input
-                      :id="`${criterion.criteriaKey}-${value}-${i}-na`"
-                      class="usa-radio__input"
-                      type="radio"
-                      :name="`${criterion.criteriaKey}-${value}-${i}`"
-                      value="not applicable"
-                      :checked="
-                        getResponseByEligibilityKey(criterion.criteriaKey) ===
-                          value
-                      "
-                      @click="resetEligibilitySelected(criterion.criteriaKey)"
-                    />
-                    <label
-                      class="usa-radio__label"
-                      :for="`${criterion.criteriaKey}-${value}-${i}-na`"
-                      >not applicable</label
-                    >
-                  </div> -->
-
                   <input
                     :id="`${criterion.criteriaKey}-${value}-${i}`"
                     class="usa-radio__input"
@@ -166,7 +155,7 @@
                     >{{ value }}</label
                   >
                 </div>
-              </fieldset>
+              </fieldset> -->
             </div>
           </div>
         </li>
@@ -185,11 +174,11 @@
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
-// import RadioButton from "../components/RadioButton.vue";
+import { mapGetters } from "vuex"
+import RadioButton from "../components/RadioButton.vue"
 
 export default {
-  // components: { RadioButton },
+  components: { RadioButton },
   props: {
     benefitEligibilityCriteria: {
       type: Array,
@@ -197,26 +186,26 @@ export default {
       default: /* istanbul ignore next */ () => {
         return [
           {
-            criteriaKey: "error",
-          },
-        ];
-      },
+            criteriaKey: "error"
+          }
+        ]
+      }
     },
     benefitSource: {
       type: String,
       required: false,
-      default: "",
+      default: ""
     },
     headingClasses: {
       type: Array,
       required: false,
-      default: () => ["bg-base-lighter"],
+      default: () => ["bg-base-lighter"]
     },
     showMatchingCount: {
       type: Boolean,
       required: false,
-      default: true,
-    },
+      default: true
+    }
   },
   computed: {
     ...mapGetters({
@@ -224,41 +213,41 @@ export default {
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       isCriterionSelected: "criteria/isCriterionSelected",
-      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey",
-    }),
+      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey"
+    })
   },
   methods: {
     formatArrayWithSeparator(array = [], lastSeparator = "or") {
       return array
         .join(", ")
-        .replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);
+        .replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`)
     },
     updateEligibilityChecked(event, key) {
       const localCriterion = {
         criteriaKey: key,
-        response: event.target.checked,
-      };
-      this.$store.commit("criteria/updateResponse", localCriterion);
+        response: event.target.checked
+      }
+      this.$store.commit("criteria/updateResponse", localCriterion)
     },
     updateEligibilitySelected(event, key) {
       const localCriterion = {
         criteriaKey: key,
-        response: event.target.value,
-      };
-      this.$store.commit("criteria/updateResponse", localCriterion);
+        response: event.target.value
+      }
+      this.$store.commit("criteria/updateResponse", localCriterion)
     },
     resetEligibilitySelected(key) {
       const localCriterion = {
         criteriaKey: key,
-        response: "not applicable",
-      };
-      this.$store.commit("criteria/updateResponse", localCriterion);
+        response: "not applicable"
+      }
+      this.$store.commit("criteria/updateResponse", localCriterion)
     },
     showStuff(key) {
-      console.log(this.getCriterionByEligibilityKey(key));
-    },
-  },
-};
+      console.log(this.getCriterionByEligibilityKey(key))
+    }
+  }
+}
 </script>
 
 <style scoped>

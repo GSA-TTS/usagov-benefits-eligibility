@@ -3,23 +3,25 @@
     <legend class="usa-legend usa-legend">{{ label }}</legend>
     <div v-for="value in values" :key="value" class="usa-radio">
       <input
-        :id="`${criteriaKey}-${value}`"
+        :id="`${uniqueId}-${criteriaKey}-${value}`"
         class="usa-radio__input"
         type="radio"
-        :name="`${criteriaKey}-${value}`"
+        :name="`${uniqueId}-${criteriaKey}-${value}`"
         :value="value"
         :checked="response === value"
         @change="updateEligibilitySelected"
       />
-      <label class="usa-radio__label" :for="`${criteriaKey}-${value}`">{{
-        value
-      }}</label>
+      <label
+        class="usa-radio__label"
+        :for="`${uniqueId}-${criteriaKey}-${value}`"
+        >{{ value }}</label
+      >
     </div>
   </fieldset>
 </template>
 
 <script>
-// import _ from "lodash";
+import _ from "lodash"
 export default {
   name: "RadioButton",
   props: {
@@ -48,15 +50,14 @@ export default {
       default: "No location provided"
     }
   },
-
-  // data() {
-  //   return {
-  //     uniqueId: _.uniqueId("radio-")
-  //   };
-  // },
-  // beforeCreate() {
-  //   this.uniqueId = _.uniqueId("radio-");
-  // },
+  data() {
+    return {
+      uniqueId: _.uniqueId("radio-")
+    }
+  },
+  beforeCreate() {
+    this.uniqueId = _.uniqueId("radio-")
+  },
   methods: {
     updateEligibilitySelected(e) {
       const payload = {
