@@ -6,6 +6,7 @@
 
 name: usagov-benefits-eligibility
 
+# yamllint disable-line rule:truthy
 on:
   workflow_dispatch:
   push:
@@ -14,7 +15,6 @@ on:
       - release
       - main
   pull_request:
-    branches_ignore: []
 
 # A workflow run is made up of one or more jobs that can run
 # sequentially or in parallel
@@ -23,7 +23,6 @@ jobs:
   test_frontend:
     name: "test frontend"
     runs-on: ubuntu-latest
-
 
     steps:
       - name: Checkout
@@ -35,7 +34,7 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        # if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Test frontend
@@ -48,5 +47,5 @@ jobs:
         run: |
           npm run start & \
           timeout 22 \
-          sh -c 'until nc -z $0 $1; do sleep 1; done' localhost 3000 \
+          sh -c 'until nc -z localhost 3000; do sleep 1; done' \
           && npm run test:pa11y
