@@ -27,6 +27,7 @@
 <script>
 import _ from "lodash"
 export default {
+  name: "DropDown",
   props: {
     label: {
       type: String,
@@ -45,8 +46,8 @@ export default {
       default: "No response provided"
     },
     criteriaIndex: {
-      type: Number,
-      default: 0
+      type: [Number, String],
+      default: "no index provided"
     },
     // TODO: may be helpful?
     location: {
