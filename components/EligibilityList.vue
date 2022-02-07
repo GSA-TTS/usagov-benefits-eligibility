@@ -78,34 +78,16 @@
                 'select'
               "
             >
-              <label
-                :class="{ 'usa-label': true, 'margin-top-0': true }"
-                :for="'criteria' + '-' + criterion.criteriaKey + '-' + index"
-                >{{
+              <DropDown
+                :label="
                   getCriterionByEligibilityKey(criterion.criteriaKey).label
-                }}</label
-              >
-              <select
-                :id="'criteria' + '-' + criterion.criteriaKey + '-' + index"
-                :class="{ 'usa-select': true }"
-                :name="'criteria' + '-' + criterion.criteriaKey"
-                @change="
-                  updateEligibilitySelected($event, criterion.criteriaKey)
                 "
-              >
-                <option value>- Select -</option>
-                <option
-                  v-for="option in criterion.acceptableValues"
-                  :key="option"
-                  :value="option"
-                  :selected="
-                    getResponseByEligibilityKey(criterion.criteriaKey) ===
-                    option
-                  "
-                >
-                  {{ option }}
-                </option>
-              </select>
+                :criteria-key="criterion.criteriaKey"
+                :values="criterion.acceptableValues"
+                :response="getResponseByEligibilityKey(criterion.criteriaKey)"
+                :criteria-index="index"
+                location="benefitCard"
+              />
             </div>
 
             <div
@@ -123,39 +105,6 @@
                 :response="getResponseByEligibilityKey(criterion.criteriaKey)"
                 location="benefitCard"
               />
-              <!-- <fieldset class="usa-fieldset">
-                <legend class="usa-legend usa-legend">
-                  {{
-                    getCriterionByEligibilityKey(criterion.criteriaKey).label
-                  }}
-                </legend>
-
-                <div
-                  v-for="(value, i) in criterion.acceptableValues"
-                  :key="`${value}-${i}`"
-                  class="usa-radio"
-                >
-                  <input
-                    :id="`${criterion.criteriaKey}-${value}-${i}`"
-                    class="usa-radio__input"
-                    type="radio"
-                    :name="`${criterion.criteriaKey}-${value}-${i}`"
-                    :value="value"
-                    :checked="
-                      getResponseByEligibilityKey(criterion.criteriaKey) ===
-                      value
-                    "
-                    @click="
-                      updateEligibilitySelected($event, criterion.criteriaKey)
-                    "
-                  />
-                  <label
-                    class="usa-radio__label"
-                    :for="`${criterion.criteriaKey}-${value}-${i}`"
-                    >{{ value }}</label
-                  >
-                </div>
-              </fieldset> -->
             </div>
           </div>
         </li>
@@ -176,9 +125,10 @@
 <script>
 import { mapGetters } from "vuex"
 import RadioButton from "../components/RadioButton.vue"
+import DropDown from "./DropDown.vue"
 
 export default {
-  components: { RadioButton },
+  components: { RadioButton, DropDown },
   props: {
     benefitEligibilityCriteria: {
       type: Array,
