@@ -1,22 +1,11 @@
 <template>
   <div class="eligibility-criterion">
     <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
-      <input
-        :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
-        class="usa-checkbox__input usa-checkbox__input"
-        type="checkbox"
-        :name="criteriaGroupKey + '-' + criteriaKey"
-        :checked="response"
-        :value="criteriaKey"
-        :data-section="criteriaGroupKey"
-        @change="updateEligibilityChecked"
+      <CheckBox
+        :criteria-key="criteriaKey"
+        :label="label"
+        :response="response"
       />
-      <label
-        class="usa-checkbox__label font-sans-sm"
-        :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
-      >
-        {{ label }}
-      </label>
     </div>
 
     <div v-if="type === 'select'" :key="criteriaKey">
@@ -45,11 +34,13 @@
 import { mapGetters } from "vuex"
 import RadioButton from "./RadioButton"
 import DropDown from "./DropDown"
+import CheckBox from "./CheckBox"
 
 export default {
   components: {
     RadioButton,
-    DropDown
+    DropDown,
+    CheckBox
   },
   props: {
     criteriaKey: {

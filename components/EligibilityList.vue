@@ -50,28 +50,15 @@
               "
               class="usa-checkbox"
             >
-              <input
-                :id="criterion.criteriaKey"
-                class="usa-checkbox__input"
-                type="checkbox"
-                :name="criterion.criteriaKey"
-                :value="criterion.criteriaKey"
-                :checked="doesCriterionMatchSelection(criterion) == true"
-                @change="
-                  updateEligibilityChecked($event, criterion.criteriaKey)
+              <CheckBox
+                :criteria-key="criterion.criteriaKey"
+                :label="
+                  getCriterionByEligibilityKey(criterion.criteriaKey).label
                 "
+                :response="doesCriterionMatchSelection(criterion)"
               />
-              <label class="usa-checkbox__label" :for="criterion.criteriaKey">
-                <template v-if="criterion.label">
-                  {{ criterion.label }}
-                </template>
-                <template v-else>
-                  {{
-                    getCriterionByEligibilityKey(criterion.criteriaKey).label
-                  }}
-                </template>
-              </label>
             </div>
+
             <div
               v-if="
                 getCriterionByEligibilityKey(criterion.criteriaKey).type ===
@@ -124,11 +111,12 @@
 </template>
 <script>
 import { mapGetters } from "vuex"
-import RadioButton from "../components/RadioButton.vue"
+import RadioButton from "./RadioButton.vue"
 import DropDown from "./DropDown.vue"
+import CheckBox from "./CheckBox.vue"
 
 export default {
-  components: { RadioButton, DropDown },
+  components: { RadioButton, DropDown, CheckBox },
   props: {
     benefitEligibilityCriteria: {
       type: Array,
@@ -192,9 +180,6 @@ export default {
         response: "not applicable"
       }
       this.$store.commit("criteria/updateResponse", localCriterion)
-    },
-    showStuff(key) {
-      console.log(this.getCriterionByEligibilityKey(key))
     }
   }
 }
