@@ -20,31 +20,14 @@
     </div>
 
     <div v-if="type === 'select'" :key="criteriaKey">
-      <label
-        :class="{
-          'usa-label': true,
-          'margin-top-0': true,
-          'usa-select-empty': !response
-        }"
-        :for="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
-        >{{ label }}</label
-      >
-      <select
-        :id="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
-        :class="{ 'usa-select': true, 'usa-select-empty': !response }"
-        :name="'criteria-' + criteriaGroupKey + '-' + criteriaKey"
-        @change="updateEligibilitySelected"
-      >
-        <option value>- Select -</option>
-        <option
-          v-for="option in values"
-          :key="option"
-          :value="option"
-          :selected="response === option"
-        >
-          {{ option }}
-        </option>
-      </select>
+      <DropDown
+        :label="label"
+        :criteria-key="criteriaKey"
+        :values="values"
+        :response="response"
+        :criteria-index="criteriaGroupKey"
+        location="leftRail"
+      />
     </div>
 
     <div v-if="type === 'radio'" :key="criteriaKey">
@@ -61,10 +44,12 @@
 <script>
 import { mapGetters } from "vuex"
 import RadioButton from "./RadioButton"
+import DropDown from "./DropDown"
 
 export default {
   components: {
-    RadioButton
+    RadioButton,
+    DropDown
   },
   props: {
     criteriaKey: {
