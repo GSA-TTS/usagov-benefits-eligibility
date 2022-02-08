@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <fieldset class="usa-fieldset">
     <input
       :id="`${uniqueId}-${criteriaKey}`"
       class="usa-checkbox__input"
@@ -12,7 +12,7 @@
     <label class="usa-checkbox__label" :for="`${uniqueId}-${criteriaKey}`">
       {{ label }}
     </label>
-  </div>
+  </fieldset>
 </template>
 
 <script>

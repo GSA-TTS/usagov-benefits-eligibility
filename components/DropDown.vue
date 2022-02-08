@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <fieldset class="usa-fieldset">
     <label
       :class="{ 'usa-label': true, 'margin-top-0': true }"
       :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
@@ -21,7 +21,7 @@
         {{ option }}
       </option>
     </select>
-  </div>
+  </fieldset>
 </template>
 
 <script>
