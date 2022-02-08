@@ -4,7 +4,7 @@
       <div
         :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`"
         :key="criteriaGroup.criteriaGroupKey"
-        class="margin-bottom-4 border-bottom border-base border-width-2px break-inside-avoid"
+        class="margin-bottom-4 border-bottom border-gray-30 border-width-2px break-inside-avoid"
       >
         <h2
           :class="{

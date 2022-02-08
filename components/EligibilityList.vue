@@ -34,8 +34,7 @@
                   doesCriterionMatchSelection(criterion) === true
               },
               {
-                'text-base-light':
-                  doesCriterionMatchSelection(criterion) === null
+                'text-base': doesCriterionMatchSelection(criterion) === null
               },
               {
                 'text-secondary-vivid text-bold':
