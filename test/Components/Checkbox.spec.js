@@ -10,11 +10,11 @@ import {
 } from "~/store/criteria"
 
 const MOCK_CRITERIA = {
-  criteriaKey: "criteriaKey1",
-  label: "Benefit criteria label 1.",
+  criteriaKey: "deceased_served_in_active_military",
+  label:
+    "The deceased served in the active military, naval, or air service and",
   type: "boolean",
-  value: true,
-  criteriaGroupKey: "group1"
+  response: true
 }
 
 describe("CheckBox", () => {
@@ -42,9 +42,9 @@ describe("CheckBox", () => {
   test("is a Vue instance", () => {
     const wrapper = mount(CheckBox, {
       propsData: {
-        criteriaKey: "active_duty_member",
-        label: "You served in the active military, naval or air service and",
-        response: false
+        criteriaKey: MOCK_CRITERIA.criteriaKey,
+        label: MOCK_CRITERIA.label,
+        response: MOCK_CRITERIA.response
       }
     })
     expect(wrapper.vm).toBeTruthy()
@@ -55,7 +55,9 @@ describe("CheckBox", () => {
       propsData: { ...MOCK_CRITERIA },
       store
     })
-    expect(wrapper.find("label").text()).toBe("Benefit criteria label 1.")
+    expect(wrapper.find("label").text()).toBe(
+      "The deceased served in the active military, naval, or air service and"
+    )
   })
 
   test("updates when a checkbox criteria response changes", async () => {
@@ -66,7 +68,7 @@ describe("CheckBox", () => {
     const localCriterion = [
       {
         criteriaKey: MOCK_CRITERIA.criteriaKey,
-        response: MOCK_CRITERIA.value
+        response: MOCK_CRITERIA.response
       }
     ]
     await store.dispatch("criteria/populate", localCriterion)
