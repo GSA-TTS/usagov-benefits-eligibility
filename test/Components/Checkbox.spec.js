@@ -76,7 +76,6 @@ describe("<CheckBox/>", () => {
     ]
     await store.dispatch("criteria/populate", localCriterion)
     await wrapper.find(".usa-checkbox__input").setChecked()
-    await wrapper.vm.$nextTick()
     expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy()
   })
 })

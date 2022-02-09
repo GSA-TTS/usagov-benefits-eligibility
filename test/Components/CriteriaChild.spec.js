@@ -83,16 +83,16 @@ describe("CriteriaChild", () => {
   //   expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy();
 
   // });
-  test("updates when a select criteria response changes", async () => {
-    const wrapper = shallowMount(CriteriaChild, {
-      propsData: { ...MOCK_CRITERIA[1] },
-      store
-    })
+  // test("updates when a select criteria response changes", async () => {
+  //   const wrapper = shallowMount(CriteriaChild, {
+  //     propsData: { ...MOCK_CRITERIA[1] },
+  //     store
+  //   })
 
-    await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
-    await wrapper.vm.$nextTick()
-    const choices = wrapper.find("select").findAll("option")
-    await choices.at(2).setSelected()
-    expect(wrapper.find("option:checked").element.value).toBe("two")
-  })
+  //   await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
+  //   await wrapper.vm.$nextTick()
+  //   const choices = wrapper.find("select").findAll("option")
+  //   await choices.at(2).setSelected()
+  //   expect(wrapper.find("option:checked").element.value).toBe("two")
+  // })
 })

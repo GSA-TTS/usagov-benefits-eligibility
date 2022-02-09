@@ -77,7 +77,6 @@ describe("<DropDown/>", () => {
       }
     ]
     await store.dispatch("criteria/populate", localCriterion)
-    await wrapper.vm.$nextTick()
     const choices = wrapper.find("select").findAll("option")
     await choices.at(2).setSelected()
     expect(wrapper.find("option:checked").element.value).toBe(
