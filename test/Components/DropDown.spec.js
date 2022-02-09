@@ -54,6 +54,8 @@ describe("<DropDown/>", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
+  // * TODO: Add test for default values array
+
   test("displays eligibilityCriteria when one is passed in", () => {
     const wrapper = shallowMount(DropDown, {
       propsData: { ...MOCK_CRITERIA },
