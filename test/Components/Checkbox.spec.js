@@ -14,10 +14,10 @@ const MOCK_CRITERIA = {
   label:
     "The deceased served in the active military, naval, or air service and",
   type: "boolean",
-  response: true
+  response: false
 }
 
-describe("CheckBox", () => {
+describe("<CheckBox/>", () => {
   let store
 
   beforeAll(async () => {
@@ -58,6 +58,9 @@ describe("CheckBox", () => {
     expect(wrapper.find("label").text()).toBe(
       "The deceased served in the active military, naval, or air service and"
     )
+    expect(
+      wrapper.find(".usa-checkbox__input").element.checked
+    ).not.toBeTruthy()
   })
 
   test("updates when a checkbox criteria response changes", async () => {
