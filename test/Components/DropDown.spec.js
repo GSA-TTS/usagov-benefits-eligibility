@@ -73,7 +73,7 @@ describe("<DropDown/>", () => {
     const localCriterion = [
       {
         criteriaKey: MOCK_CRITERIA.criteriaKey,
-        response: MOCK_CRITERIA.values[1]
+        response: MOCK_CRITERIA.values[2]
       }
     ]
     await store.dispatch("criteria/populate", localCriterion)
