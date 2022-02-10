@@ -152,34 +152,6 @@ export default {
       isCriterionSelected: "criteria/isCriterionSelected",
       getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey"
     })
-  },
-  methods: {
-    formatArrayWithSeparator(array = [], lastSeparator = "or") {
-      return array
-        .join(", ")
-        .replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`)
-    },
-    updateEligibilityChecked(event, key) {
-      const localCriterion = {
-        criteriaKey: key,
-        response: event.target.checked
-      }
-      this.$store.commit("criteria/updateResponse", localCriterion)
-    },
-    updateEligibilitySelected(event, key) {
-      const localCriterion = {
-        criteriaKey: key,
-        response: event.target.value
-      }
-      this.$store.commit("criteria/updateResponse", localCriterion)
-    },
-    resetEligibilitySelected(key) {
-      const localCriterion = {
-        criteriaKey: key,
-        response: "not applicable"
-      }
-      this.$store.commit("criteria/updateResponse", localCriterion)
-    }
   }
 }
 </script>
