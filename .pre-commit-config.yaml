@@ -15,6 +15,7 @@ repos:
     - id: check-added-large-files
     - id: check-symlinks
 
+# this is a fun tool that detects secrets (tokens, etc.)
 - repo: https://github.com/Yelp/detect-secrets
   rev: v1.1.0
   hooks:
