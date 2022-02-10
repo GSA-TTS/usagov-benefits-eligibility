@@ -27,18 +27,15 @@ export default {
   props: {
     criteriaKey: {
       type: String,
-      default: "No key provided",
-      required: true
+      default: "No key provided"
     },
     label: {
       type: String,
-      default: "No label provided",
-      required: true
+      default: "No label provided"
     },
     values: {
       type: Array,
-      default: () => [],
-      required: true
+      default: () => []
     },
     response: {
       type: [String, Object],
@@ -60,11 +57,11 @@ export default {
   },
   methods: {
     updateEligibilitySelected(e) {
-      const payload = {
+      const localCriterion = {
         criteriaKey: this.criteriaKey,
         response: e.target.value
       }
-      this.$store.commit("criteria/updateResponse", payload)
+      this.$store.commit("criteria/updateResponse", localCriterion)
     }
   }
 }

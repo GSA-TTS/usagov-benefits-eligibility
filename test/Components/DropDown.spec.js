@@ -54,7 +54,10 @@ describe("<DropDown/>", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
-  // * TODO: Add test for default values array
+  test("displays without any props", () => {
+    const wrapper = mount(DropDown, {})
+    expect(wrapper.vm).toBeTruthy()
+  })
 
   test("displays eligibilityCriteria when one is passed in", () => {
     const wrapper = shallowMount(DropDown, {

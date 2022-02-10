@@ -54,6 +54,11 @@ describe("<Radio/>", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
+  test("displays with no props", () => {
+    const wrapper = mount(RadioButton)
+    expect(wrapper.vm).toBeTruthy()
+  })
+
   test("displays eligibilityCriteria when one is passed in", () => {
     const wrapper = shallowMount(RadioButton, {
       propsData: { ...MOCK_CRITERIA },
