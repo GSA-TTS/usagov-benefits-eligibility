@@ -51,9 +51,7 @@
             >
               <CheckBox
                 :criteria-key="criterion.criteriaKey"
-                :label="
-                  getCriterionByEligibilityKey(criterion.criteriaKey).label
-                "
+                :label="getCriterionLabel(criterion)"
                 :response="doesCriterionMatchSelection(criterion)"
               />
             </div>
@@ -65,9 +63,7 @@
               "
             >
               <DropDown
-                :label="
-                  getCriterionByEligibilityKey(criterion.criteriaKey).label
-                "
+                :label="getCriterionLabel(criterion)"
                 :criteria-key="criterion.criteriaKey"
                 :values="criterion.acceptableValues"
                 :response="getResponseByEligibilityKey(criterion.criteriaKey)"
@@ -84,9 +80,7 @@
             >
               <RadioButton
                 :criteria-key="criterion.criteriaKey"
-                :label="
-                  getCriterionByEligibilityKey(criterion.criteriaKey).label
-                "
+                :label="getCriterionLabel(criterion)"
                 :values="criterion.acceptableValues"
                 :response="getResponseByEligibilityKey(criterion.criteriaKey)"
                 location="benefitCard"
@@ -154,6 +148,9 @@ export default {
     })
   },
   methods: {
+    getCriterionLabel(criterion) {
+      return criterion.label || this.getCriterionByEligibilityKey(criterion.criteriaKey).label
+    },
     formatArrayWithSeparator(array = [], lastSeparator = "or") {
       return array
         .join(", ")
