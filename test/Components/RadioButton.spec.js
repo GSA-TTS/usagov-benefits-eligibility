@@ -74,7 +74,7 @@ describe("<Radio/>", () => {
   })
 
   test("updates when a radio criteria response changes", async () => {
-    const wrapper = shallowMount(RadioButton, {
+    const wrapper = mount(RadioButton, {
       propsData: { ...MOCK_CRITERIA },
       store
     })
