@@ -19,6 +19,7 @@ const MOCK_CRITERIA = {
 
 describe("<CheckBox/>", () => {
   let store
+  let actions
 
   beforeAll(async () => {
     await beforeAllTests()
@@ -26,6 +27,10 @@ describe("<CheckBox/>", () => {
 
   beforeEach(() => {
     criteriaState.namespaced = true
+    actions = {
+      updateResponse: jest.fn()
+    }
+
     store = new Store({
       modules: {
         criteria: {
@@ -74,8 +79,9 @@ describe("<CheckBox/>", () => {
         response: MOCK_CRITERIA.response
       }
     ]
-    await store.dispatch("criteria/populate", localCriterion)
+    await store.dispatch("criteria/updateResponse", localCriterion)
     await wrapper.find(".usa-checkbox__input").setChecked()
     expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy()
+    expect(actions.updateResponse).toHaveBeenCalled()
   })
 })

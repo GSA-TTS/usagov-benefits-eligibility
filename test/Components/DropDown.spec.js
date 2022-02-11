@@ -23,6 +23,7 @@ const MOCK_CRITERIA = {
 
 describe("<DropDown/>", () => {
   let store
+  let actions
 
   beforeAll(async () => {
     await beforeAllTests()
@@ -30,6 +31,11 @@ describe("<DropDown/>", () => {
 
   beforeEach(() => {
     criteriaState.namespaced = true
+
+    actions = {
+      updateResponse: jest.fn()
+    }
+
     store = new Store({
       modules: {
         criteria: {
@@ -81,11 +87,12 @@ describe("<DropDown/>", () => {
         response: MOCK_CRITERIA.values[2]
       }
     ]
-    await store.dispatch("criteria/populate", localCriterion)
+    await store.dispatch("criteria/updateResponse", localCriterion)
     const choices = wrapper.find("select").findAll("option")
     await choices.at(2).setSelected()
     expect(wrapper.find("option:checked").element.value).toBe(
       "died while on active duty"
     )
+    expect(actions.updateResponse).toHaveBeenCalled()
   })
 })

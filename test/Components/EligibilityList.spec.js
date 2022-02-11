@@ -57,7 +57,7 @@ describe("EligibilityList", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
-  test("displays an error if there are no criteria passed in", () => {
+  test("displays an error if there are no criteria selected", () => {
     const wrapper = shallowMount(EligibilityList, {
       store
     })

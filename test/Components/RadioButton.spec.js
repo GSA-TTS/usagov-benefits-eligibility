@@ -23,6 +23,7 @@ const MOCK_CRITERIA = {
 
 describe("<Radio/>", () => {
   let store
+  let actions
 
   beforeAll(async () => {
     await beforeAllTests()
@@ -30,6 +31,11 @@ describe("<Radio/>", () => {
 
   beforeEach(() => {
     criteriaState.namespaced = true
+
+    actions = {
+      updateResponse: jest.fn()
+    }
+
     store = new Store({
       modules: {
         criteria: {
@@ -83,11 +89,12 @@ describe("<Radio/>", () => {
         response: MOCK_CRITERIA.values[1]
       }
     ]
-    await store.dispatch("criteria/populate", localCriterion)
+    await store.dispatch("criteria/updateResponse", localCriterion)
     const choices = wrapper.findAll("input")
     await choices.at(1).trigger("click")
     expect(wrapper.find("input:checked").element.value).toBe(
       "died while on active duty"
     )
+    expect(actions.updateResponse).toHaveBeenCalled()
   })
 })

@@ -61,7 +61,7 @@ export default {
         criteriaKey: this.criteriaKey,
         response: e.target.value
       }
-      this.$store.commit("criteria/updateResponse", localCriterion)
+      this.$store.dispatch("criteria/updateResponse", localCriterion)
     }
   }
 }

@@ -65,11 +65,11 @@ export default {
   },
   methods: {
     updateEligibilitySelected(e) {
-      const payload = {
+      const localCriterion = {
         criteriaKey: this.criteriaKey,
         response: e.target.value
       }
-      this.$store.commit("criteria/updateResponse", payload)
+      this.$store.dispatch("criteria/updateResponse", localCriterion)
     }
   }
 }
