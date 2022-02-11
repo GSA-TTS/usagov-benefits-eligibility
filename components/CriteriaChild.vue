@@ -3,14 +3,14 @@
     <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
       <CheckBox
         :criteria-key="criteriaKey"
-        :label="label"
+        :label="getCriterionLabel()"
         :response="response"
       />
     </div>
 
     <div v-if="type === 'select'" :key="criteriaKey">
       <DropDown
-        :label="label"
+        :label="getCriterionLabel()"
         :criteria-key="criteriaKey"
         :values="values"
         :response="response"
@@ -22,7 +22,7 @@
     <div v-if="type === 'radio'" :key="criteriaKey">
       <RadioButton
         :criteria-key="criteriaKey"
-        :label="label"
+        :label="getCriterionLabel()"
         :values="values"
         :response="response"
         location="leftRail"
@@ -74,6 +74,10 @@ export default {
     })
   },
   methods: {
+    getCriterionLabel() {
+      return this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
+    },
+
     updateEligibilityChecked(e) {
       const localCriterion = {
         criteriaKey: this.criteriaKey,
