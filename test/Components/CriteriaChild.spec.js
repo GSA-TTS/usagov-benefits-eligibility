@@ -9,23 +9,6 @@ import {
   actions
 } from "~/store/criteria"
 
-const MOCK_CRITERIA = [
-  {
-    criteriaKey: "criteriaKey1",
-    label: "Benefit criteria label 1.",
-    type: "boolean",
-    values: [true],
-    criteriaGroupKey: "group1"
-  },
-  {
-    criteriaKey: "criteriaKey2",
-    label: "Benefit criteria label 2.",
-    type: "select",
-    values: ["one", "two", "three", "four", "five", "six", "seven", "eight"],
-    criteriaGroupKey: "group2"
-  }
-]
-
 describe("CriteriaChild", () => {
   let store
 
@@ -61,38 +44,4 @@ describe("CriteriaChild", () => {
     })
     expect(wrapper.find(".eligibility-criterion").text()).toBeFalsy()
   })
-
-  // test("displays eligibilityCriteria when one is passed in", () => {
-  //   const wrapper = shallowMount(CriteriaChild, {
-  //     propsData: { ...MOCK_CRITERIA[0] },
-  //     store
-  //   })
-  //   expect(wrapper.find(".usa-checkbox").text()).toBe(
-  //     "Benefit criteria label 1."
-  //   )
-  // })
-
-  // test('updates when a checkbox criteria response changes', async () => {
-  //   const wrapper = shallowMount(CriteriaChild, {
-  //     propsData: { ...MOCK_CRITERIA[0] },
-  //     store,
-  //   });
-  //   await store.dispatch("criteria/populate", [...MOCK_CRITERIA]);
-  //   await wrapper.vm.$nextTick();
-  //   await wrapper.find(".usa-checkbox__input").setChecked();
-  //   expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy();
-
-  // });
-  // test("updates when a select criteria response changes", async () => {
-  //   const wrapper = shallowMount(CriteriaChild, {
-  //     propsData: { ...MOCK_CRITERIA[1] },
-  //     store
-  //   })
-
-  //   await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
-  //   await wrapper.vm.$nextTick()
-  //   const choices = wrapper.find("select").findAll("option")
-  //   await choices.at(2).setSelected()
-  //   expect(wrapper.find("option:checked").element.value).toBe("two")
-  // })
 })
