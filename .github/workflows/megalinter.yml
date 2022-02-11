@@ -3,6 +3,7 @@
 # More info at https://megalinter.github.io
 name: MegaLinter
 
+# yamllint disable-line rule:truthy
 on:
   workflow_dispatch:
   # run when PRs are created
@@ -25,6 +26,8 @@ env:
   # If APPLY_FIXES is used, defines if the fixes are directly committed
   # (commit) or posted in a PR (pull_request)
   APPLY_FIXES_MODE: commit
+
+  DISABLE: SPELL, COPYPASTE
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}

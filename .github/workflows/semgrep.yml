@@ -1,6 +1,7 @@
 ---
 name: Semgrep
 
+# yamllint disable-line rule:truthy
 on:
   workflow_dispatch:
   # Scan changed files in PRs, block on new issues
