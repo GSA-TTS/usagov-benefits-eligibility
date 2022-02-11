@@ -48,8 +48,7 @@ export default {
       default: "No key provided"
     },
     label: {
-      type: String,
-      default: "No label provided"
+      type: String
     },
     type: {
       type: String,

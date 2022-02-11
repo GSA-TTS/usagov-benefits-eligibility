@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils"
+import { shallowMount, mount } from "@vue/test-utils"
 import Vuex from "vuex"
 import CriteriaChild from "@/components/CriteriaChild.vue"
 import beforeAllTests from "@/test/beforeAllTests"
@@ -43,5 +43,34 @@ describe("CriteriaChild", () => {
       store
     })
     expect(wrapper.find(".eligibility-criterion").text()).toBeFalsy()
+  })
+
+  test("test label", () => {
+    const wrapper = mount(CriteriaChild, {
+      store,
+      propsData: {
+        criteriaKey: "key",
+        label:"bal bal",
+        type:"boolean",
+        values: ['true','false'],
+        criteriaGroupKey: "dummy",
+        response: "balkajdflkjslf"
+      },
+    })
+    expect(wrapper.find("label").text()).toBe("bal bal");
+  })
+
+  test("test label using default", () => {
+    const wrapper = mount(CriteriaChild, {
+      store,
+      propsData: {
+        criteriaKey: "myKey",
+        type:"boolean",
+        values: ['true','false'],
+        criteriaGroupKey: "dummy",
+        response: "balkajdflkjslf"
+      },
+    })
+    expect(wrapper.find("label").text()).toBe('Key named "myKey" not found');
   })
 })
