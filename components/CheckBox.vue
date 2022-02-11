@@ -48,7 +48,7 @@ export default {
         criteriaKey: key,
         response: event.target.checked
       }
-      this.$store.commit("criteria/updateResponse", localCriterion)
+      this.$store.dispatch("criteria/updateResponse", localCriterion)
     }
   }
 }
