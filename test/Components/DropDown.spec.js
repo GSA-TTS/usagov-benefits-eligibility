@@ -2,12 +2,7 @@ import { mount, shallowMount } from "@vue/test-utils"
 import { Store } from "vuex"
 import DropDown from "@/components/DropDown.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import {
-  state as criteriaState,
-  mutations,
-  getters,
-  actions
-} from "~/store/criteria"
+import { state as criteriaState, mutations, getters } from "~/store/criteria"
 
 const MOCK_CRITERIA = {
   criteriaKey: "deceased_served_in_active_military",
@@ -81,13 +76,6 @@ describe("<DropDown/>", () => {
       propsData: { ...MOCK_CRITERIA },
       store
     })
-    const localCriterion = [
-      {
-        criteriaKey: MOCK_CRITERIA.criteriaKey,
-        response: MOCK_CRITERIA.values[2]
-      }
-    ]
-    await store.dispatch("criteria/updateResponse", localCriterion)
     const choices = wrapper.find("select").findAll("option")
     await choices.at(2).setSelected()
     expect(wrapper.find("option:checked").element.value).toBe(

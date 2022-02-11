@@ -2,12 +2,7 @@ import { mount, shallowMount } from "@vue/test-utils"
 import { Store } from "vuex"
 import CheckBox from "@/components/CheckBox.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import {
-  state as criteriaState,
-  mutations,
-  getters,
-  actions
-} from "~/store/criteria"
+import { state as criteriaState, mutations, getters } from "~/store/criteria"
 
 const MOCK_CRITERIA = {
   criteriaKey: "deceased_served_in_active_military",
@@ -73,13 +68,6 @@ describe("<CheckBox/>", () => {
       propsData: { ...MOCK_CRITERIA },
       store
     })
-    const localCriterion = [
-      {
-        criteriaKey: MOCK_CRITERIA.criteriaKey,
-        response: MOCK_CRITERIA.response
-      }
-    ]
-    await store.dispatch("criteria/updateResponse", localCriterion)
     await wrapper.find(".usa-checkbox__input").setChecked()
     expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy()
     expect(actions.updateResponse).toHaveBeenCalled()

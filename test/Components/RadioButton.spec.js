@@ -2,12 +2,7 @@ import { mount, shallowMount } from "@vue/test-utils"
 import { Store } from "vuex"
 import RadioButton from "@/components/RadioButton.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import {
-  state as criteriaState,
-  mutations,
-  getters,
-  actions
-} from "~/store/criteria"
+import { state as criteriaState, mutations, getters } from "~/store/criteria"
 
 const MOCK_CRITERIA = {
   criteriaKey: "deceased_served_in_active_military",
@@ -83,18 +78,9 @@ describe("<Radio/>", () => {
       propsData: { ...MOCK_CRITERIA },
       store
     })
-    const localCriterion = [
-      {
-        criteriaKey: MOCK_CRITERIA.criteriaKey,
-        response: MOCK_CRITERIA.values[1]
-      }
-    ]
-    await store.dispatch("criteria/updateResponse", localCriterion)
-    const choices = wrapper.findAll("input")
-    await choices.at(1).trigger("click")
-    expect(wrapper.find("input:checked").element.value).toBe(
-      "died while on active duty"
-    )
+    const choices = wrapper.findAll('input[type="radio"]')
+    await choices.at(1).setChecked()
+    expect(choices.at(1).element.value).toBe("died while on active duty")
     expect(actions.updateResponse).toHaveBeenCalled()
   })
 })
