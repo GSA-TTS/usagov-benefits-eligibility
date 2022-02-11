@@ -79,19 +79,13 @@ describe("<Radio/>", () => {
   })
 
   test("updates when a radio criteria response changes", async () => {
-    const wrapper = shallowMount(RadioButton, {
+    const wrapper = mount(RadioButton, {
       propsData: { ...MOCK_CRITERIA },
       store
     })
-    const localCriterion = [
-      {
-        criteriaKey: MOCK_CRITERIA.criteriaKey,
-        response: MOCK_CRITERIA.values[1]
-      }
-    ]
-    await store.dispatch("criteria/updateResponse", localCriterion)
     const choices = wrapper.findAll("input")
     await choices.at(1).trigger("click")
+    await choices.at(1).trigger("change")
     expect(wrapper.find("input:checked").element.value).toBe(
       "died while on active duty"
     )
