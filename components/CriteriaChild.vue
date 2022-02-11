@@ -31,7 +31,6 @@
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex"
 import RadioButton from "./RadioButton"
 import DropDown from "./DropDown"
 import CheckBox from "./CheckBox"
@@ -67,27 +66,6 @@ export default {
       type: [Boolean, String],
       default: false
     }
-  },
-  computed: {
-    ...mapGetters({
-      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey"
-    })
-  },
-  methods: {
-    updateEligibilityChecked(e) {
-      const localCriterion = {
-        criteriaKey: this.criteriaKey,
-        response: e.target.checked
-      }
-      this.$store.commit("criteria/updateResponse", localCriterion)
-    },
-    updateEligibilitySelected(e) {
-      const localCriterion = {
-        criteriaKey: this.criteriaKey,
-        response: e.target.value
-      }
-      this.$store.commit("criteria/updateResponse", localCriterion)
-    }
   }
 }
 </script>
@@ -113,9 +91,7 @@ export default {
 .usa-checkbox {
   background: none;
 }
-.usa-radio {
-  background: transparent;
-}
+
 @media print {
   .eligibility-criterion input[type="checkbox"]:not(:checked) ~ label {
     display: none;
