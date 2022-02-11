@@ -3,14 +3,14 @@
     <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
       <CheckBox
         :criteria-key="criteriaKey"
-        :label="label"
+        :label="getCriterionLabel()"
         :response="response"
       />
     </div>
 
     <div v-if="type === 'select'" :key="criteriaKey">
       <DropDown
-        :label="label"
+        :label="getCriterionLabel()"
         :criteria-key="criteriaKey"
         :values="values"
         :response="response"
@@ -22,7 +22,7 @@
     <div v-if="type === 'radio'" :key="criteriaKey">
       <RadioButton
         :criteria-key="criteriaKey"
-        :label="label"
+        :label="getCriterionLabel()"
         :values="values"
         :response="response"
         location="leftRail"
@@ -31,6 +31,7 @@
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex"
 import RadioButton from "./RadioButton"
 import DropDown from "./DropDown"
 import CheckBox from "./CheckBox"
@@ -47,8 +48,7 @@ export default {
       default: "No key provided"
     },
     label: {
-      type: String,
-      default: "No label provided"
+      type: String
     },
     type: {
       type: String,
@@ -65,6 +65,16 @@ export default {
     response: {
       type: [Boolean, String],
       default: false
+    }
+  },
+  computed: {
+    ...mapGetters({
+      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey"
+    })
+  },
+  methods: {
+    getCriterionLabel() {
+      return this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
     }
   }
 }

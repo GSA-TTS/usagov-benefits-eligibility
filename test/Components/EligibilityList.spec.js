@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils"
+import {mount, shallowMount} from "@vue/test-utils"
 import Vuex from "vuex"
 import EligibilityList from "@/components/EligibilityList.vue"
 import beforeAllTests from "@/test/beforeAllTests"
@@ -75,5 +75,24 @@ describe("EligibilityList", () => {
       store
     })
     expect(wrapper.findAll("li")).toHaveLength(2)
+  })
+
+
+  test("test label using functionality", () => {
+    const wrapper = shallowMount(EligibilityList, {
+      store,
+      propsData: {
+      },
+    })
+    let l1 = wrapper.vm.getCriterionLabel({
+      criteriaKey: "myKey",
+      type: "boolean",
+    })
+    let l2 = wrapper.vm.getCriterionLabel({
+      criteriaKey: "myKey",
+      label:"mylabel"
+    })
+    expect(l1).toBe('Key named "myKey" not found');
+    expect(l2).toBe('mylabel');
   })
 })
