@@ -7,7 +7,7 @@ lifeEvents:
 - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: "https://www.va.gov/life-insurance/options-eligibility/"
+  link: https://www.va.gov/life-insurance/options-eligibility/
 
 summary: "VA Life Insurance programs are available for veterans, service members, and their spouses and dependent children."
 
