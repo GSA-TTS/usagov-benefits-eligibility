@@ -15,7 +15,6 @@ eligibilityCriteria:
       - applicant_served_in_active_military
       - applicant_disability
       - applicant_marital_status
-      - applicant_zombie
 
   - label: "Did you loose a loved one who served in military?"
     description: ""

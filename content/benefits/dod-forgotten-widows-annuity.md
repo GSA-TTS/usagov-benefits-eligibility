@@ -21,6 +21,4 @@ eligibility:
     acceptableValues: ["had retired from the service"]
   - criteriaKey: applicant_relationship
     acceptableValues: [spouse]
-  - criteriaKey: applicant_zombie
-    acceptableValues: ["turning", "no brain eating"]
 ---
