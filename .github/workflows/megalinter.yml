@@ -3,16 +3,12 @@
 # More info at https://megalinter.github.io
 name: MegaLinter
 
+# yamllint disable-line rule:truthy
 on:
   workflow_dispatch:
-  # Trigger mega-linter at every push. Action will also be visible from
-  # Comment this line to trigger action only on pull-requests (noit
-  # recommended if you don't pay for GH Actions)
-  push:
-  # Pull Requests to main
+  # run when PRs are created
   pull_request:
     branches: [master, main]
-
 
 # Comment env block if you do not want to apply fixes
 env:
@@ -30,6 +26,8 @@ env:
   # If APPLY_FIXES is used, defines if the fixes are directly committed
   # (commit) or posted in a PR (pull_request)
   APPLY_FIXES_MODE: commit
+
+  DISABLE: SPELL, COPYPASTE
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -52,10 +50,12 @@ jobs:
         id: ml
         # You can override MegaLinter flavor used to have faster performances
         # More info at https://megalinter.github.io/flavors/
-        uses: megalinter/megalinter@v5
+        uses: megalinter/megalinter/flavors/javascript@v5
         env:
           # All available variables are described in documentation
           # https://megalinter.github.io/configuration/
+
+          DISABLE_LINTERS: SPELL_MISSPELL, SPELL_CSPELL
 
           # Validates all source when push on main, else just the git diff
           # with main. Override with true if you always want to lint all
