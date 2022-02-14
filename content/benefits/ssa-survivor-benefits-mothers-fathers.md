@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/forms/ssa-5.html"
+  link: https://www.ssa.gov/forms/ssa-5.html
 
 summary: "Social Security survivors benefits might be available the person providing care for the deceased worker's child."
 
