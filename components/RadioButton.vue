@@ -1,7 +1,11 @@
 <template>
   <fieldset class="usa-fieldset">
     <legend class="usa-legend usa-legend">{{ label }}</legend>
-    <div v-for="value in values" :key="value" class="usa-radio margin-left-05">
+    <div
+      v-for="value in values"
+      :key="value"
+      class="usa-radio tablet:margin-left-05"
+    >
       <input
         :id="`${uniqueId}-${criteriaKey}-${value}`"
         class="usa-radio__input"
@@ -12,7 +16,7 @@
         @change="updateEligibilitySelected"
       />
       <label
-        class="usa-radio__label"
+        class="usa-radio__label tablet:margin-top-1"
         :for="`${uniqueId}-${criteriaKey}-${value}`"
         >{{ value }}</label
       >
@@ -76,15 +80,5 @@ export default {
 .usa-legend,
 .usa-legend {
   font-weight: inherit;
-}
-/*
-* @FSP: tighter spacing on radio buttons only on mobile
-* https://designsystem.digital.gov/utilities/layout-grid/#sass-mixins
- */
-@media (min-width: 640px) {
-  .usa-checkbox__label,
-  .usa-radio__label {
-    margin-top: 0.55rem;
-  }
 }
 </style>
