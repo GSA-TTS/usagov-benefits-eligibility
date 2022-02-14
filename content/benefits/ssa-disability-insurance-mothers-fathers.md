@@ -8,7 +8,7 @@ lifeEvents:
 - "loss-of-job-and-low-income"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/disability/"
+  link: https://www.ssa.gov/benefits/disability/
 
 summary: "Provides financial assistance to people with disabilities and their family members."
 
