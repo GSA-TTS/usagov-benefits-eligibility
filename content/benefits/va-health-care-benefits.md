@@ -8,7 +8,7 @@ lifeEvents:
 - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: "https://www.va.gov/health-care/family-caregiver-benefits/"
+  link: https://www.va.gov/health-care/family-caregiver-benefits/
 
 summary: "Health care benefits, such as TRICARE or CHAMPVA, may be available to the surviving spouse or child of a veteran or service member."
 
