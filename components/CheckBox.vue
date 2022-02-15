@@ -9,7 +9,11 @@
       :checked="response === true"
       @change="updateEligibilityChecked($event, criteriaKey)"
     />
-    <label class="usa-checkbox__label" :for="`${uniqueId}-${criteriaKey}`">
+    <label
+      class="usa-checkbox__label"
+      :class="selectedStyle"
+      :for="`${uniqueId}-${criteriaKey}`"
+    >
       {{ label }}
     </label>
   </fieldset>
@@ -32,11 +36,26 @@ export default {
     response: {
       type: [Boolean, String],
       default: false
+    },
+    location: {
+      type: String,
+      default: "benefit-card",
+      validator: (value) => {
+        return ["left-rail", "benefit-card"].includes(value)
+      }
     }
   },
   data() {
     return {
       uniqueId: _.uniqueId("checkbox-")
+    }
+  },
+  computed: {
+    selectedStyle() {
+      if (this.location === "benefit-card" && this.response === true) {
+        return "text-success text-bold"
+      }
+      return null
     }
   },
   mounted() {

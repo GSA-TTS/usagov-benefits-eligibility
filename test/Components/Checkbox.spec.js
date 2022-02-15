@@ -9,7 +9,8 @@ const MOCK_CRITERIA = {
   label:
     "The deceased served in the active military, naval, or air service and",
   type: "boolean",
-  response: false
+  response: false,
+  location: "benefit-card"
 }
 
 describe("<CheckBox/>", () => {
@@ -71,5 +72,24 @@ describe("<CheckBox/>", () => {
     await wrapper.find(".usa-checkbox__input").setChecked()
     expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy()
     expect(actions.updateResponse).toHaveBeenCalled()
+    // TODO: should have class "text-success" when checked and matches response
+  })
+  test("when checkbox is selected it must have correct styling", async () => {
+    const MOCK_CHECKBOX_SELECTED = {
+      criteriaKey: "deceased_served_in_active_military",
+      label:
+        "The deceased served in the active military, naval, or air service and",
+      type: "boolean",
+      response: true,
+      location: "benefit-card"
+    }
+
+    const wrapper = shallowMount(CheckBox, {
+      propsData: { ...MOCK_CHECKBOX_SELECTED },
+      store
+    })
+    await wrapper.find(".usa-checkbox__input").setChecked()
+    expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy()
+    expect(wrapper.find("label").classes()).toContain("text-success")
   })
 })

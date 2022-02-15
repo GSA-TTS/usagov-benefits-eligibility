@@ -49,10 +49,11 @@ export default {
       type: [Number, String],
       default: "no index provided"
     },
-    // TODO: may be helpful?
     location: {
-      type: String,
-      default: "No location provided"
+      default: "benefit-card",
+      validator: (value) => {
+        return ["left-rail", "benefit-card"].includes(value)
+      }
     }
   },
   data() {

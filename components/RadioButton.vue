@@ -45,10 +45,11 @@ export default {
       type: [String, Object],
       default: "No response provided"
     },
-    // TODO: may be helpful?
     location: {
-      type: String,
-      default: "No location provided"
+      default: "benefit-card",
+      validator: (value) => {
+        return ["left-rail", "benefit-card"].includes(value)
+      }
     }
   },
   data() {
