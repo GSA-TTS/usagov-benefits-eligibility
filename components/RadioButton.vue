@@ -56,7 +56,7 @@ export default {
       uniqueId: _.uniqueId("radio-")
     }
   },
-  beforeCreate() {
+  mounted() {
     this.uniqueId = _.uniqueId("radio-")
   },
   methods: {

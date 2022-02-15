@@ -60,7 +60,7 @@ export default {
       uniqueId: _.uniqueId("dropdown-")
     }
   },
-  beforeCreate() {
+  mounted() {
     this.uniqueId = _.uniqueId("dropdown-")
   },
   methods: {

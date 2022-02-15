@@ -39,7 +39,7 @@ export default {
       uniqueId: _.uniqueId("checkbox-")
     }
   },
-  beforeCreate() {
+  mounted() {
     this.uniqueId = _.uniqueId("checkbox-")
   },
   methods: {
