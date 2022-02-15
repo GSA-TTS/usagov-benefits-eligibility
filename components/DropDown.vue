@@ -11,7 +11,7 @@
       :name="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       @change="updateEligibilitySelected($event, criteriaKey)"
     >
-      <option>- Select -</option>
+      <option :value="null">- Select -</option>
       <option
         v-for="option in values"
         :key="option"
