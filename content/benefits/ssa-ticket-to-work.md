@@ -7,7 +7,7 @@ lifeEvents:
 - "disability"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/work/"
+  link: https://www.ssa.gov/work/
 
 summary: "Social Security's Ticket to Work Program supports career development for Social Security disability beneficiaries age 18 through 64 who want to work."
 

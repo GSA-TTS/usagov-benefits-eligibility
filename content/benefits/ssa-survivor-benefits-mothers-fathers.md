@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/forms/ssa-5.html"
+  link: https://www.ssa.gov/forms/ssa-5.html
 
 summary: "Social Security survivors benefits might be available the person providing care for the deceased worker's child."
 
@@ -18,7 +18,7 @@ eligibility:
 - criteriaKey: applicant_care_for_child
   acceptableValues: [true]
 - criteriaKey: applicant_marital_status
-  acceptableValues: ["unmarried", "widowed"]
+  acceptableValues: ["unmarried", "widowed", "divorced"]
 - criteriaKey: applicant_citizen_status
   acceptableValues: [true]
 

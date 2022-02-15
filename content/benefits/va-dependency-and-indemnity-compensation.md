@@ -8,7 +8,7 @@ lifeEvents:
 - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: "https://www.va.gov/disability/dependency-indemnity-compensation/"
+  link: https://www.va.gov/disability/dependency-indemnity-compensation/
 
 summary: "Tax-free financial assistance may be available to surviving family members of a service member or a veteran."
 

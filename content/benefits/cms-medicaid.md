@@ -8,7 +8,7 @@ lifeEvents:
 - "pregnancy-and-baby"
 source:
   name: "Centers for Medicare and Medicaid"
-  link: "https://www.medicaid.gov/"
+  link: https://www.medicaid.gov/
 
 summary: "Health insurance for eligible low-income adults, children, pregnant women, elderly adults, and people with disabilities."
 
