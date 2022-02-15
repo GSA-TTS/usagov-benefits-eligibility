@@ -16,7 +16,7 @@ applicant_funeral_reimbursment,You were NOT reimbursed for the funeral/burial co
 applicant_relationship,Your relationship to the deceased is,select,spouse; child; parent; other family member; personal or official representative,
 applicant_date_of_birth,Your date of birth is,boolean,TRUE,
 applicant_citizen_status,You are a U.S. citizen or eligible non-citizen.,boolean,TRUE,
-applicant_marital_status,Your marital status is,radio,now married; unmarried; widowed; divorced,
+applicant_marital_status,Your marital status is,radio,not applicable; now married; unmarried; widowed; divorced,
 applicant_care_for_child,You are caring for the child who is under age 16 or is disabled.,boolean,TRUE,
 applicant_declared_disaster,Your residence is in a declared disaster area.,boolean,TRUE,
 applicant_disability,You have a medically determinable physical or mental impairment (including an emotional or learning problem).,boolean,TRUE,
