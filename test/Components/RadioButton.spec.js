@@ -13,7 +13,8 @@ const MOCK_CRITERIA = {
     "was discharged under conditions other than dishonorable",
     "died while on active duty",
     "had retired from the service"
-  ]
+  ],
+  location: "left-rail"
 }
 
 describe("<Radio/>", () => {
@@ -82,5 +83,31 @@ describe("<Radio/>", () => {
     await choices.at(1).setChecked()
     expect(choices.at(1).element.value).toBe("died while on active duty")
     expect(actions.updateResponse).toHaveBeenCalled()
+  })
+
+  test("when radio is not applicable it must have correct styling", async () => {
+    const MOCK_RADIO_SELECTED = {
+      criteriaKey: "deceased_served_in_active_military",
+      label:
+        "The deceased served in the active military, naval, or air service and",
+      type: "radio",
+      values: [
+        "not applicable",
+        "was discharged under conditions other than dishonorable",
+        "died while on active duty",
+        "had retired from the service"
+      ],
+      location: "benefit-card",
+      response: "not applicable"
+    }
+
+    const wrapper = shallowMount(RadioButton, {
+      propsData: { ...MOCK_RADIO_SELECTED },
+      store
+    })
+    const choices = wrapper.findAll('input[type="radio"]')
+    await choices.at(1).setChecked()
+    expect(choices.at(1).element.value).toBe("not applicable")
+    expect(wrapper.find(".text-base").classes()).toContain("font-weight-normal")
   })
 })
