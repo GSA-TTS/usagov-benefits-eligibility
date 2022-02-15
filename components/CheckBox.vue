@@ -34,8 +34,8 @@ export default {
       default: "no label provided"
     },
     response: {
-      type: [Boolean, String],
-      default: false
+      type: [String, Object, Boolean],
+      default: "No response provided"
     },
     location: {
       type: String,

@@ -42,7 +42,7 @@ export default {
       default: () => []
     },
     response: {
-      type: [String, Object],
+      type: [String, Object, Boolean],
       default: "No response provided"
     },
     criteriaIndex: {
