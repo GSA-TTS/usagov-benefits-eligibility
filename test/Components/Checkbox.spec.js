@@ -72,7 +72,6 @@ describe("<CheckBox/>", () => {
     await wrapper.find(".usa-checkbox__input").setChecked()
     expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy()
     expect(actions.updateResponse).toHaveBeenCalled()
-    // TODO: should have class "text-success" when checked and matches response
   })
   test("when checkbox is selected it must have correct styling", async () => {
     const MOCK_CHECKBOX_SELECTED = {
