@@ -16,7 +16,7 @@ eligibilityCriteria:
       - applicant_degree_cerificate_program
       - applicant_citizen_status
    
-  - label: "Did you recently loose a family member?"
+  - label: "Did you recently lose a family member?"
     description: ""
     criteriaGroupKey: deceased
     criteriaKeys:
