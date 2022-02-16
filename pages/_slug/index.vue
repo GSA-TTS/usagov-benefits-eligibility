@@ -181,8 +181,7 @@ export default {
       .sortBy("title")
       .fetch();
 
-    const allEligibilityCriteria = (await this.$content("criteria").fetch())
-      .body;
+    const allEligibilityCriteria = (await this.$content("criteria").fetch()).body;
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
 
     lifeEvent.related = [];
