@@ -20,7 +20,7 @@ eligibilityCriteria:
       - applicant_served_in_active_military
       - applicant_citizen_status
 
-  - label: "Did you recently loose a family member?"
+  - label: "Did you recently lose a family member?"
     description: ""
     criteriaGroupKey: deceased
     criteriaKeys:
