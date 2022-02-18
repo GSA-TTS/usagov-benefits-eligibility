@@ -1,20 +1,37 @@
-FROM node:14
+ARG IMAGE_NAME=node
+ARG IMAGE_TAG=14
+ARG APPHOME=/usr/src/app
+ARG HOST=0.0.0.0
+ARG PORT=3000
+ARG NODE_ENVIRONMENT=production
 
-RUN mkdir -p /usr/src/app
+FROM ${IMAGE_NAME}:${IMAGE_TAG}
 
-ENV NODE_ENV=production
-COPY package.json /usr/src/app/
-COPY package-lock.json /usr/src/app/
+ARG IMAGE_NAME
+ARG IMAGE_TAG
+ARG APPHOME
+ARG HOST
+ARG PORT
+ARG NODE_ENVIRONMENT
 
-WORKDIR /usr/src/app
+RUN mkdir -p ${APPHOME}
+
+WORKDIR ${APPHOME}
+
+COPY . ${APPHOME}
+
 RUN npm set unsafe-perm true \
   && npm install
 
-COPY . /usr/src/app/
+ENV NODE_ENV=${NODE_ENVIRONMENT}
+
+COPY . ${APPHOME}
+
 RUN npm run build
 
-EXPOSE 3000
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3000
+ENV HOST=${HOST}
+EXPOSE ${PORT}
+ENV NUXT_HOST=${HOST}
+ENV NUXT_PORT=${PORT}
 
 CMD ["npm", "run", "dev"]
