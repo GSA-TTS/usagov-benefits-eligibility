@@ -7,11 +7,8 @@
         class="margin-bottom-4 border-bottom border-gray-30 border-width-2px break-inside-avoid"
       >
         <h2
+          class="font-heading-lg font-family-sans text-bold margin-top-0"
           :class="{
-            'font-heading-lg': true,
-            'font-family-sans': true,
-            'text-bold': true,
-            'margin-top-0': true,
             'criteria-group-empty': hasNoResponses(
               getCriteriaMap(criteriaGroup.criteriaKeys)
             )
