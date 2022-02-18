@@ -2,13 +2,15 @@ FROM node:14
 
 RUN mkdir -p /usr/src/app
 
+ENV NODE_ENV=production
+COPY package.json /usr/src/app/
+COPY package-lock.json /usr/src/app/
+
 WORKDIR /usr/src/app
+RUN npm set unsafe-perm true \
+  && npm install
 
-COPY . /usr/src/app
-
-RUN apt-get update
-
-RUN npm install
+COPY . /usr/src/app/
 RUN npm run build
 
 EXPOSE 3000
