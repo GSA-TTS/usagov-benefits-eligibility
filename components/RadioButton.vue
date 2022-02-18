@@ -1,8 +1,19 @@
 <template>
   <fieldset class="usa-fieldset">
-    <legend class="usa-legend usa-legend" :class="selectedStyle">
-      {{ label }}
-    </legend>
+    <template v-if="location === 'left-rail'">
+      <legend class="usa-legend usa-legend text-bold">
+        {{ label }}
+      </legend>
+    </template>
+    <template v-else>
+      <legend
+        class="usa-legend usa-legend"
+        :class="selectedStyle"
+        style="font-weight: inherit"
+      >
+        {{ label }}
+      </legend>
+    </template>
     <template v-for="(value, index) in values">
       <div
         v-if="location === 'benefit-card' && index === 0"
@@ -108,10 +119,6 @@ export default {
 <style scoped>
 .usa-radio {
   background: transparent;
-}
-
-.usa-legend {
-  font-weight: inherit;
 }
 
 .font-weight-normal {
