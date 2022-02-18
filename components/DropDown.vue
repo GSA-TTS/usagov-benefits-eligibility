@@ -1,13 +1,25 @@
 <template>
   <fieldset class="usa-fieldset">
-    <label
-      :class="{ 'usa-label': true, 'margin-top-0': true }"
-      :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
-      >{{ label }}</label
-    >
+    <template v-if="location === 'left-rail'">
+      <label
+        class="usa-label margin-top-0 text-bold"
+        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
+      >
+        {{ label }}
+      </label>
+    </template>
+    <template v-else>
+      <label
+        class="usa-label margin-top-0"
+        style="font-weight: inherit"
+        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
+      >
+        {{ label }}
+      </label>
+    </template>
     <select
       :id="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
-      :class="{ 'usa-select': true }"
+      class="usa-select"
       :name="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       @change="updateEligibilitySelected($event, criteriaKey)"
     >
@@ -75,10 +87,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.usa-label,
-.usa-legend {
-  font-weight: inherit;
-}
-</style>

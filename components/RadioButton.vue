@@ -6,11 +6,7 @@
       </legend>
     </template>
     <template v-else>
-      <legend
-        class="usa-legend usa-legend"
-        :class="selectedStyle"
-        style="font-weight: inherit"
-      >
+      <legend class="usa-legend usa-legend" :class="selectedStyle">
         {{ label }}
       </legend>
     </template>
@@ -92,12 +88,13 @@ export default {
   computed: {
     selectedStyle() {
       if (
-        this.location === "benefit-card" &&
-        this.response === "not applicable"
+        (this.location === "benefit-card" &&
+          this.response === "not applicable") ||
+        typeof this.response === "object"
       ) {
         return "text-base text-normal font-weight-normal"
       }
-      return null
+      return "text-bold"
     }
   },
   mounted() {
