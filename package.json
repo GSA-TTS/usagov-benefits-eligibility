@@ -27,7 +27,7 @@
     "ansi-html": "github:gebhardtr/ansi-html#25ca3089b6cb0ff785b76e21643e51f2d3570f0b",
     "ansi-regex": ">=5.0.1",
     "axios": "^0.26.0",
-    "core-js": "^3.21.0",
+    "core-js": "^3.21.1",
     "glob-parent": ">=6.0.2",
     "nth-check": ">=2.0.1",
     "nuxt": "^2.15.8",
