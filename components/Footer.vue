@@ -124,7 +124,7 @@
         </div>
       </div>
       <div class="usa-footer__secondary-section padding-y-1">
-        <div class="grid-container">
+        <div class="grid-container margin-y-2">
           <div
             class="display-flex flex-row flex-justify tablet:flex-justify-end"
           >
