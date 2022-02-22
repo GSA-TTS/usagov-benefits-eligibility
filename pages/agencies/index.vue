@@ -3,11 +3,16 @@
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
-          <h1 class="font-heading-1xl margin-top-0 text-secondary">
+          <h1
+            class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary"
+          >
             Benefits by agency
           </h1>
-          <p class="usa-intro">
-            If you know the federal agency that provides a specific benefit, select it below.
+          <p
+            class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6"
+          >
+            If you know the federal agency that provides a specific benefit,
+            select it below.
           </p>
         </div>
       </div>
@@ -19,13 +24,22 @@
               v-for="agency in mapAgencies(agencies)"
               :key="agency.slug"
               class="usa-card desktop:grid-col-6"
-              :aria-label="agency.title">
-              <nuxt-link :to="`/agencies/${agency.slug}`" class="display-block height-full margin-x-1" style="text-decoration:none; outline-offset: .25rem;">
+              :aria-label="agency.title"
+            >
+              <nuxt-link
+                :to="`/agencies/${agency.slug}`"
+                class="display-block height-full margin-x-1"
+                style="text-decoration: none; outline-offset: 0.25rem"
+              >
                 <Card
                   card-title-heading-level="h2"
                   :card-title="agency.title"
                   :card-body="agency.summary"
-                  :card-container-classes="['hover:border-base-light', 'margin-x-0']"/>
+                  :card-container-classes="[
+                    'hover:border-base-light',
+                    'margin-x-0',
+                  ]"
+                />
               </nuxt-link>
             </li>
           </ul>
@@ -36,23 +50,21 @@
 </template>
 
 <script>
-import _ from 'lodash';
+import _ from "lodash";
 
 export default {
   layout: "default",
-  async asyncData ({ $content }) {
-    const contentAgencyList = await $content('agencies').fetch();
+  async asyncData({ $content }) {
+    const contentAgencyList = await $content("agencies").fetch();
     const contentAgencies = {};
     for (const a of contentAgencyList) {
       contentAgencies[_.kebabCase(a.slug)] = a;
     }
 
     const agencies = _.chain(
-      await $content("benefits")
-        .only(['source'])
-        .fetch()
+      await $content("benefits").only(["source"]).fetch()
     )
-      .map(benefit => benefit.source.name)
+      .map((benefit) => benefit.source.name)
       .flatten()
       .uniq()
       .compact()
@@ -61,21 +73,21 @@ export default {
 
     return { agencies, contentAgencies };
   },
-  data () {
+  data() {
     return {
       agencies: [],
       contentAgencies: {},
     };
   },
   /* istanbul ignore next */
-  head () {
+  head() {
     return {
-      title: 'Benefits by agency',
+      title: "Benefits by agency",
     };
   },
   methods: {
     kebabCase: _.kebabCase,
-    mapAgencies (agencies) {
+    mapAgencies(agencies) {
       return agencies.map((agency) => {
         const slug = _.kebabCase(agency);
         if (this.contentAgencies[slug]) {
