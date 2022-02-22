@@ -111,7 +111,7 @@
           <em class="usa-logo__text display-flex flex-align-center">
             <nuxt-link to="/" title="USAGov Logo" aria-label="USAGov Logo">
               <img
-                class="circle-5 desktop:circle-10 margin-right-2"
+                class="circle-5 desktop:circle-10 margin-right-2 tablet:margin-right-1"
                 src="~/assets/img/logo-img-usagov.png"
                 alt="USAGov Logo"
               />

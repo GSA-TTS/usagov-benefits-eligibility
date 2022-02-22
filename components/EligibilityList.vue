@@ -23,8 +23,8 @@
         <li
           v-for="criterion in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
-          class="usa-icon-list__item grid-col-6 padding-bottom-2"
-          style="padding-top: 0; padding-left: 1.25rem;"
+          class="usa-icon-list__item tablet:grid-col-6 padding-bottom-2"
+          style="padding-top: 0; padding-left: 1.25rem"
         >
           <div
             :class="[
@@ -32,24 +32,22 @@
               'print:display-none',
               {
                 'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true
+                  doesCriterionMatchSelection(criterion) === true,
               },
               {
                 'text-base-light':
-                  doesCriterionMatchSelection(criterion) === null
+                  doesCriterionMatchSelection(criterion) === null,
               },
               {
                 'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false
-              }
+                  doesCriterionMatchSelection(criterion) === false,
+              },
             ]"
           >
             <svg
               v-if="showIcons"
               class="usa-icon"
-              :aria-labelledby="
-                `eligibility-icon-${criterion.criteriaKey}-title-${_uid}`
-              "
+              :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img"
             >
               <title
@@ -86,9 +84,7 @@
             <svg
               v-else
               class="usa-icon"
-              :aria-labelledby="
-                `eligibility-icon-${criterion.criteriaKey}-title-${_uid}`
-              "
+              :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img"
             >
               <use xlink:href="~/assets/img/sprite.svg#check_circle" />
@@ -101,16 +97,16 @@
               'print:display-inline',
               {
                 'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true
+                  doesCriterionMatchSelection(criterion) === true,
               },
               {
                 'text-base-light':
-                  doesCriterionMatchSelection(criterion) === null
+                  doesCriterionMatchSelection(criterion) === null,
               },
               {
                 'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false
-              }
+                  doesCriterionMatchSelection(criterion) === false,
+              },
             ]"
           >
             <svg v-if="showIcons" class="usa-icon" role="img">
@@ -130,9 +126,7 @@
             <svg
               v-else
               class="usa-icon"
-              :aria-labelledby="
-                `eligibility-icon-${criterion.criteriaKey}-title-${_uid}`
-              "
+              :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img"
             >
               <use
@@ -146,20 +140,20 @@
               'usa-icon-list__content',
               {
                 'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true
+                  doesCriterionMatchSelection(criterion) === true,
               },
               {
                 'text-base-dark':
-                  doesCriterionMatchSelection(criterion) === null
+                  doesCriterionMatchSelection(criterion) === null,
               },
               {
                 'print:text-base-darker':
-                  doesCriterionMatchSelection(criterion) === null
+                  doesCriterionMatchSelection(criterion) === null,
               },
               {
                 'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false
-              }
+                  doesCriterionMatchSelection(criterion) === false,
+              },
             ]"
           >
             <span>
@@ -205,31 +199,31 @@ export default {
       default: /* istanbul ignore next */ () => {
         return [
           {
-            criteriaKey: "error"
-          }
+            criteriaKey: "error",
+          },
         ];
-      }
+      },
     },
     benefitSource: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     headingClasses: {
       type: Array,
       required: false,
-      default: () => ["bg-base-lighter"]
+      default: () => ["bg-base-lighter"],
     },
     showIcons: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     showMatchingCount: {
       type: Boolean,
       required: false,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {};
@@ -239,18 +233,19 @@ export default {
       doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-      isCriterionSelected: "criteria/isCriterionSelected"
-    })
+      isCriterionSelected: "criteria/isCriterionSelected",
+    }),
   },
   methods: {
     formatArrayWithSeparator(array = [], lastSeparator = "or") {
       return array
         .join(", ")
         .replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);
-    }
-  }
+    },
+  },
 };
 </script>
+
 <style scoped>
 .usa-icon-list {
   max-width: none;
