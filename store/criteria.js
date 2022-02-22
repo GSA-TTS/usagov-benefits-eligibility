@@ -13,6 +13,8 @@ export const mutations = {
     // TODO: make sure the response matches one of the available criterion values
 
     Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response);
+    const hashedData = this.getters['criteria/getHashResponses'];
+    localStorage.setItem('responseData', JSON.stringify(hashedData));
   },
   preloadedResponse (state, { criteriaKeyHash, response }) {
     const criteriaKey = state.hashToCriteria[criteriaKeyHash];
@@ -24,11 +26,28 @@ export const mutations = {
   },
   populateCriterion (state, { criterion, hash }) {
     const criteriaKey = criterion.criteriaKey;
-    criterion.response = state.preloadedResponses[hash] != null ? state.preloadedResponses[hash] : null;
+
+    let val = null;
+    if(process.client && localStorage.getItem('responseData')){
+      const storedData = JSON.parse(localStorage.getItem('responseData'));
+      val = storedData[hash];
+    }
+    criterion.response = state.preloadedResponses[hash] != null ? state.preloadedResponses[hash] : val;
     criterion.criteriaKeyHash = hash;
     Vue.set(state.eligibilityCriteria, criteriaKey, criterion);
     Vue.set(state.hashToCriteria, hash, criteriaKey);
+
+   // localStorage.setItem('responseData', JSON.stringify(hash));
   },
+
+  clearSelectedCriteria (state){
+    //  todo quicker to loop through hash values only??
+    for(const criteriaKey in state.eligibilityCriteria){
+      Vue.set(state.eligibilityCriteria[criteriaKey], 'response', null);
+    }
+    localStorage.setItem('responseData', JSON.stringify({}));
+  },
+
 }
 
 export const getters = {
@@ -85,5 +104,9 @@ export const actions = {
       const hash = await stringToHash(criteriaKey);
       commit('populateCriterion', { criterion, hash })
     }
+  },
+
+  clear ({ commit, state }, criteriaArray = []) {
+    commit('clearSelectedCriteria', { })
   },
 };

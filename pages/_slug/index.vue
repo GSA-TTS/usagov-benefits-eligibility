@@ -37,6 +37,8 @@
             <button class="usa-button usa-button--unstyled open-all" aria-controls="acc-id" @click="openAll">Open All</button>
             /
             <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">Close All</button>
+            /
+            <button class="usa-button usa-button--unstyled " aria-controls="acc-id" @click="clearCriteria">Clear Criteria</button>
           </div>
         </div>
         <div class="grid-col margin-y-2 text-right">
@@ -97,7 +99,7 @@
                 </svg>
               </div>
               <div class="font-body-md usa-icon-list">
-                {{ lifeEvent.eligibilityCriteriaDescription }}
+                 {{ lifeEvent.eligibilityCriteriaDescription }}
               </div>
             </div>
             <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
@@ -204,7 +206,7 @@ export default {
     },
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria"
+      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria",
     }),
     ...mapState({
       eligibilityCriteria: state => state.criteria.eligibilityCriteria
@@ -226,6 +228,12 @@ export default {
     this.$root.$on("tag:click", this.tagClick);
   },
   methods: {
+
+    clearCriteria () {
+      console.log("clear me");
+      this.$store.dispatch('criteria/clear')
+    },
+
     getVirtualCriteria () {
       const lifeEventCriteria = Object.fromEntries(
         this.lifeEvent.eligibilityCriteria
