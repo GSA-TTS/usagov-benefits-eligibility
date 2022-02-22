@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "command": "npm run dev",
+            "name": "Run Dev Server",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "npm install",
+            "name": "NPM Install",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "npm run build",
+            "name": "Build Site",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "npm run start",
+            "name": "Run Prod Site",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "npm run lint",
+            "name": "Run Lint",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "npm run test",
+            "name": "Run Tests",
+            "request": "launch",
+            "type": "node-terminal"
+        }
+    ]
+}
