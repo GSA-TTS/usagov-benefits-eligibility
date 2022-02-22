@@ -9,7 +9,10 @@
           >
             {{ lifeEvent.secondaryHeadline }}
           </h1>
-          <p v-if="lifeEvent.lede" class="usa-intro">
+          <p
+            v-if="lifeEvent.lede"
+            class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6"
+          >
             {{ lifeEvent.lede }}
           </p>
           <ol class="usa-process-list">
@@ -134,7 +137,9 @@
             <share-results @print="openAll()" />
           </div>
         </div>
-        <div class="tablet:grid-col-7 desktop:grid-col-8 print:display-block">
+        <div
+          class="margin-top-2 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block"
+        >
           <div
             class="grid-row grid-gap display-none print:display-block break-before-always"
           >
