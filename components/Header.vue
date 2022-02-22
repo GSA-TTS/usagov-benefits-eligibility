@@ -127,39 +127,6 @@
           </em>
         </div>
         <button class="usa-menu-btn print:display-none">Menu</button>
-
-        <div class="usa-nav__secondary display-none desktop:display-block">
-          <ul class="usa-nav__secondary-links">
-            <li class="usa-nav__secondary-item">
-              <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
-            </li>
-          </ul>
-          <form class="usa-search" role="search">
-            <label class="usa-sr-only" for="extended-search-field-small"
-              >Search small</label
-            >
-            <input
-              id="extended-search-field-small"
-              ref="search"
-              class="usa-input"
-              type="search"
-              name="search"
-              :value="query"
-            />
-            <button class="usa-button" type="submit" @click="doSearch">
-              <span class="usa-sr-only">Search</span>
-              <svg
-                class="usa-icon text-middle usa-icon--size-3"
-                aria-hidden="true"
-                focusable="false"
-                role="img"
-              >
-                <use xlink:href="~/assets/img/sprite.svg#search" />
-              </svg>
-              <!-- <span class="text-middle">Share my selections</span> -->
-            </button>
-          </form>
-        </div>
       </div>
       <nav aria-label="Primary navigation" class="usa-nav print:display-none">
         <div class="usa-nav__inner">
@@ -170,6 +137,38 @@
               alt="close"
             />
           </button>
+          <div class="usa-nav__secondary">
+            <ul class="usa-nav__secondary-links">
+              <li class="usa-nav__secondary-item">
+                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
+              </li>
+            </ul>
+            <form class="usa-search" role="search">
+              <label class="usa-sr-only" for="extended-search-field-small"
+                >Search small</label
+              >
+              <input
+                id="extended-search-field-small"
+                ref="search"
+                class="usa-input"
+                type="search"
+                name="search"
+                :value="query"
+              />
+              <button class="usa-button" type="submit" @click="doSearch">
+                <span class="usa-sr-only">Search</span>
+                <svg
+                  class="usa-icon text-middle usa-icon--size-3"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <use xlink:href="~/assets/img/sprite.svg#search" />
+                </svg>
+                <!-- <span class="text-middle">Share my selections</span> -->
+              </button>
+            </form>
+          </div>
           <ul class="usa-nav__primary usa-accordion">
             <li v-if="isLifeEventPage" class="usa-nav__primary-item">
               <nuxt-link to="/" class="usa-nav__link">
