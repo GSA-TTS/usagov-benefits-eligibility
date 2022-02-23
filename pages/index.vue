@@ -9,7 +9,7 @@
             {{ landingPage.title }}
           </h1>
           <p
-            class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6 usa-intro"
+            class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6"
           >
             {{ landingPage.summary }}
           </p>
