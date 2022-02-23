@@ -92,10 +92,10 @@ describe("<Radio/>", () => {
         "The deceased served in the active military, naval, or air service and",
       type: "radio",
       values: [
-        "not applicable",
         "was discharged under conditions other than dishonorable",
         "died while on active duty",
-        "had retired from the service"
+        "had retired from the service",
+        "not applicable"
       ],
       location: "benefit-card",
       response: "not applicable"
@@ -106,8 +106,10 @@ describe("<Radio/>", () => {
       store
     })
     const choices = wrapper.findAll('input[type="radio"]')
-    await choices.at(1).setChecked()
-    expect(choices.at(1).element.value).toBe("not applicable")
+    await choices.at(0).setChecked()
+    expect(choices.at(0).element.value).toBe(
+      "was discharged under conditions other than dishonorable"
+    )
     expect(wrapper.find(".text-base").classes()).toContain("font-weight-normal")
   })
 })
