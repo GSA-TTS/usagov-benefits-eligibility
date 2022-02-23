@@ -34,7 +34,7 @@
               :type="criterion.type"
               :criteria-group-key="criteriaGroup.criteriaGroupKey"
               :response="criterion.response"
-              class="margin-y-2"
+              class="margin-y-2 tablet:margin-y-3"
             />
           </template>
         </div>
