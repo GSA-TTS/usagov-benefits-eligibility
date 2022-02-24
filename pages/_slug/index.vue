@@ -36,7 +36,7 @@
           class="display-none tablet:display-block tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"
         ></div>
         <div
-          class="display-none tablet:display-flex tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-2 print:display-none"
+          class="tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-2 print:display-none"
         >
           <div>
             <button
