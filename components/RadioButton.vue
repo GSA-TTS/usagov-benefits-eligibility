@@ -11,7 +11,7 @@
       </legend>
     </template>
     <template v-for="(value, index) in values">
-      <div :key="value" class="usa-radio tablet:margin-left-05">
+      <div :key="value" class="usa-radio tablet:padding-left-1">
         <input
           :id="`${uniqueId}-${criteriaKey}-${value}`"
           class="usa-radio__input"
@@ -30,7 +30,7 @@
       <div
         v-if="location === 'benefit-card' && lastItem(index, values)"
         :key="`${value}-${naUniqueId}`"
-        class="usa-radio tablet:margin-left-05"
+        class="usa-radio tablet:padding-left-1"
       >
         <input
           :id="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`"
