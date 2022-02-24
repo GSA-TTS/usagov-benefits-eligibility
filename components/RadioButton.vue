@@ -1,7 +1,7 @@
 <template>
   <fieldset class="usa-fieldset">
     <template v-if="location === 'left-rail'">
-      <legend class="usa-legend usa-legend text-bold">
+      <legend class="usa-legend usa-legend text-bold tablet:padding-top-1">
         {{ label }}
       </legend>
     </template>

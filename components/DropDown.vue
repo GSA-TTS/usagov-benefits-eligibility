@@ -2,7 +2,7 @@
   <fieldset class="usa-fieldset">
     <template v-if="location === 'left-rail'">
       <label
-        class="usa-label margin-top-0 text-bold"
+        class="usa-label margin-top-0 tablet:padding-top-1 text-bold"
         :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       >
         {{ label }}
