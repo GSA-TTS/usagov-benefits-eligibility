@@ -50,14 +50,14 @@ describe("CriteriaChild", () => {
       store,
       propsData: {
         criteriaKey: "key",
-        label:"bal bal",
-        type:"boolean",
-        values: ['true','false'],
-        criteriaGroupKey: "dummy",
+        label: "bal bal",
+        type: "boolean",
+        values: ["true", "false"],
+        criteriaGroupKey: "test-group-key",
         response: "balkajdflkjslf"
-      },
+      }
     })
-    expect(wrapper.find("label").text()).toBe("bal bal");
+    expect(wrapper.find("label").text()).toBe("bal bal")
   })
 
   test("test label using default", () => {
@@ -65,12 +65,12 @@ describe("CriteriaChild", () => {
       store,
       propsData: {
         criteriaKey: "myKey",
-        type:"boolean",
-        values: ['true','false'],
-        criteriaGroupKey: "dummy",
+        type: "boolean",
+        values: ["true", "false"],
+        criteriaGroupKey: "test-group-key",
         response: "balkajdflkjslf"
-      },
+      }
     })
-    expect(wrapper.find("label").text()).toBe('Key named "myKey" not found');
+    expect(wrapper.find("label").text()).toBe("No label provided")
   })
 })

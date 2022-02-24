@@ -5,6 +5,7 @@
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"
         :response="response"
+        location="left-rail"
       />
     </div>
 
@@ -15,7 +16,7 @@
         :values="values"
         :response="response"
         :criteria-index="criteriaGroupKey"
-        location="leftRail"
+        location="left-rail"
       />
     </div>
 
@@ -25,7 +26,7 @@
         :label="getCriterionLabel()"
         :values="values"
         :response="response"
-        location="leftRail"
+        location="left-rail"
       />
     </div>
   </div>
@@ -48,7 +49,8 @@ export default {
       default: "No key provided"
     },
     label: {
-      type: String
+      type: String,
+      default: "No label provided"
     },
     type: {
       type: String,
@@ -74,7 +76,9 @@ export default {
   },
   methods: {
     getCriterionLabel() {
-      return this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
+      return (
+        this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
+      )
     }
   }
 }

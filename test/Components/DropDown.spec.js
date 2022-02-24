@@ -68,7 +68,7 @@ describe("<DropDown/>", () => {
     expect(wrapper.find("label").text()).toBe(
       "The deceased served in the active military, naval, or air service and"
     )
-    expect(wrapper.find("option:checked").element.value).toBe("- Select -")
+    expect(wrapper.find("option:checked").element.value).toBeFalsy()
   })
 
   test("updates when a select criteria response changes", async () => {

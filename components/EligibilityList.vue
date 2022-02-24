@@ -53,6 +53,7 @@
                 :criteria-key="criterion.criteriaKey"
                 :label="getCriterionLabel(criterion)"
                 :response="doesCriterionMatchSelection(criterion)"
+                location="benefit-card"
               />
             </div>
 
@@ -68,7 +69,7 @@
                 :values="criterion.acceptableValues"
                 :response="getResponseByEligibilityKey(criterion.criteriaKey)"
                 :criteria-index="index"
-                location="benefitCard"
+                location="benefit-card"
               />
             </div>
 
@@ -83,7 +84,7 @@
                 :label="getCriterionLabel(criterion)"
                 :values="criterion.acceptableValues"
                 :response="getResponseByEligibilityKey(criterion.criteriaKey)"
-                location="benefitCard"
+                location="benefit-card"
               />
             </div>
           </div>
@@ -149,7 +150,10 @@ export default {
   },
   methods: {
     getCriterionLabel(criterion) {
-      return criterion.label || this.getCriterionByEligibilityKey(criterion.criteriaKey).label
+      return (
+        criterion.label ||
+        this.getCriterionByEligibilityKey(criterion.criteriaKey).label
+      )
     }
   }
 }

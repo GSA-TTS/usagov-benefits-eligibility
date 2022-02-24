@@ -1,17 +1,29 @@
 <template>
   <fieldset class="usa-fieldset">
-    <label
-      :class="{ 'usa-label': true, 'margin-top-0': true }"
-      :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
-      >{{ label }}</label
-    >
+    <template v-if="location === 'left-rail'">
+      <label
+        class="usa-label margin-top-0 tablet:padding-top-1 text-bold"
+        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
+      >
+        {{ label }}
+      </label>
+    </template>
+    <template v-else>
+      <label
+        class="usa-label margin-top-0"
+        style="font-weight: inherit"
+        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
+      >
+        {{ label }}
+      </label>
+    </template>
     <select
       :id="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
-      :class="{ 'usa-select': true }"
+      class="usa-select"
       :name="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       @change="updateEligibilitySelected($event, criteriaKey)"
     >
-      <option>- Select -</option>
+      <option :value="null">- Select -</option>
       <option
         v-for="option in values"
         :key="option"
@@ -42,17 +54,18 @@ export default {
       default: () => []
     },
     response: {
-      type: [String, Object],
+      type: [String, Object, Boolean],
       default: "No response provided"
     },
     criteriaIndex: {
       type: [Number, String],
       default: "no index provided"
     },
-    // TODO: may be helpful?
     location: {
-      type: String,
-      default: "No location provided"
+      default: "benefit-card",
+      validator: (value) => {
+        return ["left-rail", "benefit-card"].includes(value)
+      }
     }
   },
   data() {
@@ -74,10 +87,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.usa-label,
-.usa-legend {
-  font-weight: inherit;
-}
-</style>
