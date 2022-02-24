@@ -2,10 +2,10 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
-    parser: "babel-eslint"
+    parser: "babel-eslint",
   },
   extends: ["@nuxtjs", "plugin:nuxt/recommended", "prettier"],
   plugins: [],
@@ -24,44 +24,44 @@ module.exports = {
       "error",
       {
         singleline: {
-          max: 3
+          max: 3,
         },
         multiline: {
-          max: 3
-        }
-      }
+          max: 3,
+        },
+      },
     ],
     "vue/html-closing-bracket-newline": [
       "off",
       {
         singleline: "never",
-        multiline: "never"
-      }
+        multiline: "never",
+      },
     ],
     "vue/multi-word-component-names": [
       "warn",
       {
-        ignores: ["Accordion"]
-      }
+        ignores: ["Accordion"],
+      },
     ],
     "vue/html-self-closing": [
-      "error",
+      "warn",
       {
         html: {
           void: "any",
           normal: "any",
-          component: "any"
+          component: "any",
         },
         svg: "always",
-        math: "always"
-      }
+        math: "always",
+      },
     ],
     "vue/first-attribute-linebreak": [
-      "error",
+      "warn",
       {
         singleline: "ignore",
-        multiline: "below"
-      }
-    ]
-  }
-};
+        multiline: "below",
+      },
+    ],
+  },
+}
