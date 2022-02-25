@@ -21,18 +21,18 @@
           </ol>
         </div>
       </div>
-
-      <div role="complementary" class="grid-row grid-gap print:display-none">
+      <!-- Desktop meta sort and open -->
+      <div role="complementary" class="display-none tablet:display-flex grid-row grid-gap print:display-none">
         <div
           class="display-none tablet:display-block tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
         <div class="tablet:grid-col-4 desktop:grid-col-3 margin-y-2 print:display-none">
-          <div class="display-flex flex-align-center flex-justify-start flex-align-stretch">
-            <button class="usa-button usa-button--unstyled open-all height-5" aria-controls="acc-id" @click="openAll">
+          <div class="display-flex tablet:flex-column flex-align-center flex-justify-start">
+            <button class="usa-button usa-button--unstyled open-all height-6" aria-controls="acc-id" @click="openAll">
               Open All
             </button>
-            <span class="margin-left-2 height-5">/</span>
+
             <button
-              class="margin-left-2 usa-button usa-button--unstyled close-all height-5"
+              class="tablet:margin-left-2 usa-button usa-button--unstyled close-all height-6"
               aria-controls="acc-id"
               @click="closeAll">
               Close All
@@ -98,6 +98,37 @@
           </div>
         </div>
         <div class="margin-top-2 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
+          <!-- Mobile meta sort and open -->
+          <h2 class="tablet:display-none font-heading-lg margin-top-6">Benefits Results</h2>
+          <div role="complementary" class="display-flex tablet:display-none grid-row grid-gap print:display-none">
+            <div class="display-none print:display-none"></div>
+            <div class="tablet:grid-col margin-y-2">
+              <label role="status" class="usa-label display-inline margin-right-1" for="benefitSort"
+                >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
+              >
+              <select
+                id="benefitSort"
+                class="usa-select margin-left-auto width-card display-inline-block"
+                name="options"
+                @change="sortChange">
+                <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
+                <option value="title" :selected="sort === 'title'">Title (A-Z)</option>
+              </select>
+            </div>
+            <div class="tablet:grid-col-4 desktop:grid-col-3 margin-y-2 print:display-none">
+              <div class="display-flex flex-align-center flex-justify-start flex-align-stretch">
+                <button class="usa-button open-all height-5" aria-controls="acc-id" @click="openAll">Open All</button>
+
+                <button
+                  class="usa-button usa-button--outline close-all height-5"
+                  aria-controls="acc-id"
+                  @click="closeAll">
+                  Close All
+                </button>
+              </div>
+            </div>
+          </div>
+
           <div class="grid-row grid-gap display-none print:display-block break-before-always">
             <div class="grid-col margin-bottom-3">
               <h2 class="display-none print:display-block">Benefits</h2>
@@ -288,5 +319,15 @@ export default {
 <style scoped>
 .benefit-list-move {
   transition: transform 2s;
+}
+
+/* 
+tablet and higher
+uswds breakpoints https://designsystem.digital.gov/utilities/layout-grid/
+*/
+@media only screen and (min-width: 640px) {
+  .usa-process-list > .usa-process-list__item:last-child {
+    padding-bottom: 0;
+  }
 }
 </style>
