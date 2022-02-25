@@ -23,23 +23,19 @@
       </div>
       <!-- Desktop meta sort and open -->
       <div role="complementary" class="display-none tablet:display-flex grid-row grid-gap print:display-none">
-        <div
-          class="display-none tablet:display-flex tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
-        <div class="tablet:grid-col-4 desktop:grid-col-3 margin-y-2 print:display-none">
-          <div class="display-flex tablet:flex-column flex-align-center flex-justify-start">
-            <button class="usa-button usa-button--unstyled open-all height-6" aria-controls="acc-id" @click="openAll">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
+        <div class="tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-2 print:display-none">
+          <div>
+            <button class="usa-button usa-button--unstyled open-all" aria-controls="acc-id" @click="openAll">
               Open All
             </button>
-
-            <button
-              class="tablet:margin-left-2 usa-button usa-button--unstyled close-all height-6"
-              aria-controls="acc-id"
-              @click="closeAll">
+            /
+            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">
               Close All
             </button>
           </div>
         </div>
-        <div class="tablet:grid-col margin-y-2 tablet:text-right">
+        <div class="grid-col margin-y-2 text-right">
           <label role="status" class="usa-label display-inline margin-right-1" for="benefitSort"
             >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
           >
