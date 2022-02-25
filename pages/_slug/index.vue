@@ -24,7 +24,7 @@
       <!-- Desktop meta sort and open -->
       <div role="complementary" class="display-none tablet:display-flex grid-row grid-gap print:display-none">
         <div
-          class="display-none tablet:display-block tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
+          class="display-none tablet:display-flex tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
         <div class="tablet:grid-col-4 desktop:grid-col-3 margin-y-2 print:display-none">
           <div class="display-flex tablet:flex-column flex-align-center flex-justify-start">
             <button class="usa-button usa-button--unstyled open-all height-6" aria-controls="acc-id" @click="openAll">
