@@ -18,4 +18,6 @@ eligibility:
     acceptableValues: ["died while on active duty"]
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child", "parent", "other family member"]
+  - criteriaKey: luke_date_key
+    acceptableValues: ["=11-14-1999"]
 ---

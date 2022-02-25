@@ -35,6 +35,30 @@ export const mutations = {
 }
 
 export const getters = {
+  doesCriterionDateMatch: (state, getter) => (criterion) => {
+    if (
+      !getters.isCriterionSelected(criterion) || !criterion.acceptableValues
+    ) {
+      return null
+    }
+    // need to check the date
+    const operator = criterion.acceptableValues[0][0]
+    const acceptDate = Date.parse(criterion.acceptableValues[0].substring(1))
+    const responseDate = Date.parse(getters.getResponseByEligibilityKey(state)(criterion.criteriaKey))
+    if (isNaN(responseDate)) {
+      return null
+    }
+    switch (operator) {
+      case "=":
+        return responseDate === acceptDate
+      case ">":
+        return responseDate > acceptDate
+      case "<":
+        return responseDate < acceptDate
+      default:
+        return null
+    }
+  },
   doesCriterionMatchSelection: (state, getters) => (criterion) => {
     if (
       !getters.isCriterionSelected(criterion) ||
@@ -42,11 +66,15 @@ export const getters = {
     ) {
       return null
     }
-    return !!criterion.acceptableValues.find(
-      (val) =>
-        val ===
-        getters.getCriterionByEligibilityKey(criterion.criteriaKey).response
-    )
+    if(getters.getCriterionByEligibilityKey(criterion.criteriaKey).type === 'date') {
+      return getters.doesCriterionDateMatch(criterion.criteriaKey)
+    } else {
+      return !!criterion.acceptableValues.find(
+        (val) =>
+          val ===
+          getters.getCriterionByEligibilityKey(criterion.criteriaKey).response
+      )
+    }    
   },
   getCriterionByEligibilityKey: (state) => (criteriaKey) => {
     return (

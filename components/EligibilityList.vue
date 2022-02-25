@@ -45,6 +45,22 @@
             <div
               v-if="
                 getCriterionByEligibilityKey(criterion.criteriaKey).type ===
+                'date'
+              "
+              class="usa-checkbox"
+            >
+              <DateInput
+                :criteria-key="criterion.criteriaKey"
+                :label="getCriterionLabel(criterion)"
+                :response="doesCriterionDateMatch(criterion)"
+                :date-response="getCriterionByEligibilityKey(criterion.criteriaKey)"
+                :location="benefit-card"
+              />
+            </div>
+
+            <div
+              v-if="
+                getCriterionByEligibilityKey(criterion.criteriaKey).type ===
                 'boolean'
               "
               class="usa-checkbox"
@@ -108,9 +124,10 @@ import { mapGetters } from "vuex"
 import RadioButton from "./RadioButton.vue"
 import DropDown from "./DropDown.vue"
 import CheckBox from "./CheckBox.vue"
+import DateInput from './DateInput.vue'
 
 export default {
-  components: { RadioButton, DropDown, CheckBox },
+  components: { RadioButton, DropDown, CheckBox, DateInput },
   props: {
     benefitEligibilityCriteria: {
       type: Array,
@@ -145,7 +162,8 @@ export default {
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       isCriterionSelected: "criteria/isCriterionSelected",
-      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey"
+      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey",
+      doesCriterionDateMatch: "criteria/doesCriterionDateMatch"
     })
   },
   methods: {
