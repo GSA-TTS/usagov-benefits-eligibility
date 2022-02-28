@@ -8,7 +8,7 @@ lifeEvents:
 - "retirement"
 source:
   name: "Centers for Medicare and Medicaid"
-  link: "https://www.medicare.gov/sign-up-change-plans/get-started-with-medicare"
+  link: https://www.medicare.gov/sign-up-change-plans/get-started-with-medicare
 
 summary: "Health insurance program for Americans aged 65 and older, and for people with disabilities."
 

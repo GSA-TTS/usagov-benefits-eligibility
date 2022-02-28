@@ -8,7 +8,7 @@ lifeEvents:
 - "loss-of-job-and-low-income"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/disability/apply-child.html"
+  link: https://www.ssa.gov/benefits/disability/apply-child.html
 
 summary: "Provides financial assistance to older, blind, and people with disabilities to help meet basic needs for food, clothing, and shelter."
 

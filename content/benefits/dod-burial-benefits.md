@@ -8,7 +8,7 @@ lifeEvents:
   - "military-service"
 source:
   name: "Department of Defense"
-  link: "https://www.dcms.uscg.mil/Portals/10/CG-1/PSC/PSD/docs/SurvivorsGuide2015.pdf?ver=2017-03-24-132033-397"
+  link: https://www.dcms.uscg.mil/Portals/10/CG-1/PSC/PSD/docs/SurvivorsGuide2015.pdf?ver=2017-03-24-132033-397
 
 summary: "Assistance transporting and intering your loved one may be available, as well as travel support for the surviving spouse, children, and immediate family members of the service member."
 

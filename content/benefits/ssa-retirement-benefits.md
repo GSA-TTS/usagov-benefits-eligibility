@@ -8,7 +8,7 @@ lifeEvents:
 - "late-adulthood"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/retirement/"
+  link: https://www.ssa.gov/benefits/retirement/
 
 summary: "Social Security is part of the retirement plan for almost every American worker. It provides replacement income for qualified retirees and their families."
 

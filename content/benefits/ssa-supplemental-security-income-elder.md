@@ -9,7 +9,7 @@ lifeEvents:
 - "late-adulthood"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/ssi/65older.html"
+  link: https://www.ssa.gov/benefits/ssi/65older.html
 
 summary: "Provides financial assistance to older, blind, and people with disabilities to help meet basic needs for food, clothing, and shelter."
 

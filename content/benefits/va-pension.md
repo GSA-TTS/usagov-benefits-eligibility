@@ -9,7 +9,7 @@ lifeEvents:
   - "disability"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: "https://www.va.gov/pension/how-to-apply/"
+  link: https://www.va.gov/pension/how-to-apply/
 
 summary: "Monthly payments to wartime veterans who meet certain age or disability requirements, and who have income and net worth within certain limits."
 
