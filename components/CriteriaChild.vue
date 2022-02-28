@@ -8,6 +8,16 @@
         location="left-rail"
       />
     </div>
+   
+    <div v-if="type === 'date'" :key="criteriaKey">
+      <DateInput
+        :criteria-key="criteriaKey"
+        :label="getCriterionLabel()"
+        :response="doesCriterionDateMatch(getCriterionByEligibilityKey(criteriaKey))"
+        :date-response="getCriterionByEligibilityKey(criteriaKey).response"
+        :location="benefit-card"
+      />
+    </div>
 
     <div v-if="type === 'select'" :key="criteriaKey">
       <DropDown
@@ -71,7 +81,9 @@ export default {
   },
   computed: {
     ...mapGetters({
-      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey"
+      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
+      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey",
+      doesCriterionDateMatch: "criteria/doesCriterionDateMatch"
     })
   },
   methods: {

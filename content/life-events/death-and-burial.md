@@ -16,6 +16,7 @@ eligibilityCriteria:
       - deceased_died_of_COVID
       - deceased_death_location_is_US
       - deceased_public_safety_officer
+      - applicant_eligible_senior
 
   - label: "About the deceased's military service"
     description: ""

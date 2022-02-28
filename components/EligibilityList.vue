@@ -53,7 +53,7 @@
                 :criteria-key="criterion.criteriaKey"
                 :label="getCriterionLabel(criterion)"
                 :response="doesCriterionDateMatch(criterion)"
-                :date-response="getCriterionByEligibilityKey(criterion.criteriaKey)"
+                :date-response="getCriterionByEligibilityKey(criterion.criteriaKey).response"
                 :location="benefit-card"
               />
             </div>

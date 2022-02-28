@@ -35,7 +35,7 @@ export const mutations = {
 }
 
 export const getters = {
-  doesCriterionDateMatch: (state, getter) => (criterion) => {
+  doesCriterionDateMatch: (state, getters) => (criterion) => {
     if (
       !getters.isCriterionSelected(criterion) || !criterion.acceptableValues
     ) {

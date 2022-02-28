@@ -1,13 +1,16 @@
 <template>
   <fieldset class="usa-fieldset">
     <legend 
-    :class="`usa-legend usa-legend--${response ? 'success': response == null ? 'empty': 'error'}`">{{label}}</legend>
+      :class="`usa-legend usa-legend--${response ? 'success': response == null ? 'empty': 'error'}`">
+      {{label}}
+    </legend>
     <div class="usa-memorable-date">
        <!-- lower margin of the label -->
       <div class="usa-form-group usa-form-group--month">
         <label 
           :class="`usa-label usa-label--${response ? 'success': 
-            response == null ? 'empty': 'error'}`" :for="`${uniqueId}-${criteriaKey}-month`">Month</label>
+            response == null ? 'empty': 'error'}`" 
+          :for="`${uniqueId}-${criteriaKey}-month`">Month</label>
         <input
           :class="`usa-input usa-input--${response ? 'success': 
             response == null ? 'empty': 'error'}`"
@@ -18,14 +21,15 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          :value="`${dateResponse.response.split('-')[0]}`"
+          :value="`${dateResponse !== null ? dateResponse.split('-')[0]: ''}`"
           @change="updateElibilityDate($event, criteriaKey)"
         />
       </div>
       <div class="usa-form-group usa-form-group--day">
         <label 
           :class="`usa-label usa-label--${response ? 'success': 
-            response == null ? 'empty': 'error'}`" :for="`${uniqueId}-${criteriaKey}-day`">Day</label>
+            response == null ? 'empty': 'error'}`" 
+          :for="`${uniqueId}-${criteriaKey}-day`">Day</label>
         <input
           :class="`usa-input usa-input--${response ? 'success': 
             response == null ? 'empty': 'error'}`"
@@ -36,14 +40,15 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          :value="`${dateResponse.response.split('-')[1]}`"
+          :value="`${dateResponse !== null ? dateResponse.split('-')[1]: ''}`"
           @change="updateElibilityDate($event, criteriaKey)"
         />
       </div>
       <div class="usa-form-group usa-form-group--year">
         <label 
           :class="`usa-label usa-label--${response ? 'success': 
-            response == null ? 'empty': 'error'}`" :for="`${uniqueId}-${criteriaKey}-year`">Year</label>
+            response == null ? 'empty': 'error'}`" 
+          :for="`${uniqueId}-${criteriaKey}-year`">Year</label>
         <input
           :class="`usa-input usa-input--${response ? 'success': 
             response == null ? 'empty': 'error'}`"
@@ -55,7 +60,7 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
-          :value="`${dateResponse.response.split('-')[2]}`"
+          :value="`${dateResponse !== null ? dateResponse.split('-')[2]: ''}`"
           @change="updateElibilityDate($event, criteriaKey)"
         />
       </div>
@@ -65,6 +70,7 @@
 
 <style scoped>
 .usa-legend {
+  font-weight: bold;
   margin-bottom: -0.6875rem;
 }
 
@@ -109,13 +115,6 @@ export default {
         dateResponse: {
           type: String,
           default: 'no response inputted'
-        },
-        location: {
-          type: String,
-          default: "benefit-card",
-          validator: (value) => {
-            return ["benefit-card", "left-rail"].includes(value)
-          }
         }
     },
     data() {
@@ -129,8 +128,8 @@ export default {
     methods: {
         updateElibilityDate (event, key) {
             // figure out date from 3 boxes
-            const month = document.getElementById(`${this.uniqueId}-${this.criteriaKey}-day`).value
-            const day = document.getElementById(`${this.uniqueId}-${this.criteriaKey}-month`).value
+            const month = document.getElementById(`${this.uniqueId}-${this.criteriaKey}-month`).value
+            const day = document.getElementById(`${this.uniqueId}-${this.criteriaKey}-day`).value
             const year = document.getElementById(`${this.uniqueId}-${this.criteriaKey}-year`).value
             if (
               month !== '' && 

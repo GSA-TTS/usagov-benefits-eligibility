@@ -66,9 +66,11 @@ describe('DateInput', () => {
     const monthInput = wrapper.find(`#${wrapper.vm.uniqueId}-${CRITERIA_KEY}-month`)
     monthInput.element.value = "01"
     monthInput.trigger('change')
+    expect(actions.updateResponse).toHaveNotBeenCalled()
     const dayInput = wrapper.find(`#${wrapper.vm.uniqueId}-${CRITERIA_KEY}-day`)
     dayInput.element.value = "01"
     dayInput.trigger('change')
+    expect(actions.updateResponse).toHaveNotBeenCalled()
     const yearInput = wrapper.find(`#${wrapper.vm.uniqueId}-${CRITERIA_KEY}-year`)
     yearInput.element.value = '2022'
     yearInput.trigger('change')
