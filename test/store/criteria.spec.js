@@ -100,5 +100,85 @@ describe("criteria", () => {
         expect(ret).toBe(0)
       })
     })
+    describe("doesCriterionDateMatch", () => {
+      it("should return false when criteria is not met", async () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: "applicant_senior_citizen",
+          criteriaKeyHash: "9e63db02",
+          type: "date",
+          acceptableValues: ['<60years', '>40years'],
+          response: '11-14-1900'
+        }
+        storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
+        const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
+        expect(ret).toBe(false)
+      })
+      it("should return true when criteria is passed (dynamic years)", async () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: "applicant_senior_citizen",
+          criteriaKeyHash: "9e63db02",
+          type: "date",
+          acceptableValues: ['<60years', '>40years'],
+          response: '11-14-1975'
+        }
+        storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
+        const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
+        expect(ret).toBe(true)
+      })   
+      it("should return true when criteria is passed (fixed years)", async () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: "applicant_senior_citizen",
+          criteriaKeyHash: "9e63db02",
+          type: "date",
+          acceptableValues: ['<01-01-1982', '>01-01-1962'],
+          response: '11-14-1975'
+        }
+        storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
+        const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
+        expect(ret).toBe(true)
+      }) 
+      it("should return true when criteria is passed (same date)", async () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: "applicant_senior_citizen",
+          criteriaKeyHash: "9e63db02",
+          type: "date",
+          acceptableValues: ['=11-14-1999'],
+          response: '11-14-1999'
+        }
+        storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
+        const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
+        expect(ret).toBe(true)
+      })   
+      it("should return true when criteria is passed (dynamic months)", async () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: "applicant_senior_citizen",
+          criteriaKeyHash: "9e63db02",
+          type: "date",
+          acceptableValues: ['<6months', '>4months'],
+          response: '09-14-2021'
+        }
+        storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
+        const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
+        expect(ret).toBe(true)
+      })
+      it("should return true when criteria is passed (dynamic days)", async () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: "applicant_senior_citizen",
+          criteriaKeyHash: "9e63db02",
+          type: "date",
+          acceptableValues: ['<30days', '>1days'],
+          response: '02-25-2022'
+        }
+        storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
+        const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
+        expect(ret).toBe(true)
+      })
+    })
   })
 })
