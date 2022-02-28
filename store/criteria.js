@@ -56,7 +56,13 @@ export const getters = {
     ) {
       return null
     }
-    let userInputDate = Date.parse(getters.getResponseByEligibilityKey(criterion.criteriaKey))
+    // need this to be swapped if passing in a state I.E. testing
+    let userInputDate = null
+    if(criterion.TEST) {
+      userInputDate = Date.parse(getters.getResponseByEligibilityKey(state)(criterion.criteriaKey))      
+    } else {
+      userInputDate = Date.parse(getters.getResponseByEligibilityKey(criterion.criteriaKey))
+    } 
     const DETERMINERS = ['months', 'days', 'years']
     let determiner = null
     let checkResult = null

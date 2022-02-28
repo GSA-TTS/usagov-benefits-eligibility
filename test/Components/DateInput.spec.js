@@ -63,18 +63,21 @@ describe('DateInput', () => {
         return obj
     } 
     const wrapper = shallowMount(DateInput, { propsData: PROPS_DATA, store})
-    const monthInput = wrapper.find(`#${wrapper.vm.uniqueId}-${CRITERIA_KEY}-month`)
+    console.log(wrapper.html())
+    const UID = wrapper.find('input').element.id.split(`-${CRITERIA_KEY}`)[0]
+    console.log(UID)
+    const monthInput = wrapper.find(`#${UID}-${CRITERIA_KEY}-month`)
     monthInput.element.value = "01"
     monthInput.trigger('change')
-    expect(actions.updateResponse).toHaveNotBeenCalled()
-    const dayInput = wrapper.find(`#${wrapper.vm.uniqueId}-${CRITERIA_KEY}-day`)
+    expect(actions.updateResponse.mock.calls.length).toBe(1)
+    const dayInput = wrapper.find(`#${UID}-${CRITERIA_KEY}-day`)
     dayInput.element.value = "01"
     dayInput.trigger('change')
-    expect(actions.updateResponse).toHaveNotBeenCalled()
-    const yearInput = wrapper.find(`#${wrapper.vm.uniqueId}-${CRITERIA_KEY}-year`)
+    expect(actions.updateResponse.mock.calls.length).toBe(2)
+    const yearInput = wrapper.find(`#${UID}-${CRITERIA_KEY}-year`)
     yearInput.element.value = '2022'
     yearInput.trigger('change')
-    expect(actions.updateResponse).toHaveBeenCalled()
+    expect(actions.updateResponse.mock.calls.length).toBe(3)
   })
 
 })

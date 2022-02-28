@@ -108,7 +108,8 @@ describe("criteria", () => {
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ['<60years', '>40years'],
-          response: '11-14-1900'
+          response: '11-14-1900',
+          TEST: true
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
@@ -121,7 +122,8 @@ describe("criteria", () => {
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ['<60years', '>40years'],
-          response: '11-14-1975'
+          response: '11-14-1975',
+          TEST: true
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
@@ -134,7 +136,8 @@ describe("criteria", () => {
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ['<01-01-1982', '>01-01-1962'],
-          response: '11-14-1975'
+          response: '11-14-1975',
+          TEST: true
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
@@ -147,7 +150,8 @@ describe("criteria", () => {
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ['=11-14-1999'],
-          response: '11-14-1999'
+          response: '11-14-1999',
+          TEST: true
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
@@ -160,7 +164,8 @@ describe("criteria", () => {
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ['<6months', '>4months'],
-          response: '09-14-2021'
+          response: '09-14-2021',
+          TEST: true
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
@@ -173,7 +178,8 @@ describe("criteria", () => {
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ['<30days', '>1days'],
-          response: '02-25-2022'
+          response: '02-25-2022',
+          TEST: true
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
