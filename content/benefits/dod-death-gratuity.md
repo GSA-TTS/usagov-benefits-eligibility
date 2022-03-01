@@ -18,5 +18,8 @@ eligibility:
   acceptableValues: ["died while on active duty"]
 - criteriaKey: applicant_relationship
   acceptableValues: ["spouse", "child", "parent", "other family member"]
+- criteriaKey: applicant_eligible_senior
+  #acceptableValues: ['<60years', '>40years']
+  acceptableValues: ['>01-01-1962', '<01-01-1982']
   
 ---

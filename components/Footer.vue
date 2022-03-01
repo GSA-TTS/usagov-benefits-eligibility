@@ -120,7 +120,6 @@
                 href="https://www.youtube.com/usagov1">
                 <img alt="YouTube"
                   src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJhMTAgMTAgMCAxMDEwIDEwQTEwIDEwIDAgMDAxMiAyem01Ljc1IDEyLjkxQTEuNDkgMS40OSAwIDAxMTYuNjkgMTZhMzQuNjUgMzQuNjUgMCAwMS00LjY5LjI2QTM0LjY1IDM0LjY1IDAgMDE3LjMxIDE2YTEuNDkgMS40OSAwIDAxLTEuMDYtMS4wNkExNS44OCAxNS44OCAwIDAxNiAxMmExNS44OCAxNS44OCAwIDAxLjI1LTIuOTFBMS40OSAxLjQ5IDAgMDE3LjMxIDggMzQuNjUgMzQuNjUgMCAwMTEyIDcuNzdhMzQuNjUgMzQuNjUgMCAwMTQuNjkuMjMgMS40OSAxLjQ5IDAgMDExLjA2IDEuMDZBMTUuODggMTUuODggMCAwMTE4IDEyYTE1Ljg4IDE1Ljg4IDAgMDEtLjI1IDIuOTF6Ii8+PHBhdGggZD0iTTEwLjc3IDEzLjc4TDEzLjkxIDEybC0zLjE0LTEuNzh2My41NnoiLz48L3N2Zz4=">
-                <span>YouTube</span>
               </a>
             </div>
 
