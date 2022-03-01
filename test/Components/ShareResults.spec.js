@@ -64,8 +64,8 @@ describe('ShareResults', () => {
 
     store.commit("criteria/updateResponse", { ...trueCriteria });
     await wrapper.vm.$nextTick();
-    expect(wrapper.find('button').attributes('disabled')).toBeUndefined();
-    await wrapper.find('button').trigger('click');
+    expect(wrapper.find('button.copy-selections').attributes('disabled')).toBeUndefined();
+    await wrapper.find('button.copy-selections').trigger('click');
     expect(window.navigator.clipboard.writeText).toHaveBeenCalledWith('http://localhost/?ae35859=1');
   });
 

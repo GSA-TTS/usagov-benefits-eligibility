@@ -29,7 +29,7 @@
         </span>
     </div>
     <div class="margin-bottom-1">
-      <button class="usa-button usa-button--outline width-card-lg bg-white" @click="copy">
+      <button class="usa-button usa-button--outline width-card-lg bg-white copy-selections" @click="copy">
         <svg class="usa-icon text-middle" aria-hidden="true" focusable="false"
           role="img">
           <use xlink:href="~/assets/img/sprite.svg#share"/>
