@@ -4,31 +4,53 @@ import stringToHash from "../services/stringToHash";
 export const state = () => ({
   eligibilityCriteria: {},
   hashToCriteria: {},
-  preloadedResponses: {},
 });
 
 export const mutations = {
   // payload must include a criteriaKey and the new response / selected value
   updateResponse (state, { criteriaKey, response }) {
     // TODO: make sure the response matches one of the available criterion values
-
     Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response);
+    const hashedData = getters.getHashResponses(state);
+    localStorage.setItem('responseData', JSON.stringify(hashedData));
   },
-  preloadedResponse (state, { criteriaKeyHash, response }) {
-    const criteriaKey = state.hashToCriteria[criteriaKeyHash];
-    if (state.eligibilityCriteria[criteriaKey] != null) {
-      Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response)
-    } else {
-      Vue.set(state.preloadedResponses, criteriaKeyHash, response);
+
+  preloadedResponses (state, { valueArray }) {
+    for(const param of valueArray){
+      const criteriaKey = state.hashToCriteria[param.criteriaKeyHash];
+      if (state.eligibilityCriteria[criteriaKey] != null) {
+        Vue.set(state.eligibilityCriteria[criteriaKey], 'response', param.response)
+      }
     }
+
+    const hashedData = getters.getHashResponses(state);
+    localStorage.setItem('responseData', JSON.stringify(hashedData));
   },
-  populateCriterion (state, { criterion, hash }) {
+
+
+  populateCriterion (state, { criterion, hash, storedData }) {
+
+    //TODO shouldn't have to load from storage every time here.
+    //populate action runs on server so it storeData wont be populated here on prod builds.
+    if(process.client && localStorage.getItem('responseData')){
+      storedData = JSON.parse(localStorage.getItem('responseData'));
+    }
+
     const criteriaKey = criterion.criteriaKey;
-    criterion.response = state.preloadedResponses[hash] != null ? state.preloadedResponses[hash] : null;
+    criterion.response = storedData[hash] ? storedData[hash] : null;
     criterion.criteriaKeyHash = hash;
+
     Vue.set(state.eligibilityCriteria, criteriaKey, criterion);
     Vue.set(state.hashToCriteria, hash, criteriaKey);
   },
+
+  clearSelectedCriteria (state) {
+    for(const criteriaKey in state.eligibilityCriteria){
+      Vue.set(state.eligibilityCriteria[criteriaKey], 'response', null);
+    }
+    localStorage.setItem('responseData', JSON.stringify({}));
+  },
+
 }
 
 export const getters = {
@@ -80,10 +102,20 @@ export const getters = {
 
 export const actions = {
   async populate ({ commit, state }, criteriaArray = []) {
+    let storedData = {};
+
+    if(process.client && localStorage.getItem('responseData')){
+       storedData = JSON.parse(localStorage.getItem('responseData'));
+    }
+
     for (const criterion of criteriaArray) {
       const criteriaKey = criterion.criteriaKey;
       const hash = await stringToHash(criteriaKey);
-      commit('populateCriterion', { criterion, hash })
+      commit('populateCriterion', { criterion, hash, storedData})
     }
+  },
+
+  clear ({ commit, state }, criteriaArray = []) {
+    commit('clearSelectedCriteria', { })
   },
 };
