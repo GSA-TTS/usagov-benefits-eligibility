@@ -11,11 +11,14 @@ export const mutations = {
   updateResponse (state, { criteriaKey, response }) {
     // TODO: make sure the response matches one of the available criterion values
     Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response);
-    const hashedData = getters.getHashResponses(state);;
+    const hashedData = getters.getHashResponses(state);
+
+    console.log("updateResponse hashed data", hashedData);
     localStorage.setItem('responseData', JSON.stringify(hashedData));
   },
 
   preloadedResponses (state, { valueArray }) {
+    console.log("preloadedResponses");
     for(const param of valueArray){
       const criteriaKey = state.hashToCriteria[param.criteriaKeyHash];
       if (state.eligibilityCriteria[criteriaKey] != null) {
@@ -24,11 +27,20 @@ export const mutations = {
     }
 
     const hashedData = getters.getHashResponses(state);
+    console.log("preloadedResponses hashed data", hashedData);
     localStorage.setItem('responseData', JSON.stringify(hashedData));
   },
 
 
   populateCriterion (state, { criterion, hash, storedData }) {
+
+    console.log("populateCriterion stored data", storedData);
+
+    if(process.client && localStorage.getItem('responseData')){
+      storedData = JSON.parse(localStorage.getItem('responseData'));
+    }
+    console.log("loaded... stored data", storedData);
+
     const criteriaKey = criterion.criteriaKey;
     criterion.response = storedData[hash] ? storedData[hash] : null;
     criterion.criteriaKeyHash = hash;
@@ -41,6 +53,7 @@ export const mutations = {
     for(const criteriaKey in state.eligibilityCriteria){
       Vue.set(state.eligibilityCriteria[criteriaKey], 'response', null);
     }
+    console.log("clearSelectedCriteria");
     localStorage.setItem('responseData', JSON.stringify({}));
   },
 
@@ -96,10 +109,12 @@ export const getters = {
 export const actions = {
   async populate ({ commit, state }, criteriaArray = []) {
     let storedData = {};
-
+    console.log("populate");
     if(process.client && localStorage.getItem('responseData')){
        storedData = JSON.parse(localStorage.getItem('responseData'));
     }
+
+    console.log("populate loaded stored data...", storedData);
 
     for (const criterion of criteriaArray) {
       const criteriaKey = criterion.criteriaKey;
