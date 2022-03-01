@@ -1,5 +1,4 @@
 <template>
-
   <div class="margin-bottom-4 print:display-none">
     <div class="margin-bottom-5 border-bottom border-base-lighter border-width-2px break-inside-avoid padding-bottom-4">
       <button class="usa-button usa-button--outline width-card-lg bg-white clear-selections" @click="clearCriteria">
