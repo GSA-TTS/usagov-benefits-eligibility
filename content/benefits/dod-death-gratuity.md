@@ -21,5 +21,6 @@ eligibility:
 - criteriaKey: applicant_eligible_senior
   #acceptableValues: ['<60years', '>40years']
   acceptableValues: ['>01-01-1962', '<01-01-1982']
-  
+- criteriaKey: applicant_disaster_zone
+  acceptableValues: ['28269']
 ---

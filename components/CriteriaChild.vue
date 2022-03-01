@@ -8,14 +8,23 @@
         location="left-rail"
       />
     </div>
-   
+    <div v-if="type === 'location'" :key="criteriaKey">
+      <LocationInput
+        :criteriaKey="criterion.criteriaKey"
+        :label="getCriterionLabel(criterion)"
+        :response="doesCriterionMatchSelection(criterion)"
+        location="benefit-card"
+      />
+    </div>
     <div v-if="type === 'date'" :key="criteriaKey">
       <DateInput
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"
-        :response="doesCriterionDateMatch(getCriterionByEligibilityKey(criteriaKey))"
+        :response="
+          doesCriterionDateMatch(getCriterionByEligibilityKey(criteriaKey))
+        "
         :date-response="getCriterionByEligibilityKey(criteriaKey).response"
-        :location="benefit-card"
+        location="left-rail"
       />
     </div>
 

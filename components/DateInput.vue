@@ -1,7 +1,7 @@
 <template>
   <fieldset class="usa-fieldset">
     <legend 
-      :class="`usa-legend usa-legend--${response ? 'success': response == null ? 'empty': 'error'}`">
+      :class="`usa-legend usa-legend--${response ? 'success': response == null ? 'empty': 'error'} ${selectedStyle}`">
       {{label}}
     </legend>
     <div class="usa-memorable-date">
@@ -70,7 +70,6 @@
 
 <style scoped>
 .usa-legend {
-  font-weight: bold;
   margin-bottom: -0.6875rem;
 }
 
@@ -115,12 +114,25 @@ export default {
         dateResponse: {
           type: String,
           default: 'no response inputted'
+        },
+        location: {
+          type: String,
+          default: "benefit-card",
+          validator: (value) => { return ['benefit-card', 'left-rail'].includes(value) }
         }
     },
     data() {
         return {
             uniqueId: _.uniqueId('dateinput-')
         }
+    },
+    computed: {
+      selectedStyle() {
+        if (this.location === "left-rail") {
+          return "text-bold"
+        }
+        return null
+      }
     },
     mounted() {
         this.uniqueId = _.uniqueId('dateinput-')
