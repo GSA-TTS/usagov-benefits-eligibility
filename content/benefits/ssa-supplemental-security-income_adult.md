@@ -20,6 +20,7 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: applicant_date_of_birth
   label: "You are 18 to 64 years old."
+  acceptableValues: [true]
 - criteriaKey: applicant_income
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
