@@ -90,7 +90,7 @@
                 </span>
               </div>
             </div>
-            <div class="margin-bottom-4 display-flex print:display-none">
+            <div class="margin-bottom-2 display-flex print:display-none">
               <div class="text-primary">
                 <svg class="usa-icon usa-icon--size-3" aria-labelledby="eligibility-section-criteria-icon-title" focusable="false"
                   role="img">
@@ -292,6 +292,7 @@ export default {
       });
       this.filter = tag;
       this.sortBenefits();
+      // eslint-disable-next-line vue/valid-next-tick
       setTimeout(() => (this.$nextTick(() => this.$refs.accordion.focus())), 250);
     },
     clearFilter () {

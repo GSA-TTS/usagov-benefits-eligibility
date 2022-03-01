@@ -1,10 +1,10 @@
 <template>
 
   <div class="margin-bottom-4 print:display-none">
-    <div class="margin-bottom-1">
+    <div class="margin-bottom-5 border-bottom border-base-lighter border-width-2px break-inside-avoid padding-bottom-4">
       <button class="usa-button usa-button--outline width-card-lg bg-white clear-selections" @click="clearCriteria">
         <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
-          <use xlink:href="~/assets/img/sprite.svg#close"/>
+          <use xlink:href="~/assets/img/sprite.svg#highlight_off"/>
         </svg>
         <span class="text-middle">Clear my selections</span>
       </button>
