@@ -1,8 +1,9 @@
-import { mount } from '@vue/test-utils'
+import {mount, shallowMount} from '@vue/test-utils'
 import Vuex from 'vuex';
 import ShareResults from '@/components/ShareResults.vue'
 import beforeAllTests from '@/test/beforeAllTests';
 import { state as criteriaState, mutations, getters, actions } from '~/store/criteria';
+import LifeEventPage from "~/pages/_slug";
 
 const MOCK_CRITERIA = [
   {
@@ -98,5 +99,16 @@ describe('ShareResults', () => {
     await wrapper.vm.$nextTick();
     jest.runAllTimers();
     jest.useRealTimers();
+  });
+
+  it('should clear all filters', async () => {
+    const dispatchMock = jest.fn();
+    store.dispatch = dispatchMock
+
+    const wrapper = mount(ShareResults, { store });
+
+    await wrapper.find('.usa-button.clear-selections').trigger('click');
+    expect(dispatchMock).toHaveBeenCalled();
+    expect(dispatchMock.mock.calls[0][0]).toBe("criteria/clear")
   });
 });
