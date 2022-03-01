@@ -21,7 +21,7 @@ module.exports = {
     "vue/html-closing-bracket-spacing": 0,
     "vue/no-v-html": 0,
     "vue/max-attributes-per-line": [
-      "error",
+      "warn",
       {
         singleline: {
           max: 3
@@ -45,7 +45,7 @@ module.exports = {
       }
     ],
     "vue/html-self-closing": [
-      "error",
+      "warn",
       {
         html: {
           void: "any",
@@ -57,7 +57,7 @@ module.exports = {
       }
     ],
     "vue/first-attribute-linebreak": [
-      "error",
+      "warn",
       {
         singleline: "ignore",
         multiline: "below"

@@ -82,6 +82,7 @@ export default {
   beforeMount () {
     const params = new URLSearchParams(this.search || window.location.search);
     /* eslint prefer-const: "OFF" */
+    let vals = [];
     for (let [key, value] of params) {
       value = value || true;
       const valueMap = {
@@ -93,11 +94,15 @@ export default {
         1: true,
         0: false,
       };
-      this.$store.commit("criteria/preloadedResponse", {
+      vals.push({
         criteriaKeyHash: key.toLowerCase(),
         response: valueMap[value],
       });
     }
+
+    this.$store.commit("criteria/preloadedResponses", {
+      valueArray:vals
+    });
   },
   methods: {
     blur () {

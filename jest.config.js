@@ -1,3 +1,4 @@
+
 module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
@@ -9,6 +10,7 @@ module.exports = {
     'vue',
     'json'
   ],
+
   transform: {
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest'

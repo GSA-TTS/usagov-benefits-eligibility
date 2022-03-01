@@ -1,3 +1,6 @@
+
+
+
 function buf2hex (buffer) {
   let u = new Uint8Array(buffer);
   const a = new Array(u.length);
@@ -8,6 +11,7 @@ function buf2hex (buffer) {
   u = null;
   return a.join('');
 };
+
 
 export default async function (str) {
   if (process.client) {

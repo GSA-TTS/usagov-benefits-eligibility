@@ -38,7 +38,7 @@
             /
             <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">Close All</button>
             /
-            <button class="usa-button usa-button--unstyled " aria-controls="acc-id" @click="clearCriteria">Clear Criteria</button>
+            <button class="usa-button usa-button--unstyled clear-all" aria-controls="acc-id" @click="clearCriteria">Clear Criteria</button>
           </div>
         </div>
         <div class="grid-col margin-y-2 text-right">
@@ -230,7 +230,6 @@ export default {
   methods: {
 
     clearCriteria () {
-      console.log("clear me");
       this.$store.dispatch('criteria/clear')
     },
 
