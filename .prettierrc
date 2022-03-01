@@ -2,8 +2,9 @@
 # motivations
 # https://github.com/btholt/complete-intro-to-react-v7/blob/main/lessons/03-js-tools/B-prettier.md
 # some options to uncomment if we desire to do so
+printWidth: 120
 # trailingComma: "es5"
 # tabWidth: 4
-# semi: false
+semi: false
 # singleQuote: true
-# bracketSameLine: true
+bracketSameLine: true
