@@ -1,5 +1,11 @@
 # 🐻 Benefits Eligibility - Phase 4
 
+[![usagov-benefits-eligibility](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/main.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/main.yml)
+[![CodeQL](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml)
+[![MegaLinter](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml)
+[![Semgrep](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml)
+[![woke](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml)
+
 BEARS will be a proactive notification service that provides
 timely and personalized information about benefits
 eligibility, contextualized by life events. Before we can
@@ -39,6 +45,101 @@ $ npm run test:watch
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Using Docker
+
+If one does not wish to use / install the build requirements on their
+local system, an alternative would be to use Docker.  Docker is a
+containerization tool that allows for fresh, repeatable builds on
+a clean system.  The artifact from a Docker build is an "image";
+when that image is run, it starts a "container."
+
+### Building with Docker
+
+To build an image of the BEARS software, use the following command:
+
+```bash
+(
+  cd "$(git rev-parse --show-toplevel)" \
+  && docker build -t bears .
+)
+```
+
+This will create a Docker image named "bears" that may be run as a
+container later.
+
+### Running the BEARS Image
+
+To run a container based on the BEARS Docker Image, the following
+command may be used:
+
+```bash
+docker run \
+  --rm \
+  --interactive \
+  --tty \
+  --expose 3000:3000 \
+  bears
+```
+
+This will run the container in the foreground (replace the `--interactive`
+and `--tty` flags with `--detach` to have it run in the background).  The
+`--expose` flag makes it so that connection attempts to the port BEARS
+runs on is accessible outside of the container (e.g., from a web browser
+on the local system).
+
+When the container is running, one may use a web browser to interact with
+the BEARS application at:
+
+<!-- markdown-link-check-disable -->
+
+- [http://localhost:3000/](http://localhost:3000/)
+
+<!-- markdown-link-check-enable -->
+
+## Using Vagrant when Docker isn't Available
+
+For systems where Docker is not installed, a Vagrantfile is provided
+so that the [Vagrant](https://www.vagrantup.com/) tool may be used to
+start a virtual machine (VM) that has Docker installed.  Note: one
+may need to install virtualization platform such as
+[Virtualbox](https://www.virtualbox.org/).
+
+### Starting a Vagrant Virtual Machine
+
+To start Vagrant, use the following command:
+
+```bash
+vagrant up
+```
+
+This will start the virtual machine in the background.  This virtual
+machine will have the BEARS source code copied to it as a part of
+the provisioning steps performed by `vagrant up`.
+
+- note: the source code installed on the virtual machine is a copy
+  of what's on the local filesystem.  Any changes made on the
+  virtual machine are not reflected on the local filesystem; any
+  changes made on the local filesystem are not reflected on the
+  virtual machine.
+
+Once the virtual machine is running, one may connect to it using this
+command:
+
+```bash
+vagrant ssh
+```
+
+Running this command is like using `ssh` to connect to a remote
+system.  To close the connection, use `exit` or `logout` normally.
+
+Once connected to the virtual machine, use the steps listed previously
+to build an image of the BEARS software and run it as a container.
+
+```bash
+docker build -t bears . \
+&& docker run --rm -it -p 3000:3000 bears
+```
 
 ### Useful links
 

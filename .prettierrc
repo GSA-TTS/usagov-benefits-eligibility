@@ -4,7 +4,7 @@
 # docs: https://prettier.io/docs/en/options.html
 # some options to uncomment if we desire to do so
 printWidth: 120
-# trailingComma: "none"
+# trailingComma: "es5"
 # tabWidth: 4
 semi: false
 # singleQuote: true

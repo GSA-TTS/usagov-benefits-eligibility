@@ -270,6 +270,7 @@ describe('Life Event page', () => {
         tags: ['tagThree']
       },
     ];
+
     const openAllSpy = jest.fn();
     const closeAllSpy = jest.fn();
     wrapper.vm.$refs.accordion.openAll = openAllSpy;
@@ -279,4 +280,21 @@ describe('Life Event page', () => {
     await wrapper.find('.usa-button.close-all').trigger('click');
     expect(closeAllSpy).toHaveBeenCalled();
   });
+
+
+  it('should clear all filters', async () => {
+    const clearAllSoy = jest.fn();
+    store.dispatch = clearAllSoy
+
+    const wrapper = shallowMount(LifeEventPage, {
+      mocks: vueMocks(),
+      store
+    });
+
+    await wrapper.find('.usa-button.clear-all').trigger('click');
+    expect(clearAllSoy).toHaveBeenCalled();
+    expect(clearAllSoy.mock.calls[0][0]).toBe("criteria/clear")
+  });
+
+
 });

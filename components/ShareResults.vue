@@ -1,5 +1,13 @@
 <template>
   <div class="margin-bottom-4 print:display-none">
+    <div class="margin-bottom-5 border-bottom border-base-lighter border-width-2px break-inside-avoid padding-bottom-4">
+      <button class="usa-button usa-button--outline width-card-lg bg-white clear-selections" @click="clearCriteria">
+        <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
+          <use xlink:href="~/assets/img/sprite.svg#highlight_off"/>
+        </svg>
+        <span class="text-middle">Clear my selections</span>
+      </button>
+    </div>
     <h3>Sharing and printing</h3>
     <p class="usa-prose">
       Copy a link to this page with the criteria you
@@ -20,7 +28,7 @@
         </span>
     </div>
     <div class="margin-bottom-1">
-      <button class="usa-button usa-button--outline width-card-lg bg-white" @click="copy">
+      <button class="usa-button usa-button--outline width-card-lg bg-white copy-selections" @click="copy">
         <svg class="usa-icon text-middle" aria-hidden="true" focusable="false"
           role="img">
           <use xlink:href="~/assets/img/sprite.svg#share"/>
@@ -82,6 +90,7 @@ export default {
   beforeMount () {
     const params = new URLSearchParams(this.search || window.location.search);
     /* eslint prefer-const: "OFF" */
+    let vals = [];
     for (let [key, value] of params) {
       value = value || true;
       const valueMap = {
@@ -93,11 +102,15 @@ export default {
         1: true,
         0: false,
       };
-      this.$store.commit("criteria/preloadedResponse", {
+      vals.push({
         criteriaKeyHash: key.toLowerCase(),
         response: valueMap[value],
       });
     }
+
+    this.$store.commit("criteria/preloadedResponses", {
+      valueArray:vals
+    });
   },
   methods: {
     blur () {
@@ -111,6 +124,11 @@ export default {
         this.alert = false;
       }, 30 * 1000)
     },
+
+    clearCriteria () {
+      this.$store.dispatch('criteria/clear')
+    },
+
     /* istanbul ignore next */
     email () {
       window.location.href = `mailto:?subject=Results%20from%20benefits%20elibibility%20awareness%20resource&body=Results%20${encodeURIComponent(this.url)}`;

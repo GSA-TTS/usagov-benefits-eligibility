@@ -37,6 +37,8 @@
             <button class="usa-button usa-button--unstyled open-all" aria-controls="acc-id" @click="openAll">Open All</button>
             /
             <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">Close All</button>
+            /
+            <button class="usa-button usa-button--unstyled clear-all" aria-controls="acc-id" @click="clearCriteria">Clear Selections</button>
           </div>
         </div>
         <div class="grid-col margin-y-2 text-right">
@@ -91,7 +93,7 @@
                 </span>
               </div>
             </div>
-            <div class="margin-bottom-4 display-flex print:display-none">
+            <div class="margin-bottom-2 display-flex print:display-none">
               <div class="text-primary">
                 <svg class="usa-icon usa-icon--size-3" aria-labelledby="eligibility-section-criteria-icon-title" focusable="false"
                   role="img">
@@ -100,7 +102,7 @@
                 </svg>
               </div>
               <div class="font-body-md usa-icon-list">
-                {{ lifeEvent.eligibilityCriteriaDescription }}
+                 {{ lifeEvent.eligibilityCriteriaDescription }}
               </div>
             </div>
             <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
@@ -184,8 +186,7 @@ export default {
       .sortBy("title")
       .fetch();
 
-    const allEligibilityCriteria = (await this.$content("criteria").fetch())
-      .body;
+    const allEligibilityCriteria = (await this.$content("criteria").fetch()).body;
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
 
     lifeEvent.related = [];
@@ -208,7 +209,7 @@ export default {
     },
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria"
+      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria",
     }),
     ...mapState({
       eligibilityCriteria: state => state.criteria.eligibilityCriteria
@@ -230,6 +231,11 @@ export default {
     this.$root.$on("tag:click", this.tagClick);
   },
   methods: {
+
+    clearCriteria () {
+      this.$store.dispatch('criteria/clear')
+    },
+
     getVirtualCriteria () {
       const lifeEventCriteria = Object.fromEntries(
         this.lifeEvent.eligibilityCriteria
@@ -289,6 +295,7 @@ export default {
       });
       this.filter = tag;
       this.sortBenefits();
+      // eslint-disable-next-line vue/valid-next-tick
       setTimeout(() => (this.$nextTick(() => this.$refs.accordion.focus())), 250);
     },
     clearFilter () {
