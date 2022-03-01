@@ -1,5 +1,11 @@
 # 🐻 Benefits Eligibility - Phase 4
 
+[![usagov-benefits-eligibility](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/main.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/main.yml)
+[![CodeQL](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml)
+[![MegaLinter](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml)
+[![Semgrep](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml)
+[![woke](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml)
+
 BEARS will be a proactive notification service that provides
 timely and personalized information about benefits
 eligibility, contextualized by life events. Before we can
