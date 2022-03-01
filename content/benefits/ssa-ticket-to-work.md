@@ -7,7 +7,7 @@ lifeEvents:
 - "disability"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/work/"
+  link: https://www.ssa.gov/work/
 
 summary: "Social Security's Ticket to Work Program supports career development for Social Security disability beneficiaries age 18 through 64 who want to work."
 
@@ -19,6 +19,7 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: applicant_date_of_birth
   label: "You are 18 to 64 years old."
+  acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
   acceptableValues: [true]
 

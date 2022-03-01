@@ -8,7 +8,7 @@ lifeEvents:
 - "military-service"
 source:
   name: "Department of Defense"
-  link: "https://militarypay.defense.gov/Benefits/Survivor-Benefit-Program/"
+  link: https://militarypay.defense.gov/Benefits/Survivor-Benefit-Program/
 
 summary: "Survivors of deceased active duty service members and some retired and reserve members may be eligible for up to 55% of the member's retired pay."
 

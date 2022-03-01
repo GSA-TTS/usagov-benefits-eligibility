@@ -8,7 +8,7 @@ lifeEvents:
 - "school-and-education"
 source:
   name: "U.S. Department of Education"
-  link: "https://studentaid.gov/h/apply-for-aid/fafsa"
+  link: https://studentaid.gov/h/apply-for-aid/fafsa
 
 summary: "Apply for federal student aid—grants, work-study funds, and loans—to help pay for college or career school."
 

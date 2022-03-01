@@ -8,7 +8,7 @@ lifeEvents:
 - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: "https://www.va.gov/housing-assistance/home-loans/surviving-spouse/"
+  link: https://www.va.gov/housing-assistance/home-loans/surviving-spouse/
 
 summary: "A VA-backed home loan may be available to the surviving spouse of a veteran."
 

@@ -8,7 +8,7 @@ lifeEvents:
 - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: "https://www.benefits.va.gov/INSURANCE/sglivgli.asp"
+  link: https://www.benefits.va.gov/INSURANCE/sglivgli.asp
 
 summary: "Financial payment from a veteran's or service member's life insurance policy may be available."
 

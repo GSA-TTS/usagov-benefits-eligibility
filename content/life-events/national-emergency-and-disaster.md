@@ -15,7 +15,7 @@ eligibilityCriteria:
       - applicant_declared_disaster
       - applicant_citizen_status
       
-  - label: "Did you loose a loved one due to national emergency or disater?"
+  - label: "Did you lose a loved one due to national emergency or disater?"
     description: ""
     criteriaGroupKey: deceased
     criteriaKeys:

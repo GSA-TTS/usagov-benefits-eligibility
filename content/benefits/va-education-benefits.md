@@ -9,7 +9,7 @@ lifeEvents:
 - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: "https://www.va.gov/education/survivor-dependent-benefits/"
+  link: https://www.va.gov/education/survivor-dependent-benefits/
 
 summary: "VA education benefits (also called Chapter 35 benefits) or job training through a GI Bill program may be available."
 
