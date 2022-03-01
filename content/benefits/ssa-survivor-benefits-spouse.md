@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h2"
+  link: https://www.ssa.gov/benefits/survivors/ifyou.html#h2
 
 summary: "Social Security survivors benefits are paid to a surviving spouse of eligible workers, and under certain circumstances, to a surviving divorced spouse of eligible workers."
 
@@ -19,6 +19,7 @@ eligibility:
   acceptableValues: [spouse]
 - criteriaKey: applicant_date_of_birth
   label: "You are at least 60 years old."
+  acceptableValues: [true]
 - criteriaKey: applicant_marital_status
   acceptableValues: ["widowed", "divorced"]
 - criteriaKey: applicant_citizen_status

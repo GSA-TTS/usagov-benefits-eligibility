@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h5"
+  link: https://www.ssa.gov/benefits/survivors/ifyou.html#h5
 
 summary: "Social Security survivors benefits are paid to parents of eligible workers."
 
@@ -19,6 +19,7 @@ eligibility:
   acceptableValues: [parent]
 - criteriaKey: deceased_date_of_death
   label: "You are at least 62 years old and were dependent on the deceased for at least half of your support."
+  acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
   acceptableValues: [true]
   

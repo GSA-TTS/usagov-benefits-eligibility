@@ -7,7 +7,7 @@ lifeEvents:
 - "national-emergency-and-disaster"
 source:
   name: "FEMA"
-  link: "https://www.disasterassistance.gov/"
+  link: https://www.disasterassistance.gov/
 
 summary: "FEMA provides disaster survivors with assistance that supports your disaster recovery efforts."
 

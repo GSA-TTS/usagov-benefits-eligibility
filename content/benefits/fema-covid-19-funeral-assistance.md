@@ -8,7 +8,7 @@ lifeEvents:
 - national-emergency-and-disaster
 source:
   name: "FEMA"
-  link: "https://www.fema.gov/disasters/coronavirus/economic/funeral-assistance"
+  link: https://www.fema.gov/disasters/coronavirus/economic/funeral-assistance
 
 summary: "Financial assistance may be available to help with the burial and funeral costs for people who died of COVID-19."
 
@@ -20,6 +20,7 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: deceased_date_of_funeral
   label: "The deceased's funeral/burial was after January 20, 2020."
+  acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
   acceptableValues: [true]
 - criteriaKey: applicant_paid_funeral_expenses

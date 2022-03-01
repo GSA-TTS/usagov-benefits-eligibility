@@ -8,7 +8,7 @@ lifeEvents:
 - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: "https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/"
+  link: https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/
 
 summary: "A headstone, grave or niche marker, or medallion may be available to honor a veteran, service member, or eligible family member."
 
@@ -22,6 +22,7 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: deceased_spouse_child_of_veteran
   label: "The deceased is a spouse or a child of a Veteran who is buried in a national, state, tribal, Veterans or military post cemetery."
+  acceptableValues: [true]
 - criteriaKey: applicant_relationship
   acceptableValues: ["spouse", "child","parent", "other family member", "personal or official representative"]
 

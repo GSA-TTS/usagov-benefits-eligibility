@@ -33,3 +33,6 @@ _site
 /assets/img
 /assets/js
 .eslintcache
+
+# MegaLinter reports
+report/

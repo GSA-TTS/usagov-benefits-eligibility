@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "U.S. Department of Justice"
-  link: "https://psob.bja.ojp.gov/PSOB_FactSheet2019.pdf"
+  link: https://psob.bja.ojp.gov/PSOB_FactSheet2019.pdf
 
 summary: "A one-time benefit is available to eligible survivors of law enforcement officers, firefighters, and other first responders whose deaths were the direct result of an injury sustained in the line of duty on or after September 29, 1976."
 

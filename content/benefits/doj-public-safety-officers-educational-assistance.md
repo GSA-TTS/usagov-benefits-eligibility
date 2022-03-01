@@ -8,7 +8,7 @@ lifeEvents:
 - "school-and-education"
 source:
   name: "U.S. Department of Justice"
-  link: "https://psob.bja.ojp.gov/PSOB_Education2018.pdf"
+  link: https://psob.bja.ojp.gov/PSOB_Education2018.pdf
 
 summary: "Financial assistance for higher education is available to spouses and children of police, fire, and emergency public safety officers killed in the line of duty."
 

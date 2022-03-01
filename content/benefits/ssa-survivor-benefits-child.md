@@ -7,7 +7,7 @@ lifeEvents:
 - "death-and-burial"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/survivors/ifyou.html#h4"
+  link: https://www.ssa.gov/benefits/survivors/ifyou.html#h4
 
 summary: "Social Security survivors benefits are paid to a child, stepchild, grandchild, or adopted child of eligible workers."
 
@@ -19,6 +19,7 @@ eligibility:
   acceptableValues: [child]
 - criteriaKey: applicant_date_of_birth
   label: "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school)."
+  acceptableValues: [true]
 - criteriaKey: applicant_marital_status
   acceptableValues: [unmarried]
 - criteriaKey: applicant_citizen_status

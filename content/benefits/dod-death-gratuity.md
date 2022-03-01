@@ -8,7 +8,7 @@ lifeEvents:
 - "military-service"
 source:
   name: "Department of Defense"
-  link: "https://militarypay.defense.gov/Benefits/Death-Gratuity/"
+  link: https://militarypay.defense.gov/Benefits/Death-Gratuity/
 
 summary: "Death Gratuity is a tax free payment of $100,000 to eligible survivors of members of the Armed Forces, who died while on active duty or while serving in certain reserve statuses."
 

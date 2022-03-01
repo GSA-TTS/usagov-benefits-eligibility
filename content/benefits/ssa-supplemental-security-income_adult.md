@@ -8,7 +8,7 @@ lifeEvents:
 - "loss-of-job-and-low-income"
 source:
   name: "Social Security Administration"
-  link: "https://www.ssa.gov/benefits/ssi/adults.html"
+  link: https://www.ssa.gov/benefits/ssi/adults.html
 
 summary: "Provides financial assistance to older, blind, and people with disabilities to help meet basic needs for food, clothing, and shelter."
 
@@ -20,6 +20,7 @@ eligibility:
   acceptableValues: [true]
 - criteriaKey: applicant_date_of_birth
   label: "You are 18 to 64 years old."
+  acceptableValues: [true]
 - criteriaKey: applicant_income
   acceptableValues: [true]
 - criteriaKey: applicant_citizen_status
