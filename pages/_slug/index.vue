@@ -38,7 +38,7 @@
             /
             <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">Close All</button>
             /
-            <button class="usa-button usa-button--unstyled clear-all" aria-controls="acc-id" @click="clearCriteria">Clear Criteria</button>
+            <button class="usa-button usa-button--unstyled clear-all" aria-controls="acc-id" @click="clearCriteria">Clear Selections</button>
           </div>
         </div>
         <div class="grid-col margin-y-2 text-right">
