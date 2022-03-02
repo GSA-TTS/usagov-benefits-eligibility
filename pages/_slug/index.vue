@@ -46,19 +46,22 @@
             role="status"
             class="usa-label display-inline margin-right-1"
             for="benefitSort">Showing {{ lifeEventBenefits.length }} related benefits sorted
-            by:</label>
-          <select
-            id="benefitSort"
-            class="usa-select margin-left-auto width-card display-inline-block"
-            name="options"
-            @change="sortChange">
-            <option value="relevance" :selected="sort === 'relevance'">
-              Relevance
-            </option>
-            <option value="title" :selected="sort === 'title'">
-              Title (A-Z)
-            </option>
-          </select>
+            by:
+            <select
+              id="benefitSort"
+              class="usa-select margin-left-auto width-card display-inline-block"
+              name="benefitSort"
+              aria-label="Sort benefits by"
+              @change="sortChange">
+              <option value="relevance" :selected="sort === 'relevance'">
+                Relevance
+              </option>
+              <option value="title" :selected="sort === 'title'">
+                Title (A-Z)
+              </option>
+            </select>
+
+            </label>
         </div>
       </div>
 

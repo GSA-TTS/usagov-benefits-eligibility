@@ -25,6 +25,4 @@ eligibilityCriteria:
       - deceased_buried_in_unmarked_grave
       - deceased_headstone_is_privately_purchased
       - deceased_buried_in_private_cemetery
-
-
 ---
