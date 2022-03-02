@@ -4,67 +4,59 @@ import stringToHash from "../services/stringToHash"
 export const state = () => ({
   eligibilityCriteria: {},
   hashToCriteria: {},
-});
+})
 
 export const mutations = {
   // payload must include a criteriaKey and the new response / selected value
   updateResponse(state, { criteriaKey, response }) {
     // TODO: make sure the response matches one of the available criterion values
-    Vue.set(state.eligibilityCriteria[criteriaKey], 'response', response);
-    const hashedData = getters.getHashResponses(state);
-    localStorage.setItem('responseData', JSON.stringify(hashedData));
+    Vue.set(state.eligibilityCriteria[criteriaKey], "response", response)
+    const hashedData = getters.getHashResponses(state)
+    localStorage.setItem("responseData", JSON.stringify(hashedData))
   },
 
-  preloadedResponses (state, { valueArray }) {
-    for(const param of valueArray){
-      const criteriaKey = state.hashToCriteria[param.criteriaKeyHash];
+  preloadedResponses(state, { valueArray }) {
+    for (const param of valueArray) {
+      const criteriaKey = state.hashToCriteria[param.criteriaKeyHash]
       if (state.eligibilityCriteria[criteriaKey] != null) {
-        Vue.set(state.eligibilityCriteria[criteriaKey], 'response', param.response)
+        Vue.set(state.eligibilityCriteria[criteriaKey], "response", param.response)
       }
     }
 
-    const hashedData = getters.getHashResponses(state);
-    localStorage.setItem('responseData', JSON.stringify(hashedData));
+    const hashedData = getters.getHashResponses(state)
+    localStorage.setItem("responseData", JSON.stringify(hashedData))
   },
 
-
-  populateCriterion (state, { criterion, hash, storedData }) {
-
-    //TODO shouldn't have to load from storage every time here.
-    //populate action runs on server so it storeData wont be populated here on prod builds.
-    if(process.client && localStorage.getItem('responseData')){
-      storedData = JSON.parse(localStorage.getItem('responseData'));
+  populateCriterion(state, { criterion, hash, storedData }) {
+    // TODO shouldn't have to load from storage every time here.
+    // populate action runs on server so it storeData wont be populated here on prod builds.
+    if (process.client && localStorage.getItem("responseData")) {
+      storedData = JSON.parse(localStorage.getItem("responseData"))
     }
 
-    const criteriaKey = criterion.criteriaKey;
-    criterion.response = storedData[hash] ? storedData[hash] : null;
-    criterion.criteriaKeyHash = hash;
+    const criteriaKey = criterion.criteriaKey
+    criterion.response = storedData[hash] ? storedData[hash] : null
+    criterion.criteriaKeyHash = hash
 
-    Vue.set(state.eligibilityCriteria, criteriaKey, criterion);
-    Vue.set(state.hashToCriteria, hash, criteriaKey);
+    Vue.set(state.eligibilityCriteria, criteriaKey, criterion)
+    Vue.set(state.hashToCriteria, hash, criteriaKey)
   },
 
-  clearSelectedCriteria (state) {
-    for(const criteriaKey in state.eligibilityCriteria){
-      Vue.set(state.eligibilityCriteria[criteriaKey], 'response', null);
+  clearSelectedCriteria(state) {
+    for (const criteriaKey in state.eligibilityCriteria) {
+      Vue.set(state.eligibilityCriteria[criteriaKey], "response", null)
     }
-    localStorage.setItem('responseData', JSON.stringify({}));
+    localStorage.setItem("responseData", JSON.stringify({}))
   },
-
 }
 
 export const getters = {
   doesCriterionMatchSelection: (state, getters) => (criterion) => {
-    if (
-      !getters.isCriterionSelected(criterion) ||
-      !criterion.acceptableValues
-    ) {
+    if (!getters.isCriterionSelected(criterion) || !criterion.acceptableValues) {
       return null
     }
     return !!criterion.acceptableValues.find(
-      (val) =>
-        val ===
-        getters.getCriterionByEligibilityKey(criterion.criteriaKey).response
+      (val) => val === getters.getCriterionByEligibilityKey(criterion.criteriaKey).response
     )
   },
   getCriterionByEligibilityKey: (state) => (criteriaKey) => {
@@ -73,7 +65,7 @@ export const getters = {
         key: `error-missing-key--${criteriaKey}`,
         label: `Key named "${criteriaKey}" not found`,
         values: "",
-        type: "missing"
+        type: "missing",
       }
     )
   },
@@ -83,7 +75,7 @@ export const getters = {
         key: `error-missing-key--${criteriaKey}`,
         label: `Key named "${criteriaKey}" not found`,
         values: "",
-        type: "missing"
+        type: "missing",
       }
     )
   },
@@ -103,8 +95,8 @@ export const getters = {
       if (benefitEligibilityCriteria && benefitEligibilityCriteria.length < 1) {
         return 0
       } else {
-        const matchingCriteria = benefitEligibilityCriteria.filter(
-          (criterion) => getters.doesCriterionMatchSelection(criterion)
+        const matchingCriteria = benefitEligibilityCriteria.filter((criterion) =>
+          getters.doesCriterionMatchSelection(criterion)
         )
         return matchingCriteria.length
       }
@@ -116,34 +108,36 @@ export const getters = {
         return 0
       } else {
         const matchingCriteria = benefitEligibilityCriteria.filter(
-          (criterion) =>
-            getters.doesCriterionMatchSelection(criterion) === false
+          (criterion) => getters.doesCriterionMatchSelection(criterion) === false
         )
         return matchingCriteria.length
       }
     },
   isCriterionSelected: (state, getters) => (criterion) => {
-    return !!getters.getCriterionByEligibilityKey(criterion.criteriaKey)
-      .response
-  }
+    return !!getters.getCriterionByEligibilityKey(criterion.criteriaKey).response
+  },
 }
 
 export const actions = {
-  async populate ({ commit, state }, criteriaArray = []) {
-    let storedData = {};
+  async populate({ commit, state }, criteriaArray = []) {
+    let storedData = {}
 
-    if(process.client && localStorage.getItem('responseData')){
-       storedData = JSON.parse(localStorage.getItem('responseData'));
+    if (process.client && localStorage.getItem("responseData")) {
+      storedData = JSON.parse(localStorage.getItem("responseData"))
     }
 
     for (const criterion of criteriaArray) {
-      const criteriaKey = criterion.criteriaKey;
-      const hash = await stringToHash(criteriaKey);
-      commit('populateCriterion', { criterion, hash, storedData})
+      const criteriaKey = criterion.criteriaKey
+      const hash = await stringToHash(criteriaKey)
+      commit("populateCriterion", { criterion, hash, storedData })
     }
   },
 
-  clear ({ commit, state }, criteriaArray = []) {
-    commit('clearSelectedCriteria', { })
+  clear({ commit, state }, criteriaArray = []) {
+    commit("clearSelectedCriteria", {})
   },
-};
+
+  updateResponse({ commit }, { criteriaKey, response }) {
+    commit("updateResponse", { criteriaKey, response })
+  },
+}
