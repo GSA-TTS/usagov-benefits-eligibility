@@ -30,32 +30,28 @@
               Open All
             </button>
             /
-            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">Close All</button>
+            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">
+              Close All
+            </button>
             /
-            <button class="usa-button usa-button--unstyled clear-all" aria-controls="acc-id" @click="clearCriteria">Clear Selections</button>
+            <button class="usa-button usa-button--unstyled clear-all" aria-controls="acc-id" @click="clearCriteria">
+              Clear Selections
+            </button>
           </div>
         </div>
         <div class="grid-col margin-y-2 text-right">
-          <label
-            role="status"
-            class="usa-label display-inline margin-right-1"
-            for="benefitSort">Showing {{ lifeEventBenefits.length }} related benefits sorted
-            by:
+          <label role="status" class="usa-label display-inline margin-right-1" for="benefitSort"
+            >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
             <select
               id="benefitSort"
               class="usa-select margin-left-auto width-card display-inline-block"
               name="benefitSort"
               aria-label="Sort benefits by"
               @change="sortChange">
-              <option value="relevance" :selected="sort === 'relevance'">
-                Relevance
-              </option>
-              <option value="title" :selected="sort === 'title'">
-                Title (A-Z)
-              </option>
+              <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
+              <option value="title" :selected="sort === 'title'">Title (A-Z)</option>
             </select>
-
-            </label>
+          </label>
         </div>
       </div>
 
@@ -95,7 +91,7 @@
                 </svg>
               </div>
               <div class="font-body-md usa-icon-list">
-                 {{ lifeEvent.eligibilityCriteriaDescription }}
+                {{ lifeEvent.eligibilityCriteriaDescription }}
               </div>
             </div>
             <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
@@ -105,22 +101,35 @@
         <div class="margin-top-2 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <!-- Mobile meta sort and open -->
           <h2 class="tablet:display-none font-heading-lg margin-top-6">Benefits Results</h2>
-          <div role="complementary" class="display-flex tablet:display-none grid-row grid-gap print:display-none">
-            <div class="display-none print:display-none"></div>
-            <div class="tablet:grid-col margin-y-2">
-              <label role="status" class="usa-label display-inline margin-right-1" for="benefitSort"
-                >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
-              >
-              <select
-                id="benefitSort"
-                class="usa-select margin-left-auto width-card display-inline-block"
-                name="options"
-                @change="sortChange">
-                <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
-                <option value="title" :selected="sort === 'title'">Title (A-Z)</option>
-              </select>
+          <div role="complementary" class="tablet:display-none print:display-none">
+            <div class="grid-row grid-gap">
+              <div class="grid-col-6 margin-y-2 print:display-none">
+                <fieldset class="usa-fieldset">
+                  <label role="status" class="usa-label display-inline margin-right-1" for="benefitSort"
+                    >benefits sorted by:</label
+                  >
+                  <select
+                    id="benefitSort"
+                    class="usa-select margin-left-auto width-card display-inline-block"
+                    name="options"
+                    @change="sortChange">
+                    <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
+                    <option value="title" :selected="sort === 'title'">Title (A-Z)</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="grid-col-6 margin-y-2 print:display-none">
+                <button
+                  class="usa-button usa-button--outline bg-white clear-selections margin-top-105em"
+                  @click="clearCriteria">
+                  <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
+                    <use xlink:href="~/assets/img/sprite.svg#highlight_off" />
+                  </svg>
+                  <span class="text-middle">Clear </span>
+                </button>
+              </div>
             </div>
-            <div class="tablet:grid-col-4 desktop:grid-col-3 margin-y-2 print:display-none">
+            <div class="margin-y-2 print:display-none">
               <div class="display-flex flex-align-center flex-justify-start flex-align-stretch">
                 <button class="usa-button open-all height-5" aria-controls="acc-id" @click="openAll">Open All</button>
 
@@ -212,8 +221,8 @@ export default {
       .sortBy("title")
       .fetch()
 
-    const allEligibilityCriteria = (await this.$content("criteria").fetch()).body;
-    await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
+    const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
+    await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
 
     lifeEvent.related = []
     for (const related of lifeEvent.relatedKeys || []) {
@@ -257,12 +266,11 @@ export default {
     this.$root.$on("tag:click", this.tagClick)
   },
   methods: {
-
-    clearCriteria () {
-      this.$store.dispatch('criteria/clear')
+    clearCriteria() {
+      this.$store.dispatch("criteria/clear")
     },
 
-    getVirtualCriteria () {
+    getVirtualCriteria() {
       const lifeEventCriteria = Object.fromEntries(
         this.lifeEvent.eligibilityCriteria
           .map((ec) => ec.criteriaKeys)
@@ -309,12 +317,12 @@ export default {
     },
     tagClick(tag) {
       this.lifeEventBenefits = _.filter(this.allLifeEventBenefits, (benefit) => {
-        return benefit.tags.includes(tag);
-      });
-      this.filter = tag;
-      this.sortBenefits();
+        return benefit.tags.includes(tag)
+      })
+      this.filter = tag
+      this.sortBenefits()
       // eslint-disable-next-line vue/valid-next-tick
-      setTimeout(() => (this.$nextTick(() => this.$refs.accordion.focus())), 250);
+      setTimeout(() => this.$nextTick(() => this.$refs.accordion.focus()), 250)
     },
   },
 }
