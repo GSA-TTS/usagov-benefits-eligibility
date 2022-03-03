@@ -21,7 +21,7 @@ module.exports = {
     "vue/html-closing-bracket-spacing": 0,
     "vue/no-v-html": 0,
     "vue/max-attributes-per-line": [
-      "warn",
+      "off",
       {
         singleline: {
           max: 3,
