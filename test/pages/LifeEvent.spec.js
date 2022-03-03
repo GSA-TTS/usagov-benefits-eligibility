@@ -133,7 +133,7 @@ describe("Life Event page", () => {
       },
     ])
     const wrapper = shallowMount(LifeEventPage, {
-      mocks: vueMocks(mockContent),
+      mocks: vueMocks({ $content, ...mockContent }),
       store,
     })
 
