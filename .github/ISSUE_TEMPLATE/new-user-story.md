@@ -7,6 +7,7 @@ assignees: ''
 
 ---
 
+<!-- markdownlint-disable-next-line -->
 # User Story
 
 As a BEARS _______, in order to _______, I would like ________ .
@@ -15,12 +16,12 @@ Pre-conditions:
 
 - [ ] condition 1
 
-
-
 Acceptance Criteria:
+
 - [ ] thing 1
 
 Definition of Done:
+
 - [ ] Code complete
 - [ ]  Tests coverage is greater than team benchmark (90% goal)
 - [ ]  Security scans passed
