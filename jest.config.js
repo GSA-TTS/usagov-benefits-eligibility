@@ -1,3 +1,4 @@
+
 module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
@@ -9,6 +10,7 @@ module.exports = {
     'vue',
     'json'
   ],
+
   transform: {
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest'
@@ -21,8 +23,8 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      branches: 90,
-      functions: 90,
+      branches: 85,
+      functions: 85,
       lines: 90,
       statements: 90
     },

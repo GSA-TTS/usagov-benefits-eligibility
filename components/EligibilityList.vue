@@ -21,7 +21,7 @@
         class="usa-icon-list grid-row padding-x-205 padding-top-205 padding-bottom-1"
       >
         <li
-          v-for="criterion in benefitEligibilityCriteria"
+          v-for="(criterion, index) in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
           class="usa-icon-list__item tablet:grid-col-6 padding-bottom-2"
           style="padding-top: 0; padding-left: 1.25rem"
@@ -29,7 +29,6 @@
           <div
             :class="[
               'usa-icon-list__icon',
-              'print:display-none',
               {
                 'text-success text-bold':
                   doesCriterionMatchSelection(criterion) === true,
@@ -44,134 +43,51 @@
               },
             ]"
           >
-            <svg
-              v-if="showIcons"
-              class="usa-icon"
-              :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
-              role="img"
+            <div
+              v-if="
+                getCriterionByEligibilityKey(criterion.criteriaKey).type ===
+                'boolean'
+              "
+              class="usa-checkbox"
             >
-              <title
-                v-if="doesCriterionMatchSelection(criterion) == true"
-                :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
-              >
-                This criteria matched
-              </title>
-              <title
-                v-else-if="doesCriterionMatchSelection(criterion) == false"
-                :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
-              >
-                This criteria removed this benefit
-              </title>
-              <title
-                v-else
-                :id="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
-              >
-                This criteria has not matched
-              </title>
-              <use
-                v-if="doesCriterionMatchSelection(criterion) == true"
-                xlink:href="~/assets/img/sprite.svg#check_circle"
+              <CheckBox
+                :criteria-key="criterion.criteriaKey"
+                :label="getCriterionLabel(criterion)"
+                :response="doesCriterionMatchSelection(criterion)"
+                location="benefit-card"
               />
-              <use
-                v-else-if="doesCriterionMatchSelection(criterion) == false"
-                xlink:href="~/assets/img/sprite.svg#highlight_off"
-              />
-              <use
-                v-else
-                xlink:href="~/assets/img/sprite.svg#radio_button_unchecked"
-              />
-            </svg>
-            <svg
-              v-else
-              class="usa-icon"
-              :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
-              role="img"
-            >
-              <use xlink:href="~/assets/img/sprite.svg#check_circle" />
-            </svg>
-          </div>
-          <div
-            :class="[
-              'usa-icon-list__icon',
-              'display-none',
-              'print:display-inline',
-              {
-                'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true,
-              },
-              {
-                'text-base-light':
-                  doesCriterionMatchSelection(criterion) === null,
-              },
-              {
-                'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false,
-              },
-            ]"
-          >
-            <svg v-if="showIcons" class="usa-icon" role="img">
-              <use
-                v-if="doesCriterionMatchSelection(criterion) == true"
-                xlink:href="~/assets/img/sprite.svg#check_circle"
-              />
-              <use
-                v-else-if="doesCriterionMatchSelection(criterion) == false"
-                xlink:href="~/assets/img/sprite.svg#highlight_off"
-              />
-              <use
-                v-else
-                xlink:href="~/assets/img/sprite.svg#radio_button_unchecked"
-              />
-            </svg>
-            <svg
-              v-else
-              class="usa-icon"
-              :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
-              role="img"
-            >
-              <use
-                xlink:href="~/assets/img/sprite.svg#radio_button_unchecked"
-              />
-            </svg>
-          </div>
+            </div>
 
-          <div
-            :class="[
-              'usa-icon-list__content',
-              {
-                'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true,
-              },
-              {
-                'text-base-dark':
-                  doesCriterionMatchSelection(criterion) === null,
-              },
-              {
-                'print:text-base-darker':
-                  doesCriterionMatchSelection(criterion) === null,
-              },
-              {
-                'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false,
-              },
-            ]"
-          >
-            <span>
-              <template v-if="criterion.label">
-                {{ criterion.label }}
-              </template>
-              <template v-else>
-                {{ getCriterionByEligibilityKey(criterion.criteriaKey).label }}
-              </template>
-              <template
-                v-if="
-                  getCriterionByEligibilityKey(criterion.criteriaKey).type ===
-                    'select' && criterion.acceptableValues
-                "
-              >
-                {{ formatArrayWithSeparator(criterion.acceptableValues) }}.
-              </template>
-            </span>
+            <div
+              v-if="
+                getCriterionByEligibilityKey(criterion.criteriaKey).type ===
+                'select'
+              "
+            >
+              <DropDown
+                :label="getCriterionLabel(criterion)"
+                :criteria-key="criterion.criteriaKey"
+                :values="criterion.acceptableValues"
+                :response="getResponseByEligibilityKey(criterion.criteriaKey)"
+                :criteria-index="index"
+                location="benefit-card"
+              />
+            </div>
+
+            <div
+              v-if="
+                getCriterionByEligibilityKey(criterion.criteriaKey).type ===
+                'radio'
+              "
+            >
+              <RadioButton
+                :criteria-key="criterion.criteriaKey"
+                :label="getCriterionLabel(criterion)"
+                :values="criterion.acceptableValues"
+                :response="getResponseByEligibilityKey(criterion.criteriaKey)"
+                location="benefit-card"
+              />
+            </div>
           </div>
         </li>
       </ul>
@@ -189,9 +105,13 @@
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from "vuex"
+import RadioButton from "./RadioButton.vue"
+import DropDown from "./DropDown.vue"
+import CheckBox from "./CheckBox.vue"
 
 export default {
+  components: { RadioButton, DropDown, CheckBox },
   props: {
     benefitEligibilityCriteria: {
       type: Array,
@@ -199,10 +119,10 @@ export default {
       default: /* istanbul ignore next */ () => {
         return [
           {
-            criteriaKey: "error",
-          },
-        ];
-      },
+            criteriaKey: "error"
+          }
+        ]
+      }
     },
     benefitSource: {
       type: String,
@@ -214,19 +134,11 @@ export default {
       required: false,
       default: () => ["bg-base-lighter"],
     },
-    showIcons: {
-      type: Boolean,
-      required: false,
-      default: true,
-    },
     showMatchingCount: {
       type: Boolean,
       required: false,
       default: true,
     },
-  },
-  data() {
-    return {};
   },
   computed: {
     ...mapGetters({
@@ -234,16 +146,18 @@ export default {
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       isCriterionSelected: "criteria/isCriterionSelected",
-    }),
+      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey"
+    })
   },
   methods: {
-    formatArrayWithSeparator(array = [], lastSeparator = "or") {
-      return array
-        .join(", ")
-        .replace(/, ((?:.(?!, ))+)$/, ` ${lastSeparator} $1`);
-    },
-  },
-};
+    getCriterionLabel(criterion) {
+      return (
+        criterion.label ||
+        this.getCriterionByEligibilityKey(criterion.criteriaKey).label
+      )
+    }
+  }
+}
 </script>
 
 <style scoped>

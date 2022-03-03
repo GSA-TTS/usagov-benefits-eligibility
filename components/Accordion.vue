@@ -96,7 +96,6 @@
 import _ from "lodash";
 import { mapGetters } from "vuex";
 import mapTags from "~/mixins/MapTags";
-
 let USWDS;
 let accordion;
 /* istanbul ignore if */
@@ -104,7 +103,6 @@ if (process.client) {
   USWDS = require("../node_modules/uswds/src/js/components");
   accordion = USWDS.accordion;
 }
-
 export default {
   mixins: [mapTags],
   props: {
@@ -205,7 +203,6 @@ export default {
   }
 };
 </script>
-
 <style scoped>
 .benefit-list-move {
   transition: transform 1s;

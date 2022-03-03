@@ -1,17 +1,31 @@
 <template>
   <div>
     <template v-for="criteriaGroup in lifeEventCriteria">
-      <div :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`"
-      :key="criteriaGroup.criteriaGroupKey"
-      :class="{ 'margin-bottom-4': true, 'border-bottom': true, 'border-base-lighter': true, 'border-width-2px': true, 'break-inside-avoid': true }">
-        <h2 :class="{ 'font-heading-lg': true, 'font-family-sans': true, 'text-bold': true, 'margin-top-0': true, 'criteria-group-empty': hasNoResponses(getCriteriaMap(criteriaGroup.criteriaKeys)) }">
-            {{ criteriaGroup.label }}
+      <div
+        :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`"
+        :key="criteriaGroup.criteriaGroupKey"
+        class="margin-bottom-4 border-bottom border-gray-30 border-width-2px break-inside-avoid"
+      >
+        <h2
+          class="font-heading-lg font-family-sans text-bold margin-top-0 text-primary-darker"
+          :class="{
+            'criteria-group-empty': hasNoResponses(
+              getCriteriaMap(criteriaGroup.criteriaKeys)
+            )
+          }"
+        >
+          {{ criteriaGroup.label }}
         </h2>
         <p class="line-height-sans-4 font-sans-sm">
-            {{ criteriaGroup.description }}
+          {{ criteriaGroup.description }}
         </p>
-        <div :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey" class="">
-          <template v-for="(criterion) in getCriteriaMap(criteriaGroup.criteriaKeys)">
+        <div
+          :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
+          class="margin-y-3"
+        >
+          <template
+            v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)"
+          >
             <CriteriaChild
               :key="criterion.criteriaKey"
               :criteria-key="criterion.criteriaKey"
@@ -19,16 +33,27 @@
               :values="criterion.values.split('; ')"
               :type="criterion.type"
               :criteria-group-key="criteriaGroup.criteriaGroupKey"
-              :response="criterion.response" />
+              :response="criterion.response"
+              class="margin-y-2 tablet:margin-y-3"
+            />
           </template>
         </div>
-        <p class="display-none text-bold" :class="{ 'criteria-group-empty': hasNoResponses(getCriteriaMap(criteriaGroup.criteriaKeys)) }">No eligibility criteria selected</p>
+        <p
+          class="display-none text-bold"
+          :class="{
+            'criteria-group-empty': hasNoResponses(
+              getCriteriaMap(criteriaGroup.criteriaKeys)
+            )
+          }"
+        >
+          No eligibility criteria selected
+        </p>
       </div>
     </template>
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex"
 
 export default {
   props: {
@@ -39,20 +64,20 @@ export default {
   },
   computed: {
     ...mapGetters({
-      getCriterionByEligibilityKey: 'criteria/getCriterionByEligibilityKey',
+      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey"
     })
   },
   methods: {
-    getCriteriaMap (criteriaKeys) {
+    getCriteriaMap(criteriaKeys) {
       return criteriaKeys.map((criterionKey) => {
-        return this.getCriterionByEligibilityKey(criterionKey);
-      });
+        return this.getCriterionByEligibilityKey(criterionKey)
+      })
     },
-    hasNoResponses (criteria) {
-      return !criteria.map(c => !!c.response).some(response => response);
-    },
-  },
-};
+    hasNoResponses(criteria) {
+      return !criteria.map((c) => !!c.response).some((response) => response)
+    }
+  }
+}
 </script>
 <style type="scss" scoped>
 @media print {

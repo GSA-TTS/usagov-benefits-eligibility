@@ -30,23 +30,32 @@
               Open All
             </button>
             /
-            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">
-              Close All
-            </button>
+            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">Close All</button>
+            /
+            <button class="usa-button usa-button--unstyled clear-all" aria-controls="acc-id" @click="clearCriteria">Clear Selections</button>
           </div>
         </div>
         <div class="grid-col margin-y-2 text-right">
-          <label role="status" class="usa-label display-inline margin-right-1" for="benefitSort"
-            >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
-          >
-          <select
-            id="benefitSort"
-            class="usa-select margin-left-auto width-card display-inline-block"
-            name="options"
-            @change="sortChange">
-            <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
-            <option value="title" :selected="sort === 'title'">Title (A-Z)</option>
-          </select>
+          <label
+            role="status"
+            class="usa-label display-inline margin-right-1"
+            for="benefitSort">Showing {{ lifeEventBenefits.length }} related benefits sorted
+            by:
+            <select
+              id="benefitSort"
+              class="usa-select margin-left-auto width-card display-inline-block"
+              name="benefitSort"
+              aria-label="Sort benefits by"
+              @change="sortChange">
+              <option value="relevance" :selected="sort === 'relevance'">
+                Relevance
+              </option>
+              <option value="title" :selected="sort === 'title'">
+                Title (A-Z)
+              </option>
+            </select>
+
+            </label>
         </div>
       </div>
 
@@ -74,7 +83,7 @@
                 </span>
               </div>
             </div>
-            <div class="margin-bottom-4 display-flex print:display-none">
+            <div class="margin-bottom-2 display-flex print:display-none">
               <div class="text-primary">
                 <svg
                   class="usa-icon usa-icon--size-3"
@@ -86,7 +95,7 @@
                 </svg>
               </div>
               <div class="font-body-md usa-icon-list">
-                {{ lifeEvent.eligibilityCriteriaDescription }}
+                 {{ lifeEvent.eligibilityCriteriaDescription }}
               </div>
             </div>
             <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
@@ -203,8 +212,8 @@ export default {
       .sortBy("title")
       .fetch()
 
-    const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
-    await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
+    const allEligibilityCriteria = (await this.$content("criteria").fetch()).body;
+    await this.$store.dispatch("criteria/populate", allEligibilityCriteria);
 
     lifeEvent.related = []
     for (const related of lifeEvent.relatedKeys || []) {
@@ -248,7 +257,12 @@ export default {
     this.$root.$on("tag:click", this.tagClick)
   },
   methods: {
-    getVirtualCriteria() {
+
+    clearCriteria () {
+      this.$store.dispatch('criteria/clear')
+    },
+
+    getVirtualCriteria () {
       const lifeEventCriteria = Object.fromEntries(
         this.lifeEvent.eligibilityCriteria
           .map((ec) => ec.criteriaKeys)
@@ -295,18 +309,12 @@ export default {
     },
     tagClick(tag) {
       this.lifeEventBenefits = _.filter(this.allLifeEventBenefits, (benefit) => {
-        return benefit.tags.includes(tag)
-      })
-      this.filter = tag
-      this.sortBenefits()
+        return benefit.tags.includes(tag);
+      });
+      this.filter = tag;
+      this.sortBenefits();
       // eslint-disable-next-line vue/valid-next-tick
-      setTimeout(() => this.$nextTick(() => this.$refs.accordion.focus()), 250)
-    },
-    clearFilter() {
-      this.filter = ""
-      this.lifeEventBenefits = this.allLifeEventBenefits
-      this.sortBenefits()
-      this.$nextTick(() => this.$refs.accordion.focus())
+      setTimeout(() => (this.$nextTick(() => this.$refs.accordion.focus())), 250);
     },
   },
 }

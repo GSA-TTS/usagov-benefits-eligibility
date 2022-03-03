@@ -1,6 +1,7 @@
 # .prettierrc or .prettierrc.yaml
 # motivations
 # https://github.com/btholt/complete-intro-to-react-v7/blob/main/lessons/03-js-tools/B-prettier.md
+# docs: https://prettier.io/docs/en/options.html
 # some options to uncomment if we desire to do so
 printWidth: 120
 # trailingComma: "es5"
