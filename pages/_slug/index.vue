@@ -324,6 +324,12 @@ export default {
       // eslint-disable-next-line vue/valid-next-tick
       setTimeout(() => this.$nextTick(() => this.$refs.accordion.focus()), 250)
     },
+    clearFilter() {
+      this.filter = ""
+      this.lifeEventBenefits = this.allLifeEventBenefits
+      this.sortBenefits()
+      this.$nextTick(() => this.$refs.accordion.focus())
+    },
   },
 }
 </script>
