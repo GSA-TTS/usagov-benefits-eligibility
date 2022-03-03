@@ -6,7 +6,7 @@ ADDITIONAL_EXCLUDED_DIRECTORIES: [report]
 IGNORE_GITIGNORED_FILES: true
 
 # don't attempt to apply fixes at this time
-APPLY_FIXES: none
+APPLY_FIXES: all
 
 # please don't spell check everything...
 DISABLE: [SPELL, COPYPASTE]
@@ -19,3 +19,6 @@ PRINT_ALPACA: false
 
 # don't fail on finding (yet)
 DISABLE_ERRORS: true
+
+# use prettier for JavaScript code formatting
+JAVASCRIPT_DEFAULT_STYLE: prettier
