@@ -1,3 +1,5 @@
-*                     @GSA/bears-engineers
-*.js *.scss *.vue     @GSA/bears-engineers
+*.md                  @GSA/bears-engineers
+*.js                  @GSA/bears-engineers
+*.scss                @GSA/bears-engineers
+*.vue                 @GSA/bears-engineers
 /content/             @GSA/bears-content
