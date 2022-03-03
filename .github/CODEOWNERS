@@ -1,0 +1,3 @@
+*.js *.scss *.vue @bears-engineers !@wesley-dean-gsa
+*.md ! /content/ @bears-engineers !@wesley-dean-gsa
+/content/ @bears-content !@wesley-dean-gsa !@jonadecker
