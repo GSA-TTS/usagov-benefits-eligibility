@@ -1,5 +1,8 @@
+# Allow engineers to approve development PRs
 *.md                  @bears-engineers
 *.js                  @bears-engineers
 *.scss                @bears-engineers
 *.vue                 @bears-engineers
+
+# allow content editors to approve content PRs
 /content/             @bears-content
