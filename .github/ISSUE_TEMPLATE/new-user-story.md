@@ -7,13 +7,15 @@ assignees: ''
 
 ---
 
+# User Story
+
 As a BEARS _______, in order to _______, I would like ________ .
 
 Pre-conditions:
 
 - [ ] condition 1
 
- 
+
 
 Acceptance Criteria:
 - [ ] thing 1
