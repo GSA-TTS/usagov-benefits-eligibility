@@ -123,16 +123,7 @@
                 <span class="text-middle">Clear my selections</span>
               </button>
             </div>
-
-            <div class="margin-y-2 print:display-none">
-              <div class="display-flex flex-align-center">
-                <button class="usa-button open-all" aria-controls="acc-id" @click="openAll">Open All</button>
-
-                <button class="usa-button usa-button--outline close-all" aria-controls="acc-id" @click="closeAll">
-                  Close All
-                </button>
-              </div>
-            </div>
+            <OpenCloseButtons :is-close-active-prop="true" @open-all="openAll" @close-all="closeAll" />
           </div>
 
           <div class="grid-row grid-gap display-none print:display-block break-before-always">
@@ -158,7 +149,7 @@
               <p class="usa-alert__text">No matching benefits found.</p>
             </div>
           </div>
-          <accordion
+          <Accordion
             ref="accordion"
             :life-event-benefits="lifeEventBenefits"
             :life-event-criteria="lifeEvent.eligibilityCriteria" />
@@ -176,8 +167,13 @@
 import _ from "lodash"
 import { mapGetters, mapState } from "vuex"
 import mapTags from "~/mixins/MapTags"
+import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
 export default {
+  name: "LifeEvent",
+  components: {
+    OpenCloseButtons,
+  },
   mixins: [mapTags],
   layout: "default",
   async asyncData({ $content }) {

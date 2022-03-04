@@ -51,20 +51,7 @@
           </div>
           <!-- Mobile meta sort and open -->
           <h2 class="tablet:display-none font-heading-lg margin-top-1">Benefits Results</h2>
-          <div role="complementary" class="display-flex tablet:display-none grid-row grid-gap print:display-none">
-            <div class="tablet:grid-col-4 desktop:grid-col-3 margin-y-2 print:display-none">
-              <div class="display-flex flex-align-center flex-justify-start flex-align-stretch">
-                <button class="usa-button open-all height-5" aria-controls="acc-id" @click="openAll">Open All</button>
-
-                <button
-                  class="usa-button usa-button--outline close-all height-5"
-                  aria-controls="acc-id"
-                  @click="closeAll">
-                  Close All
-                </button>
-              </div>
-            </div>
-          </div>
+          <OpenCloseButtons :is-open-active-prop="true" @open-all="openAll" @close-all="closeAll" />
 
           <accordion
             ref="accordion"
@@ -90,8 +77,12 @@
 <script>
 import _ from "lodash"
 import mapTags from "~/mixins/MapTags"
+import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
 export default {
+  components: {
+    OpenCloseButtons,
+  },
   mixins: [mapTags],
   data() {
     return {
@@ -120,12 +111,10 @@ export default {
     this.topic = await this.$content("types", this.$route.params.slug)
       .fetch()
       .catch((_err) => {})
-
     this.topic.related = []
     for (const related of this.topic.relatedKeys || []) {
       this.topic.related.push(await this.$content("types", related).fetch())
     }
-
     this.lifeEventBenefits = lifeEventBenefits
   },
   /* istanbul ignore next */

@@ -51,21 +51,9 @@
           </div>
           <!-- Mobile meta sort and open -->
           <h2 class="tablet:display-none font-heading-lg margin-top-1">Benefits Results</h2>
-          <div role="complementary" class="display-flex tablet:display-none grid-row grid-gap print:display-none">
-            <div class="tablet:grid-col-4 desktop:grid-col-3 margin-y-2 print:display-none">
-              <div class="display-flex flex-align-center flex-justify-start flex-align-stretch">
-                <button class="usa-button open-all height-5" aria-controls="acc-id" @click="openAll">Open All</button>
 
-                <button
-                  class="usa-button usa-button--outline close-all height-5"
-                  aria-controls="acc-id"
-                  @click="closeAll">
-                  Close All
-                </button>
-              </div>
-            </div>
-          </div>
-          <accordion
+          <OpenCloseButtons :is-open-active-prop="true" @open-all="openAll" @close-all="closeAll" />
+          <Accordion
             ref="accordion"
             :life-event-benefits="lifeEventBenefits"
             :expanded="true"
@@ -91,8 +79,12 @@
 <script>
 import _ from "lodash"
 import mapTags from "~/mixins/MapTags"
+import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
 export default {
+  components: {
+    OpenCloseButtons,
+  },
   mixins: [mapTags],
   data() {
     return {
@@ -113,7 +105,6 @@ export default {
       : _.lowerCase(this.$route.params.slug)
     const agencyRegex = new RegExp(_.escapeRegExp(slug), "i")
     const lifeEventBenefits = await this.$content("benefits").sortBy("title").fetch()
-
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     this.lifeEventBenefits = lifeEventBenefits.filter(
@@ -124,7 +115,6 @@ export default {
     this.agency = await this.$content("agencies", this.$route.params.slug)
       .fetch()
       .catch((_err) => {})
-
     this.agency.related = []
     for (const related of this.agency.relatedKeys || []) {
       this.agency.related.push(await this.$content("agencies", related).fetch())
