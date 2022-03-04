@@ -72,7 +72,7 @@ describe("<OpenCloseButtons/>", () => {
     await button.trigger("click")
     expect(wrapper.emitted("close-all")).toBeTruthy()
   })
-  
+
   test("click twice Open", async () => {
     const wrapper = shallowMount(OpenCloseButtons, {
       propsData: {
