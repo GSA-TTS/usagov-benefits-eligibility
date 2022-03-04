@@ -53,7 +53,7 @@
           <h2 class="tablet:display-none font-heading-lg margin-top-1">Benefits Results</h2>
           <OpenCloseButtons :is-open-active-prop="true" @open-all="openAll" @close-all="closeAll" />
 
-          <accordion
+          <Accordion
             ref="accordion"
             :life-event-benefits="lifeEventBenefits"
             :expanded="true"
