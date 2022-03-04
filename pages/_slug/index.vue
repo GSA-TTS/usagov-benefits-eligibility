@@ -125,13 +125,10 @@
             </div>
 
             <div class="margin-y-2 print:display-none">
-              <div class="display-flex flex-align-center flex-justify-start flex-align-stretch">
-                <button class="usa-button open-all height-5" aria-controls="acc-id" @click="openAll">Open All</button>
+              <div class="display-flex flex-align-center">
+                <button class="usa-button open-all" aria-controls="acc-id" @click="openAll">Open All</button>
 
-                <button
-                  class="usa-button usa-button--outline close-all height-5"
-                  aria-controls="acc-id"
-                  @click="closeAll">
+                <button class="usa-button usa-button--outline close-all" aria-controls="acc-id" @click="closeAll">
                   Close All
                 </button>
               </div>
