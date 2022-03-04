@@ -102,33 +102,28 @@
           <!-- Mobile meta sort and open -->
           <h2 class="tablet:display-none font-heading-lg margin-top-6">Benefits Results</h2>
           <div role="complementary" class="tablet:display-none print:display-none">
-            <div class="grid-row grid-gap">
-              <div class="grid-col-6 margin-y-2 print:display-none">
-                <fieldset class="usa-fieldset">
-                  <label role="status" class="usa-label display-inline margin-right-1" for="benefitSort"
-                    >benefits sorted by:</label
-                  >
-                  <select
-                    id="benefitSort"
-                    class="usa-select margin-left-auto width-card display-inline-block"
-                    name="options"
-                    @change="sortChange">
-                    <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
-                    <option value="title" :selected="sort === 'title'">Title (A-Z)</option>
-                  </select>
-                </fieldset>
-              </div>
-              <div class="grid-col-6 margin-y-2 print:display-none">
-                <button
-                  class="usa-button usa-button--outline bg-white clear-selections margin-top-105em"
-                  @click="clearCriteria">
-                  <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
-                    <use xlink:href="~/assets/img/sprite.svg#highlight_off" />
-                  </svg>
-                  <span class="text-middle">Clear </span>
-                </button>
-              </div>
+            <div class="margin-y-2 print:display-none">
+              <fieldset class="usa-fieldset">
+                <label role="status" class="usa-label" for="benefitSort"
+                  >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
+                >
+                <select id="benefitSort" class="usa-select width-full" name="options" @change="sortChange">
+                  <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
+                  <option value="title" :selected="sort === 'title'">Title (A-Z)</option>
+                </select>
+              </fieldset>
             </div>
+            <div class="margin-y-2 print:display-none">
+              <button
+                class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white copy-selections"
+                @click="clearCriteria">
+                <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
+                  <use xlink:href="~/assets/img/sprite.svg#highlight_off" />
+                </svg>
+                <span class="text-middle">Clear my selections</span>
+              </button>
+            </div>
+
             <div class="margin-y-2 print:display-none">
               <div class="display-flex flex-align-center flex-justify-start flex-align-stretch">
                 <button class="usa-button open-all height-5" aria-controls="acc-id" @click="openAll">Open All</button>
