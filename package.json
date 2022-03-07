@@ -17,14 +17,13 @@
     "federalist:nuxtjsbug": "open https://github.com/nuxt/nuxt.js/issues/8973",
     "federalist:local": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/url\\(\\/fonts/url\\(..\\/fonts/g' *.css && cd ../../.. && ls -lhR _site",
     "federalist": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css && cd ../../.. && ls -lhR _site",
-    "preinstall": "npx npm-force-resolutions",
     "format": "prettier --write \"./**/*.{js,jsx,json,vue,md,css}\""
   },
   "dependencies": {
     "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/sitemap": "^2.4.0",
-    "ansi-html": "github:gebhardtr/ansi-html#25ca3089b6cb0ff785b76e21643e51f2d3570f0b",
+    "ansi-html": "^0.0.7",
     "ansi-regex": ">=5.0.1",
     "axios": "^0.26.0",
     "core-js": "^3.21.1",
@@ -74,8 +73,5 @@
     "Safari >= 9",
     "ie 8-11",
     "iOS >= 9"
-  ],
-  "resolutions": {
-    "glob-parent": "^5.1.2"
-  }
+  ]
 }
