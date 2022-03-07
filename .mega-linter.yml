@@ -6,7 +6,7 @@ ADDITIONAL_EXCLUDED_DIRECTORIES: [report]
 IGNORE_GITIGNORED_FILES: true
 
 # don't attempt to apply fixes at this time
-APPLY_FIXES: all
+APPLY_FIXES: none
 
 # please don't spell check everything...
 DISABLE: [SPELL, COPYPASTE]
