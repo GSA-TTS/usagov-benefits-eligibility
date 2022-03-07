@@ -1,0 +1,8 @@
+# Allow engineers to approve development PRs
+*.md                  @GSA/bears-engineers
+*.js                  @GSA/bears-engineers
+*.scss                @GSA/bears-engineers
+*.vue                 @GSA/bears-engineers
+
+# allow content editors to approve content PRs
+/content/             @GSA/bears-content
