@@ -19,7 +19,6 @@ on:
 # A workflow run is made up of one or more jobs that can run
 # sequentially or in parallel
 jobs:
-
   test_frontend:
     name: "test frontend"
     runs-on: ubuntu-latest
