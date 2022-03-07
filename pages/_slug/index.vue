@@ -267,7 +267,6 @@ export default {
       this.sortBenefits();
     },
     sortBenefits () {
-      console.log("this.sort", this.sort);
       if (this.sort === "title") {
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [this.sort]);
       } else {
