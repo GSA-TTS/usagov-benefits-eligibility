@@ -19,3 +19,6 @@ PRINT_ALPACA: false
 
 # don't fail on finding (yet)
 DISABLE_ERRORS: true
+
+# use prettier for JavaScript code formatting
+JAVASCRIPT_DEFAULT_STYLE: prettier

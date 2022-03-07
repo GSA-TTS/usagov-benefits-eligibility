@@ -23,7 +23,7 @@
         <li
           v-for="(criterion, index) in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
-          class="usa-icon-list__item grid-col-6 padding-bottom-2"
+          class="usa-icon-list__item tablet:grid-col-6 padding-bottom-2"
           style="padding-top: 0; padding-left: 1.25rem"
         >
           <div
@@ -31,15 +31,16 @@
               'usa-icon-list__icon',
               {
                 'text-success text-bold':
-                  doesCriterionMatchSelection(criterion) === true
+                  doesCriterionMatchSelection(criterion) === true,
               },
               {
-                'text-base': doesCriterionMatchSelection(criterion) === null
+                'text-base-light':
+                  doesCriterionMatchSelection(criterion) === null,
               },
               {
                 'text-secondary-vivid text-bold':
-                  doesCriterionMatchSelection(criterion) === false
-              }
+                  doesCriterionMatchSelection(criterion) === false,
+              },
             ]"
           >
             <div
@@ -126,18 +127,18 @@ export default {
     benefitSource: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     headingClasses: {
       type: Array,
       required: false,
-      default: () => ["bg-base-lighter"]
+      default: () => ["bg-base-lighter"],
     },
     showMatchingCount: {
       type: Boolean,
       required: false,
-      default: true
-    }
+      default: true,
+    },
   },
   computed: {
     ...mapGetters({
