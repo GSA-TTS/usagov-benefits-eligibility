@@ -196,6 +196,7 @@ export default {
 
     this.lifeEvent = lifeEvent;
     this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits;
+    this.sortBenefits();
   },
   /* istanbul ignore next */
   head () {
@@ -230,10 +231,12 @@ export default {
   mounted () {
     this.$root.$on("tag:click", this.tagClick);
   },
+
   methods: {
 
     clearCriteria () {
       this.$store.dispatch('criteria/clear')
+      this.sortBenefits();
     },
 
     getVirtualCriteria () {
@@ -264,6 +267,7 @@ export default {
       this.sortBenefits();
     },
     sortBenefits () {
+      console.log("this.sort", this.sort);
       if (this.sort === "title") {
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [this.sort]);
       } else {
