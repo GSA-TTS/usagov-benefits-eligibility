@@ -15,7 +15,7 @@ eligibilityCriteria:
       - applicant_served_in_active_military
       - applicant_disability
       - applicant_marital_status
-  
+
   - label: "Did you lose a loved one who served in military?"
     description: ""
     criteriaGroupKey: military

@@ -14,6 +14,4 @@ eligibilityCriteria:
     criteriaKeys:
       - applicant_income
       - applicant_citizen_status
-
-
 ---

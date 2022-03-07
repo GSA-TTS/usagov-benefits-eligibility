@@ -4,7 +4,6 @@ summary: "Financial or transportation assistance, in addition to burial in a VA 
 lede: "Financial or transportation assistance, in addition to burial in a VA national cemetery and memorials for some deceased veterans."
 
 relatedKeys:
- - financial-assistance
- - healthcare
- 
+  - financial-assistance
+  - healthcare
 ---
