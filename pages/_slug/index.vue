@@ -113,16 +113,7 @@
                 </select>
               </fieldset>
             </div>
-            <div class="margin-y-2 print:display-none">
-              <button
-                class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white copy-selections"
-                @click="clearCriteria">
-                <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
-                  <use xlink:href="~/assets/img/sprite.svg#highlight_off" />
-                </svg>
-                <span class="text-middle">Clear my selections</span>
-              </button>
-            </div>
+
             <OpenCloseButtons :is-close-active-prop="true" @open-all="openAll" @close-all="closeAll" />
           </div>
 
