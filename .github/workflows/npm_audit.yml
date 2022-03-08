@@ -1,0 +1,27 @@
+---
+name: npm audit
+
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+  schedule:
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+jobs:
+  scan:
+    name: npm audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+
+      - name: install dependencies
+        run: npm ci
+
+      - uses: oke-py/npm-audit-action@v1.8.4
+        with:
+          audit_level: moderate
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_labels: vulnerability,test
+          dedupe_issues: true
