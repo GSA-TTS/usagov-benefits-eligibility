@@ -4,12 +4,9 @@ name: npm audit
 # yamllint disable-line rule:truthy
 on:
   pull_request:
-  push:
-    branches:
-      - main
-      - "releases/*"
   schedule:
     - cron: "0 10 * * *"
+  workflow_dispatch:
 
 jobs:
   scan:
