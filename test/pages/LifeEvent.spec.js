@@ -68,7 +68,6 @@ const mockContent = {
   },
 }
 
-
 const vueMocks = (mocks) => {
   return Object.assign(
     {},
@@ -259,7 +258,7 @@ describe("Life Event page", () => {
         collectionName: CRITERIA_DIRECTORY,
         items: [{ ...mockContent.criteria }],
       },
-    ]);
+    ])
     const wrapper = shallowMount(LifeEventPage, {
       mocks: vueMocks({ $content, ...mockContent }),
       store,
