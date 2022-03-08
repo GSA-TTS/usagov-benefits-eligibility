@@ -10,13 +10,19 @@ export function createContentMock (collections) {
     const mockCollection = db.addCollection(collectionName);
     mockCollection.insert([...items]);
   });
-  // this mocks $content
+  // this mocks $content  a filter by dir returns an array,
+  // if specific content is added as an optional param, a single object is returned
   return jest.fn(function (queryName, options = null) {
-    const query = new QueryBuilder({
-      query: db.getCollection(queryName).chain(),
-      path: queryName,
-      text: false
-    }, {})
-    return query;
+    if(options == null){
+      const query = new QueryBuilder({
+        query: db.getCollection(queryName).chain(),
+        path: queryName,
+        text: false,
+      }, {})
+      return query;
+    }else {
+      const obj = db.getCollection(queryName).findOne({slug:options})
+      return { "fetch"() { return obj}}
+    }
   });
 }
