@@ -1,3 +1,3 @@
-import uswds from '../assets/js/uswds'
+import uswds from "../assets/js/uswds"
 
-export default function () {};
+export default function () {}

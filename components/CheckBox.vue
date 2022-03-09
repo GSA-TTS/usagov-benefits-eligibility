@@ -7,13 +7,8 @@
       :name="`${uniqueId}-${criteriaKey}`"
       :value="`${uniqueId}-${criteriaKey}`"
       :checked="response === true"
-      @change="updateEligibilityChecked($event, criteriaKey)"
-    />
-    <label
-      class="usa-checkbox__label"
-      :class="selectedStyle"
-      :for="`${uniqueId}-${criteriaKey}`"
-    >
+      @change="updateEligibilityChecked($event, criteriaKey)" />
+    <label class="usa-checkbox__label" :class="selectedStyle" :for="`${uniqueId}-${criteriaKey}`">
       {{ label }}
     </label>
   </fieldset>
@@ -27,27 +22,27 @@ export default {
   props: {
     criteriaKey: {
       type: String,
-      default: "no criteria key provided"
+      default: "no criteria key provided",
     },
     label: {
       type: String,
-      default: "no label provided"
+      default: "no label provided",
     },
     response: {
       type: [String, Object, Boolean],
-      default: "No response provided"
+      default: "No response provided",
     },
     location: {
       type: String,
       default: "benefit-card",
       validator: (value) => {
         return ["left-rail", "benefit-card"].includes(value)
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      uniqueId: _.uniqueId("checkbox-")
+      uniqueId: _.uniqueId("checkbox-"),
     }
   },
   computed: {
@@ -56,7 +51,7 @@ export default {
         return "text-success text-bold"
       }
       return null
-    }
+    },
   },
   mounted() {
     this.uniqueId = _.uniqueId("checkbox-")
@@ -65,11 +60,11 @@ export default {
     updateEligibilityChecked(event, key) {
       const localCriterion = {
         criteriaKey: key,
-        response: event.target.checked
+        response: event.target.checked,
       }
       this.$store.dispatch("criteria/updateResponse", localCriterion)
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -19,19 +19,15 @@
           :name="`${uniqueId}-${criteriaKey}-${value}`"
           :value="value"
           :checked="response === value"
-          @change="updateEligibilitySelected"
-        />
-        <label
-          class="usa-radio__label tablet:margin-top-1"
-          :for="`${uniqueId}-${criteriaKey}-${value}`"
-          >{{ value }}</label
-        >
+          @change="updateEligibilitySelected" />
+        <label class="usa-radio__label tablet:margin-top-1" :for="`${uniqueId}-${criteriaKey}-${value}`">{{
+          value
+        }}</label>
       </div>
       <div
         v-if="location === 'benefit-card' && lastItem(index, values)"
         :key="`${value}-${naUniqueId}`"
-        class="usa-radio tablet:padding-left-1"
-      >
+        class="usa-radio tablet:padding-left-1">
         <input
           :id="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`"
           class="usa-radio__input"
@@ -39,11 +35,8 @@
           :name="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`"
           :value="'not applicable'"
           :checked="response === 'not applicable'"
-          @change="updateEligibilitySelected"
-        />
-        <label
-          :for="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`"
-          class="usa-radio__label tablet:margin-top-1"
+          @change="updateEligibilitySelected" />
+        <label :for="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`" class="usa-radio__label tablet:margin-top-1"
           >not applicable</label
         >
       </div>
@@ -58,44 +51,43 @@ export default {
   props: {
     criteriaKey: {
       type: String,
-      default: "No key provided"
+      default: "No key provided",
     },
     label: {
       type: String,
-      default: "No label provided"
+      default: "No label provided",
     },
     values: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     response: {
       type: [String, Object, Boolean],
-      default: "No response provided"
+      default: "No response provided",
     },
     location: {
       default: "benefit-card",
       validator: (value) => {
         return ["left-rail", "benefit-card"].includes(value)
-      }
-    }
+      },
+    },
   },
   data() {
     return {
       uniqueId: _.uniqueId("radio-"),
-      naUniqueId: _.uniqueId("na-")
+      naUniqueId: _.uniqueId("na-"),
     }
   },
   computed: {
     selectedStyle() {
       if (
-        (this.location === "benefit-card" &&
-          this.response === "not applicable") ||
+        (this.location === "benefit-card" && this.response === "not applicable") ||
         typeof this.response === "object"
       ) {
         return "text-base text-normal font-weight-normal"
       }
       return "text-bold"
-    }
+    },
   },
   mounted() {
     this.uniqueId = _.uniqueId("radio-")
@@ -105,14 +97,14 @@ export default {
     updateEligibilitySelected(e) {
       const localCriterion = {
         criteriaKey: this.criteriaKey,
-        response: e.target.value
+        response: e.target.value,
       }
       this.$store.dispatch("criteria/updateResponse", localCriterion)
     },
     lastItem(index, list) {
       return index === list.length - 1
-    }
-  }
+    },
+  },
 }
 </script>
 
