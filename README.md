@@ -51,9 +51,9 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 ## Using Docker
 
 If one does not wish to use / install the build requirements on their
-local system, an alternative would be to use Docker.  Docker is a
+local system, an alternative would be to use Docker. Docker is a
 containerization tool that allows for fresh, repeatable builds on
-a clean system.  The artifact from a Docker build is an "image";
+a clean system. The artifact from a Docker build is an "image";
 when that image is run, it starts a "container."
 
 ### Building with Docker
@@ -85,7 +85,7 @@ docker run \
 ```
 
 This will run the container in the foreground (replace the `--interactive`
-and `--tty` flags with `--detach` to have it run in the background).  The
+and `--tty` flags with `--detach` to have it run in the background). The
 `--expose` flag makes it so that connection attempts to the port BEARS
 runs on is accessible outside of the container (e.g., from a web browser
 on the local system).
@@ -103,7 +103,7 @@ the BEARS application at:
 
 For systems where Docker is not installed, a Vagrantfile is provided
 so that the [Vagrant](https://www.vagrantup.com/) tool may be used to
-start a virtual machine (VM) that has Docker installed.  Note: one
+start a virtual machine (VM) that has Docker installed. Note: one
 may need to install virtualization platform such as
 [Virtualbox](https://www.virtualbox.org/).
 
@@ -115,12 +115,12 @@ To start Vagrant, use the following command:
 vagrant up
 ```
 
-This will start the virtual machine in the background.  This virtual
+This will start the virtual machine in the background. This virtual
 machine will have the BEARS source code copied to it as a part of
 the provisioning steps performed by `vagrant up`.
 
 - note: the source code installed on the virtual machine is a copy
-  of what's on the local filesystem.  Any changes made on the
+  of what's on the local filesystem. Any changes made on the
   virtual machine are not reflected on the local filesystem; any
   changes made on the local filesystem are not reflected on the
   virtual machine.
@@ -133,7 +133,7 @@ vagrant ssh
 ```
 
 Running this command is like using `ssh` to connect to a remote
-system.  To close the connection, use `exit` or `logout` normally.
+system. To close the connection, use `exit` or `logout` normally.
 
 Once connected to the virtual machine, use the steps listed previously
 to build an image of the BEARS software and run it as a container.
@@ -148,8 +148,8 @@ docker build -t bears . \
 - [https://nuxtjs.org/](https://nuxtjs.org/)
 - [https://webpack.js.org/](https://webpack.js.org)
 - [https://jestjs.io/](https://jestjs.io/)
-- [https://federalistapp.18f.gov/]( https://federalistapp.18f.gov/)
-- [https://federalist.18f.gov/documentation/]( https://federalist.18f.gov/documentation/)
+- [https://federalistapp.18f.gov/](https://federalistapp.18f.gov/)
+- [https://federalist.18f.gov/documentation/](https://federalist.18f.gov/documentation/)
 
 ### Github Actions
 

@@ -23,6 +23,4 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_served_in_active_military
-      
-
 ---

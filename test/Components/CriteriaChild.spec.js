@@ -2,12 +2,7 @@ import { shallowMount, mount } from "@vue/test-utils"
 import Vuex from "vuex"
 import CriteriaChild from "@/components/CriteriaChild.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import {
-  state as criteriaState,
-  mutations,
-  getters,
-  actions
-} from "~/store/criteria"
+import { state as criteriaState, mutations, getters, actions } from "~/store/criteria"
 
 describe("CriteriaChild", () => {
   let store
@@ -25,22 +20,22 @@ describe("CriteriaChild", () => {
           state: criteriaState,
           actions,
           mutations,
-          getters
-        }
-      }
+          getters,
+        },
+      },
     })
   })
   test("is a Vue instance", () => {
     const wrapper = shallowMount(CriteriaChild, {
       propsData: {},
-      store
+      store,
     })
     expect(wrapper.vm).toBeTruthy()
   })
 
   test("displays nothing when there are no criteria passed in", () => {
     const wrapper = shallowMount(CriteriaChild, {
-      store
+      store,
     })
     expect(wrapper.find(".eligibility-criterion").text()).toBeFalsy()
   })
@@ -54,8 +49,8 @@ describe("CriteriaChild", () => {
         type: "boolean",
         values: ["true", "false"],
         criteriaGroupKey: "test-group-key",
-        response: "balkajdflkjslf"
-      }
+        response: "balkajdflkjslf",
+      },
     })
     expect(wrapper.find("label").text()).toBe("bal bal")
   })
@@ -68,8 +63,8 @@ describe("CriteriaChild", () => {
         type: "boolean",
         values: ["true", "false"],
         criteriaGroupKey: "test-group-key",
-        response: "balkajdflkjslf"
-      }
+        response: "balkajdflkjslf",
+      },
     })
     expect(wrapper.find("label").text()).toBe("No label provided")
   })

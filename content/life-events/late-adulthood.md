@@ -17,6 +17,4 @@ eligibilityCriteria:
       - applicant_disability
       - applicant_marital_status
       - applicant_citizen_status
-      
-
 ---

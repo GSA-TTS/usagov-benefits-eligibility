@@ -1,24 +1,11 @@
 <template>
   <div :class="['usa-card__container'].concat(cardContainerClasses)">
     <header class="usa-card__header padding-bottom-2">
-      <component
-        :is="cardTitleHeadingLevel"
-        :id="'usa-card-heading-' + _uid"
-        class="usa-card__heading"
-      >
+      <component :is="cardTitleHeadingLevel" :id="'usa-card-heading-' + _uid" class="usa-card__heading">
         {{ cardTitle }}
       </component>
-      <div
-        v-if="cardTags && cardTags.length > 0"
-        class="tags-container margin-top-1"
-      >
-        <Tag
-          v-for="tag in cardTags"
-          :key="tag.name"
-          :name="tag.name"
-          :click="cardTagsEmitClick"
-          :title="tag.title"
-        />
+      <div v-if="cardTags && cardTags.length > 0" class="tags-container margin-top-1">
+        <Tag v-for="tag in cardTags" :key="tag.name" :name="tag.name" :click="cardTagsEmitClick" :title="tag.title" />
       </div>
     </header>
     <div class="usa-card__body">
@@ -29,11 +16,7 @@
       <slot name="eligibility"></slot>
     </div>
     <div class="usa-card__footer">
-      <ul
-        v-if="primaryButtonLink !== '#'"
-        class="usa-button-group"
-        :aria-label="'Choices for ' + cardTitle"
-      >
+      <ul v-if="primaryButtonLink !== '#'" class="usa-button-group" :aria-label="'Choices for ' + cardTitle">
         <li class="usa-button-group__item">
           <span v-if="isRemoteLink(primaryButtonLink)">
             <a
@@ -41,8 +24,7 @@
               :target="primaryButtonTarget"
               :aria-label="primaryButtonAriaLabel"
               :aria-labelledby="'usa-card-heading-' + _uid"
-              class="usa-button usa-button--outline print:display-none"
-            >
+              class="usa-button usa-button--outline print:display-none">
               {{ primaryButtonText }}
             </a>
           </span>
@@ -51,21 +33,16 @@
             :to="primaryButtonLink"
             :aria-label="primaryButtonAriaLabel"
             class="usa-button"
-            :aria-labelledby="'usa-card-heading-' + _uid"
-          >
+            :aria-labelledby="'usa-card-heading-' + _uid">
             {{ primaryButtonText }}
           </nuxt-link>
         </li>
 
-        <li
-          v-if="secondaryButtonText && secondaryButtonLink"
-          class="usa-button-group__item"
-        >
+        <li v-if="secondaryButtonText && secondaryButtonLink" class="usa-button-group__item">
           <nuxt-link
             :to="secondaryButtonLink"
             class="usa-button usa-button--outline print:display-none"
-            :aria-labelledby="'usa-card-heading-' + _uid"
-          >
+            :aria-labelledby="'usa-card-heading-' + _uid">
             {{ secondaryButtonText }}
           </nuxt-link>
         </li>
@@ -79,73 +56,73 @@ export default {
     cardTitle: {
       type: String,
       required: true,
-      default: "Card title not provided"
+      default: "Card title not provided",
     },
     cardTitleHeadingLevel: {
       type: String,
       required: false,
-      default: "h3"
+      default: "h3",
     },
     cardBody: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     cardContainerClasses: {
       type: Array,
       required: false,
-      default: () => []
+      default: () => [],
     },
     primaryButtonText: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     primaryButtonLink: {
       type: String,
       required: false,
-      default: "#"
+      default: "#",
     },
     primaryButtonTarget: {
       type: String,
       required: false,
-      default: "_self"
+      default: "_self",
     },
     primaryButtonAriaLabel: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     secondaryButtonText: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     secondaryButtonLink: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     cardTagsEmitClick: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     cardTags: {
       type: Array,
       required: false,
       default: () => {
-        return [];
-      }
-    }
+        return []
+      },
+    },
   },
   data() {
-    return {};
+    return {}
   },
   methods: {
     isRemoteLink(link) {
-      return link?.startsWith("https://");
-    }
-  }
-};
+      return link?.startsWith("https://")
+    },
+  },
+}
 </script>

@@ -6,14 +6,13 @@ import { state as criteriaState, mutations, getters } from "~/store/criteria"
 
 const MOCK_CRITERIA = {
   criteriaKey: "deceased_served_in_active_military",
-  label:
-    "The deceased served in the active military, naval, or air service and",
+  label: "The deceased served in the active military, naval, or air service and",
   type: "select",
   values: [
     "was discharged under conditions other than dishonorable",
     "died while on active duty",
-    "had retired from the service"
-  ]
+    "had retired from the service",
+  ],
 }
 
 describe("<DropDown/>", () => {
@@ -28,7 +27,7 @@ describe("<DropDown/>", () => {
     criteriaState.namespaced = true
 
     actions = {
-      updateResponse: jest.fn()
+      updateResponse: jest.fn(),
     }
 
     store = new Store({
@@ -38,9 +37,9 @@ describe("<DropDown/>", () => {
           state: criteriaState,
           actions,
           mutations,
-          getters
-        }
-      }
+          getters,
+        },
+      },
     })
   })
 
@@ -49,8 +48,8 @@ describe("<DropDown/>", () => {
       propsData: {
         criteriaKey: MOCK_CRITERIA.criteriaKey,
         label: MOCK_CRITERIA.label,
-        values: MOCK_CRITERIA.values
-      }
+        values: MOCK_CRITERIA.values,
+      },
     })
     expect(wrapper.vm).toBeTruthy()
   })
@@ -63,24 +62,20 @@ describe("<DropDown/>", () => {
   test("displays eligibilityCriteria when one is passed in", () => {
     const wrapper = shallowMount(DropDown, {
       propsData: { ...MOCK_CRITERIA },
-      store
+      store,
     })
-    expect(wrapper.find("label").text()).toBe(
-      "The deceased served in the active military, naval, or air service and"
-    )
+    expect(wrapper.find("label").text()).toBe("The deceased served in the active military, naval, or air service and")
     expect(wrapper.find("option:checked").element.value).toBeFalsy()
   })
 
   test("updates when a select criteria response changes", async () => {
     const wrapper = shallowMount(DropDown, {
       propsData: { ...MOCK_CRITERIA },
-      store
+      store,
     })
     const choices = wrapper.find("select").findAll("option")
     await choices.at(2).setSelected()
-    expect(wrapper.find("option:checked").element.value).toBe(
-      "died while on active duty"
-    )
+    expect(wrapper.find("option:checked").element.value).toBe("died while on active duty")
     expect(actions.updateResponse).toHaveBeenCalled()
   })
 })
