@@ -193,7 +193,6 @@ export default {
 
   async fetch() {
     const lifeEvent = await this.$content("life-events", this.$route.params.slug).fetch()
-
     const lifeEventBenefits = await this.$content("benefits")
       .where({
         lifeEvents: { $contains: this.$route.params.slug },
