@@ -1,0 +1,4 @@
+# zap-baseline rule configuration file
+# Change WARN to IGNORE to ignore rule or FAIL to fail if rule matches
+# Only the rule identifiers are used - the names are just for info
+# You can add your own messages to each rule by appending them after a TAB on each line.
