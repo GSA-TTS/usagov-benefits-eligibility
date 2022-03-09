@@ -26,5 +26,4 @@ eligibilityCriteria:
     criteriaKeys:
       - applicant_relationship
       - deceased_paid_into_SS
-
 ---

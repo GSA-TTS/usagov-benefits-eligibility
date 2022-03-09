@@ -210,6 +210,7 @@ export default {
 
     this.lifeEvent = lifeEvent
     this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits
+    this.sortBenefits()
   },
   /* istanbul ignore next */
   head() {
@@ -247,6 +248,7 @@ export default {
   methods: {
     clearCriteria() {
       this.$store.dispatch("criteria/clear")
+      this.sortBenefits()
     },
 
     getVirtualCriteria() {
@@ -318,7 +320,7 @@ export default {
   transition: transform 2s;
 }
 
-/* 
+/*
 tablet and higher
 uswds breakpoints https://designsystem.digital.gov/utilities/layout-grid/
 */

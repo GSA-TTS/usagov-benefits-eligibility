@@ -3,8 +3,7 @@
     <template v-if="location === 'left-rail'">
       <label
         class="usa-label margin-top-0 tablet:padding-top-1 text-bold"
-        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
-      >
+        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`">
         {{ label }}
       </label>
     </template>
@@ -12,8 +11,7 @@
       <label
         class="usa-label margin-top-0"
         style="font-weight: inherit"
-        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
-      >
+        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`">
         {{ label }}
       </label>
     </template>
@@ -21,15 +19,9 @@
       :id="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       class="usa-select"
       :name="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
-      @change="updateEligibilitySelected($event, criteriaKey)"
-    >
+      @change="updateEligibilitySelected($event, criteriaKey)">
       <option :value="null">- Select -</option>
-      <option
-        v-for="option in values"
-        :key="option"
-        :value="option"
-        :selected="response === option"
-      >
+      <option v-for="option in values" :key="option" :value="option" :selected="response === option">
         {{ option }}
       </option>
     </select>
@@ -43,34 +35,34 @@ export default {
   props: {
     label: {
       type: String,
-      default: "No label provided"
+      default: "No label provided",
     },
     criteriaKey: {
       type: String,
-      default: "No key provided"
+      default: "No key provided",
     },
     values: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     response: {
       type: [String, Object, Boolean],
-      default: "No response provided"
+      default: "No response provided",
     },
     criteriaIndex: {
       type: [Number, String],
-      default: "no index provided"
+      default: "no index provided",
     },
     location: {
       default: "benefit-card",
       validator: (value) => {
         return ["left-rail", "benefit-card"].includes(value)
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      uniqueId: _.uniqueId("dropdown-")
+      uniqueId: _.uniqueId("dropdown-"),
     }
   },
   mounted() {
@@ -80,10 +72,10 @@ export default {
     updateEligibilitySelected(e) {
       const localCriterion = {
         criteriaKey: this.criteriaKey,
-        response: e.target.value
+        response: e.target.value,
       }
       this.$store.dispatch("criteria/updateResponse", localCriterion)
-    }
-  }
+    },
+  },
 }
 </script>
