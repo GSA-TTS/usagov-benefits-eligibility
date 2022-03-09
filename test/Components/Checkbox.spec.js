@@ -6,11 +6,10 @@ import { state as criteriaState, mutations, getters } from "~/store/criteria"
 
 const MOCK_CRITERIA = {
   criteriaKey: "deceased_served_in_active_military",
-  label:
-    "The deceased served in the active military, naval, or air service and",
+  label: "The deceased served in the active military, naval, or air service and",
   type: "boolean",
   response: false,
-  location: "benefit-card"
+  location: "benefit-card",
 }
 
 describe("<CheckBox/>", () => {
@@ -24,7 +23,7 @@ describe("<CheckBox/>", () => {
   beforeEach(() => {
     criteriaState.namespaced = true
     actions = {
-      updateResponse: jest.fn()
+      updateResponse: jest.fn(),
     }
 
     store = new Store({
@@ -34,9 +33,9 @@ describe("<CheckBox/>", () => {
           state: criteriaState,
           actions,
           mutations,
-          getters
-        }
-      }
+          getters,
+        },
+      },
     })
   })
 
@@ -45,8 +44,8 @@ describe("<CheckBox/>", () => {
       propsData: {
         criteriaKey: MOCK_CRITERIA.criteriaKey,
         label: MOCK_CRITERIA.label,
-        response: MOCK_CRITERIA.response
-      }
+        response: MOCK_CRITERIA.response,
+      },
     })
     expect(wrapper.vm).toBeTruthy()
   })
@@ -54,20 +53,16 @@ describe("<CheckBox/>", () => {
   test("displays eligibilityCriteria when one is passed in", () => {
     const wrapper = shallowMount(CheckBox, {
       propsData: { ...MOCK_CRITERIA },
-      store
+      store,
     })
-    expect(wrapper.find("label").text()).toBe(
-      "The deceased served in the active military, naval, or air service and"
-    )
-    expect(
-      wrapper.find(".usa-checkbox__input").element.checked
-    ).not.toBeTruthy()
+    expect(wrapper.find("label").text()).toBe("The deceased served in the active military, naval, or air service and")
+    expect(wrapper.find(".usa-checkbox__input").element.checked).not.toBeTruthy()
   })
 
   test("updates when a checkbox criteria response changes", async () => {
     const wrapper = shallowMount(CheckBox, {
       propsData: { ...MOCK_CRITERIA },
-      store
+      store,
     })
     await wrapper.find(".usa-checkbox__input").setChecked()
     expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy()
@@ -76,16 +71,15 @@ describe("<CheckBox/>", () => {
   test("when checkbox is selected it must have correct styling", async () => {
     const MOCK_CHECKBOX_SELECTED = {
       criteriaKey: "deceased_served_in_active_military",
-      label:
-        "The deceased served in the active military, naval, or air service and",
+      label: "The deceased served in the active military, naval, or air service and",
       type: "boolean",
       response: true,
-      location: "benefit-card"
+      location: "benefit-card",
     }
 
     const wrapper = shallowMount(CheckBox, {
       propsData: { ...MOCK_CHECKBOX_SELECTED },
-      store
+      store,
     })
     await wrapper.find(".usa-checkbox__input").setChecked()
     expect(wrapper.find(".usa-checkbox__input").element.checked).toBeTruthy()

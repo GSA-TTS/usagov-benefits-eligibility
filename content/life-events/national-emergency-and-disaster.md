@@ -14,7 +14,7 @@ eligibilityCriteria:
     criteriaKeys:
       - applicant_declared_disaster
       - applicant_citizen_status
-      
+
   - label: "Did you lose a loved one due to national emergency or disater?"
     description: ""
     criteriaGroupKey: deceased
@@ -22,8 +22,4 @@ eligibilityCriteria:
       - deceased_died_of_COVID
       - deceased_death_location_is_US
       - applicant_paid_funeral_expenses
- 
-
-
-
 ---

@@ -208,9 +208,9 @@ export default {
       lifeEvent.related.push(await this.$content("life-events", related).fetch())
     }
 
-    this.lifeEvent = lifeEvent;
-    this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits;
-    this.sortBenefits();
+    this.lifeEvent = lifeEvent
+    this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits
+    this.sortBenefits()
   },
   /* istanbul ignore next */
   head() {
@@ -246,10 +246,9 @@ export default {
     this.$root.$on("tag:click", this.tagClick)
   },
   methods: {
-
-    clearCriteria () {
-      this.$store.dispatch('criteria/clear')
-      this.sortBenefits();
+    clearCriteria() {
+      this.$store.dispatch("criteria/clear")
+      this.sortBenefits()
     },
 
     getVirtualCriteria() {
