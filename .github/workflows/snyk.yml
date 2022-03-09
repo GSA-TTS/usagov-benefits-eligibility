@@ -1,5 +1,4 @@
 ---
-
 name: Snyk Scan
 
 # yamllint disable-line rule:truthy
