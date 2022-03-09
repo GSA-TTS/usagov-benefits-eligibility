@@ -36,3 +36,5 @@ _site
 
 # MegaLinter reports
 report/
+
+.idea
