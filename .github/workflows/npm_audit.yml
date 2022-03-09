@@ -3,7 +3,6 @@ name: npm audit
 
 # yamllint disable-line rule:truthy
 on:
-  pull_request:
   schedule:
     - cron: "0 10 * * *"
   workflow_dispatch:
