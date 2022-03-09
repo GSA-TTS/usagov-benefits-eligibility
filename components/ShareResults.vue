@@ -1,8 +1,10 @@
 <template>
   <div class="margin-bottom-4 print:display-none">
     <div
-      class="display-none tablet:display-block margin-bottom-5 border-bottom border-gray-30 border-width-2px break-inside-avoid padding-bottom-4">
-      <button class="usa-button usa-button--outline width-card-lg bg-white clear-selections" @click="clearCriteria">
+      class="display-block margin-bottom-5 border-bottom border-gray-30 border-width-2px break-inside-avoid padding-bottom-4">
+      <button
+        class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white clear-selections"
+        @click="clearCriteria">
         <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
           <use xlink:href="~/assets/img/sprite.svg#highlight_off" />
         </svg>

@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils"
+import { shallowMount, mount } from "@vue/test-utils"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
 import Vuex from "vuex"
@@ -138,8 +138,6 @@ describe("Life Event page", () => {
     })
 
     await wrapper.vm.$options.fetch.apply(wrapper.vm)
-    wrapper.vm.lifeEvent = mockContent.lifeEvent
-    await store.dispatch("criteria/populate", [...mockContent.criteria.body])
     await wrapper.vm.$nextTick()
     expect(wrapper.find("h1").text()).toBe("test life event secondary headline")
     expect(wrapper.vm.lifeEventTitle).toBe("test life event secondary headline")
