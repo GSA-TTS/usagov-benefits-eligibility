@@ -8,8 +8,8 @@ on:
     - cron: '30 3 * * SAT' # every Saturday at 3:30am
 
 jobs:
-  woke:
-    name: woke
+  ZAP:
+    name: OWASP ZAP
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
