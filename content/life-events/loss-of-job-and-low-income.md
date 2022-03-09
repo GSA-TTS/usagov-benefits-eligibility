@@ -19,5 +19,4 @@ eligibilityCriteria:
       - applicant_marital_status
       - applicant_care_for_child
       - applicant_citizen_status
-
 ---
