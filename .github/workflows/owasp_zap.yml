@@ -5,7 +5,7 @@ name: OWASP ZAP
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 3 * * SAT' # every Saturday at 3:30am
+    - cron: "30 3 * * SAT" # every Saturday at 3:30am
 
 jobs:
   ZAP:
