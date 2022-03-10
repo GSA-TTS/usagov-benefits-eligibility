@@ -1,9 +1,8 @@
-import { mount, shallowMount } from "@vue/test-utils"
+import { mount } from "@vue/test-utils"
 import Vuex from "vuex"
 import ShareResults from "@/components/ShareResults.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import { state as criteriaState, mutations, getters, actions } from "~/store/criteria"
-import LifeEventPage from "~/pages/_slug"
+import { actions, getters, mutations, state as criteriaState } from "~/store/criteria"
 
 const MOCK_CRITERIA = [
   {
@@ -52,6 +51,26 @@ describe("ShareResults", () => {
     await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
     const wrapper = mount(ShareResults, { store })
     expect(wrapper.vm).toBeTruthy()
+  })
+
+  it("will append query args with values from local store", async () => {
+    let historyLocationChange = "nothing"
+    jest.spyOn(window.history, "replaceState")
+    window.history.replaceState.mockImplementation((state, title, url) => {
+      historyLocationChange = url
+    })
+
+    await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
+    const trueCriteria = {
+      criteriaKey: "criteriaKey1",
+      response: true,
+    }
+
+    store.commit("criteria/updateResponse", { ...trueCriteria })
+
+    expect(historyLocationChange).toBe("nothing")
+    mount(ShareResults, { store })
+    expect(historyLocationChange).toBe("http://localhost/?ae35859=1")
   })
 
   it("should have an enabled button when there are critera filled out and populate the clipboard when clicked", async () => {
