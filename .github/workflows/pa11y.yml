@@ -1,0 +1,58 @@
+---
+name: pa11y tests
+
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Building site and running pa11y-ci tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source.
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test frontend
+        run: npm run test
+
+      - name: Build frontend
+        run: npm run federalist:local
+
+      - name: Test accessibility with pa11y
+        run: |
+          npm run start & \
+          timeout 22 \
+          sh -c 'until nc -z localhost 3000; do sleep 1; done' \
+          && npm run test:pa11y 2>&1 | tee pa11y_output.txt
+
+      - name: Read pa11y_output file.
+        id: pa11y_output
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./pa11y_output.txt
+
+      - name: Comment on pull request.
+        uses: thollander/actions-comment-pull-request@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: "<details><summary>Pa11y testing results</summary>
+            ```${{ steps.pa11y_output.outputs.content }}```
+            </details>"
+
+      - name: Check for pa11y failures.
+        if: contains(steps.pa11y_output.outputs.content, 'errno 2')
+        run: |
+          echo "::error::The site is failing accessibility tests."
+          echo "Please review the comment in the pull request for details."
+          exit 1
