@@ -5,7 +5,7 @@ name: OWASP ZAP Full Scan
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 3 * * SAT' # every Saturday at 3:30am
+    - cron: "30 3 * * SAT" # every Saturday at 3:30am
 
 jobs:
   ZAP:
@@ -19,8 +19,8 @@ jobs:
         uses: zaproxy/action-full-scan@v0.6.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          docker_name: 'owasp/zap2docker-stable'
+          docker_name: "owasp/zap2docker-stable"
           # yamllint disable-line rule:line-length
-          target: 'https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov/site/gsa/usagov-benefits-eligibility/'
-          rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a -n .zap/context.txt'
+          target: "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov/site/gsa/usagov-benefits-eligibility/"
+          rules_file_name: ".zap/rules.tsv"
+          cmd_options: "-a -n .zap/context.txt"
