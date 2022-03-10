@@ -5,6 +5,8 @@
 [![MegaLinter](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml)
 [![Semgrep](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml)
 [![woke](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml)
+[![Snyk Scan](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml)
+[![npm audit](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/npm_audit.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/npm_audit.yml)
 
 BEARS will be a proactive notification service that provides
 timely and personalized information about benefits
