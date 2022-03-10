@@ -1,5 +1,5 @@
 ---
-name: OWASP ZAP
+name: OWASP ZAP Full Scan
 
 # yamllint disable-line rule:truthy
 on:
@@ -9,14 +9,14 @@ on:
 
 jobs:
   ZAP:
-    name: OWASP ZAP
+    name: OWASP ZAP Full Scan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: OWASP ZAP Baseline Scan
-        uses: zaproxy/action-baseline@v0.6.1
+      - name: OWASP ZAP Full Scan
+        uses: zaproxy/action-full-scan@v0.6.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: "owasp/zap2docker-stable"
