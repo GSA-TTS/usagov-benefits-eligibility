@@ -63,44 +63,55 @@
 export default {
   data() {
     return {
-      alert: false,
-    }
+      alert: false
+    };
   },
   computed: {
     /* eslint vue/return-in-computed-property: "off" */
     url() {
-      /* istanbul ignore next */ if (process.client || process.env.NODE_ENV === "test") {
-        const params = new URLSearchParams()
-        const responses = this.$store.getters["criteria/getHashResponses"]
-
+      /* istanbul ignore next */
+      if (process.client || process.env.NODE_ENV === "test") {
+        const params = new URLSearchParams();
+        const responses = this.$store.getters["criteria/getHashResponses"];
         for (const criteriaKey in responses) {
           if (responses[criteriaKey]) {
             const valueMap = {
               [responses[criteriaKey]]: responses[criteriaKey],
               true: 1,
-              false: 0,
-            }
-            params.append(criteriaKey, valueMap[responses[criteriaKey]])
+              false: 0
+            };
+            params.append(criteriaKey, valueMap[responses[criteriaKey]]);
           }
         }
-        const baseUrl = window.location.href.replace(window.location.search, "")
-        const diredBaseUrl = baseUrl.endsWith("/") || baseUrl.endsWith("?") ? baseUrl : `${baseUrl}/`
-        return `${diredBaseUrl}?${params.toString()}`
+        let baseUrl = window.location.href.replace(window.location.search, "");
+        if (baseUrl.endsWith("?")) {
+          baseUrl = baseUrl.substring(0, baseUrl.length - 1);
+        }
+        const diredBaseUrl = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+        return `${diredBaseUrl}?${params.toString()}`;
       }
-    },
+    }
   },
   watch: {
     url(value) {
-      const url = value || /* istanbul ignore next */ window.location.href.replace(window.location.search, "")
-      history.replaceState(null, document.title, url)
-    },
+      const url = value || /* istanbul ignore next */ window.location.href.replace(window.location.search, "");
+      history.replaceState(null, document.title, url);
+    }
   },
+
+  mounted() {
+    if (window.location.href !== this.url) {
+      history.replaceState(null, document.title, this.url);
+    }
+  },
+
+
   beforeMount() {
-    const params = new URLSearchParams(this.search || window.location.search)
+    const params = new URLSearchParams(this.search || window.location.search);
     /* eslint prefer-const: "OFF" */
-    let vals = []
+    let vals = [];
     for (let [key, value] of params) {
-      value = value || true
+      value = value || true;
       const valueMap = {
         [value]: value,
         // eslint-disable-next-line quote-props
@@ -108,41 +119,41 @@ export default {
         // eslint-disable-next-line quote-props
         false: false,
         1: true,
-        0: false,
-      }
+        0: false
+      };
       vals.push({
         criteriaKeyHash: key.toLowerCase(),
-        response: valueMap[value],
-      })
+        response: valueMap[value]
+      });
     }
 
     this.$store.commit("criteria/preloadedResponses", {
-      valueArray: vals,
-    })
+      valueArray: vals
+    });
   },
   methods: {
     blur() {
-      this.alert = false
+      this.alert = false;
     },
     async copy() {
-      await navigator.clipboard.writeText(this.url)
-      this.alert = true
+      await navigator.clipboard.writeText(this.url);
+      this.alert = true;
       /* istanbul ignore next */
       setTimeout(() => {
-        this.alert = false
-      }, 30 * 1000)
+        this.alert = false;
+      }, 30 * 1000);
     },
 
     clearCriteria() {
-      this.$store.dispatch("criteria/clear")
+      this.$store.dispatch("criteria/clear");
     },
 
     /* istanbul ignore next */
     email() {
       window.location.href = `mailto:?subject=Results%20from%20benefits%20elibibility%20awareness%20resource&body=Results%20${encodeURIComponent(
         this.url
-      )}`
-    },
-  },
-}
+      )}`;
+    }
+  }
+};
 </script>
