@@ -125,6 +125,7 @@ export default {
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       isCriterionSelected: "criteria/isCriterionSelected",
       getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey",
+      doesCriterionDateMatch: "criteria/doesCriterionDateMatch"
     }),
   },
   methods: {

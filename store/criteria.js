@@ -1,6 +1,6 @@
 import Vue from "vue"
-import stringToHash from "../services/stringToHash"
 import { toDate, isEqual, isBefore, isAfter, sub } from "date-fns"
+import stringToHash from "../services/stringToHash"
 
 export const state = () => ({
   eligibilityCriteria: {},
