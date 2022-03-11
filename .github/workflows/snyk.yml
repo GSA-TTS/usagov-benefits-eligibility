@@ -2,8 +2,10 @@
 name: Snyk Scan
 
 # yamllint disable-line rule:truthy
-on: push
-workflow_dispatch:
+on:
+  push:
+  workflow_dispatch:
+
 jobs:
   security:
     runs-on: ubuntu-latest
