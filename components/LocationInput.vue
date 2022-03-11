@@ -4,7 +4,7 @@
         {{label}}
     </label>
     <input
-      :class="`usa-input usa-input${response === null ? '': response === false ? '--error': '--success' } ${selectedStyle}`"
+      :class="inputClass"
       :id="`${uniqueId}-${criteriaKey}`"
       :name="`${uniqueId}-${criteriaKey}`"
       type="text"
@@ -49,7 +49,10 @@ export default {
       if (this.location === "left-rail") {
         return "text-bold"
       }
-      return null
+      return ''
+    },
+    inputClass() {
+      return `usa-input usa-input${this.response === null ? '': this.response === false ? '--error': '--success' } ${this.selectedStyle}`
     }
   },
   mounted() {
@@ -58,7 +61,7 @@ export default {
   methods: {
       updateLocationInfo(event, key) {
             const zipCode = event.target.value
-
+            window[key+'_element'] = event.target
             const localCriterion = {
                 criteriaKey: key,
                 response: zipCode

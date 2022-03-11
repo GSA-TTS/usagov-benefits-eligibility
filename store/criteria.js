@@ -1,5 +1,8 @@
 import Vue from "vue"
 import { toDate, isEqual, isBefore, isAfter, sub } from "date-fns"
+import zipcodes from 'zipcodes'
+import zipcodedata from 'zipcodes-nrviens'
+import axios from "axios"
 import stringToHash from "../services/stringToHash"
 
 export const state = () => ({
@@ -12,7 +15,6 @@ export const mutations = {
   // payload must include a criteriaKey and the new response / selected value
   updateResponse(state, { criteriaKey, response }) {
     // TODO: make sure the response matches one of the available criterion values
-
     Vue.set(state.eligibilityCriteria[criteriaKey], "response", response)
   },
   preloadedResponse(state, { criteriaKeyHash, response }) {
@@ -57,12 +59,9 @@ export const getters = {
       return null
     }
     // need this to be swapped if passing in a state I.E. testing
-    let userInputDate = null
-    if(criterion.TEST) {
-      userInputDate = Date.parse(getters.getResponseByEligibilityKey(state)(criterion.criteriaKey))      
-    } else {
-      userInputDate = Date.parse(getters.getResponseByEligibilityKey(criterion.criteriaKey))
-    } 
+    let userInputDate = criterion.TEST ? 
+      Date.parse(getters.getResponseByEligibilityKey(state)(criterion.criteriaKey)) :    
+      Date.parse(getters.getResponseByEligibilityKey(criterion.criteriaKey)) 
     const DETERMINERS = ['months', 'days', 'years']
     let determiner = null
     let checkResult = null
@@ -106,20 +105,14 @@ export const getters = {
           case ">":
             // handling the use case of a user being <60Y & >40Y also being reflected as a range
             // >01-01-1962, <01-01-1982
-            if(DETERMINERS.includes(determiner)) {              
-              checkResult = isAfter(acceptanceDate, userInputDate)
-            } else {
-              checkResult = isAfter(userInputDate, acceptanceDate)
-            }
+            checkResult = DETERMINERS.includes(determiner) ?
+              isAfter(acceptanceDate, userInputDate) :
+              isAfter(userInputDate, acceptanceDate)
             break
           case "<":
-            // handling the use case of a user being <60Y & >40Y years also being reflected as a range
-            // >01-01-1962, <01-01-1982
-            if(DETERMINERS.includes(determiner)) {              
-              checkResult = isBefore(acceptanceDate, userInputDate)
-            } else {
-              checkResult = isBefore(userInputDate, acceptanceDate)
-            }
+            checkResult = DETERMINERS.includes(determiner) ? 
+              isBefore(acceptanceDate, userInputDate) : 
+              isBefore(userInputDate, acceptanceDate)
             break     
           default:
             checkResult = null
@@ -132,16 +125,71 @@ export const getters = {
     }
     return checkResult    
   },
+  /**
+   * Will validate if the inputted location is either equal to or in a given distance to
+   * the specified zip codes in the acceptance criteria
+   * Use Cases
+   * [00000]
+   * [00000, 00000, 00000]
+   * [00000, 00miles] (radius)
+   * none - dynamic get county and state and check fema
+   * @param {currentState} state 
+   * @param {storeGetters} getters 
+   * @returns null / true / false [ empty, pass, fail ]
+   */
+  validateCriterionLocation: (state, getters) => (criterion) => {
+    if (!getters.isCriterionSelected(criterion)) {
+      return null
+    }
+    const response = getters.getResponseByEligibilityKey(criterion.criteriaKey)
+    // check if acceptance criteria
+    if (criterion.acceptableValues) {
+      switch (criterion.acceptableValues.length) {
+        case 1: 
+          return criterion.acceptableValues[0] === response
+        case 2: {
+          // need to pull zip code and radius
+          let radius = criterion.acceptableValues[0].includes('mi') ? criterion.acceptableValues[0]: criterion.acceptableValues[1]
+          const startingZip = criterion.acceptableValues[0].includes('mi') ? criterion.acceptableValues[1]: criterion.acceptableValues[0]
+          radius = radius.split('mi')[0]
+          return zipcodes.distance(parseInt(response), parseInt(startingZip)) < radius
+        }
+        default:
+          return !!criterion.acceptableValues.find(
+            (val) => 
+              val === response
+          )
+      }
+    } else {
+      const zipCodeInfo = zipcodedata.lookup(parseInt(response))
+      const { state, county } = zipCodeInfo
+      const requestUrl = `https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter(state eq '${state}' and declaredCountyArea eq '${county} (County)') and incidentEndDate eq ''}`
+      axios.get(requestUrl)
+        .then((response) => {
+          const disasters = response.data.DisasterDeclarationsSummaries
+          return disasters.length > 1
+        })
+        .catch((err) => {
+          console.error(err)
+        })
+    }
+    return null
+  },
   doesCriterionMatchSelection: (state, getters) => (criterion) => {
     if (
-      !getters.isCriterionSelected(criterion) ||
-      !criterion.acceptableValues
+      !getters.isCriterionSelected(criterion)
     ) {
       return null
     }
+
     if(getters.getCriterionByEligibilityKey(criterion.criteriaKey).type === 'date') {
       return getters.doesCriterionDateMatch(criterion.criteriaKey)
+    } else if (getters.getCriterionByEligibilityKey(criterion.criteriaKey).type === 'location') {
+      return getters.validateCriterionLocation(criterion)
     } else {
+      if(!criterion.acceptableValues) {
+        return null
+      }
       return !!criterion.acceptableValues.find(
         (val) =>
           val ===

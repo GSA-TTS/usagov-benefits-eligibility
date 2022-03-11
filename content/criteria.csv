@@ -29,5 +29,5 @@ applicant_served_in_active_military,"You served in the active military, naval or
 applicant_ss_number,You have a valid Social Security number.,boolean,TRUE,
 applicant_child_parents_benefits,Your parent is receiving retirement or disability benefits.,boolean,TRUE,
 applicant_spouses_benefits,Your spouse (or parent of your child) is receiving retirement or disability benefits.,boolean,TRUE,
-applicant_eligible_senior,Are you a senior citizen,date,,
+applicant_eligible_senior,When is your birthday?,date,,
 applicant_disaster_zone,What is your zip code?,location,,

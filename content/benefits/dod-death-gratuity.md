@@ -19,8 +19,7 @@ eligibility:
 - criteriaKey: applicant_relationship
   acceptableValues: ["spouse", "child", "parent", "other family member"]
 - criteriaKey: applicant_eligible_senior
-  #acceptableValues: ['<60years', '>40years']
-  acceptableValues: ['>01-01-1962', '<01-01-1982']
+  acceptableValues: ['<60years', '>40years']
+  #acceptableValues: ['>01-01-1962', '<01-01-1982']
 - criteriaKey: applicant_disaster_zone
-  acceptableValues: ['28269']
 ---

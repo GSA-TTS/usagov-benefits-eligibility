@@ -1,19 +1,17 @@
 <template>
   <fieldset class="usa-fieldset">
     <legend 
-      :class="`usa-legend usa-legend--${response ? 'success': response == null ? 'empty': 'error'} ${selectedStyle}`">
+      :class="legendClass">
       {{label}}
     </legend>
     <div class="usa-memorable-date">
        <!-- lower margin of the label -->
       <div class="usa-form-group usa-form-group--month">
         <label 
-          :class="`usa-label usa-label--${response ? 'success': 
-            response == null ? 'empty': 'error'}`" 
+          :class="labelClass" 
           :for="`${uniqueId}-${criteriaKey}-month`">Month</label>
         <input
-          :class="`usa-input usa-input--${response ? 'success': 
-            response == null ? 'empty': 'error'}`"
+          :class="inputClass"
           aria-describedby="monthinput"
           :id="`${uniqueId}-${criteriaKey}-month`"
           :name="`${uniqueId}-${criteriaKey}-month`"
@@ -21,18 +19,16 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          :value="`${dateResponse !== null ? dateResponse.split('-')[0]: ''}`"
+          :value="pullDateValue(dateResponse, 0)"
           @change="updateElibilityDate($event, criteriaKey)"
         />
       </div>
       <div class="usa-form-group usa-form-group--day">
         <label 
-          :class="`usa-label usa-label--${response ? 'success': 
-            response == null ? 'empty': 'error'}`" 
+          :class="labelClass" 
           :for="`${uniqueId}-${criteriaKey}-day`">Day</label>
         <input
-          :class="`usa-input usa-input--${response ? 'success': 
-            response == null ? 'empty': 'error'}`"
+          :class="inputClass"
           aria-describedby="dayinput"
           :id="`${uniqueId}-${criteriaKey}-day`"
           :name="`${uniqueId}-${criteriaKey}-day`"
@@ -40,18 +36,16 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          :value="`${dateResponse !== null ? dateResponse.split('-')[1]: ''}`"
+          :value="pullDateValue(dateResponse, 1)"
           @change="updateElibilityDate($event, criteriaKey)"
         />
       </div>
       <div class="usa-form-group usa-form-group--year">
         <label 
-          :class="`usa-label usa-label--${response ? 'success': 
-            response == null ? 'empty': 'error'}`" 
+          :class="labelClass" 
           :for="`${uniqueId}-${criteriaKey}-year`">Year</label>
         <input
-          :class="`usa-input usa-input--${response ? 'success': 
-            response == null ? 'empty': 'error'}`"
+          :class="inputClass"
           aria-describedby="yearinput"
           :id="`${uniqueId}-${criteriaKey}-year`"
           :name="`${uniqueId}-${criteriaKey}-year`"
@@ -60,7 +54,7 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
-          :value="`${dateResponse !== null ? dateResponse.split('-')[2]: ''}`"
+          :value="pullDateValue(dateResponse, 2)"
           @change="updateElibilityDate($event, criteriaKey)"
         />
       </div>
@@ -83,14 +77,14 @@
 .usa-label--success,
 .usa-input--success {
   color: green;
-  border-color: green;
+  font-weight: bold;
 }
 
 .usa-legend--error,
 .usa-label--error,
 .usa-input--error {
   color: red;
-  border-color: red;
+  font-weight: bold;
 }
 </style>
 
@@ -132,12 +126,26 @@ export default {
           return "text-bold"
         }
         return null
+      },
+      labelClass() {
+        return `usa-label usa-label--${this.response ? 'success': 
+            this.response == null ? 'empty': 'error'}`
+      },
+      legendClass() {
+        return `usa-legend usa-legend--${this.response ? 'success': this.response == null ? 'empty': 'error'} ${this.selectedStyle}`
+      },
+      inputClass() {
+        return `usa-input usa-input--${this.response ? 'success': 
+            this.response == null ? 'empty': 'error'}`
       }
     },
     mounted() {
         this.uniqueId = _.uniqueId('dateinput-')
     },
     methods: {
+        pullDateValue(dateResponse, index) {
+            return `${dateResponse !== null ? dateResponse.split('-')[index]: ''}`
+        },
         updateElibilityDate (event, key) {
             // figure out date from 3 boxes
             const month = document.getElementById(`${this.uniqueId}-${this.criteriaKey}-month`).value
