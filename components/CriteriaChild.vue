@@ -47,12 +47,14 @@ import { mapGetters } from "vuex"
 import RadioButton from "./RadioButton"
 import DropDown from "./DropDown"
 import CheckBox from "./CheckBox"
+import DateInput from './DateInput.vue'
 
 export default {
   components: {
     RadioButton,
     DropDown,
-    CheckBox
+    CheckBox,
+    DateInput
   },
   props: {
     criteriaKey: {
