@@ -18,4 +18,4 @@ uswds.paths.dist.css = "./assets/css"
 exports.init = uswds.init
 exports.compile = uswds.compile
 exports.watch = uswds.watch
-exports.default = uswds.compile
+exports.default = uswds.copyAssets
