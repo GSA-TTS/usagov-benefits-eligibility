@@ -155,9 +155,9 @@ describe("criteria", () => {
     it("should call updateResponse commit", async () => {
       state()
       const commit = jest.fn()
-      await actions.updateResponse({commit}, { criteriaKey: "applicant_eligible_senior", response: true})
+      await actions.updateResponse({ commit }, { criteriaKey: "applicant_eligible_senior", response: true })
       expect(commit.mock.calls.length).toBe(1)
-      expect(commit.mock.calls[0][0]).toBe("updateResponse")    
+      expect(commit.mock.calls[0][0]).toBe("updateResponse")
     })
   })
   describe("getters", () => {
@@ -242,10 +242,10 @@ describe("criteria", () => {
       it("should return null when not selected", () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: 'applicant_eligible_senior'
+          criteriaKey: "applicant_eligible_senior",
         }
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
-        expect(ret).toBe(null)        
+        expect(ret).toBe(null)
       })
       it("should return null when not complete", async () => {
         let storeState = state()
