@@ -170,6 +170,22 @@ describe("criteria", () => {
         expect(ret).toBe(0)
       })
     })
+    describe("doesCriterionMatchSelection" , () => {
+      it("should return false when acceptable critieria is invalid", async () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: "applicant_senior_citizen",
+          criteriaKeyHash: "9e63db02",
+          type: "date",
+          acceptableValues: ["=10-10-2020"],
+          response: "02-25-2021",
+          TEST: true,
+        }
+        storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
+        const ret = getters.doesCriterionMatchSelection(storeState, getters)(criterion)
+        expect(ret).toBe(false)
+      })
+    })
     describe("doesCriterionDateMatch", () => {
       it("should return false when criteria is not met", async () => {
         let storeState = state()
@@ -213,6 +229,20 @@ describe("criteria", () => {
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(true)
       })
+      it("should return null when not complete", async () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: "applicant_senior_citizen",
+          criteriaKeyHash: "9e63db02",
+          type: "date",
+          acceptableValues: ["!01-01-1982"],
+          response: "11-1",
+          TEST: true,
+        }
+        storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
+        const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
+        expect(ret).toBe(null)
+      })
       it("should return true when criteria is passed (same date)", async () => {
         let storeState = state()
         const criterion = {
@@ -254,6 +284,21 @@ describe("criteria", () => {
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(true)
+      })
+      
+      it("should call the correct function when a date", async () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: "applicant_senior_citizen",
+          criteriaKeyHash: "9e63db02",
+          type: "date",
+          acceptableValues: ["<30days", ">1days"],
+          response: "02-25-2021",
+          TEST: true,
+        }
+        storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
+        const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
+        expect(ret).toBe(false)
       })
       describe("populate with storedData", () => {
         it("should set value from stored data", () => {

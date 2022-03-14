@@ -10,6 +10,7 @@ const PROPS_DATA = {
   label: "Testing DateInput Label",
   response: "test",
   dateResponse: "",
+  location: "left-rail"
 }
 
 describe("DateInput", () => {
@@ -49,6 +50,17 @@ describe("DateInput", () => {
     const wrapper = mount(DateInput)
     expect(wrapper.vm).toBeTruthy()
   })
+
+  test("displays with default location correctly", () => {
+    const wrapper = shallowMount(DateInput, {propsData: {
+      criteriaKey: CRITERIA_KEY,
+      label: "Testing DateInput Label",
+      response: "test",
+      dateResponse: ""
+    }})
+    expect(wrapper.vm).toBeTruthy()
+  })
+  
 
   test("clicking input values results in update in store", async () => {
     document.getElementById = (id) => {
