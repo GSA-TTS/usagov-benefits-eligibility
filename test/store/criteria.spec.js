@@ -291,6 +291,7 @@ describe("criteria", () => {
           expect(storeState.eligibilityCriteria[criteria[0].criteriaKey]).toBeDefined()
           expect(storeState.eligibilityCriteria[criteria[0].criteriaKey].response).toBe(null)
         })
+      })
     })
   })
 })
