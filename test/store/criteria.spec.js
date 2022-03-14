@@ -170,7 +170,7 @@ describe("criteria", () => {
         expect(ret).toBe(0)
       })
     })
-    describe("doesCriterionMatchSelection" , () => {
+    describe("doesCriterionMatchSelection", () => {
       it("should return false when acceptable critieria is invalid", async () => {
         let storeState = state()
         const criterion = {
@@ -285,7 +285,7 @@ describe("criteria", () => {
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(true)
       })
-      
+
       it("should call the correct function when a date", async () => {
         let storeState = state()
         const criterion = {
