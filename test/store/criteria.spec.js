@@ -1,4 +1,6 @@
-import { state, mutations, getters, actions } from "@/store/criteria"
+import { actions, getters, mutations, state } from "@/store/criteria"
+import { Crypto } from "@peculiar/webcrypto"
+import { TextEncoder } from "util"
 
 const mockCriteria = () => [
   {
@@ -25,14 +27,7 @@ describe("criteria", () => {
       const criteria = mockCriteria()
 
       mutations.populateCriterion(storeState, {
-        hash: criteria[0].criteriaKeyHash,
-        criterion: criteria[0],
-        storedData: {},
-      })
-      mutations.populateCriterion(storeState, {
-        hash: criteria[1].criteriaKeyHash,
-        criterion: criteria[1],
-        storedData: {},
+        criterionArray: criteria,
       })
       mutations.preloadedResponses(storeState, {
         valueArray: [
@@ -48,14 +43,7 @@ describe("criteria", () => {
       const criteria = mockCriteria()
 
       mutations.populateCriterion(storeState, {
-        hash: criteria[0].criteriaKeyHash,
-        criterion: criteria[0],
-        storedData: {},
-      })
-      mutations.populateCriterion(storeState, {
-        hash: criteria[1].criteriaKeyHash,
-        criterion: criteria[1],
-        storedData: {},
+        criterionArray: criteria,
       })
       mutations.preloadedResponses(storeState, {
         valueArray: [{ response: true, criteriaKeyHash: criteria[0].criteriaKeyHash }],
@@ -66,29 +54,20 @@ describe("criteria", () => {
 
     it("should populate criterion", () => {
       const storeState = state()
-      const criterionn = mockCriteria()[0]
+      const criterion = mockCriteria()
       mutations.populateCriterion(storeState, {
-        hash: criterionn.criteriaKeyHash,
-        criterion: criterionn,
-        storedData: {},
+        criterionArray: criterion,
       })
 
-      expect(storeState.eligibilityCriteria[criterionn.criteriaKey]).toBeDefined()
-      expect(storeState.hashToCriteria[criterionn.criteriaKeyHash]).toBeDefined()
+      expect(storeState.eligibilityCriteria[criterion[0].criteriaKey]).toBeDefined()
+      expect(storeState.hashToCriteria[criterion[0].criteriaKeyHash]).toBeDefined()
     })
     it("should clear all responses", () => {
       const storeState = state()
       const criteria = mockCriteria()
 
       mutations.populateCriterion(storeState, {
-        hash: criteria[0].criteriaKeyHash,
-        criterion: criteria[0],
-        storedData: {},
-      })
-      mutations.populateCriterion(storeState, {
-        hash: criteria[1].criteriaKeyHash,
-        criterion: criteria[1],
-        storedData: {},
+        criterionArray: criteria,
       })
 
       expect(storeState.eligibilityCriteria[criteria[0].criteriaKey].response).toBe(null)
@@ -124,24 +103,9 @@ describe("criteria", () => {
 
       const commit = jest.fn()
       await actions.populate({ commit, state }, mockCriteria())
-      expect(commit.mock.calls.length).toBe(2)
+      expect(commit.mock.calls.length).toBe(1)
       expect(commit.mock.calls[0][0]).toBe("populateCriterion")
-      expect(commit.mock.calls[0][1].hash).toBe("acbca85")
-      expect(commit.mock.calls[0][1].storedData).toStrictEqual({})
-    })
-
-    it("calls populateCriterion with stored data", async () => {
-      state()
-      const commit = jest.fn()
-      const localStorageData = '{"acbca89":true}'
-      localStorage.setItem("responseData", localStorageData)
-
-      await actions.populate({ commit, state }, mockCriteria())
-
-      expect(commit.mock.calls.length).toBe(2)
-      expect(commit.mock.calls[0][0]).toBe("populateCriterion")
-      expect(commit.mock.calls[0][1].hash).toBe("acbca85")
-      expect(commit.mock.calls[0][1].storedData).toStrictEqual(JSON.parse(localStorageData))
+      expect(commit.mock.calls[0][1].criterionArray.length).toBe(mockCriteria().length)
     })
 
     it("should call clear commit", async () => {
@@ -174,6 +138,21 @@ describe("criteria", () => {
     })
 
     describe("populate with storedData", () => {
+      beforeEach(() => {
+        process.client = true
+        // const { Crypto } = require("@peculiar/webcrypto")
+        // window.crypto = new Crypto()
+        // localStorage.removeItem("responseData")
+        //
+        // const { TextEncoder } = require("util")
+        // global.TextEncoder = TextEncoder
+      })
+
+      afterEach(() => {
+        process.client = false
+        localStorage.removeItem("responseData")
+      })
+
       it("should set value from stored data", () => {
         const storeState = state()
         const criteria = mockCriteria()
@@ -181,10 +160,9 @@ describe("criteria", () => {
         const hashedCriteria = {
           acbca85: "died as a result of a service-connected disability",
         }
+        localStorage.setItem("responseData", JSON.stringify(hashedCriteria))
         mutations.populateCriterion(storeState, {
-          hash: criteria[0].criteriaKeyHash,
-          criterion: criteria[0],
-          storedData: hashedCriteria,
+          criterionArray: criteria,
         })
         expect(storeState.eligibilityCriteria[criteria[0].criteriaKey]).toBeDefined()
         expect(storeState.eligibilityCriteria[criteria[0].criteriaKey].response).toBe(
@@ -199,10 +177,11 @@ describe("criteria", () => {
         const hashedCriteria = {
           someOtherKey: "not real value",
         }
+
+        localStorage.setItem("responseData", JSON.stringify(hashedCriteria))
+
         mutations.populateCriterion(storeState, {
-          hash: criteria[0].criteriaKeyHash,
-          criterion: criteria[0],
-          storedData: hashedCriteria,
+          criterionArray: criteria,
         })
         expect(storeState.eligibilityCriteria[criteria[0].criteriaKey]).toBeDefined()
         expect(storeState.eligibilityCriteria[criteria[0].criteriaKey].response).toBe(null)
