@@ -7,16 +7,15 @@ const mockCriteria = () => [
     label: "One of the following circumstances apply to the deceased",
     type: "select",
     values:
-      "died as a result of a service-connected disability; died while receiving or traveling to receive VA care; died while eligible, pending to receive, or receiving VA compensation or pension"
+      "died as a result of a service-connected disability; died while receiving or traveling to receive VA care; died while eligible, pending to receive, or receiving VA compensation or pension",
   },
   {
     criteriaKey: "applicant_relationship",
     criteriaKeyHash: "8f306c9",
     label: "Your (applicant's) relationship to the deceased is",
     type: "select",
-    values:
-      "spouse; child; other family member; personal or official representative"
-  }
+    values: "spouse; child; other family member; personal or official representative",
+  },
 ]
 
 describe("criteria", () => {
@@ -96,11 +95,9 @@ describe("criteria", () => {
       const criterion = mockCriteria()[0]
       mutations.populateCriterion(storeState, {
         hash: criterion.criteriaKeyHash,
-        criterion
+        criterion,
       })
-      expect(
-        storeState.eligibilityCriteria[criterion.criteriaKey]
-      ).toBeDefined()
+      expect(storeState.eligibilityCriteria[criterion.criteriaKey]).toBeDefined()
       expect(storeState.hashToCriteria[criterion.criteriaKeyHash]).toBeDefined()
     })
   })
@@ -179,9 +176,9 @@ describe("criteria", () => {
           criteriaKey: "applicant_senior_citizen",
           criteriaKeyHash: "9e63db02",
           type: "date",
-          acceptableValues: ['<60years', '>40years'],
-          response: '11-14-1900',
-          TEST: true
+          acceptableValues: ["<60years", ">40years"],
+          response: "11-14-1900",
+          TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
@@ -193,51 +190,51 @@ describe("criteria", () => {
           criteriaKey: "applicant_senior_citizen",
           criteriaKeyHash: "9e63db02",
           type: "date",
-          acceptableValues: ['<60years', '>40years'],
-          response: '11-14-1975',
-          TEST: true
+          acceptableValues: ["<60years", ">40years"],
+          response: "11-14-1975",
+          TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(true)
-      })   
+      })
       it("should return true when criteria is passed (fixed years)", async () => {
         let storeState = state()
         const criterion = {
           criteriaKey: "applicant_senior_citizen",
           criteriaKeyHash: "9e63db02",
           type: "date",
-          acceptableValues: ['<01-01-1982', '>01-01-1962'],
-          response: '11-14-1975',
-          TEST: true
+          acceptableValues: ["<01-01-1982", ">01-01-1962"],
+          response: "11-14-1975",
+          TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(true)
-      }) 
+      })
       it("should return true when criteria is passed (same date)", async () => {
         let storeState = state()
         const criterion = {
           criteriaKey: "applicant_senior_citizen",
           criteriaKeyHash: "9e63db02",
           type: "date",
-          acceptableValues: ['=11-14-1999'],
-          response: '11-14-1999',
-          TEST: true
+          acceptableValues: ["=11-14-1999"],
+          response: "11-14-1999",
+          TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(true)
-      })   
+      })
       it("should return true when criteria is passed (dynamic months)", async () => {
         let storeState = state()
         const criterion = {
           criteriaKey: "applicant_senior_citizen",
           criteriaKeyHash: "9e63db02",
           type: "date",
-          acceptableValues: ['<6months', '>4months'],
-          response: '09-14-2021',
-          TEST: true
+          acceptableValues: ["<6months", ">4months"],
+          response: "09-14-2021",
+          TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
@@ -249,9 +246,9 @@ describe("criteria", () => {
           criteriaKey: "applicant_senior_citizen",
           criteriaKeyHash: "9e63db02",
           type: "date",
-          acceptableValues: ['<30days', '>1days'],
-          response: '02-25-2022',
-          TEST: true
+          acceptableValues: ["<30days", ">1days"],
+          response: "02-25-2022",
+          TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
@@ -261,7 +258,7 @@ describe("criteria", () => {
         it("should set value from stored data", () => {
           const storeState = state()
           const criteria = mockCriteria()
-  
+
           const hashedCriteria = {
             acbca85: "died as a result of a service-connected disability",
           }
@@ -275,11 +272,11 @@ describe("criteria", () => {
             "died as a result of a service-connected disability"
           )
         })
-  
+
         it("should default to null if no stored data exists", () => {
           const storeState = state()
           const criteria = mockCriteria()
-  
+
           const hashedCriteria = {
             someOtherKey: "not real value",
           }
