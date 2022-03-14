@@ -55,28 +55,26 @@ export const getters = {
   /**
    * Function that checks the acceptable criteria date encoding and translates
    * it to something that the js engine can parse / check
-   * 
+   *
    * Use Cases                                      | Required encoding (acceptable value(s))
    * - user must be born on MM/DD/YYYY (11/14/1999) | =11-14-1999
    * - user older than 60 years  (Y, M, D)          | >60Y
    * - criteria before MM/DD/YYYY (01/01/2022)      | <01-01-2022
    * - born during YYYY-YYYYY (1990-2000)           | >01-01-1990 , <01-01-2000
    * - same use case as above (but with age range)  | >60Y, <40Y
-   * @param {currentState} state 
-   * @param {storeGetters} getter 
+   * @param {currentState} state
+   * @param {storeGetters} getter
    * @returns null / true / false [empty, pass, fail]
    */
-   doesCriterionDateMatch: (state, getters) => (criterion) => {
-    if (
-      !getters.isCriterionSelected(criterion) || !criterion.acceptableValues
-    ) {
+  doesCriterionDateMatch: (state, getters) => (criterion) => {
+    if (!getters.isCriterionSelected(criterion) || !criterion.acceptableValues) {
       return null
     }
     // need this to be swapped if passing in a state I.E. testing
-    let userInputDate = criterion.TEST ? 
-      Date.parse(getters.getResponseByEligibilityKey(state)(criterion.criteriaKey)) :    
-      Date.parse(getters.getResponseByEligibilityKey(criterion.criteriaKey)) 
-    const DETERMINERS = ['months', 'days', 'years']
+    let userInputDate = criterion.TEST
+      ? Date.parse(getters.getResponseByEligibilityKey(state)(criterion.criteriaKey))
+      : Date.parse(getters.getResponseByEligibilityKey(criterion.criteriaKey))
+    const DETERMINERS = ["months", "days", "years"]
     let determiner = null
     let checkResult = null
     // need to check the date
@@ -90,25 +88,27 @@ export const getters = {
       let acceptanceDate = null
 
       // need to check if there is a determiner in the acceptable value
-      if(DETERMINERS.some((detChar) => {
-        if(encodedDate.includes(detChar)) {
-          determiner = detChar
-          return true
-        }
-        return false
-      })) {
+      if (
+        DETERMINERS.some((detChar) => {
+          if (encodedDate.includes(detChar)) {
+            determiner = detChar
+            return true
+          }
+          return false
+        })
+      ) {
         const amount = parseInt(value.substring(1, value.indexOf(determiner)))
         const today = new Date(Date.now())
         const changeVal = {}
         changeVal[determiner] = amount
         acceptanceDate = sub(today, changeVal)
       } else {
-        acceptanceDate = Date.parse(encodedDate)      
+        acceptanceDate = Date.parse(encodedDate)
       }
       // checking to see if the date from the content file is valid
       if (isNaN(acceptanceDate)) {
         checkResult = null
-      } 
+      }
       // checking to see if the inputted date is valid / complete
       if (!isNaN(userInputDate)) {
         userInputDate = toDate(userInputDate)
@@ -119,15 +119,15 @@ export const getters = {
           case ">":
             // handling the use case of a user being <60Y & >40Y also being reflected as a range
             // >01-01-1962, <01-01-1982
-            checkResult = DETERMINERS.includes(determiner) ?
-              isAfter(acceptanceDate, userInputDate) :
-              isAfter(userInputDate, acceptanceDate)
+            checkResult = DETERMINERS.includes(determiner)
+              ? isAfter(acceptanceDate, userInputDate)
+              : isAfter(userInputDate, acceptanceDate)
             break
           case "<":
-            checkResult = DETERMINERS.includes(determiner) ? 
-              isBefore(acceptanceDate, userInputDate) : 
-              isBefore(userInputDate, acceptanceDate)
-            break     
+            checkResult = DETERMINERS.includes(determiner)
+              ? isBefore(acceptanceDate, userInputDate)
+              : isBefore(userInputDate, acceptanceDate)
+            break
           default:
             checkResult = null
             break
@@ -135,29 +135,25 @@ export const getters = {
         if (checkResult === false) {
           break
         }
-      }      
+      }
     }
-    return checkResult    
+    return checkResult
   },
   doesCriterionMatchSelection: (state, getters) => (criterion) => {
-    if (
-      !getters.isCriterionSelected(criterion)
-    ) {
+    if (!getters.isCriterionSelected(criterion)) {
       return null
     }
 
-    if(getters.getCriterionByEligibilityKey(criterion.criteriaKey).type === 'date') {
+    if (getters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
       return getters.doesCriterionDateMatch(criterion.criteriaKey)
     } else {
-      if(!criterion.acceptableValues) {
+      if (!criterion.acceptableValues) {
         return null
       }
       return !!criterion.acceptableValues.find(
-        (val) =>
-          val ===
-          getters.getCriterionByEligibilityKey(criterion.criteriaKey).response
+        (val) => val === getters.getCriterionByEligibilityKey(criterion.criteriaKey).response
       )
-    }    
+    }
   },
   getCriterionByEligibilityKey: (state) => (criteriaKey) => {
     return (
