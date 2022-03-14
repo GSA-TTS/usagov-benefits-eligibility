@@ -7,7 +7,7 @@
 ========================================
 ========================================
 ----------------------------------------
-USWDS 2.11.1
+USWDS 2.13.2
 ----------------------------------------
 GENERAL SETTINGS
 ----------------------------------------
@@ -25,7 +25,7 @@ Relative image file path
 ----------------------------------------
 */
 
-$theme-image-path: "assets/img";
+$theme-image-path: "../img";
 
 /*
 ----------------------------------------
@@ -39,7 +39,7 @@ Show updates and notifications.
 */
 
 $theme-show-compile-warnings: true;
-$theme-show-notifications: false;
+$theme-show-notifications: true;
 
 /*
 ----------------------------------------

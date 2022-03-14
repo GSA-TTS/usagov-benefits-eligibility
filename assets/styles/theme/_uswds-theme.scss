@@ -1,0 +1,112 @@
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+USWDS THEME CUSTOM STYLES
+----------------------------------------
+!! Copy this file to your project's
+   sass root. Don't edit the version
+   in node_modules.
+----------------------------------------
+Custom project SASS goes here.
+
+i.e.
+@include u-padding-right('05');
+----------------------------------------
+*/
+
+$theme-show-notifications: false;
+// from uswds-theme-color
+$theme-color-base-lightest: "gray-cool-10";
+$theme-color-primary-lighter: "cyan-5";
+$theme-color-primary: "blue-warm-70v";
+
+// from uswds-theme-components
+$theme-banner-max-width: "widescreen";
+$theme-card-margin-bottom: 2;
+$theme-footer-max-width: "widescreen";
+$theme-input-tile-background-color-selected: "primary-lighter";
+$theme-input-tile-border-color: "base-lighter";
+$theme-input-tile-border-color-selected: "primary-light";
+$theme-header-max-width: "widescreen";
+$theme-identifier-max-width: "widescreen";
+$theme-site-alert-max-width: "widescreen";
+
+// from uswds-theme-general
+$theme-show-notifications: false;
+
+// from uswds-theme-spacing
+$theme-grid-container-max-width: "widescreen";
+$theme-site-max-width: "widescreen";
+
+// from uswds-theme-utilities
+$theme-utility-breakpoints: (
+  // 160px:
+  "card": false,
+  // 240px:
+  "card-lg": false,
+  // 320px:
+  "mobile": false,
+  // 480px:
+  "mobile-lg": true,
+  // 640px:
+  "tablet": true,
+  // 800px:
+  "tablet-lg": false,
+  // 1024px:
+  "desktop": true,
+  // 1200px:
+  "desktop-lg": true,
+  // 1400px:
+  "widescreen": true
+);
+
+$circle-settings: (
+  output: true,
+  responsive: true,
+  active: false,
+  focus: false,
+  hover: false,
+  visited: false,
+);
+
+$height-settings: (
+  output: true,
+  responsive: true,
+  active: false,
+  focus: false,
+  hover: false,
+  visited: false,
+);
+
+$overflow-settings: (
+  output: true,
+  responsive: true,
+  active: false,
+  focus: false,
+  hover: false,
+  visited: false,
+);
+
+$position-settings: (
+  output: true,
+  responsive: true,
+  active: false,
+  focus: false,
+  hover: false,
+  visited: false,
+);
+
+$top-settings: (
+  output: true,
+  responsive: true,
+  active: false,
+  focus: false,
+  hover: false,
+  visited: false,
+);
