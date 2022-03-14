@@ -27,19 +27,19 @@ export const mutations = {
     localStorage.setItem("responseData", JSON.stringify(hashedData))
   },
 
-  populateCriterion(state, { criterion, hash, storedData }) {
-    // TODO shouldn't have to load from storage every time here.
-    // populate action runs on server so it storeData wont be populated here on prod builds.
+  populateCriterion(state, { criterionArray }) {
+    let storedData = {}
+
     if (process.client && localStorage.getItem("responseData")) {
       storedData = JSON.parse(localStorage.getItem("responseData"))
     }
 
-    const criteriaKey = criterion.criteriaKey
-    criterion.response = storedData[hash] ? storedData[hash] : null
-    criterion.criteriaKeyHash = hash
-
-    Vue.set(state.eligibilityCriteria, criteriaKey, criterion)
-    Vue.set(state.hashToCriteria, hash, criteriaKey)
+    for (const criterion of criterionArray) {
+      const criteriaKey = criterion.criteriaKey
+      criterion.response = storedData[criterion.criteriaKeyHash] ? storedData[criterion.criteriaKeyHash] : null
+      Vue.set(state.eligibilityCriteria, criteriaKey, criterion)
+      Vue.set(state.hashToCriteria, criterion.criteriaKeyHash, criteriaKey)
+    }
   },
 
   clearSelectedCriteria(state) {
@@ -120,17 +120,11 @@ export const getters = {
 
 export const actions = {
   async populate({ commit, state }, criteriaArray = []) {
-    let storedData = {}
-
-    if (process.client && localStorage.getItem("responseData")) {
-      storedData = JSON.parse(localStorage.getItem("responseData"))
-    }
-
     for (const criterion of criteriaArray) {
       const criteriaKey = criterion.criteriaKey
-      const hash = await stringToHash(criteriaKey)
-      commit("populateCriterion", { criterion, hash, storedData })
+      criterion.criteriaKeyHash = await stringToHash(criteriaKey)
     }
+    commit("populateCriterion", { criterionArray: criteriaArray })
   },
 
   clear({ commit, state }, criteriaArray = []) {
