@@ -5,7 +5,7 @@
   "license": "See license in CONTRIBUTING.md",
   "repository": "https://github.com/GSA/usagov-benefits-eligibility",
   "scripts": {
-    "dev": "nuxt && gulp",
+    "dev": "gulp && nuxt",
     "build": "gulp && nuxt build",
     "start": "gulp && nuxt start",
     "generate": "gulp && nuxt generate",
