@@ -63,9 +63,7 @@ describe("DateInput", () => {
       return obj
     }
     const wrapper = shallowMount(DateInput, { propsData: PROPS_DATA, store })
-    console.log(wrapper.html())
     const UID = wrapper.find("input").element.id.split(`-${CRITERIA_KEY}`)[0]
-    console.log(UID)
     const monthInput = wrapper.find(`#${UID}-${CRITERIA_KEY}-month`)
     monthInput.element.value = "01"
     monthInput.trigger("change")
