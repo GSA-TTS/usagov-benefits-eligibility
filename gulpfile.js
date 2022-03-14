@@ -1,10 +1,23 @@
-const gulp = require("gulp")
+/* gulpfile.js */
 
-function defaultTask(cb) {
-  gulp.src("./node_modules/uswds/dist/img/**/*").pipe(gulp.dest("./assets/img/"))
-  gulp.src("./node_modules/uswds/dist/fonts/**/*").pipe(gulp.dest("./assets/fonts/"))
-  gulp.src("node_modules/uswds/dist/js/**/*").pipe(gulp.dest("./assets/js/"))
-  cb()
-}
+const uswds = require("@uswds/compile")
 
-exports.default = defaultTask
+/**
+ * Path settings
+ * Set as many as you need
+ */
+
+uswds.paths.dist.theme = "./assets/styles/theme"
+uswds.paths.dist.img = "./assets/img"
+uswds.paths.dist.fonts = "./assets/fonts"
+uswds.paths.dist.js = "./assets/js"
+uswds.paths.dist.css = "./assets/css"
+/**
+ * Exports
+ * Add as many as you need
+ */
+
+exports.init = uswds.init
+exports.compile = uswds.compile
+exports.watch = uswds.watch
+exports.default = uswds.default
