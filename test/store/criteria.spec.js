@@ -96,6 +96,7 @@ describe("criteria", () => {
       mutations.populateCriterion(storeState, {
         hash: criterion.criteriaKeyHash,
         criterion,
+        storedData: {}
       })
       expect(storeState.eligibilityCriteria[criterion.criteriaKey]).toBeDefined()
       expect(storeState.hashToCriteria[criterion.criteriaKeyHash]).toBeDefined()
@@ -232,9 +233,9 @@ describe("criteria", () => {
           criteriaKey: "applicant_senior_citizen",
           criteriaKeyHash: "9e63db02",
           type: "date",
-          acceptableValues: ["<6months", ">4months"],
-          response: "09-14-2021",
-          TEST: true,
+          acceptableValues: ['<6months', '>4months'],
+          response: '11-14-2021',
+          TEST: true
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
