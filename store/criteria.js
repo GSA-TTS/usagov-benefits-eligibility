@@ -36,7 +36,7 @@ export const mutations = {
     }
 
     const criteriaKey = criterion.criteriaKey
-    criterion.response = storedData ? storedData[hash] ? storedData[hash] : null : null
+    criterion.response = storedData[hash] ? storedData[hash] : null
     criterion.criteriaKeyHash = hash
 
     Vue.set(state.eligibilityCriteria, criteriaKey, criterion)
