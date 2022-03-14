@@ -145,7 +145,7 @@ export const getters = {
     }
 
     if (getters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
-      return getters.doesCriterionDateMatch(criterion.criteriaKey)
+      return criterion.TEST ? getters.doesCriterionDateMatch(state)(criterion.criteriaKey): getters.doesCriterionDateMatch(criterion.criteriaKey)
     } else {
       if (!criterion.acceptableValues) {
         return null

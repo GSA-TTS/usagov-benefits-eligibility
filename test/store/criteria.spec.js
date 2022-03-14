@@ -93,6 +93,8 @@ describe("criteria", () => {
     it("should populate criterion", () => {
       const storeState = state()
       const criterion = mockCriteria()[0]
+      process.client = true
+      localStorage.setItem("responseData", JSON.stringify({}))
       mutations.populateCriterion(storeState, {
         hash: criterion.criteriaKeyHash,
         criterion,
@@ -149,6 +151,14 @@ describe("criteria", () => {
       expect(commit.mock.calls.length).toBe(1)
       expect(commit.mock.calls[0][0]).toBe("clearSelectedCriteria")
     })
+
+    it("should call updateResponse commit", async () => {
+      state()
+      const commit = jest.fn()
+      await actions.updateResponse({commit}, { criteriaKey: "applicant_eligible_senior", response: true})
+      expect(commit.mock.calls.length).toBe(1)
+      expect(commit.mock.calls[0][0]).toBe("updateResponse")    
+    })
   })
   describe("getters", () => {
     it("should return an error when criteriaKey doesn't exist", () => {
@@ -174,7 +184,7 @@ describe("criteria", () => {
       it("should return false when acceptable critieria is invalid", async () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: "applicant_senior_citizen",
+          criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["=10-10-2020"],
@@ -190,7 +200,7 @@ describe("criteria", () => {
       it("should return false when criteria is not met", async () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: "applicant_senior_citizen",
+          criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["<60years", ">40years"],
@@ -204,7 +214,7 @@ describe("criteria", () => {
       it("should return true when criteria is passed (dynamic years)", async () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: "applicant_senior_citizen",
+          criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["<60years", ">40years"],
@@ -218,7 +228,7 @@ describe("criteria", () => {
       it("should return true when criteria is passed (fixed years)", async () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: "applicant_senior_citizen",
+          criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["<01-01-1982", ">01-01-1962"],
@@ -229,10 +239,18 @@ describe("criteria", () => {
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(true)
       })
+      it("should return null when not selected", () => {
+        let storeState = state()
+        const criterion = {
+          criteriaKey: 'applicant_eligible_senior'
+        }
+        const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
+        expect(ret).toBe(null)        
+      })
       it("should return null when not complete", async () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: "applicant_senior_citizen",
+          criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["!01-01-1982"],
@@ -246,7 +264,7 @@ describe("criteria", () => {
       it("should return true when criteria is passed (same date)", async () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: "applicant_senior_citizen",
+          criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["=11-14-1999"],
@@ -260,7 +278,7 @@ describe("criteria", () => {
       it("should return true when criteria is passed (dynamic months)", async () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: "applicant_senior_citizen",
+          criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["<6months", ">4months"],
@@ -274,7 +292,7 @@ describe("criteria", () => {
       it("should return true when criteria is passed (dynamic days)", async () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: "applicant_senior_citizen",
+          criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["<30days", ">1days"],
@@ -289,7 +307,7 @@ describe("criteria", () => {
       it("should call the correct function when a date", async () => {
         let storeState = state()
         const criterion = {
-          criteriaKey: "applicant_senior_citizen",
+          criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["<30days", ">1days"],
