@@ -27,5 +27,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Test frontend
-        run: npm run test
+      - name: Build frontend
+        run: npm run federalist:local
