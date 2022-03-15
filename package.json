@@ -15,8 +15,8 @@
     "test:watch": "jest --watch",
     "test:pa11y": "pa11y-ci",
     "federalist:nuxtjsbug": "open https://github.com/nuxt/nuxt.js/issues/8973",
-    "federalist:local": "gulp && nuxt generate",
-    "federalist": "gulp && nuxt generate",
+    "federalist:local": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/url\\(\\/fonts/url\\(..\\/fonts/g' *.css && cd ../../.. && ls -lhR _site && nuxt start",
+    "federalist": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css && cd ../../.. && ls -lhR _site",
     "format": "prettier --write \"./**/*.{js,jsx,json,vue,md,css}\""
   },
   "dependencies": {
