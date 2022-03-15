@@ -57,7 +57,7 @@ describe("DateInput", () => {
         criteriaKey: CRITERIA_KEY,
         label: "Testing DateInput Label",
         response: "test",
-        location: 'left-rail',
+        location: "left-rail",
         dateResponse: "",
       },
     })
