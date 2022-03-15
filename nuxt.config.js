@@ -37,6 +37,7 @@ export default {
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: sitePrefix + "favicon.ico" }],
+    script: [{ src: `${sitePrefix}assets/js/uswds-init.min.js` }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
