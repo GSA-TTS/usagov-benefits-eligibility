@@ -125,14 +125,15 @@ export default {
         if (this.location === "left-rail") {
           return "text-bold"
         }
-        return null
+        return ''
       },
       labelClass() {
         return `usa-label usa-label--${this.response ? 'success': 
             this.response == null ? 'empty': 'error'}`
       },
       legendClass() {
-        return `usa-legend usa-legend--${this.response ? 'success': this.response == null ? 'empty': 'error'} ${this.selectedStyle}`
+        return `usa-legend usa-legend--${this.response ? 'success': 
+          this.response == null ? 'empty': 'error'}`
       },
       inputClass() {
         return `usa-input usa-input--${this.response ? 'success': 

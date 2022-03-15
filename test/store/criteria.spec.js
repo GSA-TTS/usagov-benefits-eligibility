@@ -25,14 +25,7 @@ describe("criteria", () => {
       const criteria = mockCriteria()
 
       mutations.populateCriterion(storeState, {
-        hash: criteria[0].criteriaKeyHash,
-        criterion: criteria[0],
-        storedData: {},
-      })
-      mutations.populateCriterion(storeState, {
-        hash: criteria[1].criteriaKeyHash,
-        criterion: criteria[1],
-        storedData: {},
+        criterionArray: criteria,
       })
       mutations.preloadedResponses(storeState, {
         valueArray: [
@@ -48,14 +41,7 @@ describe("criteria", () => {
       const criteria = mockCriteria()
 
       mutations.populateCriterion(storeState, {
-        hash: criteria[0].criteriaKeyHash,
-        criterion: criteria[0],
-        storedData: {},
-      })
-      mutations.populateCriterion(storeState, {
-        hash: criteria[1].criteriaKeyHash,
-        criterion: criteria[1],
-        storedData: {},
+        criterionArray: criteria,
       })
 
       expect(storeState.eligibilityCriteria[criteria[0].criteriaKey].response).toBe(null)
@@ -75,14 +61,7 @@ describe("criteria", () => {
       const criteria = mockCriteria()
 
       mutations.populateCriterion(storeState, {
-        hash: criteria[0].criteriaKeyHash,
-        criterion: criteria[0],
-        storedData: {},
-      })
-      mutations.populateCriterion(storeState, {
-        hash: criteria[1].criteriaKeyHash,
-        criterion: criteria[1],
-        storedData: {},
+        criterionArray: criteria,
       })
       mutations.preloadedResponses(storeState, {
         valueArray: [{ response: true, criteriaKeyHash: criteria[0].criteriaKeyHash }],
@@ -92,16 +71,13 @@ describe("criteria", () => {
     })
     it("should populate criterion", () => {
       const storeState = state()
-      const criterion = mockCriteria()[0]
-      process.client = true
-      localStorage.setItem("responseData", JSON.stringify({}))
+      const criterion = mockCriteria()
       mutations.populateCriterion(storeState, {
-        hash: criterion.criteriaKeyHash,
-        criterion,
-        storedData: {},
+        criterionArray: criterion,
       })
-      expect(storeState.eligibilityCriteria[criterion.criteriaKey]).toBeDefined()
-      expect(storeState.hashToCriteria[criterion.criteriaKeyHash]).toBeDefined()
+
+      expect(storeState.eligibilityCriteria[criterion[0].criteriaKey]).toBeDefined()
+      expect(storeState.hashToCriteria[criterion[0].criteriaKeyHash]).toBeDefined()
     })
   })
   describe("actions", () => {
@@ -124,25 +100,12 @@ describe("criteria", () => {
 
       const commit = jest.fn()
       await actions.populate({ commit, state }, mockCriteria())
-      expect(commit.mock.calls.length).toBe(2)
+      expect(commit.mock.calls.length).toBe(1)
       expect(commit.mock.calls[0][0]).toBe("populateCriterion")
-      expect(commit.mock.calls[0][1].hash).toBe("acbca85")
-      expect(commit.mock.calls[0][1].storedData).toStrictEqual({})
+      expect(commit.mock.calls[0][1].criterionArray.length).toBe(mockCriteria().length)
     })
 
-    it("calls populateCriterion with stored data", async () => {
-      state()
-      const commit = jest.fn()
-      const localStorageData = '{"acbca89":true}'
-      localStorage.setItem("responseData", localStorageData)
-
-      await actions.populate({ commit, state }, mockCriteria())
-
-      expect(commit.mock.calls.length).toBe(2)
-      expect(commit.mock.calls[0][0]).toBe("populateCriterion")
-      expect(commit.mock.calls[0][1].hash).toBe("acbca85")
-      expect(commit.mock.calls[0][1].storedData).toStrictEqual(JSON.parse(localStorageData))
-    })
+    
 
     it("should call clear commit", async () => {
       state()
@@ -318,41 +281,7 @@ describe("criteria", () => {
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(false)
       })
-      describe("populate with storedData", () => {
-        it("should set value from stored data", () => {
-          const storeState = state()
-          const criteria = mockCriteria()
-
-          const hashedCriteria = {
-            acbca85: "died as a result of a service-connected disability",
-          }
-          mutations.populateCriterion(storeState, {
-            hash: criteria[0].criteriaKeyHash,
-            criterion: criteria[0],
-            storedData: hashedCriteria,
-          })
-          expect(storeState.eligibilityCriteria[criteria[0].criteriaKey]).toBeDefined()
-          expect(storeState.eligibilityCriteria[criteria[0].criteriaKey].response).toBe(
-            "died as a result of a service-connected disability"
-          )
-        })
-
-        it("should default to null if no stored data exists", () => {
-          const storeState = state()
-          const criteria = mockCriteria()
-
-          const hashedCriteria = {
-            someOtherKey: "not real value",
-          }
-          mutations.populateCriterion(storeState, {
-            hash: criteria[0].criteriaKeyHash,
-            criterion: criteria[0],
-            storedData: hashedCriteria,
-          })
-          expect(storeState.eligibilityCriteria[criteria[0].criteriaKey]).toBeDefined()
-          expect(storeState.eligibilityCriteria[criteria[0].criteriaKey].response).toBe(null)
-        })
-      })
+      
     })
   })
 })

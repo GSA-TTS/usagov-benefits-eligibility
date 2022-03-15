@@ -61,6 +61,9 @@ describe("DateInput", () => {
       },
     })
     expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.vm.labelClass).toBeDefined()
+    expect(wrapper.vm.legendClass).toBeDefined()
+    expect(wrapper.vm.inputClass).toBeDefined()
   })
 
   test("clicking input values results in update in store", async () => {
