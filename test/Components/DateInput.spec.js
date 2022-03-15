@@ -57,6 +57,7 @@ describe("DateInput", () => {
         criteriaKey: CRITERIA_KEY,
         label: "Testing DateInput Label",
         response: "test",
+        location: 'left-rail',
         dateResponse: "",
       },
     })
@@ -64,6 +65,7 @@ describe("DateInput", () => {
     expect(wrapper.vm.labelClass).toBeDefined()
     expect(wrapper.vm.legendClass).toBeDefined()
     expect(wrapper.vm.inputClass).toBeDefined()
+    expect(wrapper.vm.selectedStyle).toBeDefined()
   })
 
   test("clicking input values results in update in store", async () => {
