@@ -105,8 +105,6 @@ describe("criteria", () => {
       expect(commit.mock.calls[0][1].criterionArray.length).toBe(mockCriteria().length)
     })
 
-    
-
     it("should call clear commit", async () => {
       state()
       const commit = jest.fn()
@@ -281,7 +279,6 @@ describe("criteria", () => {
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(false)
       })
-      
     })
   })
 })
