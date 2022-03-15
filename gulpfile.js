@@ -1,3 +1,4 @@
+// gh-docs: https://github.com/uswds/uswds-compile
 const uswds = require("@uswds/compile")
 
 /**
@@ -15,7 +16,8 @@ uswds.paths.dist.css = "./assets/css"
  * Add as many as you need
  */
 
-exports.init = uswds.init
-exports.compile = uswds.compile
-exports.watch = uswds.watch
-exports.default = uswds.copyAssets
+exports.init = uswds.init // Initialize the theme
+// exports.compile = uswds.compile // Compile the theme
+// exports.watch = uswds.watch // Don't think we need since webpack is watching
+exports.default = uswds.copyAssets // fonts not loading for prod?
+exports.update = uswds.updateUswds // keep up with latest uswds
