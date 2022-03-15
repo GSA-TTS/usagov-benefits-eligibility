@@ -140,9 +140,20 @@ export default {
     //   minimize: false,
     // },
   },
-
+  // Generate Config: https://nuxtjs.org/docs/configuration-glossary/configuration-generate/
   generate: {
     dir: "_site",
+    cache: {
+      ignore: [
+        ".nuxt", // buildDir
+        "static", // dir.static
+        "dist", // generate.dir
+        "node_modules",
+        ".**/*",
+        ".*",
+        "README.md",
+      ],
+    },
   },
 
   router: {
