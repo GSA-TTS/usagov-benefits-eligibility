@@ -1,5 +1,3 @@
 
 
-function validateDateAgainstAcceptance({criterion, response}) {
-    
-}
+function validateDateAgainstAcceptance({ criterion, response }) {}
