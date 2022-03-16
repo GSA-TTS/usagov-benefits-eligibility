@@ -21,7 +21,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci && npm install gulp && npm install -g gulp
 
       - name: Build site
         run: gulp && nuxt build
