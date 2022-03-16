@@ -28,6 +28,7 @@ describe("CrossSell", () => {
     const wrapper = mount(CrossSell, {
       propsData: {
         title: "Title",
+        cards: []
       },
     })
     expect(wrapper.vm).toBeTruthy()
