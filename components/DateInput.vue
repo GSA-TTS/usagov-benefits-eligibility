@@ -17,6 +17,7 @@
           pattern="[0-9]*"
           inputmode="numeric"
           :value="pullDateValue(dateResponse, 0)"
+          v-model="month"
           @change="updateElibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--day">
@@ -31,6 +32,7 @@
           pattern="[0-9]*"
           inputmode="numeric"
           :value="pullDateValue(dateResponse, 1)"
+          v-model="day"
           @change="updateElibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--year">
@@ -45,6 +47,7 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
+          v-model="year"
           :value="pullDateValue(dateResponse, 2)"
           @change="updateElibilityDate($event, criteriaKey)" />
       </div>
@@ -110,6 +113,9 @@ export default {
   data() {
     return {
       uniqueId: _.uniqueId("dateinput-"),
+      month: '',
+      day: '',
+      year: ''
     }
   },
   computed: {
@@ -138,9 +144,9 @@ export default {
     },
     updateElibilityDate(event, key) {
       // figure out date from 3 boxes
-      const month = document.getElementById(`${this.uniqueId}-${this.criteriaKey}-month`).value
-      const day = document.getElementById(`${this.uniqueId}-${this.criteriaKey}-day`).value
-      const year = document.getElementById(`${this.uniqueId}-${this.criteriaKey}-year`).value
+      const month = this.data.month
+      const day = this.data.day
+      const year = this.data.year
       if (month !== "" && day !== "" && year !== "") {
         const date = `${month}-${day}-${year}`
         const localCriterion = {
