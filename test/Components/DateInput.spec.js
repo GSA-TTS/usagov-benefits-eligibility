@@ -10,7 +10,7 @@ const PROPS_DATA = {
   label: "Testing DateInput Label",
   response: "test",
   dateResponse: "",
-  location: "left-rail",
+  location: 'benefit-card'
 }
 
 describe("DateInput", () => {

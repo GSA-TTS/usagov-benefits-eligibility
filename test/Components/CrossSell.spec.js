@@ -1,4 +1,4 @@
-import { mount } from "@vue/test-utils"
+import { mount, shallowMount } from "@vue/test-utils"
 import CrossSell from "@/components/CrossSell.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
@@ -8,7 +8,7 @@ describe("CrossSell", () => {
   })
 
   it("should be a Vue instance", () => {
-    const wrapper = mount(CrossSell, {
+    const wrapper = shallowMount(CrossSell, {
       propsData: {
         title: "Title",
         cards: [
@@ -19,6 +19,15 @@ describe("CrossSell", () => {
             primaryButtonLink: "#test-card-primary-button-link",
           },
         ],
+      },
+    })
+    expect(wrapper.vm).toBeTruthy()
+  })
+
+  it("should be a Vue instance with no cards", () => {
+    const wrapper = mount(CrossSell, {
+      propsData: {
+        title: "Title"
       },
     })
     expect(wrapper.vm).toBeTruthy()
