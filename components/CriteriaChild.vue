@@ -1,23 +1,15 @@
 <template>
   <div class="eligibility-criterion">
     <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
-      <CheckBox
-        :criteria-key="criteriaKey"
-        :label="getCriterionLabel()"
-        :response="response"
-        location="left-rail"
-      />
+      <CheckBox :criteria-key="criteriaKey" :label="getCriterionLabel()" :response="response" location="left-rail" />
     </div>
     <div v-if="type === 'date'" :key="criteriaKey">
       <DateInput
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"
-        :response="
-          doesCriterionDateMatch(getCriterionByEligibilityKey(criteriaKey))
-        "
+        :response="doesCriterionDateMatch(getCriterionByEligibilityKey(criteriaKey))"
         :date-response="getCriterionByEligibilityKey(criteriaKey).response"
-        location="left-rail"
-      />
+        location="left-rail" />
     </div>
 
     <div v-if="type === 'select'" :key="criteriaKey">
@@ -27,8 +19,7 @@
         :values="values"
         :response="response"
         :criteria-index="criteriaGroupKey"
-        location="left-rail"
-      />
+        location="left-rail" />
     </div>
 
     <div v-if="type === 'radio'" :key="criteriaKey">
@@ -37,8 +28,7 @@
         :label="getCriterionLabel()"
         :values="values"
         :response="response"
-        location="left-rail"
-      />
+        location="left-rail" />
     </div>
   </div>
 </template>
@@ -47,55 +37,53 @@ import { mapGetters } from "vuex"
 import RadioButton from "./RadioButton"
 import DropDown from "./DropDown"
 import CheckBox from "./CheckBox"
-import DateInput from './DateInput.vue'
+import DateInput from "./DateInput.vue"
 
 export default {
   components: {
     RadioButton,
     DropDown,
     CheckBox,
-    DateInput
+    DateInput,
   },
   props: {
     criteriaKey: {
       type: String,
-      default: "No key provided"
+      default: "No key provided",
     },
     label: {
       type: String,
-      default: "No label provided"
+      default: "No label provided",
     },
     type: {
       type: String,
-      default: "No type provided"
+      default: "No type provided",
     },
     values: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     criteriaGroupKey: {
       type: String,
-      default: "criteriaGroup"
+      default: "criteriaGroup",
     },
     response: {
       type: [Boolean, String],
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
       getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey",
-      doesCriterionDateMatch: "criteria/doesCriterionDateMatch"
-    })
+      doesCriterionDateMatch: "criteria/doesCriterionDateMatch",
+    }),
   },
   methods: {
     getCriterionLabel() {
-      return (
-        this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
-      )
-    }
-  }
+      return this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
+    },
+  },
 }
 </script>
 <style type="scss" scoped>

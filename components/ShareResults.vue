@@ -63,7 +63,7 @@
 export default {
   data() {
     return {
-      alert: false
+      alert: false,
     }
   },
   computed: {
@@ -78,7 +78,7 @@ export default {
             const valueMap = {
               [responses[criteriaKey]]: responses[criteriaKey],
               true: 1,
-              false: 0
+              false: 0,
             }
             params.append(criteriaKey, valueMap[responses[criteriaKey]])
           }
@@ -90,13 +90,13 @@ export default {
         const diredBaseUrl = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`
         return `${diredBaseUrl}?${params.toString()}`
       }
-    }
+    },
   },
   watch: {
     url(value) {
       const url = value || /* istanbul ignore next */ window.location.href.replace(window.location.search, "")
       history.replaceState(null, document.title, url)
-    }
+    },
   },
 
   mounted() {
@@ -104,7 +104,6 @@ export default {
       history.replaceState(null, document.title, this.url)
     }
   },
-
 
   beforeMount() {
     const params = new URLSearchParams(this.search || window.location.search)
@@ -119,16 +118,16 @@ export default {
         // eslint-disable-next-line quote-props
         false: false,
         1: true,
-        0: false
+        0: false,
       }
       vals.push({
         criteriaKeyHash: key.toLowerCase(),
-        response: valueMap[value]
+        response: valueMap[value],
       })
     }
 
     this.$store.commit("criteria/preloadedResponses", {
-      valueArray: vals
+      valueArray: vals,
     })
   },
   methods: {
@@ -153,7 +152,7 @@ export default {
       window.location.href = `mailto:?subject=Results%20from%20benefits%20elibibility%20awareness%20resource&body=Results%20${encodeURIComponent(
         this.url
       )}`
-    }
-  }
+    },
+  },
 }
 </script>
