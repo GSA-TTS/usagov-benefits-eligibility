@@ -58,7 +58,7 @@ describe("DateInput", () => {
         label: "Testing DateInput Label",
         response: "test",
         location: "left-rail",
-        dateResponse: "",
+        dateResponse: "00-00-0000",
       },
     })
     expect(wrapper.vm).toBeTruthy()
@@ -66,6 +66,25 @@ describe("DateInput", () => {
     expect(wrapper.vm.legendClass).toBeDefined()
     expect(wrapper.vm.inputClass).toBeDefined()
     expect(wrapper.vm.selectedStyle).toBeDefined()
+    expect(wrapper.vm.pullDateValue('00-00-0000', 0)).toBeDefined()
+  })
+
+  test("displays with default location correctly", () => {
+    const wrapper = shallowMount(DateInput, {
+      propsData: {
+        criteriaKey: CRITERIA_KEY,
+        label: "Testing DateInput Label",
+        response: null,
+        location: "benefit-card",
+        dateResponse: null,
+      },
+    })
+    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.vm.labelClass).toBeDefined()
+    expect(wrapper.vm.legendClass).toBeDefined()
+    expect(wrapper.vm.inputClass).toBeDefined()
+    expect(wrapper.vm.selectedStyle).toBeDefined()
+    expect(wrapper.vm.pullDateValue(null, 0)).toBeDefined()
   })
 
   test("clicking input values results in update in store", async () => {
