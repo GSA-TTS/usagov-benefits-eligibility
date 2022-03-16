@@ -66,7 +66,7 @@ describe("DateInput", () => {
     expect(wrapper.vm.legendClass).toBeDefined()
     expect(wrapper.vm.inputClass).toBeDefined()
     expect(wrapper.vm.selectedStyle).toBeDefined()
-    expect(wrapper.vm.pullDateValue('00-00-0000', 0)).toBeDefined()
+    expect(wrapper.vm.pullDateValue("00-00-0000", 0)).toBeDefined()
   })
 
   test("displays with default location correctly", () => {
