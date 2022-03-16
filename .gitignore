@@ -40,3 +40,7 @@ _site
 report/
 
 .idea
+
+# OWASP ZAP reports
+/report.md
+/zap.yaml
