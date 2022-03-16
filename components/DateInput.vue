@@ -122,10 +122,7 @@ export default {
     },
     computed: {
       selectedStyle() {
-        if (this.location === "left-rail") {
-          return "text-bold"
-        }
-        return ''
+        return this.location === 'left-rail' ? 'text-bold': ''
       },
       labelClass() {
         return `usa-label usa-label--${this.response ? 'success': 
