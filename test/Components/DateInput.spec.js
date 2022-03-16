@@ -9,7 +9,7 @@ const PROPS_DATA = {
   criteriaKey: CRITERIA_KEY,
   label: "Testing DateInput Label",
   response: "test",
-  dateResponse: "",
+  dateResponse: "11-14-1999",
   location: "benefit-card",
 }
 
@@ -88,17 +88,6 @@ describe("DateInput", () => {
   })
 
   test("clicking input values results in update in store", async () => {
-    document.getElementById = (id) => {
-      let obj = {}
-      if (id.includes("month")) {
-        obj.value = "01"
-      } else if (id.includes("day")) {
-        obj.value = "01"
-      } else if (id.includes("year")) {
-        obj.value = "2022"
-      }
-      return obj
-    }
     const wrapper = shallowMount(DateInput, { propsData: PROPS_DATA, store })
     const UID = wrapper.find("input").element.id.split(`-${CRITERIA_KEY}`)[0]
     const monthInput = wrapper.find(`#${UID}-${CRITERIA_KEY}-month`)
