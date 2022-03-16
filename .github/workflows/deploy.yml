@@ -27,5 +27,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Test frontend
-        run: npm run test
+      - name: Wait for checks to pass
+        uses: lewagon/wait-on-check-action@v1.0.0
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'test frontend'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - name: Deploy frontend to Federalist
+        run: npm run federalist:local
