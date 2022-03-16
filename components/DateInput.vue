@@ -117,19 +117,22 @@ export default {
       return this.location === "left-rail" ? "text-bold" : ""
     },
     labelClass() {
-      return `usa-label usa-label--${this.response ? "success" : this.response == null ? "empty" : "error"}`
+      return `usa-label usa-label--${this.classFromResponse()}`
     },
     legendClass() {
-      return `usa-legend usa-legend--${this.response ? "success" : this.response == null ? "empty" : "error"}`
+      return `usa-legend usa-legend--${this.classFromResponse()}`
     },
     inputClass() {
-      return `usa-input usa-input--${this.response ? "success" : this.response == null ? "empty" : "error"}`
+      return `usa-input usa-input--${this.classFromResponse()}`
     },
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
   },
   methods: {
+    classFromResponse() {
+      return this.response ? "success" : this.response == null ? "empty" : "error"
+    },
     pullDateValue(dateResponse, index) {
       return `${dateResponse !== null ? dateResponse.split("-")[index] : ""}`
     },
