@@ -3,7 +3,7 @@ name: pa11y tests
 
 # yamllint disable-line rule:truthy
 on:
-  pull_request:
+  push:
   workflow_dispatch:
 
 jobs:
