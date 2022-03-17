@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
   push:
   schedule:
-    - cron: '20 11 * * 1'
+    - cron: "20 11 * * 1"
 
 jobs:
   analyze:
@@ -31,7 +31,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['javascript']
+        language: ["javascript"]
         # CodeQL supports:
         #   'cpp', 'csharp', 'go', 'java', 'javascript', 'python'
         # Learn more:
