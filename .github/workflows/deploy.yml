@@ -13,7 +13,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    # only deploy when a PR is merged
     if: github.event.pull_request.merged == true
 
     steps:

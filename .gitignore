@@ -29,11 +29,13 @@ yarn-error.log*
 dist
 _site
 
+# USWDS 
 /assets/fonts
 /assets/img
 /assets/js
-.eslintcache
+/assets/css
 
+.eslintcache
 # MegaLinter reports
 report/
 

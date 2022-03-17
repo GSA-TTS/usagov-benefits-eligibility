@@ -37,10 +37,11 @@ export default {
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: sitePrefix + "favicon.ico" }],
+    script: [{ src: `${sitePrefix}assets/js/uswds-init.min.js` }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/assets/styles/index"],
+  css: ["~/assets/styles/index.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ["~/plugins/uswds.client.js", "~/plugins/axe.client.js"],

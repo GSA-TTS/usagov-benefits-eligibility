@@ -1,3 +1,87 @@
+// ######################
+// COLORS FROM STYLEGUIDE
+// ######################
+//NOTE: Many of the primary/supporting color variables are used for other colors in a redundant manner
+
+// Primary Colors
+$dark-blue: #11385b; //NOTE not currently in our code
+$aqua-blue: #02bfe7; //highlights action items and key areas (buttons, borders, etc)
+$white: #ffffff; //site background, text on dark
+
+// Supporting Colors
+$dark-gray: #4b4b4d; //footer primary
+$light-gray: #d9d9d9; //footer secondary
+$beige: #ebe6de; //leftnav
+$red: #c61f0c; //h1, leftnav current item, featurebox h2
+$blue: #154285; //standard links, h2, leftnav header
+$black: #000000; //standard text, h3
+
+// Other Colors
+$h3: $dark-gray;
+$button-text: $black;
+$aqua-darker: #00a6d2; //hover
+$lang-toggle: $dark-blue;
+$AZ-button: $blue;
+$AZ-button-disabled: #859cba;
+
+.text-success {
+  color: color("success-dark");
+}
+
+@media print {
+  .break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: block;
+  }
+  .break-before-always-nfc:not(:first-child),
+  .break-before-always {
+    page-break-before: always;
+    break-before: page;
+    display: block;
+  }
+  .print\:text-left {
+    text-align: left;
+  }
+  .print\:display-none {
+    display: none;
+  }
+  .print\:display-inline {
+    display: inline;
+  }
+  .print\:display-block {
+    display: block;
+  }
+  .print\:text-black {
+    color: color("black");
+  }
+  .print\:bg-white {
+    @include u-bg("white");
+  }
+  .print\:text-base-darker {
+    color: color("base-darker");
+  }
+}
+
+.usa-nav__secondary {
+  @include at-media($theme-header-min-width) {
+    bottom: 6rem;
+  }
+}
+
+.usa-social-link-a11y > img {
+  display: block;
+  margin: 0 auto;
+  width: 65%;
+  transform: translate(0, 25%);
+}
+
+@media (min-width: 64em) {
+  .usa-navbar.position-relative > .usa-nav__secondary {
+    bottom: 3rem;
+  }
+}
+
 .usa-footer {
   &__primary-section {
     background-color: $dark-gray;
