@@ -3,16 +3,17 @@ name: Deploy
 
 # yamllint disable-line rule:truthy
 on:
-  workflow_dispatch:  
-    
+  workflow_dispatch:
+
   pull_request:
-    branches:      
+    branches:
       - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
+    # only deploy when a PR is merged
     if: github.event.pull_request.merged == true
 
     steps:
@@ -31,7 +32,7 @@ jobs:
         uses: lewagon/wait-on-check-action@v1.0.0
         with:
           ref: ${{ github.ref }}
-          check-name: 'test frontend'
+          check-name: "test frontend"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
