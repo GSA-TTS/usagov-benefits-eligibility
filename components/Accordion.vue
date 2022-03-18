@@ -175,7 +175,7 @@ export default {
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
         return "(you might be eligible)"
       }
-      return ""
+      return null
     },
     toggleAccordion(expanded) {
       for (const button of this.$refs.accordionButtons) {
