@@ -5,11 +5,6 @@ name: Test
 on:
   workflow_dispatch:
   push:
-    branches:
-      - develop
-      - release
-      - main
-  pull_request:
 
 jobs:
   test_frontend:
