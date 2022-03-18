@@ -48,4 +48,4 @@ jobs:
           wait-interval: 10
 
       - name: Deploy frontend to Federalist
-        run: npm run federalist:local
+        run: npm run federalist
