@@ -6,12 +6,16 @@
       </legend>
     </template>
     <template v-else>
-      <legend class="usa-legend usa-legend" :class="selectedStyle">
+      <legend
+        class="usa-legend usa-legend"
+        :class="selectedStyle">
         {{ label }}
       </legend>
     </template>
     <template v-for="(value, index) in values">
-      <div :key="value" class="usa-radio tablet:padding-left-1">
+      <div
+        :key="value"
+        class="usa-radio tablet:padding-left-1">
         <input
           :id="`${uniqueId}-${criteriaKey}-${value}`"
           class="usa-radio__input"
@@ -20,9 +24,11 @@
           :value="value"
           :checked="response === value"
           @change="updateEligibilitySelected" />
-        <label class="usa-radio__label tablet:margin-top-1" :for="`${uniqueId}-${criteriaKey}-${value}`">{{
-          value
-        }}</label>
+        <label
+          class="usa-radio__label tablet:margin-top-1"
+          :for="`${uniqueId}-${criteriaKey}-${value}`"
+          >{{ value }}</label
+        >
       </div>
       <div
         v-if="location === 'benefit-card' && lastItem(index, values)"
@@ -36,7 +42,9 @@
           :value="'not applicable'"
           :checked="response === 'not applicable'"
           @change="updateEligibilitySelected" />
-        <label :for="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`" class="usa-radio__label tablet:margin-top-1"
+        <label
+          :for="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`"
+          class="usa-radio__label tablet:margin-top-1"
           >not applicable</label
         >
       </div>

@@ -15,7 +15,9 @@
         <p class="line-height-sans-4 font-sans-sm">
           {{ criteriaGroup.description }}
         </p>
-        <div :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey" class="margin-y-3">
+        <div
+          :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
+          class="margin-y-3">
           <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)">
             <CriteriaChild
               :key="criterion.criteriaKey"
@@ -66,7 +68,9 @@ export default {
   },
 }
 </script>
-<style type="scss" scoped>
+<style
+  type="scss"
+  scoped>
 @media print {
   .criteria-group-empty {
     display: block;

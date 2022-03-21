@@ -5,7 +5,11 @@
     role="alert">
     <div class="usa-alert">
       <div class="usa-alert__body">
-        <h3 v-if="heading" class="usa-alert__heading">{{ heading }}</h3>
+        <h3
+          v-if="heading"
+          class="usa-alert__heading">
+          {{ heading }}
+        </h3>
         <p class="usa-alert__text">
           <slot></slot>
         </p>

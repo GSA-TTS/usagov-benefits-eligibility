@@ -2,7 +2,9 @@
   <div class="eligibility-list-container border border-base-lighter border-width-2px radius-md margin-top-4">
     <h3 :class="['margin-0', 'padding-x-2', 'padding-y-1', 'font-sans-md'].concat(headingClasses)">
       Key eligibility criteria
-      <span v-if="showMatchingCount" class="print:display-none">
+      <span
+        v-if="showMatchingCount"
+        class="print:display-none">
         (You must meet all criteria. You currently meet
         {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of {{ benefitEligibilityCriteria.length }}).
       </span>
@@ -27,7 +29,9 @@
                 'text-error-dark text-bold': doesCriterionMatchSelection(criterion) === false,
               },
             ]">
-            <div v-if="getCriterionByEligibilityKey(criterion.criteriaKey).type === 'boolean'" class="usa-checkbox">
+            <div
+              v-if="getCriterionByEligibilityKey(criterion.criteriaKey).type === 'boolean'"
+              class="usa-checkbox">
               <CheckBox
                 :criteria-key="criterion.criteriaKey"
                 :label="getCriterionLabel(criterion)"

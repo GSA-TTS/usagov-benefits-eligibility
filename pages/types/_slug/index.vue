@@ -3,10 +3,14 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 v-if="benefitTopic" class="font-heading-lg tablet:font-heading-xl margin-top-5 text-secondary">
+          <h1
+            v-if="benefitTopic"
+            class="font-heading-lg tablet:font-heading-xl margin-top-5 text-secondary">
             {{ benefitTopic }}
           </h1>
-          <p v-if="topic && topic.lede" class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
+          <p
+            v-if="topic && topic.lede"
+            class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
             {{ topic.lede }}
           </p>
         </div>
@@ -19,11 +23,17 @@
       <div class="display-none tablet:display-flex grid-row grid-gap print:display-block">
         <div class="tablet:grid-col margin-bottom-3">
           <div>
-            <button class="usa-button usa-button--unstyled open-all" aria-controls="acc-id" @click="openAll">
+            <button
+              class="usa-button usa-button--unstyled open-all"
+              aria-controls="acc-id"
+              @click="openAll">
               Open All
             </button>
             /
-            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">
+            <button
+              class="usa-button usa-button--unstyled close-all"
+              aria-controls="acc-id"
+              @click="closeAll">
               Close All
             </button>
           </div>
@@ -32,12 +42,16 @@
 
       <div class="grid-row grid-gap print:display-block">
         <div class="tablet:grid-col-7 desktop:grid-col-8">
-          <div v-if="$fetchState.pending" class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
+          <div
+            v-if="$fetchState.pending"
+            class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
             <div class="usa-alert__body">
               <p class="usa-alert__text">Fetching benefits...</p>
             </div>
           </div>
-          <div v-if="$fetchState.error" class="usa-alert usa-alert--error usa-alert--slim">
+          <div
+            v-if="$fetchState.error"
+            class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
               <p class="usa-alert__text">Error while fetching benefits.</p>
             </div>
@@ -51,7 +65,10 @@
           </div>
           <!-- Mobile meta sort and open -->
           <h2 class="tablet:display-none font-heading-lg margin-top-1">Benefits Results</h2>
-          <OpenCloseButtons :is-open-active-prop="true" @open-all="openAll" @close-all="closeAll" />
+          <OpenCloseButtons
+            :is-open-active-prop="true"
+            @open-all="openAll"
+            @close-all="closeAll" />
 
           <Accordion
             ref="accordion"
@@ -70,7 +87,10 @@
       </div>
     </section>
 
-    <cross-sell title="Other topics that might be relevant to you." :cards="topic.related" class="print:display-none" />
+    <cross-sell
+      title="Other topics that might be relevant to you."
+      :cards="topic.related"
+      class="print:display-none" />
   </div>
 </template>
 

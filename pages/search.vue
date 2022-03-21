@@ -5,7 +5,9 @@
         <h1 class="font-heading-lg tablet:font-heading-xl margin-top-5">Search results for "{{ query }}"</h1>
       </div>
     </div>
-    <div v-if="results.web.results.length > 0" class="grid-row grid-gap">
+    <div
+      v-if="results.web.results.length > 0"
+      class="grid-row grid-gap">
       <div class="tablet:grid-col">
         <p>Showing {{ results.web.results.length }} of {{ results.web.total }}</p>
       </div>
@@ -20,7 +22,9 @@
             <p class="usa-alert__text">Fetching search results...</p>
           </div>
         </div>
-        <div v-if="$fetchState.error" class="usa-alert usa-alert--error usa-alert--slim margin-bottom-3">
+        <div
+          v-if="$fetchState.error"
+          class="usa-alert usa-alert--error usa-alert--slim margin-bottom-3">
           <div class="usa-alert__body">
             <p class="usa-alert__text">Error while fetching search results.</p>
           </div>
@@ -35,7 +39,10 @@
       </div>
     </div>
 
-    <div v-for="(result, index) in results.web.results" :key="index" class="grid-row grid-gap">
+    <div
+      v-for="(result, index) in results.web.results"
+      :key="index"
+      class="grid-row grid-gap">
       <div class="grid-col margin-y-3">
         <a href="result.url"> {{ result.title }} </a>
         <p>{{ result.snippet }}</p>
