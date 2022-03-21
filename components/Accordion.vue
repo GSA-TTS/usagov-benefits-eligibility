@@ -10,11 +10,11 @@
     <div
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
-      class="break-inside-avoid margin-bottom-2 border-left-105"
-      :class="getBorderColor(benefit.eligibility)">
+      class="break-inside-avoid margin-bottom-2">
       <h2
         :id="`acc-h-${benefit.slug}-${cid}`"
-        class="usa-accordion__heading">
+        class="usa-accordion__heading border-left-105"
+        :class="getBorderColor(benefit.eligibility)">
         <button
           ref="accordionButtons"
           class="usa-accordion__button"
@@ -29,7 +29,7 @@
       <div
         :id="`acc-content-${benefit.slug}`"
         ref="accordionContents"
-        class="usa-accordion__content usa-prose">
+        class="usa-accordion__content usa-prose border-left-0 border-transparent">
         <div
           v-if="benefit && benefit.tags.length > 0"
           class="tags-container margin-top-1">
