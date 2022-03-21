@@ -10,7 +10,8 @@
     <div
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
-      class="break-inside-avoid margin-bottom-2">
+      class="break-inside-avoid margin-bottom-2 border-left-105"
+      :class="getBorderColor(benefit.eligibility)">
       <h2 :id="`acc-h-${benefit.slug}-${cid}`" class="usa-accordion__heading">
         <button
           ref="accordionButtons"
@@ -160,13 +161,21 @@ export default {
       this.closeAll()
       this.$refs.accordion.$el.querySelector(".usa-accordion__button").focus()
     },
+    getBorderColor(eligibilityCriteria) {
+      if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
+        return "border-error-dark"
+      } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
+        return "border-success-dark"
+      }
+      return "border-gray-30"
+    },
     getCriteriaMatchLanguage(eligibilityCriteria) {
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
         return "(you are not eligible)"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
         return "(you might be eligible)"
       }
-      return ""
+      return null
     },
     toggleAccordion(expanded) {
       for (const button of this.$refs.accordionButtons) {
