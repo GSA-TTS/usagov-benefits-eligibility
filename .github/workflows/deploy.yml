@@ -5,15 +5,27 @@ name: Deploy
 on:
   workflow_dispatch:
   push:
-    branches:
-      - develop
-      - release
-      - main
-  pull_request:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    # why is this commented out?  Good question.  When a commit is
+    # pushed to a branch, the `npm run federalist:local` step will
+    # push this branch to where it goes on Federalist.  It doesn't
+    # blindly push to `main`.  If we're looking at PR 123, then
+    # this will push to
+    # https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov/preview/gsa/usagov-benefits-eligibility/us/123/
+    # When this workflow is run, it will deploy the contents of
+    # the main branch to Federalist not the feature branch.
+    #
+    # So, Wes, when you look at this again and worry about PRs'
+    # files being deployed to PROD during the checks or before
+    # the PRs are approved, stop, take a second, relax, and
+    # remember that you've been down this road and everything is
+    # fine.  EVERYTHING IS FINE.
+    #
+    # if: github.event.pull_request.merged == true
 
     steps:
       - name: Checkout
@@ -27,5 +39,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Test frontend
-        run: npm run test
+      - name: Wait for checks to pass
+        uses: lewagon/wait-on-check-action@v1.0.0
+        with:
+          ref: ${{ github.ref }}
+          check-name: "test frontend"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - name: Deploy frontend to Federalist
+        run: npm run federalist

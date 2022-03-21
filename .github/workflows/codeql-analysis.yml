@@ -16,12 +16,8 @@ name: "CodeQL"
 on:
   workflow_dispatch:
   push:
-    branches: [main]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [main]
   schedule:
-    - cron: '20 11 * * 1'
+    - cron: "20 11 * * 1"
 
 jobs:
   analyze:
@@ -35,7 +31,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['javascript']
+        language: ["javascript"]
         # CodeQL supports:
         #   'cpp', 'csharp', 'go', 'java', 'javascript', 'python'
         # Learn more:
