@@ -63,5 +63,16 @@ module.exports = {
         multiline: "below",
       },
     ],
+    "vuejs-accessibility/label-has-for": [
+      "error",
+      {
+        components: ["VLabel"],
+        controlComponents: ["VInput"],
+        required: {
+          every: ["id"],
+        },
+        allowChildren: false,
+      },
+    ],
   },
 }
