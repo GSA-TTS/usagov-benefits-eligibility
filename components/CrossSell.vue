@@ -1,5 +1,7 @@
 <template>
-  <section v-if="cards && cards.length" class="grid-container margin-top-8">
+  <section
+    v-if="cards && cards.length"
+    class="grid-container margin-top-8">
     <div class="grid-row grid-gap">
       <div
         class="tablet:grid-col border-top border-width-2px border-base-light margin-right-2"
@@ -10,8 +12,14 @@
       </div>
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <ul v-if="cards && cards.length" class="usa-card-group">
-            <li v-for="card in cards" :key="card.slug" class="usa-card desktop:grid-col-6" :aria-label="card.title">
+          <ul
+            v-if="cards && cards.length"
+            class="usa-card-group">
+            <li
+              v-for="card in cards"
+              :key="card.slug"
+              class="usa-card desktop:grid-col-6"
+              :aria-label="card.title">
               <nuxt-link
                 class="display-block height-full margin-x-1"
                 style="text-decoration: none; outline-offset: 0.25rem"

@@ -10,8 +10,11 @@
     <div
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
-      class="break-inside-avoid margin-bottom-2">
-      <h2 :id="`acc-h-${benefit.slug}-${cid}`" class="usa-accordion__heading">
+      class="break-inside-avoid margin-bottom-2 border-left-105"
+      :class="getBorderColor(benefit.eligibility)">
+      <h2
+        :id="`acc-h-${benefit.slug}-${cid}`"
+        class="usa-accordion__heading">
         <button
           ref="accordionButtons"
           class="usa-accordion__button"
@@ -23,8 +26,13 @@
           </span>
         </button>
       </h2>
-      <div :id="`acc-content-${benefit.slug}`" ref="accordionContents" class="usa-accordion__content usa-prose">
-        <div v-if="benefit && benefit.tags.length > 0" class="tags-container margin-top-1">
+      <div
+        :id="`acc-content-${benefit.slug}`"
+        ref="accordionContents"
+        class="usa-accordion__content usa-prose">
+        <div
+          v-if="benefit && benefit.tags.length > 0"
+          class="tags-container margin-top-1">
           <Tag
             v-for="tag in mapTags(benefit.tags)"
             :key="tag.name"
@@ -34,13 +42,20 @@
             :aria-label="tag.title" />
         </div>
         <template v-if="benefit.source && benefit.source.name && benefit.source.link">
-          <h3 class="font-sans-xs text-normal text-base-dark margin-bottom-0" style="font-size: 1rem">
+          <h3
+            class="font-sans-xs text-normal text-base-dark margin-bottom-0"
+            style="font-size: 1rem">
             Provided by
-            <a class="usa-link" :href="benefit.source ? benefit.source.link : '#'" target="_blank">{{
-              benefit.source.name
-            }}</a>
+            <a
+              class="usa-link"
+              :href="benefit.source ? benefit.source.link : '#'"
+              target="_blank"
+              >{{ benefit.source.name }}</a
+            >
           </h3>
-          <p class="usa-prose" style="max-width: unset">
+          <p
+            class="usa-prose"
+            style="max-width: unset">
             {{ benefit.summary }}
           </p>
         </template>
@@ -160,13 +175,21 @@ export default {
       this.closeAll()
       this.$refs.accordion.$el.querySelector(".usa-accordion__button").focus()
     },
+    getBorderColor(eligibilityCriteria) {
+      if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
+        return "border-error-dark"
+      } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
+        return "border-success-dark"
+      }
+      return "border-gray-30"
+    },
     getCriteriaMatchLanguage(eligibilityCriteria) {
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
         return "(you are not eligible)"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
         return "(you might be eligible)"
       }
-      return ""
+      return null
     },
     toggleAccordion(expanded) {
       for (const button of this.$refs.accordionButtons) {

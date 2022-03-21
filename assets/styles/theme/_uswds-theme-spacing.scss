@@ -7,7 +7,7 @@
 ========================================
 ========================================
 ----------------------------------------
-USWDS 2.11.1
+USWDS 2.13.2
 ----------------------------------------
 SPACING SETTINGS
 ----------------------------------------
@@ -79,7 +79,7 @@ widescreen
 ----------------------------------------
 */
 
-$theme-grid-container-max-width: "widescreen";
+$theme-grid-container-max-width: "desktop";
 
 /*
 ----------------------------------------
@@ -87,7 +87,6 @@ Site
 ----------------------------------------
 */
 
-$theme-site-max-width: "widescreen";
 $theme-site-margins-breakpoint: "desktop";
 $theme-site-margins-width: 4;
 $theme-site-margins-mobile-width: 2;

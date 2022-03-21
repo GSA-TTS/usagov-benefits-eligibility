@@ -8,7 +8,10 @@
       :value="`${uniqueId}-${criteriaKey}`"
       :checked="response === true"
       @change="updateEligibilityChecked($event, criteriaKey)" />
-    <label class="usa-checkbox__label" :class="selectedStyle" :for="`${uniqueId}-${criteriaKey}`">
+    <label
+      class="usa-checkbox__label"
+      :class="selectedStyle"
+      :for="`${uniqueId}-${criteriaKey}`">
       {{ label }}
     </label>
   </fieldset>
@@ -68,4 +71,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style
+  lang="scss"
+  scoped></style>

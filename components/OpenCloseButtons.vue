@@ -1,10 +1,18 @@
 <template>
   <div class="margin-y-2 print:display-none">
     <div class="display-flex flex-align-center">
-      <button class="usa-button open-all" :class="openButtonStyle" aria-controls="acc-id" @click="openAll">
+      <button
+        class="usa-button open-all"
+        :class="openButtonStyle"
+        aria-controls="acc-id"
+        @click="openAll">
         Open All
       </button>
-      <button class="usa-button close-all" :class="closeButtonStyle" aria-controls="acc-id" @click="closeAll">
+      <button
+        class="usa-button close-all"
+        :class="closeButtonStyle"
+        aria-controls="acc-id"
+        @click="closeAll">
         Close All
       </button>
     </div>

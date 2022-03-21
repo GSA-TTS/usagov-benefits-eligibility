@@ -5,7 +5,11 @@
       <button
         class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white clear-selections"
         @click="clearCriteria">
-        <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
+        <svg
+          class="usa-icon text-middle"
+          aria-hidden="true"
+          focusable="false"
+          role="img">
           <use xlink:href="~/assets/img/sprite.svg#highlight_off" />
         </svg>
         <span class="text-middle">Clear my selections</span>
@@ -40,18 +44,30 @@
       <button
         class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white copy-selections"
         @click="copy">
-        <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
+        <svg
+          class="usa-icon text-middle"
+          aria-hidden="true"
+          focusable="false"
+          role="img">
           <use xlink:href="~/assets/img/sprite.svg#share" />
         </svg>
         <span class="text-middle">Copy my selections</span>
       </button>
     </div>
     <div class="margin-bottom-1">
-      <print :show-selections="true" @print="$emit('print')" />
+      <print
+        :show-selections="true"
+        @print="$emit('print')" />
     </div>
     <div class="margin-bottom-1">
-      <button class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white" @click="email">
-        <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
+      <button
+        class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white"
+        @click="email">
+        <svg
+          class="usa-icon text-middle"
+          aria-hidden="true"
+          focusable="false"
+          role="img">
           <use xlink:href="~/assets/img/sprite.svg#mail" />
         </svg>
         <span class="text-middle">Email my selections</span>

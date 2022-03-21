@@ -1,7 +1,14 @@
 <template>
   <div class="eligibility-criterion">
-    <div v-if="type === 'boolean'" :key="criteriaKey" class="usa-checkbox">
-      <CheckBox :criteria-key="criteriaKey" :label="getCriterionLabel()" :response="response" location="left-rail" />
+    <div
+      v-if="type === 'boolean'"
+      :key="criteriaKey"
+      class="usa-checkbox">
+      <CheckBox
+        :criteria-key="criteriaKey"
+        :label="getCriterionLabel()"
+        :response="response"
+        location="left-rail" />
     </div>
     <div v-if="type === 'date'" :key="criteriaKey">
       <DateInput
@@ -12,7 +19,9 @@
         location="left-rail" />
     </div>
 
-    <div v-if="type === 'select'" :key="criteriaKey">
+    <div
+      v-if="type === 'select'"
+      :key="criteriaKey">
       <DropDown
         :label="getCriterionLabel()"
         :criteria-key="criteriaKey"
@@ -22,7 +31,9 @@
         location="left-rail" />
     </div>
 
-    <div v-if="type === 'radio'" :key="criteriaKey">
+    <div
+      v-if="type === 'radio'"
+      :key="criteriaKey">
       <RadioButton
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"
@@ -86,7 +97,9 @@ export default {
   },
 }
 </script>
-<style type="scss" scoped>
+<style
+  type="scss"
+  scoped>
 .eligibility-criteria__child {
   border-left: 2px solid #dee1e2;
   margin-left: 0.25rem;
