@@ -3,10 +3,14 @@
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
-          <h1 v-if="lifeEventTitle" class="font-heading-lg tablet:font-heading-xl margin-top-6 text-secondary">
+          <h1
+            v-if="lifeEventTitle"
+            class="font-heading-lg tablet:font-heading-xl margin-top-6 text-secondary">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
-          <p v-if="lifeEvent.lede" class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
+          <p
+            v-if="lifeEvent.lede"
+            class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
             {{ lifeEvent.lede }}
           </p>
           <ol class="usa-process-list">
@@ -22,34 +26,56 @@
         </div>
       </div>
       <!-- Desktop meta sort and open -->
-      <div role="complementary" class="display-none tablet:display-flex grid-row grid-gap print:display-none">
+      <div
+        role="complementary"
+        class="display-none tablet:display-flex grid-row grid-gap print:display-none">
         <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
         <div class="tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-2 print:display-none">
           <div>
-            <button class="usa-button usa-button--unstyled open-all" aria-controls="acc-id" @click="openAll">
+            <button
+              class="usa-button usa-button--unstyled open-all"
+              aria-controls="acc-id"
+              @click="openAll">
               Open All
             </button>
             /
-            <button class="usa-button usa-button--unstyled close-all" aria-controls="acc-id" @click="closeAll">
+            <button
+              class="usa-button usa-button--unstyled close-all"
+              aria-controls="acc-id"
+              @click="closeAll">
               Close All
             </button>
             /
-            <button class="usa-button usa-button--unstyled clear-all" aria-controls="acc-id" @click="clearCriteria">
+            <button
+              class="usa-button usa-button--unstyled clear-all"
+              aria-controls="acc-id"
+              @click="clearCriteria">
               Clear Selections
             </button>
           </div>
         </div>
         <div class="grid-col margin-y-2 text-right">
-          <label role="status" class="usa-label display-inline margin-right-1" for="benefitSort"
-          >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
+          <label
+            role="status"
+            class="usa-label display-inline margin-right-1"
+            for="benefitSort"
+            >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
             <select
               id="benefitSort"
               class="usa-select margin-left-auto width-card display-inline-block"
               name="benefitSort"
               aria-label="Sort benefits by"
               @change="sortChange">
-              <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
-              <option value="title" :selected="sort === 'title'">Title (A-Z)</option>
+              <option
+                value="relevance"
+                :selected="sort === 'relevance'">
+                Relevance
+              </option>
+              <option
+                value="title"
+                :selected="sort === 'title'">
+                Title (A-Z)
+              </option>
             </select>
           </label>
         </div>
@@ -61,7 +87,9 @@
           <h2 class="display-none print:display-block">Eligibility criteria</h2>
           <div>
             <div v-if="filter">
-              <div class="margin-bottom-3" role="alert">
+              <div
+                class="margin-bottom-3"
+                role="alert">
                 Currently viewing
                 <span class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
                   <button
@@ -72,7 +100,11 @@
                     data-position="top"
                     @click="clearFilter">
                     <span class="text-middle text-white">{{ filter }}</span>
-                    <svg class="usa-icon text-white text-middle" aria-hidden="true" focusable="false" role="img">
+                    <svg
+                      class="usa-icon text-white text-middle"
+                      aria-hidden="true"
+                      focusable="false"
+                      role="img">
                       <use xlink:href="~/assets/img/sprite.svg#close" />
                     </svg>
                   </button>
@@ -101,20 +133,40 @@
         <div class="margin-top-2 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <!-- Mobile meta sort and open -->
           <h2 class="tablet:display-none font-heading-lg margin-top-6">Benefits Results</h2>
-          <div role="complementary" class="tablet:display-none print:display-none">
+          <div
+            role="complementary"
+            class="tablet:display-none print:display-none">
             <div class="margin-y-2 print:display-none">
               <fieldset class="usa-fieldset">
-                <label role="status" class="usa-label" for="benefitSort"
-                >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
+                <label
+                  role="status"
+                  class="usa-label"
+                  for="benefitSort"
+                  >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
                 >
-                <select id="benefitSort" class="usa-select width-full" name="options" @change="sortChange">
-                  <option value="relevance" :selected="sort === 'relevance'">Relevance</option>
-                  <option value="title" :selected="sort === 'title'">Title (A-Z)</option>
+                <select
+                  id="benefitSort"
+                  class="usa-select width-full"
+                  name="options"
+                  @change="sortChange">
+                  <option
+                    value="relevance"
+                    :selected="sort === 'relevance'">
+                    Relevance
+                  </option>
+                  <option
+                    value="title"
+                    :selected="sort === 'title'">
+                    Title (A-Z)
+                  </option>
                 </select>
               </fieldset>
             </div>
 
-            <OpenCloseButtons :is-close-active-prop="true" @open-all="openAll" @close-all="closeAll" />
+            <OpenCloseButtons
+              :is-close-active-prop="true"
+              @open-all="openAll"
+              @close-all="closeAll" />
           </div>
 
           <div class="grid-row grid-gap display-none print:display-block break-before-always">
@@ -123,12 +175,16 @@
               Showing {{ lifeEventBenefits.length }} related benefits sorted by {{ sort }}.
             </div>
           </div>
-          <div v-if="$fetchState.pending" class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
+          <div
+            v-if="$fetchState.pending"
+            class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
             <div class="usa-alert__body">
               <p class="usa-alert__text">Fetching benefits...</p>
             </div>
           </div>
-          <div v-if="$fetchState.error" class="usa-alert usa-alert--error usa-alert--slim">
+          <div
+            v-if="$fetchState.error"
+            class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
               <p class="usa-alert__text">Error while fetching benefits.</p>
             </div>
@@ -163,7 +219,7 @@ import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 export default {
   name: "LifeEvent",
   components: {
-    OpenCloseButtons
+    OpenCloseButtons,
   },
   mixins: [mapTags],
   layout: "default",
@@ -183,11 +239,11 @@ export default {
         summary: "",
         eligibilityCriteria: [],
         relatedKeys: [],
-        related: []
+        related: [],
       },
       lifeEventBenefits: [],
       allLifeEventBenefits: [],
-      sort: "relevance"
+      sort: "relevance",
     }
   },
 
@@ -195,7 +251,7 @@ export default {
     const lifeEvent = await this.$content("life-events", this.$route.params.slug).fetch()
     const lifeEventBenefits = await this.$content("benefits")
       .where({
-        lifeEvents: { $contains: this.$route.params.slug }
+        lifeEvents: { $contains: this.$route.params.slug },
       })
       .sortBy("title")
       .fetch()
@@ -214,7 +270,7 @@ export default {
   /* istanbul ignore next */
   head() {
     return {
-      title: this.lifeEvent.secondaryHeadline
+      title: this.lifeEvent.secondaryHeadline,
     }
   },
   computed: {
@@ -223,24 +279,24 @@ export default {
     },
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria"
+      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria",
     }),
     ...mapState({
-      eligibilityCriteria: (state) => state.criteria.eligibilityCriteria
-    })
+      eligibilityCriteria: (state) => state.criteria.eligibilityCriteria,
+    }),
   },
   watch: {
     eligibilityCriteria: {
       handler(newEligibilityCriteria) {
         this.sortBenefits()
       },
-      deep: true
+      deep: true,
     },
     lifeEvent: {
       handler(lifeEvent) {
         this.sortBenefits()
-      }
-    }
+      },
+    },
   },
   beforeDestroy() {
     /* istanbul ignore next */
@@ -314,8 +370,8 @@ export default {
       this.lifeEventBenefits = this.allLifeEventBenefits
       this.sortBenefits()
       this.$nextTick(() => this.$refs.accordion.focus())
-    }
-  }
+    },
+  },
 }
 </script>
 

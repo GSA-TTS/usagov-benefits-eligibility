@@ -1,11 +1,21 @@
 <template>
   <div :class="['usa-card__container'].concat(cardContainerClasses)">
     <header class="usa-card__header padding-bottom-2">
-      <component :is="cardTitleHeadingLevel" :id="'usa-card-heading-' + _uid" class="usa-card__heading">
+      <component
+        :is="cardTitleHeadingLevel"
+        :id="'usa-card-heading-' + _uid"
+        class="usa-card__heading">
         {{ cardTitle }}
       </component>
-      <div v-if="cardTags && cardTags.length > 0" class="tags-container margin-top-1">
-        <Tag v-for="tag in cardTags" :key="tag.name" :name="tag.name" :click="cardTagsEmitClick" :title="tag.title" />
+      <div
+        v-if="cardTags && cardTags.length > 0"
+        class="tags-container margin-top-1">
+        <Tag
+          v-for="tag in cardTags"
+          :key="tag.name"
+          :name="tag.name"
+          :click="cardTagsEmitClick"
+          :title="tag.title" />
       </div>
     </header>
     <div class="usa-card__body">
@@ -16,7 +26,10 @@
       <slot name="eligibility"></slot>
     </div>
     <div class="usa-card__footer">
-      <ul v-if="primaryButtonLink !== '#'" class="usa-button-group" :aria-label="'Choices for ' + cardTitle">
+      <ul
+        v-if="primaryButtonLink !== '#'"
+        class="usa-button-group"
+        :aria-label="'Choices for ' + cardTitle">
         <li class="usa-button-group__item">
           <span v-if="isRemoteLink(primaryButtonLink)">
             <a
@@ -38,7 +51,9 @@
           </nuxt-link>
         </li>
 
-        <li v-if="secondaryButtonText && secondaryButtonLink" class="usa-button-group__item">
+        <li
+          v-if="secondaryButtonText && secondaryButtonLink"
+          class="usa-button-group__item">
           <nuxt-link
             :to="secondaryButtonLink"
             class="usa-button usa-button--outline print:display-none"

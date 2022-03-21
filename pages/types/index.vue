@@ -12,7 +12,9 @@
 
       <div class="grid-row grid-gap margin-top-4">
         <div class="tablet:grid-col-10 life-event-tags">
-          <ul v-if="lifeEventTags && lifeEventTags.length > 0" class="usa-card-group">
+          <ul
+            v-if="lifeEventTags && lifeEventTags.length > 0"
+            class="usa-card-group">
             <li
               v-for="tag in mapTags(lifeEventTags)"
               :key="tag.slug"
