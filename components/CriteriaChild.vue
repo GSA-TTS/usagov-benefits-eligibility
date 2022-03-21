@@ -10,7 +10,9 @@
         :response="response"
         location="left-rail" />
     </div>
-    <div v-if="type === 'date'" :key="criteriaKey">
+    <div
+      v-if="type === 'date'"
+      :key="criteriaKey">
       <DateInput
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"

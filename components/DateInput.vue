@@ -6,7 +6,11 @@
     <div class="usa-memorable-date">
       <!-- lower margin of the label -->
       <div class="usa-form-group usa-form-group--month">
-        <label :class="labelClass" :for="`${uniqueId}-${criteriaKey}-month`">Month</label>
+        <label
+          :class="labelClass"
+          :for="`${uniqueId}-${criteriaKey}-month`"
+          >Month</label
+        >
         <input
           :class="inputClass"
           aria-describedby="monthinput"
@@ -20,7 +24,11 @@
           @change="updateElibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--day">
-        <label :class="labelClass" :for="`${uniqueId}-${criteriaKey}-day`">Day</label>
+        <label
+          :class="labelClass"
+          :for="`${uniqueId}-${criteriaKey}-day`"
+          >Day</label
+        >
         <input
           :class="inputClass"
           aria-describedby="dayinput"
@@ -34,7 +42,11 @@
           @change="updateElibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--year">
-        <label :class="labelClass" :for="`${uniqueId}-${criteriaKey}-year`">Year</label>
+        <label
+          :class="labelClass"
+          :for="`${uniqueId}-${criteriaKey}-year`"
+          >Year</label
+        >
         <input
           :class="inputClass"
           aria-describedby="yearinput"
@@ -112,7 +124,7 @@ export default {
       uniqueId: _.uniqueId("dateinput-"),
       month: this.pullDateValue(this.dateResponse, 0),
       day: this.pullDateValue(this.dateResponse, 1),
-      year: this.pullDateValue(this.dateResponse, 2)
+      year: this.pullDateValue(this.dateResponse, 2),
     }
   },
   computed: {

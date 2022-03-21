@@ -38,7 +38,9 @@
                 :response="doesCriterionMatchSelection(criterion)"
                 location="benefit-card" />
             </div>
-            <div v-if="getCriterionByEligibilityKey(criterion.criteriaKey).type === 'date'" class="usa-checkbox">
+            <div
+              v-if="getCriterionByEligibilityKey(criterion.criteriaKey).type === 'date'"
+              class="usa-checkbox">
               <DateInput
                 :criteria-key="criterion.criteriaKey"
                 :label="getCriterionLabel(criterion)"

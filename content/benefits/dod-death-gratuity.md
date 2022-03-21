@@ -19,5 +19,5 @@ eligibility:
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child", "parent", "other family member"]
   - criteriaKey: applicant_eligible_senior
-    acceptableValues: ['>11-14-1990']
+    acceptableValues: [">11-14-1990"]
 ---
