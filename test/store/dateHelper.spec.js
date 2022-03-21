@@ -11,8 +11,8 @@ describe("dateHelper", () => {
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(false)
   })
@@ -26,8 +26,8 @@ describe("dateHelper", () => {
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(false)
   })
@@ -41,8 +41,8 @@ describe("dateHelper", () => {
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(true)
   })
@@ -56,8 +56,8 @@ describe("dateHelper", () => {
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(true)
   })
@@ -66,8 +66,8 @@ describe("dateHelper", () => {
       criteriaKey: "applicant_eligible_senior",
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(null)
   })
@@ -81,8 +81,8 @@ describe("dateHelper", () => {
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(null)
   })
@@ -96,8 +96,8 @@ describe("dateHelper", () => {
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(true)
   })
@@ -111,8 +111,8 @@ describe("dateHelper", () => {
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(true)
   })
@@ -126,8 +126,8 @@ describe("dateHelper", () => {
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(true)
   })
@@ -142,8 +142,8 @@ describe("dateHelper", () => {
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
-        criterion,
-        userInputDate: Date.parse(criterion.response)
+      criterion,
+      userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(false)
   })
