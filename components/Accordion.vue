@@ -29,7 +29,7 @@
       <div
         :id="`acc-content-${benefit.slug}`"
         ref="accordionContents"
-        class="usa-accordion__content usa-prose border-left-0 border-transparent">
+        class="usa-accordion__content usa-prose">
         <div
           v-if="benefit && benefit.tags.length > 0"
           class="tags-container margin-top-1">
