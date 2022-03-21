@@ -67,7 +67,7 @@ export const getters = {
    * @param {storeGetters} getter
    * @returns null / true / false [empty, pass, fail]
    */
-   doesCriterionDateMatch: (state, getters) => (criterion) => {
+  doesCriterionDateMatch: (state, getters) => (criterion) => {
     if (!getters.isCriterionSelected(criterion) || !criterion.acceptableValues) {
       return null
     }
@@ -77,7 +77,7 @@ export const getters = {
       : Date.parse(getters.getResponseByEligibilityKey(criterion.criteriaKey))
     return validateDateAgainstAcceptance({
       criterion,
-      userInputDate
+      userInputDate,
     })
   },
   doesCriterionMatchSelection: (state, getters) => (criterion) => {
