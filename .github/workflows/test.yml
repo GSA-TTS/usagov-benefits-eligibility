@@ -5,15 +5,10 @@ name: Test
 on:
   workflow_dispatch:
   push:
-    branches:
-      - develop
-      - release
-      - main
-  pull_request:
 
 jobs:
   test_frontend:
-    name: "test frontend"
+    name: test frontend
     runs-on: ubuntu-latest
 
     steps:

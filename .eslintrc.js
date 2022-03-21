@@ -7,8 +7,8 @@ module.exports = {
   parserOptions: {
     parser: "babel-eslint",
   },
-  extends: ["@nuxtjs", "plugin:nuxt/recommended", "prettier"],
-  plugins: [],
+  extends: ["@nuxtjs", "plugin:nuxt/recommended", "plugin:vuejs-accessibility/recommended", "prettier"],
+  plugins: ["vuejs-accessibility"],
   // add your custom rules here
   rules: {
     "comma-dangle": 0,
@@ -61,6 +61,17 @@ module.exports = {
       {
         singleline: "ignore",
         multiline: "below",
+      },
+    ],
+    "vuejs-accessibility/label-has-for": [
+      "error",
+      {
+        components: ["VLabel"],
+        controlComponents: ["VInput"],
+        required: {
+          every: ["id"],
+        },
+        allowChildren: false,
       },
     ],
   },

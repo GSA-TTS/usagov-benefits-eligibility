@@ -18,13 +18,13 @@
             :class="[
               'usa-icon-list__icon',
               {
-                'text-success text-bold': doesCriterionMatchSelection(criterion) === true,
+                'text-success-dark text-bold': doesCriterionMatchSelection(criterion) === true,
               },
               {
                 'text-base-light': doesCriterionMatchSelection(criterion) === null,
               },
               {
-                'text-secondary-vivid text-bold': doesCriterionMatchSelection(criterion) === false,
+                'text-error-dark text-bold': doesCriterionMatchSelection(criterion) === false,
               },
             ]">
             <div v-if="getCriterionByEligibilityKey(criterion.criteriaKey).type === 'boolean'" class="usa-checkbox">

@@ -132,5 +132,7 @@ describe("Accordion", () => {
     expect(wrapper.vm.toggleAccordion).toHaveBeenCalled()
     wrapper.vm.openAll()
     expect(wrapper.vm.toggleAccordion).toHaveBeenCalled()
+    wrapper.vm.focus()
+    expect(wrapper.vm.toggleAccordion).toHaveBeenCalled()
   })
 })
