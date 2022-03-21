@@ -44,7 +44,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^27.5.0",
-    "copy-webpack-plugin": "^6.2.2",
+    "copy-webpack-plugin": "^10.2.4",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
@@ -64,7 +64,8 @@
     "tmpl": ">=1.0.5",
     "uswds": "^2.13.1",
     "vue-axe": "^2.4.4",
-    "vue-jest": "^3.0.7"
+    "vue-jest": "^3.0.7",
+    "webpack": "^4.46.0"
   },
   "browserslist": [
     ">0.2%",
