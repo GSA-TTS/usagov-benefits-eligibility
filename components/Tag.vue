@@ -1,5 +1,7 @@
 <template>
-  <span v-if="click" class="usa-tag margin-left-05 usa-button-group__item margin-left-0 padding-0 display-inline-block">
+  <span
+    v-if="click"
+    class="usa-tag margin-left-05 usa-button-group__item margin-left-0 padding-0 display-inline-block">
     <button
       style="padding: 1px 8px; text-decoration: none"
       class="usa-tooltip usa-button usa-button--outline usa-button--inverse usa-button--unstyled text-uppercase font-sans-2xs"
@@ -10,7 +12,11 @@
       {{ name }}
     </button>
   </span>
-  <span v-else class="usa-tag">{{ name }}</span>
+  <span
+    v-else
+    class="usa-tag"
+    >{{ name }}</span
+  >
 </template>
 <script>
 export default {

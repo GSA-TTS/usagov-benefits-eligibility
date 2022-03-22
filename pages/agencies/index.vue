@@ -12,7 +12,9 @@
 
       <div class="grid-row grid-gap margin-top-4">
         <div class="tablet:grid-col-10">
-          <ul v-if="agencies && agencies.length > 0" class="usa-card-group">
+          <ul
+            v-if="agencies && agencies.length > 0"
+            class="usa-card-group">
             <li
               v-for="agency in mapAgencies(agencies)"
               :key="agency.slug"

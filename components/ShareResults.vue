@@ -5,7 +5,11 @@
       <button
         class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white clear-selections"
         @click="clearCriteria">
-        <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
+        <svg
+          class="usa-icon text-middle"
+          aria-hidden="true"
+          focusable="false"
+          role="img">
           <use xlink:href="~/assets/img/sprite.svg#highlight_off" />
         </svg>
         <span class="text-middle">Clear my selections</span>
@@ -40,18 +44,30 @@
       <button
         class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white copy-selections"
         @click="copy">
-        <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
+        <svg
+          class="usa-icon text-middle"
+          aria-hidden="true"
+          focusable="false"
+          role="img">
           <use xlink:href="~/assets/img/sprite.svg#share" />
         </svg>
         <span class="text-middle">Copy my selections</span>
       </button>
     </div>
     <div class="margin-bottom-1">
-      <print :show-selections="true" @print="$emit('print')" />
+      <print
+        :show-selections="true"
+        @print="$emit('print')" />
     </div>
     <div class="margin-bottom-1">
-      <button class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white" @click="email">
-        <svg class="usa-icon text-middle" aria-hidden="true" focusable="false" role="img">
+      <button
+        class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white"
+        @click="email">
+        <svg
+          class="usa-icon text-middle"
+          aria-hidden="true"
+          focusable="false"
+          role="img">
           <use xlink:href="~/assets/img/sprite.svg#mail" />
         </svg>
         <span class="text-middle">Email my selections</span>
@@ -63,7 +79,7 @@
 export default {
   data() {
     return {
-      alert: false
+      alert: false,
     }
   },
   computed: {
@@ -78,7 +94,7 @@ export default {
             const valueMap = {
               [responses[criteriaKey]]: responses[criteriaKey],
               true: 1,
-              false: 0
+              false: 0,
             }
             params.append(criteriaKey, valueMap[responses[criteriaKey]])
           }
@@ -90,13 +106,13 @@ export default {
         const diredBaseUrl = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`
         return `${diredBaseUrl}?${params.toString()}`
       }
-    }
+    },
   },
   watch: {
     url(value) {
       const url = value || /* istanbul ignore next */ window.location.href.replace(window.location.search, "")
       history.replaceState(null, document.title, url)
-    }
+    },
   },
 
   mounted() {
@@ -104,7 +120,6 @@ export default {
       history.replaceState(null, document.title, this.url)
     }
   },
-
 
   beforeMount() {
     const params = new URLSearchParams(this.search || window.location.search)
@@ -119,16 +134,16 @@ export default {
         // eslint-disable-next-line quote-props
         false: false,
         1: true,
-        0: false
+        0: false,
       }
       vals.push({
         criteriaKeyHash: key.toLowerCase(),
-        response: valueMap[value]
+        response: valueMap[value],
       })
     }
 
     this.$store.commit("criteria/preloadedResponses", {
-      valueArray: vals
+      valueArray: vals,
     })
   },
   methods: {
@@ -153,7 +168,7 @@ export default {
       window.location.href = `mailto:?subject=Results%20from%20benefits%20elibibility%20awareness%20resource&body=Results%20${encodeURIComponent(
         this.url
       )}`
-    }
-  }
+    },
+  },
 }
 </script>
