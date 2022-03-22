@@ -71,7 +71,7 @@ export const getters = {
       return null
     }
     // need this to be swapped if passing in a state I.E. testing
-    let userInputDate = criterion.TEST
+    const userInputDate = criterion.TEST
       ? Date.parse(getters.getResponseByEligibilityKey(state)(criterion.criteriaKey))
       : Date.parse(getters.getResponseByEligibilityKey(criterion.criteriaKey))
     return validateDateAgainstAcceptance({
@@ -86,8 +86,8 @@ export const getters = {
 
     if (getters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
       return criterion.TEST
-        ? getters.doesCriterionDateMatch(state)(criterion.criteriaKey)
-        : getters.doesCriterionDateMatch(criterion.criteriaKey)
+        ? getters.doesCriterionDateMatch(state)(criterion)
+        : getters.doesCriterionDateMatch(criterion)
     } else {
       if (!criterion.acceptableValues) {
         return null
