@@ -1,8 +1,11 @@
 <template>
-  <fieldset class="usa-fieldset">
+  <fieldset
+    class="usa-fieldset"
+    :class="disabledStyle">
     <template v-if="location === 'left-rail'">
       <label
         class="usa-label margin-top-0 tablet:padding-top-1 text-bold"
+        :class="disabledLabel"
         :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`">
         {{ label }}
       </label>
@@ -19,7 +22,8 @@
       :id="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       class="usa-select"
       :name="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
-      @change="updateEligibilitySelected($event, criteriaKey)">
+      :disabled="disabledDropDown"
+      @blur="updateEligibilitySelected($event, criteriaKey)">
       <option :value="null">- Select -</option>
       <option
         v-for="option in values"
@@ -63,11 +67,30 @@ export default {
         return ["left-rail", "benefit-card"].includes(value)
       },
     },
+    isDisabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       uniqueId: _.uniqueId("dropdown-"),
+      disabledDropDown: this.isDisabled,
     }
+  },
+  computed: {
+    disabledStyle() {
+      if (this.disabledDropDown) {
+        return "border-2px border-dotted border-gray-30 padding-1"
+      }
+      return null
+    },
+    disabledLabel() {
+      if (this.disabledDropDown) {
+        return "text-gray-30"
+      }
+      return null
+    },
   },
   mounted() {
     this.uniqueId = _.uniqueId("dropdown-")

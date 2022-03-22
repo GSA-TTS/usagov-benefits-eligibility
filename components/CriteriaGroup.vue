@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SummaryBox />
     <template v-for="criteriaGroup in lifeEventCriteria">
       <div
         :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`"
@@ -43,8 +44,10 @@
 </template>
 <script>
 import { mapGetters } from "vuex"
-
+import SummaryBox from "./SummaryBox.vue"
 export default {
+  name: "EligibilityCriteria",
+  components: { SummaryBox },
   props: {
     lifeEventCriteria: {
       type: Array,

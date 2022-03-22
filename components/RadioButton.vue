@@ -1,7 +1,11 @@
 <template>
-  <fieldset class="usa-fieldset">
+  <fieldset
+    class="usa-fieldset"
+    :class="disabledStyle">
     <template v-if="location === 'left-rail'">
-      <legend class="usa-legend usa-legend text-bold tablet:padding-top-1">
+      <legend
+        class="usa-legend usa-legend text-bold tablet:padding-top-1"
+        :class="disabledLabel">
         {{ label }}
       </legend>
     </template>
@@ -23,6 +27,7 @@
           :name="`${uniqueId}-${criteriaKey}-${value}`"
           :value="value"
           :checked="response === value"
+          :disabled="disabledRadio"
           @change="updateEligibilitySelected" />
         <label
           class="usa-radio__label tablet:margin-top-1"
@@ -79,11 +84,16 @@ export default {
         return ["left-rail", "benefit-card"].includes(value)
       },
     },
+    isDisabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       uniqueId: _.uniqueId("radio-"),
       naUniqueId: _.uniqueId("na-"),
+      disabledRadio: this.isDisabled,
     }
   },
   computed: {
@@ -95,6 +105,18 @@ export default {
         return "text-base text-normal font-weight-normal"
       }
       return "text-bold"
+    },
+    disabledStyle() {
+      if (this.disabledRadio) {
+        return "border-2px border-dotted border-gray-30 padding-1"
+      }
+      return null
+    },
+    disabledLabel() {
+      if (this.disabledRadio) {
+        return "text-gray-30"
+      }
+      return null
     },
   },
   mounted() {
