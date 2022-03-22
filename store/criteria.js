@@ -1,5 +1,4 @@
 import Vue from "vue"
-import { toDate, isEqual, isBefore, isAfter, sub } from "date-fns"
 import stringToHash from "../services/stringToHash"
 import validateDateAgainstAcceptance from "~/services/dateHelper"
 
