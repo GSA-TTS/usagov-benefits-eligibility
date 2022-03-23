@@ -7,39 +7,30 @@
       <h3
         id="summary-box-key-information"
         class="usa-summary-box__heading">
-        Start here
+        {{ label }}
       </h3>
       <div class="usa-summary-box__text">
         <form class="usa-form">
           <fieldset class="usa-fieldset">
-            <legend class="usa-legend usa-legend">Did you serve in the military?</legend>
-            <div class="usa-radio">
-              <input
-                id="served-yes"
-                class="usa-radio__input"
-                type="radio"
-                name="serve-in-military"
-                value="yes"
-                checked />
-              <label
-                class="usa-radio__label"
-                for="served-yes"
-                >Yes</label
-              >
-            </div>
-            <div class="usa-radio">
-              <input
-                id="served-no"
-                class="usa-radio__input"
-                type="radio"
-                name="serve-in-military"
-                value="no" />
-              <label
-                class="usa-radio__label"
-                for="served-no"
-                >No</label
-              >
-            </div>
+            <template v-for="criteriaGroup in lifeEvents">
+              <div
+                :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
+                :key="criteriaGroup.criteriaGroupKey">
+                <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)">
+                  <div :key="criterion">
+                    <CriteriaChild
+                      :key="criterion.criteriaKey"
+                      :criteria-key="criterion.criteriaKey"
+                      :label="criterion.label"
+                      :values="criterion.values.split('; ')"
+                      :type="criterion.type"
+                      :criteria-group-key="criteriaGroup.criteriaGroupKey"
+                      :response="criterion.response"
+                      class="margin-y-2 tablet:margin-y-3" />
+                  </div>
+                </template>
+              </div>
+            </template>
           </fieldset>
         </form>
       </div>
@@ -48,8 +39,45 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+import CriteriaChild from "./CriteriaChild.vue"
+
 export default {
   name: "SummaryBox",
+  components: {
+    CriteriaChild,
+  },
+  props: {
+    lifeEvents: {
+      type: Array,
+      default: /* istanbul ignore next */ () => [],
+    },
+  },
+  data() {
+    return {
+      label: this.lifeEvents[0].label,
+    }
+  },
+  computed: {
+    ...mapGetters({
+      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
+    }),
+  },
+  methods: {
+    getCriteriaMap(criteriaKeys) {
+      return criteriaKeys.map((criterionKey) => {
+        return this.getCriterionByEligibilityKey(criterionKey)
+      })
+    },
+    // hasNoResponses(criteria) {
+    //   return !criteria.map((c) => !!c.response).some((response) => response)
+    // },
+  },
+  // data() {
+  //   return {
+  //     lifeEvents: this.lifeEventCriteria,
+  //   }
+  // },
 }
 </script>
 

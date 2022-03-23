@@ -1,7 +1,7 @@
 <template>
   <div>
-    <SummaryBox />
-    <template v-for="criteriaGroup in lifeEventCriteria">
+    <SummaryBox :life-events="getTopLevelCriteria(lifeEventCriteria)" />
+    <template v-for="criteriaGroup in getAllCriteriaExceptTopLevel(lifeEventCriteria)">
       <div
         :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`"
         :key="criteriaGroup.criteriaGroupKey"
@@ -46,7 +46,7 @@
 import { mapGetters } from "vuex"
 import SummaryBox from "./SummaryBox.vue"
 export default {
-  name: "EligibilityCriteria",
+  name: "CriteriaGroup",
   components: { SummaryBox },
   props: {
     lifeEventCriteria: {
@@ -67,6 +67,16 @@ export default {
     },
     hasNoResponses(criteria) {
       return !criteria.map((c) => !!c.response).some((response) => response)
+    },
+    getTopLevelCriteria(criteriaGroups) {
+      return criteriaGroups.filter((criteriaGroup) => {
+        return criteriaGroup.criteriaGroupKey === "top-level"
+      })
+    },
+    getAllCriteriaExceptTopLevel(criteriaGroups) {
+      return criteriaGroups.filter((criteriaGroup) => {
+        return criteriaGroup.criteriaGroupKey !== "top-level"
+      })
     },
   },
 }

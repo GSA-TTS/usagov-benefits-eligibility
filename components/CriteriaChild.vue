@@ -8,7 +8,7 @@
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"
         :response="response"
-        :is-disabled="true"
+        :is-disabled="false"
         location="left-rail" />
     </div>
 
@@ -21,7 +21,7 @@
         :values="values"
         :response="response"
         :criteria-index="criteriaGroupKey"
-        :is-disabled="true"
+        :is-disabled="false"
         location="left-rail" />
     </div>
 
@@ -33,7 +33,7 @@
         :label="getCriterionLabel()"
         :values="values"
         :response="response"
-        :is-disabled="true"
+        :is-disabled="false"
         location="left-rail" />
     </div>
   </div>

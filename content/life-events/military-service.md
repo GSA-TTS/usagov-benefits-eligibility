@@ -8,8 +8,15 @@ secondaryHeadline: "Military service benefits"
 eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 eligibilityCriteria:
+  - label: "Start here"
+    criteriaGroupKey: top-level
+    criteriaKeys:
+      - applicant_served_in_active_military
+
   - label: "About you (the person applying for benefits)"
     description: ""
+    topLevelCriteriaKey:
+      - applicant_served_in_active_military
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_served_in_active_military
