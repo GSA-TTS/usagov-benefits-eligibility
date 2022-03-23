@@ -1,4 +1,4 @@
-import { mount, shallowMount } from "@vue/test-utils"
+import { mount } from "@vue/test-utils"
 import CrossSell from "@/components/CrossSell.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
@@ -8,7 +8,7 @@ describe("CrossSell", () => {
   })
 
   it("should be a Vue instance", () => {
-    const wrapper = shallowMount(CrossSell, {
+    const wrapper = mount(CrossSell, {
       propsData: {
         title: "Title",
         cards: [
