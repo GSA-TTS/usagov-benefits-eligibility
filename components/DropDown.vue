@@ -23,7 +23,7 @@
       class="usa-select"
       :name="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       :disabled="disabledDropDown"
-      @blur="updateEligibilitySelected($event, criteriaKey)">
+      @change="updateEligibilitySelected($event, criteriaKey)">
       <option :value="null">- Select -</option>
       <option
         v-for="option in values"

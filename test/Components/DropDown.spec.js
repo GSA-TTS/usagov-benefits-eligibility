@@ -75,7 +75,6 @@ describe("<DropDown/>", () => {
     })
     const choices = wrapper.find("select").findAll("option")
     await choices.at(2).setSelected()
-    wrapper.find("select").trigger("blur")
     expect(wrapper.find("option:checked").element.value).toBe("died while on active duty")
     expect(actions.updateResponse).toHaveBeenCalled()
   })
