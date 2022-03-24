@@ -11,6 +11,16 @@
         :is-disabled="false"
         location="left-rail" />
     </div>
+    <div
+      v-if="type === 'date'"
+      :key="criteriaKey">
+      <DateInput
+        :criteria-key="criteriaKey"
+        :label="getCriterionLabel()"
+        :response="doesCriterionDateMatch(getCriterionByEligibilityKey(criteriaKey))"
+        :date-response="getCriterionByEligibilityKey(criteriaKey).response"
+        location="left-rail" />
+    </div>
 
     <div
       v-if="type === 'select'"
@@ -43,12 +53,14 @@ import { mapGetters } from "vuex"
 import RadioButton from "./RadioButton"
 import DropDown from "./DropDown"
 import CheckBox from "./CheckBox"
+import DateInput from "./DateInput.vue"
 
 export default {
   components: {
     RadioButton,
     DropDown,
     CheckBox,
+    DateInput,
   },
   props: {
     criteriaKey: {
@@ -79,6 +91,8 @@ export default {
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
+      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey",
+      doesCriterionDateMatch: "criteria/doesCriterionDateMatch",
     }),
   },
   methods: {

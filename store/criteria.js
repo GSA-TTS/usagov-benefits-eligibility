@@ -1,5 +1,6 @@
 import Vue from "vue"
 import stringToHash from "../services/stringToHash"
+import validateDateAgainstAcceptance from "~/services/dateHelper"
 
 export const state = () => ({
   eligibilityCriteria: {},
@@ -51,13 +52,50 @@ export const mutations = {
 }
 
 export const getters = {
-  doesCriterionMatchSelection: (state, getters) => (criterion) => {
+  /**
+   * Function that checks the acceptable criteria date encoding and translates
+   * it to something that the js engine can parse / check
+   *
+   * Use Cases                                      | Required encoding (acceptable value(s))
+   * - user must be born on MM/DD/YYYY (11/14/1999) | =11-14-1999
+   * - user older than 60 years  (Y, M, D)          | >60Y
+   * - criteria before MM/DD/YYYY (01/01/2022)      | <01-01-2022
+   * - born during YYYY-YYYYY (1990-2000)           | >01-01-1990 , <01-01-2000
+   * - same use case as above (but with age range)  | >60Y, <40Y
+   * @param {currentState} state
+   * @param {storeGetters} getter
+   * @returns null / true / false [empty, pass, fail]
+   */
+  doesCriterionDateMatch: (state, getters) => (criterion) => {
     if (!getters.isCriterionSelected(criterion) || !criterion.acceptableValues) {
       return null
     }
-    return !!criterion.acceptableValues.find(
-      (val) => val === getters.getCriterionByEligibilityKey(criterion.criteriaKey).response
-    )
+    // need this to be swapped if passing in a state I.E. testing
+    const userInputDate = criterion.TEST
+      ? Date.parse(getters.getResponseByEligibilityKey(state)(criterion.criteriaKey))
+      : Date.parse(getters.getResponseByEligibilityKey(criterion.criteriaKey))
+    return validateDateAgainstAcceptance({
+      criterion,
+      userInputDate,
+    })
+  },
+  doesCriterionMatchSelection: (state, getters) => (criterion) => {
+    if (!getters.isCriterionSelected(criterion)) {
+      return null
+    }
+
+    if (getters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
+      return criterion.TEST
+        ? getters.doesCriterionDateMatch(state)(criterion)
+        : getters.doesCriterionDateMatch(criterion)
+    } else {
+      if (!criterion.acceptableValues) {
+        return null
+      }
+      return !!criterion.acceptableValues.find(
+        (val) => val === getters.getCriterionByEligibilityKey(criterion.criteriaKey).response
+      )
+    }
   },
   getCriterionByEligibilityKey: (state) => (criteriaKey) => {
     return (
