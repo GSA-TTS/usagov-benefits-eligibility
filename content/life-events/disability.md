@@ -12,6 +12,7 @@ eligibilityCriteria:
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
+      - applicant_date_of_birth
       - applicant_disability
       - applicant_ability_to_work
       - applicant_paid_into_SS
