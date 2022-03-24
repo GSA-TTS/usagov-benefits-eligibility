@@ -18,4 +18,5 @@ eligibility:
     acceptableValues: ["died while on active duty"]
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child", "parent", "other family member"]
+
 ---
