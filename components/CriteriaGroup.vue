@@ -22,6 +22,7 @@
           <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)">
             <CriteriaChild
               :key="criterion.criteriaKey"
+              :criteria="criterion"
               :criteria-key="criterion.criteriaKey"
               :label="criterion.label"
               :values="criterion.values.split('; ')"

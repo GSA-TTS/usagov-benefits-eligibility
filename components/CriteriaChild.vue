@@ -1,5 +1,6 @@
 <template>
   <div class="eligibility-criterion">
+    <pre>{{ criteria }}</pre>
     <div
       v-if="type === 'boolean'"
       :key="criteriaKey"
@@ -87,17 +88,31 @@ export default {
       type: [Boolean, String],
       default: false,
     },
+    criteria: {
+      type: Object,
+      default: () => {},
+    },
   },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
       getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey",
+      doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
+      getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       doesCriterionDateMatch: "criteria/doesCriterionDateMatch",
     }),
   },
   methods: {
     getCriterionLabel() {
       return this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
+    },
+    isTopLevelActive(eligibilityCriteria) {
+      if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
+        return true
+      } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
+        return false
+      }
+      return false
     },
   },
 }

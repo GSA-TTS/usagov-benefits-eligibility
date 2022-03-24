@@ -17,17 +17,15 @@
                 :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
                 :key="criteriaGroup.criteriaGroupKey">
                 <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)">
-                  <div :key="criterion">
-                    <CriteriaChild
-                      :key="criterion.criteriaKey"
-                      :criteria-key="criterion.criteriaKey"
-                      :label="criterion.label"
-                      :values="criterion.values.split('; ')"
-                      :type="criterion.type"
-                      :criteria-group-key="criteriaGroup.criteriaGroupKey"
-                      :response="criterion.response"
-                      class="margin-y-2 tablet:margin-y-3" />
-                  </div>
+                  <CriteriaChild
+                    :key="criterion.criteriaKey"
+                    :criteria-key="criterion.criteriaKey"
+                    :label="criterion.label"
+                    :values="criterion.values.split('; ')"
+                    :type="criterion.type"
+                    :criteria-group-key="criteriaGroup.criteriaGroupKey"
+                    :response="criterion.response"
+                    class="margin-y-2 tablet:margin-y-3" />
                 </template>
               </div>
             </template>
