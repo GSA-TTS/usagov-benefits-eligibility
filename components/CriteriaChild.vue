@@ -1,6 +1,5 @@
 <template>
   <div class="eligibility-criterion">
-    <pre>{{ criteria }}</pre>
     <div
       v-if="type === 'boolean'"
       :key="criteriaKey"
