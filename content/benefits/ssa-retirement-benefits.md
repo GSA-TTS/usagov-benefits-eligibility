@@ -18,7 +18,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: applicant_date_of_birth
     label: "You are at least 62 years old."
-    acceptableValues: [true]
+    acceptableValues: [">62years"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
 ---
