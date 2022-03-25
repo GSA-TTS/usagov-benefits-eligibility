@@ -6,7 +6,7 @@
 [![Semgrep](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml)
 [![woke](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml)
 [![Snyk Scan](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml)
-[![OWASP ZAP Baseline Scan](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_baseline.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_baseline.yml)
+[![OWASP ZAP Full Scan](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml)
 [![npm audit](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/npm_audit.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/npm_audit.yml)
 [![pa11y tests](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml)
 [![Deploy](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/deploy.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/deploy.yml)
