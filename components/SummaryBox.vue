@@ -4,19 +4,20 @@
     role="region"
     aria-labelledby="summary-box-key-information">
     <div class="usa-summary-box__body">
-      <h3
-        id="summary-box-key-information"
-        class="usa-summary-box__heading">
-        // Label goes here
-      </h3>
       <div class="usa-summary-box__text">
         <form class="usa-form">
           <fieldset class="usa-fieldset">
-            <template v-for="criteriaGroup in lifeEvents">
+            <template v-for="criteriaGroup in topLevelFilters">
               <div
                 :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
                 :key="criteriaGroup.criteriaGroupKey">
-                <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)">
+                <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKey)">
+                  <h3
+                    id="summary-box-key-information"
+                    :key="criterion.criteriaKey"
+                    class="usa-summary-box__heading">
+                    {{ criteriaGroup.label }}
+                  </h3>
                   <CriteriaChild
                     :key="criterion.criteriaKey"
                     :criteria-key="criterion.criteriaKey"
@@ -46,14 +47,14 @@ export default {
     CriteriaChild,
   },
   props: {
-    lifeEvents: {
+    topLevelFilters: {
       type: Array,
       default: /* istanbul ignore next */ () => [],
     },
   },
   // data() {
   //   return {
-  //     label: this.lifeEvents[0].label,
+  //     label: this.topLevelFilters[0].label,
   //   }
   // },
   computed: {
@@ -73,7 +74,7 @@ export default {
   },
   // data() {
   //   return {
-  //     lifeEvents: this.lifeEventCriteria,
+  //     topLevelFilters: this.lifeEventCriteria,
   //   }
   // },
 }

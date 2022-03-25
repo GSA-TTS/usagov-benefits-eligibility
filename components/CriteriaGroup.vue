@@ -1,8 +1,9 @@
 <template>
   <div>
-    <pre>{{ lifeEventCriteria }}</pre>
-    <SummaryBox :life-events="getTopLevelCriteria(lifeEventCriteria)" />
-    <template v-for="criteriaGroup in getAllCriteriaExceptTopLevel(lifeEventCriteria)">
+    <SummaryBox
+      v-if="topLevelFilters.length > 0"
+      :top-level-filters="topLevelFilters" />
+    <template v-for="criteriaGroup in lifeEventCriteria">
       <div
         :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`"
         :key="criteriaGroup.criteriaGroupKey"
@@ -55,6 +56,10 @@ export default {
       type: Array,
       default: /* istanbul ignore next */ () => [],
     },
+    topLevelFilters: {
+      type: Array,
+      default: /* istanbul ignore next */ () => [],
+    },
   },
   computed: {
     ...mapGetters({
@@ -70,16 +75,16 @@ export default {
     hasNoResponses(criteria) {
       return !criteria.map((c) => !!c.response).some((response) => response)
     },
-    getTopLevelCriteria(criteriaGroups) {
-      return criteriaGroups.filter((criteriaGroup) => {
-        return criteriaGroup.criteriaGroupKey === "top-level"
-      })
-    },
-    getAllCriteriaExceptTopLevel(criteriaGroups) {
-      return criteriaGroups.filter((criteriaGroup) => {
-        return criteriaGroup.criteriaGroupKey !== "top-level"
-      })
-    },
+    // getTopLevelCriteria(criteriaGroups) {
+    //   return criteriaGroups.filter((criteriaGroup) => {
+    //     return criteriaGroup.criteriaGroupKey === "top-level"
+    //   })
+    // },
+    // getAllCriteriaExceptTopLevel(criteriaGroups) {
+    //   return criteriaGroups.filter((criteriaGroup) => {
+    //     return criteriaGroup.criteriaGroupKey !== "top-level"
+    //   })
+    // },
   },
 }
 </script>

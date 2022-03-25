@@ -9,12 +9,14 @@ eligibilityCriteriaDescription: "Please check the boxes and select the options t
 
 topLevelFilter:
   - label: "Start here"
-    criteriaKey: applicant_served_in_military
+    criteriaKey:
+      - applicant_served_in_active_military
     childGroupKey: applicant
     disableWhen: ["not applicable"]
 
   - label: ""
-    criteriaKey: deceased_served_in_military
+    criteriaKey:
+      - deceased_served_in_active_military
     childGroupKey: military
     disableWhen:
       ["died on active duty", "had retired from the service", "was discharged under conditions other than dishonorable"]
@@ -22,8 +24,6 @@ topLevelFilter:
 eligibilityCriteria:
   - label: "About you (the person applying for benefits)"
     description: ""
-    topLevelCriteriaKey:
-      - applicant_served_in_active_military
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_served_in_active_military
