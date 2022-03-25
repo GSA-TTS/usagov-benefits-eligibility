@@ -91,6 +91,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    disableWhen: {
+      type: Array,
+      default: () => [],
+    },
   },
   computed: {
     ...mapGetters({
