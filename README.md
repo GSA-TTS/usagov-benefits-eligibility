@@ -11,7 +11,8 @@
 [![pa11y tests](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml)
 [![Deploy](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/deploy.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/deploy.yml)
 
-BEARS will be a proactive notification service that provides
+BEARS (Benefits Eligibility Awareness Resources)
+will be a proactive notification service that provides
 timely and personalized information about benefits
 eligibility, contextualized by life events. Before we can
 do notifications and potentially proactive notifications,
