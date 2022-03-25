@@ -7,7 +7,7 @@
       <h3
         id="summary-box-key-information"
         class="usa-summary-box__heading">
-        {{ label }}
+        // Label goes here
       </h3>
       <div class="usa-summary-box__text">
         <form class="usa-form">
@@ -51,11 +51,11 @@ export default {
       default: /* istanbul ignore next */ () => [],
     },
   },
-  data() {
-    return {
-      label: this.lifeEvents[0].label,
-    }
-  },
+  // data() {
+  //   return {
+  //     label: this.lifeEvents[0].label,
+  //   }
+  // },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",

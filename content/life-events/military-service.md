@@ -7,12 +7,19 @@ secondaryHeadline: "Military service benefits"
 
 eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
-eligibilityCriteria:
+topLevelFilter:
   - label: "Start here"
-    criteriaGroupKey: top-level
-    criteriaKeys:
-      - applicant_served_in_active_military
+    criteriaKey: applicant_served_in_military
+    childGroupKey: applicant
+    disableWhen: ["not applicable"]
 
+  - label: ""
+    criteriaKey: deceased_served_in_military
+    childGroupKey: military
+    disableWhen:
+      ["died on active duty", "had retired from the service", "was discharged under conditions other than dishonorable"]
+
+eligibilityCriteria:
   - label: "About you (the person applying for benefits)"
     description: ""
     topLevelCriteriaKey:

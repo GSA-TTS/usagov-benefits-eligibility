@@ -1,5 +1,6 @@
 <template>
   <div>
+    <pre>{{ lifeEventCriteria }}</pre>
     <SummaryBox :life-events="getTopLevelCriteria(lifeEventCriteria)" />
     <template v-for="criteriaGroup in getAllCriteriaExceptTopLevel(lifeEventCriteria)">
       <div

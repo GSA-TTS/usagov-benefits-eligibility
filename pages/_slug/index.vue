@@ -126,6 +126,7 @@
                 {{ lifeEvent.eligibilityCriteriaDescription }}
               </div>
             </div>
+            <pre>{{ lifeEvent }}</pre>
             <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
             <share-results @print="openAll()" />
           </div>
