@@ -1,6 +1,20 @@
 <template>
   <div class="eligibility-criterion">
     <pre>{{ $store.state.criteria.eligibilityCriteria.applicant_served_in_active_military.response }}</pre>
+    <pre>{{ topLevelFilters }}</pre>
+    <pre>{{
+      // topLevelFilters.map((child) => {
+      //   if (
+      //     child.disableChildWhen.includes(
+      //       $store.state.criteria.eligibilityCriteria.applicant_served_in_active_military.response
+      //     )
+      //   ) {
+      //     return true
+      //   }
+      // })
+      topLevelFilters.map((child) => child.disableChildWhen)
+    }}</pre>
+
     <div
       v-if="type === 'boolean'"
       :key="criteriaKey"
@@ -9,7 +23,7 @@
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"
         :response="response"
-        :is-disabled="applicant_served_in_active_military"
+        :is-disabled="false"
         location="left-rail" />
     </div>
     <div
@@ -92,16 +106,16 @@ export default {
       type: Object,
       default: () => {},
     },
-    disableWhen: {
+    topLevelFilters: {
       type: Array,
       default: () => [],
     },
   },
-  data() {
-    return {
-      isGroupKeyDisabled: false,
-    }
-  },
+  // data() {
+  //   return {
+  //     isGroupKeyDisabled: false,
+  //   }
+  // },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
@@ -111,15 +125,15 @@ export default {
       doesCriterionDateMatch: "criteria/doesCriterionDateMatch",
     }),
   },
-  watch: {
-    "$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military": {
-      deep: true,
-      handler() {
-        console.log("foo")
-        console.log(this.$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military)
-      },
-    },
-  },
+  // watch: {
+  //   "$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military": {
+  //     deep: true,
+  //     handler() {
+  //       console.log("foo")
+  //       console.log(this.$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military)
+  //     },
+  //   },
+  // },
   methods: {
     getCriterionLabel() {
       return this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
@@ -131,6 +145,14 @@ export default {
         return false
       }
       return false
+    },
+    isKeyInTopLevel(key) {
+      const { disableChildWhen } = this.topLevelFilters
+      console.log("disabled: " + disableChildWhen)
+      // if (this.topLevelFilters.includes(key)) {
+      //   return true
+      // }
+      return disableChildWhen
     },
   },
 }

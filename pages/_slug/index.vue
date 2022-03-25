@@ -126,10 +126,10 @@
                 {{ lifeEvent.eligibilityCriteriaDescription }}
               </div>
             </div>
-            <p>// top-level</p>
+            <!-- <p>// top-level</p>
             <pre>{{ lifeEvent.topLevelFilter }}</pre>
             <p>// life events</p>
-            <pre>{{ lifeEvent.eligibilityCriteria }}</pre>
+            <pre>{{ lifeEvent.eligibilityCriteria }}</pre> -->
             <CriteriaGroup
               :life-event-criteria="lifeEvent.eligibilityCriteria"
               :top-level-filters="lifeEvent.topLevelFilter" />
