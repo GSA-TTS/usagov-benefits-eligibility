@@ -1,5 +1,6 @@
 <template>
   <div class="eligibility-criterion">
+    <pre>{{ $store.state.criteria.eligibilityCriteria.applicant_served_in_active_military.response }}</pre>
     <div
       v-if="type === 'boolean'"
       :key="criteriaKey"
@@ -8,7 +9,7 @@
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"
         :response="response"
-        :is-disabled="false"
+        :is-disabled="applicant_served_in_active_military"
         location="left-rail" />
     </div>
     <div
@@ -96,6 +97,11 @@ export default {
       default: () => [],
     },
   },
+  data() {
+    return {
+      isGroupKeyDisabled: false,
+    }
+  },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
@@ -104,6 +110,15 @@ export default {
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       doesCriterionDateMatch: "criteria/doesCriterionDateMatch",
     }),
+  },
+  watch: {
+    "$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military": {
+      deep: true,
+      handler() {
+        console.log("foo")
+        console.log(this.$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military)
+      },
+    },
   },
   methods: {
     getCriterionLabel() {

@@ -12,13 +12,13 @@ topLevelFilter:
     criteriaKey:
       - applicant_served_in_active_military
     childGroupKey: applicant
-    disableWhen: ["not applicable"]
+    disableChildWhen: ["not applicable"]
 
   - label: ""
     criteriaKey:
       - deceased_served_in_active_military
     childGroupKey: military
-    disableWhen:
+    disableChildWhen:
       ["died on active duty", "had retired from the service", "was discharged under conditions other than dishonorable"]
 
 eligibilityCriteria:
