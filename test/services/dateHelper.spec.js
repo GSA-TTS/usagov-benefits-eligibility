@@ -1,5 +1,12 @@
 import validateDateAgainstAcceptance from "~/services/dateHelper"
 
+function getTestDateString(daysOffsetFromToday) {
+  const testDte = new Date()
+  testDte.setDate(testDte.getDate() + daysOffsetFromToday)
+  const testDate = testDte.toLocaleDateString("en-US", { day: "2-digit", month: "2-digit", year: "numeric" })
+  return testDate.replaceAll("/", "-")
+}
+
 describe("dateHelper", () => {
   it("should return false when acceptable critieria is invalid", async () => {
     const criterion = {
@@ -32,12 +39,13 @@ describe("dateHelper", () => {
     expect(ret).toBe(false)
   })
   it("should return true when criteria is passed (dynamic years)", async () => {
+    const testDate = getTestDateString(-(365*50))
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
       type: "date",
       acceptableValues: ["<60years", ">40years"],
-      response: "11-14-1975",
+      response: testDate,
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
@@ -102,12 +110,13 @@ describe("dateHelper", () => {
     expect(ret).toBe(true)
   })
   it("should return true when criteria is passed (dynamic months)", async () => {
+    const testDate = getTestDateString(-150)
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
       type: "date",
       acceptableValues: ["<6months", ">4months"],
-      response: "11-14-2021",
+      response: testDate,
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
@@ -117,12 +126,13 @@ describe("dateHelper", () => {
     expect(ret).toBe(true)
   })
   it("should return true when criteria is passed (dynamic days)", async () => {
+    const testDate = getTestDateString(-29)
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
       type: "date",
       acceptableValues: ["<30days", ">1days"],
-      response: "03-25-2022",
+      response: testDate,
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
