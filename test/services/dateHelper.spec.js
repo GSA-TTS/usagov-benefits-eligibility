@@ -39,7 +39,7 @@ describe("dateHelper", () => {
     expect(ret).toBe(false)
   })
   it("should return true when criteria is passed (dynamic years)", async () => {
-    const testDate = getTestDateString(-(365*50))
+    const testDate = getTestDateString(-(365 * 50))
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
