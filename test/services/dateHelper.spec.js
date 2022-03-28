@@ -122,7 +122,7 @@ describe("dateHelper", () => {
       criteriaKeyHash: "9e63db02",
       type: "date",
       acceptableValues: ["<30days", ">1days"],
-      response: "02-25-2022",
+      response: "03-25-2022",
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
