@@ -1,5 +1,7 @@
 # Content Folder
-1. Date Criteria  
+
+1. Date Criteria
+
 - In order to use the date input logic correctly a content manager must put the key and acceptance values in with accordance to our encoding
   - We have several options for inputting a date
   - First we put it the comparator into the criteria (no parathensis)
