@@ -14,7 +14,7 @@
                 <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKey)">
                   <h3
                     id="summary-box-key-information"
-                    :key="criterion.criteriaKey"
+                    :key="`heading-${criterion.criteriaKey}`"
                     class="usa-summary-box__heading">
                     {{ criteriaGroup.label }}
                   </h3>

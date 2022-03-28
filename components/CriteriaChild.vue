@@ -1,7 +1,10 @@
 <template>
   <div class="eligibility-criterion">
+    <!-- <p>// applicant_served_in_active_military.response</p>
     <pre>{{ $store.state.criteria.eligibilityCriteria.applicant_served_in_active_military.response }}</pre>
-    <pre>{{ topLevelFilters }}</pre>
+    <p>// topLevelFilters</p>
+    <pre>{{ topLevelFilters }}</pre> -->
+    <p>// did it match ?</p>
     <pre>{{
       // topLevelFilters.map((child) => {
       //   if (
@@ -12,7 +15,7 @@
       //     return true
       //   }
       // })
-      topLevelFilters.map((child) => child.disableChildWhen)
+      isGroupKeyDisabled
     }}</pre>
 
     <div
@@ -23,7 +26,7 @@
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"
         :response="response"
-        :is-disabled="false"
+        :is-disabled="isGroupKeyDisabled"
         location="left-rail" />
     </div>
     <div
@@ -46,7 +49,7 @@
         :values="values"
         :response="response"
         :criteria-index="criteriaGroupKey"
-        :is-disabled="false"
+        :is-disabled="isGroupKeyDisabled"
         location="left-rail" />
     </div>
 
@@ -58,7 +61,7 @@
         :label="getCriterionLabel()"
         :values="values"
         :response="response"
-        :is-disabled="false"
+        :is-disabled="isGroupKeyDisabled"
         location="left-rail" />
     </div>
   </div>
@@ -111,11 +114,11 @@ export default {
       default: () => [],
     },
   },
-  // data() {
-  //   return {
-  //     isGroupKeyDisabled: false,
-  //   }
-  // },
+  data() {
+    return {
+      isGroupKeyDisabled: false,
+    }
+  },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
@@ -125,16 +128,33 @@ export default {
       doesCriterionDateMatch: "criteria/doesCriterionDateMatch",
     }),
   },
-  // watch: {
-  //   "$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military": {
-  //     deep: true,
-  //     handler() {
-  //       console.log("foo")
-  //       console.log(this.$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military)
-  //     },
-  //   },
-  // },
+  watch: {
+    "$store.state.criteria.eligibilityCriteria['applicant_served_in_active_military']": {
+      deep: true,
+      handler() {
+        console.log("foo")
+        console.log(this.$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military)
+      },
+    },
+  },
   methods: {
+    isGroupKeyDisabledFunc(topLevelFilters) {
+      for (const filter in topLevelFilters) {
+        // console.log("criteriaKey + " + topLevelFilters[filter].criteriaKey)
+        // console.log("disableWhen + " + topLevelFilters[filter].disableChildWhen)
+        if (
+          // match criteria key ie `applicant_served_in_active_military`
+          topLevelFilters[filter].criteriaKey.includes("applicant_served_in_active_military") &&
+          // be included in the disableChildWhen array
+          topLevelFilters[filter].disableChildWhen.includes(
+            this.getResponseByEligibilityKey("applicant_served_in_active_military")
+          )
+        ) {
+          return true
+        }
+      }
+      return false
+    },
     getCriterionLabel() {
       return this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
     },
@@ -145,14 +165,6 @@ export default {
         return false
       }
       return false
-    },
-    isKeyInTopLevel(key) {
-      const { disableChildWhen } = this.topLevelFilters
-      console.log("disabled: " + disableChildWhen)
-      // if (this.topLevelFilters.includes(key)) {
-      //   return true
-      // }
-      return disableChildWhen
     },
   },
 }
