@@ -85,17 +85,24 @@ describe("pages/agencies/_slug/index.vue", () => {
     expect(wrapper2.vm.benefitAgency).toBe("U.S. One Two")
   })
 
-  it("should expand and collapse all accordian cards", async () => {
+  it("should expand,collapse, and clear all accordion cards", async () => {
+    const $store = {
+      dispatch: () => Promise.resolve(),
+    }
     const wrapper = shallowMount(Page, {
-      mocks: { $fetchState },
+      mocks: { $fetchState, $store },
     })
     const openAllSpy = jest.fn()
     const closeAllSpy = jest.fn()
+    const clearAllSpy = jest.fn()
     wrapper.vm.$refs.accordion.openAll = openAllSpy
     wrapper.vm.$refs.accordion.closeAll = closeAllSpy
+    wrapper.vm.$store.dispatch = clearAllSpy
     await wrapper.find(".usa-button.open-all").trigger("click")
     expect(openAllSpy).toHaveBeenCalled()
     await wrapper.find(".usa-button.close-all").trigger("click")
     expect(closeAllSpy).toHaveBeenCalled()
+    await wrapper.find(".usa-button.clear-all").trigger("click")
+    expect(clearAllSpy).toHaveBeenCalled()
   })
 })
