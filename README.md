@@ -178,3 +178,17 @@ docker build -t bears . \
   [USWDS](https://designsystem.digital.gov/) components and
   [Vue.js](https://vuejs.org/). The current approach tries
   to use each framework by it's public API's as much as possible.
+
+### Application Structure
+  As we move from phase 3 project to a production ready MVP in phase 4, we need to think more about application structure as the application grows. Here are some useful links on areas we can improve. 
+  
+The first post is more useful for nuxt/vuex structure.  The second link is more general but also a decent read.
+  - https://dykraf.com/blog/nuxtjs-static-content-using-vuex#using-store-in-pages-with-disp
+  - https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-js-application/
+
+Current todos as we are working in the code:
+  - Remove "API" or $content calls from vue components to API call to be loaded by store. 
+  - Rename Components to be easier to follow. 
+  - Revisit Vuex store to align with benefit cards vs criteria selections.
+
+
