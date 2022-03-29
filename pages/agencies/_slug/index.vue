@@ -36,6 +36,13 @@
               @click="closeAll">
               Close All
             </button>
+            /
+            <button
+              class="usa-button usa-button--unstyled clear-all"
+              aria-controls="acc-id"
+              @click="clearCriteria">
+              Clear Selections
+            </button>
           </div>
         </div>
       </div>
@@ -64,12 +71,19 @@
             </div>
           </div>
           <!-- Mobile meta sort and open -->
-          <h2 class="tablet:display-none font-heading-lg margin-top-1">Benefits Results</h2>
-
-          <OpenCloseButtons
-            :is-open-active-prop="true"
-            @open-all="openAll"
-            @close-all="closeAll" />
+          <div class="tablet:display-none">
+            <h2 class="font-heading-lg margin-top-1">Benefits Results</h2>
+            <button
+              class="usa-button clear-all"
+              aria-controls="acc-id"
+              @click="clearCriteria">
+              Clear Selections
+            </button>
+            <OpenCloseButtons
+              :is-open-active-prop="true"
+              @open-all="openAll"
+              @close-all="closeAll" />
+          </div>
           <Accordion
             ref="accordion"
             :life-event-benefits="lifeEventBenefits"
@@ -152,6 +166,9 @@ export default {
     },
     closeAll() {
       this.$refs.accordion.closeAll()
+    },
+    clearCriteria() {
+      this.$store.dispatch("criteria/clear")
     },
   },
 }
