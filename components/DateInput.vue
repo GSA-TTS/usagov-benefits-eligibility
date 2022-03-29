@@ -143,12 +143,18 @@ export default {
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
+    this.month = this.pullDateValue(this.dateResponse, 0)
+    this.day = this.pullDateValue(this.dateResponse, 1)
+    this.year = this.pullDateValue(this.dateResponse, 2)
   },
   methods: {
     classFromResponse() {
       return this.response ? "success" : this.response == null ? "empty" : "error"
     },
     pullDateValue(dateResponse, index) {
+      if(this.location === 'left-rail' && this.dateResponse === null) {
+        return ''
+      }
       return `${dateResponse !== null ? dateResponse.split("-")[index] : ""}`
     },
     updateElibilityDate(event, key) {
