@@ -52,11 +52,7 @@ export default {
       default: /* istanbul ignore next */ () => [],
     },
   },
-  // data() {
-  //   return {
-  //     label: this.topLevelFilters[0].label,
-  //   }
-  // },
+
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
@@ -68,18 +64,6 @@ export default {
         return this.getCriterionByEligibilityKey(criterionKey)
       })
     },
-    // hasNoResponses(criteria) {
-    //   return !criteria.map((c) => !!c.response).some((response) => response)
-    // },
   },
-  // data() {
-  //   return {
-  //     topLevelFilters: this.lifeEventCriteria,
-  //   }
-  // },
 }
 </script>
-
-<style
-  lang="scss"
-  scoped></style>

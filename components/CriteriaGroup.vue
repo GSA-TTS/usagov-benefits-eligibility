@@ -76,16 +76,6 @@ export default {
     hasNoResponses(criteria) {
       return !criteria.map((c) => !!c.response).some((response) => response)
     },
-    // getTopLevelCriteria(criteriaGroups) {
-    //   return criteriaGroups.filter((criteriaGroup) => {
-    //     return criteriaGroup.criteriaGroupKey === "top-level"
-    //   })
-    // },
-    // getAllCriteriaExceptTopLevel(criteriaGroups) {
-    //   return criteriaGroups.filter((criteriaGroup) => {
-    //     return criteriaGroup.criteriaGroupKey !== "top-level"
-    //   })
-    // },
   },
 }
 </script>
