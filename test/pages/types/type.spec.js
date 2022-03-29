@@ -1,8 +1,8 @@
 import { shallowMount } from "@vue/test-utils"
-import Page from "@/pages/agencies/_slug/index.vue"
-import beforeAllTests from "@/test/beforeAllTests"
+import Page from "~/pages/types/_type.vue"
+import beforeAllTests from "~/test/beforeAllTests"
 
-describe("pages/agencies/_slug/index.vue", () => {
+describe("pages/types/_type.vue", () => {
   let $fetchState
 
   beforeAll(async () => {
@@ -19,10 +19,11 @@ describe("pages/agencies/_slug/index.vue", () => {
     })
     expect(wrapper.vm).toBeTruthy()
     const results = wrapper.vm.$options.data()
+    expect(results.benefitTopic).toBe("")
     expect(results.lifeEventBenefits).toBeTruthy()
   })
 
-  it("should fetch benefits for a specific agency", async () => {
+  it("should fetch benefits for a specific category", async () => {
     let contentRequest
     const contentMock = {
       sortBy: () => contentMock,
@@ -30,20 +31,14 @@ describe("pages/agencies/_slug/index.vue", () => {
       fetch: () => {
         return Promise.resolve(
           {
-            agencies: {
-              relatedKeys: ["one"],
-            },
             benefits: [
-              {
-                title: "One",
-                summary: "One summary",
-                source: { name: "One two three" },
-                lifeEvents: ["Three", "Four"],
-              },
-              { title: "Two", summary: "Two summary", source: { name: "One two three" }, lifeEvents: [] },
-              { title: "Three", summary: "Three summary", source: { name: "U.S. One Two" }, lifeEvents: [] },
+              { title: "One", summary: "One summary", lifeEvents: ["Three", "Four"] },
+              { title: "Two", summary: "Two summary", lifeEvents: [] },
             ],
             criteria: [],
+            types: {
+              relatedKeys: ["one"],
+            },
           }[contentRequest]
         )
       },
@@ -54,7 +49,7 @@ describe("pages/agencies/_slug/index.vue", () => {
     }
     const $route = {
       params: {
-        slug: "one-two-three",
+        type: "one-two-three",
       },
     }
     const $store = {
@@ -69,20 +64,8 @@ describe("pages/agencies/_slug/index.vue", () => {
       },
     })
     await wrapper.vm.$options.fetch.apply(wrapper.vm)
-    expect(wrapper.vm.benefitAgency).toBe("One two three")
+    expect(wrapper.vm.benefitTopic).toBe("One two three")
     expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("One,Two")
-
-    $route.params.slug = "u-s-one-two"
-    const wrapper2 = shallowMount(Page, {
-      mocks: {
-        $content,
-        $fetchState,
-        $route,
-        $store,
-      },
-    })
-    await wrapper2.vm.$options.fetch.apply(wrapper2.vm)
-    expect(wrapper2.vm.benefitAgency).toBe("U.S. One Two")
   })
 
   it("should expand,collapse, and clear all accordion cards", async () => {
