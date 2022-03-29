@@ -27,7 +27,7 @@
           :name="`${uniqueId}-${criteriaKey}-${value}`"
           :value="value"
           :checked="response === value"
-          :disabled="disabledRadio"
+          :disabled="isDisabled"
           @change="updateEligibilitySelected" />
         <label
           class="usa-radio__label tablet:margin-top-1"
@@ -93,7 +93,6 @@ export default {
     return {
       uniqueId: _.uniqueId("radio-"),
       naUniqueId: _.uniqueId("na-"),
-      disabledRadio: this.isDisabled,
     }
   },
   computed: {
@@ -107,13 +106,13 @@ export default {
       return "text-bold"
     },
     disabledStyle() {
-      if (this.disabledRadio) {
+      if (this.isDisabled) {
         return "border-2px border-dotted border-gray-30 padding-1"
       }
       return null
     },
     disabledLabel() {
-      if (this.disabledRadio) {
+      if (this.isDisabled) {
         return "text-gray-30"
       }
       return null

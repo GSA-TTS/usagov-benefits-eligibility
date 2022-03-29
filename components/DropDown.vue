@@ -22,7 +22,7 @@
       :id="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       class="usa-select"
       :name="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
-      :disabled="disabledDropDown"
+      :disabled="isDisabled"
       @change="updateEligibilitySelected($event, criteriaKey)">
       <option :value="null">- Select -</option>
       <option
@@ -75,18 +75,17 @@ export default {
   data() {
     return {
       uniqueId: _.uniqueId("dropdown-"),
-      disabledDropDown: this.isDisabled,
     }
   },
   computed: {
     disabledStyle() {
-      if (this.disabledDropDown) {
+      if (this.isDisabled) {
         return "border-2px border-dotted border-gray-30 padding-1"
       }
       return null
     },
     disabledLabel() {
-      if (this.disabledDropDown) {
+      if (this.isDisabled) {
         return "text-gray-30"
       }
       return null

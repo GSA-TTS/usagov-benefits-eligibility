@@ -11,15 +11,14 @@ topLevelFilter:
   - label: "Start here"
     criteriaKey:
       - applicant_served_in_active_military
-    childGroupKey: applicant
-    disableChildWhen: ["not applicable"]
+    disableGroupKey: applicant
+    disableGroupWhen: ["not applicable"]
 
   - label: ""
     criteriaKey:
       - deceased_served_in_active_military
-    childGroupKey: military
-    disableChildWhen:
-      ["died on active duty", "had retired from the service", "was discharged under conditions other than dishonorable"]
+    disableGroupKey: military
+    disableGroupWhen: ["not applicable"]
 
 eligibilityCriteria:
   - label: "About you (the person applying for benefits)"

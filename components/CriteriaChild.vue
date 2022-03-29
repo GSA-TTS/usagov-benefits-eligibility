@@ -1,23 +1,5 @@
 <template>
   <div class="eligibility-criterion">
-    <!-- <p>// applicant_served_in_active_military.response</p>
-    <pre>{{ $store.state.criteria.eligibilityCriteria.applicant_served_in_active_military.response }}</pre>
-    <p>// topLevelFilters</p>
-    <pre>{{ topLevelFilters }}</pre> -->
-    <p>// did it match ?</p>
-    <pre>{{
-      // topLevelFilters.map((child) => {
-      //   if (
-      //     child.disableChildWhen.includes(
-      //       $store.state.criteria.eligibilityCriteria.applicant_served_in_active_military.response
-      //     )
-      //   ) {
-      //     return true
-      //   }
-      // })
-      isGroupKeyDisabled
-    }}</pre>
-
     <div
       v-if="type === 'boolean'"
       :key="criteriaKey"
@@ -128,33 +110,30 @@ export default {
       doesCriterionDateMatch: "criteria/doesCriterionDateMatch",
     }),
   },
-  watch: {
-    "$store.state.criteria.eligibilityCriteria['applicant_served_in_active_military']": {
-      deep: true,
-      handler() {
-        console.log("foo")
-        console.log(this.$store.state.criteria.eligibilityCriteria.applicant_served_in_active_military)
-      },
-    },
+
+  created() {
+    let myTopLevelFilter = null
+
+    for (const filter in this.topLevelFilters) {
+      if (this.topLevelFilters[filter].disableGroupKey === this.criteriaGroupKey) {
+        myTopLevelFilter = this.topLevelFilters[filter]
+        break
+      }
+    }
+
+    if (myTopLevelFilter !== null) {
+      const myCriteria = myTopLevelFilter.criteriaKey
+
+      this.$watch(`$store.state.criteria.eligibilityCriteria.${myCriteria}.response`, (newValue) => {
+        this.isGroupKeyDisabled = false
+
+        if (myTopLevelFilter.disableGroupWhen.includes(newValue)) {
+          this.isGroupKeyDisabled = true
+        }
+      })
+    }
   },
   methods: {
-    isGroupKeyDisabledFunc(topLevelFilters) {
-      for (const filter in topLevelFilters) {
-        // console.log("criteriaKey + " + topLevelFilters[filter].criteriaKey)
-        // console.log("disableWhen + " + topLevelFilters[filter].disableChildWhen)
-        if (
-          // match criteria key ie `applicant_served_in_active_military`
-          topLevelFilters[filter].criteriaKey.includes("applicant_served_in_active_military") &&
-          // be included in the disableChildWhen array
-          topLevelFilters[filter].disableChildWhen.includes(
-            this.getResponseByEligibilityKey("applicant_served_in_active_military")
-          )
-        ) {
-          return true
-        }
-      }
-      return false
-    },
     getCriterionLabel() {
       return this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
     },

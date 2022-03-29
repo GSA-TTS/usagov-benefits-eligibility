@@ -9,7 +9,7 @@
       :name="`${uniqueId}-${criteriaKey}`"
       :value="`${uniqueId}-${criteriaKey}`"
       :checked="response === true"
-      :disabled="disabledCheckbox"
+      :disabled="isDisabled"
       @change="updateEligibilityChecked($event, criteriaKey)" />
     <label
       class="usa-checkbox__label"
@@ -53,7 +53,6 @@ export default {
   data() {
     return {
       uniqueId: _.uniqueId("checkbox-"),
-      disabledCheckbox: this.isDisabled,
     }
   },
 
@@ -65,7 +64,7 @@ export default {
       return null
     },
     disabledStyle() {
-      if (this.disabledCheckbox) {
+      if (this.isDisabled) {
         return "border-2px border-dotted border-gray-30 padding-1"
       }
       return null
