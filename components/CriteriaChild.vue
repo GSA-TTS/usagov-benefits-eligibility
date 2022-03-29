@@ -104,9 +104,6 @@ export default {
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
-      getResponseByEligibilityKey: "criteria/getResponseByEligibilityKey",
-      doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
-      getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       doesCriterionDateMatch: "criteria/doesCriterionDateMatch",
     }),
   },
