@@ -116,7 +116,7 @@ import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
 export default {
   components: {
-    OpenCloseButtons,
+    OpenCloseButtons
   },
   mixins: [mapTags],
   data() {
@@ -128,24 +128,25 @@ export default {
         summary: "",
         lede: "",
         relatedKeys: [],
-        related: [],
-      },
+        related: []
+      }
     }
   },
   async fetch() {
-    this.benefitTopic = _.capitalize(_.lowerCase(this.$route.params.slug))
+    this.benefitTopic = _.capitalize(_.lowerCase(this.$route.params.type))
     const lifeEventBenefits = await this.$content("benefits")
       .where({
-        tags: { $contains: _.lowerCase(this.$route.params.slug) },
+        tags: { $contains: _.lowerCase(this.$route.params.type) }
       })
       .sortBy("title")
       .fetch()
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     // eslint-disable-next-line node/handle-callback-err
-    this.topic = await this.$content("types", this.$route.params.slug)
+    this.topic = await this.$content("types", this.$route.params.type)
       .fetch()
-      .catch((_err) => {})
+      .catch((_err) => {
+      })
     this.topic.related = []
     for (const related of this.topic.relatedKeys || []) {
       this.topic.related.push(await this.$content("types", related).fetch())
@@ -155,7 +156,7 @@ export default {
   /* istanbul ignore next */
   head() {
     return {
-      title: this.benefitTopic,
+      title: this.benefitTopic
     }
   },
   methods: {
@@ -170,7 +171,7 @@ export default {
     },
     clearCriteria() {
       this.$store.dispatch("criteria/clear")
-    },
-  },
+    }
+  }
 }
 </script>

@@ -114,7 +114,7 @@ import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
 export default {
   components: {
-    OpenCloseButtons,
+    OpenCloseButtons
   },
   mixins: [mapTags],
   data() {
@@ -126,14 +126,14 @@ export default {
         summary: "",
         lede: "",
         relatedKeys: [],
-        related: [],
-      },
+        related: []
+      }
     }
   },
   async fetch() {
-    const slug = this.$route.params.slug.startsWith("u-s-")
-      ? _.lowerCase(this.$route.params.slug).replace(/^u s /, "u.s. ")
-      : _.lowerCase(this.$route.params.slug)
+    const slug = this.$route.params.agency.startsWith("u-s-")
+      ? _.lowerCase(this.$route.params.agency).replace(/^u s /, "u.s. ")
+      : _.lowerCase(this.$route.params.agency)
     const agencyRegex = new RegExp(_.escapeRegExp(slug), "i")
     const lifeEventBenefits = await this.$content("benefits").sortBy("title").fetch()
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
@@ -143,9 +143,10 @@ export default {
     )
     this.benefitAgency = this.lifeEventBenefits[0]?.source?.name
     // eslint-disable-next-line node/handle-callback-err
-    this.agency = await this.$content("agencies", this.$route.params.slug)
+    this.agency = await this.$content("agencies", this.$route.params.agency)
       .fetch()
-      .catch((_err) => {})
+      .catch((_err) => {
+      })
     this.agency.related = []
     for (const related of this.agency.relatedKeys || []) {
       this.agency.related.push(await this.$content("agencies", related).fetch())
@@ -154,7 +155,7 @@ export default {
   /* istanbul ignore next */
   head() {
     return {
-      title: this.benefitAgency,
+      title: this.benefitAgency
     }
   },
   methods: {
@@ -169,8 +170,8 @@ export default {
     },
     clearCriteria() {
       this.$store.dispatch("criteria/clear")
-    },
-  },
+    }
+  }
 }
 </script>
 
