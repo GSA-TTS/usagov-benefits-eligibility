@@ -59,7 +59,7 @@
             role="status"
             class="usa-label display-inline margin-right-1"
             for="benefitSort"
-            >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
+          >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
             <select
               id="benefitSort"
               class="usa-select margin-left-auto width-card display-inline-block"
@@ -142,7 +142,7 @@
                   role="status"
                   class="usa-label"
                   for="benefitSort"
-                  >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
+                >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
                 >
                 <select
                   id="benefitSort"
@@ -219,13 +219,12 @@ import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 export default {
   name: "LifeEvent",
   components: {
-    OpenCloseButtons,
+    OpenCloseButtons
   },
   mixins: [mapTags],
   layout: "default",
   async asyncData({ $content }) {
     const landingPage = await $content("landing-page").fetch()
-
     return { landingPage }
   },
   data() {
@@ -239,19 +238,20 @@ export default {
         summary: "",
         eligibilityCriteria: [],
         relatedKeys: [],
-        related: [],
+        related: []
       },
       lifeEventBenefits: [],
       allLifeEventBenefits: [],
-      sort: "relevance",
+      sort: "relevance"
     }
   },
 
   async fetch() {
-    const lifeEvent = await this.$content("life-events", this.$route.params.slug).fetch()
+    const lifeEvent = await this.$content("life-events", this.$route.params.lifeEvent).fetch()
+
     const lifeEventBenefits = await this.$content("benefits")
       .where({
-        lifeEvents: { $contains: this.$route.params.slug },
+        lifeEvents: { $contains: this.$route.params.lifeEvent }
       })
       .sortBy("title")
       .fetch()
@@ -270,7 +270,7 @@ export default {
   /* istanbul ignore next */
   head() {
     return {
-      title: this.lifeEvent.secondaryHeadline,
+      title: this.lifeEvent.secondaryHeadline
     }
   },
   computed: {
@@ -279,24 +279,24 @@ export default {
     },
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria",
+      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria"
     }),
     ...mapState({
-      eligibilityCriteria: (state) => state.criteria.eligibilityCriteria,
-    }),
+      eligibilityCriteria: (state) => state.criteria.eligibilityCriteria
+    })
   },
   watch: {
     eligibilityCriteria: {
       handler(newEligibilityCriteria) {
         this.sortBenefits()
       },
-      deep: true,
+      deep: true
     },
     lifeEvent: {
       handler(lifeEvent) {
         this.sortBenefits()
-      },
-    },
+      }
+    }
   },
   beforeDestroy() {
     /* istanbul ignore next */
@@ -370,8 +370,8 @@ export default {
       this.lifeEventBenefits = this.allLifeEventBenefits
       this.sortBenefits()
       this.$nextTick(() => this.$refs.accordion.focus())
-    },
-  },
+    }
+  }
 }
 </script>
 
