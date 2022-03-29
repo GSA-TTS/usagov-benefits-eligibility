@@ -137,14 +137,6 @@ export default {
     getCriterionLabel() {
       return this.label || this.getCriterionByEligibilityKey(this.criteriaKey).label
     },
-    isTopLevelActive(eligibilityCriteria) {
-      if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
-        return true
-      } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
-        return false
-      }
-      return false
-    },
   },
 }
 </script>
