@@ -79,6 +79,7 @@
 .usa-label--success,
 .usa-input--success {
   color: green;
+  border-color: black;
   font-weight: bold;
 }
 
@@ -138,7 +139,7 @@ export default {
       return `usa-legend usa-legend--${this.classFromResponse()}`
     },
     inputClass() {
-      return `usa-input usa-input--${this.classFromResponse()}`
+      return 'usa-input'
     },
   },
   mounted() {
