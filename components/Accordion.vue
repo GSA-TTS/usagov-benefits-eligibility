@@ -50,7 +50,7 @@
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
-            >{{ benefit.source.name }}</a
+              >{{ benefit.source.name }}</a
             >
           </h3>
           <p
@@ -104,46 +104,46 @@ export default {
     expanded: {
       type: Boolean,
       requierd: false,
-      default: false
+      default: false,
     },
     lifeEventBenefits: {
       type: Array,
       required: true,
-      default: /* istanbul ignore next */ () => []
+      default: /* istanbul ignore next */ () => [],
     },
     lifeEventCriteria: {
       type: Array,
       required: false,
-      default: /* istanbul ignore next */ () => []
+      default: /* istanbul ignore next */ () => [],
     },
     showMatchingCount: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     showIcons: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     tagClick: {
       type: Boolean,
       required: false,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
       accordionInit: false,
       cid: _.uniqueId("c"),
-      lifeEventCriteriaKeys: []
+      lifeEventCriteriaKeys: [],
     }
   },
   computed: {
     ...mapGetters({
       doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
-      getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria"
-    })
+      getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
+    }),
   },
   beforeCreate() {
     this.cid = _.uniqueId("c")
@@ -204,8 +204,8 @@ export default {
     },
     sanitizedBenefitUrl(benefit, defaultValue = "#") {
       return this.sanitizeUrl(benefit.source ? benefit.source.link : defaultValue)
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>
