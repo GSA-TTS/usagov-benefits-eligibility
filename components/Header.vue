@@ -173,7 +173,6 @@
                   role="img">
                   <use xlink:href="~/assets/img/sprite.svg#search" />
                 </svg>
-                <!-- <span class="text-middle">Share my selections</span> -->
               </button>
             </form>
           </div>
