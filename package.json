@@ -68,7 +68,7 @@
     "uswds": "^2.13.1",
     "vue-axe": "^2.4.4",
     "vue-jest": "^3.0.7",
-    "webpack": "^4.46.0"
+    "webpack": "^5.70.0"
   },
   "browserslist": [
     ">0.2%",
