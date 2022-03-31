@@ -7,28 +7,24 @@
       <div class="usa-summary-box__text">
         <form class="usa-form">
           <fieldset class="usa-fieldset">
-            <template v-for="criteriaGroup in topLevelFilters">
-              <div
-                :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
-                :key="criteriaGroup.criteriaGroupKey">
-                <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKey)">
-                  <h3
-                    id="summary-box-key-information"
-                    :key="`heading-${criterion.criteriaKey}`"
-                    class="usa-summary-box__heading">
-                    {{ criteriaGroup.label }}
-                  </h3>
-                  <CriteriaChild
-                    :key="criterion.criteriaKey"
-                    :criteria-key="criterion.criteriaKey"
-                    :label="criterion.label"
-                    :values="criterion.values.split('; ')"
-                    :type="criterion.type"
-                    :criteria-group-key="criteriaGroup.criteriaGroupKey"
-                    :response="criterion.response"
-                    class="margin-y-2 tablet:margin-y-3" />
-                </template>
-              </div>
+            <template v-for="filter in topLevelFilters">
+              <h3
+                id="summary-box-key-information"
+                :key="`heading-${filter.criteriaKey}`"
+                class="usa-summary-box__heading">
+                {{ filter.label }}
+              </h3>
+              <template v-for="criterion in getCriteriaMap(filter.criteriaKey)">
+                <CriteriaChild
+                  :key="criterion.criteriaKey"
+                  :criteria-key="criterion.criteriaKey"
+                  :label="criterion.label"
+                  :type="criterion.type"
+                  :values="criterion.values.split('; ')"
+                  :criteria-group-key="criterion.criterionKey"
+                  :response="criterion.response"
+                  class="margin-y-2 tablet:margin-y-3" />
+              </template>
             </template>
           </fieldset>
         </form>
@@ -43,6 +39,7 @@ import CriteriaChild from "./CriteriaChild.vue"
 
 export default {
   name: "SummaryBox",
+
   components: {
     CriteriaChild,
   },
@@ -59,10 +56,8 @@ export default {
     }),
   },
   methods: {
-    getCriteriaMap(criteriaKeys) {
-      return criteriaKeys.map((criterionKey) => {
-        return this.getCriterionByEligibilityKey(criterionKey)
-      })
+    getCriteriaMap(criteriaKey) {
+      return [this.getCriterionByEligibilityKey(criteriaKey)]
     },
   },
 }
