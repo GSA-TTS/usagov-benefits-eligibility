@@ -9,7 +9,7 @@
         <label
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-month`"
-        >Month</label
+          >Month</label
         >
         <input
           :id="`${uniqueId}-${criteriaKey}-month`"
@@ -27,7 +27,7 @@
         <label
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-day`"
-        >Day</label
+          >Day</label
         >
         <input
           :id="`${uniqueId}-${criteriaKey}-day`"
@@ -45,7 +45,7 @@
         <label
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-year`"
-        >Year</label
+          >Year</label
         >
         <input
           :id="`${uniqueId}-${criteriaKey}-year`"
@@ -98,34 +98,41 @@ export default {
   props: {
     criteriaKey: {
       type: String,
-      default: "no criteria key provided"
+      default: "no criteria key provided",
     },
     label: {
       type: String,
-      default: "no label provided"
+      default: "no label provided",
     },
     response: {
       type: [String, Object, Boolean],
-      default: "no response provided"
+      default: "no response provided",
     },
     dateResponse: {
       type: String,
-      default: "no response inputted"
+      default: "no response inputted",
     },
     location: {
       type: String,
       default: "benefit-card",
       validator: (value) => {
         return ["benefit-card", "left-rail"].includes(value)
-      }
-    }
+      },
+    },
+  },
+  watch: {
+    dateResponse() {
+      this.month = this.pullDateValue(this.dateResponse, 0)
+      this.day = this.pullDateValue(this.dateResponse, 1)
+      this.year = this.pullDateValue(this.dateResponse, 2)
+    },
   },
   data() {
     return {
       uniqueId: _.uniqueId("dateinput-"),
       month: this.pullDateValue(this.dateResponse, 0),
       day: this.pullDateValue(this.dateResponse, 1),
-      year: this.pullDateValue(this.dateResponse, 2)
+      year: this.pullDateValue(this.dateResponse, 2),
     }
   },
   computed: {
@@ -140,7 +147,7 @@ export default {
     },
     inputClass() {
       return `usa-input usa-input--${this.classFromResponse()}`
-    }
+    },
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
@@ -167,11 +174,11 @@ export default {
         const date = `${month}-${day}-${year}`
         const localCriterion = {
           criteriaKey: key,
-          response: date
+          response: date,
         }
         this.$store.dispatch("criteria/updateResponse", localCriterion)
       }
-    }
-  }
+    },
+  },
 }
 </script>

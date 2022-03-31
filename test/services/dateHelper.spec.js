@@ -39,12 +39,13 @@ describe("dateHelper", () => {
     expect(ret).toBe(false)
   })
   it("should return true when criteria is passed (dynamic years)", async () => {
+    const testDate = getTestDateString(-(365 * 50))
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
       type: "date",
       acceptableValues: ["<60years", ">40years"],
-      response: "11-14-1975",
+      response: testDate,
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
@@ -109,12 +110,13 @@ describe("dateHelper", () => {
     expect(ret).toBe(true)
   })
   it("should return true when criteria is passed (dynamic months)", async () => {
+    const testDate = getTestDateString(-150)
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
       type: "date",
       acceptableValues: ["<6months", ">4months"],
-      response: "11-14-2021",
+      response: testDate,
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
