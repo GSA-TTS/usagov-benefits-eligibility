@@ -17,7 +17,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: deceased_date_of_death
     label: "The deceased died within the last two years."
-    acceptableValues: ["<2years"]
+    acceptableValues: [true]
   - criteriaKey: applicant_relationship
     acceptableValues: [spouse, child]
   - criteriaKey: applicant_citizen_status

@@ -20,7 +20,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: applicant_date_of_birth
     label: "You are under 18 years old."
-    acceptableValues: ["<18years"]
+    acceptableValues: [true]
   - criteriaKey: applicant_income
     acceptableValues: [true]
   - criteriaKey: applicant_citizen_status

@@ -19,7 +19,7 @@ eligibility:
     acceptableValues: [spouse]
   - criteriaKey: applicant_date_of_birth
     label: "You are at least 60 years old."
-    acceptableValues: [">60years"]
+    acceptableValues: [true]
   - criteriaKey: applicant_marital_status
     acceptableValues: ["widowed", "divorced"]
   - criteriaKey: applicant_citizen_status
