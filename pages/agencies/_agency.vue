@@ -114,7 +114,7 @@ import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
 export default {
   components: {
-    OpenCloseButtons
+    OpenCloseButtons,
   },
   mixins: [mapTags],
   data() {
@@ -126,8 +126,8 @@ export default {
         summary: "",
         lede: "",
         relatedKeys: [],
-        related: []
-      }
+        related: [],
+      },
     }
   },
   async fetch() {
@@ -145,8 +145,7 @@ export default {
     // eslint-disable-next-line node/handle-callback-err
     this.agency = await this.$content("agencies", this.$route.params.agency)
       .fetch()
-      .catch((_err) => {
-      })
+      .catch((_err) => {})
     this.agency.related = []
     for (const related of this.agency.relatedKeys || []) {
       this.agency.related.push(await this.$content("agencies", related).fetch())
@@ -155,7 +154,7 @@ export default {
   /* istanbul ignore next */
   head() {
     return {
-      title: this.benefitAgency
+      title: this.benefitAgency,
     }
   },
   methods: {
@@ -170,8 +169,8 @@ export default {
     },
     clearCriteria() {
       this.$store.dispatch("criteria/clear")
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -33,38 +33,38 @@ export default {
     cardTitle: {
       type: String,
       required: true,
-      default: "Card title not provided"
+      default: "Card title not provided",
     },
     cardTitleHeadingLevel: {
       type: String,
       required: false,
-      default: "h3"
+      default: "h3",
     },
     cardBody: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     cardContainerClasses: {
       type: Array,
       required: false,
-      default: () => []
+      default: () => [],
     },
     cardTagsEmitClick: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     cardTags: {
       type: Array,
       required: false,
       default: () => {
         return []
-      }
-    }
+      },
+    },
   },
   data() {
     return {}
-  }
+  },
 }
 </script>
