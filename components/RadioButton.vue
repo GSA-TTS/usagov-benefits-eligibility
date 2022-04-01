@@ -3,18 +3,18 @@
     class="usa-fieldset"
     :class="disabledStyle">
     <template v-if="location === 'left-rail'">
-      <legend
+      <p
         class="usa-legend usa-legend text-bold tablet:padding-top-1"
         :class="disabledLabel">
         {{ label }}
-      </legend>
+      </p>
     </template>
     <template v-else>
-      <legend
+      <p
         class="usa-legend usa-legend"
         :class="selectedStyle">
         {{ label }}
-      </legend>
+      </p>
     </template>
     <template v-for="(value, index) in values">
       <div
@@ -59,6 +59,8 @@
 
 <script>
 import _ from "lodash"
+const benefitCard = "benefit-card"
+
 export default {
   name: "RadioButton",
   props: {
@@ -79,9 +81,9 @@ export default {
       default: "No response provided",
     },
     location: {
-      default: "benefit-card",
+      default: benefitCard,
       validator: (value) => {
-        return ["left-rail", "benefit-card"].includes(value)
+        return ["left-rail", benefitCard].includes(value)
       },
     },
     isDisabled: {
@@ -97,10 +99,7 @@ export default {
   },
   computed: {
     selectedStyle() {
-      if (
-        (this.location === "benefit-card" && this.response === "not applicable") ||
-        typeof this.response === "object"
-      ) {
+      if ((this.location === benefitCard && this.response === "not applicable") || typeof this.response === "object") {
         return "text-base text-normal font-weight-normal"
       }
       return "text-bold"

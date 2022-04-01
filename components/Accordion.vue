@@ -53,18 +53,20 @@
               >{{ benefit.source.name }}</a
             >
           </h3>
-          <p
+        </template>
+        <fieldset class="usa-fieldset">
+          <legend
             class="usa-prose"
             style="max-width: unset">
             {{ benefit.summary }}
-          </p>
-        </template>
-        <EligibilityList
-          :benefit-eligibility-criteria="benefit.eligibility"
-          :benefit-source="sanitizedBenefitUrl(benefit, '')"
-          :heading-classes="['bg-primary', 'text-white']"
-          :show-icons="showIcons"
-          :show-matching-count="showMatchingCount" />
+          </legend>
+          <EligibilityList
+            :benefit-eligibility-criteria="benefit.eligibility"
+            :benefit-source="sanitizedBenefitUrl(benefit, '')"
+            :heading-classes="['bg-primary', 'text-white']"
+            :show-icons="showIcons"
+            :show-matching-count="showMatchingCount" />
+        </fieldset>
         <ul
           v-if="benefit.source && benefit.source.link"
           class="usa-button-group"

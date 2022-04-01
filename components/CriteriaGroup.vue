@@ -4,17 +4,17 @@
       v-if="topLevelFilters.length > 0"
       :top-level-filters="topLevelFilters" />
     <template v-for="criteriaGroup in lifeEventCriteria">
-      <div
+      <fieldset
         :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`"
         :key="criteriaGroup.criteriaGroupKey"
-        class="margin-bottom-4 border-bottom border-gray-30 border-width-2px break-inside-avoid">
-        <h2
+        class="usa-fieldset margin-bottom-4 border-bottom-2px border-gray-30 break-inside-avoid">
+        <legend
           class="font-heading-lg font-family-sans text-bold margin-top-0 text-primary-darker"
           :class="{
             'criteria-group-empty': hasNoResponses(getCriteriaMap(criteriaGroup.criteriaKeys)),
           }">
           {{ criteriaGroup.label }}
-        </h2>
+        </legend>
         <p class="line-height-sans-4 font-sans-sm">
           {{ criteriaGroup.description }}
         </p>
@@ -42,7 +42,7 @@
           }">
           No eligibility criteria selected
         </p>
-      </div>
+      </fieldset>
     </template>
   </div>
 </template>
