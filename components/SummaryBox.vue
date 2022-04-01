@@ -12,12 +12,12 @@
                 :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
                 :key="criteriaGroup.criteriaGroupKey">
                 <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKey)">
-                  <h3
+                  <h2
                     id="summary-box-key-information"
                     :key="`heading-${criterion.criteriaKey}`"
                     class="usa-summary-box__heading">
                     {{ criteriaGroup.label }}
-                  </h3>
+                  </h2>
                   <CriteriaChild
                     :key="criterion.criteriaKey"
                     :criteria-key="criterion.criteriaKey"
