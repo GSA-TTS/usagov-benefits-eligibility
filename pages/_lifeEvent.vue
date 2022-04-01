@@ -144,11 +144,11 @@
                 <label
                   role="status"
                   class="usa-label"
-                  for="benefitSort"
+                  for="benefitSortMobile"
                   >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
                 >
                 <select
-                  id="benefitSort"
+                  id="benefitSortMobile"
                   class="usa-select width-full"
                   name="options"
                   @change="sortChange">
