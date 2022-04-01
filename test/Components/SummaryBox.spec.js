@@ -31,10 +31,6 @@ describe("<SummaryBox />", () => {
   beforeEach(() => {
     criteriaState.namespaced = true
 
-    // actions = {
-    //   getCriteriaMap: jest.fn(),
-    // }
-
     store = new Vuex.Store({
       modules: {
         criteria: {

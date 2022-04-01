@@ -14,8 +14,9 @@
                 class="usa-summary-box__heading">
                 {{ filter.label }}
               </h3>
-              <div :key="`heading-${filter.criteriaKey}`"
-                   :criterion="criterion = getCriterionByEligibilityKey(filter.criteriaKey)">
+              <div
+                :key="`heading-${filter.criteriaKey}`"
+                :criterion="(criterion = getCriterionByEligibilityKey(filter.criteriaKey))">
                 <CriteriaChild
                   :key="criterion.criteriaKey"
                   :criteria-key="criterion.criteriaKey"
@@ -43,14 +44,14 @@ export default {
   props: {
     topLevelFilters: {
       type: Array,
-      default: /* istanbul ignore next */ () => []
-    }
+      default: /* istanbul ignore next */ () => [],
+    },
   },
 
   computed: {
     ...mapGetters({
-      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey"
-    })
-  }
+      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
+    }),
+  },
 }
 </script>
