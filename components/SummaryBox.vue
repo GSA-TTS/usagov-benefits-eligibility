@@ -14,7 +14,8 @@
                 class="usa-summary-box__heading">
                 {{ filter.label }}
               </h3>
-              <template v-for="criterion in getCriteriaMap(filter.criteriaKey)">
+              <div :key="`heading-${filter.criteriaKey}`"
+                   :criterion="criterion = getCriterionByEligibilityKey(filter.criteriaKey)">
                 <CriteriaChild
                   :key="criterion.criteriaKey"
                   :criteria-key="criterion.criteriaKey"
@@ -24,7 +25,7 @@
                   :criteria-group-key="criterion.criterionKey"
                   :response="criterion.response"
                   class="margin-y-2 tablet:margin-y-3" />
-              </template>
+              </div>
             </template>
           </fieldset>
         </form>
@@ -35,30 +36,21 @@
 
 <script>
 import { mapGetters } from "vuex"
-import CriteriaChild from "./CriteriaChild.vue"
 
 export default {
   name: "SummaryBox",
 
-  components: {
-    CriteriaChild,
-  },
   props: {
     topLevelFilters: {
       type: Array,
-      default: /* istanbul ignore next */ () => [],
-    },
+      default: /* istanbul ignore next */ () => []
+    }
   },
 
   computed: {
     ...mapGetters({
-      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
-    }),
-  },
-  methods: {
-    getCriteriaMap(criteriaKey) {
-      return [this.getCriterionByEligibilityKey(criteriaKey)]
-    },
-  },
+      getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey"
+    })
+  }
 }
 </script>
