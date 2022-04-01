@@ -56,7 +56,6 @@
         </div>
         <div class="grid-col margin-y-2 text-right">
           <label
-            role="status"
             class="usa-label display-inline margin-right-1"
             for="benefitSort"
             >Showing {{ lifeEventBenefits.length }} related benefits sorted by:

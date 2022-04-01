@@ -4,10 +4,10 @@
 <div
   class="usa-summary-box bg-transparent border-transparent"
   role="region"
-  aria-labelledby="summary-box-key-information"
+  aria-labelledby="summary-box-key-information-disclaimer"
 >
   <div class="usa-summary-box__body">
-    <h3 class="usa-summary-box__heading" id="summary-box-key-information">
+    <h3 class="usa-summary-box__heading" id="summary-box-key-information-disclaimer">
       Important Notice:
     </h3>
     <div class="usa-summary-box__text">

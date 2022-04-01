@@ -8,12 +8,11 @@
         <form class="usa-form">
           <fieldset class="usa-fieldset">
             <template v-for="criteriaGroup in topLevelFilters">
-              <div
-                :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
-                :key="criteriaGroup.criteriaGroupKey">
+              <div :key="criteriaGroup.criteriaGroupKey">
                 <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKey)">
                   <h2
-                    id="summary-box-key-information"
+                    v-if="criteriaGroup.label"
+                    :id="`summary-box-key-information-${uniqueId}`"
                     :key="`heading-${criterion.criteriaKey}`"
                     class="usa-summary-box__heading">
                     {{ criteriaGroup.label }}
@@ -39,6 +38,7 @@
 
 <script>
 import { mapGetters } from "vuex"
+import _ from "lodash"
 import CriteriaChild from "./CriteriaChild.vue"
 
 export default {
@@ -52,11 +52,18 @@ export default {
       default: /* istanbul ignore next */ () => [],
     },
   },
-
+  data() {
+    return {
+      uniqueId: _.uniqueId("summary-box-"),
+    }
+  },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
     }),
+  },
+  mounted() {
+    this.uniqueId = _.uniqueId("summary-box-")
   },
   methods: {
     getCriteriaMap(criteriaKeys) {
