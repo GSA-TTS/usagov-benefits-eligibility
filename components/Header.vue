@@ -3,7 +3,7 @@
     <a
       class="usa-skipnav"
       href="#main-content"
-    >{{ $t("skipnav") }}</a
+      >{{ $t("skipnav") }}</a
     >
 
     <section
@@ -152,7 +152,7 @@
               <label
                 class="usa-sr-only"
                 for="extended-search-field-small"
-              >Search small</label
+                >Search small</label
               >
               <input
                 id="extended-search-field-small"
@@ -173,7 +173,6 @@
                   role="img">
                   <use xlink:href="~/assets/img/sprite.svg#search" />
                 </svg>
-                <!-- <span class="text-middle">Share my selections</span> -->
               </button>
             </form>
           </div>
@@ -223,13 +222,13 @@ export default {
   data() {
     return {
       isLifeEventPage: this.doesRouteMatchLifeEventPages(),
-      query: this.$route?.query?.q || ""
+      query: this.$route?.query?.q || "",
     }
   },
   watch: {
     $route() {
       this.isLifeEventPage = this.doesRouteMatchLifeEventPages()
-    }
+    },
   },
   methods: {
     doesRouteMatchLifeEventPages() {
@@ -245,10 +244,10 @@ export default {
     doSearch(evt) {
       this.$router.push({
         path: "/search/",
-        query: { q: this.$refs.search.value }
+        query: { q: this.$refs.search.value },
       })
       evt.preventDefault()
-    }
-  }
+    },
+  },
 }
 </script>
