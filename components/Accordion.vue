@@ -4,10 +4,10 @@
     ref="accordion"
     class="usa-accordion usa-accordion--bordered"
     name="benefit-list"
-    tag="div"
+    tag="section"
     aria-multiselectable="true"
     aria-live="polite">
-    <div
+    <article
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
       class="break-inside-avoid margin-bottom-2">
@@ -83,7 +83,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </article>
   </transition-group>
 </template>
 
