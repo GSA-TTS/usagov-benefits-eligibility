@@ -8,14 +8,19 @@
         :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`"
         :key="criteriaGroup.criteriaGroupKey"
         class="usa-fieldset margin-bottom-4 border-bottom-2px border-gray-30 break-inside-avoid">
-        <legend
-          class="font-heading-lg font-family-sans text-bold margin-top-0 line-height-sans-2 text-primary-darker"
-          :class="{
-            'criteria-group-empty': hasNoResponses(getCriteriaMap(criteriaGroup.criteriaKeys)),
-          }">
-          {{ criteriaGroup.label }}
+        <legend class="usa-legend">
+          <h2
+            v-if="criteriaGroup.label"
+            :class="{
+              'criteria-group-empty': hasNoResponses(getCriteriaMap(criteriaGroup.criteriaKeys)),
+            }"
+            class="font-heading-lg font-family-sans text-bold margin-top-0 margin-bottom-0 text-primary-darker line-height-sans-2">
+            {{ criteriaGroup.label }}
+          </h2>
         </legend>
-        <p class="line-height-sans-4 font-sans-sm">
+        <p
+          v-if="criteriaGroup.description"
+          class="line-height-sans-4 font-sans-sm">
           {{ criteriaGroup.description }}
         </p>
         <div

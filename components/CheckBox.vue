@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     :class="disabledStyle"
     class="my-fieldset">
     <input
@@ -17,7 +17,7 @@
       :for="`${uniqueId}-${criteriaKey}`">
       {{ label }}
     </label>
-  </div>
+  </section>
 </template>
 
 <script>

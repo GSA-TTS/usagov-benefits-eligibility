@@ -13,9 +13,11 @@
                   <legend
                     v-if="criteriaGroup.label"
                     :id="`summary-box-key-information-${uniqueId}`"
-                    :key="`heading-${criterion.criteriaKey}`"
-                    class="font-sans-lg text-bold margin-top-0 line-height-sans-2 criteria-group-empty">
-                    {{ criteriaGroup.label }}
+                    :key="`heading-${criterion.criteriaKey}`">
+                    <h2
+                      class="font-heading-lg font-family-sans text-bold margin-top-0 text-primary-darker criteria-group-empty">
+                      {{ criteriaGroup.label }}
+                    </h2>
                   </legend>
                   <CriteriaChild
                     :key="criterion.criteriaKey"

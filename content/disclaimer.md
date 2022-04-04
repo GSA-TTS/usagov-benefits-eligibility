@@ -7,9 +7,9 @@
   aria-labelledby="summary-box-key-information-disclaimer"
 >
   <div class="usa-summary-box__body">
-    <h3 class="usa-summary-box__heading" id="summary-box-key-information-disclaimer">
+    <h2 class="usa-summary-box__heading" id="summary-box-key-information-disclaimer">
       Important Notice:
-    </h3>
+    </h2>
     <div class="usa-summary-box__text">
       <ul class="usa-list">
         <li style="max-width: unset;">
