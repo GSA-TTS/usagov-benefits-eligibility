@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <SummaryBox
       v-if="topLevelFilters.length > 0"
       :top-level-filters="topLevelFilters" />
@@ -23,7 +23,7 @@
           class="line-height-sans-4 font-sans-sm">
           {{ criteriaGroup.description }}
         </p>
-        <div
+        <section
           :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
           class="margin-y-3">
           <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)">
@@ -39,7 +39,7 @@
               :top-level-filters="topLevelFilters"
               class="margin-y-2 tablet:margin-y-3" />
           </template>
-        </div>
+        </section>
         <p
           class="display-none text-bold"
           :class="{
@@ -49,7 +49,7 @@
         </p>
       </fieldset>
     </template>
-  </div>
+  </section>
 </template>
 <script>
 import { mapGetters } from "vuex"

@@ -1,5 +1,5 @@
 <template>
-  <section :class="disabledStyle">
+  <div :class="disabledStyle">
     <template v-if="location === 'left-rail'">
       <label
         class="usa-label margin-top-0 tablet:padding-top-1 text-bold"
@@ -31,7 +31,7 @@
         {{ option }}
       </option>
     </select>
-  </section>
+  </div>
 </template>
 
 <script>

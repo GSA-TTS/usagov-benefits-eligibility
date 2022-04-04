@@ -43,8 +43,7 @@
               <img
                 class="usa-banner__icon usa-media-block__img"
                 src="../assets/img/icon-dot-gov.svg"
-                role="img"
-                alt=""
+                alt="government"
                 aria-hidden="true" />
               <div class="usa-media-block__body">
                 <p>
@@ -63,8 +62,7 @@
               <img
                 class="usa-banner__icon usa-media-block__img"
                 src="../assets/img/icon-https.svg"
-                role="img"
-                alt=""
+                alt="https secure"
                 aria-hidden="true" />
               <div class="usa-media-block__body">
                 <p>
@@ -137,8 +135,7 @@
           <button class="usa-nav__close">
             <img
               src="../assets/img/usa-icons/close.svg"
-              role="img"
-              alt="close" />
+              alt="close mobile navigation" />
           </button>
           <div class="usa-nav__secondary">
             <ul class="usa-nav__secondary-links">
