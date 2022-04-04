@@ -1,5 +1,7 @@
 <template>
-  <div :class="disabledStyle">
+  <div
+    :class="disabledStyle"
+    class="my-fieldset">
     <input
       :id="`${uniqueId}-${criteriaKey}`"
       class="usa-checkbox__input"
@@ -87,4 +89,21 @@ export default {
 
 <style
   lang="scss"
-  scoped></style>
+  scoped>
+.my-fieldset {
+  font-size: 1.06rem;
+  line-height: 1.3;
+  display: block;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  padding-block-start: 0.35em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-block-end: 0.625em;
+  min-inline-size: min-content;
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 6px;
+}
+</style>

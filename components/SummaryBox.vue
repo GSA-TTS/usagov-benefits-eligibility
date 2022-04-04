@@ -10,13 +10,13 @@
             <template v-for="criteriaGroup in topLevelFilters">
               <div :key="criteriaGroup.criteriaGroupKey">
                 <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKey)">
-                  <h2
+                  <legend
                     v-if="criteriaGroup.label"
                     :id="`summary-box-key-information-${uniqueId}`"
                     :key="`heading-${criterion.criteriaKey}`"
-                    class="usa-summary-box__heading">
+                    class="font-sans-lg text-bold margin-top-0 line-height-sans-2 criteria-group-empty">
                     {{ criteriaGroup.label }}
-                  </h2>
+                  </legend>
                   <CriteriaChild
                     :key="criterion.criteriaKey"
                     :criteria-key="criterion.criteriaKey"

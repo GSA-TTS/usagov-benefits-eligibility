@@ -9,7 +9,7 @@
         :key="criteriaGroup.criteriaGroupKey"
         class="usa-fieldset margin-bottom-4 border-bottom-2px border-gray-30 break-inside-avoid">
         <legend
-          class="font-heading-lg font-family-sans text-bold margin-top-0 text-primary-darker"
+          class="font-heading-lg font-family-sans text-bold margin-top-0 line-height-sans-2 text-primary-darker"
           :class="{
             'criteria-group-empty': hasNoResponses(getCriteriaMap(criteriaGroup.criteriaKeys)),
           }">

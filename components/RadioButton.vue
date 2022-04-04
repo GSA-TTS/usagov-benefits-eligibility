@@ -3,18 +3,18 @@
     class="usa-fieldset"
     :class="disabledStyle">
     <template v-if="location === 'left-rail'">
-      <p
+      <legend
         class="usa-legend usa-legend text-bold tablet:padding-top-1"
         :class="disabledLabel">
         {{ label }}
-      </p>
+      </legend>
     </template>
     <template v-else>
-      <p
+      <legend
         class="usa-legend usa-legend"
         :class="selectedStyle">
         {{ label }}
-      </p>
+      </legend>
     </template>
     <template v-for="(value, index) in values">
       <div
