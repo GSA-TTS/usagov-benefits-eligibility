@@ -105,7 +105,7 @@ export default {
   props: {
     expanded: {
       type: Boolean,
-      requierd: false,
+      required: false,
       default: false,
     },
     lifeEventBenefits: {
