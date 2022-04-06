@@ -339,23 +339,22 @@ export default {
       this.sortBenefits()
     },
     sortBenefits() {
-      // if (this.sort === "title") {
-      //   this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [this.sort])
-      // } else {
-      //   const forceToBottom = 2048
-      //   const virtualCriteria = this.getVirtualCriteria()
-      //   this.lifeEventBenefits.forEach((benefit) => {
-      //     const matches = (benefit.matches = this.getTotalEligibleCriteria(benefit.eligibility))
-      //     const ineligible = this.getTotalIneligibleCriteria(benefit.eligibility) > 0
-      //     const virtualBenefitEligibility = (benefit.virtualBenefitEligibility = (benefit.eligibility || []).filter(
-      //       (c) => virtualCriteria[c.criteriaKey]
-      //     ).length)
-      //     benefit.inverseMatchRatio =
-      //       1 - matches / (benefit.eligibility.length - virtualBenefitEligibility) + (ineligible ? forceToBottom : 0)
-      //   })
-      //   this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
-      // }
-      console.log("sorting")
+      if (this.sort === "title") {
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [this.sort])
+      } else {
+        const forceToBottom = 2048
+        const virtualCriteria = this.getVirtualCriteria()
+        this.lifeEventBenefits.forEach((benefit) => {
+          const matches = (benefit.matches = this.getTotalEligibleCriteria(benefit.eligibility))
+          const ineligible = this.getTotalIneligibleCriteria(benefit.eligibility) > 0
+          const virtualBenefitEligibility = (benefit.virtualBenefitEligibility = (benefit.eligibility || []).filter(
+            (c) => virtualCriteria[c.criteriaKey]
+          ).length)
+          benefit.inverseMatchRatio =
+            1 - matches / (benefit.eligibility.length - virtualBenefitEligibility) + (ineligible ? forceToBottom : 0)
+        })
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
+      }
     },
     tagClick(tag) {
       this.lifeEventBenefits = _.filter(this.allLifeEventBenefits, (benefit) => {
