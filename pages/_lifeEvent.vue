@@ -126,7 +126,10 @@
                 {{ lifeEvent.eligibilityCriteriaDescription }}
               </div>
             </div>
-            <CriteriaGroup :life-event-criteria="lifeEvent.eligibilityCriteria" />
+
+            <CriteriaGroup
+              :life-event-criteria="lifeEvent.eligibilityCriteria"
+              :top-level-filters="lifeEvent.topLevelFilter" />
             <share-results @print="openAll()" />
           </div>
         </div>
@@ -225,7 +228,6 @@ export default {
   layout: "default",
   async asyncData({ $content }) {
     const landingPage = await $content("landing-page").fetch()
-
     return { landingPage }
   },
   data() {
@@ -248,10 +250,11 @@ export default {
   },
 
   async fetch() {
-    const lifeEvent = await this.$content("life-events", this.$route.params.slug).fetch()
+    const lifeEvent = await this.$content("life-events", this.$route.params.lifeEvent).fetch()
+
     const lifeEventBenefits = await this.$content("benefits")
       .where({
-        lifeEvents: { $contains: this.$route.params.slug },
+        lifeEvents: { $contains: this.$route.params.lifeEvent },
       })
       .sortBy("title")
       .fetch()

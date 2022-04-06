@@ -12,15 +12,15 @@
           >Month</label
         >
         <input
+          :id="`${uniqueId}-${criteriaKey}-month`"
+          v-model="month"
           :class="inputClass"
           aria-describedby="monthinput"
-          :id="`${uniqueId}-${criteriaKey}-month`"
           :name="`${uniqueId}-${criteriaKey}-month`"
           type="text"
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          v-model="month"
           @change="updateElibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--day">
@@ -30,15 +30,15 @@
           >Day</label
         >
         <input
+          :id="`${uniqueId}-${criteriaKey}-day`"
+          v-model="day"
           :class="inputClass"
           aria-describedby="dayinput"
-          :id="`${uniqueId}-${criteriaKey}-day`"
           :name="`${uniqueId}-${criteriaKey}-day`"
           type="text"
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          v-model="day"
           @change="updateElibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--year">
@@ -48,16 +48,16 @@
           >Year</label
         >
         <input
+          :id="`${uniqueId}-${criteriaKey}-year`"
+          v-model="year"
           :class="inputClass"
           aria-describedby="yearinput"
-          :id="`${uniqueId}-${criteriaKey}-year`"
           :name="`${uniqueId}-${criteriaKey}-year`"
           type="text"
           minlength="4"
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
-          v-model="year"
           @change="updateElibilityDate($event, criteriaKey)" />
       </div>
     </div>
@@ -92,6 +92,7 @@
 
 <script>
 import _ from "lodash"
+
 export default {
   name: "DateInput",
   props: {
@@ -117,6 +118,13 @@ export default {
       validator: (value) => {
         return ["benefit-card", "left-rail"].includes(value)
       },
+    },
+  },
+  watch: {
+    dateResponse() {
+      this.month = this.pullDateValue(this.dateResponse, 0)
+      this.day = this.pullDateValue(this.dateResponse, 1)
+      this.year = this.pullDateValue(this.dateResponse, 2)
     },
   },
   data() {
@@ -146,7 +154,13 @@ export default {
   },
   methods: {
     classFromResponse() {
-      return this.response ? "success" : this.response == null ? "empty" : "error"
+      let cls = "error"
+      if (this.response) {
+        cls = "success"
+      } else if (this.response == null) {
+        cls = "empty"
+      }
+      return cls
     },
     pullDateValue(dateResponse, index) {
       return `${dateResponse !== null ? dateResponse.split("-")[index] : ""}`
