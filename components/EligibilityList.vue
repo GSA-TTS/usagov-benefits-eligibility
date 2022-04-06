@@ -11,7 +11,7 @@
     </h3>
     <client-only>
       <ul class="usa-icon-list grid-row padding-x-205 padding-top-205 padding-bottom-1">
-        <li
+        <!-- <li
           v-for="(criterion, index) in benefitEligibilityCriteria"
           :key="criterion.criteriaKey"
           class="usa-icon-list__item tablet:grid-col-6 padding-bottom-2"
@@ -68,7 +68,7 @@
                 location="benefit-card" />
             </div>
           </div>
-        </li>
+        </li> -->
       </ul>
     </client-only>
     <p
@@ -82,13 +82,13 @@
 </template>
 <script>
 import { mapGetters } from "vuex"
-import RadioButton from "./RadioButton.vue"
-import DropDown from "./DropDown.vue"
-import CheckBox from "./CheckBox.vue"
-import DateInput from "./DateInput.vue"
+// import RadioButton from "./RadioButton.vue"
+// import DropDown from "./DropDown.vue"
+// import CheckBox from "./CheckBox.vue"
+// import DateInput from "./DateInput.vue"
 
 export default {
-  components: { RadioButton, DropDown, CheckBox, DateInput },
+  // components: { RadioButton, DropDown, CheckBox, DateInput },
   props: {
     benefitEligibilityCriteria: {
       type: Array,
