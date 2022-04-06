@@ -14,8 +14,7 @@
                     v-if="criteriaGroup.label"
                     :id="`summary-box-key-information-${uniqueId}`"
                     :key="`heading-${criterion.criteriaKey}`">
-                    <h2
-                      class="font-heading-lg font-family-sans text-bold margin-top-0 text-primary-darker criteria-group-empty">
+                    <h2 class="usa-summary-box__heading">
                       {{ criteriaGroup.label }}
                     </h2>
                   </legend>
