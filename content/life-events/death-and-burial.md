@@ -24,7 +24,7 @@ topLevelFilter:
     criteriaKey: 
       - deceased_served_in_active_military
     disableGroupKey: deceased-military
-    disableGroupWhen: ["not applicable"]
+    disableGroupWhen: ["no"]
 
 eligibilityCriteria:
   - label: "About the person who died"
@@ -36,21 +36,23 @@ eligibilityCriteria:
       - deceased_death_location_is_US
       - deceased_public_safety_officer
       - deceased_date_of_death
+      - deceased_date_of_funeral
 
   - label: "About the deceased's military service"
     description: ""
     criteriaGroupKey: deceased-military
     criteriaKeys:
-      - deceased_buried_in_unmarked_grave
-      - deceased_headstone_is_privately_purchased
-      - deceased_buried_in_private_cemetery
+      - deceased_service_status
+      - deceased_death_circumstances
+      - deceased_grave_headstone
 
   - label: "About you (the person applying for benefits)"
     description: ""
-    criteriaGroupKey: applicant-basics
+    criteriaGroupKey: applicant
     criteriaKeys:
+      - applicant_family_of_service_member
+      - applicant_marital_status
       - applicant_care_for_child
-      - deceased_date_of_funeral
       - applicant_paid_funeral_expenses
       - applicant_funeral_reimbursment
 
