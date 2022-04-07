@@ -1,6 +1,6 @@
 ---
-title: "Survivor Pension"
-headline: "Survivor Pension"
+title: "Survivor Pension for Child"
+headline: "Survivor Pension for Child"
 tags:
   - "financial assistance"
 lifeEvents:
@@ -17,10 +17,10 @@ eligibility:
   - criteriaKey: deceased_served_in_active_military
     acceptableValues: ["was discharged under conditions other than dishonorable"]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child"]
+    acceptableValues: ["child"]
   - criteriaKey: applicant_date_of_birth
-    label: "As a child, you are under 18 years old or disabled (under 23 years old if attending a VA-approved school)."
-    acceptableValues: [true]
+    label: "You are under 18 years old (under 23 years old if attending a VA-approved school)."
+    acceptableValues: ["<18years"]
   - criteriaKey: applicant_marital_status
-    acceptableValues: ["unmarried", "widowed"]
+    acceptableValues: ["unmarried"]
 ---

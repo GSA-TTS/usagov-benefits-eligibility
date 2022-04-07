@@ -12,6 +12,7 @@ eligibilityCriteria:
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
+      - applicant_date_of_birth
       - applicant_high-school_diploma
       - applicant_degree_cerificate_program
       - applicant_citizen_status
