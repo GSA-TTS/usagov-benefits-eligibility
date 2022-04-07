@@ -50,7 +50,6 @@ eligibilityCriteria:
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
-      - applicant_family_of_service_member
       - applicant_marital_status
       - applicant_care_for_child
       - applicant_paid_funeral_expenses
