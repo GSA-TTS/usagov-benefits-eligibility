@@ -11,30 +11,28 @@ topLevelFilter:
   - label: "Start here"
     criteriaKey:
       - applicant_served_in_active_military
-    disableGroupKey: applicant
+    disableGroupKey: applicant-military
     disableGroupWhen: ["not applicable"]
 
   - label: ""
     criteriaKey:
       - deceased_served_in_active_military
-    disableGroupKey: military
+    disableGroupKey: deceased-military
     disableGroupWhen: ["not applicable"]
 
 eligibilityCriteria:
   - label: "About you (the person applying for benefits)"
     description: ""
-    criteriaGroupKey: applicant
+    criteriaGroupKey: applicant-military
     criteriaKeys:
-      - applicant_served_in_active_military
       - applicant_disability
       - applicant_marital_status
 
   - label: "Did you lose a loved one who served in military?"
     description: ""
-    criteriaGroupKey: military
+    criteriaGroupKey: deceased-military
     criteriaKeys:
       - applicant_relationship
-      - deceased_served_in_active_military
       - deceased_buried_in_unmarked_grave
       - deceased_headstone_is_privately_purchased
       - deceased_buried_in_private_cemetery
