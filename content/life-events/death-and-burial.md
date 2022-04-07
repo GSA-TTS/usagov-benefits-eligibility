@@ -38,12 +38,12 @@ eligibilityCriteria:
       - deceased_date_of_death
       - deceased_date_of_funeral
 
-  - label: "About the deceased's military service"
+  - label: "About the military service of the person who died"
     description: ""
     criteriaGroupKey: deceased-military
     criteriaKeys:
       - deceased_service_status
-      - deceased_death_circumstances
+      - deceased_death_circumstance
       - deceased_grave_headstone
 
   - label: "About you (the person applying for benefits)"
