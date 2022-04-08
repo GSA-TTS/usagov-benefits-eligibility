@@ -19,6 +19,6 @@ eligibility:
   - criteriaKey: deceased_service_status
     acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable", "a member of the National Guard or Reserves"]
   - criteriaKey: deceased_death_circumstance
-    acceptableValues: ["died while on active duty", "died as a result of a service-connected disability or illness", "died while receiving or traveling to receive VA care", "died while eligible, pending to receive or receiving VA compensation / pension"]
+    acceptableValues: ["died while on active duty", "died as a result of a service-connected disability or illness", "died while receiving or traveling to receive VA care", "died while eligible or receiving VA compensation"]
 
 ---
