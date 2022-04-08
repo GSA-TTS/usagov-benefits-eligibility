@@ -1,6 +1,6 @@
 ---
-title: "Social Security Disability Insurance for Child"
-headline: "Social Security Disability Insurance for Child"
+title: "Social Security Disability Insurance for Child with Disabilities"
+headline: "Social Security Disability Insurance for Child with Disabilities"
 tags:
   - "financial assistance"
 lifeEvents:
