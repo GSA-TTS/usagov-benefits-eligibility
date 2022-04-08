@@ -25,7 +25,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: applicant_ability_to_work
     acceptableValues: [true]
-  - criteriaKey: applicant_child_parents_benefits
+  - criteriaKey: applicant_child_spouse_SS
     acceptableValues: [true]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
