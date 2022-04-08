@@ -17,5 +17,5 @@ eligibility:
   - criteriaKey: applicant_family_of_service_member
     acceptableValues: ["missing in action", "captured/detained in the line of duty", "disabled due to a service-connected disability"]
   - criteriaKey: applicant_high_school_diploma
-    acceptableValues: ["true"]
+    acceptableValues: [true]
 ---
