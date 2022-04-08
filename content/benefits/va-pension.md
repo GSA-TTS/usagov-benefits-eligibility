@@ -23,4 +23,5 @@ eligibility:
     acceptableValues: ["discharged under conditions other than dishonorable"]
   - criteriaKey: applicant_income
     acceptableValues: [true]
+    
 ---
