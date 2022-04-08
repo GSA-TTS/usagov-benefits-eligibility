@@ -24,5 +24,5 @@ eligibility:
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child"]
   - criteriaKey: applicant_high_school_diploma
-    acceptableValues: ["true"]
+    acceptableValues: [true]
 ---
