@@ -15,6 +15,10 @@ summary: "Death Gratuity is a tax free payment of $100,000 to eligible survivors
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: deceased_served_in_active_military
+    acceptableValues: ["yes"]
+  - criteriaKey: deceased_service_status
+    acceptableValues: ["an active-duty service member"]
+  - criteriaKey: deceased_death_circumstance
     acceptableValues: ["died while on active duty"]
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child", "parent", "other family member"]
