@@ -25,7 +25,7 @@ eligibility:
     label: "You are at least 18 years old."
     acceptableValues: [">18years"]
   - criteriaKey: applicant_disability
-    acceptableValues: ["true"]
+    acceptableValues: [true]
   - criteriaKey: applicant_marital_status
     acceptableValues: ["unmarried"]
 ---
