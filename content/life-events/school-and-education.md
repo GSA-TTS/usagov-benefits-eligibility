@@ -7,21 +7,35 @@ secondaryHeadline: "School and education benefits"
 
 eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
+topLevelFilter:
+  - label: "Start here"
+    criteriaKey: 
+      - applicant_date_of_birth
+    disableGroupKey:
+    disableGroupWhen:
+
+  - label: ""
+    criteriaKey: 
+      - applicant_lost_a_family_member
+    disableGroupKey: applicant-relationships
+    disableGroupWhen: ["no"]
+
 eligibilityCriteria:
   - label: "About you (the person applying for benefits)"
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
-      - applicant_date_of_birth
       - applicant_high-school_diploma
       - applicant_degree_cerificate_program
       - applicant_citizen_status
+      - applicant_family_of_service_member
 
-  - label: "Did you recently lose a family member?"
+  - label: "About the person who died"
     description: ""
-    criteriaGroupKey: deceased
+    criteriaGroupKey: applicant-relationships
     criteriaKeys:
       - applicant_relationship
-      - deceased_served_in_active_military
       - deceased_public_safety_officer
+      - deceased_served_in_active_military
+      - deceased_service_status
 ---
