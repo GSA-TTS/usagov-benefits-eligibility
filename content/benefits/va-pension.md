@@ -6,7 +6,6 @@ tags:
 lifeEvents:
   - "retirement"
   - "military-service"
-  - "disability"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/pension/how-to-apply/
@@ -19,7 +18,9 @@ eligibility:
     label: "You are at least 65 years old."
     acceptableValues: [">65years"]
   - criteriaKey: applicant_served_in_active_military
-    acceptableValues: ["were discharged under conditions other than dishonorable"]
+    acceptableValues: ["yes"]
+  - criteriaKey: applicant_service_status
+    acceptableValues: ["discharged under conditions other than dishonorable"]
   - criteriaKey: applicant_income
     acceptableValues: ["true"]
 ---
