@@ -18,5 +18,5 @@ eligibility:
   - criteriaKey: applicant_service_status
     acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable", "a member of the National Guard or Reserves"]
   - criteriaKey: applicant_minimum_service_requirement
-    acceptableValues: ["true"]
+    acceptableValues: [true]
 ---
