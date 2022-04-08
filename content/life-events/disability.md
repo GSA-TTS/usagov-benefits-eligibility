@@ -33,6 +33,7 @@ eligibilityCriteria:
     criteriaKeys:
       - applicant_disability
       - applicant_ability_to_work
+      - applicant_child_spouse_SS
       - applicant_paid_into_SS
       - applicant_income
       - applicant_marital_status
@@ -43,6 +44,7 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_service_status
+      - applicant_service_disability
 
   - label: "About the person who died"
     description: ""
@@ -50,4 +52,5 @@ eligibilityCriteria:
     criteriaKeys:
       - applicant_relationship
       - deceased_paid_into_SS
+      - deceased_served_in_active_military
 ---
