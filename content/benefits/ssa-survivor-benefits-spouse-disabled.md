@@ -1,6 +1,6 @@
 ---
-title: "Survivors Benefits for Spouse"
-headline: "Survivors Benefits for Spouse"
+title: "Survivors Benefits for Spouse with Disabilities"
+headline: "Survivors Benefits for Spouse with Disabilities"
 tags:
   - "financial assistance"
 lifeEvents:
