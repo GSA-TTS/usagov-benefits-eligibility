@@ -23,5 +23,5 @@ eligibility:
   - criteriaKey: applicant_relationship
     acceptableValues: ["parent"]
   - criteriaKey: applicant_income
-    acceptableValues: ["true"]
+    acceptableValues: [true]
 ---
