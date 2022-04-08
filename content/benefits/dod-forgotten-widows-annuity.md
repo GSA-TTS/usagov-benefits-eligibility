@@ -14,13 +14,13 @@ summary: "Commonly referred to as the Annuity for Forgotten Widows, qualified su
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
-    label: "The deceased died before 1978."
   - criteriaKey: deceased_served_in_active_military
     acceptableValues: ["yes"]
   - criteriaKey: deceased_service_status
     acceptableValues: ["retired from the service"]
   - criteriaKey: deceased_date_of_death
     acceptableValues: ["<01-01-1978"]
+    label: "The deceased died before 1978."
   - criteriaKey: applicant_relationship
     acceptableValues: [spouse]
 ---
