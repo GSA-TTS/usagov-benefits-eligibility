@@ -17,7 +17,7 @@ eligibility:
   - criteriaKey: applicant_served_in_active_military
     acceptableValues: ["yes"]
   - criteriaKey: applicant_disability
-    acceptableValues: ["true"]
+    acceptableValues: [true]
   - criteriaKey: applicant_service_disability
-    acceptableValues: ["true"]
+    acceptableValues: [true]
 ---
