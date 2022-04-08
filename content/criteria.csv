@@ -9,7 +9,7 @@ deceased_date_of_funeral,The deceased's funeral/burial was on the following date
 deceased-military,,,,
 deceased_served_in_active_military,"Did the person who died serve in the active military, naval, or air service?",radio,yes; no,
 deceased_service_status,One of the following describes deceased's service status:,select,an active-duty service member; discharged under conditions other than dishonorable; retired from the service; a member of the National Guard or Reserves,
-deceased_death_circumstance,One of the following circumstances apply to the deceased:,select,died while on active duty; died as a result of a service-connected disability or illness; died while receiving or traveling to receive VA care; "died while eligible, pending to receive or receiving VA compensation / pension",
+deceased_death_circumstance,One of the following circumstances apply to the deceased:,select,died while on active duty; died as a result of a service-connected disability or illness; died while receiving or traveling to receive VA care; died while eligible or pending to receive or receiving VA compensation / pension,
 deceased_grave_headstone,"The deceased is buried in an unmarked grave, or their grave is marked with a privately purchased headstone.",boolean,TRUE,
 applicant-basics,,,,
 applicant_paid_into_SS,You worked and paid Social Security taxes on your earnings.,boolean,TRUE,
