@@ -22,6 +22,7 @@ eligibilityCriteria:
       - applicant_paid_into_SS
       - applicant_income
       - applicant_disability
+      - applicant_child_spouse_SS
       - applicant_marital_status
       - applicant_citizen_status
 ---
