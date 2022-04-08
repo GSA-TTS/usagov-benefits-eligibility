@@ -1,6 +1,6 @@
 ---
-title: "Retirement Benefits for Child"
-headline: "Retirement Benefits for Child"
+title: "Retirement Benefits for Child with Disabilities"
+headline: "Retirement Benefits for Child with Disabilities"
 tags:
   - "financial assistance"
 lifeEvents:
