@@ -13,6 +13,12 @@ topLevelFilter:
       - applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
+    
+  - label: ""
+    criteriaKey: 
+      - applicant_served_in_active_military
+    disableGroupKey: applicant-military
+    disableGroupWhen: ["no"]
 
   - label: ""
     criteriaKey: 
@@ -29,6 +35,14 @@ eligibilityCriteria:
       - applicant_degree_cerificate_program
       - applicant_citizen_status
       - applicant_family_of_service_member
+   
+  - label: "About your military service"
+    description: ""
+    criteriaGroupKey: applicant-military
+    criteriaKeys:
+      - applicant_service_status
+      - applicant_disability
+      - applicant_service_disability
 
   - label: "About the person who died"
     description: ""
