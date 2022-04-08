@@ -7,23 +7,46 @@ secondaryHeadline: "Disability benefits"
 
 eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
+topLevelFilter:
+  - label: "Start here"
+    criteriaKey: 
+      - applicant_date_of_birth
+    disableGroupKey:
+    disableGroupWhen:
+    
+  - label: ""
+    criteriaKey: 
+      - applicant_served_in_active_military
+    disableGroupKey: applicant-military
+    disableGroupWhen: ["no"]
+    
+  - label: ""
+    criteriaKey: 
+      - applicant_lost_a_family_member
+    disableGroupKey: applicant-relationships
+    disableGroupWhen: ["no"]
+
 eligibilityCriteria:
   - label: "About you (the person applying for benefits)"
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
-      - applicant_date_of_birth
       - applicant_disability
       - applicant_ability_to_work
       - applicant_paid_into_SS
       - applicant_income
       - applicant_marital_status
-      - applicant_served_in_active_military
       - applicant_citizen_status
 
-  - label: "Did you recently lose a family member?"
+  - label: "About your military service"
     description: ""
-    criteriaGroupKey: deceased
+    criteriaGroupKey: applicant
+    criteriaKeys:
+      - applicant_service_status
+
+  - label: "About the person who died"
+    description: ""
+    criteriaGroupKey: applicant-relationships
     criteriaKeys:
       - applicant_relationship
       - deceased_paid_into_SS
