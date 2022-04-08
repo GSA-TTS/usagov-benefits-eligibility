@@ -23,5 +23,5 @@ eligibility:
   - criteriaKey: applicant_marital_status
     acceptableValues: ["unmarried", "widowed"]
   - criteriaKey: applicant_income
-    acceptableValues: ["true"]
+    acceptableValues: [true]
 ---
