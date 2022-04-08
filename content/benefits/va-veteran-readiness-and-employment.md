@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - "school-and-education"
   - "military-service"
+  - "disability"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/careers-employment/vocational-rehabilitation/eligibility/
