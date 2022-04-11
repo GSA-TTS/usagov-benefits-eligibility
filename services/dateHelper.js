@@ -25,11 +25,7 @@ function validateDateAgainstAcceptance({ criterion, userInputDate }) {
         return false
       })
     ) {
-      const amount = parseInt(value.substring(1, value.indexOf(determiner)))
-      const today = new Date(Date.now())
-      const changeVal = {}
-      changeVal[determiner] = amount
-      acceptanceDate = sub(today, changeVal)
+      acceptanceDate = figureOutAcceptanceDate(encodedDate, determiner)
     } else {
       acceptanceDate = Date.parse(encodedDate)
     }
@@ -46,6 +42,14 @@ function validateDateAgainstAcceptance({ criterion, userInputDate }) {
   return checkResult
 }
 
+function figureOutAcceptanceDate(value, determiner) {
+  const amount = parseInt(value.substring(1, value.indexOf(determiner)))
+  const today = new Date(Date.now())
+  const changeVal = {}
+  changeVal[determiner] = amount
+  return sub(today, changeVal)
+}
+
 function checkUserDate(userInputDate, determiner, operator, acceptanceDate) {
   let checkResult = null
   if (!isNaN(userInputDate)) {
@@ -58,28 +62,28 @@ function checkUserDate(userInputDate, determiner, operator, acceptanceDate) {
     if (!isExists(...dateData)) {
       return false
     }
-    switch (operator) {
-      case "=":
-        checkResult = isEqual(userInputDate, acceptanceDate)
-        break
-      case ">":
-        // handling the use case of a user being <60Y & >40Y also being reflected as a range
-        // >01-01-1962, <01-01-1982
-        checkResult = DETERMINERS.includes(determiner)
-          ? isAfter(acceptanceDate, userInputDate)
-          : isAfter(userInputDate, acceptanceDate)
-        break
-      case "<":
-        checkResult = DETERMINERS.includes(determiner)
-          ? isBefore(acceptanceDate, userInputDate)
-          : isBefore(userInputDate, acceptanceDate)
-        break
-      default:
-        checkResult = null
-        break
-    }
+    checkResult = applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate)
   }
   return checkResult
+}
+
+function applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate) {
+  switch (operator) {
+    case "=":
+      return isEqual(userInputDate, acceptanceDate)
+    case ">":
+      // handling the use case of a user being <60Y & >40Y also being reflected as a range
+      // >01-01-1962, <01-01-1982
+      return DETERMINERS.includes(determiner)
+        ? isAfter(acceptanceDate, userInputDate)
+        : isAfter(userInputDate, acceptanceDate)
+    case "<":
+      return DETERMINERS.includes(determiner)
+        ? isBefore(acceptanceDate, userInputDate)
+        : isBefore(userInputDate, acceptanceDate)
+    default:
+      return null
+  }
 }
 
 export default validateDateAgainstAcceptance
