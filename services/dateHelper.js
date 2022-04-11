@@ -54,7 +54,7 @@ function checkUserDate(userInputDate, determiner, operator, acceptanceDate) {
     if (isFuture(userInputDate)) {
       return false
     }
-    let dateData = [userInputDate.getFullYear(), userInputDate.getMonth(), userInputDate.getDate()]
+    const dateData = [userInputDate.getFullYear(), userInputDate.getMonth(), userInputDate.getDate()]
     if (!isExists(...dateData)) {
       return false
     }

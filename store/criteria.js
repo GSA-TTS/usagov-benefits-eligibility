@@ -87,17 +87,16 @@ export const getters = {
       userInputDate,
     })
   },
-  doesCriterionMatchSelection: (theState, theGetters) => (criterion) => {
-    if (!theGetters.isCriterionSelected(criterion)) {
-      return null
-    }
-
+  doesCriterionMatchSelection: (theState, theGetters) => (criterion) => {   
     if (theGetters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
       return criterion.TEST
         ? theGetters.doesCriterionDateMatch(theState)(criterion)
         : theGetters.doesCriterionDateMatch(criterion)
     } else {
       if (!criterion.acceptableValues) {
+        return null
+      }
+      if (!theGetters.isCriterionSelected(criterion)) {
         return null
       }
       return !!criterion.acceptableValues.find(
