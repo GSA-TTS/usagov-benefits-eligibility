@@ -50,7 +50,6 @@
 </template>
 <script>
 import { mapGetters } from "vuex"
-import _ from "lodash"
 import SummaryBox from "./SummaryBox.vue"
 
 export default {
@@ -66,18 +65,10 @@ export default {
       default: /* istanbul ignore next */ () => [],
     },
   },
-  data() {
-    return {
-      uniqueId: _.uniqueId("key-"),
-    }
-  },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
     }),
-  },
-  mounted() {
-    this.uniqueId = _.uniqueId("key-")
   },
   methods: {
     getCriteriaMap(criteriaKeys) {
