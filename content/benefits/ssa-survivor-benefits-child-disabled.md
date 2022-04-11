@@ -1,6 +1,6 @@
 ---
-title: "Survivors Benefits for Child"
-headline: "Survivors Benefits for Child"
+title: "Survivors Benefits for Child with Disabilities"
+headline: "Survivors Benefits for Child with Disabilities"
 tags:
   - "financial assistance"
 lifeEvents:
@@ -20,7 +20,7 @@ eligibility:
     acceptableValues: [child]
   - criteriaKey: applicant_date_of_birth
     label: "You are at least 18 years old."
-    acceptableValues: [true]
+    acceptableValues: [">18years"]
   - criteriaKey: applicant_marital_status
     acceptableValues: [unmarried]
   - criteriaKey: applicant_disability

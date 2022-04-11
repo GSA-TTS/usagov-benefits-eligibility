@@ -52,6 +52,7 @@
               target="_blank"
               >{{ benefit.source.name }}</a
             >
+            <!-- //NOSONAR -->
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -80,6 +81,7 @@
               class="usa-button print:display-none">
               How to Apply
             </a>
+            <!-- //NOSONAR -->
           </li>
         </ul>
       </div>
