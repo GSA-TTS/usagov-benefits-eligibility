@@ -7,7 +7,7 @@ function validateDateAgainstAcceptance({ criterion, userInputDate }) {
   let checkResult = null
 
   const selectedResult = checkSelectedAndExists(userInputDate)
-  if(selectedResult !== true) {
+  if (selectedResult !== true) {
     return selectedResult
   } else {
     for (const index in criterion.acceptableValues) {
@@ -15,7 +15,7 @@ function validateDateAgainstAcceptance({ criterion, userInputDate }) {
       const operator = value[0]
       const encodedDate = value.substring(1)
       let acceptanceDate = null
-  
+
       // need to check if there is a determiner in the acceptable value
       if (
         DETERMINERS.some((detChar) => {
@@ -41,11 +41,11 @@ function validateDateAgainstAcceptance({ criterion, userInputDate }) {
       }
     }
     return checkResult
-  }  
+  }
 }
 
 function checkSelectedAndExists(userInputDate) {
-  if(userInputDate === '' || userInputDate === null) {
+  if (userInputDate === "" || userInputDate === null) {
     return null
   }
   userInputDate = toDate(userInputDate)
