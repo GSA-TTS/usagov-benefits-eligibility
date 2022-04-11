@@ -41,7 +41,7 @@ eligibilityCriteria:
 
   - label: "About your military service"
     description: ""
-    criteriaGroupKey: applicant
+    criteriaGroupKey: applicant-military
     criteriaKeys:
       - applicant_service_status
       - applicant_service_disability
