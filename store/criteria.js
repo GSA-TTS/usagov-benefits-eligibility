@@ -87,7 +87,7 @@ export const getters = {
       userInputDate,
     })
   },
-  doesCriterionMatchSelection: (theState, theGetters) => (criterion) => {   
+  doesCriterionMatchSelection: (theState, theGetters) => (criterion) => {
     if (theGetters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
       return criterion.TEST
         ? theGetters.doesCriterionDateMatch(theState)(criterion)
