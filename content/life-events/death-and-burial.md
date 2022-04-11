@@ -31,8 +31,10 @@ eligibilityCriteria:
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
+      - applicant_date_of_birth
       - applicant_relationship
       - applicant_care_for_child
+      - deceased_date_of_funeral
       - applicant_paid_funeral_expenses
       - applicant_funeral_reimbursment
 
