@@ -61,12 +61,25 @@
           @change="updateElibilityDate($event, criteriaKey)" />
       </div>
     </div>
+    <span
+      class="usa-hint"
+      id="error"
+      >{{ check }}</span
+    >
   </fieldset>
 </template>
 
 <style scoped>
 .usa-legend {
   margin-bottom: -0.6875rem;
+}
+
+.usa-hint {
+  color: red;
+}
+
+.usa-memorable-date {
+  margin-bottom: 0.5rem;
 }
 
 .usa-legend--empty {
@@ -96,6 +109,7 @@
 
 <script>
 import _ from "lodash"
+import { checkDateValid } from "../services/dateHelper.js"
 
 export default {
   name: "DateInput",
@@ -134,6 +148,7 @@ export default {
   data() {
     return {
       uniqueId: _.uniqueId("dateinput-"),
+      check: "",
       month: this.pullDateValue(this.dateResponse, 0),
       day: this.pullDateValue(this.dateResponse, 1),
       year: this.pullDateValue(this.dateResponse, 2),
@@ -175,12 +190,16 @@ export default {
       const day = this.day
       const year = this.year
       if (month !== "" && day !== "" && year !== "") {
+        debugger
         const date = `${month}-${day}-${year}`
-        const localCriterion = {
-          criteriaKey: key,
-          response: date,
+        this.check = checkDateValid(date)
+        if (this.check === "") {
+          const localCriterion = {
+            criteriaKey: key,
+            response: date,
+          }
+          this.$store.dispatch("criteria/updateResponse", localCriterion)
         }
-        this.$store.dispatch("criteria/updateResponse", localCriterion)
       }
     },
   },

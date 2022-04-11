@@ -1,4 +1,4 @@
-import validateDateAgainstAcceptance from "~/services/dateHelper"
+import { validateDateAgainstAcceptance, checkDateValid } from "~/services/dateHelper"
 
 function getTestDateString(daysOffsetFromToday) {
   const testDte = new Date()
@@ -205,5 +205,12 @@ describe("dateHelper", () => {
       userInputDate: criterion.response,
     })
     expect(ret).toBe(false)
+  })
+
+  it("should return correct when invalid user date", async () => {
+    const ret = checkDateValid("11-14-2021")
+    expect(ret).toBe("")
+    expect(checkDateValid("14-44-5000")).toBe("Date is invalid")
+    expect(checkDateValid("11-14-2025")).toBe("Date is in the future and not valid")
   })
 })

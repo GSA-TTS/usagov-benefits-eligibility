@@ -1,6 +1,6 @@
 import Vue from "vue"
 import stringToHash from "../services/stringToHash"
-import validateDateAgainstAcceptance from "~/services/dateHelper"
+import { validateDateAgainstAcceptance } from "~/services/dateHelper"
 
 export const state = () => ({
   eligibilityCriteria: {},

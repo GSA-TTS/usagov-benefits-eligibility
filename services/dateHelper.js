@@ -30,10 +30,6 @@ function validateDateAgainstAcceptance({ criterion, userInputDate }) {
       } else {
         acceptanceDate = toDate(Date.parse(encodedDate))
       }
-      // checking to see if the date from the content file is valid
-      if (isNaN(acceptanceDate)) {
-        checkResult = null
-      }
       checkResult = checkUserDate(userInputDate, determiner, operator, acceptanceDate)
       // checking to see if the inputted date is valid / complete
       if (checkResult === false) {
@@ -50,10 +46,7 @@ function checkSelectedAndExists(userInputDate) {
   }
   userInputDate = toDate(userInputDate)
   const dateData = [userInputDate.getFullYear(), userInputDate.getMonth(), userInputDate.getDate()]
-  if (!isExists(...dateData)) {
-    return false
-  }
-  return true
+  return isExists(...dateData)
 }
 
 function figureOutAcceptanceDate(value, determiner) {
@@ -65,6 +58,7 @@ function figureOutAcceptanceDate(value, determiner) {
 }
 
 function checkUserDate(userInputDate, determiner, operator, acceptanceDate) {
+  debugger
   userInputDate = toDate(userInputDate)
   // first will check if the users inputted date is in the future
   if (isFuture(userInputDate)) {
@@ -92,4 +86,15 @@ function applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate
   }
 }
 
-export default validateDateAgainstAcceptance
+function checkDateValid(userInputDate) {
+  const checkDate = toDate(Date.parse(userInputDate))
+  if (isNaN(checkDate)) {
+    return "Date is invalid"
+  }
+  if (isFuture(checkDate)) {
+    return "Date is in the future and not valid"
+  }
+  return ""
+}
+
+export { validateDateAgainstAcceptance, checkDateValid }
