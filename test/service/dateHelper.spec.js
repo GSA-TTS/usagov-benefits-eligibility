@@ -72,7 +72,7 @@ describe("dateHelper", () => {
   it("should return null when not selected", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
-      response: null
+      response: null,
     }
     const ret = validateDateAgainstAcceptance({
       criterion,

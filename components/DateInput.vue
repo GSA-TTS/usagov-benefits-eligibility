@@ -147,7 +147,7 @@ export default {
       return `usa-label bears-label--${this.classFromResponse()}`
     },
     legendClass() {
-      return `usa-legend usa-legend--${this.classFromResponse()}`
+      return `usa-legend usa-legend--${this.classFromResponse()} ${this.selectedStyle}`
     },
     inputClass() {
       return `usa-input bears-input--${this.classFromResponse()}`
