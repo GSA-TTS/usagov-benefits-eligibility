@@ -82,13 +82,8 @@
 </template>
 <script>
 import { mapGetters } from "vuex"
-// import RadioButton from "./RadioButton.vue"
-// import DropDown from "./DropDown.vue"
-// import CheckBox from "./CheckBox.vue"
-// import DateInput from "./DateInput.vue"
 
 export default {
-  // components: { RadioButton, DropDown, CheckBox, DateInput },
   props: {
     benefitEligibilityCriteria: {
       type: Array,
