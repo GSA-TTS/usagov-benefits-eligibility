@@ -5,7 +5,6 @@
       :top-level-filters="topLevelFilters" />
     <template v-for="criteriaGroup in lifeEventCriteria">
       <fieldset
-        :id="`criteriaGroup-${criteriaGroup.criteriaGroupKey}-${_uid}`"
         :key="criteriaGroup.criteriaGroupKey"
         class="usa-fieldset margin-bottom-4 border-bottom-2px border-gray-30 break-inside-avoid">
         <legend class="usa-legend">
@@ -23,9 +22,7 @@
           class="line-height-sans-4 font-sans-sm">
           {{ criteriaGroup.description }}
         </p>
-        <section
-          :id="'criteriaGroup-' + criteriaGroup.criteriaGroupKey"
-          class="margin-y-3">
+        <section class="margin-y-3">
           <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)">
             <CriteriaChild
               :key="criterion.criteriaKey"
@@ -53,7 +50,9 @@
 </template>
 <script>
 import { mapGetters } from "vuex"
+import _ from "lodash"
 import SummaryBox from "./SummaryBox.vue"
+
 export default {
   name: "CriteriaGroup",
   components: { SummaryBox },
@@ -67,10 +66,18 @@ export default {
       default: /* istanbul ignore next */ () => [],
     },
   },
+  data() {
+    return {
+      uniqueId: _.uniqueId("key-"),
+    }
+  },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
     }),
+  },
+  mounted() {
+    this.uniqueId = _.uniqueId("key-")
   },
   methods: {
     getCriteriaMap(criteriaKeys) {
