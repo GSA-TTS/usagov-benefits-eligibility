@@ -6,44 +6,58 @@ function validateDateAgainstAcceptance({ criterion, userInputDate }) {
   let determiner = null
   let checkResult = null
 
-  for (const index in criterion.acceptableValues) {
-    const value = criterion.acceptableValues[index].toLowerCase()
-    const operator = value[0]
-    const encodedDate = value.substring(1)
+  const selectedResult = checkSelectedAndExists(userInputDate)
+  if(selectedResult !== true) {
+    return selectedResult
+  } else {
+    for (const index in criterion.acceptableValues) {
+      const value = criterion.acceptableValues[index].toLowerCase()
+      const operator = value[0]
+      const encodedDate = value.substring(1)
+      let acceptanceDate = null
+  
+      // need to check if there is a determiner in the acceptable value
+      if (
+        DETERMINERS.some((detChar) => {
+          if (encodedDate.includes(detChar)) {
+            determiner = detChar
+            return true
+          }
+          return false
+        })
+      ) {
+        acceptanceDate = figureOutAcceptanceDate(encodedDate, determiner)
+      } else {
+        acceptanceDate = toDate(Date.parse(encodedDate))
+      }
+      // checking to see if the date from the content file is valid
+      if (isNaN(acceptanceDate)) {
+        checkResult = null
+      }
+      checkResult = checkUserDate(userInputDate, determiner, operator, acceptanceDate)
+      // checking to see if the inputted date is valid / complete
+      if (checkResult === false) {
+        break
+      }
+    }
+    return checkResult
+  }  
+}
 
-    // date that the users input will be checked against (either the acceptable criteria static
-    //   input or it will be calculated based on the duration in the acceptable criteria)
-    let acceptanceDate = null
-
-    // need to check if there is a determiner in the acceptable value
-    if (
-      DETERMINERS.some((detChar) => {
-        if (encodedDate.includes(detChar)) {
-          determiner = detChar
-          return true
-        }
-        return false
-      })
-    ) {
-      acceptanceDate = figureOutAcceptanceDate(encodedDate, determiner)
-    } else {
-      acceptanceDate = Date.parse(encodedDate)
-    }
-    // checking to see if the date from the content file is valid
-    if (isNaN(acceptanceDate)) {
-      checkResult = null
-    }
-    checkResult = checkUserDate(userInputDate, determiner, operator, acceptanceDate)
-    // checking to see if the inputted date is valid / complete
-    if (checkResult === false) {
-      break
-    }
+function checkSelectedAndExists(userInputDate) {
+  if(userInputDate === '' || userInputDate === null) {
+    return null
   }
-  return checkResult
+  userInputDate = toDate(userInputDate)
+  const dateData = [userInputDate.getFullYear(), userInputDate.getMonth(), userInputDate.getDate()]
+  if (!isExists(...dateData)) {
+    return false
+  }
+  return true
 }
 
 function figureOutAcceptanceDate(value, determiner) {
-  const amount = parseInt(value.substring(1, value.indexOf(determiner)))
+  const amount = parseInt(value.substring(0, value.indexOf(determiner)))
   const today = new Date(Date.now())
   const changeVal = {}
   changeVal[determiner] = amount
@@ -51,20 +65,12 @@ function figureOutAcceptanceDate(value, determiner) {
 }
 
 function checkUserDate(userInputDate, determiner, operator, acceptanceDate) {
-  let checkResult = null
-  if (!isNaN(userInputDate)) {
-    userInputDate = toDate(userInputDate)
-    // first will check if the users inputted date is in the future
-    if (isFuture(userInputDate)) {
-      return false
-    }
-    const dateData = [userInputDate.getFullYear(), userInputDate.getMonth(), userInputDate.getDate()]
-    if (!isExists(...dateData)) {
-      return false
-    }
-    checkResult = applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate)
+  userInputDate = toDate(userInputDate)
+  // first will check if the users inputted date is in the future
+  if (isFuture(userInputDate)) {
+    return false
   }
-  return checkResult
+  return applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate)
 }
 
 function applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate) {
