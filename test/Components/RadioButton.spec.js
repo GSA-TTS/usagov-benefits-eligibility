@@ -4,15 +4,16 @@ import RadioButton from "@/components/RadioButton.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { getters, mutations, state as criteriaState } from "~/store/criteria"
 
+const LABEL = "The deceased served in the active military, naval, or air service and"
+const VALUE_ONE = "was discharged under conditions other than dishonorable"
+const VALUE_TWO = "died while on active duty"
+const VALUE_THREE = "had retired from the service"
+
 const MOCK_CRITERIA = {
   criteriaKey: "deceased_served_in_active_military",
-  label: "The deceased served in the active military, naval, or air service and",
+  label: LABEL,
   type: "radio",
-  values: [
-    "was discharged under conditions other than dishonorable",
-    "died while on active duty",
-    "had retired from the service",
-  ],
+  values: [VALUE_ONE, VALUE_TWO, VALUE_THREE],
   location: "left-rail",
 }
 
@@ -65,8 +66,8 @@ describe("<Radio/>", () => {
       propsData: { ...MOCK_CRITERIA },
       store,
     })
-    expect(wrapper.find("legend").text()).toBe("The deceased served in the active military, naval, or air service and")
-    expect(wrapper.find("input").element.value).toBe("was discharged under conditions other than dishonorable")
+    expect(wrapper.find("legend").text()).toBe(LABEL)
+    expect(wrapper.find("input").element.value).toBe(VALUE_ONE)
   })
 
   test("updates when a radio criteria response changes", async () => {
@@ -76,21 +77,16 @@ describe("<Radio/>", () => {
     })
     const choices = wrapper.findAll('input[type="radio"]')
     await choices.at(1).setChecked()
-    expect(choices.at(1).element.value).toBe("died while on active duty")
+    expect(choices.at(1).element.value).toBe(VALUE_TWO)
     expect(actions.updateResponse).toHaveBeenCalled()
   })
 
   test("when radio is not applicable it must have correct styling", async () => {
     const MOCK_RADIO_SELECTED = {
       criteriaKey: "deceased_served_in_active_military",
-      label: "The deceased served in the active military, naval, or air service and",
+      label: LABEL,
       type: "radio",
-      values: [
-        "was discharged under conditions other than dishonorable",
-        "died while on active duty",
-        "had retired from the service",
-        "not applicable",
-      ],
+      values: [VALUE_ONE, VALUE_TWO, VALUE_THREE, "not applicable"],
       location: "benefit-card",
       response: "not applicable",
     }
@@ -101,7 +97,7 @@ describe("<Radio/>", () => {
     })
     const choices = wrapper.findAll('input[type="radio"]')
     await choices.at(0).setChecked()
-    expect(choices.at(0).element.value).toBe("was discharged under conditions other than dishonorable")
+    expect(choices.at(0).element.value).toBe(VALUE_ONE)
     expect(wrapper.find(".text-base").classes()).toContain("font-weight-normal")
   })
 

@@ -2,6 +2,8 @@ import { shallowMount } from "@vue/test-utils"
 import Page from "~/pages/agencies/_agency.vue"
 import beforeAllTests from "~/test/beforeAllTests"
 
+const SOURCE_NAME = "One two three"
+
 describe("pages/agencies/_agency.vue", () => {
   let $fetchState
 
@@ -37,10 +39,10 @@ describe("pages/agencies/_agency.vue", () => {
               {
                 title: "One",
                 summary: "One summary",
-                source: { name: "One two three" },
+                source: { name: SOURCE_NAME },
                 lifeEvents: ["Three", "Four"],
               },
-              { title: "Two", summary: "Two summary", source: { name: "One two three" }, lifeEvents: [] },
+              { title: "Two", summary: "Two summary", source: { name: SOURCE_NAME }, lifeEvents: [] },
               { title: "Three", summary: "Three summary", source: { name: "U.S. One Two" }, lifeEvents: [] },
             ],
             criteria: [],
@@ -69,7 +71,7 @@ describe("pages/agencies/_agency.vue", () => {
       },
     })
     await wrapper.vm.$options.fetch.apply(wrapper.vm)
-    expect(wrapper.vm.benefitAgency).toBe("One two three")
+    expect(wrapper.vm.benefitAgency).toBe(SOURCE_NAME)
     expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("One,Two")
 
     $route.params.agency = "u-s-one-two"

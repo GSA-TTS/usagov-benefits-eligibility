@@ -1,5 +1,5 @@
-import { mount, shallowMount } from "@vue/test-utils"
-import Vuex from "vuex"
+import { shallowMount } from "@vue/test-utils"
+import { Store } from "vuex"
 import EligibilityList from "@/components/EligibilityList.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { state as criteriaState, mutations, getters, actions } from "~/store/criteria"
@@ -30,7 +30,7 @@ describe("EligibilityList", () => {
 
   beforeEach(() => {
     criteriaState.namespaced = true
-    store = new Vuex.Store({
+    store = new Store({
       modules: {
         criteria: {
           namespaced: true,
@@ -74,11 +74,11 @@ describe("EligibilityList", () => {
       store,
       propsData: {},
     })
-    let l1 = wrapper.vm.getCriterionLabel({
+    const l1 = wrapper.vm.getCriterionLabel({
       criteriaKey: "myKey",
       type: "boolean",
     })
-    let l2 = wrapper.vm.getCriterionLabel({
+    const l2 = wrapper.vm.getCriterionLabel({
       criteriaKey: "myKey",
       label: "mylabel",
     })
