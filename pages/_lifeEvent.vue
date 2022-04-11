@@ -140,7 +140,6 @@
             class="tablet:display-none print:display-none">
             <div class="margin-y-2 print:display-none">
               <label
-                role="status"
                 class="usa-label"
                 for="benefitSortMobile"
                 >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
