@@ -1,11 +1,12 @@
 ---
-title: "Survivor Pension for Child"
-headline: "Survivor Pension for Child"
+title: "Survivor Pension for Child with Disabilities"
+headline: "Survivor Pension for Child with Disabilities"
 tags:
   - "financial assistance"
 lifeEvents:
   - "death-and-burial"
   - "military-service"
+  - "disability"
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/pension/survivors-pension/
@@ -21,8 +22,10 @@ eligibility:
   - criteriaKey: applicant_relationship
     acceptableValues: ["child"]
   - criteriaKey: applicant_date_of_birth
-    label: "You are under 18 years old (under 23 years old if attending a VA-approved school)."
-    acceptableValues: ["<18years"]
+    label: "You are at least 18 years old."
+    acceptableValues: [">18years"]
+  - criteriaKey: applicant_disability
+    acceptableValues: [true]
   - criteriaKey: applicant_marital_status
     acceptableValues: ["unmarried"]
 ---

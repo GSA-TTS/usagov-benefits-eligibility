@@ -1,6 +1,6 @@
 ---
-title: "Dependency and Indemnity Compensation (DIC) for Child"
-headline: "Dependency and Indemnity Compensation (DIC) for Child"
+title: "Dependency and Indemnity Compensation (DIC) for Spouse"
+headline: "Dependency and Indemnity Compensation (DIC) for Spouse"
 tags:
   - "financial assistance"
 lifeEvents:
@@ -21,10 +21,7 @@ eligibility:
   - criteriaKey: deceased_death_circumstance
     acceptableValues: ["died while on active duty", "died as a result of a service-connected disability or illness", "died while eligible or receiving VA compensation"]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["child"]
-  - criteriaKey: applicant_date_of_birth
-    label: "You are under 18 years old (under 23 years old if attending a VA-approved school)."
-    acceptableValues: ["<18years"]
+    acceptableValues: ["spouse"]
   - criteriaKey: applicant_marital_status
-    acceptableValues: ["unmarried"]
+    acceptableValues: ["unmarried", "widowed"]
 ---

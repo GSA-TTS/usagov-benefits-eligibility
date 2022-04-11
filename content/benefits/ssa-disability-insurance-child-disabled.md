@@ -1,6 +1,6 @@
 ---
-title: "Social Security Disability Insurance for Child"
-headline: "Social Security Disability Insurance for Child"
+title: "Social Security Disability Insurance for Child with Disabilities"
+headline: "Social Security Disability Insurance for Child with Disabilities"
 tags:
   - "financial assistance"
 lifeEvents:
@@ -23,7 +23,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: applicant_ability_to_work
     acceptableValues: [true]
-  - criteriaKey: applicant_child_parents_benefits
+  - criteriaKey: applicant_child_spouse_SS
     acceptableValues: [true]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]

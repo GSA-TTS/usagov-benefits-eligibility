@@ -19,8 +19,6 @@ eligibility:
     acceptableValues: ["unmarried", "divorced"]
   - criteriaKey: applicant_care_for_child
     acceptableValues: [true]
-  - criteriaKey: applicant_spouses_benefits
-    acceptableValues: [true]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
 ---

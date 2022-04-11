@@ -20,7 +20,7 @@ eligibility:
     acceptableValues: [">62years"]
   - criteriaKey: applicant_marital_status
     acceptableValues: ["now married", "divorced"]
-  - criteriaKey: applicant_spouses_benefits
+  - criteriaKey: applicant_child_spouse_SS
     acceptableValues: [true]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
