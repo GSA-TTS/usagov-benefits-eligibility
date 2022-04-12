@@ -58,7 +58,6 @@ function figureOutAcceptanceDate(value, determiner) {
 }
 
 function checkUserDate(userInputDate, determiner, operator, acceptanceDate) {
-  
   userInputDate = toDate(userInputDate)
   // first will check if the users inputted date is in the future
   if (isFuture(userInputDate)) {
