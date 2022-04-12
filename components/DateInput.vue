@@ -143,7 +143,7 @@ export default {
       this.month = this.pullDateValue(this.dateResponse, 0)
       this.day = this.pullDateValue(this.dateResponse, 1)
       this.year = this.pullDateValue(this.dateResponse, 2)
-    },
+    },    
   },
   data() {
     return {
@@ -170,6 +170,14 @@ export default {
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
+    this.$store.subscribe((mutation) => {
+      if(mutation.type === "criteria/clearSelectedCriteria") {
+        this.month = ""
+        this.day = ""
+        this.year = ""
+        this.check = ""
+      }
+    })
   },
   methods: {
     classFromResponse() {
@@ -190,7 +198,7 @@ export default {
       const day = this.day
       const year = this.year
       if (month !== "" && day !== "" && year !== "") {
-        debugger
+        
         const date = `${month}-${day}-${year}`
         this.check = checkDateValid(date)
         if (this.check === "") {

@@ -58,7 +58,7 @@ function figureOutAcceptanceDate(value, determiner) {
 }
 
 function checkUserDate(userInputDate, determiner, operator, acceptanceDate) {
-  debugger
+  
   userInputDate = toDate(userInputDate)
   // first will check if the users inputted date is in the future
   if (isFuture(userInputDate)) {
@@ -89,10 +89,10 @@ function applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate
 function checkDateValid(userInputDate) {
   const checkDate = toDate(Date.parse(userInputDate))
   if (isNaN(checkDate)) {
-    return "Date is invalid"
+    return "Please enter a valid date"
   }
   if (isFuture(checkDate)) {
-    return "Date is in the future and not valid"
+    return "Please enter a valid date"
   }
   return ""
 }
