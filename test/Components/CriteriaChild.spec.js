@@ -1,9 +1,11 @@
 import { mount, shallowMount } from "@vue/test-utils"
-import Vuex from "vuex"
+import { Store } from "vuex"
 import CriteriaChild from "@/components/CriteriaChild.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { actions, getters, mutations, state as criteriaState } from "~/store/criteria"
 
+const GROUP_KEY = "test-group-key"
+const DISABLE_GROUP_KEY = "group-i-dont-care-about-2"
 describe("CriteriaChild", () => {
   let store
 
@@ -13,7 +15,7 @@ describe("CriteriaChild", () => {
 
   beforeEach(() => {
     criteriaState.namespaced = true
-    store = new Vuex.Store({
+    store = new Store({
       modules: {
         criteria: {
           namespaced: true,
@@ -48,7 +50,7 @@ describe("CriteriaChild", () => {
         label: "bal bal",
         type: "boolean",
         values: ["true", "false"],
-        criteriaGroupKey: "test-group-key",
+        criteriaGroupKey: GROUP_KEY,
         response: "balkajdflkjslf",
       },
     })
@@ -62,7 +64,7 @@ describe("CriteriaChild", () => {
         criteriaKey: "myKey",
         type: "boolean",
         values: ["true", "false"],
-        criteriaGroupKey: "test-group-key",
+        criteriaGroupKey: GROUP_KEY,
         response: "balkajdflkjslf",
       },
     })
@@ -76,7 +78,7 @@ describe("CriteriaChild", () => {
         criteriaKey: "myKey",
         type: "boolean",
         values: ["true", "false"],
-        criteriaGroupKey: "test-group-key",
+        criteriaGroupKey: GROUP_KEY,
         response: "balkajdflkjslf",
         topLevelFilters: [
           {
@@ -90,7 +92,7 @@ describe("CriteriaChild", () => {
             criteriaKey: ["otherKey"],
             type: "boolean",
             values: ["true", "false"],
-            disableGroupKey: "group-i-dont-care-about-2",
+            disableGroupKey: DISABLE_GROUP_KEY,
             disableGroupWhen: "false",
           },
         ],
@@ -98,8 +100,8 @@ describe("CriteriaChild", () => {
     })
 
     let watcherWasCreated = false
-    for (let watcherIndex in wrapper.vm._watchers) {
-      let watcher = wrapper.vm._watchers[watcherIndex]
+    for (const watcherIndex in wrapper.vm._watchers) {
+      const watcher = wrapper.vm._watchers[watcherIndex]
       if (
         watcher.expression === "$store.state.criteria.eligibilityCriteria.filterKey.response" ||
         watcher.expression === "$store.state.criteria.eligibilityCriteria.otherKey.response"
@@ -117,21 +119,21 @@ describe("CriteriaChild", () => {
         criteriaKey: "myKey",
         type: "boolean",
         values: ["true", "false"],
-        criteriaGroupKey: "test-group-key",
+        criteriaGroupKey: GROUP_KEY,
         response: "balkajdflkjslf",
         topLevelFilters: [
           {
             criteriaKey: ["filterKey"],
             type: "boolean",
             values: ["true", "false"],
-            disableGroupKey: "test-group-key",
+            disableGroupKey: GROUP_KEY,
             disableGroupWhen: "true",
           },
           {
             criteriaKey: ["otherKey"],
             type: "boolean",
             values: ["true", "false"],
-            disableGroupKey: "group-i-dont-care-about-2",
+            disableGroupKey: DISABLE_GROUP_KEY,
             disableGroupWhen: "false",
           },
         ],
@@ -139,8 +141,8 @@ describe("CriteriaChild", () => {
     })
 
     let watcherWasCreated = false
-    for (let watcherIndex in wrapper.vm._watchers) {
-      let watcher = wrapper.vm._watchers[watcherIndex]
+    for (const watcherIndex in wrapper.vm._watchers) {
+      const watcher = wrapper.vm._watchers[watcherIndex]
       if (watcher.expression === "$store.state.criteria.eligibilityCriteria.filterKey.response") {
         watcherWasCreated = true
       }
@@ -163,21 +165,21 @@ describe("CriteriaChild", () => {
         criteriaKey: "myKey",
         type: "boolean",
         values: ["true", "false"],
-        criteriaGroupKey: "test-group-key",
+        criteriaGroupKey: GROUP_KEY,
         response: "balkajdflkjslf",
         topLevelFilters: [
           {
             criteriaKey: ["filterKey"],
             type: "boolean",
             values: ["true", "false"],
-            disableGroupKey: "test-group-key",
+            disableGroupKey: GROUP_KEY,
             disableGroupWhen: "true",
           },
           {
             criteriaKey: ["otherKey"],
             type: "boolean",
             values: ["true", "false"],
-            disableGroupKey: "group-i-dont-care-about-2",
+            disableGroupKey: DISABLE_GROUP_KEY,
             disableGroupWhen: "false",
           },
         ],
@@ -185,7 +187,7 @@ describe("CriteriaChild", () => {
     })
 
     expect(wrapper.vm.isGroupKeyDisabled).toBeFalsy()
-    store.state.criteria.eligibilityCriteria["filterKey"].response = true
+    store.state.criteria.eligibilityCriteria.filterKey.response = true
     expect(wrapper.vm.isGroupKeyDisabled).toBeFalsy()
   })
 })

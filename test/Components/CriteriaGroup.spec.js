@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils"
-import Vuex from "vuex"
+import { Store } from "vuex"
 import CriteriaGroup from "@/components/CriteriaGroup.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { state as criteriaState, mutations, getters, actions } from "~/store/criteria"
@@ -30,7 +30,7 @@ describe("CriteriaGroup", () => {
 
   beforeEach(() => {
     criteriaState.namespaced = true
-    store = new Vuex.Store({
+    store = new Store({
       modules: {
         criteria: {
           namespaced: true,

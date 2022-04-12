@@ -8,17 +8,20 @@
         <form class="usa-form">
           <fieldset class="usa-fieldset">
             <template v-for="filter in topLevelFilters">
-              <h3
-                id="summary-box-key-information"
-                :key="`heading-${filter.criteriaKey}`"
-                class="usa-summary-box__heading">
-                {{ filter.label }}
-              </h3>
+              <legend
+                v-if="filter.label"
+                :key="`legend-${filter.criteriaKey}-${uniqueId}`">
+                <h2
+                  id="summary-box-key-information"
+                  class="usa-summary-box__heading">
+                  {{ filter.label }}
+                </h2>
+              </legend>
               <div
                 :key="`heading-${filter.criteriaKey}`"
                 :criterion="(criterion = getCriterionByEligibilityKey(filter.criteriaKey))">
                 <CriteriaChild
-                  :key="criterion.criteriaKey"
+                  :key="`${criterion.criteriaKey}-${uniqueId}`"
                   :criteria-key="criterion.criteriaKey"
                   :label="criterion.label"
                   :type="criterion.type"
@@ -37,21 +40,28 @@
 
 <script>
 import { mapGetters } from "vuex"
+import _ from "lodash"
 
 export default {
   name: "SummaryBox",
-
   props: {
     topLevelFilters: {
       type: Array,
       default: /* istanbul ignore next */ () => [],
     },
   },
-
+  data() {
+    return {
+      uniqueId: _.uniqueId("summary-box-"),
+    }
+  },
   computed: {
     ...mapGetters({
       getCriterionByEligibilityKey: "criteria/getCriterionByEligibilityKey",
     }),
+  },
+  mounted() {
+    this.uniqueId = _.uniqueId("id-")
   },
 }
 </script>

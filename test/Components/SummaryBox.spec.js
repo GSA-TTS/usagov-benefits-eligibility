@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils"
-import Vuex from "vuex"
+import { Store } from "vuex"
 import SummaryBox from "@/components/SummaryBox.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { actions, getters, mutations, state as criteriaState } from "~/store/criteria"
@@ -31,7 +31,7 @@ describe("<SummaryBox />", () => {
   beforeEach(() => {
     criteriaState.namespaced = true
 
-    store = new Vuex.Store({
+    store = new Store({
       modules: {
         criteria: {
           namespaced: true,
