@@ -62,7 +62,7 @@
       </div>
     </div>
     <span
-      class="usa-hint"
+      class="usa-error-message"
       id="error"
       >{{ check }}</span
     >

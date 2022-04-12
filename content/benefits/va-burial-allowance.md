@@ -19,7 +19,12 @@ eligibility:
   - criteriaKey: deceased_service_status
     acceptableValues: ["discharged under conditions other than dishonorable"]
   - criteriaKey: deceased_death_circumstance
-    acceptableValues: ["died as a result of a service-connected disability or illness", "died while receiving or traveling to receive VA care", "died while eligible or receiving VA compensation"]
+    acceptableValues:
+      [
+        "died as a result of a service-connected disability or illness",
+        "died while receiving or traveling to receive VA care",
+        "died while eligible or receiving VA compensation",
+      ]
   - criteriaKey: deceased_date_of_funeral
     label: "The deceased's funeral/burial was within the last two years."
     acceptableValues: [">2years"]

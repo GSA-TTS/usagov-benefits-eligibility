@@ -16,5 +16,10 @@ eligibility:
   - criteriaKey: applicant_served_in_active_military
     acceptableValues: ["yes"]
   - criteriaKey: applicant_service_status
-    acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable", "retired from the service"]
+    acceptableValues:
+      [
+        "an active-duty service member",
+        "discharged under conditions other than dishonorable",
+        "retired from the service",
+      ]
 ---
