@@ -91,7 +91,7 @@ function checkDateValid(userInputDate) {
     return "Please enter a valid date."
   }
   if (isFuture(checkDate)) {
-  return "Please enter a valid date."
+    return "Please enter a valid date."
   }
   return ""
 }
