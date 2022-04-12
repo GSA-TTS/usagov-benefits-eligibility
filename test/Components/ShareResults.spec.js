@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils"
-import Vuex from "vuex"
+import { Store } from "vuex"
 import ShareResults from "@/components/ShareResults.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { actions, getters, mutations, state as criteriaState } from "~/store/criteria"
@@ -21,6 +21,8 @@ const MOCK_CRITERIA = [
   },
 ]
 
+const CRITERIA_POPULATE = "criteria/populate"
+
 describe("ShareResults", () => {
   let store
 
@@ -30,7 +32,7 @@ describe("ShareResults", () => {
 
   beforeEach(() => {
     criteriaState.namespaced = true
-    store = new Vuex.Store({
+    store = new Store({
       modules: {
         criteria: {
           namespaced: true,
@@ -48,7 +50,7 @@ describe("ShareResults", () => {
   })
 
   it("is a Vue instance", async () => {
-    await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
+    await store.dispatch(CRITERIA_POPULATE, [...MOCK_CRITERIA])
     const wrapper = mount(ShareResults, { store })
     expect(wrapper.vm).toBeTruthy()
   })
@@ -60,7 +62,7 @@ describe("ShareResults", () => {
       historyLocationChange = url
     })
 
-    await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
+    await store.dispatch(CRITERIA_POPULATE, [...MOCK_CRITERIA])
     const trueCriteria = {
       criteriaKey: "criteriaKey1",
       response: true,
@@ -74,7 +76,7 @@ describe("ShareResults", () => {
   })
 
   it("should have an enabled button when there are critera filled out and populate the clipboard when clicked", async () => {
-    await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
+    await store.dispatch(CRITERIA_POPULATE, [...MOCK_CRITERIA])
     window.navigator.clipboard = { writeText: jest.fn() }
     const wrapper = mount(ShareResults, { store })
     const trueCriteria = {
@@ -90,7 +92,7 @@ describe("ShareResults", () => {
   })
 
   it("should load url search params into the store", async () => {
-    await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
+    await store.dispatch(CRITERIA_POPULATE, [...MOCK_CRITERIA])
     const wrapper = mount(ShareResults, {
       data: () => ({
         search: "?ae35859=1&77edd0d",
@@ -103,7 +105,7 @@ describe("ShareResults", () => {
 
   it("should display tooltip when the url is copied", async () => {
     jest.useFakeTimers()
-    await store.dispatch("criteria/populate", [...MOCK_CRITERIA])
+    await store.dispatch(CRITERIA_POPULATE, [...MOCK_CRITERIA])
     const wrapper = mount(ShareResults, {
       data: () => ({
         search: "?ae35859=1&77edd0d",

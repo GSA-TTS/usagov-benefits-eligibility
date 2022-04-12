@@ -2,6 +2,11 @@ import { mount } from "@vue/test-utils"
 import Card from "@/components/Card.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
+const CARD_TITLE = "Test card title"
+const CARD_BODY = "Test card body"
+const PRIMARY_BUTTON_TEXT = "Test card primary button text"
+const PRIMARY_BUTTON_LINK = "#test-card-primary-button-link"
+
 describe("Card", () => {
   beforeAll(async () => {
     await beforeAllTests()
@@ -10,10 +15,10 @@ describe("Card", () => {
   test("is a Vue instance", () => {
     const wrapper = mount(Card, {
       propsData: {
-        cardTitle: "Test card title",
-        cardBody: "Test card body",
-        primaryButtonText: "Test card primary button text",
-        primaryButtonLink: "#test-card-primary-button-link",
+        cardTitle: CARD_TITLE,
+        cardBody: CARD_BODY,
+        primaryButtonText: PRIMARY_BUTTON_TEXT,
+        primaryButtonLink: PRIMARY_BUTTON_LINK,
       },
     })
     expect(wrapper.vm).toBeTruthy()
@@ -21,10 +26,10 @@ describe("Card", () => {
   test("adds secondary buttons if both text and link are provided", () => {
     const wrapper = mount(Card, {
       propsData: {
-        cardTitle: "Test card title",
-        cardBody: "Test card body",
-        primaryButtonText: "Test card primary button text",
-        primaryButtonLink: "#test-card-primary-button-link",
+        cardTitle: CARD_TITLE,
+        cardBody: CARD_BODY,
+        primaryButtonText: PRIMARY_BUTTON_TEXT,
+        primaryButtonLink: PRIMARY_BUTTON_LINK,
         secondaryButtonText: "Test card secondary button text",
         secondaryButtonLink: "#test-card-secondary-button-link",
       },
@@ -34,10 +39,10 @@ describe("Card", () => {
   test("adds tags if provided", () => {
     const wrapper = mount(Card, {
       propsData: {
-        cardTitle: "Test card title",
-        cardBody: "Test card body",
-        primaryButtonText: "Test card primary button text",
-        primaryButtonLink: "#test-card-primary-button-link",
+        cardTitle: CARD_TITLE,
+        cardBody: CARD_BODY,
+        primaryButtonText: PRIMARY_BUTTON_TEXT,
+        primaryButtonLink: PRIMARY_BUTTON_LINK,
         cardTags: ["test-card-tag-1"],
       },
     })
@@ -46,11 +51,11 @@ describe("Card", () => {
   test("uses a given heading level for the card title element", () => {
     const wrapper = mount(Card, {
       propsData: {
-        cardTitle: "Test card title",
+        cardTitle: CARD_TITLE,
         cardTitleHeadingLevel: "h4",
-        cardBody: "Test card body",
-        primaryButtonText: "Test card primary button text",
-        primaryButtonLink: "#test-card-primary-button-link",
+        cardBody: CARD_BODY,
+        primaryButtonText: PRIMARY_BUTTON_TEXT,
+        primaryButtonLink: PRIMARY_BUTTON_LINK,
       },
     })
     expect(wrapper.vm).toBeTruthy()

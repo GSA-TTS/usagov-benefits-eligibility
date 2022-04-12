@@ -1,8 +1,8 @@
 import { mount } from "@vue/test-utils"
-import Vuex from "vuex"
+import { Store } from "vuex"
 import SummaryBox from "@/components/SummaryBox.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import { state as criteriaState, mutations, getters, actions } from "~/store/criteria"
+import { state as criteriaState, mutations, getters } from "~/store/criteria"
 
 const MOCK_CRITERIA = [
   {
@@ -36,7 +36,7 @@ describe("<SummaryBox />", () => {
       getCriteriaMap: jest.fn(),
     }
 
-    store = new Vuex.Store({
+    store = new Store({
       modules: {
         criteria: {
           namespaced: true,

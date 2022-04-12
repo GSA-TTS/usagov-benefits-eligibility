@@ -1,7 +1,7 @@
 import { shallowMount } from "@vue/test-utils"
+import { Store } from "vuex"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
-import Vuex from "vuex"
 import LifeEventPage from "~/pages/_lifeEvent.vue"
 import { actions, getters, mutations, state as criteriaState } from "~/store/criteria"
 
@@ -9,7 +9,7 @@ const THIS_LIFE_EVENT_SLUG = "this-life-event"
 const LIFE_EVENTS_DIRECTORY = "life-events"
 const CRITERIA_DIRECTORY = "criteria"
 const BENEFITS_DIRECTORY = "benefits"
-
+const SECENONDARY_HEADLINE = "test life event secondary headline"
 const mockContent = {
   landingPage: {
     title: "landing title",
@@ -22,7 +22,7 @@ const mockContent = {
     title: "test life event title",
     summary: "test life event summary",
     lede: "test life event lede",
-    secondaryHeadline: "test life event secondary headline",
+    secondaryHeadline: SECENONDARY_HEADLINE,
     eligibilityCriteria: [
       {
         label: "first group label",
@@ -96,7 +96,7 @@ describe("Life Event page", () => {
 
   beforeEach(() => {
     criteriaState.namespaced = true
-    store = new Vuex.Store({
+    store = new Store({
       modules: {
         criteria: {
           namespaced: true,
@@ -139,8 +139,8 @@ describe("Life Event page", () => {
 
     await wrapper.vm.$options.fetch.apply(wrapper.vm)
     await wrapper.vm.$nextTick()
-    expect(wrapper.find("h1").text()).toBe("test life event secondary headline")
-    expect(wrapper.vm.lifeEventTitle).toBe("test life event secondary headline")
+    expect(wrapper.find("h1").text()).toBe(SECENONDARY_HEADLINE)
+    expect(wrapper.vm.lifeEventTitle).toBe(SECENONDARY_HEADLINE)
   })
 
   it("should sort the results", async () => {
@@ -200,7 +200,7 @@ describe("Life Event page", () => {
     expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("two,three,one,four")
   })
 
-  it("should filter tags", async () => {
+  it("should filter tags", () => {
     const $content = createContentMock([
       {
         collectionName: LIFE_EVENTS_DIRECTORY,

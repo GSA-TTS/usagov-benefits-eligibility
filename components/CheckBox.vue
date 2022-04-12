@@ -1,7 +1,7 @@
 <template>
-  <fieldset
-    class="usa-fieldset"
-    :class="disabledStyle">
+  <div
+    :class="disabledStyle"
+    class="my-fieldset">
     <input
       :id="`${uniqueId}-${criteriaKey}`"
       class="usa-checkbox__input"
@@ -17,11 +17,13 @@
       :for="`${uniqueId}-${criteriaKey}`">
       {{ label }}
     </label>
-  </fieldset>
+  </div>
 </template>
 
 <script>
 import _ from "lodash"
+
+const benefitCard = "benefit-card"
 
 export default {
   name: "CheckBox",
@@ -40,9 +42,9 @@ export default {
     },
     location: {
       type: String,
-      default: "benefit-card",
+      default: benefitCard,
       validator: (value) => {
-        return ["left-rail", "benefit-card"].includes(value)
+        return ["left-rail", benefitCard].includes(value)
       },
     },
     isDisabled: {
@@ -58,7 +60,7 @@ export default {
 
   computed: {
     selectedStyle() {
-      if (this.location === "benefit-card" && this.response === true) {
+      if (this.location === benefitCard && this.response === true) {
         return "text-success text-bold"
       }
       return null
@@ -87,4 +89,21 @@ export default {
 
 <style
   lang="scss"
-  scoped></style>
+  scoped>
+.my-fieldset {
+  font-size: 1.06rem;
+  line-height: 1.3;
+  display: block;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  padding-block-start: 0.35em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-block-end: 0.625em;
+  min-inline-size: min-content;
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 6px;
+}
+</style>

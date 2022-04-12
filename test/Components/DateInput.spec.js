@@ -1,13 +1,14 @@
 import { mount, shallowMount } from "@vue/test-utils"
+import { Store } from "vuex"
 import DateInput from "@/components/DateInput.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { state as criteriaState, mutations, getters } from "~/store/criteria"
-import { Store } from "vuex"
 
+const LABEL = "Testing DateInput Label"
 const CRITERIA_KEY = "applicant_senior"
 const PROPS_DATA = {
   criteriaKey: CRITERIA_KEY,
-  label: "Testing DateInput Label",
+  label: LABEL,
   response: "test",
   dateResponse: "11-14-1999",
   location: "benefit-card",
@@ -56,7 +57,7 @@ describe("DateInput", () => {
     const wrapper = shallowMount(DateInput, {
       propsData: {
         criteriaKey: CRITERIA_KEY,
-        label: "Testing DateInput Label",
+        label: LABEL,
         response: "test",
         location: "left-rail",
         dateResponse: "00-00-0000",
@@ -75,7 +76,7 @@ describe("DateInput", () => {
     const wrapper = shallowMount(DateInput, {
       propsData: {
         criteriaKey: CRITERIA_KEY,
-        label: "Testing DateInput Label",
+        label: LABEL,
         response: null,
         location: "benefit-card",
         dateResponse: null,
@@ -90,7 +91,7 @@ describe("DateInput", () => {
     expect(wrapper.vm.pullDateValue(null, 0)).toBeDefined()
   })
 
-  test("clicking input values results in update in store", async () => {
+  test("clicking input values results in update in store", () => {
     const wrapper = shallowMount(DateInput, { propsData: PROPS_DATA, store })
     const UID = wrapper.find("input").element.id.split(`-${CRITERIA_KEY}`)[0]
     const monthInput = wrapper.find(`#${UID}-${CRITERIA_KEY}-month`)

@@ -6,8 +6,6 @@ describe("pages/agencies/index.vue", () => {
   const content = {
     benefits: [
       { source: { name: "Agency one" } },
-      { source: { name: "Agency one" } },
-      { source: { name: "Agency one" } },
       { source: { name: "Agency two" } },
       { source: { name: "Agency two" } },
       { source: { name: "Agency three" } },
