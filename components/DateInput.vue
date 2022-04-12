@@ -137,6 +137,10 @@ export default {
         return ["benefit-card", "left-rail"].includes(value)
       },
     },
+    TEST: {
+      type: Boolean,
+      default: false
+    }
   },
   watch: {
     dateResponse() {
@@ -170,7 +174,8 @@ export default {
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
-    this.$store.subscribe((mutation) => {
+    if(!this.TEST){
+      this.store.subscribe((mutation) => {
       if(mutation.type === "criteria/clearSelectedCriteria") {
         this.month = ""
         this.day = ""
@@ -178,6 +183,8 @@ export default {
         this.check = ""
       }
     })
+    }
+    
   },
   methods: {
     classFromResponse() {

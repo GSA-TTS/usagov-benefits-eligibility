@@ -11,6 +11,7 @@ const PROPS_DATA = {
   response: "test",
   dateResponse: "11-14-1999",
   location: "benefit-card",
+  TEST: true
 }
 
 describe("DateInput", () => {
@@ -47,7 +48,7 @@ describe("DateInput", () => {
   })
 
   test("displays with no props", () => {
-    const wrapper = mount(DateInput)
+    const wrapper = mount(DateInput, {propsData: {TEST: true}})
     expect(wrapper.vm).toBeTruthy()
   })
 
@@ -59,6 +60,7 @@ describe("DateInput", () => {
         response: "test",
         location: "left-rail",
         dateResponse: "00-00-0000",
+        TEST: true
       },
     })
     expect(wrapper.vm).toBeTruthy()
@@ -77,6 +79,7 @@ describe("DateInput", () => {
         response: null,
         location: "benefit-card",
         dateResponse: null,
+        TEST: true
       },
     })
     expect(wrapper.vm).toBeTruthy()

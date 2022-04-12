@@ -89,10 +89,10 @@ function applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate
 function checkDateValid(userInputDate) {
   const checkDate = toDate(Date.parse(userInputDate))
   if (isNaN(checkDate)) {
-    return "Please enter a valid date"
+    return "Please enter a valid date."
   }
   if (isFuture(checkDate)) {
-    return "Please enter a valid date"
+  return "Please enter a valid date."
   }
   return ""
 }
