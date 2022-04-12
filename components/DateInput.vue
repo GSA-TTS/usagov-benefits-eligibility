@@ -175,7 +175,7 @@ export default {
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
     if(!this.TEST){
-      this.store.subscribe((mutation) => {
+      this.$store.subscribe((mutation) => {
       if(mutation.type === "criteria/clearSelectedCriteria") {
         this.month = ""
         this.day = ""
