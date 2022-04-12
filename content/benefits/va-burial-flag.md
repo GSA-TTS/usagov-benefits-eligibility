@@ -1,16 +1,16 @@
 ---
-title: "Veteran’s Headstone and Grave Marker"
-headline: "Veteran’s Headstone and Grave Marker"
+title: "Burial Flag"
+headline: "Burial Flag"
 tags:
-  - "burial and funeral assistance"
+  - "memorial"
 lifeEvents:
   - "death-and-burial"
   - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/
+  link: https://www.va.gov/burials-memorials/memorial-items/burial-flags/
 
-summary: "A headstone, grave or niche marker, or medallion may be available to honor a veteran, service member, or eligible family member."
+summary: "VA provides a United States flag to drape on a casket (or coffin) or place with an urn in honor of the military service of a Veteran or Reservist. Find out how to apply for this burial honor."
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
@@ -18,10 +18,7 @@ eligibility:
     acceptableValues: ["yes"]
   - criteriaKey: deceased_service_status
     acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable", "a member of the National Guard or Reserves"]
-  - criteriaKey: deceased_buried_in_unmarked_grave
-    acceptableValues: [true]
-  - criteriaKey: deceased_grave_headstone
-    acceptableValues: [true]
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]
+
 ---

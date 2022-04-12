@@ -19,7 +19,7 @@ eligibility:
     acceptableValues: ["<18years"]
   - criteriaKey: applicant_marital_status
     acceptableValues: ["unmarried"]
-  - criteriaKey: applicant_child_parents_benefits
+  - criteriaKey: applicant_child_spouse_SS
     acceptableValues: [true]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
