@@ -1,7 +1,5 @@
 <template>
-  <fieldset
-    class="usa-fieldset"
-    :class="disabledStyle">
+  <div :class="disabledStyle">
     <template v-if="location === 'left-rail'">
       <label
         class="usa-label margin-top-0 tablet:padding-top-1 text-bold"
@@ -33,7 +31,7 @@
         {{ option }}
       </option>
     </select>
-  </fieldset>
+  </div>
 </template>
 
 <script>

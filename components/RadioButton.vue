@@ -59,6 +59,8 @@
 
 <script>
 import _ from "lodash"
+const benefitCard = "benefit-card"
+
 export default {
   name: "RadioButton",
   props: {
@@ -79,9 +81,9 @@ export default {
       default: "No response provided",
     },
     location: {
-      default: "benefit-card",
+      default: benefitCard,
       validator: (value) => {
-        return ["left-rail", "benefit-card"].includes(value)
+        return ["left-rail", benefitCard].includes(value)
       },
     },
     isDisabled: {
@@ -97,10 +99,7 @@ export default {
   },
   computed: {
     selectedStyle() {
-      if (
-        (this.location === "benefit-card" && this.response === "not applicable") ||
-        typeof this.response === "object"
-      ) {
+      if ((this.location === benefitCard && this.response === "not applicable") || typeof this.response === "object") {
         return "text-base text-normal font-weight-normal"
       }
       return "text-bold"
