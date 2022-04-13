@@ -17,10 +17,20 @@ eligibility:
   - criteriaKey: deceased_served_in_active_military
     acceptableValues: ["yes"]
   - criteriaKey: deceased_service_status
-    acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable", "a member of the National Guard or Reserves"]
+    acceptableValues:
+      [
+        "an active-duty service member",
+        "discharged under conditions other than dishonorable",
+        "a member of the National Guard or Reserves",
+      ]
   - criteriaKey: deceased_death_circumstance
-    acceptableValues: ["died while on active duty", "died as a result of a service-connected disability or illness", "died while receiving or traveling to receive VA care", "died while eligible or receiving VA compensation"]
+    acceptableValues:
+      [
+        "died while on active duty",
+        "died as a result of a service-connected disability or illness",
+        "died while receiving or traveling to receive VA care",
+        "died while eligible or receiving VA compensation",
+      ]
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]
-
 ---

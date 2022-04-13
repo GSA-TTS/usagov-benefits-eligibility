@@ -17,7 +17,12 @@ eligibility:
   - criteriaKey: deceased_served_in_active_military
     acceptableValues: ["yes"]
   - criteriaKey: deceased_service_status
-    acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable", "retired from the service"]
+    acceptableValues:
+      [
+        "an active-duty service member",
+        "discharged under conditions other than dishonorable",
+        "retired from the service",
+      ]
   - criteriaKey: deceased_death_circumstance
     acceptableValues: ["died while on active duty"]
   - criteriaKey: applicant_relationship

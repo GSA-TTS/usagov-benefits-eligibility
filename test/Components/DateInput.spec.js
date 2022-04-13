@@ -12,6 +12,7 @@ const PROPS_DATA = {
   response: "test",
   dateResponse: "11-14-1999",
   location: "benefit-card",
+  TEST: true,
 }
 
 describe("DateInput", () => {
@@ -48,7 +49,7 @@ describe("DateInput", () => {
   })
 
   test("displays with no props", () => {
-    const wrapper = mount(DateInput)
+    const wrapper = mount(DateInput, { propsData: { TEST: true } })
     expect(wrapper.vm).toBeTruthy()
   })
 
@@ -60,6 +61,7 @@ describe("DateInput", () => {
         response: "test",
         location: "left-rail",
         dateResponse: "00-00-0000",
+        TEST: true,
       },
     })
     expect(wrapper.vm).toBeTruthy()
@@ -78,6 +80,7 @@ describe("DateInput", () => {
         response: null,
         location: "benefit-card",
         dateResponse: null,
+        TEST: true,
       },
     })
     expect(wrapper.vm).toBeTruthy()
@@ -103,5 +106,13 @@ describe("DateInput", () => {
     yearInput.element.value = "2022"
     yearInput.trigger("change")
     expect(actions.updateResponse.mock.calls.length).toBe(3)
+  })
+
+  test("the watch functions for M/D/Y work correctly", async () => {
+    const wrapper = shallowMount(DateInput, { propsData: PROPS_DATA, store })
+    wrapper.vm.$options.watch.dateResponse.call(wrapper.vm, "11-14-1999")
+    expect(wrapper.vm.$data.month).toBe("11")
+    expect(wrapper.vm.$data.day).toBe("14")
+    expect(wrapper.vm.$data.year).toBe("1999")
   })
 })
