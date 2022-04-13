@@ -1,4 +1,4 @@
-import validateDateAgainstAcceptance from "~/services/dateHelper"
+import { validateDateAgainstAcceptance, checkDateValid } from "~/services/dateHelper"
 
 function getTestDateString(daysOffsetFromToday) {
   const testDte = new Date()
@@ -72,10 +72,11 @@ describe("dateHelper", () => {
   it("should return null when not selected", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
+      response: null,
     }
     const ret = validateDateAgainstAcceptance({
       criterion,
-      userInputDate: Date.parse(criterion.response),
+      userInputDate: criterion.response,
     })
     expect(ret).toBe(null)
   })
@@ -156,5 +157,60 @@ describe("dateHelper", () => {
       userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(false)
+  })
+
+  it("should return null when invalid acceptance date", async () => {
+    const criterion = {
+      criteriaKey: "applicant_eligible_senior",
+      criteriaKeyHash: "9e63db02",
+      type: "date",
+      acceptableValues: [""],
+      response: "02-25-2021",
+      TEST: true,
+    }
+    const ret = validateDateAgainstAcceptance({
+      criterion,
+      userInputDate: Date.parse(criterion.response),
+    })
+    expect(ret).toBe(null)
+  })
+
+  it("should return false when future input date", async () => {
+    const criterion = {
+      criteriaKey: "applicant_eligible_senior",
+      criteriaKeyHash: "9e63db02",
+      type: "date",
+      acceptableValues: [">60years"],
+      response: "02-25-2050",
+      TEST: true,
+    }
+    const ret = validateDateAgainstAcceptance({
+      criterion,
+      userInputDate: Date.parse(criterion.response),
+    })
+    expect(ret).toBe(false)
+  })
+
+  it("should return null when invalid acceptance date", async () => {
+    const criterion = {
+      criteriaKey: "applicant_eligible_senior",
+      criteriaKeyHash: "9e63db02",
+      type: "date",
+      acceptableValues: [">11-14-1999"],
+      response: "14-38-2021",
+      TEST: true,
+    }
+    const ret = validateDateAgainstAcceptance({
+      criterion,
+      userInputDate: criterion.response,
+    })
+    expect(ret).toBe(false)
+  })
+
+  it("should return correct when invalid user date", async () => {
+    const ret = checkDateValid("11-14-2021")
+    expect(ret).toBe("")
+    expect(checkDateValid("14-44-5000")).toBe("Please enter a valid date.")
+    expect(checkDateValid("11-14-2025")).toBe("Please enter a valid date.")
   })
 })

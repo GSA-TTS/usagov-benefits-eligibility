@@ -16,6 +16,6 @@ eligibility:
   - criteriaKey: applicant_served_in_active_military
     acceptableValues: ["yes"]
   - criteriaKey: applicant_service_status
-    acceptableValues: ["discharged under conditions other than dishonorable", "a member of the National Guard or Reserves"]
-
+    acceptableValues:
+      ["discharged under conditions other than dishonorable", "a member of the National Guard or Reserves"]
 ---

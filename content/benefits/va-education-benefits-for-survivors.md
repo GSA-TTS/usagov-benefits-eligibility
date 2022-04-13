@@ -2,7 +2,7 @@
 title: "Education Benefits (GI Bill) for Survivors"
 headline: "Education Benefits (GI Bill) for Survivors"
 tags:
-    - "educational assistance"
+  - "educational assistance"
 lifeEvents:
   - "death-and-burial"
   - "school-and-education"

@@ -9,7 +9,7 @@ eligibilityCriteriaDescription: "Please check the boxes and select the options t
 
 topLevelFilter:
   - label: "Start here"
-    criteriaKey: 
+    criteriaKey:
       - applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:

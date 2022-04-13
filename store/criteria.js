@@ -1,6 +1,6 @@
 import Vue from "vue"
 import stringToHash from "../services/stringToHash"
-import validateDateAgainstAcceptance from "~/services/dateHelper"
+import { validateDateAgainstAcceptance } from "~/services/dateHelper"
 
 export const state = () => ({
   eligibilityCriteria: {},
@@ -88,16 +88,15 @@ export const getters = {
     })
   },
   doesCriterionMatchSelection: (theState, theGetters) => (criterion) => {
-    if (!theGetters.isCriterionSelected(criterion)) {
-      return null
-    }
-
     if (theGetters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
       return criterion.TEST
         ? theGetters.doesCriterionDateMatch(theState)(criterion)
         : theGetters.doesCriterionDateMatch(criterion)
     } else {
       if (!criterion.acceptableValues) {
+        return null
+      }
+      if (!theGetters.isCriterionSelected(criterion)) {
         return null
       }
       return !!criterion.acceptableValues.find(

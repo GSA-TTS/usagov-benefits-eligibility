@@ -17,7 +17,12 @@ eligibility:
   - criteriaKey: deceased_served_in_active_military
     acceptableValues: ["yes"]
   - criteriaKey: deceased_service_status
-    acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable", "a member of the National Guard or Reserves"]
+    acceptableValues:
+      [
+        "an active-duty service member",
+        "discharged under conditions other than dishonorable",
+        "a member of the National Guard or Reserves",
+      ]
   - criteriaKey: deceased_buried_in_unmarked_grave
     acceptableValues: [true]
   - criteriaKey: deceased_grave_headstone
