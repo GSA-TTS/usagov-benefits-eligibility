@@ -10,32 +10,44 @@ eligibilityCriteriaDescription: "Please check the boxes and select the options t
 topLevelFilter:
   - label: "Start here"
     criteriaKey:
-      - applicant_served_in_active_military
-    disableGroupKey: applicant
-    disableGroupWhen: ["not applicable"]
+      - applicant_date_of_birth
+    disableGroupKey:
+    disableGroupWhen:
 
   - label: ""
     criteriaKey:
-      - deceased_served_in_active_military
-    disableGroupKey: military
-    disableGroupWhen: ["not applicable"]
+      - applicant_served_in_active_military
+    disableGroupKey: applicant-military
+    disableGroupWhen: ["no"]
+
+  - label: ""
+    criteriaKey:
+      - applicant_lost_a_service_member
+    disableGroupKey: deceased-military
+    disableGroupWhen: ["no"]
 
 eligibilityCriteria:
   - label: "About you (the person applying for benefits)"
     description: ""
-    criteriaGroupKey: applicant
+    criteriaGroupKey: applicant-basics
     criteriaKeys:
-      - applicant_served_in_active_military
       - applicant_disability
       - applicant_marital_status
 
-  - label: "Did you lose a loved one who served in military?"
+  - label: "About your military service"
     description: ""
-    criteriaGroupKey: military
+    criteriaGroupKey: applicant-military
     criteriaKeys:
+      - applicant_service_status
+      - applicant_minimum_service_requirement
+      - applicant_service_disability
+
+  - label: "About the military service of the person who died"
+    description: ""
+    criteriaGroupKey: deceased-military
+    criteriaKeys:
+      - deceased_service_status
+      - deceased_death_circumstance
+      - deceased_grave_headstone
       - applicant_relationship
-      - deceased_served_in_active_military
-      - deceased_buried_in_unmarked_grave
-      - deceased_headstone_is_privately_purchased
-      - deceased_buried_in_private_cemetery
 ---

@@ -15,10 +15,15 @@ summary: "Some veterans who are buried in a private cemetery, including veterans
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: deceased_served_in_active_military
-    acceptableValues: ["was discharged under conditions other than dishonorable", "died while on active duty"]
-  - criteriaKey: deceased_headstone_is_privately_purchased
-    acceptableValues: [true]
-  - criteriaKey: deceased_buried_in_private_cemetery
+    acceptableValues: ["yes"]
+  - criteriaKey: deceased_service_status
+    acceptableValues:
+      [
+        "an active-duty service member",
+        "discharged under conditions other than dishonorable",
+        "a member of the National Guard or Reserves",
+      ]
+  - criteriaKey: deceased_grave_headstone
     acceptableValues: [true]
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]

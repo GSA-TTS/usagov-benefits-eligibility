@@ -2,6 +2,8 @@ import { shallowMount } from "@vue/test-utils"
 import OpenCloseButtons from "@/components/OpenCloseButtons.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
+const USA_BTN_STYLE = "usa-button--outline"
+
 describe("<OpenCloseButtons/>", () => {
   let actions
 
@@ -38,10 +40,10 @@ describe("<OpenCloseButtons/>", () => {
       actions,
     })
     const button = wrapper.find(".close-all")
-    expect(button.classes()).toContain("usa-button--outline")
+    expect(button.classes()).toContain(USA_BTN_STYLE)
     await button.trigger("click")
     expect(wrapper.emitted("close-all")).toBeTruthy()
-    expect(button.classes()).not.toContain("usa-button--outline")
+    expect(button.classes()).not.toContain(USA_BTN_STYLE)
   })
 
   test("styles openAll button", async () => {
@@ -52,10 +54,10 @@ describe("<OpenCloseButtons/>", () => {
       actions,
     })
     const button = wrapper.find(".open-all")
-    expect(button.classes()).toContain("usa-button--outline")
+    expect(button.classes()).toContain(USA_BTN_STYLE)
     await button.trigger("click")
     expect(wrapper.emitted("open-all")).toBeTruthy()
-    expect(button.classes()).not.toContain("usa-button--outline")
+    expect(button.classes()).not.toContain(USA_BTN_STYLE)
   })
 
   test("click twice Close", async () => {
@@ -81,7 +83,7 @@ describe("<OpenCloseButtons/>", () => {
       actions,
     })
     const button = wrapper.find(".open-all")
-    expect(button.classes()).toContain("usa-button--outline")
+    expect(button.classes()).toContain(USA_BTN_STYLE)
     await button.trigger("click")
     expect(wrapper.emitted("open-all")).toBeTruthy()
     await button.trigger("click")

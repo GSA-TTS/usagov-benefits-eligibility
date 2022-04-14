@@ -56,7 +56,6 @@
         </div>
         <div class="grid-col margin-y-2 text-right">
           <label
-            role="status"
             class="usa-label display-inline margin-right-1"
             for="benefitSort"
             >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
@@ -140,30 +139,27 @@
             role="complementary"
             class="tablet:display-none print:display-none">
             <div class="margin-y-2 print:display-none">
-              <fieldset class="usa-fieldset">
-                <label
-                  role="status"
-                  class="usa-label"
-                  for="benefitSort"
-                  >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
-                >
-                <select
-                  id="benefitSort"
-                  class="usa-select width-full"
-                  name="options"
-                  @change="sortChange">
-                  <option
-                    value="relevance"
-                    :selected="sort === 'relevance'">
-                    Relevance
-                  </option>
-                  <option
-                    value="title"
-                    :selected="sort === 'title'">
-                    Title (A-Z)
-                  </option>
-                </select>
-              </fieldset>
+              <label
+                class="usa-label"
+                for="benefitSortMobile"
+                >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
+              >
+              <select
+                id="benefitSortMobile"
+                class="usa-select width-full"
+                name="options"
+                @change="sortChange">
+                <option
+                  value="relevance"
+                  :selected="sort === 'relevance'">
+                  Relevance
+                </option>
+                <option
+                  value="title"
+                  :selected="sort === 'title'">
+                  Title (A-Z)
+                </option>
+              </select>
             </div>
 
             <OpenCloseButtons

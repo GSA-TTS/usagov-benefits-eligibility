@@ -1,4 +1,4 @@
-import validateDateAgainstAcceptance from "~/services/dateHelper"
+import { validateDateAgainstAcceptance, checkDateValid } from "~/services/dateHelper"
 
 function getTestDateString(daysOffsetFromToday) {
   const testDte = new Date()
@@ -8,7 +8,7 @@ function getTestDateString(daysOffsetFromToday) {
 }
 
 describe("dateHelper", () => {
-  it("should return false when acceptable critieria is invalid", async () => {
+  it("should return false when acceptable critieria is invalid", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
@@ -23,7 +23,7 @@ describe("dateHelper", () => {
     })
     expect(ret).toBe(false)
   })
-  it("should return false when criteria is not met", async () => {
+  it("should return false when criteria is not met", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
@@ -38,7 +38,7 @@ describe("dateHelper", () => {
     })
     expect(ret).toBe(false)
   })
-  it("should return true when criteria is passed (dynamic years)", async () => {
+  it("should return true when criteria is passed (dynamic years)", () => {
     const testDate = getTestDateString(-(365 * 50))
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
@@ -54,7 +54,7 @@ describe("dateHelper", () => {
     })
     expect(ret).toBe(true)
   })
-  it("should return true when criteria is passed (fixed years)", async () => {
+  it("should return true when criteria is passed (fixed years)", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
@@ -72,14 +72,15 @@ describe("dateHelper", () => {
   it("should return null when not selected", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
+      response: null,
     }
     const ret = validateDateAgainstAcceptance({
       criterion,
-      userInputDate: Date.parse(criterion.response),
+      userInputDate: criterion.response,
     })
     expect(ret).toBe(null)
   })
-  it("should return null when not complete", async () => {
+  it("should return null when not complete", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
@@ -94,7 +95,7 @@ describe("dateHelper", () => {
     })
     expect(ret).toBe(null)
   })
-  it("should return true when criteria is passed (same date)", async () => {
+  it("should return true when criteria is passed (same date)", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
@@ -109,7 +110,7 @@ describe("dateHelper", () => {
     })
     expect(ret).toBe(true)
   })
-  it("should return true when criteria is passed (dynamic months)", async () => {
+  it("should return true when criteria is passed (dynamic months)", () => {
     const testDate = getTestDateString(-150)
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
@@ -125,7 +126,7 @@ describe("dateHelper", () => {
     })
     expect(ret).toBe(true)
   })
-  it("should return true when criteria is passed (dynamic days)", async () => {
+  it("should return true when criteria is passed (dynamic days)", () => {
     const testDate = getTestDateString(-29)
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
@@ -142,7 +143,7 @@ describe("dateHelper", () => {
     expect(ret).toBe(true)
   })
 
-  it("should call the correct function when a date", async () => {
+  it("should call the correct function when a date", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
@@ -156,5 +157,60 @@ describe("dateHelper", () => {
       userInputDate: Date.parse(criterion.response),
     })
     expect(ret).toBe(false)
+  })
+
+  it("should return null when invalid acceptance date", async () => {
+    const criterion = {
+      criteriaKey: "applicant_eligible_senior",
+      criteriaKeyHash: "9e63db02",
+      type: "date",
+      acceptableValues: [""],
+      response: "02-25-2021",
+      TEST: true,
+    }
+    const ret = validateDateAgainstAcceptance({
+      criterion,
+      userInputDate: Date.parse(criterion.response),
+    })
+    expect(ret).toBe(null)
+  })
+
+  it("should return false when future input date", async () => {
+    const criterion = {
+      criteriaKey: "applicant_eligible_senior",
+      criteriaKeyHash: "9e63db02",
+      type: "date",
+      acceptableValues: [">60years"],
+      response: "02-25-2050",
+      TEST: true,
+    }
+    const ret = validateDateAgainstAcceptance({
+      criterion,
+      userInputDate: Date.parse(criterion.response),
+    })
+    expect(ret).toBe(false)
+  })
+
+  it("should return null when invalid acceptance date", async () => {
+    const criterion = {
+      criteriaKey: "applicant_eligible_senior",
+      criteriaKeyHash: "9e63db02",
+      type: "date",
+      acceptableValues: [">11-14-1999"],
+      response: "14-38-2021",
+      TEST: true,
+    }
+    const ret = validateDateAgainstAcceptance({
+      criterion,
+      userInputDate: criterion.response,
+    })
+    expect(ret).toBe(false)
+  })
+
+  it("should return correct when invalid user date", async () => {
+    const ret = checkDateValid("11-14-2021")
+    expect(ret).toBe("")
+    expect(checkDateValid("14-44-5000")).toBe("Please enter a valid date.")
+    expect(checkDateValid("11-14-2025")).toBe("Please enter a valid date.")
   })
 })

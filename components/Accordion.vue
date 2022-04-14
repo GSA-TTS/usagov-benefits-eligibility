@@ -4,10 +4,10 @@
     ref="accordion"
     class="usa-accordion usa-accordion--bordered"
     name="benefit-list"
-    tag="div"
+    tag="section"
     aria-multiselectable="true"
     aria-live="polite">
-    <div
+    <article
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
       class="break-inside-avoid margin-bottom-2">
@@ -52,19 +52,22 @@
               target="_blank"
               >{{ benefit.source.name }}</a
             >
+            <!-- //NOSONAR -->
           </h3>
-          <p
+        </template>
+        <fieldset class="usa-fieldset">
+          <legend
             class="usa-prose"
             style="max-width: unset">
             {{ benefit.summary }}
-          </p>
-        </template>
-        <EligibilityList
-          :benefit-eligibility-criteria="benefit.eligibility"
-          :benefit-source="sanitizedBenefitUrl(benefit, '')"
-          :heading-classes="['bg-primary', 'text-white']"
-          :show-icons="showIcons"
-          :show-matching-count="showMatchingCount" />
+          </legend>
+          <EligibilityList
+            :benefit-eligibility-criteria="benefit.eligibility"
+            :benefit-source="sanitizedBenefitUrl(benefit, '')"
+            :heading-classes="['bg-primary', 'text-white']"
+            :show-icons="showIcons"
+            :show-matching-count="showMatchingCount" />
+        </fieldset>
         <ul
           v-if="benefit.source && benefit.source.link"
           class="usa-button-group"
@@ -78,10 +81,11 @@
               class="usa-button print:display-none">
               How to Apply
             </a>
+            <!-- //NOSONAR -->
           </li>
         </ul>
       </div>
-    </div>
+    </article>
   </transition-group>
 </template>
 

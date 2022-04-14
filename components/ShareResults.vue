@@ -15,7 +15,7 @@
         <span class="text-middle">Clear my selections</span>
       </button>
     </div>
-    <h3>Sharing and printing</h3>
+    <h2 class="font-sans-md">Sharing and printing</h2>
     <p class="usa-prose">
       Copy a link to this page with the criteria you selected above. Make sure to share it only with those you trust as
       your answers will be visible.

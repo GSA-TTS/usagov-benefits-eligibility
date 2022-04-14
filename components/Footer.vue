@@ -20,9 +20,9 @@
               <div class="grid-row grid-gap-4">
                 <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
                   <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                    <h4 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
+                    <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
                       About USA.gov
-                    </h4>
+                    </h2>
                     <ul class="usa-list usa-list--unstyled">
                       <li class="usa-footer__secondary-link">
                         <a
@@ -53,9 +53,9 @@
 
                 <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
                   <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                    <h4 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
+                    <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
                       Ask USA.gov a Question
-                    </h4>
+                    </h2>
                     <ul class="usa-list usa-list--unstyled">
                       <li class="usa-footer__secondary-link">
                         <a href="https://www.usa.gov/phone">Call 1-844-USAGOV1 (1-844-872-4681)</a>
@@ -70,9 +70,9 @@
 
                 <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
                   <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                    <h4 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
+                    <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
                       Sign Up to Receive Email Updates
-                    </h4>
+                    </h2>
                     <ul class="usa-list usa-list--unstyled">
                       <li class="usa-footer__secondary-link">
                         <form

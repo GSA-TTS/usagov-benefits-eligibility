@@ -1,16 +1,18 @@
 import { mount, shallowMount } from "@vue/test-utils"
+import { Store } from "vuex"
 import DateInput from "@/components/DateInput.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { state as criteriaState, mutations, getters } from "~/store/criteria"
-import { Store } from "vuex"
 
+const LABEL = "Testing DateInput Label"
 const CRITERIA_KEY = "applicant_senior"
 const PROPS_DATA = {
   criteriaKey: CRITERIA_KEY,
-  label: "Testing DateInput Label",
+  label: LABEL,
   response: "test",
   dateResponse: "11-14-1999",
   location: "benefit-card",
+  TEST: true,
 }
 
 describe("DateInput", () => {
@@ -47,7 +49,7 @@ describe("DateInput", () => {
   })
 
   test("displays with no props", () => {
-    const wrapper = mount(DateInput)
+    const wrapper = mount(DateInput, { propsData: { TEST: true } })
     expect(wrapper.vm).toBeTruthy()
   })
 
@@ -55,10 +57,11 @@ describe("DateInput", () => {
     const wrapper = shallowMount(DateInput, {
       propsData: {
         criteriaKey: CRITERIA_KEY,
-        label: "Testing DateInput Label",
+        label: LABEL,
         response: "test",
         location: "left-rail",
         dateResponse: "00-00-0000",
+        TEST: true,
       },
     })
     expect(wrapper.vm).toBeTruthy()
@@ -73,10 +76,11 @@ describe("DateInput", () => {
     const wrapper = shallowMount(DateInput, {
       propsData: {
         criteriaKey: CRITERIA_KEY,
-        label: "Testing DateInput Label",
+        label: LABEL,
         response: null,
         location: "benefit-card",
         dateResponse: null,
+        TEST: true,
       },
     })
     expect(wrapper.vm).toBeTruthy()
@@ -87,7 +91,7 @@ describe("DateInput", () => {
     expect(wrapper.vm.pullDateValue(null, 0)).toBeDefined()
   })
 
-  test("clicking input values results in update in store", async () => {
+  test("clicking input values results in update in store", () => {
     const wrapper = shallowMount(DateInput, { propsData: PROPS_DATA, store })
     const UID = wrapper.find("input").element.id.split(`-${CRITERIA_KEY}`)[0]
     const monthInput = wrapper.find(`#${UID}-${CRITERIA_KEY}-month`)
@@ -102,5 +106,13 @@ describe("DateInput", () => {
     yearInput.element.value = "2022"
     yearInput.trigger("change")
     expect(actions.updateResponse.mock.calls.length).toBe(3)
+  })
+
+  test("the watch functions for M/D/Y work correctly", async () => {
+    const wrapper = shallowMount(DateInput, { propsData: PROPS_DATA, store })
+    wrapper.vm.$options.watch.dateResponse.call(wrapper.vm, "11-14-1999")
+    expect(wrapper.vm.$data.month).toBe("11")
+    expect(wrapper.vm.$data.day).toBe("14")
+    expect(wrapper.vm.$data.year).toBe("1999")
   })
 })
