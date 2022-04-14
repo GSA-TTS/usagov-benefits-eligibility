@@ -62,9 +62,10 @@
       </div>
     </div>
     <span
-      id="error"
+      :id="`${errUniqueId}-input-error-message`"
+      v:show="errorMessage"
       class="usa-error-message"
-      >{{ check }}</span
+      >{{ errorMessage }}</span
     >
   </fieldset>
 </template>
@@ -107,7 +108,8 @@ export default {
   data() {
     return {
       uniqueId: _.uniqueId("dateinput-"),
-      check: "",
+      errUniqueId: _.uniqueId("error-"),
+      errorMessage: "",
       month: this.pullDateValue(this.dateResponse, 0),
       day: this.pullDateValue(this.dateResponse, 1),
       year: this.pullDateValue(this.dateResponse, 2),
@@ -136,13 +138,14 @@ export default {
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
+    this.errUniqueId = _.uniqueId("error-")
     if (!this.test) {
       this.$store.subscribe((mutation) => {
         if (mutation.type === "criteria/clearSelectedCriteria") {
           this.month = ""
           this.day = ""
           this.year = ""
-          this.check = ""
+          this.errorMessage = ""
         }
       })
     }
@@ -167,8 +170,8 @@ export default {
       const year = this.year
       if (month !== "" && day !== "" && year !== "") {
         const date = `${month}-${day}-${year}`
-        this.check = checkDateValid(date)
-        if (this.check === "") {
+        this.errorMessage = checkDateValid(date)
+        if (this.errorMessage === "") {
           const localCriterion = {
             criteriaKey: key,
             response: date,
