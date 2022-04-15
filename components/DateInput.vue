@@ -139,15 +139,15 @@ export default {
     },
     TEST: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   watch: {
     dateResponse() {
       this.month = this.pullDateValue(this.dateResponse, 0)
       this.day = this.pullDateValue(this.dateResponse, 1)
       this.year = this.pullDateValue(this.dateResponse, 2)
-    },    
+    },
   },
   data() {
     return {
@@ -174,17 +174,16 @@ export default {
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
-    if(!this.TEST){
+    if (!this.TEST) {
       this.$store.subscribe((mutation) => {
-      if(mutation.type === "criteria/clearSelectedCriteria") {
-        this.month = ""
-        this.day = ""
-        this.year = ""
-        this.check = ""
-      }
-    })
+        if (mutation.type === "criteria/clearSelectedCriteria") {
+          this.month = ""
+          this.day = ""
+          this.year = ""
+          this.check = ""
+        }
+      })
     }
-    
   },
   methods: {
     classFromResponse() {
@@ -205,13 +204,18 @@ export default {
       const day = this.day
       const year = this.year
       if (month !== "" && day !== "" && year !== "") {
-        
         const date = `${month}-${day}-${year}`
         this.check = checkDateValid(date)
         if (this.check === "") {
           const localCriterion = {
             criteriaKey: key,
             response: date,
+          }
+          this.$store.dispatch("criteria/updateResponse", localCriterion)
+        } else {
+          const localCriterion = {
+            criteriaKey: key,
+            response: null,
           }
           this.$store.dispatch("criteria/updateResponse", localCriterion)
         }
