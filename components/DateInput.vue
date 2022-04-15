@@ -138,7 +138,6 @@ export default {
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
-    this.errUniqueId = _.uniqueId("error-")
     if (!this.test) {
       this.$store.subscribe((mutation) => {
         if (mutation.type === "criteria/clearSelectedCriteria") {
@@ -175,6 +174,12 @@ export default {
           const localCriterion = {
             criteriaKey: key,
             response: date,
+          }
+          this.$store.dispatch("criteria/updateResponse", localCriterion)
+        } else {
+          const localCriterion = {
+            criteriaKey: key,
+            response: null,
           }
           this.$store.dispatch("criteria/updateResponse", localCriterion)
         }
