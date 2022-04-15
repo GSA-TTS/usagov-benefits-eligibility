@@ -6,7 +6,8 @@
       "@/*": ["./*"],
       "~~/*": ["./*"],
       "@@/*": ["./*"]
-    }
+    },
+    "jsx": "preserve"
   },
   "vueCompilerOptions": {
     "experimentalCompatMode": 2,
