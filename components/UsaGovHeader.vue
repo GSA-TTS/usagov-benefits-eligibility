@@ -5,7 +5,7 @@
       href="#main-content"
       >{{ $t("skipnav") }}</a
     >
-
+    <!-- USWDS Banner -->
     <section
       class="usa-banner"
       aria-label="Official government website">
@@ -114,29 +114,23 @@
               ><img
                 src="https://app-usa-modeast-prod-a01239f-ecas.s3.amazonaws.com/Logo_USAGov.png"
                 alt="USAGov Logo"
+                width="80"
             /></a>
           </em>
         </div>
-        <a
-          class="language-toggle-mobile"
-          href="/espanol/"
-          lang="es"
-          xml:lang="es">
-          Español
-        </a>
+
         <button class="usa-menu-btn">MENU</button>
       </div>
 
       <nav
         aria-labelledby="navi"
-        class="usa-nav"
+        class="usa-nav border-base-lighter border-bottom-1px"
         aria-hidden="false">
-        <!-- TODO: Bring this back -->
-        <!-- <div
+        <div
           id="navi"
           class="usa-sr-only">
           Main Navigation
-        </div> -->
+        </div>
         <div class="usa-nav__inner">
           <div class="usa-nav__secondary">
             <button class="usa-nav__close">Close</button>
@@ -184,7 +178,8 @@
               </li>
             </ul>
           </div>
-          <!-- TODO: Mobile nav? -->
+          <!-- TODO: Mobile nav?  Maybe we don't need it?-->
+
           <!-- <ul
             id="mobile-nav"
             class="">
@@ -1594,7 +1589,7 @@
             <li class="usa-nav__primary-item">
               <a
                 class="usa-nav__link"
-                href="/#tpcs">
+                href="https://www.usa.gov/#tpcs">
                 <span>All Topics and Services</span>
               </a>
             </li>
@@ -1612,26 +1607,25 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="/branches-of-government">Branches of the U.S. Government</a>
+                        <a href="https://www.usa.gov/branches-of-government">Branches of the U.S. Government</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="/budget">Budget of the U.S. Government</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/statistics">Data and Statistics About the U.S.</a>
+                        <a href="https://www.usa.gov/budget">Budget of the U.S. Government</a>
                       </li>
-                      <li class="topic-link topic-nav-flag">
-                        <a
-                          class="usa-button"
-                          href="/about-the-us"
-                          >About the U.S.</a
-                        >
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/statistics">Data and Statistics About the U.S.</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="/history">History and Historical Documents</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/history">History and Historical Documents</a>
+                      </li>
                       <li class="usa-nav__submenu-item"><a href="/flag">American Flag</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/life-in-the-us">Learn About Life in the U.S.</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="/life-in-the-us">Learn About Life in the U.S.</a>
+                      </li>
                     </ul>
                   </div>
                   <div class="usa-col">
@@ -1645,6 +1639,18 @@
                       <li class="usa-nav__submenu-item"><a href="/laws">Laws and Legal Issues</a></li>
                     </ul>
                   </div>
+                </div>
+                <div class="topic-link topic-nav-flag">
+                  <img
+                    src="https://www.usa.gov/images/Topic_Icon_About_USA_White.svg"
+                    alt="U.S. Flag"
+                    width="55"
+                    class="va-middle" />
+                  <a
+                    class="usa-button"
+                    href="https://www.usa.gov/about-the-us">
+                    About the U.S.
+                  </a>
                 </div>
               </div>
             </li>
@@ -1666,13 +1672,6 @@
                         <a href="/state-social-services">State Social Service Agencies</a>
                       </li>
                       <li class="usa-nav__submenu-item"><a href="/help-with-bills">Help with Bills</a></li>
-                      <li class="topic-link topic-nav-benefit">
-                        <a
-                          class="usa-button"
-                          href="/benefits-grants-loans"
-                          >Benefits, Grants, Loans</a
-                        >
-                      </li>
                     </ul>
                   </div>
                   <div class="usa-col">
@@ -1700,6 +1699,18 @@
                     </ul>
                   </div>
                 </div>
+                <div class="topic-link topic-nav-benefit">
+                  <img
+                    src="https://www.usa.gov/images/Topic_Icon_Benefit_White.svg"
+                    alt="U.S. Money"
+                    width="55"
+                    class="va-middle" />
+                  <a
+                    class="usa-button"
+                    href="/benefits-grants-loans"
+                    >Benefits, Grants, Loans</a
+                  >
+                </div>
               </div>
             </li>
             <li class="usa-nav__primary-item">
@@ -1722,13 +1733,6 @@
                         <a href="/state-tribal-governments">State, Local, and Tribal Governments</a>
                       </li>
                       <li class="usa-nav__submenu-item"><a href="/elected-officials">Contact Elected Officials</a></li>
-                      <li class="topic-link topic-nav-agencies">
-                        <a
-                          class="usa-button"
-                          href="/agencies"
-                          >Government Agencies and Elected Officials</a
-                        >
-                      </li>
                     </ul>
                   </div>
                   <div class="usa-col">
@@ -1751,6 +1755,18 @@
                     </ul>
                   </div>
                 </div>
+                <div class="topic-link topic-nav-agencies">
+                  <img
+                    src="https://www.usa.gov/images/Topic_Icon_Elected_Officials_White.svg"
+                    alt="person in front of government building"
+                    width="55"
+                    class="va-middle" />
+                  <a
+                    class="usa-button"
+                    href="/agencies"
+                    >Government Agencies and Elected Officials</a
+                  >
+                </div>
               </div>
             </li>
             <li class="usa-nav__primary-item">
@@ -1769,13 +1785,6 @@
                       <li class="usa-nav__submenu-item"><a href="/job-search">Looking for a New Job</a></li>
                       <li class="usa-nav__submenu-item"><a href="/unemployment">Unemployment Help</a></li>
                       <li class="usa-nav__submenu-item"><a href="/labor-laws">Labor Laws and Issues</a></li>
-                      <li class="topic-link topic-nav-job">
-                        <a
-                          class="usa-button"
-                          href="/jobs-and-unemployment"
-                          >Jobs and Unemployment</a
-                        >
-                      </li>
                     </ul>
                   </div>
                   <div class="usa-col">
@@ -1785,6 +1794,18 @@
                       <li class="usa-nav__submenu-item"><a href="/business">Small Business</a></li>
                     </ul>
                   </div>
+                </div>
+                <div class="topic-link topic-nav-job">
+                  <img
+                    src="	https://www.usa.gov/images/Topic_Icon_Job_White.svg"
+                    alt="suitcase"
+                    width="55"
+                    class="va-middle" />
+                  <a
+                    class="usa-button"
+                    href="/jobs-and-unemployment"
+                    >Jobs and Unemployment</a
+                  >
                 </div>
               </div>
             </li>
@@ -1806,13 +1827,6 @@
                       <li class="usa-nav__submenu-item">
                         <a href="/spend-save-invest">Spending, Saving and Investing</a>
                       </li>
-                      <li class="topic-link topic-nav-tax">
-                        <a
-                          class="usa-button"
-                          href="/money"
-                          >Money and Taxes</a
-                        >
-                      </li>
                     </ul>
                   </div>
                   <div class="usa-col">
@@ -1833,6 +1847,18 @@
                       <li class="usa-nav__submenu-item"><a href="/retirement">Retirement</a></li>
                     </ul>
                   </div>
+                </div>
+                <div class="topic-link topic-nav-tax">
+                  <img
+                    src="https://www.usa.gov/images/Topic_Icon_Money_White.svg"
+                    alt="money sign"
+                    width="55"
+                    class="va-middle" />
+                  <a
+                    class="usa-button"
+                    href="/money"
+                    >Money and Taxes</a
+                  >
                 </div>
               </div>
             </li>
@@ -1858,13 +1884,6 @@
                       <li class="usa-nav__submenu-item">
                         <a href="/visas-and-visitors">Visas and Visiting the U.S.</a>
                       </li>
-                      <li class="topic-link topic-nav-globe">
-                        <a
-                          class="usa-button"
-                          href="/travel-and-immigration"
-                          >Travel and Immigration</a
-                        >
-                      </li>
                     </ul>
                   </div>
                   <div class="usa-col">
@@ -1875,12 +1894,40 @@
                     </ul>
                   </div>
                 </div>
+                <li class="topic-link topic-nav-globe">
+                  <img
+                    src="https://www.usa.gov/images/Topic_Icon_Immigration_White.svg"
+                    alt="earth globe"
+                    width="55"
+                    class="va-middle" />
+                  <a
+                    class="usa-button"
+                    href="/travel-and-immigration"
+                    >Travel and Immigration</a
+                  >
+                </li>
               </div>
             </li>
           </ul>
         </div>
       </nav>
     </header>
+    <div class="grid-container margin-2">
+      <div class="display-flex flex-justify">
+        <a
+          href="https://www.usa.gov/benefits-grants-loans"
+          class="back-benefit font-serif-md">
+          Benefits, Grants, Loans
+        </a>
+        <a
+          class="language-toggle-mobile"
+          href="/espanol/"
+          lang="es"
+          xml:lang="es">
+          Español
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -1890,4 +1937,68 @@ export default {}
 
 <style
   lang="scss"
-  scoped></style>
+  scoped>
+// Primary Colors
+$dark-blue: #11385b; //NOTE not currently in our code
+$aqua-blue: #02bfe7; //highlights action items and key areas (buttons, borders, etc)
+$white: #ffffff; //site background, text on dark
+
+// Supporting Colors
+$dark-gray: #4b4b4d; //footer primary
+$light-gray: #d9d9d9; //footer secondary
+$beige: #ebe6de; //leftnav
+$red: #c61f0c; //h1, leftnav current item, featurebox h2
+$blue: #154285; //standard links, h2, leftnav header
+$black: #000000; //standard text, h3
+
+// Other Colors
+$h3: $dark-gray;
+$button-text: $black;
+$aqua-darker: #00a6d2; //hover
+$lang-toggle: $dark-blue;
+$AZ-button: $blue;
+$AZ-button-disabled: #859cba;
+
+.va-middle {
+  vertical-align: middle;
+}
+.back-benefit {
+  color: #154285;
+  text-decoration: none;
+  &:before {
+    content: "< ";
+    font-weight: normal;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.language-toggle-mobile {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 20px 5px 20px;
+  background: $dark-blue;
+  font-size: 90%;
+}
+
+// NAVIGATION
+.usa-header-extended .usa-nav-primary {
+  background-color: $dark-blue;
+}
+.usa-nav__submenu-list {
+  background-color: $dark-blue;
+}
+.usa-nav__submenu.usa-megamenu {
+  background-color: $dark-blue;
+}
+.usa-nav__primary button[aria-expanded="true"] {
+  background-color: $dark-blue;
+}
+.topic-link {
+  margin-top: 1rem;
+}
+.topic-link .usa-button {
+  background-color: $aqua-blue;
+  color: $black;
+}
+</style>
