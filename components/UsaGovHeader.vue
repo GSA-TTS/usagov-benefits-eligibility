@@ -132,52 +132,11 @@
           Main Navigation
         </div>
         <div class="usa-nav__inner">
-          <div class="usa-nav__secondary">
-            <button class="usa-nav__close">Close</button>
-            <form
-              action="https://search.usa.gov/search"
-              method="get"
-              name="search_form"
-              accept-charset="UTF-8"
-              class="usa-search usa-search--small">
-              <div
-                role="search"
-                aria-labelledby="top-srch">
-                <label
-                  id="top-srch"
-                  class="usa-sr-only"
-                  for="search-field-small"
-                  >Search</label
-                >
-                <input
-                  id="affiliate"
-                  name="affiliate"
-                  type="hidden"
-                  value="usagov" />
-                <input
-                  id="search-field-small"
-                  type="search"
-                  name="query"
-                  placeholder=""
-                  onfocus="this.placeholder = ''"
-                  class="text usagov-search-autocomplete ui-autocomplete-input"
-                  autocomplete="off"
-                  aria-autocomplete="list"
-                  aria-haspopup="true" />
-                <button type="submit">
-                  <span class="usa-sr-only">Search</span>
-                </button>
-              </div>
-            </form>
-            <ul class="usa-unstyled-list usa-nav-secondary-links">
-              <li class="js-search-button-container">
-                <button class="usa-header-search-button js-search-button">Search</button>
-              </li>
-              <li>
-                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
-              </li>
-            </ul>
-          </div>
+          <button class="usa-nav__close">
+            <img
+              src="@/assets/img/close.svg"
+              alt="Close" />
+          </button>
 
           <ul class="usa-nav__primary usa-accordion usa-accordion-escapable">
             <li class="usa-nav__primary-item">
@@ -529,11 +488,67 @@
               </div>
             </li>
           </ul>
+
+          <div class="usa-nav__secondary flex-row">
+            <form
+              action="https://search.usa.gov/search"
+              method="get"
+              name="search_form"
+              accept-charset="UTF-8"
+              class="usa-search usa-search--small">
+              <div
+                role="search"
+                aria-labelledby="top-srch">
+                <label
+                  id="top-srch"
+                  class="usa-sr-only"
+                  for="search-field-small"
+                  >Search</label
+                >
+                <input
+                  id="affiliate"
+                  name="affiliate"
+                  type="hidden"
+                  value="usagov" />
+                <input
+                  id="search-field-small"
+                  type="search"
+                  name="query"
+                  placeholder=""
+                  onfocus="this.placeholder = ''"
+                  class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  aria-haspopup="true" />
+                <button
+                  class="usa-button"
+                  type="submit">
+                  <img
+                    src="https://www.usa.gov/images/search-dark.svg"
+                    class="usa-search__submit-icon"
+                    alt="Search" />
+                </button>
+              </div>
+            </form>
+            <ul class="usa-nav__secondary-links width-full">
+              <li class="usa-nav__secondary-item">
+                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
+              </li>
+            </ul>
+            <!-- <ul class="usa-unstyled-list usa-nav-secondary-links">
+              <li class="js-search-button-container">
+                <button class="usa-header-search-button js-search-button">Search</button>
+              </li>
+              <li>
+                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
+              </li>
+            </ul> -->
+          </div>
         </div>
       </nav>
     </header>
-    <div class="grid-container margin-2">
-      <div class="display-flex flex-justify">
+    <div class="grid-container margin-y-2">
+      <div class="display-row display-flex flex-justify">
         <a
           href="https://www.usa.gov/benefits-grants-loans"
           class="back-benefit font-serif-md">
@@ -620,5 +635,17 @@ $AZ-button-disabled: #859cba;
 .topic-link .usa-button {
   background-color: $aqua-blue;
   color: $black;
+}
+
+// SEARCH
+@media screen and (min-width: 951px) {
+  header [role="search"] {
+    min-width: 20rem;
+  }
+}
+@media screen and (min-width: 481px) {
+  input#search-field-small {
+    width: calc(100% - 4.5rem);
+  }
 }
 </style>
