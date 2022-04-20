@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils"
-import LifeEventsPage from "@/pages/index.vue"
+import LifeEventsPage from "~/pages/index.vue.old"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
 

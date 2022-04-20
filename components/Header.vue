@@ -173,41 +173,6 @@
               </button>
             </form>
           </div>
-          <ul class="usa-nav__primary usa-accordion">
-            <li
-              v-if="isLifeEventPage"
-              class="usa-nav__primary-item">
-              <nuxt-link
-                to="/"
-                class="usa-nav__link">
-                <span>Benefits by life event</span>
-              </nuxt-link>
-            </li>
-            <li
-              v-else
-              class="usa-nav__primary-item">
-              <nuxt-link
-                to="/"
-                exact
-                class="usa-nav__link">
-                <span>Benefits by life event</span>
-              </nuxt-link>
-            </li>
-            <li class="usa-nav__primary-item">
-              <nuxt-link
-                to="/types"
-                class="usa-nav__link">
-                <span>Benefits by type</span>
-              </nuxt-link>
-            </li>
-            <li class="usa-nav__primary-item">
-              <nuxt-link
-                to="/agencies"
-                class="usa-nav__link">
-                <span>Benefits by agency</span>
-              </nuxt-link>
-            </li>
-          </ul>
         </div>
       </nav>
     </header>
