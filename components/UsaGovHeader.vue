@@ -535,14 +535,6 @@
                 <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
               </li>
             </ul>
-            <!-- <ul class="usa-unstyled-list usa-nav-secondary-links">
-              <li class="js-search-button-container">
-                <button class="usa-header-search-button js-search-button">Search</button>
-              </li>
-              <li>
-                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
-              </li>
-            </ul> -->
           </div>
         </div>
       </nav>
