@@ -15,7 +15,7 @@
             <div class="grid-col-auto">
               <img
                 class="usa-banner__header-flag"
-                src="../assets/img/us_flag_small.png"
+                src="@/assets/img/us_flag_small.png"
                 alt="U.S. flag" />
             </div>
             <div class="grid-col-fill tablet:grid-col-auto">
@@ -42,7 +42,7 @@
             <div class="usa-banner__guidance tablet:grid-col-6">
               <img
                 class="usa-banner__icon usa-media-block__img"
-                src="../assets/img/icon-dot-gov.svg"
+                src="@/assets/img/icon-dot-gov.svg"
                 alt="government"
                 aria-hidden="true" />
               <div class="usa-media-block__body">
@@ -61,7 +61,7 @@
             <div class="usa-banner__guidance tablet:grid-col-6">
               <img
                 class="usa-banner__icon usa-media-block__img"
-                src="../assets/img/icon-https.svg"
+                src="@/assets/img/icon-https.svg"
                 alt="https secure"
                 aria-hidden="true" />
               <div class="usa-media-block__body">
@@ -109,7 +109,7 @@
           class="usa-logo">
           <em class="usa-logo__text">
             <a
-              href="/"
+              href="https://www.usa.gov/"
               title="USAGov Logo"
               ><img
                 src="https://app-usa-modeast-prod-a01239f-ecas.s3.amazonaws.com/Logo_USAGov.png"
@@ -174,7 +174,7 @@
                 <button class="usa-header-search-button js-search-button">Search</button>
               </li>
               <li>
-                <a href="/phone">1-844-USA-GOV1</a>
+                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
               </li>
             </ul>
           </div>
@@ -216,21 +216,23 @@
                       <li class="usa-nav__submenu-item">
                         <a href="https://www.usa.gov/history">History and Historical Documents</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="/flag">American Flag</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/flag">American Flag</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/life-in-the-us">Learn About Life in the U.S.</a>
+                        <a href="https://www.usa.gov/life-in-the-us">Learn About Life in the U.S.</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="/presidents">Presidents, Vice Presidents, and First Ladies</a>
+                        <a href="https://www.usa.gov/presidents">Presidents, Vice Presidents, and First Ladies</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/agencies">Government Agencies and Elected Officials</a>
+                        <a href="https://www.usa.gov/agencies">Government Agencies and Elected Officials</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="/laws">Laws and Legal Issues</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/laws">Laws and Legal Issues</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -261,35 +263,43 @@
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="/benefits">Benefits</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/benefits">Benefits</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/state-social-services">State Social Service Agencies</a>
+                        <a href="https://www.usa.gov/state-social-services">State Social Service Agencies</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="/help-with-bills">Help with Bills</a></li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="/grants">Grants and Loans</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/food-help">Food Assistance</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/about-social-security">Social Security Questions</a>
+                        <a href="https://www.usa.gov/help-with-bills">Help with Bills</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="/finding-home">Affordable Rental Housing</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/financial-aid">Financial Aid for Students</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/grants">Grants and Loans</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/food-help">Food Assistance</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/military-assistance">Military Programs and Benefits</a>
+                        <a href="https://www.usa.gov/about-social-security">Social Security Questions</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="/retirement">Retirement</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/unemployment">Unemployment Help</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/finding-home">Affordable Rental Housing</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/financial-aid">Financial Aid for Students</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/military-assistance">Military Programs and Benefits</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="usa-col">
+                    <ul class="usa-nav__submenu-list">
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/retirement">Retirement</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/unemployment">Unemployment Help</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -301,7 +311,7 @@
                     class="va-middle" />
                   <a
                     class="usa-button"
-                    href="/benefits-grants-loans"
+                    href="https://www.usa.gov/benefits-grants-loans"
                     >Benefits, Grants, Loans</a
                   >
                 </div>
@@ -321,31 +331,37 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="/federal-agencies">A-Z Index of U.S. Government Agencies</a>
+                        <a href="https://www.usa.gov/federal-agencies">A-Z Index of U.S. Government Agencies</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/state-tribal-governments">State, Local, and Tribal Governments</a>
+                        <a href="https://www.usa.gov/state-tribal-governments">State, Local, and Tribal Governments</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="/elected-officials">Contact Elected Officials</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/elected-officials">Contact Elected Officials</a>
+                      </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="/forms">Forms, by Agency</a>
+                        <a href="https://www.usa.gov/forms">Forms, by Agency</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/buy-from-government">Buying from the U.S. Government</a>
+                        <a href="https://www.usa.gov/buy-from-government">Buying from the U.S. Government</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="/about-the-us">About the U.S.</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/about-the-us">About the U.S.</a>
+                      </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="/branches-of-government">Branches of the U.S. Government</a>
+                        <a href="https://www.usa.gov/branches-of-government">Branches of the U.S. Government</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="/budget">Budget of the U.S. Government</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/budget">Budget of the U.S. Government</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -357,7 +373,7 @@
                     class="va-middle" />
                   <a
                     class="usa-button"
-                    href="/agencies"
+                    href="https://www.usa.gov/agencies"
                     >Government Agencies and Elected Officials</a
                   >
                 </div>
@@ -376,16 +392,24 @@
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="/job-search">Looking for a New Job</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/unemployment">Unemployment Help</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/labor-laws">Labor Laws and Issues</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/job-search">Looking for a New Job</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/unemployment">Unemployment Help</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/labor-laws">Labor Laws and Issues</a>
+                      </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="/federal-employees">U.S. Government Employees</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/retirement">Retirement</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/business">Small Business</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/federal-employees">U.S. Government Employees</a>
+                      </li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/retirement">Retirement</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/business">Small Business</a></li>
                     </ul>
                   </div>
                 </div>
@@ -397,7 +421,7 @@
                     class="va-middle" />
                   <a
                     class="usa-button"
-                    href="/jobs-and-unemployment"
+                    href="https://www.usa.gov/jobs-and-unemployment"
                     >Jobs and Unemployment</a
                   >
                 </div>
@@ -416,29 +440,31 @@
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="/taxes">Taxes</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/credit-and-debt">Credit and Debt</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/taxes">Taxes</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/spend-save-invest">Spending, Saving and Investing</a>
+                        <a href="https://www.usa.gov/credit-and-debt">Credit and Debt</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/spend-save-invest">Spending, Saving and Investing</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="/unclaimed-money">Unclaimed Money from the Government</a>
+                        <a href="https://www.usa.gov/unclaimed-money">Unclaimed Money from the Government</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="/currency">Currency</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/currency">Currency</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/benefits-grants-loans">Benefits, Grants, Loans</a>
+                        <a href="https://www.usa.gov/benefits-grants-loans">Benefits, Grants, Loans</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="/consumer">Consumer Issues</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/housing">Housing</a></li>
-                      <li class="usa-nav__submenu-item"><a href="/retirement">Retirement</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/consumer">Consumer Issues</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/housing">Housing</a></li>
+                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/retirement">Retirement</a></li>
                     </ul>
                   </div>
                 </div>
@@ -450,7 +476,7 @@
                     class="va-middle" />
                   <a
                     class="usa-button"
-                    href="/money"
+                    href="https://www.usa.gov/money"
                     >Money and Taxes</a
                   >
                 </div>
@@ -470,20 +496,20 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="/travel-abroad">Passports and International Travel</a>
+                        <a href="https://www.usa.gov/travel-abroad">Passports and International Travel</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/immigration-and-citizenship">Immigration and Citizenship</a>
+                        <a href="https://www.usa.gov/immigration-and-citizenship">Immigration and Citizenship</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="/visas-and-visitors">Visas and Visiting the U.S.</a>
+                        <a href="https://www.usa.gov/visas-and-visitors">Visas and Visiting the U.S.</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="/recreation-and-travel">Recreation and Travel within the U.S.</a>
+                        <a href="https://www.usa.gov/recreation-and-travel">Recreation and Travel within the U.S.</a>
                       </li>
                     </ul>
                   </div>
@@ -496,7 +522,7 @@
                     class="va-middle" />
                   <a
                     class="usa-button"
-                    href="/travel-and-immigration"
+                    href="https://www.usa.gov/travel-and-immigration"
                     >Travel and Immigration</a
                   >
                 </li>
@@ -515,7 +541,7 @@
         </a>
         <a
           class="language-toggle-mobile"
-          href="/espanol/"
+          href="https://www.usa.gov/espanol/"
           lang="es"
           xml:lang="es">
           Español
