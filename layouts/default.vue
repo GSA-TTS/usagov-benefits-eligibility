@@ -1,12 +1,19 @@
 <template>
-  <div>
-    <UsaGovHeader v-if="isUsaGov" />
-    <Header v-else />
+  <div v-if="isUsaGov">
+    <div>
+      <UsaGovHeader />
+      <main id="main-content">
+        <Nuxt />
+      </main>
+      <UsaGovFooter />
+    </div>
+  </div>
+  <div v-else>
+    <Header />
     <main id="main-content">
       <Nuxt />
     </main>
-    <UsaGovFooter v-if="isUsaGov" />
-    <Footer v-else />
+    <Footer />
   </div>
 </template>
 
