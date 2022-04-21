@@ -7,27 +7,28 @@
       <div class="usa-summary-box__text">
         <form class="usa-form">
           <fieldset class="usa-fieldset">
-            <template v-for="criteriaGroup in topLevelFilters">
-              <div :key="criteriaGroup.criteriaGroupKey">
-                <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKey)">
-                  <legend
-                    v-if="criteriaGroup.label"
-                    :id="`summary-box-key-information-${uniqueId}`"
-                    :key="`heading-${criterion.criteriaKey}`">
-                    <h2 class="usa-summary-box__heading">
-                      {{ criteriaGroup.label }}
-                    </h2>
-                  </legend>
-                  <CriteriaChild
-                    :key="criterion.criteriaKey"
-                    :criteria-key="criterion.criteriaKey"
-                    :label="criterion.label"
-                    :values="criterion.values.split('; ')"
-                    :type="criterion.type"
-                    :criteria-group-key="criteriaGroup.criteriaGroupKey"
-                    :response="criterion.response"
-                    class="margin-y-2 tablet:margin-y-3" />
-                </template>
+            <template v-for="filter in topLevelFilters">
+              <legend
+                v-if="filter.label"
+                :key="`legend-${filter.criteriaKey}-${uniqueId}`">
+                <h2
+                  id="summary-box-key-information"
+                  class="usa-summary-box__heading">
+                  {{ filter.label }}
+                </h2>
+              </legend>
+              <div
+                :key="`heading-${filter.criteriaKey}`"
+                :criterion="(criterion = getCriterionByEligibilityKey(filter.criteriaKey))">
+                <CriteriaChild
+                  :key="`${criterion.criteriaKey}-${uniqueId}`"
+                  :criteria-key="criterion.criteriaKey"
+                  :label="criterion.label"
+                  :type="criterion.type"
+                  :values="criterion.values.split('; ')"
+                  :criteria-group-key="criterion.criterionKey"
+                  :response="criterion.response"
+                  class="margin-y-2 tablet:margin-y-3" />
               </div>
             </template>
           </fieldset>
@@ -40,13 +41,9 @@
 <script>
 import { mapGetters } from "vuex"
 import _ from "lodash"
-import CriteriaChild from "./CriteriaChild.vue"
 
 export default {
   name: "SummaryBox",
-  components: {
-    CriteriaChild,
-  },
   props: {
     topLevelFilters: {
       type: Array,
@@ -64,14 +61,7 @@ export default {
     }),
   },
   mounted() {
-    this.uniqueId = _.uniqueId("summary-box-")
-  },
-  methods: {
-    getCriteriaMap(criteriaKeys) {
-      return criteriaKeys.map((criterionKey) => {
-        return this.getCriterionByEligibilityKey(criterionKey)
-      })
-    },
+    this.uniqueId = _.uniqueId("id-")
   },
 }
 </script>

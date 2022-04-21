@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils"
 import { Store } from "vuex"
 import SummaryBox from "@/components/SummaryBox.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import { state as criteriaState, mutations, getters } from "~/store/criteria"
+import { actions, getters, mutations, state as criteriaState } from "~/store/criteria"
 
 const MOCK_CRITERIA = [
   {
@@ -23,7 +23,6 @@ const MOCK_CRITERIA = [
 
 describe("<SummaryBox />", () => {
   let store
-  let actions
 
   beforeAll(async () => {
     await beforeAllTests()
@@ -31,10 +30,6 @@ describe("<SummaryBox />", () => {
 
   beforeEach(() => {
     criteriaState.namespaced = true
-
-    actions = {
-      getCriteriaMap: jest.fn(),
-    }
 
     store = new Store({
       modules: {
@@ -67,6 +62,5 @@ describe("<SummaryBox />", () => {
 
     await wrapper.vm.$nextTick()
     expect(wrapper.vm).toBeTruthy()
-    // expect(actions.getCriteriaMap).toHaveBeenCalled()
   })
 })
