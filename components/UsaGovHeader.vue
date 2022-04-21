@@ -553,4 +553,17 @@ $AZ-button-disabled: #859cba;
     width: calc(100% - 4.5rem);
   }
 }
+
+@media (min-width: 64em) {
+  .usa-megamenu.usa-nav__submenu::before,
+  .usa-megamenu.usa-nav__submenu::after {
+    background-color: $dark-blue;
+    border-bottom: 3px solid $aqua-blue;
+    margin-bottom: -3px;
+  }
+
+  .usa-nav__submenu {
+    border-bottom: 3px solid $aqua-blue;
+  }
+}
 </style>
