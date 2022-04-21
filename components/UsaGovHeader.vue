@@ -62,7 +62,8 @@
               </button>
               <div
                 id="megamenu-1"
-                class="usa-nav__submenu usa-megamenu">
+                class="usa-nav__submenu usa-megamenu"
+                hidden>
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
@@ -125,7 +126,8 @@
               </button>
               <div
                 id="megamenu-2"
-                class="usa-nav__submenu usa-megamenu">
+                class="usa-nav__submenu usa-megamenu"
+                hidden>
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
@@ -192,7 +194,8 @@
               </button>
               <div
                 id="megamenu-3"
-                class="usa-nav__submenu usa-megamenu">
+                class="usa-nav__submenu usa-megamenu"
+                hidden>
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
@@ -254,7 +257,8 @@
               </button>
               <div
                 id="megamenu-4"
-                class="usa-nav__submenu usa-megamenu">
+                class="usa-nav__submenu usa-megamenu"
+                hidden>
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
@@ -302,7 +306,8 @@
               </button>
               <div
                 id="megamenu-5"
-                class="usa-nav__submenu usa-megamenu">
+                class="usa-nav__submenu usa-megamenu"
+                hidden>
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
@@ -357,7 +362,8 @@
               </button>
               <div
                 id="megamenu-6"
-                class="usa-nav__submenu usa-megamenu">
+                class="usa-nav__submenu usa-megamenu"
+                hidden>
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
