@@ -5,9 +5,7 @@
       href="#main-content"
       >{{ $t("skipnav") }}</a
     >
-
     <TheBanner />
-
     <div class="usa-overlay" />
     <header class="usa-header usa-header--extended">
       <div class="usa-navbar display-flex flex-justify flex-align-center flex-justify-center">
