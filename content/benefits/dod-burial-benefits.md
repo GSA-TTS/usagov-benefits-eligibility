@@ -4,7 +4,7 @@ headline: "Burial Benefits"
 tags:
   - "burial and funeral assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "military-service"
 source:
   name: "Department of Defense"
