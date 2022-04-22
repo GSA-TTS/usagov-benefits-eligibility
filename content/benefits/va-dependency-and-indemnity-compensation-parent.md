@@ -4,7 +4,7 @@ headline: "Dependency and Indemnity Compensation (DIC) for Parent"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
