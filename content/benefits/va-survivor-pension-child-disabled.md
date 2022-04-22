@@ -4,7 +4,7 @@ headline: "Survivor Pension for Child with Disabilities"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "military-service"
   - "disability"
 source:
