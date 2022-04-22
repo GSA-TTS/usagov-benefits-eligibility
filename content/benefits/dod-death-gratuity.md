@@ -4,7 +4,7 @@ headline: "Death Gratuity"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "military-service"
 source:
   name: "Department of Defense"
