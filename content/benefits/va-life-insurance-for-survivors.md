@@ -4,7 +4,7 @@ headline: "Life Insurance (payout for survivors following veteran's death)"
 tags:
   - "life insurance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
