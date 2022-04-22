@@ -4,7 +4,7 @@ headline: "Public Safety Officers' Educational Assistance Program"
 tags:
   - "educational assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "school-and-education"
 source:
   name: "U.S. Department of Justice"
