@@ -108,7 +108,7 @@
                     src="https://www.usa.gov/images/Topic_Icon_About_USA_White.svg"
                     alt="U.S. Flag"
                     width="55"
-                    class="va-middle" />
+                    class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/about-the-us">
@@ -176,7 +176,7 @@
                     src="https://www.usa.gov/images/Topic_Icon_Benefit_White.svg"
                     alt="U.S. Money"
                     width="55"
-                    class="va-middle" />
+                    class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/benefits-grants-loans"
@@ -239,7 +239,7 @@
                     src="https://www.usa.gov/images/Topic_Icon_Elected_Officials_White.svg"
                     alt="person in front of government building"
                     width="55"
-                    class="va-middle" />
+                    class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/agencies"
@@ -288,7 +288,7 @@
                     src="	https://www.usa.gov/images/Topic_Icon_Job_White.svg"
                     alt="suitcase"
                     width="55"
-                    class="va-middle" />
+                    class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/jobs-and-unemployment"
@@ -344,7 +344,7 @@
                     src="https://www.usa.gov/images/Topic_Icon_Money_White.svg"
                     alt="money sign"
                     width="55"
-                    class="va-middle" />
+                    class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/money"
@@ -391,7 +391,7 @@
                     src="https://www.usa.gov/images/Topic_Icon_Immigration_White.svg"
                     alt="earth globe"
                     width="55"
-                    class="va-middle" />
+                    class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/travel-and-immigration"
@@ -534,6 +534,9 @@ $AZ-button-disabled: #859cba;
 .usa-nav__primary button[aria-expanded="true"] {
   background-color: $dark-blue;
 }
+.usa-nav__primary button[aria-expanded="true"] span {
+  color: white;
+}
 .topic-link {
   margin-top: 1rem;
 }
@@ -543,18 +546,18 @@ $AZ-button-disabled: #859cba;
 }
 
 // SEARCH
-@media screen and (min-width: 951px) {
+@media only screen and(min-width: 60em) {
   header [role="search"] {
     min-width: 20rem;
   }
 }
-@media screen and (min-width: 481px) {
+@media only screen and (min-width: 30em) {
   input#search-field-small {
     width: calc(100% - 4.5rem);
   }
 }
 
-@media (min-width: 64em) {
+@media only screen and (min-width: 64em) {
   .usa-megamenu.usa-nav__submenu::before,
   .usa-megamenu.usa-nav__submenu::after {
     background-color: $dark-blue;
@@ -564,6 +567,16 @@ $AZ-button-disabled: #859cba;
 
   .usa-nav__submenu {
     border-bottom: 3px solid $aqua-blue;
+  }
+
+  .usa-nav__primary .usa-accordion__button span {
+    color: #154285;
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  .usa-nav__primary a:not(.usa-button):not(.usa-current):not(.usa-nav__link) {
+    color: white;
   }
 }
 </style>
