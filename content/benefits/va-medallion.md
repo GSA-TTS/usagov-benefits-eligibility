@@ -4,7 +4,7 @@ headline: "Burial marker for veterans"
 tags:
   - "burial and funeral assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
