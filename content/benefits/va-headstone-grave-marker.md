@@ -4,7 +4,7 @@ headline: "Veteran’s Headstone and Grave Marker"
 tags:
   - "burial and funeral assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
