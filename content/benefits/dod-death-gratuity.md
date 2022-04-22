@@ -18,9 +18,9 @@ eligibility:
     acceptableValues: ["yes"]
     label: "The deceased served in the active military, naval, or air service."
   - criteriaKey: deceased_service_status
-    acceptableValues: ["an active-duty service member"]
+    acceptableValues: ["an active-duty service member", "a member of the National Guard or Reserves"]
   - criteriaKey: deceased_death_circumstance
-    acceptableValues: ["died while on active duty"]
+    acceptableValues: ["died while on active duty", "died while on inactive-duty training"]
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child", "parent", "other family member"]
 ---
