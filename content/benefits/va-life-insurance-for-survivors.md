@@ -23,9 +23,8 @@ eligibility:
         "an active-duty service member",
         "discharged under conditions other than dishonorable",
         "retired from the service",
+        "a member of the National Guard or Reserves",
       ]
-  - criteriaKey: deceased_death_circumstance
-    acceptableValues: ["died while on active duty"]
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse", "child", "parent", "other family member"]
 ---
