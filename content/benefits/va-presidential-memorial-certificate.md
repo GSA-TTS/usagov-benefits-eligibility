@@ -4,7 +4,7 @@ headline: "Presidential Memorial Certificate"
 tags:
   - "memorial"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
