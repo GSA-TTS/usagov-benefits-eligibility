@@ -4,7 +4,7 @@ headline: "Civilian Health and Medical Program of the VA (CHAMPVA) for Spouse"
 tags:
   - "healthcare"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
