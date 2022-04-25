@@ -10,7 +10,7 @@ source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/burials-memorials/memorial-items/presidential-memorial-certificates/
 
-summary: "A Presidential Memorial Certificate (PMC) is an engraved paper certificate signed by the current president issued to honor the military service of a Veteran or Reservist."
+summary: "A Presidential Memorial Certificate (PMC) is an engraved paper certificate signed by the current president issued to honor the military service of a veteran or reservist."
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
