@@ -1,6 +1,6 @@
 ---
-title: "Life Insurance (payout for survivors following veteran's death)"
-headline: "Life Insurance (payout for survivors following veteran's death)"
+title: "Veterans Life Insurance for Surviving Beneficiaries"
+headline: "Veterans Life Insurance for Surviving Beneficiaries"
 tags:
   - "life insurance"
 lifeEvents:
