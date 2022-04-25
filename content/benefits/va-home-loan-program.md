@@ -9,7 +9,7 @@ source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/housing-assistance/home-loans/eligibility/
 
-summary: "VA housing assistance can help Veterans and service members to buy, build or improve a home, or refinance a home loan."
+summary: "VA housing assistance can help veterans and service members to buy, build or improve a home, or refinance a home loan."
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
