@@ -2,7 +2,7 @@ import { shallowMount } from "@vue/test-utils"
 import { Store } from "vuex"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
-import LifeEventPage from "~/pages/index.vue"
+import LifeEventPage from "~/pages/_lifeEvent.vue"
 import { actions, getters, mutations, state as criteriaState } from "~/store/criteria"
 
 const THIS_LIFE_EVENT_SLUG = "this-life-event"

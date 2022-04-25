@@ -16,6 +16,17 @@ if (process.env.NODE_ENV !== "test") {
   console.log("SITE_PREFIX:", SITE_PREFIX)
 }
 
+const landingPageMd = fs.readFileSync("./content/landing-page.md", "utf8")
+const oneEventVersion = () => {
+  if(landingPageMd.indexOf('lifeEvent:') !== -1) {
+    const eventChosen = landingPageMd.split('lifeEvent:')[1].split('\n')[0].trim()
+    return eventChosen
+  } else {
+    return false
+  }
+}
+const oneEvent = oneEventVersion()
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
@@ -45,7 +56,6 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
@@ -99,6 +109,9 @@ export default {
         },
       },
     },
+  },
+  publicRuntimeConfig: {
+    oneEventVersion: oneEvent,
   },
 
   env: {
