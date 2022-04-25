@@ -226,9 +226,8 @@ export default {
     return {
       filter: "",
       alert: false,
-      singleEvent: 'death-and-burial',
       lifeEvent: {
-        slug: "death-and-burial",
+        slug: "",
         title: "",
         lede: "",
         summary: "",
@@ -243,11 +242,12 @@ export default {
   },
 
   async fetch() {
-    const lifeEvent = await this.$content("life-events", this.singleEvent).fetch()
+    const lifeEvent = await this.$content("life-events", this.landingPage.lifeEvent).fetch()
+    
 
     const lifeEventBenefits = await this.$content("benefits")
       .where({
-        lifeEvents: { $contains: this.singleEvent },
+        lifeEvents: { $contains: this.landingPage.lifeEvent },
       })
       .sortBy("title")
       .fetch()
