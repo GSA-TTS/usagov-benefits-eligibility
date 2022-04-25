@@ -9,7 +9,7 @@ const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : "/
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
-const SITE_PREFIX = process.env.SITE_PREFIX || "/site/gsa/usagov-benefits-eligibility/retirement/"
+const SITE_PREFIX = process.env.SITE_PREFIX || "/site/gsa/usagov-benefits-eligibility/"
 
 if (process.env.NODE_ENV !== "test") {
   console.log("SITE_URLPREFIX:", SITE_URLPREFIX)
@@ -135,7 +135,7 @@ export default {
   },
 
   router: {
-    base: process.env.NODE_ENV !== "production" ? undefined : sitePrefix,
+    base: process.env.NODE_ENV !== "production" ? undefined : sitePrefix + '/retirement/',
     linkActiveClass: "usa-current",
     linkExactActiveClass: "usa-current",
   },
