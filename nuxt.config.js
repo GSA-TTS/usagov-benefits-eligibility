@@ -18,8 +18,8 @@ if (process.env.NODE_ENV !== "test") {
 
 const landingPageMd = fs.readFileSync("./content/landing-page.md", "utf8")
 const oneEventVersion = () => {
-  if(landingPageMd.indexOf('lifeEvent:') !== -1) {
-    const eventChosen = landingPageMd.split('lifeEvent:')[1].split('\n')[0].trim()
+  if (landingPageMd.indexOf("lifeEvent:") !== -1) {
+    const eventChosen = landingPageMd.split("lifeEvent:")[1].split("\n")[0].trim()
     return eventChosen
   } else {
     return false
