@@ -9,20 +9,17 @@ eligibilityCriteriaDescription: "Please check the boxes and select the options t
 
 topLevelFilter:
   - label: "Start here"
-    criteriaKey:
-      - applicant_date_of_birth
+    criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
 
   - label: ""
-    criteriaKey:
-      - applicant_relationship
+    criteriaKey: applicant_relationship
     disableGroupKey:
     disableGroupWhen:
 
   - label: ""
-    criteriaKey:
-      - deceased_served_in_active_military
+    criteriaKey: deceased_served_in_active_military
     disableGroupKey: deceased-military
     disableGroupWhen: ["no"]
 

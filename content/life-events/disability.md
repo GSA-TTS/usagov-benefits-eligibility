@@ -9,14 +9,12 @@ eligibilityCriteriaDescription: "Please check the boxes and select the options t
 
 topLevelFilter:
   - label: "Start here"
-    criteriaKey:
-      - applicant_date_of_birth
+    criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
 
   - label: ""
-    criteriaKey:
-      - applicant_served_in_active_military
+    criteriaKey: applicant_served_in_active_military
     disableGroupKey: applicant-military
     disableGroupWhen: ["no"]
 
@@ -41,7 +39,7 @@ eligibilityCriteria:
 
   - label: "About your military service"
     description: ""
-    criteriaGroupKey: applicant
+    criteriaGroupKey: applicant-military
     criteriaKeys:
       - applicant_service_status
       - applicant_service_disability
