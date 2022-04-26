@@ -10,7 +10,7 @@ source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/
 
-summary: "A headstone, grave or niche marker may be available to honor a veteran, service member, or eligible family member."
+summary: "A headstone, grave marker, or niche marker may be available to honor a veteran, service member, or eligible family member."
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
