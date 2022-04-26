@@ -148,7 +148,7 @@ export default {
   },
 
   router: {
-    base: process.env.NODE_ENV !== "production" ? '/retirement' : sitePrefix,
+    base: process.env.NODE_ENV !== "production" ? "/retirement" : sitePrefix,
     linkActiveClass: "usa-current",
     linkExactActiveClass: "usa-current",
   },
