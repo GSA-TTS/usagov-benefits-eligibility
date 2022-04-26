@@ -21,7 +21,7 @@
 export default {
   data() {
     return {
-      isUsaGov: true,
+      isUsaGov: this.$config.oneEventVersion !== false,
     }
   },
 }

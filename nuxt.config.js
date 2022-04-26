@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== "test") {
   console.log("SITE_PREFIX:", SITE_PREFIX)
 }
 
+// Figure out one life event version
 const landingPageMd = fs.readFileSync("./content/landing-page.md", "utf8")
 const oneEventVersion = () => {
   if (landingPageMd.indexOf("lifeEvent:") !== -1) {
@@ -148,7 +149,9 @@ export default {
   },
 
   router: {
-    base: process.env.NODE_ENV !== "production" ? '/retirement' : sitePrefix,
+    base: process.env.NODE_ENV !== "production" ? 
+      undefined 
+      : sitePrefix,
     linkActiveClass: "usa-current",
     linkExactActiveClass: "usa-current",
   },
