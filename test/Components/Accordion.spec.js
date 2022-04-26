@@ -1,5 +1,5 @@
 import { createLocalVue, shallowMount } from "@vue/test-utils"
-import Vuex from "vuex"
+import Vuex, { Store } from "vuex"
 import Accordion from "@/components/Accordion.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
@@ -25,7 +25,7 @@ describe("Accordion", () => {
       doesCriterionMatchSelection: () => jest.fn().mockReturnValue(true).mockReturnValueOnce(false),
       getTotalEligibleCriteria: () => jest.fn().mockReturnValue(2).mockReturnValueOnce(3).mockReturnValueOnce(0),
     }
-    store = new Vuex.Store({
+    store = new Store({
       modules: {
         criteria: {
           namespaced: true,
@@ -172,7 +172,7 @@ describe("Accordion", () => {
         doesCriterionMatchSelection: () => jest.fn().mockReturnValue(false).mockReturnValueOnce(false),
         getTotalEligibleCriteria: () => jest.fn().mockReturnValue(2).mockReturnValueOnce(3).mockReturnValueOnce(0),
       }
-      store = new Vuex.Store({
+      store = new Store({
         modules: {
           criteria: {
             namespaced: true,
@@ -192,7 +192,7 @@ describe("Accordion", () => {
         doesCriterionMatchSelection: () => jest.fn().mockReturnValue(null),
         getTotalEligibleCriteria: () => jest.fn().mockReturnValue(0),
       }
-      store = new Vuex.Store({
+      store = new Store({
         modules: {
           criteria: {
             namespaced: true,

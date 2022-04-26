@@ -21,7 +21,7 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          @change="updateElibilityDate($event, criteriaKey)" />
+          @change="updateEligibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--day">
         <label
@@ -39,7 +39,7 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          @change="updateElibilityDate($event, criteriaKey)" />
+          @change="updateEligibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--year">
         <label
@@ -58,16 +58,136 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
-          @change="updateElibilityDate($event, criteriaKey)" />
+          @change="updateEligibilityDate($event, criteriaKey)" />
       </div>
     </div>
     <span
+      :id="`${errUniqueId}-input-error-message`"
+      v:show="errorMessage"
       class="usa-error-message"
-      id="error"
-      >{{ check }}</span
+      >{{ errorMessage }}</span
     >
   </fieldset>
 </template>
+
+<script>
+import _ from "lodash"
+import { checkDateValid } from "../services/dateHelper.js"
+
+export default {
+  name: "DateInput",
+  props: {
+    criteriaKey: {
+      type: String,
+      default: "no criteria key provided",
+    },
+    label: {
+      type: String,
+      default: "no label provided",
+    },
+    response: {
+      type: [String, Object, Boolean],
+      default: "no response provided",
+    },
+    dateResponse: {
+      type: String,
+      default: "no response inputted",
+    },
+    location: {
+      type: String,
+      default: "benefit-card",
+      validator: (value) => {
+        return ["benefit-card", "left-rail"].includes(value)
+      },
+    },
+    test: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      uniqueId: _.uniqueId("dateinput-"),
+      errUniqueId: _.uniqueId("error-"),
+      errorMessage: "",
+      month: this.pullDateValue(this.dateResponse, 0),
+      day: this.pullDateValue(this.dateResponse, 1),
+      year: this.pullDateValue(this.dateResponse, 2),
+    }
+  },
+  computed: {
+    selectedStyle() {
+      return this.location === "left-rail" ? "text-bold" : ""
+    },
+    labelClass() {
+      return `usa-label bears-label--${this.classFromResponse()}`
+    },
+    legendClass() {
+      return `usa-legend usa-legend--${this.classFromResponse()} ${this.selectedStyle}`
+    },
+    inputClass() {
+      return `usa-input bears-input--${this.classFromResponse()}`
+    },
+  },
+  watch: {
+    dateResponse() {
+      this.month = this.pullDateValue(this.dateResponse, 0)
+      this.day = this.pullDateValue(this.dateResponse, 1)
+      this.year = this.pullDateValue(this.dateResponse, 2)
+    },
+  },
+  mounted() {
+    this.uniqueId = _.uniqueId("dateinput-")
+    if (!this.test) {
+      this.$store.subscribe((mutation) => {
+        if (mutation.type === "criteria/clearSelectedCriteria") {
+          this.month = ""
+          this.day = ""
+          this.year = ""
+          this.errorMessage = ""
+        }
+      })
+    }
+  },
+  methods: {
+    classFromResponse() {
+      let cls = "error"
+      if (this.response) {
+        cls = "success"
+      } else if (this.response == null) {
+        cls = "empty"
+      }
+      return cls
+    },
+    pullDateValue(dateResponse, index) {
+      return `${dateResponse !== null ? dateResponse.split("-")[index] : ""}`
+    },
+    updateEligibilityDate(event, key) {
+      // figure out date from 3 boxes
+      const month = this.month
+      const day = this.day
+      const year = this.year
+      if (month !== "" && day !== "" && year !== "") {
+        const date = `${month}-${day}-${year}`
+        this.errorMessage = checkDateValid(date)
+        if (this.errorMessage === "") {
+          const localCriterion = {
+            criteriaKey: key,
+            response: date,
+          }
+          this.$store.dispatch("criteria/updateResponse", localCriterion)
+        } else {
+          const localCriterion = {
+            criteriaKey: key,
+            response: null,
+          }
+          this.$store.dispatch("criteria/updateResponse", localCriterion)
+        }
+      }
+    },
+  },
+}
+</script>
 
 <style scoped>
 .usa-legend {
@@ -106,121 +226,3 @@
   font-weight: 700;
 }
 </style>
-
-<script>
-import _ from "lodash"
-import { checkDateValid } from "../services/dateHelper.js"
-
-export default {
-  name: "DateInput",
-  props: {
-    criteriaKey: {
-      type: String,
-      default: "no criteria key provided",
-    },
-    label: {
-      type: String,
-      default: "no label provided",
-    },
-    response: {
-      type: [String, Object, Boolean],
-      default: "no response provided",
-    },
-    dateResponse: {
-      type: String,
-      default: "no response inputted",
-    },
-    location: {
-      type: String,
-      default: "benefit-card",
-      validator: (value) => {
-        return ["benefit-card", "left-rail"].includes(value)
-      },
-    },
-    TEST: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  watch: {
-    dateResponse() {
-      this.month = this.pullDateValue(this.dateResponse, 0)
-      this.day = this.pullDateValue(this.dateResponse, 1)
-      this.year = this.pullDateValue(this.dateResponse, 2)
-    },
-  },
-  data() {
-    return {
-      uniqueId: _.uniqueId("dateinput-"),
-      check: "",
-      month: this.pullDateValue(this.dateResponse, 0),
-      day: this.pullDateValue(this.dateResponse, 1),
-      year: this.pullDateValue(this.dateResponse, 2),
-    }
-  },
-  computed: {
-    selectedStyle() {
-      return this.location === "left-rail" ? "text-bold" : ""
-    },
-    labelClass() {
-      return `usa-label bears-label--${this.classFromResponse()}`
-    },
-    legendClass() {
-      return `usa-legend usa-legend--${this.classFromResponse()} ${this.selectedStyle}`
-    },
-    inputClass() {
-      return `usa-input bears-input--${this.classFromResponse()}`
-    },
-  },
-  mounted() {
-    this.uniqueId = _.uniqueId("dateinput-")
-    if (!this.TEST) {
-      this.$store.subscribe((mutation) => {
-        if (mutation.type === "criteria/clearSelectedCriteria") {
-          this.month = ""
-          this.day = ""
-          this.year = ""
-          this.check = ""
-        }
-      })
-    }
-  },
-  methods: {
-    classFromResponse() {
-      let cls = "error"
-      if (this.response) {
-        cls = "success"
-      } else if (this.response == null) {
-        cls = "empty"
-      }
-      return cls
-    },
-    pullDateValue(dateResponse, index) {
-      return `${dateResponse !== null ? dateResponse.split("-")[index] : ""}`
-    },
-    updateElibilityDate(event, key) {
-      // figure out date from 3 boxes
-      const month = this.month
-      const day = this.day
-      const year = this.year
-      if (month !== "" && day !== "" && year !== "") {
-        const date = `${month}-${day}-${year}`
-        this.check = checkDateValid(date)
-        if (this.check === "") {
-          const localCriterion = {
-            criteriaKey: key,
-            response: date,
-          }
-          this.$store.dispatch("criteria/updateResponse", localCriterion)
-        } else {
-          const localCriterion = {
-            criteriaKey: key,
-            response: null,
-          }
-          this.$store.dispatch("criteria/updateResponse", localCriterion)
-        }
-      }
-    },
-  },
-}
-</script>
