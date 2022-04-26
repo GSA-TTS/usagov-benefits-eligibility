@@ -4,4 +4,3 @@
   </div>
 </template>
 
-<style></style>

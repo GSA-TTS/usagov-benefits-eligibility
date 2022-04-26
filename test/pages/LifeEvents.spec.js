@@ -1,7 +1,8 @@
-import { shallowMount } from "@vue/test-utils"
+import { config, shallowMount, mount } from "@vue/test-utils"
 import LifeEventsPage from "~/pages/index.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
+import jestConfig from "~/jest.config"
 
 const mockContent = {
   lifeEvents: [
@@ -25,6 +26,7 @@ const LANDING_PAGE_FILE = "landing-page"
 
 describe("LifeEventsPage", () => {
   beforeAll(async () => {
+    
     await beforeAllTests()
   })
 

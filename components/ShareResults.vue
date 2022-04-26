@@ -126,9 +126,9 @@ export default {
     /* eslint prefer-const: "OFF" */
     let vals = []
     for (let [key, value] of params) {
-      value = value || true
+      let valueB = value || true
       const valueMap = {
-        [value]: value,
+        [value]: valueB,
         // eslint-disable-next-line quote-props
         true: true,
         // eslint-disable-next-line quote-props

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <section v-if="$config.oneEventVersion === false" class="grid-container usa-section">
+    <section
+      v-if="$config.oneEventVersion === false"
+      class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
           <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">
@@ -67,9 +69,9 @@ export default {
     }
   },
   mounted() {
-    if(this.$config.oneEventVersion !== false) {
-      this.$router.push('/' + this.$config.oneEventVersion)
+    if (this.$config.oneEventVersion !== false) {
+      this.$router.push("/" + this.$config.oneEventVersion)
     }
-  }
+  },
 }
 </script>

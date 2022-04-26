@@ -27,6 +27,7 @@
       </div>
       <!-- Desktop meta sort and open -->
       <div
+        aria-label="Benefit accordian controls"
         role="complementary"
         class="display-none tablet:display-flex grid-row grid-gap print:display-none">
         <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
@@ -136,6 +137,7 @@
           <!-- Mobile meta sort and open -->
           <h2 class="tablet:display-none font-heading-lg margin-top-6">Benefits Results</h2>
           <div
+            aria-label="Benefit accordian controls"
             role="complementary"
             class="tablet:display-none print:display-none">
             <div class="margin-y-2 print:display-none">
@@ -242,11 +244,10 @@ export default {
   },
 
   async fetch() {
-    const chosenEvent = this.$config.oneEventVersion === false ? 
-      this.$route.params.lifeEvent : 
-      this.$config.oneEventVersion
+    const chosenEvent =
+      this.$config.oneEventVersion === false ? this.$route.params.lifeEvent : this.$config.oneEventVersion
     const lifeEvent = await this.$content("life-events", chosenEvent).fetch()
-    
+
     const lifeEventBenefits = await this.$content("benefits")
       .where({
         lifeEvents: { $contains: chosenEvent },
@@ -285,13 +286,13 @@ export default {
   },
   watch: {
     eligibilityCriteria: {
-      handler(newEligibilityCriteria) {
+      handler() {
         this.sortBenefits()
       },
       deep: true,
     },
     lifeEvent: {
-      handler(lifeEvent) {
+      handler() {
         this.sortBenefits()
       },
     },
@@ -302,11 +303,6 @@ export default {
   },
   mounted() {
     this.$root.$on("tag:click", this.tagClick)
-    // if(this.$config.oneEventVersion !== false && !window.location.pathname.includes("/retirement")){
-    //   const fixedUrl = window.location.origin + '/retirement' + window.location.pathname
-    //   window.history.pushState({}, '', `${fixedUrl}`)
-    // }
-  
   },
   methods: {
     clearCriteria() {
