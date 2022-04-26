@@ -204,6 +204,11 @@
         </div>
       </div>
     </section>
+    <cross-sell
+      v-if="$config.oneEventVersion === false"
+      title="Other benefits that might be relevant to you."
+      :cards="lifeEvent.related"
+      class="print:display-none" />
   </div>
 </template>
 
@@ -211,13 +216,9 @@
 import _ from "lodash"
 import { mapGetters, mapState } from "vuex"
 import mapTags from "~/mixins/MapTags"
-import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
 export default {
   name: "LifeEvent",
-  components: {
-    OpenCloseButtons,
-  },
   mixins: [mapTags],
   layout: "default",
   async asyncData({ $content }) {
