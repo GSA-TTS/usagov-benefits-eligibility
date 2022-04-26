@@ -131,9 +131,11 @@ export default {
   },
   watch: {
     dateResponse() {
-      this.month = this.pullDateValue(this.dateResponse, 0)
-      this.day = this.pullDateValue(this.dateResponse, 1)
-      this.year = this.pullDateValue(this.dateResponse, 2)
+      if (this.errorMessage === "") {
+        this.month = this.pullDateValue(this.dateResponse, 0)
+        this.day = this.pullDateValue(this.dateResponse, 1)
+        this.year = this.pullDateValue(this.dateResponse, 2)
+      }
     },
   },
   mounted() {
