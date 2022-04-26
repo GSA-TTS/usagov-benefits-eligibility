@@ -482,7 +482,6 @@ export default {}
 $dark-blue: #11385b; //NOTE not currently in our code
 $aqua-blue: #02bfe7; //highlights action items and key areas (buttons, borders, etc)
 $white: #ffffff; //site background, text on dark
-
 // Supporting Colors
 $dark-gray: #4b4b4d; //footer primary
 $light-gray: #d9d9d9; //footer secondary
@@ -490,7 +489,6 @@ $beige: #ebe6de; //leftnav
 $red: #c61f0c; //h1, leftnav current item, featurebox h2
 $blue: #154285; //standard links, h2, leftnav header
 $black: #000000; //standard text, h3
-
 // Other Colors
 $h3: $dark-gray;
 $button-text: $black;
@@ -498,7 +496,6 @@ $aqua-darker: #00a6d2; //hover
 $lang-toggle: $dark-blue;
 $AZ-button: $blue;
 $AZ-button-disabled: #859cba;
-
 .va-middle {
   vertical-align: middle;
 }
@@ -520,7 +517,6 @@ $AZ-button-disabled: #859cba;
   background: $dark-blue;
   font-size: 90%;
 }
-
 // NAVIGATION
 .usa-header-extended .usa-nav-primary {
   background-color: $dark-blue;
@@ -544,7 +540,6 @@ $AZ-button-disabled: #859cba;
   background-color: $aqua-blue;
   color: $black;
 }
-
 // SEARCH
 @media only screen and(min-width: 60em) {
   header [role="search"] {
@@ -556,7 +551,6 @@ $AZ-button-disabled: #859cba;
     width: calc(100% - 4.5rem);
   }
 }
-
 @media only screen and (min-width: 64em) {
   .usa-megamenu.usa-nav__submenu::before,
   .usa-megamenu.usa-nav__submenu::after {
@@ -564,16 +558,13 @@ $AZ-button-disabled: #859cba;
     border-bottom: 3px solid $aqua-blue;
     margin-bottom: -3px;
   }
-
   .usa-nav__submenu {
     border-bottom: 3px solid $aqua-blue;
   }
-
   .usa-nav__primary .usa-accordion__button span {
     color: #154285;
   }
 }
-
 @media only screen and (max-width: 64em) {
   .usa-nav__primary a:not(.usa-button):not(.usa-current):not(.usa-nav__link) {
     color: white;
