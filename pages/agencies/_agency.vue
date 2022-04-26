@@ -145,7 +145,9 @@ export default {
     // eslint-disable-next-line node/handle-callback-err
     this.agency = await this.$content("agencies", this.$route.params.agency)
       .fetch()
-      .catch((_err) => {console.error(_err)})
+      .catch((_err) => {
+        console.error(_err)
+      })
     this.agency.related = []
     for (const related of this.agency.relatedKeys || []) {
       this.agency.related.push(await this.$content("agencies", related).fetch())

@@ -7,5 +7,5 @@ const translations = nuxtConfig.i18n.vueI18n.messages
 config.mocks.$t = (msg) => translations[locale][msg]
 config.mocks.switchLocalePath = (msg) => msg
 config.mocks.$config = {
-    oneEventVersion: false
+  oneEventVersion: false,
 }

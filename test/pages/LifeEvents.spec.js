@@ -26,7 +26,6 @@ const LANDING_PAGE_FILE = "landing-page"
 
 describe("LifeEventsPage", () => {
   beforeAll(async () => {
-    
     await beforeAllTests()
   })
 

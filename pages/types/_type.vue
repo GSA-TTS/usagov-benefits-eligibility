@@ -145,7 +145,9 @@ export default {
     // eslint-disable-next-line node/handle-callback-err
     this.topic = await this.$content("types", this.$route.params.type)
       .fetch()
-      .catch((_err) => {console.error(_err)})
+      .catch((_err) => {
+        console.error(_err)
+      })
     this.topic.related = []
     for (const related of this.topic.relatedKeys || []) {
       this.topic.related.push(await this.$content("types", related).fetch())
