@@ -1,6 +1,6 @@
 ---
-title: "Life Insurance (eligible for purchase by veteran)"
-headline: "Life Insurance (eligible for purchase by veteran)"
+title: "Veterans Life Insurance"
+headline: "Veterans Life Insurance"
 tags:
   - "life insurance"
 lifeEvents:
