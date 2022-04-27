@@ -12,6 +12,7 @@ eligibilityCriteria:
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
+      - applicant_date_of_birth
       - applicant_income
       - applicant_citizen_status
 ---

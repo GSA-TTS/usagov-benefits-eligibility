@@ -4,7 +4,7 @@ headline: "COVID-19 Funeral Assistance"
 tags:
   - "burial and funeral assistance"
 lifeEvents:
-  - death-and-burial
+  - death-of-a-loved-one
   - national-emergency-and-disaster
 source:
   name: "FEMA"
@@ -20,7 +20,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: deceased_date_of_funeral
     label: "The deceased's funeral/burial was after January 20, 2020."
-    acceptableValues: [true]
+    acceptableValues: [">01-20-2020"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
   - criteriaKey: applicant_paid_funeral_expenses

@@ -1,29 +1,28 @@
 ---
-title: "Education Benefits"
-headline: "Education Benefits"
+title: "Education Benefits (GI Bill)"
+headline: "Education Benefits (GI Bill)"
 tags:
   - "educational assistance"
 lifeEvents:
-  - "death-and-burial"
   - "school-and-education"
   - "military-service"
 source:
   name: "U.S. Department of Veteran Affairs"
-  link: https://www.va.gov/education/survivor-dependent-benefits/
+  link: https://www.va.gov/education/eligibility/
 
-summary: "VA education benefits (also called Chapter 35 benefits) or job training through a GI Bill program may be available."
+summary: "VA education benefits through GI Bill can help you pay your tuition, pick out a school, choose a career, and more."
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
-  - criteriaKey: deceased_served_in_active_military
-    acceptableValues: ["was discharged under conditions other than dishonorable", "died while on active duty"]
-  - criteriaKey: deceased_death_circumstance
+  - criteriaKey: applicant_served_in_active_military
+    acceptableValues: ["yes"]
+  - criteriaKey: applicant_service_status
     acceptableValues:
       [
-        "(1) died as a result of a service-connected disability",
-        "(2) died while receiving or traveling to receive VA care",
-        "(3) died while eligible, pending to receive or receiving VA compensation / pension",
+        "an active-duty service member",
+        "discharged under conditions other than dishonorable",
+        "a member of the National Guard or Reserves",
       ]
-  - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child"]
+  - criteriaKey: applicant_high_school_diploma
+    acceptableValues: ["true"]
 ---

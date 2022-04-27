@@ -1,6 +1,6 @@
 import Vue from "vue"
 import stringToHash from "../services/stringToHash"
-import validateDateAgainstAcceptance from "~/services/dateHelper"
+import { validateDateAgainstAcceptance } from "~/services/dateHelper"
 
 export const state = () => ({
   eligibilityCriteria: {},
@@ -70,6 +70,14 @@ export const getters = {
     if (!theGetters.isCriterionSelected(criterion) || !criterion.acceptableValues) {
       return null
     }
+    // catch for invalid criteria key that haven't been moved to dates
+    if (
+      criterion.acceptableValues.some((val) => {
+        return ["true", "false"].includes(val.toString())
+      })
+    ) {
+      return null
+    }
     // need this to be swapped if passing in a state I.E. testing
     const userInputDate = criterion.TEST
       ? Date.parse(theGetters.getResponseByEligibilityKey(theState)(criterion.criteriaKey))
@@ -80,16 +88,15 @@ export const getters = {
     })
   },
   doesCriterionMatchSelection: (theState, theGetters) => (criterion) => {
-    if (!theGetters.isCriterionSelected(criterion)) {
-      return null
-    }
-
     if (theGetters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
       return criterion.TEST
         ? theGetters.doesCriterionDateMatch(theState)(criterion)
         : theGetters.doesCriterionDateMatch(criterion)
     } else {
       if (!criterion.acceptableValues) {
+        return null
+      }
+      if (!theGetters.isCriterionSelected(criterion)) {
         return null
       }
       return !!criterion.acceptableValues.find(

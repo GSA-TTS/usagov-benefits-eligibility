@@ -1,6 +1,5 @@
 import { shallowMount } from "@vue/test-utils"
 import beforeAllTests from "@/test/beforeAllTests"
-import { createContentMock } from "@/test/mockContent"
 import SearchPage from "~/pages/search.vue"
 
 describe("Search page", () => {

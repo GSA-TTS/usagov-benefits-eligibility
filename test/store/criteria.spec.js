@@ -18,6 +18,8 @@ const mockCriteria = () => [
   },
 ]
 
+const MOCK_DATE = "02-25-2021"
+
 describe("criteria", () => {
   describe("mutations", () => {
     it("should preloaded responses", () => {
@@ -142,14 +144,14 @@ describe("criteria", () => {
       })
     })
     describe("doesCriterionMatchSelection", () => {
-      it("should return false when acceptable critieria is invalid", async () => {
+      it("should return false when acceptable critieria is invalid", () => {
         const storeState = state()
         const criterion = {
           criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["=10-10-2020"],
-          response: "02-25-2021",
+          response: MOCK_DATE,
           TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
@@ -159,39 +161,39 @@ describe("criteria", () => {
     })
 
     describe("doesCriterionDateMatch", () => {
-      it("should return false when acceptable critieria is invalid", async () => {
+      it("should return false when acceptable critieria is invalid", () => {
         const storeState = state()
         const criterion = {
           criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           type: "date",
           acceptableValues: ["=10-10-2020"],
-          response: "02-25-2021",
+          response: MOCK_DATE,
           TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionDateMatch(storeState, getters)(criterion)
         expect(ret).toBe(false)
       })
-      it("should return false when acceptable critieria is not met", async () => {
+      it("should return false when acceptable critieria is not met", () => {
         const storeState = state()
         const criterion = {
           criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
           acceptableValues: ["10-10-2020"],
-          response: "02-25-2021",
+          response: MOCK_DATE,
           TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion
         const ret = getters.doesCriterionMatchSelection(storeState, getters)(criterion)
         expect(ret).toBe(false)
       })
-      it("should return null when there are no acceptable values", async () => {
+      it("should return null when there are no acceptable values", () => {
         const storeState = state()
         const criterion = {
           criteriaKey: "applicant_eligible_senior",
           criteriaKeyHash: "9e63db02",
-          response: "02-25-2021",
+          response: MOCK_DATE,
           TEST: true,
         }
         storeState.eligibilityCriteria[criterion.criteriaKey] = criterion

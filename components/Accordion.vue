@@ -4,10 +4,10 @@
     ref="accordion"
     class="usa-accordion usa-accordion--bordered"
     name="benefit-list"
-    tag="div"
+    tag="section"
     aria-multiselectable="true"
     aria-live="polite">
-    <div
+    <article
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
       class="break-inside-avoid margin-bottom-2">
@@ -50,21 +50,24 @@
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
-            >{{ benefit.source.name }}</a
+              >{{ benefit.source.name }}</a
             >
+            <!-- //NOSONAR -->
           </h3>
-          <p
+        </template>
+        <fieldset class="usa-fieldset">
+          <legend
             class="usa-prose"
             style="max-width: unset">
             {{ benefit.summary }}
-          </p>
-        </template>
-        <EligibilityList
-          :benefit-eligibility-criteria="benefit.eligibility"
-          :benefit-source="sanitizedBenefitUrl(benefit, '')"
-          :heading-classes="['bg-primary', 'text-white']"
-          :show-icons="showIcons"
-          :show-matching-count="showMatchingCount" />
+          </legend>
+          <EligibilityList
+            :benefit-eligibility-criteria="benefit.eligibility"
+            :benefit-source="sanitizedBenefitUrl(benefit, '')"
+            :heading-classes="['bg-primary', 'text-white']"
+            :show-icons="showIcons"
+            :show-matching-count="showMatchingCount" />
+        </fieldset>
         <ul
           v-if="benefit.source && benefit.source.link"
           class="usa-button-group"
@@ -78,10 +81,11 @@
               class="usa-button print:display-none">
               How to Apply
             </a>
+            <!-- //NOSONAR -->
           </li>
         </ul>
       </div>
-    </div>
+    </article>
   </transition-group>
 </template>
 
@@ -104,46 +108,46 @@ export default {
     expanded: {
       type: Boolean,
       requierd: false,
-      default: false
+      default: false,
     },
     lifeEventBenefits: {
       type: Array,
       required: true,
-      default: /* istanbul ignore next */ () => []
+      default: /* istanbul ignore next */ () => [],
     },
     lifeEventCriteria: {
       type: Array,
       required: false,
-      default: /* istanbul ignore next */ () => []
+      default: /* istanbul ignore next */ () => [],
     },
     showMatchingCount: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     showIcons: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     tagClick: {
       type: Boolean,
       required: false,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
       accordionInit: false,
       cid: _.uniqueId("c"),
-      lifeEventCriteriaKeys: []
+      lifeEventCriteriaKeys: [],
     }
   },
   computed: {
     ...mapGetters({
       doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
-      getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria"
-    })
+      getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
+    }),
   },
   beforeCreate() {
     this.cid = _.uniqueId("c")
@@ -204,8 +208,8 @@ export default {
     },
     sanitizedBenefitUrl(benefit, defaultValue = "#") {
       return this.sanitizeUrl(benefit.source ? benefit.source.link : defaultValue)
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

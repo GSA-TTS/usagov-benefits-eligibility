@@ -4,7 +4,7 @@ headline: "Survivors Benefits for Parents"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/survivors/ifyou.html#h5
@@ -17,9 +17,9 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: applicant_relationship
     acceptableValues: [parent]
-  - criteriaKey: deceased_date_of_death
+  - criteriaKey: applicant_date_of_birth
     label: "You are at least 62 years old and were dependent on the deceased for at least half of your support."
-    acceptableValues: [true]
+    acceptableValues: [">62years"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
 ---

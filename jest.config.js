@@ -11,7 +11,12 @@ module.exports = {
     ".*\\.(vue)$": "vue-jest",
   },
   collectCoverage: true,
-  collectCoverageFrom: ["<rootDir>/components/**/*.vue", "<rootDir>/pages/**/*.vue", "<rootDir>/store/**/*.js"],
+  collectCoverageFrom: [
+    "<rootDir>/components/**/*.vue",
+    "<rootDir>/pages/**/*.vue",
+    "<rootDir>/store/**/*.js",
+    "<rootDir>/services/**/*.js",
+  ],
   coverageThreshold: {
     global: {
       branches: 85,

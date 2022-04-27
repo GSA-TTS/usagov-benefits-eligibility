@@ -4,7 +4,7 @@ headline: "Survivors Benefits for Spouse"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/survivors/ifyou.html#h2
@@ -19,7 +19,7 @@ eligibility:
     acceptableValues: [spouse]
   - criteriaKey: applicant_date_of_birth
     label: "You are at least 60 years old."
-    acceptableValues: [true]
+    acceptableValues: [">60years"]
   - criteriaKey: applicant_marital_status
     acceptableValues: ["widowed", "divorced"]
   - criteriaKey: applicant_citizen_status

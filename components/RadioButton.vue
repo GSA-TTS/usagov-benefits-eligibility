@@ -1,7 +1,11 @@
 <template>
-  <fieldset class="usa-fieldset">
+  <fieldset
+    class="usa-fieldset"
+    :class="disabledStyle">
     <template v-if="location === 'left-rail'">
-      <legend class="usa-legend usa-legend text-bold tablet:padding-top-1">
+      <legend
+        class="usa-legend usa-legend text-bold tablet:padding-top-1"
+        :class="disabledLabel">
         {{ label }}
       </legend>
     </template>
@@ -23,6 +27,7 @@
           :name="`${uniqueId}-${criteriaKey}-${value}`"
           :value="value"
           :checked="response === value"
+          :disabled="isDisabled"
           @change="updateEligibilitySelected" />
         <label
           class="usa-radio__label tablet:margin-top-1"
@@ -54,6 +59,8 @@
 
 <script>
 import _ from "lodash"
+const benefitCard = "benefit-card"
+
 export default {
   name: "RadioButton",
   props: {
@@ -74,10 +81,14 @@ export default {
       default: "No response provided",
     },
     location: {
-      default: "benefit-card",
+      default: benefitCard,
       validator: (value) => {
-        return ["left-rail", "benefit-card"].includes(value)
+        return ["left-rail", benefitCard].includes(value)
       },
+    },
+    isDisabled: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -88,13 +99,22 @@ export default {
   },
   computed: {
     selectedStyle() {
-      if (
-        (this.location === "benefit-card" && this.response === "not applicable") ||
-        typeof this.response === "object"
-      ) {
+      if ((this.location === benefitCard && this.response === "not applicable") || typeof this.response === "object") {
         return "text-base text-normal font-weight-normal"
       }
       return "text-bold"
+    },
+    disabledStyle() {
+      if (this.isDisabled) {
+        return "border-2px border-dotted border-gray-30 padding-1"
+      }
+      return null
+    },
+    disabledLabel() {
+      if (this.isDisabled) {
+        return "text-gray-30"
+      }
+      return null
     },
   },
   mounted() {

@@ -4,7 +4,7 @@ headline: "Need text here"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/survivors/ifyou.html#h7
@@ -17,7 +17,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: deceased_date_of_death
     label: "The deceased died within the last two years."
-    acceptableValues: [true]
+    acceptableValues: ["<2years"]
   - criteriaKey: applicant_relationship
     acceptableValues: [spouse, child]
   - criteriaKey: applicant_citizen_status

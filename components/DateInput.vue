@@ -9,7 +9,7 @@
         <label
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-month`"
-        >Month</label
+          >Month</label
         >
         <input
           :id="`${uniqueId}-${criteriaKey}-month`"
@@ -21,13 +21,13 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          @change="updateElibilityDate($event, criteriaKey)" />
+          @change="updateEligibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--day">
         <label
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-day`"
-        >Day</label
+          >Day</label
         >
         <input
           :id="`${uniqueId}-${criteriaKey}-day`"
@@ -39,13 +39,13 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          @change="updateElibilityDate($event, criteriaKey)" />
+          @change="updateEligibilityDate($event, criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--year">
         <label
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-year`"
-        >Year</label
+          >Year</label
         >
         <input
           :id="`${uniqueId}-${criteriaKey}-year`"
@@ -58,74 +58,61 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
-          @change="updateElibilityDate($event, criteriaKey)" />
+          @change="updateEligibilityDate($event, criteriaKey)" />
       </div>
     </div>
+    <span
+      :id="`${errUniqueId}-input-error-message`"
+      v:show="errorMessage"
+      class="usa-error-message"
+      >{{ errorMessage }}</span
+    >
   </fieldset>
 </template>
 
-<style scoped>
-.usa-legend {
-  margin-bottom: -0.6875rem;
-}
-
-.usa-legend--empty,
-.usa-label--empty,
-.usa-input--empty {
-  color: #1b1b1b;
-}
-
-.usa-legend--success,
-.usa-label--success,
-.usa-input--success {
-  color: green;
-  font-weight: bold;
-}
-
-.usa-legend--error,
-.usa-label--error,
-.usa-input--error {
-  color: red;
-  font-weight: bold;
-}
-</style>
-
 <script>
 import _ from "lodash"
+import { checkDateValid } from "../services/dateHelper.js"
 
 export default {
   name: "DateInput",
   props: {
     criteriaKey: {
       type: String,
-      default: "no criteria key provided"
+      default: "no criteria key provided",
     },
     label: {
       type: String,
-      default: "no label provided"
+      default: "no label provided",
     },
     response: {
       type: [String, Object, Boolean],
-      default: "no response provided"
+      default: "no response provided",
     },
     dateResponse: {
       type: String,
-      default: "no response inputted"
+      default: "no response inputted",
     },
     location: {
       type: String,
       default: "benefit-card",
       validator: (value) => {
         return ["benefit-card", "left-rail"].includes(value)
-      }
-    }
+      },
+    },
+    test: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       uniqueId: _.uniqueId("dateinput-"),
+      errUniqueId: _.uniqueId("error-"),
+      errorMessage: "",
       month: this.pullDateValue(this.dateResponse, 0),
       day: this.pullDateValue(this.dateResponse, 1),
-      year: this.pullDateValue(this.dateResponse, 2)
+      year: this.pullDateValue(this.dateResponse, 2),
     }
   },
   computed: {
@@ -133,17 +120,36 @@ export default {
       return this.location === "left-rail" ? "text-bold" : ""
     },
     labelClass() {
-      return `usa-label usa-label--${this.classFromResponse()}`
+      return `usa-label bears-label--${this.classFromResponse()}`
     },
     legendClass() {
-      return `usa-legend usa-legend--${this.classFromResponse()}`
+      return `usa-legend usa-legend--${this.classFromResponse()} ${this.selectedStyle}`
     },
     inputClass() {
-      return `usa-input usa-input--${this.classFromResponse()}`
-    }
+      return `usa-input bears-input--${this.classFromResponse()}`
+    },
+  },
+  watch: {
+    dateResponse() {
+      if (this.errorMessage === "") {
+        this.month = this.pullDateValue(this.dateResponse, 0)
+        this.day = this.pullDateValue(this.dateResponse, 1)
+        this.year = this.pullDateValue(this.dateResponse, 2)
+      }
+    },
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
+    if (!this.test) {
+      this.$store.subscribe((mutation) => {
+        if (mutation.type === "criteria/clearSelectedCriteria") {
+          this.month = ""
+          this.day = ""
+          this.year = ""
+          this.errorMessage = ""
+        }
+      })
+    }
   },
   methods: {
     classFromResponse() {
@@ -158,20 +164,67 @@ export default {
     pullDateValue(dateResponse, index) {
       return `${dateResponse !== null ? dateResponse.split("-")[index] : ""}`
     },
-    updateElibilityDate(event, key) {
+    updateEligibilityDate(event, key) {
       // figure out date from 3 boxes
       const month = this.month
       const day = this.day
       const year = this.year
       if (month !== "" && day !== "" && year !== "") {
         const date = `${month}-${day}-${year}`
-        const localCriterion = {
-          criteriaKey: key,
-          response: date
+        this.errorMessage = checkDateValid(date)
+        if (this.errorMessage === "") {
+          const localCriterion = {
+            criteriaKey: key,
+            response: date,
+          }
+          this.$store.dispatch("criteria/updateResponse", localCriterion)
+        } else {
+          const localCriterion = {
+            criteriaKey: key,
+            response: null,
+          }
+          this.$store.dispatch("criteria/updateResponse", localCriterion)
         }
-        this.$store.dispatch("criteria/updateResponse", localCriterion)
       }
-    }
-  }
+    },
+  },
 }
 </script>
+
+<style scoped>
+.usa-legend {
+  margin-bottom: -0.6875rem;
+}
+
+.usa-hint {
+  color: red;
+}
+
+.usa-memorable-date {
+  margin-bottom: 0.5rem;
+}
+
+.usa-legend--empty {
+  color: #1b1b1b;
+}
+
+.bears-label--error,
+.bears-label--success {
+  color: #71767a;
+}
+
+.bears-input--error,
+.bears-input--success {
+  color: black;
+}
+
+.usa-legend--success {
+  color: green;
+  font-weight: 700;
+}
+
+.usa-legend--error {
+  color: red;
+  font-weight: 700;
+}
+</style>

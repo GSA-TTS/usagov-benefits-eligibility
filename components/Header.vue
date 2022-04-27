@@ -3,7 +3,7 @@
     <a
       class="usa-skipnav"
       href="#main-content"
-    >{{ $t("skipnav") }}</a
+      >{{ $t("skipnav") }}</a
     >
 
     <section
@@ -43,8 +43,7 @@
               <img
                 class="usa-banner__icon usa-media-block__img"
                 src="../assets/img/icon-dot-gov.svg"
-                role="img"
-                alt=""
+                alt="government"
                 aria-hidden="true" />
               <div class="usa-media-block__body">
                 <p>
@@ -63,8 +62,7 @@
               <img
                 class="usa-banner__icon usa-media-block__img"
                 src="../assets/img/icon-https.svg"
-                role="img"
-                alt=""
+                alt="https secure"
                 aria-hidden="true" />
               <div class="usa-media-block__body">
                 <p>
@@ -137,8 +135,7 @@
           <button class="usa-nav__close">
             <img
               src="../assets/img/usa-icons/close.svg"
-              role="img"
-              alt="close" />
+              alt="close mobile navigation" />
           </button>
           <div class="usa-nav__secondary">
             <ul class="usa-nav__secondary-links">
@@ -152,7 +149,7 @@
               <label
                 class="usa-sr-only"
                 for="extended-search-field-small"
-              >Search small</label
+                >Search small</label
               >
               <input
                 id="extended-search-field-small"
@@ -222,13 +219,13 @@ export default {
   data() {
     return {
       isLifeEventPage: this.doesRouteMatchLifeEventPages(),
-      query: this.$route?.query?.q || ""
+      query: this.$route?.query?.q || "",
     }
   },
   watch: {
     $route() {
       this.isLifeEventPage = this.doesRouteMatchLifeEventPages()
-    }
+    },
   },
   methods: {
     doesRouteMatchLifeEventPages() {
@@ -244,10 +241,10 @@ export default {
     doSearch(evt) {
       this.$router.push({
         path: "/search/",
-        query: { q: this.$refs.search.value }
+        query: { q: this.$refs.search.value },
       })
       evt.preventDefault()
-    }
-  }
+    },
+  },
 }
 </script>

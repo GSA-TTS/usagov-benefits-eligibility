@@ -23,7 +23,7 @@
                 'text-success-dark text-bold': doesCriterionMatchSelection(criterion) === true,
               },
               {
-                'text-base-light': doesCriterionMatchSelection(criterion) === null,
+                'text-base': doesCriterionMatchSelection(criterion) === null,
               },
               {
                 'text-error-dark text-bold': doesCriterionMatchSelection(criterion) === false,
@@ -82,13 +82,8 @@
 </template>
 <script>
 import { mapGetters } from "vuex"
-import RadioButton from "./RadioButton.vue"
-import DropDown from "./DropDown.vue"
-import CheckBox from "./CheckBox.vue"
-import DateInput from "./DateInput.vue"
 
 export default {
-  components: { RadioButton, DropDown, CheckBox, DateInput },
   props: {
     benefitEligibilityCriteria: {
       type: Array,

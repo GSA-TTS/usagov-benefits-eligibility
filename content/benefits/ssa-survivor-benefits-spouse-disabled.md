@@ -1,10 +1,10 @@
 ---
-title: "Survivors Benefits for Spouse"
-headline: "Survivors Benefits for Spouse"
+title: "Survivors Benefits for Spouse with Disabilities"
+headline: "Survivors Benefits for Spouse with Disabilities"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "disability"
 source:
   name: "Social Security Administration"
@@ -20,7 +20,7 @@ eligibility:
     acceptableValues: [spouse]
   - criteriaKey: applicant_date_of_birth
     label: "You are at least 50 years old."
-    acceptableValues: [true]
+    acceptableValues: [">50years"]
   - criteriaKey: applicant_marital_status
     acceptableValues: ["widowed", "divorced"]
   - criteriaKey: applicant_disability

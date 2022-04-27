@@ -4,7 +4,7 @@
 
 # testing
 /coverage
-
+/.scannerwork
 # production
 /build
 /_site

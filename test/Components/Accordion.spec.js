@@ -1,8 +1,11 @@
 import { createLocalVue, shallowMount } from "@vue/test-utils"
+import Vuex, { Store } from "vuex"
 import Accordion from "@/components/Accordion.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import Vuex from "vuex"
 
+const CRITERIA_KEY_ONE = "one-criteria"
+const CRITERIA_KEY_TWO = "two-criteria"
+const CRITERIA_KEY_THREE = "three-criteria"
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
@@ -22,7 +25,7 @@ describe("Accordion", () => {
       doesCriterionMatchSelection: () => jest.fn().mockReturnValue(true).mockReturnValueOnce(false),
       getTotalEligibleCriteria: () => jest.fn().mockReturnValue(2).mockReturnValueOnce(3).mockReturnValueOnce(0),
     }
-    store = new Vuex.Store({
+    store = new Store({
       modules: {
         criteria: {
           namespaced: true,
@@ -44,15 +47,15 @@ describe("Accordion", () => {
         tags: [],
         eligibility: [
           {
-            criteriaKey: "one-criteria",
+            criteriaKey: CRITERIA_KEY_ONE,
             acceptableValues: [true],
           },
           {
-            criteriaKey: "two-criteria",
+            criteriaKey: CRITERIA_KEY_TWO,
             acceptableValues: [true],
           },
           {
-            criteriaKey: "three-criteria",
+            criteriaKey: CRITERIA_KEY_THREE,
             acceptableValues: [true],
           },
         ],
@@ -63,15 +66,15 @@ describe("Accordion", () => {
         tags: [],
         eligibility: [
           {
-            criteriaKey: "one-criteria",
+            criteriaKey: CRITERIA_KEY_ONE,
             acceptableValues: [true],
           },
           {
-            criteriaKey: "two-criteria",
+            criteriaKey: CRITERIA_KEY_TWO,
             acceptableValues: [true],
           },
           {
-            criteriaKey: "three-criteria",
+            criteriaKey: CRITERIA_KEY_THREE,
             acceptableValues: [true],
           },
         ],
@@ -82,15 +85,15 @@ describe("Accordion", () => {
         tags: [],
         eligibility: [
           {
-            criteriaKey: "one-criteria",
+            criteriaKey: CRITERIA_KEY_ONE,
             acceptableValues: [true],
           },
           {
-            criteriaKey: "two-criteria",
+            criteriaKey: CRITERIA_KEY_TWO,
             acceptableValues: [true],
           },
           {
-            criteriaKey: "three-criteria",
+            criteriaKey: CRITERIA_KEY_THREE,
             acceptableValues: [true],
           },
           {
@@ -101,10 +104,10 @@ describe("Accordion", () => {
     ],
     lifeEventCriteria: [
       {
-        criteriaKeys: ["one-criteria"],
+        criteriaKeys: [CRITERIA_KEY_ONE],
       },
       {
-        criteriaKeys: ["two-criteria", "three-criteria"],
+        criteriaKeys: [CRITERIA_KEY_TWO, CRITERIA_KEY_THREE],
       },
     ],
   }
@@ -169,7 +172,7 @@ describe("Accordion", () => {
         doesCriterionMatchSelection: () => jest.fn().mockReturnValue(false).mockReturnValueOnce(false),
         getTotalEligibleCriteria: () => jest.fn().mockReturnValue(2).mockReturnValueOnce(3).mockReturnValueOnce(0),
       }
-      store = new Vuex.Store({
+      store = new Store({
         modules: {
           criteria: {
             namespaced: true,
@@ -189,7 +192,7 @@ describe("Accordion", () => {
         doesCriterionMatchSelection: () => jest.fn().mockReturnValue(null),
         getTotalEligibleCriteria: () => jest.fn().mockReturnValue(0),
       }
-      store = new Vuex.Store({
+      store = new Store({
         modules: {
           criteria: {
             namespaced: true,
