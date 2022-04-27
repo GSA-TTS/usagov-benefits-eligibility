@@ -4,10 +4,10 @@
 
 To toggle between the one life event version and the full version, a content manager must follow the steps below.
 
-1. modify the `landing-page.md` file to include the `lifeEvent` variable.
-2. example of the `lifeEvent` variable: `lifeEvent: retirement`
-3. commit and push the changes to the github repository.
-4. view the federalist site to verify changes.
+1. Modify the `landing-page.md` file to include the `lifeEvent` variable.
+2. Example of the `lifeEvent` variable: `lifeEvent: retirement`
+3. Commit and push the changes to the github repository.
+4. View the federalist site to verify changes.
 
 ## Top-Level Filters
 
