@@ -36,15 +36,15 @@ describe("LifeEventsPage", () => {
 
   it("is a Vue instance (one-event-version)", () => {
     config.mocks.$config = {
-      oneEventVersion: 'death-of-a-loved-one'
+      oneEventVersion: "death-of-a-loved-one",
     }
     config.mocks.$router = {
-      push: jest.fn()
+      push: jest.fn(),
     }
     const wrapper = shallowMount(LifeEventsPage)
     expect(wrapper.vm).toBeTruthy()
     config.mocks.$config = {
-      oneEventVersion: false
+      oneEventVersion: false,
     }
   })
 
