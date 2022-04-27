@@ -34,6 +34,20 @@ describe("LifeEventsPage", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
+  it("is a Vue instance (one-event-version)", () => {
+    config.mocks.$config = {
+      oneEventVersion: 'death-of-a-loved-one'
+    }
+    config.mocks.$router = {
+      push: jest.fn()
+    }
+    const wrapper = shallowMount(LifeEventsPage)
+    expect(wrapper.vm).toBeTruthy()
+    config.mocks.$config = {
+      oneEventVersion: false
+    }
+  })
+
   it("displays a list of one life event", async () => {
     const wrapper = shallowMount(LifeEventsPage)
     await wrapper.setData(mockContent)

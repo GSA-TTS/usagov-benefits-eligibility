@@ -1,4 +1,4 @@
-import { mount, shallowMount } from "@vue/test-utils"
+import { config, mount, shallowMount } from "@vue/test-utils"
 import { Store } from "vuex"
 import DateInput from "@/components/DateInput.vue"
 import beforeAllTests from "@/test/beforeAllTests"
@@ -19,6 +19,9 @@ describe("DateInput", () => {
   let store, actions
   beforeAll(async () => {
     await beforeAllTests()
+    config.mocks.$store = {
+      subscribe: jest.fn(),
+    }
   })
 
   beforeEach(() => {
@@ -106,6 +109,23 @@ describe("DateInput", () => {
     yearInput.element.value = "2022"
     yearInput.trigger("change")
     expect(actions.updateResponse.mock.calls.length).toBe(3)
+  })
+
+  test("clicking input values results in update in store", () => {
+    const wrapper = shallowMount(DateInput, { propsData: {
+      criteriaKey: CRITERIA_KEY,
+      label: LABEL,
+      response: "test",
+      dateResponse: "11-14-9999",
+      location: "benefit-card",
+      test: true,
+    }, store })
+    const UID = wrapper.find("input").element.id.split(`-${CRITERIA_KEY}`)[0]
+    const yearInput = wrapper.find(`#${UID}-${CRITERIA_KEY}-year`)
+    yearInput.trigger("change")
+    expect(wrapper.vm.$data.month).toBe("11")
+    expect(wrapper.vm.$data.day).toBe("14")
+    expect(wrapper.vm.$data.year).toBe("9999")
   })
 
   test("the watch functions for M/D/Y work correctly", () => {

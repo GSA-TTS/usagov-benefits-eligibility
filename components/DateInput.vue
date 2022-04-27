@@ -140,16 +140,14 @@ export default {
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
-    if (!this.test) {
-      this.$store.subscribe((mutation) => {
-        if (mutation.type === "criteria/clearSelectedCriteria") {
-          this.month = ""
-          this.day = ""
-          this.year = ""
-          this.errorMessage = ""
-        }
-      })
-    }
+    this.$store.subscribe((mutation) => {
+      if (mutation.type === "criteria/clearSelectedCriteria") {
+        this.month = ""
+        this.day = ""
+        this.year = ""
+        this.errorMessage = ""
+      }
+    })
   },
   methods: {
     classFromResponse() {
