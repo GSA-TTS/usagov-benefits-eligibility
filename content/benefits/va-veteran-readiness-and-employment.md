@@ -11,7 +11,7 @@ source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/careers-employment/vocational-rehabilitation/eligibility/
 
-summary: "If you’re a service member or Veteran and have a disability that limits your ability to work or prevents you from working, you may be able to get employment support or services to help you live as independently as possible."
+summary: "If you’re a service member or veteran and have a disability that limits your ability to work or prevents you from working, you may be able to get employment support or services to help you live as independently as possible."
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.

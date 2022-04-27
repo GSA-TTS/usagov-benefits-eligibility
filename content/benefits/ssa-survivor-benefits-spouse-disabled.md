@@ -4,7 +4,7 @@ headline: "Survivors Benefits for Spouse with Disabilities"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
   - "disability"
 source:
   name: "Social Security Administration"

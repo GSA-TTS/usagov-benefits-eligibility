@@ -4,7 +4,7 @@ headline: "Need text here"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-and-burial"
+  - "death-of-a-loved-one"
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/survivors/ifyou.html#h7
