@@ -1,5 +1,5 @@
 <template>
-  <div>sdafadsfasdf</div>
+  <div></div>
 </template>
 
 <script>
