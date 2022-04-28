@@ -1,5 +1,7 @@
 import { validateDateAgainstAcceptance, checkDateValid } from "~/services/dateHelper"
 
+const MOCK_DATE = "02-25-2021"
+
 function getTestDateString(daysOffsetFromToday) {
   const testDte = new Date()
   testDte.setDate(testDte.getDate() + daysOffsetFromToday)
@@ -14,7 +16,7 @@ describe("dateHelper", () => {
       criteriaKeyHash: "9e63db02",
       type: "date",
       acceptableValues: ["=10-10-2020"],
-      response: "02-25-2021",
+      response: MOCK_DATE,
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
@@ -149,7 +151,7 @@ describe("dateHelper", () => {
       criteriaKeyHash: "9e63db02",
       type: "date",
       acceptableValues: ["<30days", ">1days"],
-      response: "02-25-2021",
+      response: MOCK_DATE,
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
@@ -159,13 +161,13 @@ describe("dateHelper", () => {
     expect(ret).toBe(false)
   })
 
-  it("should return null when invalid acceptance date", async () => {
+  it("should return null when invalid acceptance date", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
       type: "date",
       acceptableValues: [""],
-      response: "02-25-2021",
+      response: MOCK_DATE,
       TEST: true,
     }
     const ret = validateDateAgainstAcceptance({
@@ -175,7 +177,7 @@ describe("dateHelper", () => {
     expect(ret).toBe(null)
   })
 
-  it("should return false when future input date", async () => {
+  it("should return false when future input date", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
@@ -191,7 +193,7 @@ describe("dateHelper", () => {
     expect(ret).toBe(false)
   })
 
-  it("should return null when invalid acceptance date", async () => {
+  it("should return null when invalid acceptance date", () => {
     const criterion = {
       criteriaKey: "applicant_eligible_senior",
       criteriaKeyHash: "9e63db02",
@@ -207,7 +209,7 @@ describe("dateHelper", () => {
     expect(ret).toBe(false)
   })
 
-  it("should return correct when invalid user date", async () => {
+  it("should return correct when invalid user date", () => {
     const ret = checkDateValid("11-14-2021")
     expect(ret).toBe("")
     expect(checkDateValid("14-44-5000")).toBe("Please enter a valid date.")

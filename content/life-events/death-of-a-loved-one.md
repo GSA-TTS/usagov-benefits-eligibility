@@ -1,28 +1,25 @@
 ---
 # yaml front matter here
-title: "Death and burial"
+title: "Death of a love one"
 summary: "If you have lost a loved one, you may qualify for help, including assistance with burial or funeral costs, financial support, and more."
 lede: ""
-secondaryHeadline: "Death and burial benefits"
+secondaryHeadline: "Government assistance after losing a loved one"
 
 eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 topLevelFilter:
   - label: "Start here"
-    criteriaKey:
-      - applicant_date_of_birth
+    criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
 
   - label: ""
-    criteriaKey:
-      - applicant_relationship
+    criteriaKey: applicant_relationship
     disableGroupKey:
     disableGroupWhen:
 
   - label: ""
-    criteriaKey:
-      - deceased_served_in_active_military
+    criteriaKey: deceased_served_in_active_military
     disableGroupKey: deceased-military
     disableGroupWhen: ["no"]
 
