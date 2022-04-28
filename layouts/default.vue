@@ -1,6 +1,6 @@
 <template>
   <div v-if="isUsaGov">
-    <GoogleTagManagerHeader></GoogleTagManagerHeader>
+    <GoogleTagManagerHeader />
     <div>
       <UsaGovHeader />
       <main id="main-content">
@@ -8,16 +8,16 @@
       </main>
       <UsaGovFooter />
     </div>
-    <GoogleTagManagerFooter></GoogleTagManagerFooter>
+    <GoogleTagManagerFooter />
   </div>
   <div v-else>
-    <GoogleTagManagerHeader></GoogleTagManagerHeader>
+    <GoogleTagManagerHeader />
     <Header />
     <main id="main-content">
       <Nuxt />
     </main>
     <Footer />
-    <GoogleTagManagerFooter></GoogleTagManagerFooter>
+    <GoogleTagManagerFooter />
   </div>
 </template>
 
@@ -25,8 +25,8 @@
 export default {
   data() {
     return {
-      isUsaGov: this.$config.oneEventVersion !== false,
+      isUsaGov: this.$config.oneEventVersion !== false
     }
-  },
+  }
 }
 </script>
