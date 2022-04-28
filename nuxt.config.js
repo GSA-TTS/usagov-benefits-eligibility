@@ -31,6 +31,7 @@ const oneEvent = oneEventVersion()
 export default {
   publicRuntimeConfig: {
     tagManagerKey: process.env.GOOGLE_TAG_MANAGER_KEY,
+    oneEventVersion: oneEvent,
   },
 
   // Target: https://go.nuxtjs.dev/config-target
@@ -114,9 +115,6 @@ export default {
         },
       },
     },
-  },
-  publicRuntimeConfig: {
-    oneEventVersion: oneEvent,
   },
 
   env: {
