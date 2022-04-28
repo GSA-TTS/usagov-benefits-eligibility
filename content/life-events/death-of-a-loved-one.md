@@ -1,6 +1,6 @@
 ---
 # yaml front matter here
-title: "Death of a love one"
+title: "Death of a loved one"
 summary: "If you have lost a loved one, you may qualify for help, including assistance with burial or funeral costs, financial support, and more."
 lede: ""
 secondaryHeadline: "Government assistance after losing a loved one"

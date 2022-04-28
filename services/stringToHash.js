@@ -12,11 +12,11 @@ export default async function (str) {
   if (process.client) {
     const enc = new TextEncoder()
     const buf = await crypto.subtle.digest("SHA-256", enc.encode(str))
-    return buf2hex(buf).substr(0, 7).toLowerCase()
+    return buf2hex(buf).substring(0, 7).toLowerCase()
   } else {
     const crypto = require("crypto")
     const hash = crypto.createHash("sha256")
     hash.update(str)
-    return hash.digest("hex").substr(0, 7).toLowerCase()
+    return hash.digest("hex").substring(0, 7).toLowerCase()
   }
 }

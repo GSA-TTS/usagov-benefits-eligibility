@@ -1,5 +1,14 @@
 # Content Folder
 
+## One Life Event Version
+
+To toggle between the one life event version and the full version, a content manager must follow the steps below.
+
+1. Modify the `landing-page.md` file to include the `lifeEvent` variable.
+2. Example of the `lifeEvent` variable: `lifeEvent: retirement`
+3. Commit and push the changes to the github repository.
+4. View the federalist site to verify changes.
+
 ## Top-Level Filters
 
 In order to provide BEARS users with a reduced and tailored list of eligibility questions you can use the following encoding in a `life-event.md` file:

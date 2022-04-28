@@ -21,7 +21,7 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          @change="updateEligibilityDate($event, criteriaKey)" />
+          @change="updateEligibilityDate(criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--day">
         <label
@@ -39,7 +39,7 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          @change="updateEligibilityDate($event, criteriaKey)" />
+          @change="updateEligibilityDate(criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--year">
         <label
@@ -58,7 +58,7 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
-          @change="updateEligibilityDate($event, criteriaKey)" />
+          @change="updateEligibilityDate(criteriaKey)" />
       </div>
     </div>
     <span
@@ -140,16 +140,14 @@ export default {
   },
   mounted() {
     this.uniqueId = _.uniqueId("dateinput-")
-    if (!this.test) {
-      this.$store.subscribe((mutation) => {
-        if (mutation.type === "criteria/clearSelectedCriteria") {
-          this.month = ""
-          this.day = ""
-          this.year = ""
-          this.errorMessage = ""
-        }
-      })
-    }
+    this.$store.subscribe((mutation) => {
+      if (mutation.type === "criteria/clearSelectedCriteria") {
+        this.month = ""
+        this.day = ""
+        this.year = ""
+        this.errorMessage = ""
+      }
+    })
   },
   methods: {
     classFromResponse() {
@@ -164,7 +162,7 @@ export default {
     pullDateValue(dateResponse, index) {
       return `${dateResponse !== null ? dateResponse.split("-")[index] : ""}`
     },
-    updateEligibilityDate(event, key) {
+    updateEligibilityDate(key) {
       // figure out date from 3 boxes
       const month = this.month
       const day = this.day
