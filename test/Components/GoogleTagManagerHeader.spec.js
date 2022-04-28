@@ -1,6 +1,6 @@
 import { config, shallowMount } from "@vue/test-utils"
 import beforeAllTests from "@/test/beforeAllTests"
-import GoogleTagManagerHeader from "~/components/gtm/GoogleTagManagerHeader"
+import GoogleTagManagerHeader from "~/components/GoogleTagManagerHeader"
 
 describe("GoogleTagManagerHeader", () => {
   beforeAll(async () => {

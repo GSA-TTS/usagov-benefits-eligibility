@@ -1,6 +1,6 @@
 import { config, shallowMount } from "@vue/test-utils"
 import beforeAllTests from "@/test/beforeAllTests"
-import GoogleTagManagerFooter from "~/components/gtm/GoogleTagManagerFooter"
+import GoogleTagManagerFooter from "~/components/GoogleTagManagerFooter"
 
 describe("GoogleTagManagerFooter", () => {
   const mockMethod = jest.spyOn(GoogleTagManagerFooter.methods, "initTagManager").mockImplementation(() => {})
