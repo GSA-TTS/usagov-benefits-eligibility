@@ -1,8 +1,9 @@
 <template>
   <div>
     <section
-      v-if="$config.oneEventVersion === false"
-      class="grid-container usa-section">
+      class="grid-container usa-section"
+      :style="$config.oneEventVersion !== false ? 'display: none': ''"
+      >
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
           <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">
