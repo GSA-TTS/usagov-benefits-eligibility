@@ -91,7 +91,6 @@ describe("Life Event page", () => {
   let store
 
   beforeAll(async () => {
-
     config.mocks.$config = {
       oneEventVersion: false,
     }
