@@ -112,14 +112,17 @@ describe("DateInput", () => {
   })
 
   test("clicking input values results in update in store", () => {
-    const wrapper = shallowMount(DateInput, { propsData: {
-      criteriaKey: CRITERIA_KEY,
-      label: LABEL,
-      response: "test",
-      dateResponse: "11-14-9999",
-      location: "benefit-card",
-      test: true,
-    }, store })
+    const wrapper = shallowMount(DateInput, {
+      propsData: {
+        criteriaKey: CRITERIA_KEY,
+        label: LABEL,
+        response: "test",
+        dateResponse: "11-14-9999",
+        location: "benefit-card",
+        test: true,
+      },
+      store,
+    })
     const UID = wrapper.find("input").element.id.split(`-${CRITERIA_KEY}`)[0]
     const yearInput = wrapper.find(`#${UID}-${CRITERIA_KEY}-year`)
     yearInput.trigger("change")
