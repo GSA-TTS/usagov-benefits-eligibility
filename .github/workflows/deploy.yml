@@ -49,6 +49,6 @@ jobs:
 
       - name: Deploy frontend to Federalist
         env:
-           GOOGLE_TAG_MANAGER_KEY: ${{ secrets.GOOGLE_TAG_MANAGER_KEY }}
-     
+          GOOGLE_TAG_MANAGER_KEY: ${{ secrets.GOOGLE_TAG_MANAGER_KEY }}
+
         run: npm run federalist
