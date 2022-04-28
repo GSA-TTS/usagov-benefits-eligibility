@@ -142,7 +142,8 @@ export default {
       .fetch()
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
-    // eslint-disable-next-line node/handle-callback-err
+    // eslint-d
+    
     this.topic = await this.$content("types", this.$route.params.type)
       .fetch()
     this.topic.related = []

@@ -26,6 +26,9 @@ const LANDING_PAGE_FILE = "landing-page"
 
 describe("LifeEventsPage", () => {
   beforeAll(async () => {
+    config.mocks.$config = {
+      oneEventVersion: false,
+    }
     await beforeAllTests()
   })
 

@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils"
+import { config, shallowMount } from "@vue/test-utils"
 import { Store } from "vuex"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
@@ -91,6 +91,10 @@ describe("Life Event page", () => {
   let store
 
   beforeAll(async () => {
+
+    config.mocks.$config = {
+      oneEventVersion: false,
+    }
     await beforeAllTests()
   })
 
