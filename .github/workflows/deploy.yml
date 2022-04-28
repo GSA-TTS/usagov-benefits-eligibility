@@ -48,4 +48,7 @@ jobs:
           wait-interval: 10
 
       - name: Deploy frontend to Federalist
+        env:
+          GOOGLE_TAG_MANAGER_KEY: ${{ secrets.GOOGLE_TAG_MANAGER_KEY }}
+
         run: npm run federalist
