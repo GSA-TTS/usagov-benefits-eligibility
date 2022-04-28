@@ -29,6 +29,10 @@ const oneEventVersion = () => {
 const oneEvent = oneEventVersion()
 
 export default {
+  publicRuntimeConfig: {
+    tagManagerKey: process.env.GOOGLE_TAG_MANAGER_KEY,
+  },
+
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -64,7 +68,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n"],
+  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n", "@nuxtjs/dotenv"],
 
   i18n: {
     locales: ["en", "es"],
