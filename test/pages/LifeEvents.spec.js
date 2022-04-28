@@ -1,7 +1,8 @@
-import { shallowMount } from "@vue/test-utils"
-import LifeEventsPage from "@/pages/index.vue"
+import { config, shallowMount, mount } from "@vue/test-utils"
+import LifeEventsPage from "~/pages/index.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
+import jestConfig from "~/jest.config"
 
 const mockContent = {
   lifeEvents: [
@@ -25,12 +26,29 @@ const LANDING_PAGE_FILE = "landing-page"
 
 describe("LifeEventsPage", () => {
   beforeAll(async () => {
+    config.mocks.$config = {
+      oneEventVersion: false,
+    }
     await beforeAllTests()
   })
 
   it("is a Vue instance", () => {
     const wrapper = shallowMount(LifeEventsPage)
     expect(wrapper.vm).toBeTruthy()
+  })
+
+  it("is a Vue instance (one-event-version)", () => {
+    config.mocks.$config = {
+      oneEventVersion: "death-of-a-loved-one",
+    }
+    config.mocks.$router = {
+      push: jest.fn(),
+    }
+    const wrapper = shallowMount(LifeEventsPage)
+    expect(wrapper.vm).toBeTruthy()
+    config.mocks.$config = {
+      oneEventVersion: false,
+    }
   })
 
   it("displays a list of one life event", async () => {

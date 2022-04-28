@@ -27,6 +27,7 @@
       </div>
       <!-- Desktop meta sort and open -->
       <div
+        aria-label="Benefit accordian controls"
         role="complementary"
         class="display-none tablet:display-flex grid-row grid-gap print:display-none">
         <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
@@ -136,6 +137,7 @@
           <!-- Mobile meta sort and open -->
           <h2 class="tablet:display-none font-heading-lg margin-top-6">Benefits Results</h2>
           <div
+            aria-label="Benefit accordian controls"
             role="complementary"
             class="tablet:display-none print:display-none">
             <div class="margin-y-2 print:display-none">
@@ -203,6 +205,7 @@
       </div>
     </section>
     <cross-sell
+      v-if="$config.oneEventVersion === false"
       title="Other benefits that might be relevant to you."
       :cards="lifeEvent.related"
       class="print:display-none" />
@@ -213,13 +216,9 @@
 import _ from "lodash"
 import { mapGetters, mapState } from "vuex"
 import mapTags from "~/mixins/MapTags"
-import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
 export default {
   name: "LifeEvent",
-  components: {
-    OpenCloseButtons,
-  },
   mixins: [mapTags],
   layout: "default",
   async asyncData({ $content }) {
@@ -246,11 +245,13 @@ export default {
   },
 
   async fetch() {
-    const lifeEvent = await this.$content("life-events", this.$route.params.lifeEvent).fetch()
+    const chosenEvent =
+      this.$config.oneEventVersion === false ? this.$route.params.lifeEvent : this.$config.oneEventVersion
+    const lifeEvent = await this.$content("life-events", chosenEvent).fetch()
 
     const lifeEventBenefits = await this.$content("benefits")
       .where({
-        lifeEvents: { $contains: this.$route.params.lifeEvent },
+        lifeEvents: { $contains: chosenEvent },
       })
       .sortBy("title")
       .fetch()
@@ -286,13 +287,13 @@ export default {
   },
   watch: {
     eligibilityCriteria: {
-      handler(newEligibilityCriteria) {
+      handler() {
         this.sortBenefits()
       },
       deep: true,
     },
     lifeEvent: {
-      handler(lifeEvent) {
+      handler() {
         this.sortBenefits()
       },
     },

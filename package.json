@@ -10,6 +10,7 @@
     "start": "gulp && nuxt start",
     "generate": "gulp && nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "sonarqube": "npm test && ./sonar_scanner_cli.bash",
     "lint": "npm run lint:js",
     "test": "jest",
     "test:watch": "jest --watch",
