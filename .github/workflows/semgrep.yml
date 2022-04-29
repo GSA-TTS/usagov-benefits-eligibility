@@ -31,15 +31,20 @@ jobs:
     steps:
       # Fetch project source
       - uses: actions/checkout@v3
-      - run: semgrep ci
+      - run: semgrep scan --sarif --output=semgrep.sarif
         env:
           SEMGREP_RULES: >- # more at semgrep.dev/r
             p/security-audit
             p/secrets
 
-      # Upload findings to GitHub Advanced Security Dashboard [step 2/2]
-      - uses: github/codeql-action/upload-sarif@v1
-        name: Upload SARIF file for GitHub Advanced Security Dashboard
+      - name: Check to see if the SARIF a was generated
+        id: sarif_file_exists
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "semgrep.sarif"
+
+      - name: Upload the SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        if: steps.sarif_file_exists.outputs.files_exists == 'true'
         with:
           sarif_file: semgrep.sarif
-        if: always()
