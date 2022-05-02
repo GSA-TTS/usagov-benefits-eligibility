@@ -9,7 +9,7 @@
     </div>
     <footer class="usa-footer usa-footer--slim print:display-none">
       <div class="grid-container usa-footer__return-to-top">
-        <nuxt-link :to="{ path: getUrl(), hash: '#' }">Return to top</nuxt-link>
+        <nuxt-link :to="{ path: getUrl(), hash: '#' }">{{ $t("returnToTop") }}</nuxt-link>
       </div>
       <div class="usa-footer__primary-section padding-bottom-7">
         <div class="usa-footer__primary-container grid-row">
@@ -21,31 +21,31 @@
                 <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
                   <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
                     <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
-                      About USA.gov
+                      {{ $t("footer.GroupOne.header") }}
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
                       <li class="usa-footer__secondary-link">
                         <a
                           class="margin-bottom-3"
                           href="https://www.usa.gov/about"
-                          >About Us and Site Notices</a
+                          >{{ $t("footer.GroupOne.linkOne") }}</a
                         >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/media">For the Media</a>
+                        <a href="https://www.usa.gov/media">{{ $t("footer.GroupOne.linkTwo") }}</a>
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/developer">For Developers</a>
+                        <a href="https://www.usa.gov/developer">{{ $t("footer.GroupOne.linkThree") }}</a>
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/site-issue-report-form">Report a Website Issue</a>
+                        <a href="https://www.usa.gov/site-issue-report-form">{{ $t("footer.GroupOne.linkFour") }}</a>
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/#tpcs">All Topics and Services</a>
+                        <a href="https://www.usa.gov/#tpcs">{{ $t("footer.GroupOne.linkFive") }}</a>
                       </li>
                     </ul>
                   </section>

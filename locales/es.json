@@ -14,5 +14,16 @@
       "secureDetailsLockPostfix": "o https:// significa que usted se conectó de forma segura a un sitio web .gov. Comparta información sensible sólo en sitios web oficiales y seguros."
     }
   },
-  "skipnav": "Saltar al contenido principal"
+  "skipnav": "Saltar al contenido principal",
+  "returnToTop": "Regresar arriba",
+  "footer": {
+    "GroupOne": {
+      "header": "About USA.gov",
+      "linkOne": "About Us and Site Notices",
+      "linkTwo": "For the Media",
+      "linkThree": "For Developers",
+      "linkFour": "Report a Website Issue",
+      "linkFive": "All Topics and Services"
+    }
+  }
 }

@@ -1,5 +1,4 @@
 import fs from "fs"
-import i18n from "./config/i18n"
 
 const getLifeEvents = function () {
   const files = fs.readdirSync("./content/life-events/")
@@ -67,28 +66,22 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     "@nuxtjs/eslint-module",
-    [
-      "nuxt-i18n",
-      {
-        vueI18nLoader: true,
-
-        locales: [
-          {
-            code: "en",
-            name: "English",
-          },
-          {
-            code: "es",
-            name: "Spanish",
-          },
-        ],
-        vueI18n: i18n,
-      },
-    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "@nuxtjs/dotenv"],
+  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n", "@nuxtjs/dotenv"],
+
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
+    vueI18n: {
+      fallbackLocale: "en",
+      messages: {
+        en: require("./locales/en.json"),
+        es: require("./locales/es.json"),
+      },
+    },
+  },
 
   env: {
     searchGovUrl: "https://search.usa.gov/api/v2/search/i14y",
