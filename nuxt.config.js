@@ -1,4 +1,5 @@
 import fs from "fs"
+import i18n from "./config/i18n"
 
 const getLifeEvents = function () {
   const files = fs.readdirSync("./content/life-events/")
@@ -66,56 +67,28 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     "@nuxtjs/eslint-module",
+    [
+      "nuxt-i18n",
+      {
+        vueI18nLoader: true,
+
+        locales: [
+          {
+            code: "en",
+            name: "English",
+          },
+          {
+            code: "es",
+            name: "Spanish",
+          },
+        ],
+        vueI18n: i18n,
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n", "@nuxtjs/dotenv"],
-
-  i18n: {
-    locales: ["en", "es"],
-    defaultLocale: "en",
-    vueI18n: {
-      fallbackLocale: "en",
-      messages: {
-        en: {
-          projectName: "Benefits Eligibility Awareness Resource",
-          banner: {
-            official: "An official website of the United States government",
-            know: "Here’s how you know",
-            dropdown: {
-              official: "Official websites use .gov",
-              officialDetailsDotGovPrefix: "A ",
-              officialDetails: " website belongs to an official government organization in the United States.",
-              secure: "Secure .gov websites use HTTPS",
-              secureDetailsLockPrefix: "A",
-              secureDetailsLockStrong: "lock",
-              secureDetailsLockPostfix:
-                "or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.",
-            },
-          },
-          skipnav: "Skip to main content",
-        },
-        es: {
-          projectName: "Buscador de beneficios",
-          banner: {
-            official: "Un sitio oficial del Gobierno de Estados Unidos",
-            know: "Así es como usted puede verificarlo",
-            dropdown: {
-              official: "Los sitios web oficiales usan .gov",
-              officialDetailsDotGovPrefix: "Un sitio web",
-              officialDetails: " pertenece a una organización oficial del Gobierno de Estados Unidos.",
-              secure: "Los sitios web seguros .gov usan HTTPS",
-              secureDetailsLockPrefix: "Un",
-              secureDetailsLockStrong: "candado",
-              secureDetailsLockPostfix:
-                "o https:// significa que usted se conectó de forma segura a un sitio web .gov. Comparta información sensible sólo en sitios web oficiales y seguros.",
-            },
-          },
-          skipnav: "Saltar al contenido principal",
-        },
-      },
-    },
-  },
+  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "@nuxtjs/dotenv"],
 
   env: {
     searchGovUrl: "https://search.usa.gov/api/v2/search/i14y",

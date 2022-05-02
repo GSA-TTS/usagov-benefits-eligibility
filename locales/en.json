@@ -1,0 +1,18 @@
+{
+  "message": "Hello!",
+  "projectName": "Benefits Eligibility Awareness Resource",
+  "banner": {
+    "official": "An official website of the United States government",
+    "know": "Here’s how you know",
+    "dropdown": {
+      "official": "Official websites use .gov",
+      "officialDetailsDotGovPrefix": "A ",
+      "officialDetails": " website belongs to an official government organization in the United States.",
+      "secure": "Secure .gov websites use HTTPS",
+      "secureDetailsLockPrefix": "A",
+      "secureDetailsLockStrong": "lock",
+      "secureDetailsLockPostfix": "or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites."
+    }
+  },
+  "skipnav": "Skip to main content"
+}

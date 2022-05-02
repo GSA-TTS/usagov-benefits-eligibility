@@ -3,6 +3,7 @@
     <GoogleTagManagerHeader />
     <div>
       <UsaGovHeader />
+      <h1>{{ $t("message") }}</h1>
       <main id="main-content">
         <Nuxt />
       </main>
@@ -13,6 +14,7 @@
   <div v-else>
     <GoogleTagManagerHeader />
     <Header />
+    <h1>{{ $t("message") }}</h1>
     <main id="main-content">
       <Nuxt />
     </main>
@@ -25,8 +27,8 @@
 export default {
   data() {
     return {
-      isUsaGov: this.$config.oneEventVersion !== false
+      isUsaGov: this.$config.oneEventVersion !== false,
     }
-  }
+  },
 }
 </script>

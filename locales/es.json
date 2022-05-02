@@ -1,0 +1,18 @@
+{
+  "message": "Hola!",
+  "projectName": "Buscador de beneficios",
+  "banner": {
+    "official": "Un sitio oficial del Gobierno de Estados Unidos",
+    "know": "Así es como usted puede verificarlo",
+    "dropdown": {
+      "official": "Los sitios web oficiales usan .gov",
+      "officialDetailsDotGovPrefix": "Un sitio web",
+      "officialDetails": " pertenece a una organización oficial del Gobierno de Estados Unidos.",
+      "secure": "Los sitios web seguros .gov usan HTTPS",
+      "secureDetailsLockPrefix": "Un",
+      "secureDetailsLockStrong": "candado",
+      "secureDetailsLockPostfix": "o https:// significa que usted se conectó de forma segura a un sitio web .gov. Comparta información sensible sólo en sitios web oficiales y seguros."
+    }
+  },
+  "skipnav": "Saltar al contenido principal"
+}
