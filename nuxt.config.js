@@ -30,7 +30,7 @@ const oneEvent = oneEventVersion()
 
 export default {
   publicRuntimeConfig: {
-    tagManagerKey: process.env.GOOGLE_TAG_MANAGER_KEY,
+    tagManagerKey: "dude",
     oneEventVersion: oneEvent,
   },
 
