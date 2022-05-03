@@ -1,23 +1,25 @@
 <template>
   <div v-if="isUsaGov">
-    <GoogleTagManagerHeader></GoogleTagManagerHeader>
+    <GoogleTagManagerHeader />
     <div>
       <UsaGovHeader />
+      <h1>{{ $t("message") }}</h1>
       <main id="main-content">
         <Nuxt />
       </main>
       <UsaGovFooter />
     </div>
-    <GoogleTagManagerFooter></GoogleTagManagerFooter>
+    <GoogleTagManagerFooter />
   </div>
   <div v-else>
-    <GoogleTagManagerHeader></GoogleTagManagerHeader>
+    <GoogleTagManagerHeader />
     <Header />
+    <h1>{{ $t("message") }}</h1>
     <main id="main-content">
       <Nuxt />
     </main>
     <Footer />
-    <GoogleTagManagerFooter></GoogleTagManagerFooter>
+    <GoogleTagManagerFooter />
   </div>
 </template>
 
