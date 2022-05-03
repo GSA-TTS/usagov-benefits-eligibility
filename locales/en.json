@@ -83,6 +83,11 @@
       "linkTwo": "Immigration and Citizenship",
       "linkThree": "Visas and Visiting the U.S.",
       "linkFour": "Recreation and Travel within the U.S."
+    },
+    "meta": {
+      "search": "Search",
+      "back": "Benefits, Grants, Loans",
+      "language": "Español"
     }
   },
   "footer": {

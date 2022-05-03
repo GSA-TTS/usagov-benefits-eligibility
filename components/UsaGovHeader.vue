@@ -445,7 +445,7 @@
                   id="top-srch"
                   class="usa-sr-only"
                   for="search-field-small"
-                  >Search</label
+                  >{{ $t("header.meta.search") }}</label
                 >
                 <input
                   id="affiliate"
@@ -486,14 +486,14 @@
         <a
           href="https://www.usa.gov/benefits-grants-loans"
           class="back-benefit font-serif-md">
-          Benefits, Grants, Loans
+          {{ $t("header.meta.back") }}
         </a>
         <a
           class="language-toggle-mobile"
           href="https://www.usa.gov/espanol/"
           lang="es"
           xml:lang="es">
-          Español
+          {{ $t("header.meta.language") }}
         </a>
       </div>
     </div>
