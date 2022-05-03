@@ -16,6 +16,75 @@
   },
   "skipnav": "Skip to main content",
   "returnToTop": "Return to top",
+  "header": {
+    "menu": "MENU",
+    "main": "Main Navigation",
+    "GroupOne": "All Topics and Services",
+    "GroupTwo": {
+      "title": "About the U.S.",
+      "linkOne": "Branches of the U.S. Government",
+      "linkTwo": "Budget of the U.S. Government",
+      "linkThree": "Data and Statistics About the U.S.",
+      "linkFour": "History and Historical Documents",
+      "linkFive": "American Flag",
+      "linkSix": "Learn About Life in the U.S.",
+      "linkSeven": "Presidents, Vice Presidents, and First Ladies",
+      "linkEight": "Government Agencies and Elected Officials",
+      "linkNine": "Laws and Legal Issues"
+    },
+    "GroupThree": {
+      "title": "Benefits, Grants, Loans",
+      "linkOne": "Benefits",
+      "linkTwo": "State Social Service Agencies",
+      "linkThree": "Help with Bills",
+      "linkFour": "Grants and Loans",
+      "linkFive": "Food Assistance",
+      "linkSix": "Social Security Questions",
+      "linkSeven": "Affordable Rental Housing",
+      "linkEight": "Financial Aid for Students",
+      "linkNine": "Military Programs and Benefits",
+      "linkTen": "Retirement",
+      "linkEleven": "Unemployment Help"
+    },
+    "GroupFour": {
+      "title": "Government Agencies and Elected Officials",
+      "linkOne": "A-Z Index of U.S. Government Agencies",
+      "linkTwo": "State, Local, and Tribal Governments",
+      "linkThree": "Contact Elected Officials",
+      "linkFour": "Forms, by Agency",
+      "linkFive": "Buying from the U.S. Government",
+      "linkSix": "About the U.S.",
+      "linkSeven": "Branches of the U.S. Government"
+    },
+    "GroupFive": {
+      "title": "Jobs and Unemployment",
+      "linkOne": "Looking for a New Job",
+      "linkTwo": "Unemployment Help",
+      "linkThree": "Labor Laws and Issues",
+      "linkFour": "U.S. Government Employees",
+      "linkFive": "Retirement",
+      "linkSix": "Small Business"
+    },
+    "GroupSix": {
+      "title": "Money and Taxes",
+      "linkOne": "Taxes",
+      "linkTwo": "Credit and Debt",
+      "linkThree": "Spending, Saving and Investing",
+      "linkFour": "Unclaimed Money from the Government",
+      "linkFive": "Currency",
+      "linkSix": "Benefits, Grants, Loans",
+      "linkSeven": "Consumer Issues",
+      "linkEight": "Housing",
+      "linkNine": "Retirement"
+    },
+    "GroupSeven": {
+      "title": "Travel and Immigration",
+      "linkOne": "Passports and International Travel",
+      "linkTwo": "Immigration and Citizenship",
+      "linkThree": "Visas and Visiting the U.S.",
+      "linkFour": "Recreation and Travel within the U.S."
+    }
+  },
   "footer": {
     "GroupOne": {
       "header": "About USA.gov",

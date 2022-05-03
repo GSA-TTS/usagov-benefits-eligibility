@@ -6,6 +6,9 @@
       >{{ $t("skipnav") }}</a
     >
     <TheBanner />
+    <p>
+      {{ this.$i18n.locale === "en" ? "English" : "Español" }}
+    </p>
     <header
       class="usa-header usa-header--extended"
       data-stickyheight="22">
@@ -26,7 +29,7 @@
           </em>
         </div>
 
-        <button class="usa-menu-btn">MENU</button>
+        <button class="usa-menu-btn">{{ $t("header.menu") }}</button>
       </div>
 
       <nav
@@ -36,7 +39,7 @@
         <div
           id="navi"
           class="usa-sr-only">
-          Main Navigation
+          {{ $t("header.main") }}
         </div>
         <div class="usa-nav__inner">
           <button class="usa-nav__close">
@@ -50,7 +53,7 @@
               <a
                 class="usa-nav__link"
                 href="https://www.usa.gov/#tpcs">
-                <span>All Topics and Services</span>
+                <span>{{ $t("header.GroupOne") }}</span>
               </a>
             </li>
             <li class="usa-nav__primary-item">
@@ -58,7 +61,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-1">
-                <span>About the U.S.</span>
+                <span>{{ $t("header.GroupTwo.title") }}</span>
               </button>
               <div
                 id="megamenu-1"
@@ -68,37 +71,39 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/branches-of-government">Branches of the U.S. Government</a>
+                        <a href="https://www.usa.gov/branches-of-government">{{ $t("header.GroupTwo.linkOne") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/budget">Budget of the U.S. Government</a>
+                        <a href="https://www.usa.gov/budget">{{ $t("header.GroupTwo.linkTwo") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/statistics">Data and Statistics About the U.S.</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/history">History and Historical Documents</a>
-                      </li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/flag">American Flag</a></li>
-                      <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/life-in-the-us">Learn About Life in the U.S.</a>
+                        <a href="https://www.usa.gov/statistics">{{ $t("header.GroupTwo.linkThree") }}</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/presidents">Presidents, Vice Presidents, and First Ladies</a>
+                        <a href="https://www.usa.gov/history">{{ $t("header.GroupTwo.linkFour") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/agencies">Government Agencies and Elected Officials</a>
+                        <a href="https://www.usa.gov/flag">{{ $t("header.GroupTwo.linkFive") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/laws">Laws and Legal Issues</a>
+                        <a href="https://www.usa.gov/life-in-the-us">{{ $t("header.GroupTwo.linkSix") }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="usa-col">
+                    <ul class="usa-nav__submenu-list">
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/presidents">{{ $t("header.GroupTwo.linkSeven") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/agencies">{{ $t("header.GroupTwo.linkEight") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/laws">{{ $t("header.GroupTwo.linkNine") }}</a>
                       </li>
                     </ul>
                   </div>
@@ -112,7 +117,7 @@
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/about-the-us">
-                    About the U.S.
+                    {{ $t("header.GroupTwo.title") }}
                   </a>
                 </div>
               </div>
@@ -122,7 +127,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-2">
-                <span>Benefits, Grants, Loans</span>
+                <span>{{ $t("header.GroupThree.title") }}</span>
               </button>
               <div
                 id="megamenu-2"
@@ -131,42 +136,50 @@
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/benefits">Benefits</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/state-social-services">State Social Service Agencies</a>
+                        <a href="https://www.usa.gov/benefits">{{ $t("header.GroupThree.linkOne") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/help-with-bills">Help with Bills</a>
+                        <a href="https://www.usa.gov/state-social-services">{{ $t("header.GroupThree.linkTwo") }}</a>
                       </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/grants">Grants and Loans</a></li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/food-help">Food Assistance</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/about-social-security">Social Security Questions</a>
+                        <a href="https://www.usa.gov/help-with-bills">{{ $t("header.GroupThree.linkThree") }}</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/finding-home">Affordable Rental Housing</a>
+                        <a href="https://www.usa.gov/grants">{{ $t("header.GroupThree.linkFour") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/financial-aid">Financial Aid for Students</a>
+                        <a href="https://www.usa.gov/food-help">{{ $t("header.GroupThree.linkFive") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/military-assistance">Military Programs and Benefits</a>
+                        <a href="https://www.usa.gov/about-social-security">{{ $t("header.GroupThree.linkSix") }}</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/retirement">Retirement</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/unemployment">Unemployment Help</a>
+                        <a href="https://www.usa.gov/finding-home">{{ $t("header.GroupThree.linkSeven") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/financial-aid">{{ $t("header.GroupThree.linkEight") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/military-assistance">{{ $t("header.GroupThree.linkNine") }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="usa-col">
+                    <ul class="usa-nav__submenu-list">
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/retirement">{{ $t("header.GroupThree.linkTen") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/unemployment">{{ $t("header.GroupThree.linkEleven") }}</a>
                       </li>
                     </ul>
                   </div>
@@ -180,7 +193,7 @@
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/benefits-grants-loans"
-                    >Benefits, Grants, Loans</a
+                    >{{ $t("header.GroupThree.title") }}</a
                   >
                 </div>
               </div>
@@ -190,7 +203,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-3">
-                <span>Government Agencies and Elected Officials</span>
+                <span>{{ $t("header.GroupFour.title") }}</span>
               </button>
               <div
                 id="megamenu-3"
@@ -200,36 +213,36 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/federal-agencies">A-Z Index of U.S. Government Agencies</a>
+                        <a href="https://www.usa.gov/federal-agencies">{{ $t("header.GroupFour.linkOne") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/state-tribal-governments">State, Local, and Tribal Governments</a>
+                        <a href="https://www.usa.gov/state-tribal-governments">{{ $t("header.GroupFour.linkTwo") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/elected-officials">Contact Elected Officials</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/forms">Forms, by Agency</a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/buy-from-government">Buying from the U.S. Government</a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/about-the-us">About the U.S.</a>
+                        <a href="https://www.usa.gov/elected-officials">{{ $t("header.GroupFour.linkThree") }}</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/branches-of-government">Branches of the U.S. Government</a>
+                        <a href="https://www.usa.gov/forms">{{ $t("header.GroupFour.linkFour") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/budget">Budget of the U.S. Government</a>
+                        <a href="https://www.usa.gov/buy-from-government">{{ $t("header.GroupFour.linkFour") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/about-the-us">{{ $t("header.GroupFour.linkFive") }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="usa-col">
+                    <ul class="usa-nav__submenu-list">
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/branches-of-government">{{ $t("header.GroupFour.linkSix") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/budget">{{ $t("header.GroupFour.linkSeven") }}</a>
                       </li>
                     </ul>
                   </div>
@@ -243,7 +256,7 @@
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/agencies"
-                    >Government Agencies and Elected Officials</a
+                    >{{ $t("header.GroupFour.title") }}</a
                   >
                 </div>
               </div>
@@ -253,7 +266,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-4">
-                <span>Jobs and Unemployment</span>
+                <span>{{ $t("header.GroupFive.title") }}</span>
               </button>
               <div
                 id="megamenu-4"
@@ -263,23 +276,27 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/job-search">Looking for a New Job</a>
+                        <a href="https://www.usa.gov/job-search">{{ $t("header.GroupFive.linkOne") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/unemployment">Unemployment Help</a>
+                        <a href="https://www.usa.gov/unemployment">{{ $t("header.GroupFive.linkTwo") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/labor-laws">Labor Laws and Issues</a>
+                        <a href="https://www.usa.gov/labor-laws">{{ $t("header.GroupFive.linkThree") }}</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/federal-employees">U.S. Government Employees</a>
+                        <a href="https://www.usa.gov/federal-employees">{{ $t("header.GroupFive.linkFour") }}</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/retirement">Retirement</a></li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/business">Small Business</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/retirement">{{ $t("header.GroupFive.linkFive") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/business">{{ $t("header.GroupFive.linkSix") }}</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -292,7 +309,7 @@
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/jobs-and-unemployment"
-                    >Jobs and Unemployment</a
+                    >{{ $t("header.GroupFive.title") }}</a
                   >
                 </div>
               </div>
@@ -302,7 +319,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-5">
-                <span>Money and Taxes</span>
+                <span>{{ $t("header.GroupSix.title") }}</span>
               </button>
               <div
                 id="megamenu-5"
@@ -311,31 +328,41 @@
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/taxes">Taxes</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/credit-and-debt">Credit and Debt</a>
+                        <a href="https://www.usa.gov/taxes">{{ $t("header.GroupSix.linkOne") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/spend-save-invest">Spending, Saving and Investing</a>
+                        <a href="https://www.usa.gov/credit-and-debt">{{ $t("header.GroupSix.linkTwo") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/spend-save-invest">{{ $t("header.GroupSix.linkThree") }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="usa-col">
+                    <ul class="usa-nav__submenu-list">
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/unclaimed-money">{{ $t("header.GroupSix.linkFour") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/currency">{{ $t("header.GroupSix.linkFive") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/benefits-grants-loans">{{ $t("header.GroupSix.linkSix") }}</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/unclaimed-money">Unclaimed Money from the Government</a>
+                        <a href="https://www.usa.gov/consumer">{{ $t("header.GroupSix.linkSeven") }}</a>
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/currency">Currency</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/benefits-grants-loans">Benefits, Grants, Loans</a>
+                        <a href="https://www.usa.gov/housing">{{ $t("header.GroupSix.linkEight") }}</a>
                       </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/consumer">Consumer Issues</a></li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/housing">Housing</a></li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/retirement">Retirement</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/retirement">{{ $t("header.GroupSix.linkNine") }}</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -348,7 +375,7 @@
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/money"
-                    >Money and Taxes</a
+                    >{{ $t("header.GroupSix.title") }}</a
                   >
                 </div>
               </div>
@@ -358,7 +385,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-6">
-                <span>Travel and Immigration</span>
+                <span>{{ $t("header.GroupSeven.title") }}</span>
               </button>
               <div
                 id="megamenu-6"
@@ -368,20 +395,22 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/travel-abroad">Passports and International Travel</a>
+                        <a href="https://www.usa.gov/travel-abroad">{{ $t("header.GroupSeven.linkOne") }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/immigration-and-citizenship">Immigration and Citizenship</a>
+                        <a href="https://www.usa.gov/immigration-and-citizenship">{{
+                          $t("header.GroupSeven.linkTwo")
+                        }}</a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/visas-and-visitors">Visas and Visiting the U.S.</a>
+                        <a href="https://www.usa.gov/visas-and-visitors">{{ $t("header.GroupSeven.linkThree") }}</a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/recreation-and-travel">Recreation and Travel within the U.S.</a>
+                        <a href="https://www.usa.gov/recreation-and-travel">{{ $t("header.GroupSeven.linkFour") }}</a>
                       </li>
                     </ul>
                   </div>
@@ -395,7 +424,7 @@
                   <a
                     class="usa-button"
                     href="https://www.usa.gov/travel-and-immigration"
-                    >Travel and Immigration</a
+                    >{{ $t("header.GroupSeven.title") }}</a
                   >
                 </li>
               </div>
