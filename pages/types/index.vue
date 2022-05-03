@@ -43,13 +43,13 @@ import _ from "lodash"
 
 export default {
   layout: "default",
-  async asyncData({ $content }) {
-    const contentTopics = await $content("types", this.$i18n.locale).fetch()
+  async asyncData({ $content, i18n }) {
+    const contentTopics = await $content("types", i18n.locale).fetch()
     const topics = {}
     for (const c of contentTopics) {
       topics[_.lowerCase(c.slug)] = c
     }
-    const lifeEventTags = _.chain(await $content("benefits", this.$i18n.locale).only(["tags"]).fetch())
+    const lifeEventTags = _.chain(await $content("benefits", i18n.locale).only(["tags"]).fetch())
       .map((le) => le.tags)
       .flatten()
       .uniq()
