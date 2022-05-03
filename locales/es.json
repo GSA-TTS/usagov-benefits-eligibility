@@ -18,12 +18,23 @@
   "returnToTop": "Regresar arriba",
   "footer": {
     "GroupOne": {
-      "header": "About USA.gov",
-      "linkOne": "About Us and Site Notices",
-      "linkTwo": "For the Media",
-      "linkThree": "For Developers",
-      "linkFour": "Report a Website Issue",
-      "linkFive": "All Topics and Services"
-    }
+      "header": "Sobre USAGov en Español",
+      "linkOne": "Acerca de nosotros y avisos de este sitio",
+      "linkTwo": "Medios",
+      "linkThree": "Desarrolladores (en inglés)",
+      "linkFour": "Reporte problemas en este sitio",
+      "linkFive": "Todos los temas y servicios"
+    },
+    "GroupTwo": {
+      "header": "Envíenos sus preguntas",
+      "linkOne": "Llame al 1-844-USAGOV1 (1-844-872-4681)",
+      "linkTwo": "In English"
+    },
+    "GroupThree": {
+      "header": "Subscríbase para recibir información actualizada",
+      "formLabel": "Escriba su email",
+      "buttonText": "Subscríbase ahora"
+    },
+    "subFooter": "USAGov en Español es la guía oficial de información y servicios del Gobierno"
   }
 }

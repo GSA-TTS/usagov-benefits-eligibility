@@ -24,6 +24,17 @@
       "linkThree": "For Developers",
       "linkFour": "Report a Website Issue",
       "linkFive": "All Topics and Services"
-    }
+    },
+    "GroupTwo": {
+      "header": "Ask USA.gov a Question",
+      "linkOne": "Call 1-844-USAGOV1 (1-844-872-4681)",
+      "linkTwo": "En Español"
+    },
+    "GroupThree": {
+      "header": "Sign Up to Receive Email Updates",
+      "formLabel": "Enter your email",
+      "buttonText": "Sign Up"
+    },
+    "subFooter": "USAGov is the Official Guide to Government Information and Services"
   }
 }
