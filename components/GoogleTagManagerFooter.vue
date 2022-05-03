@@ -1,7 +1,5 @@
 <template>
-  <!-- Google Tag Manager footer starts here -->
   <div></div>
-  <!-- Google Tag Manager footer ends here -->
 </template>
 
 <script>
