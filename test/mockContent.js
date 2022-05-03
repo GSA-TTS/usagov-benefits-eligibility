@@ -13,6 +13,9 @@ export function createContentMock(collections) {
   // this mocks $content  a filter by dir returns an array,
   // if specific content is added as an optional param, a single object is returned
   return jest.fn(function (queryName, options = null) {
+    if (queryName === "en") {
+      return obj
+    }
     if (options == null) {
       return new QueryBuilder(
         {
@@ -23,9 +26,16 @@ export function createContentMock(collections) {
         {}
       )
     } else {
-      const obj = db.getCollection(queryName).findOne({ slug: options })
+      const collection = db.getCollection(queryName)
+      const obj = collection.findOne({ slug: options })
       return {
         fetch() {
+          return obj
+        },
+        where() {
+          return obj
+        },
+        sortBy() {
           return obj
         },
       }

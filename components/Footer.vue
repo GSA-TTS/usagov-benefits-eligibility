@@ -167,8 +167,8 @@ export default {
       disclaimer: {},
     }
   },
-  async fetch({ i18n }) {
-    this.disclaimer = await this.$content(i18n.locale, "disclaimer").fetch()
+  async fetch() {
+    this.disclaimer = await this.$content(this.$i18n.locale, "disclaimer").fetch()
   },
   methods: {
     getUrl() {

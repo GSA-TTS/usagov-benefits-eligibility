@@ -14,6 +14,8 @@ export default function beforeAllTests() {
   config.stubs.NuxtLink = { template: "<a><slot /></a>" }
   config.stubs.NuxtContent = { template: "<div><slot /></div>" }
   config.stubs.ClientOnly = { template: "<div><slot /></div>" }
+  config.provide["$i18n"] = { locale: "en" }
+  config.provide["i18n"] = { locale: "en" }
   Vue.use(Vuex)
   process.server = true
 }

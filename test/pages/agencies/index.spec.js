@@ -36,7 +36,7 @@ describe("pages/agencies/index.vue", () => {
       return contentMock
     }
     const wrapper = shallowMount(Page)
-    const result = await wrapper.vm.$options.asyncData({ $content })
+    const result = await wrapper.vm.$options.asyncData({ $content, i18n: { locale: "en" } })
     expect(result.agencies.join()).toBe("Agency one,Agency three,Agency two")
   })
 
@@ -53,7 +53,7 @@ describe("pages/agencies/index.vue", () => {
       return contentMock
     }
     const wrapper = shallowMount(Page)
-    const data = await wrapper.vm.$options.asyncData({ $content })
+    const data = await wrapper.vm.$options.asyncData({ $content, i18n: { locale: "en" } })
     wrapper.vm.contentAgencies = data.contentAgencies
     const results = wrapper.vm.mapAgencies(content.benefits.map((b) => b.source.name))
     expect(results[0].slug).toBe("agency-one")

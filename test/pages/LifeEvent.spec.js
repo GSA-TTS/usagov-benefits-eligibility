@@ -1,4 +1,4 @@
-import { config, shallowMount } from "@vue/test-utils"
+import { config, shallowMount, mount } from "@vue/test-utils"
 import { Store } from "vuex"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
@@ -94,6 +94,7 @@ describe("Life Event page", () => {
     config.mocks.$config = {
       oneEventVersion: false,
     }
+    config.mocks.lifeEvent = {}
     await beforeAllTests()
   })
 
@@ -121,20 +122,25 @@ describe("Life Event page", () => {
   })
 
   it("should display the page content", async () => {
-    const $content = createContentMock([
-      {
-        collectionName: LIFE_EVENTS_DIRECTORY,
-        items: [{ ...mockContent.lifeEvent }],
+    let contentRequest
+    const contentMock = {
+      where: () => contentMock,
+      sortBy: () => contentMock,
+      fetch: () => {
+        console.log(contentRequest)
+        return Promise.resolve(Object.assign({}, mockContent[contentRequest]))
       },
-      {
-        collectionName: BENEFITS_DIRECTORY,
-        items: [{ ...mockContent.benefit }],
-      },
-      {
-        collectionName: CRITERIA_DIRECTORY,
-        items: [{ ...mockContent.criteria }],
-      },
-    ])
+    }
+    const $content = (path, path2, path3 = "") => {
+      if (path === "life-events") {
+        contentRequest = "lifeEvent"
+      } else if (path === "benefits") {
+        contentRequest = "benefit"
+      } else {
+        contentRequest = path
+      }
+      return contentMock
+    }
     const wrapper = shallowMount(LifeEventPage, {
       mocks: vueMocks({ $content, ...mockContent }),
       store,

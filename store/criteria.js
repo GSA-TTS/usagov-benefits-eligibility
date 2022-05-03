@@ -67,17 +67,6 @@ export const getters = {
    * @returns null / true / false [empty, pass, fail]
    */
   doesCriterionDateMatch: (theState, theGetters) => (criterion) => {
-    if (!theGetters.isCriterionSelected(criterion) || !criterion.acceptableValues) {
-      return null
-    }
-    // catch for invalid criteria key that haven't been moved to dates
-    if (
-      criterion.acceptableValues.some((val) => {
-        return ["true", "false"].includes(val.toString())
-      })
-    ) {
-      return null
-    }
     // need this to be swapped if passing in a state I.E. testing
     const userInputDate = criterion.TEST
       ? Date.parse(theGetters.getResponseByEligibilityKey(theState)(criterion.criteriaKey))

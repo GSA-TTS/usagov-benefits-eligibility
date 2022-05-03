@@ -248,7 +248,7 @@ export default {
     const chosenEvent =
       this.$config.oneEventVersion === false ? this.$route.params.lifeEvent : this.$config.oneEventVersion
     const lifeEvent = await this.$content("life-events", this.$i18n.locale, chosenEvent).fetch()
-
+    console.log(`lifeEvent: ${JSON.stringify(lifeEvent)}`)
     const lifeEventBenefits = await this.$content("benefits", this.$i18n.locale)
       .where({
         lifeEvents: { $contains: chosenEvent },
