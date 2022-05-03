@@ -2,8 +2,7 @@
   <div>
     <section
       class="grid-container usa-section"
-      :style="$config.oneEventVersion !== false ? 'display: none': ''"
-      >
+      :style="$config.oneEventVersion !== false ? 'display: none' : ''">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
           <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">
@@ -56,10 +55,10 @@
 <script>
 export default {
   layout: "default",
-  async asyncData({ $content }) {
-    const lifeEvents = await $content("life-events").sortBy("title").fetch()
+  async asyncData({ $content, i18n }) {
+    const lifeEvents = await $content("life-events", i18n.locale).sortBy("title").fetch()
 
-    const landingPage = await $content("landing-page").fetch()
+    const landingPage = await $content(i18n.locale, "landing-page").fetch()
 
     return { lifeEvents, landingPage }
   },

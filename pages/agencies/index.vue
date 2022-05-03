@@ -43,14 +43,14 @@ import _ from "lodash"
 
 export default {
   layout: "default",
-  async asyncData({ $content }) {
-    const contentAgencyList = await $content("agencies").fetch()
+  async asyncData({ $content, i18n }) {
+    const contentAgencyList = await $content("agencies", i18n.locale).fetch()
     const contentAgencies = {}
     for (const a of contentAgencyList) {
       contentAgencies[_.kebabCase(a.slug)] = a
     }
 
-    const agencies = _.chain(await $content("benefits").only(["source"]).fetch())
+    const agencies = _.chain(await $content("benefits", i18n.locale).only(["source"]).fetch())
       .map((benefit) => benefit.source.name)
       .flatten()
       .uniq()

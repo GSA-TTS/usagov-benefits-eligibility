@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== "test") {
 }
 
 // Figure out one life event version
-const landingPageMd = fs.readFileSync("./content/landing-page.md", "utf8")
+const landingPageMd = fs.readFileSync("./content/en/landing-page.md", "utf8")
 const oneEventVersion = () => {
   if (landingPageMd.indexOf("lifeEvent:") !== -1) {
     const eventChosen = landingPageMd.split("lifeEvent:")[1].split("\n")[0].trim()
@@ -69,18 +69,22 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n", "@nuxtjs/dotenv"],
+  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "@nuxtjs/i18n", "@nuxtjs/dotenv"],
 
   i18n: {
-    locales: ["en", "es"],
-    defaultLocale: "en",
-    vueI18n: {
-      fallbackLocale: "en",
-      messages: {
-        en: require("./locales/en.json"),
-        es: require("./locales/es.json"),
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
       },
-    },
+      {
+        code: "es",
+        file: "es.json",
+      },
+    ],
+    lazy: true,
+    langDir: "locales/",
+    defaultLocale: "en",
   },
 
   env: {

@@ -459,20 +459,33 @@
           class="back-benefit font-serif-md">
           Benefits, Grants, Loans
         </a>
-        <a
+        <button
           class="language-toggle-mobile"
-          href="https://www.usa.gov/espanol/"
           lang="es"
-          xml:lang="es">
-          Español
-        </a>
+          xml:lang="es"
+          @click="changeLanguage()">
+          {{ this.$i18n.locale === "en" ? "Español" : "English" }}
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    changeLanguage() {
+      let route = ""
+      const oneEventString = this.$config.oneEventVersion ? this.$config.oneEventVersion : ""
+      if (this.$i18n.locale === "en") {
+        route = `/es/${oneEventString}`
+      } else {
+        route = `/${oneEventString}`
+      }
+      this.$router.push(route)
+    },
+  },
+}
 </script>
 
 <style

@@ -1,6 +1,6 @@
 ---
-title: "Annuity for Certain Military Surviving Spouses"
-headline: "Annuity for Certain Military Surviving Spouses"
+title: "Anualidad para ciertos cónyuges militares sobrevivientes"
+headline: "Anualidad para ciertos cónyuges militares sobrevivientes"
 tags:
   - "financial assistance"
 lifeEvents:
