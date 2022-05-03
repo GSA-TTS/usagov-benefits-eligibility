@@ -67,8 +67,11 @@ export const getters = {
    * @returns null / true / false [empty, pass, fail]
    */
   doesCriterionDateMatch: (theState, theGetters) => (criterion) => {
+    if (!theGetters.isCriterionSelected(criterion) || !criterion.acceptableValues) {
+      return null
+    }
     // need this to be swapped if passing in a state I.E. testing
-    const userInputDate = criterion.TEST
+    const userInputDate = criterion.test
       ? Date.parse(theGetters.getResponseByEligibilityKey(theState)(criterion.criteriaKey))
       : Date.parse(theGetters.getResponseByEligibilityKey(criterion.criteriaKey))
     return validateDateAgainstAcceptance({
@@ -78,9 +81,7 @@ export const getters = {
   },
   doesCriterionMatchSelection: (theState, theGetters) => (criterion) => {
     if (theGetters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
-      return criterion.TEST
-        ? theGetters.doesCriterionDateMatch(theState)(criterion)
-        : theGetters.doesCriterionDateMatch(criterion)
+      return theGetters.doesCriterionDateMatch(criterion)
     } else {
       if (!criterion.acceptableValues) {
         return null
