@@ -1,5 +1,33 @@
 # Content Folder
 
+## Internationalization Support Toggle  
+To toggle on the internationalization support feature, set the `langaugeToggleActive` to `true` in the `nuxt.config.js` file.  
+
+## New File Structure 05/04/2022  
+Now the content folder is structured as follows:  
+content  
+- en 
+- es 
+  - markdown files at the root of the content folder that are translated
+- types  
+  - en
+  - es
+    - markdown data files
+- agencies
+  - en
+  - es
+    - markdown data files
+- benefits
+  - en
+  - es
+    - markdown data files
+- life-events
+  - en
+  - es
+    - markdown data files
+
+Since the readme and the criteria.csv are not changed with internationalization we can keep them in the root folder.
+
 ## One Life Event Version
 
 To toggle between the one life event version and the full version, a content manager must follow the steps below.
