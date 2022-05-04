@@ -1,5 +1,4 @@
 <template>
-  <!-- Google Tag Manager header starts here -->
   <div>
     <noscript v-if="$config.tagManagerKey">
       <iframe
@@ -9,9 +8,7 @@
         style="display: none; visibility: hidden"
         title="GoogleTagManager"></iframe>
     </noscript>
-    <div v-else>GTM disabled<!--- google tag manager disabled  ---></div>
   </div>
-  <!-- Google Tag Manager header ends here -->
 </template>
 
 <script>

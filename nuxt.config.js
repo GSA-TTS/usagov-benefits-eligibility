@@ -30,7 +30,8 @@ const oneEvent = oneEventVersion()
 
 export default {
   publicRuntimeConfig: {
-    tagManagerKey: process.env.GOOGLE_TAG_MANAGER_KEY,
+    tagManagerKey: process.env.BRANCH === "main" ? process.env.GOOGLE_TAG_MANAGER_KEY : null,
+    branchName: process.env.BRANCH,
     oneEventVersion: oneEvent,
   },
 
