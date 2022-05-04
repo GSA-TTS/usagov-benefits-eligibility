@@ -30,6 +30,8 @@ const oneEvent = oneEventVersion()
 
 export default {
   publicRuntimeConfig: {
+    // This is where the toggle for langauge is accesible from a content manager perspective
+    langaugeTogleActive: false,
     tagManagerKey: process.env.GOOGLE_TAG_MANAGER_KEY,
     oneEventVersion: oneEvent,
   },
