@@ -30,7 +30,8 @@
       "linkSix": "Pago de facturas",
       "linkSeven": "Ayuda disponible por desempleo",
       "linkEight": "Beneficios para miembros de las Fuerzas Armadas",
-      "linkNine": "Jubilación"
+      "linkNine": "Jubilación",
+      "linkTen": "Vivienda de renta asequible"
     },
     "GroupThree": {
       "title": "Ciudadanía, inmigración y viajes",
@@ -54,7 +55,8 @@
       "linkFour": "Impuestos",
       "linkFive": "Dinero sin reclamar",
       "linkSix": "Ayuda financiera y beneficios",
-      "linkSeven": "Temas del consumidor"
+      "linkSeven": "Temas del consumidor",
+      "linkEight": ""
     },
     "GroupFive": {
       "title": "Directorios del Gobierno",
