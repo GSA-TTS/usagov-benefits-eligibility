@@ -2,8 +2,10 @@
 
 ## Internationalization Support Toggle
 
-To toggle on the internationalization support feature, set the `langaugeToggleActive` to `true` in the `nuxt.config.js` file.
+To toggle on the internationalization support feature, set the `langaugeToggleActive` to `true` in the `nuxt.config.js` file.  
 
+## New Content Translation
+The content is now beinbg translated following a `dot (key.key...)` notation to allow for smooth translation. Currently the content of the content files are to be moved to their respective json language files. Following the convention layed out in the `locales/en.json` file. (will be migrating the content to json files that individually correspond to the content files before this branch is merged with main)
 <!--
 ## New File Structure 05/04/2022
 Now the content folder is structured as follows:
