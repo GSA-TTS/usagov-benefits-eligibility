@@ -27,25 +27,57 @@
                       <li class="usa-footer__secondary-link">
                         <a
                           class="margin-bottom-3"
-                          href="https://www.usa.gov/about"
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/about'
+                              : 'https://www.usa.gov/espanol/acerca-de-usagov-en-espanol'
+                          "
                           >{{ $t("footer.GroupOne.linkOne") }}</a
                         >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/media">{{ $t("footer.GroupOne.linkTwo") }}</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/media'
+                              : 'https://www.usa.gov/espanol/medios'
+                          "
+                          >{{ $t("footer.GroupOne.linkTwo") }}</a
+                        >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/developer">{{ $t("footer.GroupOne.linkThree") }}</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/developer'
+                              : 'https://www.usa.gov/developer'
+                          "
+                          >{{ $t("footer.GroupOne.linkThree") }}</a
+                        >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/site-issue-report-form">{{ $t("footer.GroupOne.linkFour") }}</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/site-issue-report-form'
+                              : 'https://www.usa.gov/espanol/reporte-problemas-en-este-sitio-web'
+                          "
+                          >{{ $t("footer.GroupOne.linkFour") }}</a
+                        >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/#tpcs">{{ $t("footer.GroupOne.linkFive") }}</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/#tpcs'
+                              : 'https://www.usa.gov/espanol/#tpcs'
+                          "
+                          >{{ $t("footer.GroupOne.linkFive") }}</a
+                        >
                       </li>
                     </ul>
                   </section>
@@ -58,11 +90,25 @@
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/phone">{{ $t("footer.GroupTwo.linkOne") }}</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/phone'
+                              : 'https://www.usa.gov/espanol/centro-de-llamadas'
+                          "
+                          >{{ $t("footer.GroupTwo.linkOne") }}</a
+                        >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://usa.gov/espanol/contactenos">{{ $t("footer.GroupTwo.linkTwo") }}</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://usa.gov/espanol/contactenos'
+                              : 'https://www.usa.gov/contact'
+                          "
+                          >{{ $t("footer.GroupTwo.linkTwo") }}</a
+                        >
                       </li>
                     </ul>
                   </section>
