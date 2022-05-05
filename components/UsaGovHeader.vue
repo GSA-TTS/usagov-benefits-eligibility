@@ -28,7 +28,6 @@
             /></a>
           </em>
         </div>
-
         <button class="usa-menu-btn">{{ $t("header.menu") }}</button>
       </div>
 
@@ -47,12 +46,11 @@
               src="@/assets/img/close.svg"
               alt="Close" />
           </button>
-
           <ul class="usa-nav__primary usa-accordion usa-accordion-escapable">
             <li class="usa-nav__primary-item">
               <a
                 class="usa-nav__link"
-                href="https://www.usa.gov/#tpcs">
+                :href="this.$i18n.locale === 'en' ? 'https://www.usa.gov/#tpcs' : 'https://www.usa.gov/espanol/#tpcs'">
                 <span>{{ $t("header.GroupOne") }}</span>
               </a>
             </li>
@@ -71,13 +69,34 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/branches-of-government">{{ $t("header.GroupTwo.linkOne") }}</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/branches-of-government'
+                              : 'https://www.usa.gov/espanol/programas-sociales'
+                          "
+                          >{{ $t("header.GroupTwo.linkOne") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/budget">{{ $t("header.GroupTwo.linkTwo") }}</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/budget'
+                              : 'https://www.usa.gov/espanol/programas-sociales'
+                          "
+                          >{{ $t("header.GroupTwo.linkTwo") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/statistics">{{ $t("header.GroupTwo.linkThree") }}</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/statistics'
+                              : 'https://www.usa.gov/espanol/ayuda-financiera-para-estudiantes'
+                          "
+                          >{{ $t("header.GroupTwo.linkThree") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
