@@ -78,11 +78,11 @@ export default {
     locales: [
       {
         code: "en",
-        file: "en.json",
+        file: "en.js",
       },
       {
         code: "es",
-        file: "es.json",
+        file: "es.js",
       },
     ],
     lazy: true,

@@ -1,8 +1,7 @@
 import { config } from "@vue/test-utils"
-import path from "path"
 import nuxtConfig from "@/nuxt.config.js"
-import enJson from "./locales/en.json"
-import esJson from "./locales/es.json"
+import enJson from "./locales/en/en.json"
+import esJson from "./locales/es/es.json"
 
 const locale = nuxtConfig.i18n.defaultLocale
 const translations = {
