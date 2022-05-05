@@ -135,7 +135,7 @@ export default {
       ? _.lowerCase(this.$route.params.agency).replace(/^u s /, "u.s. ")
       : _.lowerCase(this.$route.params.agency)
     const agencyRegex = new RegExp(_.escapeRegExp(slug), "i")
-    const lifeEventBenefits = await this.$content("benefits", this.$i18n.locale).sortBy("title").fetch()
+    const lifeEventBenefits = await this.$content("benefits").sortBy("title").fetch()
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     this.lifeEventBenefits = lifeEventBenefits.filter(
@@ -143,10 +143,10 @@ export default {
     )
     this.benefitAgency = this.lifeEventBenefits[0]?.source?.name
     // eslint-disable-next-line node/handle-callback-err
-    this.agency = await this.$content("agencies", this.$i18n.locale, this.$route.params.agency).fetch()
+    this.agency = await this.$content("agencies", this.$route.params.agency).fetch()
     this.agency.related = []
     for (const related of this.agency.relatedKeys || []) {
-      this.agency.related.push(await this.$content("agencies", this.$i18n.locale, related).fetch())
+      this.agency.related.push(await this.$content("agencies", related).fetch())
     }
   },
   /* istanbul ignore next */

@@ -1,15 +1,19 @@
 # Content Folder
 
-## Internationalization Support Toggle  
+## Internationalization Support Toggle
+
 To toggle on the internationalization support feature, set the `langaugeToggleActive` to `true` in the `nuxt.config.js` file.  
 
-## New File Structure 05/04/2022  
-Now the content folder is structured as follows:  
-content  
+## New Content Translation
+The content is now beinbg translated following a `dot (key.key...)` notation to allow for smooth translation. Currently the content of the content files are to be moved to their respective json language files. Following the convention layed out in the `locales/en.json` file. (will be migrating the content to json files that individually correspond to the content files before this branch is merged with main)
+<!--
+## New File Structure 05/04/2022
+Now the content folder is structured as follows:
+content
 - en
 - es
   - markdown files at the root of the content folder that are translated
-- types  
+- types
   - en
   - es
     - markdown data files
@@ -26,7 +30,7 @@ content
   - es
     - markdown data files
 
-Since the readme and the criteria.csv are not changed with internationalization we can keep them in the root folder.
+Since the readme and the criteria.csv are not changed with internationalization we can keep them in the root folder. -->
 
 ## One Life Event Version
 

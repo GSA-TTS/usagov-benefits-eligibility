@@ -134,7 +134,7 @@ export default {
   },
   async fetch() {
     this.benefitTopic = _.capitalize(_.lowerCase(this.$route.params.type))
-    const lifeEventBenefits = await this.$content("benefits", this.$i18n.locale)
+    const lifeEventBenefits = await this.$content("benefits")
       .where({
         tags: { $contains: _.lowerCase(this.$route.params.type) },
       })
@@ -144,10 +144,10 @@ export default {
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     // eslint-d
 
-    this.topic = await this.$content("types", this.$i18n.locale, this.$route.params.type).fetch()
+    this.topic = await this.$content("types", this.$route.params.type).fetch()
     this.topic.related = []
     for (const related of this.topic.relatedKeys || []) {
-      this.topic.related.push(await this.$content("types", this.$i18n.locale, related).fetch())
+      this.topic.related.push(await this.$content("types", related).fetch())
     }
     this.lifeEventBenefits = lifeEventBenefits
   },

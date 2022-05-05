@@ -460,7 +460,7 @@
           Benefits, Grants, Loans
         </a>
         <button
-          v-if="this.$config.languageToggleActive"
+          v-if="this.$config.langaugeToggleActive"
           class="language-toggle-mobile"
           lang="es"
           xml:lang="es"
