@@ -31,7 +31,7 @@ const oneEvent = oneEventVersion()
 export default {
   publicRuntimeConfig: {
     // This is used to toggle whether or not internationalization is enabled
-    langaugeToggleActive: false,
+    langaugeToggleActive: true,
     tagManagerKey: process.env.BRANCH === "main" ? process.env.GOOGLE_TAG_MANAGER_KEY : null,
     branchName: process.env.BRANCH,
     oneEventVersion: oneEvent,

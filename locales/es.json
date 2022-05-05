@@ -25,5 +25,32 @@
       "linkFour": "Report a Website Issue",
       "linkFive": "All Topics and Services"
     }
+  },
+  "content": {
+    "life-events": {
+      "death-of-a-loved-one": {
+        "title": "Muerte de un ser querido",
+        "summary": "Si ha perdido a un ser querido, puede calificar para recibir ayuda, incluida la asistencia con los costos de entierro o funeral, apoyo financiero y más.",
+        "lede": "",
+        "secondaryHeadline": "Asistencia del gobierno después de perder a un ser querido",
+        "eligibilityCriteriaDescription": "Marque las casillas y seleccione las opciones que mejor describan su situación. Responda tantas preguntas como sea posible para obtener los resultados más precisos.",
+        "topLevelFilter": {
+          "applicant_date_of_birth": {
+            "label": "Empieza aquí"
+          }
+        },
+        "eligibilityCriteria": {
+          "deceased-basics": {
+            "label": "Sobre la persona que murió"
+          },
+          "deceased-military": {
+            "label": "Sobre los militares que murieron"
+          },
+          "applicant": {
+            "label": "Acerca de usted (la persona que solicita los beneficios)"
+          }
+        }
+      }
+    }    
   }
 }
