@@ -1,5 +1,7 @@
 <template>
   <div>
+    <div>Msg1: {{ $t("message1") }})</div>
+    <div>Msg2: {{ $t("message2") }})</div>
     <GoogleTagManagerHeader />
     <div v-if="isUsaGov">
       <div>
@@ -25,8 +27,8 @@
 export default {
   data() {
     return {
-      isUsaGov: this.$config.oneEventVersion !== false,
+      isUsaGov: this.$config.oneEventVersion !== false
     }
-  },
+  }
 }
 </script>

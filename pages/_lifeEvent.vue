@@ -59,7 +59,7 @@
           <label
             class="usa-label display-inline margin-right-1"
             for="benefitSort"
-            >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
+          >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
             <select
               id="benefitSort"
               class="usa-select margin-left-auto width-card display-inline-block"
@@ -144,7 +144,7 @@
               <label
                 class="usa-label"
                 for="benefitSortMobile"
-                >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
+              >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
               >
               <select
                 id="benefitSortMobile"
@@ -236,11 +236,11 @@ export default {
         summary: "",
         eligibilityCriteria: [],
         relatedKeys: [],
-        related: [],
+        related: []
       },
       lifeEventBenefits: [],
       allLifeEventBenefits: [],
-      sort: "relevance",
+      sort: "relevance"
     }
   },
 
@@ -250,7 +250,7 @@ export default {
     let lifeEvent = await this.$content("life-events", chosenEvent).fetch()
     const lifeEventBenefits = await this.$content("benefits")
       .where({
-        lifeEvents: { $contains: chosenEvent },
+        lifeEvents: { $contains: chosenEvent }
       })
       .sortBy("title")
       .fetch()
@@ -264,11 +264,11 @@ export default {
     }
     // translate life event
     const t = (key) => {
-      return this.$t(`content.life-events.${key}`)
+      return this.$t(`life-events.${key}`)
     }
     const stats = {
       translated: [],
-      skipped: [],
+      skipped: []
     }
     const applyTranslationToWholeObject = (object) => {
       for (const key in object) {
@@ -283,7 +283,7 @@ export default {
             object[key] = t(object[key])
             stats.translated.push({
               key: key,
-              value: object[key],
+              value: object[key]
             })
           } else {
             stats.skipped.push(key)
@@ -298,7 +298,7 @@ export default {
   /* istanbul ignore next */
   head() {
     return {
-      title: this.lifeEvent.secondaryHeadline,
+      title: this.lifeEvent.secondaryHeadline
     }
   },
   computed: {
@@ -307,24 +307,24 @@ export default {
     },
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria",
+      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria"
     }),
     ...mapState({
-      eligibilityCriteria: (state) => state.criteria.eligibilityCriteria,
-    }),
+      eligibilityCriteria: (state) => state.criteria.eligibilityCriteria
+    })
   },
   watch: {
     eligibilityCriteria: {
       handler() {
         this.sortBenefits()
       },
-      deep: true,
+      deep: true
     },
     lifeEvent: {
       handler() {
         this.sortBenefits()
-      },
-    },
+      }
+    }
   },
   beforeDestroy() {
     /* istanbul ignore next */
@@ -398,8 +398,8 @@ export default {
       this.lifeEventBenefits = this.allLifeEventBenefits
       this.sortBenefits()
       this.$nextTick(() => this.$refs.accordion.focus())
-    },
-  },
+    }
+  }
 }
 </script>
 
