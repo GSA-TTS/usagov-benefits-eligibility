@@ -222,7 +222,7 @@ export default {
   mixins: [mapTags],
   layout: "default",
   async asyncData({ $content, i18n }) {
-    const landingPage = await $content(i18n.locale, "landing-page").fetch()
+    const landingPage = await $content("landing-page").fetch()
     return { landingPage }
   },
   data() {
@@ -247,9 +247,9 @@ export default {
   async fetch() {
     const chosenEvent =
       this.$config.oneEventVersion === false ? this.$route.params.lifeEvent : this.$config.oneEventVersion
-    const lifeEvent = await this.$content("life-events", this.$i18n.locale, chosenEvent).fetch()
+    const lifeEvent = await this.$content("life-events", chosenEvent).fetch()
     console.log(`lifeEvent: ${JSON.stringify(lifeEvent)}`)
-    const lifeEventBenefits = await this.$content("benefits", this.$i18n.locale)
+    const lifeEventBenefits = await this.$content("benefits")
       .where({
         lifeEvents: { $contains: chosenEvent },
       })
@@ -261,7 +261,7 @@ export default {
 
     lifeEvent.related = []
     for (const related of lifeEvent.relatedKeys || []) {
-      lifeEvent.related.push(await this.$content("life-events", this.$i18n.locale, related).fetch())
+      lifeEvent.related.push(await this.$content("life-events", related).fetch())
     }
 
     this.lifeEvent = lifeEvent

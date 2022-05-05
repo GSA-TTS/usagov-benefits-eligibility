@@ -56,8 +56,8 @@
 export default {
   layout: "default",
   async asyncData({ $content, i18n }) {
-    const lifeEvents = await $content("life-events", i18n.locale).sortBy("title").fetch()
-    const landingPage = await $content(i18n.locale, "landing-page").fetch()
+    const lifeEvents = await $content("life-events").sortBy("title").fetch()
+    const landingPage = await $content("landing-page").fetch()
 
     return { lifeEvents, landingPage }
   },
