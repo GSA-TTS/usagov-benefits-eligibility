@@ -855,11 +855,12 @@ export default {
   methods: {
     changeLanguage() {
       let route = ""
-      const oneEventString = this.$config.oneEventVersion ? this.$config.oneEventVersion : ""
-      if (this.$i18n.locale === "en") {
-        route = `/es/${oneEventString}`
+      const locale = this.$i18n.locale
+      const oneEventString = this.$config.oneEventVersion.value ? this.$config.oneEventVersion : ""
+      if (locale === "en") {
+        route = `/es/${oneEventString["es"]}`
       } else {
-        route = `/${oneEventString}`
+        route = `/${oneEventString["en"]}`
       }
       this.$router.push(route)
     },

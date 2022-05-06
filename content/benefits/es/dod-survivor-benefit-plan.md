@@ -4,7 +4,7 @@ headline: "Survivor Benefit Plan"
 tags:
   - "financial assistance"
 lifeEvents:
-  - "death-of-a-loved-one"
+  - "muerte-de-un-ser-querido"
   - "military-service"
 source:
   name: "Department of Defense"

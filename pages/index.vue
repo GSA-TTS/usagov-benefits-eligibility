@@ -2,7 +2,7 @@
   <div>
     <section
       class="grid-container usa-section"
-      :style="$config.oneEventVersion !== false ? 'display: none' : ''">
+      :style="$config.oneEventVersion.value !== false ? 'display: none' : ''">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
           <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">
@@ -68,8 +68,8 @@ export default {
     }
   },
   mounted() {
-    if (this.$config.oneEventVersion !== false) {
-      this.$router.push("/" + this.$config.oneEventVersion)
+    if (this.$config.oneEventVersion.value !== false) {
+      this.$router.push("/" + this.$config.oneEventVersion[this.$i18n.locale])
     }
   },
 }

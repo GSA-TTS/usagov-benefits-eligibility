@@ -1,15 +1,18 @@
 # Content Folder
 
-## Internationalization Support Toggle  
-To toggle on the internationalization support feature, set the `langaugeToggleActive` to `true` in the `nuxt.config.js` file.  
+## Internationalization Support Toggle
 
-## New File Structure 05/04/2022  
+To toggle on the internationalization support feature, set the `langaugeToggleActive` to `true` in the `nuxt.config.js` file.
+
+## New File Structure 05/04/2022
+
 Now the content folder is structured as follows:  
-content  
+content
+
 - en
 - es
   - markdown files at the root of the content folder that are translated
-- types  
+- types
   - en
   - es
     - markdown data files

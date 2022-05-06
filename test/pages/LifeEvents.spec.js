@@ -38,7 +38,9 @@ const mockContent2 = {
 describe("LifeEventsPage", () => {
   beforeAll(async () => {
     config.mocks.$config = {
-      oneEventVersion: false,
+      oneEventVersion: {
+        value: false,
+      },
     }
     await beforeAllTests()
   })
@@ -50,7 +52,11 @@ describe("LifeEventsPage", () => {
 
   it("is a Vue instance (one-event-version)", () => {
     config.mocks.$config = {
-      oneEventVersion: "death-of-a-loved-one",
+      oneEventVersion: {
+        value: true,
+        en: "death-of-a-loved-one",
+        es: "muerte-de-un-ser-querido",
+      },
     }
     config.mocks.$router = {
       push: jest.fn(),
@@ -58,7 +64,9 @@ describe("LifeEventsPage", () => {
     const wrapper = shallowMount(LifeEventsPage)
     expect(wrapper.vm).toBeTruthy()
     config.mocks.$config = {
-      oneEventVersion: false,
+      oneEventVersion: {
+        value: false,
+      },
     }
   })
 

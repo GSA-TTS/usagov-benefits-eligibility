@@ -26,12 +26,25 @@ const oneEventVersion = () => {
     return false
   }
 }
-const oneEvent = oneEventVersion()
+const landingPageMdEs = fs.readFileSync("./content/es/landing-page.md", "utf8")
+const oneEventVersionEs = () => {
+  if (landingPageMd.indexOf("lifeEvent:") !== -1) {
+    const eventChosen = landingPageMdEs.split("lifeEvent:")[1].split("\n")[0].trim()
+    return eventChosen
+  } else {
+    return false
+  }
+}
+const oneEvent = {
+  value: oneEventVersion() && oneEventVersionEs(),
+  en: oneEventVersion(),
+  es: oneEventVersionEs(),
+}
 
 export default {
   publicRuntimeConfig: {
     // This is used to toggle whether or not internationalization is enabled
-    langaugeToggleActive: false,
+    languageToggleActive: true,
     tagManagerKey: process.env.BRANCH === "main" ? process.env.GOOGLE_TAG_MANAGER_KEY : null,
     branchName: process.env.BRANCH,
     oneEventVersion: oneEvent,

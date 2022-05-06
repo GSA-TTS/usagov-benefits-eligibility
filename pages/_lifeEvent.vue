@@ -205,7 +205,7 @@
       </div>
     </section>
     <cross-sell
-      v-if="$config.oneEventVersion === false"
+      v-if="$config.oneEventVersion.value === false"
       title="Other benefits that might be relevant to you."
       :cards="lifeEvent.related"
       class="print:display-none" />
@@ -246,7 +246,9 @@ export default {
 
   async fetch() {
     const chosenEvent =
-      this.$config.oneEventVersion === false ? this.$route.params.lifeEvent : this.$config.oneEventVersion
+      this.$config.oneEventVersion.value === false
+        ? this.$route.params.lifeEvent
+        : this.$config.oneEventVersion[this.$i18n.locale]
     const lifeEvent = await this.$content("life-events", this.$i18n.locale, chosenEvent).fetch()
     console.log(`lifeEvent: ${JSON.stringify(lifeEvent)}`)
     const lifeEventBenefits = await this.$content("benefits", this.$i18n.locale)
