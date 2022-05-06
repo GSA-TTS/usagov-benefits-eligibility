@@ -6,6 +6,9 @@
       >{{ $t("skipnav") }}</a
     >
     <TheBanner />
+    <p>
+      {{ this.$i18n.locale === "en" ? "English" : "Español" }}
+    </p>
     <header
       class="usa-header usa-header--extended"
       data-stickyheight="22">
@@ -25,8 +28,7 @@
             /></a>
           </em>
         </div>
-
-        <button class="usa-menu-btn">MENU</button>
+        <button class="usa-menu-btn">{{ $t("header.menu") }}</button>
       </div>
 
       <nav
@@ -36,7 +38,7 @@
         <div
           id="navi"
           class="usa-sr-only">
-          Main Navigation
+          {{ $t("header.main") }}
         </div>
         <div class="usa-nav__inner">
           <button class="usa-nav__close">
@@ -44,13 +46,12 @@
               src="@/assets/img/close.svg"
               alt="Close" />
           </button>
-
           <ul class="usa-nav__primary usa-accordion usa-accordion-escapable">
             <li class="usa-nav__primary-item">
               <a
                 class="usa-nav__link"
-                href="https://www.usa.gov/#tpcs">
-                <span>All Topics and Services</span>
+                :href="this.$i18n.locale === 'en' ? 'https://www.usa.gov/#tpcs' : 'https://www.usa.gov/espanol/#tpcs'">
+                <span>{{ $t("header.GroupOne") }}</span>
               </a>
             </li>
             <li class="usa-nav__primary-item">
@@ -58,7 +59,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-1">
-                <span>About the U.S.</span>
+                <span>{{ $t("header.GroupTwo.title") }}</span>
               </button>
               <div
                 id="megamenu-1"
@@ -68,51 +69,136 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/branches-of-government">Branches of the U.S. Government</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/branches-of-government'
+                              : 'https://www.usa.gov/espanol/programas-sociales'
+                          "
+                          >{{ $t("header.GroupTwo.linkOne") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/budget">Budget of the U.S. Government</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/budget'
+                              : 'https://www.usa.gov/espanol/prestamos-y-subvenciones'
+                          "
+                          >{{ $t("header.GroupTwo.linkTwo") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/statistics">Data and Statistics About the U.S.</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/statistics'
+                              : 'https://www.usa.gov/espanol/ayuda-financiera-para-estudiantes'
+                          "
+                          >{{ $t("header.GroupTwo.linkThree") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/history">History and Historical Documents</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/history'
+                              : 'https://www.usa.gov/espanol/seguro-social'
+                          "
+                          >{{ $t("header.GroupTwo.linkFour") }}</a
+                        >
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/flag">American Flag</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/life-in-the-us">Learn About Life in the U.S.</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/flag'
+                              : 'https://www.usa.gov/espanol/asistencia-alimentaria'
+                          "
+                          >{{ $t("header.GroupTwo.linkFive") }}</a
+                        >
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/life-in-the-us'
+                              : 'https://www.usa.gov/espanol/pago-facturas'
+                          "
+                          >{{ $t("header.GroupTwo.linkSix") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/presidents">Presidents, Vice Presidents, and First Ladies</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/presidents'
+                              : 'https://www.usa.gov/espanol/desempleo'
+                          "
+                          >{{ $t("header.GroupTwo.linkSeven") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/agencies">Government Agencies and Elected Officials</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/agencies'
+                              : 'https://www.usa.gov/espanol/beneficios-familias-militares'
+                          "
+                          >{{ $t("header.GroupTwo.linkEight") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/laws">Laws and Legal Issues</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/laws'
+                              : 'https://www.usa.gov/espanol/jubilacion'
+                          "
+                          >{{ $t("header.GroupTwo.linkNine") }}</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    v-if="this.$i18n.locale === 'es'"
+                    class="usa-col">
+                    <ul class="usa-nav__submenu-list">
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/espanol/vivienda-accesible">{{ $t("header.GroupTwo.linkTen") }}</a>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="topic-link topic-nav-flag">
                   <img
+                    v-if="this.$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_About_USA_White.svg"
                     alt="U.S. Flag"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
+                  <img
+                    v-if="this.$i18n.locale === 'es'"
+                    src="https://www.usa.gov/images/Topic_Icon_Benefit_White.svg"
+                    alt="Dinero"
+                    width="55"
+                    class="display-none tablet:display-inline va-middle" />
                   <a
-                    class="usa-button"
-                    href="https://www.usa.gov/about-the-us">
-                    About the U.S.
+                    :href="
+                      this.$i18n.locale === 'en'
+                        ? 'https://www.usa.gov/about-the-us'
+                        : 'https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios'
+                    "
+                    class="usa-button">
+                    {{ $t("header.GroupTwo.title") }}
                   </a>
                 </div>
               </div>
@@ -122,7 +208,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-2">
-                <span>Benefits, Grants, Loans</span>
+                <span>{{ $t("header.GroupThree.title") }}</span>
               </button>
               <div
                 id="megamenu-2"
@@ -131,56 +217,138 @@
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/benefits">Benefits</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/state-social-services">State Social Service Agencies</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/benefits'
+                              : 'https://www.usa.gov/espanol/deportacion'
+                          "
+                          >{{ $t("header.GroupThree.linkOne") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/help-with-bills">Help with Bills</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/state-social-services'
+                              : 'https://www.usa.gov/espanol/viajes-dentro-estados-unidos'
+                          "
+                          >{{ $t("header.GroupThree.linkTwo") }}</a
+                        >
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/help-with-bills'
+                              : 'https://www.usa.gov/espanol/viajes-al-exterior'
+                          "
+                          >{{ $t("header.GroupThree.linkThree") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/grants">Grants and Loans</a></li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/food-help">Food Assistance</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/about-social-security">Social Security Questions</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/grants'
+                              : 'https://www.usa.gov/espanol/pasaportes-documentos-de-viaje'
+                          "
+                          >{{ $t("header.GroupThree.linkFour") }}</a
+                        >
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/food-help'
+                              : 'https://www.usa.gov/espanol/naturalizacion'
+                          "
+                          >{{ $t("header.GroupThree.linkFive") }}</a
+                        >
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/about-social-security'
+                              : 'https://www.usa.gov/espanol/residencia-permanente'
+                          "
+                          >{{ $t("header.GroupThree.linkSix") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/finding-home">Affordable Rental Housing</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/finding-home'
+                              : 'https://www.usa.gov/espanol/registros-de-entrada'
+                          "
+                          >{{ $t("header.GroupThree.linkSeven") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/financial-aid">Financial Aid for Students</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/financial-aid'
+                              : 'https://www.usa.gov/espanol/inmigrantes-noresidentes'
+                          "
+                          >{{ $t("header.GroupThree.linkEight") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/military-assistance">Military Programs and Benefits</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/military-assistance'
+                              : 'https://www.usa.gov/espanol/tramites-migratorios'
+                          "
+                          >{{ $t("header.GroupThree.linkNine") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/retirement">Retirement</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/unemployment">Unemployment Help</a>
+                        <a href="https://www.usa.gov/retirement">{{ $t("header.GroupThree.linkTen") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/unemployme'">{{ $t("header.GroupThree.linkEleven") }}</a>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="topic-link topic-nav-benefit">
                   <img
+                    v-if="this.$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_Benefit_White.svg"
                     alt="U.S. Money"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
+                  <img
+                    v-if="this.$i18n.locale === 'es'"
+                    src="https://www.usa.gov/images/Topic_Icon_Immigration_White.svg"
+                    alt="World Globe"
+                    width="55"
+                    class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
-                    href="https://www.usa.gov/benefits-grants-loans"
-                    >Benefits, Grants, Loans</a
+                    :href="
+                      this.$i18n.locale === 'en'
+                        ? 'https://www.usa.gov/benefits-grants-loans'
+                        : 'https://www.usa.gov/espanol/ciudadania-inmigracion-viajes'
+                    "
+                    >{{ $t("header.GroupThree.title") }}</a
                   >
                 </div>
               </div>
@@ -190,7 +358,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-3">
-                <span>Government Agencies and Elected Officials</span>
+                <span>{{ $t("header.GroupFour.title") }}</span>
               </button>
               <div
                 id="megamenu-3"
@@ -200,50 +368,108 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/federal-agencies">A-Z Index of U.S. Government Agencies</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/federal-agencies'
+                              : 'https://www.usa.gov/espanol/seguros-personales'
+                          "
+                          >{{ $t("header.GroupFour.linkOne") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/state-tribal-governments">State, Local, and Tribal Governments</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/state-tribal-governments'
+                              : 'https://www.usa.gov/espanol/gasto-ahorro-inversion'
+                          "
+                          >{{ $t("header.GroupFour.linkTwo") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/elected-officials">Contact Elected Officials</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/elected-officials'
+                              : 'https://www.usa.gov/espanol/credito'
+                          "
+                          >{{ $t("header.GroupFour.linkThree") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/forms">Forms, by Agency</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/forms'
+                              : 'https://www.usa.gov/espanol/impuestos'
+                          "
+                          >{{ $t("header.GroupFour.linkFour") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/buy-from-government">Buying from the U.S. Government</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/buy-from-government'
+                              : 'https://www.usa.gov/espanol/dinero-sin-reclamar'
+                          "
+                          >{{ $t("header.GroupFour.linkFive") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/about-the-us">About the U.S.</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/about-the-us'
+                              : 'https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios'
+                          "
+                          >{{ $t("header.GroupFour.linkSix") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/branches-of-government">Branches of the U.S. Government</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/branches-of-government'
+                              : 'https://www.usa.gov/espanol/proteccion-consumidor'
+                          "
+                          >{{ $t("header.GroupFour.linkSeven") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/budget">Budget of the U.S. Government</a>
+                        <a href="https://www.usa.gov/budget">{{ $t("header.GroupFour.linkEight") }}</a>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="topic-link topic-nav-agencies">
                   <img
+                    v-if="this.$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_Elected_Officials_White.svg"
+                    alt="person in front of government building"
+                    width="55"
+                    class="display-none tablet:display-inline va-middle" />
+                  <img
+                    v-if="this.$i18n.locale === 'es'"
+                    src="https://www.usa.gov/images/Topic_Icon_Money_White.svg"
                     alt="person in front of government building"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
-                    href="https://www.usa.gov/agencies"
-                    >Government Agencies and Elected Officials</a
+                    :href="
+                      this.$i18n.locale === 'en' ? 'https://www.usa.gov/agencies' : 'https://www.usa.gov/espanol/dinero'
+                    "
+                    >{{ $t("header.GroupFour.title") }}</a
                   >
                 </div>
               </div>
@@ -253,7 +479,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-4">
-                <span>Jobs and Unemployment</span>
+                <span>{{ $t("header.GroupFive.title") }}</span>
               </button>
               <div
                 id="megamenu-4"
@@ -263,36 +489,86 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/job-search">Looking for a New Job</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/job-search'
+                              : 'https://www.usa.gov/espanol/funcionarios-elegidos'
+                          "
+                          >{{ $t("header.GroupFive.linkOne") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/unemployment">Unemployment Help</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/unemployment'
+                              : 'https://www.usa.gov/espanol/agencias-estatales'
+                          "
+                          >{{ $t("header.GroupFive.linkTwo") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/labor-laws">Labor Laws and Issues</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/labor-laws'
+                              : 'https://www.usa.gov/espanol/consulados-embajadas'
+                          "
+                          >{{ $t("header.GroupFive.linkThree") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/federal-employees">U.S. Government Employees</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/federal-employees'
+                              : 'https://www.usa.gov/espanol/agencias-gobierno'
+                          "
+                          >{{ $t("header.GroupFive.linkFour") }}</a
+                        >
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/retirement">Retirement</a></li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/business">Small Business</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/retirement'
+                              : 'https://www.usa.gov/espanol/acerca-de-estados-unidos'
+                          "
+                          >{{ $t("header.GroupFive.linkFive") }}</a
+                        >
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/business">{{ $t("header.GroupFive.linkSix") }}</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
                 <div class="topic-link topic-nav-job">
                   <img
-                    src="	https://www.usa.gov/images/Topic_Icon_Job_White.svg"
+                    v-if="this.$i18n.locale === 'en'"
+                    src="https://www.usa.gov/images/Topic_Icon_Job_White.svg"
                     alt="suitcase"
+                    width="55"
+                    class="display-none tablet:display-inline va-middle" />
+                  <img
+                    v-if="this.$i18n.locale === 'es'"
+                    src="https://www.usa.gov/images/Topic_Icon_Elected_Officials_White.svg"
+                    alt="building with people"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
-                    href="https://www.usa.gov/jobs-and-unemployment"
-                    >Jobs and Unemployment</a
+                    :href="
+                      this.$i18n.locale === 'en'
+                        ? 'https://www.usa.gov/jobs-and-unemployment'
+                        : 'https://www.usa.gov/espanol/directorios'
+                    "
+                    >{{ $t("header.GroupFive.title") }}</a
                   >
                 </div>
               </div>
@@ -302,7 +578,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-5">
-                <span>Money and Taxes</span>
+                <span>{{ $t("header.GroupSix.title") }}</span>
               </button>
               <div
                 id="megamenu-5"
@@ -311,44 +587,107 @@
                 <div class="grid-row grid-gap-4">
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/taxes">Taxes</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/credit-and-debt">Credit and Debt</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/taxes'
+                              : 'https://www.usa.gov/espanol/presentar-queja'
+                          "
+                          >{{ $t("header.GroupSix.linkOne") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/spend-save-invest">Spending, Saving and Investing</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/credit-and-debt'
+                              : 'https://www.usa.gov/espanol/telecomunicaciones'
+                          "
+                          >{{ $t("header.GroupSix.linkTwo") }}</a
+                        >
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/spend-save-invest'
+                              : 'https://www.usa.gov/espanol/telemercadeo-correo-basura'
+                          "
+                          >{{ $t("header.GroupSix.linkThree") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/unclaimed-money">Unclaimed Money from the Government</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/unclaimed-money'
+                              : 'https://www.usa.gov/espanol/estafas-fraudes'
+                          "
+                          >{{ $t("header.GroupSix.linkFour") }}</a
+                        >
                       </li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/currency">Currency</a></li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/benefits-grants-loans">Benefits, Grants, Loans</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/currency'
+                              : 'https://www.usa.gov/espanol/dinero'
+                          "
+                          >{{ $t("header.GroupSix.linkFive") }}</a
+                        >
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/benefits-grants-loans'
+                              : 'https://www.usa.gov/espanol/estados-consumidor'
+                          "
+                          >{{ $t("header.GroupSix.linkSix") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/consumer">Consumer Issues</a></li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/housing">Housing</a></li>
-                      <li class="usa-nav__submenu-item"><a href="https://www.usa.gov/retirement">Retirement</a></li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/consumer">{{ $t("header.GroupSix.linkSeven") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/housing">{{ $t("header.GroupSix.linkEight") }}</a>
+                      </li>
+                      <li class="usa-nav__submenu-item">
+                        <a href="https://www.usa.gov/retirement">{{ $t("header.GroupSix.linkNine") }}</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
                 <div class="topic-link topic-nav-tax">
                   <img
+                    v-if="this.$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_Money_White.svg"
                     alt="money sign"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
+                  <img
+                    v-if="this.$i18n.locale === 'es'"
+                    src="https://www.usa.gov/images/Topic_Icon_Consumer_White.svg"
+                    alt="hand  holding a credit card"
+                    width="55"
+                    class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
-                    href="https://www.usa.gov/money"
-                    >Money and Taxes</a
+                    :href="
+                      this.$i18n.locale === 'en'
+                        ? 'https://www.usa.gov/money'
+                        : 'https://www.usa.gov/espanol/proteccion-consumidor'
+                    "
+                    >{{ $t("header.GroupSix.title") }}</a
                   >
                 </div>
               </div>
@@ -358,7 +697,7 @@
                 class="usa-accordion__button usa-nav__link initialized"
                 aria-expanded="false"
                 aria-controls="megamenu-6">
-                <span>Travel and Immigration</span>
+                <span>{{ $t("header.GroupSeven.title") }}</span>
               </button>
               <div
                 id="megamenu-6"
@@ -368,34 +707,73 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/travel-abroad">Passports and International Travel</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/travel-abroad'
+                              : 'https://www.usa.gov/espanol/empleo-capacitacion-laboral'
+                          "
+                          >{{ $t("header.GroupSeven.linkOne") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/immigration-and-citizenship">Immigration and Citizenship</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/immigration-and-citizenship'
+                              : 'https://www.usa.gov/espanol/jubilacion'
+                          "
+                          >{{ $t("header.GroupSeven.linkTwo") }}</a
+                        >
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/visas-and-visitors">Visas and Visiting the U.S.</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/visas-and-visitors'
+                              : 'https://www.usa.gov/espanol/desempleo'
+                          "
+                          >{{ $t("header.GroupSeven.linkThree") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/recreation-and-travel">Recreation and Travel within the U.S.</a>
+                        <a
+                          :href="
+                            this.$i18n.locale === 'en'
+                              ? 'https://www.usa.gov/recreation-and-travel'
+                              : 'https://www.usa.gov/espanol/negocios-y-organizaciones-ONG'
+                          "
+                          >{{ $t("header.GroupSeven.linkFour") }}</a
+                        >
                       </li>
                     </ul>
                   </div>
                 </div>
                 <li class="topic-link topic-nav-globe">
                   <img
+                    v-if="this.$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_Immigration_White.svg"
                     alt="earth globe"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
+                  <img
+                    v-if="this.$i18n.locale === 'es'"
+                    src="https://www.usa.gov/images/Topic_Icon_Job_White.svg"
+                    alt="briefcase"
+                    width="55"
+                    class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
-                    href="https://www.usa.gov/travel-and-immigration"
-                    >Travel and Immigration</a
+                    :href="
+                      this.$i18n.locale === 'en'
+                        ? 'https://www.usa.gov/travel-and-immigration'
+                        : 'https://www.usa.gov/espanol/trabajo-y-desempleo'
+                    "
+                    >{{ $t("header.GroupSeven.title") }}</a
                   >
                 </li>
               </div>
@@ -416,7 +794,7 @@
                   id="top-srch"
                   class="usa-sr-only"
                   for="search-field-small"
-                  >Search</label
+                  >{{ $t("header.meta.search") }}</label
                 >
                 <input
                   id="affiliate"
@@ -457,7 +835,7 @@
         <a
           href="https://www.usa.gov/benefits-grants-loans"
           class="back-benefit font-serif-md">
-          Benefits, Grants, Loans
+          {{ $t("header.meta.back") }}
         </a>
         <button
           v-if="this.$config.languageToggleActive"
