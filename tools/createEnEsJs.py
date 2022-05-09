@@ -1,7 +1,7 @@
 import os
 
-LANGUAGE = 'es'
-jsonDir = '../locales/'+LANGUAGE+'/'
+LANGUAGE = "es"
+jsonDir = "../locales/" + LANGUAGE + "/"
 
 allFiles = {"agencies": [], "benefits": [], "life-events": [], "types": []}
 ignoreFiles = [
@@ -25,18 +25,18 @@ for file in files:
             allFiles[file] = {"path": os.path.join(jsonDir, file)}
 
 lines = [
-    'export default Object.assign({}, \n',
+    "export default Object.assign({}, \n",
 ]
 for fileOrDir in allFiles:
-    if '.' in fileOrDir:
+    if "." in fileOrDir:
         line = 'require("./' + os.path.join(LANGUAGE, fileOrDir) + '"),\n'
         lines.append(line)
-    else: 
+    else:
         for file in allFiles[fileOrDir]:
-            filePath = file['path'].replace('../locales', '.')
+            filePath = file["path"].replace("../locales", ".")
             line = 'require("' + filePath + '"),\n'
             lines.append(line)
-lines.append(')')
+lines.append(")")
 
-with open('../locales/'+LANGUAGE+'.js', 'w') as f:
+with open("../locales/" + LANGUAGE + ".js", "w") as f:
     f.writelines(lines)
