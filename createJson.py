@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import sys
 
 localesPath = "./locales/en/"
@@ -38,7 +39,8 @@ for file in files:
         else:
             allFiles[file] = {"path": os.path.join(mdPath, file)}
 
-usedVariables = []
+usedVariables = {}
+noNumbers = r'[0-9]'
 keys = list(allFiles.keys())
 for fileOrDir in keys:
         for file in allFiles[fileOrDir]:
@@ -62,20 +64,22 @@ for fileOrDir in keys:
                     if '---' in line or line == '\n':
                         newLines.append(line)
                     elif line.count('"') == 2:
-                        if usedVariables.count(variableDelim) > 0:
-                            variableDelim = variableDelim + str(usedVariables.count(variableDelim))
+                        if variableDelim in usedVariables:
+                            usedVariables[variableDelim] += 1
+                            variableDelim = variableDelim + str(usedVariables[variableDelim])
                         else:
-                            usedVariables.append(variableDelim)
+                            usedVariables[variableDelim] = 0
                         if '.' in variableDelim:
                             topLevel = variableDelim.split('.')[0]
                             nestedLevel = variableDelim.split('.')[1]
                             if jsonData.get(topLevel) is None:
                                 jsonData[topLevel] = {}
                             else:
-                                jsonData[topLevel][nestedLevel] = nline.replace('"', '').replace('[','').replace(']', '')
+                                jsonData[topLevel][nestedLevel] = nline.replace('"', '').replace('[','').replace(']', '').strip()
                         else:
-                            jsonData[variableDelim] = nline.replace('"', '').replace('[','').replace(']','')
+                            jsonData[variableDelim] = nline.replace('"', '').replace('[','').replace(']','').strip()
                         bline = line.split('"')[0] + variableDelim + line.split('"')[2]
+                        variableDelim = re.sub(noNumbers, '', variableDelim)
                         newLines.append(bline)
                     else:
                         newLines.append(line)
@@ -85,6 +89,8 @@ for fileOrDir in keys:
                 f.close()
             with open(filePath, 'w') as f:
                 f.write(''.join(newLines))       
-                f.close()   
+                f.close() 
+            break
+        break  
 # now that we have all the content files and their paths 
 # we just need to find the information to put into the json files
