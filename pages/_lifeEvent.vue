@@ -215,13 +215,14 @@
 <script>
 import _ from "lodash"
 import { mapGetters, mapState } from "vuex"
+import tObj from '~/services/translation'
 import mapTags from "~/mixins/MapTags"
 
 export default {
   name: "LifeEvent",
   mixins: [mapTags],
   layout: "default",
-  async asyncData({ $content, i18n }) {
+  async asyncData({ $content }) {
     const landingPage = await $content("landing-page").fetch()
     return { landingPage }
   },
@@ -248,23 +249,8 @@ export default {
     const chosenEvent =
       this.$config.oneEventVersion === false ? this.$route.params.lifeEvent : this.$config.oneEventVersion
 
-    const translateObject = (object) => {
-      for (const key in object) {
-          if (typeof object[key] === "object") {
-              translateObject(object[key])
-          } else if (typeof object[key] === "array") {
-              for (const item of object[key]) {
-                  translateObject(item)
-              }
-          } else {
-              if (typeof object[key] === "string" && object[key].indexOf(".") !== -1) {
-                  object[key] = this.$t(object[key])
-              }
-          }
-      }
-      return object
-    }
-    let lifeEvent = await this.$content("life-events", chosenEvent).fetch()
+    
+    const lifeEvent = await this.$content("life-events", chosenEvent).fetch()
     const lifeEventBenefits = await this.$content("benefits")
       .where({
         lifeEvents: { $contains: chosenEvent }
@@ -279,12 +265,8 @@ export default {
     for (const related of lifeEvent.relatedKeys || []) {
       lifeEvent.related.push(await this.$content("life-events", related).fetch())
     }
-    const translatedBenefits = lifeEventBenefits.map((benefit) => {
-      const translatedBenefit = translateObject(benefit)
-      return translatedBenefit
-    })
-    this.lifeEvent = translateObject(lifeEvent)
-    this.allLifeEventBenefits = this.lifeEventBenefits = translatedBenefits
+    this.lifeEvent = lifeEvent
+    this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits
   },
   /* istanbul ignore next */
   head() {
@@ -323,6 +305,9 @@ export default {
   },
   mounted() {
     this.$root.$on("tag:click", this.tagClick)
+    this.lifeEvent = tObj(this.lifeEvent, this.$t)
+    const translatedBenefits = this.lifeEventBenefits.map((benefit) => tObj(benefit, this.$t))
+    this.lifeEventBenefits = this.allLifeEventBenefits = translatedBenefits
   },
   methods: {
     clearCriteria() {

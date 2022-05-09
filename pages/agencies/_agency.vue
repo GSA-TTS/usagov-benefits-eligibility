@@ -109,6 +109,7 @@
 
 <script>
 import _ from "lodash"
+import tObj from '~/services/translation'
 import mapTags from "~/mixins/MapTags"
 import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
@@ -136,9 +137,10 @@ export default {
       : _.lowerCase(this.$route.params.agency)
     const agencyRegex = new RegExp(_.escapeRegExp(slug), "i")
     const lifeEventBenefits = await this.$content("benefits").sortBy("title").fetch()
+    const translatedBenefits = lifeEventBenefits.map(benefit => tObj(benefit, this.$t))
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
-    this.lifeEventBenefits = lifeEventBenefits.filter(
+    this.lifeEventBenefits = translatedBenefits.filter(
       (benefit) => benefit?.source?.name && agencyRegex.test(benefit.source.name)
     )
     this.benefitAgency = this.lifeEventBenefits[0]?.source?.name

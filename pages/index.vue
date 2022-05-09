@@ -33,14 +33,14 @@
               v-for="event in lifeEvents"
               :key="event.slug"
               class="usa-card desktop:grid-col-6"
-              :aria-label="event.title">
+              :aria-label="$t(event.title)">
               <nuxt-link
                 class="display-block height-full margin-x-1"
                 style="text-decoration: none; outline-offset: 0.25rem"
                 :to="event.slug">
                 <Card
-                  :card-body="event.summary"
-                  :card-title="event.title"
+                  :card-body="$t(event.summary)"
+                  :card-title="$t(event.title)"
                   :card-container-classes="['hover:border-base-light', 'margin-x-0']"
                   card-title-heading-level="h2" />
               </nuxt-link>
@@ -53,12 +53,12 @@
 </template>
 
 <script>
+
 export default {
   layout: "default",
-  async asyncData({ $content, i18n }) {
+  async asyncData({ $content }) {
     const lifeEvents = await $content("life-events").sortBy("title").fetch()
     const landingPage = await $content("landing-page").fetch()
-
     return { lifeEvents, landingPage }
   },
   data() {

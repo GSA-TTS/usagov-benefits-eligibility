@@ -113,6 +113,7 @@
 import _ from "lodash"
 import mapTags from "~/mixins/MapTags"
 import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
+import tObj from '~/services/translation'
 
 export default {
   components: {
@@ -140,6 +141,7 @@ export default {
       })
       .sortBy("title")
       .fetch()
+    const translatedBenefits = lifeEventBenefits.map(benefit => tObj(benefit, this.$t))
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     // eslint-d
@@ -149,7 +151,7 @@ export default {
     for (const related of this.topic.relatedKeys || []) {
       this.topic.related.push(await this.$content("types", related).fetch())
     }
-    this.lifeEventBenefits = lifeEventBenefits
+    this.lifeEventBenefits = translatedBenefits
   },
   /* istanbul ignore next */
   head() {

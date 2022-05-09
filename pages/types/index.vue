@@ -19,16 +19,16 @@
               v-for="tag in mapTags(lifeEventTags)"
               :key="tag.slug"
               class="usa-card desktop:grid-col-6"
-              :aria-label="tag.title">
+              :aria-label="$t(tag.title)">
               <nuxt-link
                 :to="`/types/${tag.slug}`"
                 class="display-block height-full margin-x-1"
                 style="text-decoration: none; outline-offset: 0.25rem">
                 <Card
-                  :card-title="tag.title"
+                  :card-title="$t(tag.title)"
                   card-title-heading-level="h2"
                   :card-container-classes="['hover:border-base-light', 'margin-x-0']"
-                  :card-body="tag.summary" />
+                  :card-body="$t(tag.summary)" />
               </nuxt-link>
             </li>
           </ul>
@@ -43,7 +43,7 @@ import _ from "lodash"
 
 export default {
   layout: "default",
-  async asyncData({ $content, i18n }) {
+  async asyncData({ $content }) {
     const contentTopics = await $content("types").fetch()
     const topics = {}
     for (const c of contentTopics) {

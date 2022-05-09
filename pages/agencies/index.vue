@@ -19,15 +19,15 @@
               v-for="agency in mapAgencies(agencies)"
               :key="agency.slug"
               class="usa-card desktop:grid-col-6"
-              :aria-label="agency.title">
+              :aria-label="$t(agency.title)">
               <nuxt-link
                 :to="`/agencies/${agency.slug}`"
                 class="display-block height-full margin-x-1"
                 style="text-decoration: none; outline-offset: 0.25rem">
                 <Card
                   card-title-heading-level="h2"
-                  :card-title="agency.title"
-                  :card-body="agency.summary"
+                  :card-title="$t(agency.title)"
+                  :card-body="$t(agency.summary)"
                   :card-container-classes="['hover:border-base-light', 'margin-x-0']" />
               </nuxt-link>
             </li>
@@ -43,7 +43,7 @@ import _ from "lodash"
 
 export default {
   layout: "default",
-  async asyncData({ $content, i18n }) {
+  async asyncData({ $content }) {
     const contentAgencyList = await $content("agencies").fetch()
     const contentAgencies = {}
     for (const a of contentAgencyList) {
