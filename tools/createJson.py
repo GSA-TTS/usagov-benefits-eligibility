@@ -76,12 +76,9 @@ for fileOrDir in keys:
                         )
                     else:
                         usedVariables[variableDelim] = 0
-                    
-                    jsonData[baseTitle + '.' + variableDelim] = (
-                        nline.replace('"', "")
-                        .replace("[", "")
-                        .replace("]", "")
-                        .strip()
+
+                    jsonData[baseTitle + "." + variableDelim] = (
+                        nline.replace('"', "").replace("[", "").replace("]", "").strip()
                     )
                     bline = (
                         line.split('"')[0]
