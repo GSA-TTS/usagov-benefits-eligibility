@@ -5,7 +5,8 @@ module.exports = {
     node: true,
   },
   parserOptions: {
-    parser: "babel-eslint",
+    parser: "@babel/eslint-parser",
+    requireConfigFile: false,
   },
   extends: [
     "@nuxtjs",
@@ -14,7 +15,7 @@ module.exports = {
     "plugin:sonarjs/recommended",
     "prettier",
   ],
-  plugins: ["vuejs-accessibility", "sonarjs"],
+  plugins: ["vuejs-accessibility", "promise", "sonarjs"],
   // add your custom rules here
   rules: {
     "comma-dangle": 0,
