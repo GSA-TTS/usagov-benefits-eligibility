@@ -51,18 +51,18 @@ for fileOrDir in keys:
         jsonData = {}
         with open(filePath, "r") as f:
             data = f.readlines()
-            variableDelim = ""
+            variableDelim = baseTitle
             for line in data:
                 nline = line
                 if ":" in line:
                     if "  " in line:
                         if "." in variableDelim:
-                            variableDelim = variableDelim.split(".")[0]
+                            variableDelim = baseTitle + variableDelim.split(".")[0]
                         variableDelim += "." + line.split(":")[0].strip().replace(
                             "-", ""
                         ).replace(" ", "")
                     else:
-                        variableDelim = (
+                        variableDelim = baseTitle + (
                             line.split(":")[0].strip().replace("-", "").replace(" ", "")
                         )
                     nline = line.split(":")[1].strip()
