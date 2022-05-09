@@ -264,7 +264,7 @@ export default {
     }
     // translate life event
     const t = (key) => {
-      return this.$t(`life-events.${key}`)
+      return this.$t(key)
     }
     const stats = {
       translated: [],

@@ -83,8 +83,6 @@ require("./en/types/burial-and-funeral-assistance.json"),
 require("./en/types/life-insurance.json"),
 require("./en/types/educational-assistance.json"),
 require("./en/types/housing.json"),
-require("./en/criteria.json"),
 require("./en/en.json"),
 require("./en/landing-page.json"),
-require("./en/disclaimer.json"),
 )
