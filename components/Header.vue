@@ -93,24 +93,24 @@
               v-else
               class="usa-nav__primary-item">
               <nuxt-link
-                to="/"
+                :to="localePath('/')"
                 exact
                 class="usa-nav__link">
-                <span>Benefits by life event</span>
+                <span>{{ $t("utilityNav.linkOne") }}</span>
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item">
               <nuxt-link
-                to="/types"
+                :to="localePath('/types')"
                 class="usa-nav__link">
-                <span>Benefits by type</span>
+                <span>{{ $t("utilityNav.linkTwo") }}</span>
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item">
               <nuxt-link
-                to="/agencies"
+                :to="localePath('/agencies')"
                 class="usa-nav__link">
-                <span>Benefits by agency</span>
+                <span>{{ $t("utilityNav.linkThree") }}</span>
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item tablet:margin-left-auto">
@@ -124,17 +124,6 @@
             </li>
           </ul>
         </div>
-        <!-- <div class="grid-container margin-y-2">
-          <div class="display-row display-flex flex-justify flex-align-stretch tablet:flex-align-end">
-            <a
-              class="language-toggle-mobile tablet:margin-left-auto usa-button"
-              href="https://www.usa.gov/espanol/"
-              lang="es"
-              xml:lang="es">
-              {{ $t("header.meta.language") }}
-            </a>
-          </div>
-        </div> -->
       </nav>
     </header>
   </div>

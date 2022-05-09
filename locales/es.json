@@ -16,6 +16,11 @@
   },
   "skipnav": "Saltar al contenido principal",
   "returnToTop": "Regresar arriba",
+  "utilityNav": {
+    "linkOne": "Beneficios por eventos de vida",
+    "linkTwo": "Beneficios por tipo",
+    "linkThree": "Beneficios por agencia"
+  },
   "header": {
     "menu": "MENÚ",
     "main": "Navegación Principal",
