@@ -1,37 +1,42 @@
-import sys, json, os
+import json
+import os
+import sys
 
-localesPath = './locales/en/'
-mdPath = './content/'
+localesPath = "./locales/en/"
+mdPath = "./content/"
 
-ignoreFiles = ['.DS_Store', 'readme.md', 'disclaimer.md', 'criteria.csv', 'landing-page.md']
+ignoreFiles = [
+    ".DS_Store",
+    "readme.md",
+    "disclaimer.md",
+    "criteria.csv",
+    "landing-page.md",
+]
 files = os.listdir(mdPath)
 
-allFiles = {
-    'agencies': [],
-    'benefits': [],
-    'life-events': [],
-    'types': []
-}
+allFiles = {"agencies": [], "benefits": [], "life-events": [], "types": []}
 
 ignoreLines = [
-    'criteriaKey',
-    'disableGroupKey',
-    'disableGroupWhen',
+    "criteriaKey",
+    "disableGroupKey",
+    "disableGroupWhen",
 ]
 
 for file in files:
     if file in ignoreFiles:
         continue
     else:
-        if '.' not in file:
+        if "." not in file:
             moreFiles = os.listdir(os.path.join(mdPath, file))
             for moreFile in moreFiles:
                 if moreFile in ignoreFiles:
                     continue
                 else:
-                    allFiles[file].append({'path': os.path.join(mdPath, file, moreFile)})
+                    allFiles[file].append(
+                        {"path": os.path.join(mdPath, file, moreFile)}
+                    )
         else:
-            allFiles[file] = {'path': os.path.join(mdPath, file)}
+            allFiles[file] = {"path": os.path.join(mdPath, file)}
 
 keys = list(allFiles.keys())
 for fileOrDir in keys:
@@ -70,5 +75,3 @@ for fileOrDir in keys:
         break
 # now that we have all the content files and their paths 
 # we just need to find the information to put into the json files
-
-

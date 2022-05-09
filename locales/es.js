@@ -1,4 +1,1 @@
-export default Object.assign(
-  {},
-  require("./es/es.json"),
-)
+export default Object.assign({}, require("./es/es.json"))
