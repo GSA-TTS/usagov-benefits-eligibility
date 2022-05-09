@@ -1,10 +1,9 @@
 import json
 import os
 import re
-import sys
 
-localesPath = "./locales/en/"
-mdPath = "./content/"
+localesPath = "../locales/en/"
+mdPath = "../content/"
 
 ignoreFiles = [
     ".DS_Store",
@@ -92,7 +91,5 @@ for fileOrDir in keys:
             with open(filePath, 'w') as f:
                 f.write(''.join(newLines))       
                 f.close() 
-            break
-        break  
 # now that we have all the content files and their paths 
 # we just need to find the information to put into the json files
