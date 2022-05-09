@@ -247,6 +247,23 @@ export default {
   async fetch() {
     const chosenEvent =
       this.$config.oneEventVersion === false ? this.$route.params.lifeEvent : this.$config.oneEventVersion
+
+    const translateObject = (object) => {
+      for (const key in object) {
+          if (typeof object[key] === "object") {
+              translateObject(object[key])
+          } else if (typeof object[key] === "array") {
+              for (const item of object[key]) {
+                  translateObject(item)
+              }
+          } else {
+              if (typeof object[key] === "string" && object[key].indexOf(chosenEvent + ".") !== -1) {
+                  object[key] = this.$t(object[key])
+              }
+          }
+      }
+      return object
+    }
     let lifeEvent = await this.$content("life-events", chosenEvent).fetch()
     const lifeEventBenefits = await this.$content("benefits")
       .where({
@@ -262,38 +279,9 @@ export default {
     for (const related of lifeEvent.relatedKeys || []) {
       lifeEvent.related.push(await this.$content("life-events", related).fetch())
     }
-    // translate life event
-    const t = (key) => {
-      return this.$t(key)
-    }
-    const stats = {
-      translated: [],
-      skipped: []
-    }
-    const applyTranslationToWholeObject = (object) => {
-      for (const key in object) {
-        if (typeof object[key] === "object") {
-          applyTranslationToWholeObject(object[key])
-        } else if (typeof object[key] === "array") {
-          for (const item of object[key]) {
-            applyTranslationToWholeObject(item)
-          }
-        } else {
-          if (typeof object[key] === "string" && object[key].indexOf(chosenEvent + ".") !== -1) {
-            object[key] = t(object[key])
-            stats.translated.push({
-              key: key,
-              value: object[key]
-            })
-          } else {
-            stats.skipped.push(key)
-          }
-        }
-      }
-      return object
-    }
-    this.lifeEvent = applyTranslationToWholeObject(lifeEvent)
-    this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits
+    
+    this.lifeEvent = translateObject(lifeEvent)
+    this.allLifeEventBenefits = this.lifeEventBenefits = translateObject(lifeEventBenefits)
   },
   /* istanbul ignore next */
   head() {

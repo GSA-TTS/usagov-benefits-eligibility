@@ -76,24 +76,13 @@ for fileOrDir in keys:
                         )
                     else:
                         usedVariables[variableDelim] = 0
-                    if "." in variableDelim:
-                        topLevel = variableDelim.split(".")[0]
-                        nestedLevel = variableDelim.split(".")[1]
-                        if jsonData.get(topLevel) is None:
-                            jsonData[topLevel] = {}
-                        jsonData[topLevel][nestedLevel] = (
-                            nline.replace('"', "")
-                            .replace("[", "")
-                            .replace("]", "")
-                            .strip()
-                        )
-                    else:
-                        jsonData[baseTitle + '.' + variableDelim] = (
-                            nline.replace('"', "")
-                            .replace("[", "")
-                            .replace("]", "")
-                            .strip()
-                        )
+                    
+                    jsonData[baseTitle + '.' + variableDelim] = (
+                        nline.replace('"', "")
+                        .replace("[", "")
+                        .replace("]", "")
+                        .strip()
+                    )
                     bline = (
                         line.split('"')[0]
                         + baseTitle
