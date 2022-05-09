@@ -1,14 +1,14 @@
 ---
 # yaml front matter here
-title: death-of-a-loved-one.title
-summary: death-of-a-loved-one.summary
-lede: death-of-a-loved-one.lede
-secondaryHeadline: death-of-a-loved-one.secondaryHeadline
+title: "Death of a loved one"
+summary: "If you have lost a loved one, you may qualify for help, including assistance with burial or funeral costs, financial support, and more."
+lede: ""
+secondaryHeadline: "Government assistance after losing a loved one"
 
-eligibilityCriteriaDescription: death-of-a-loved-one.eligibilityCriteriaDescription
+eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
 
 topLevelFilter:
-  - label: death-of-a-loved-one.topLevelFilter.applicant_date_of_birth.label
+  - label: "Start here"
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
@@ -24,7 +24,7 @@ topLevelFilter:
     disableGroupWhen: ["no"]
 
 eligibilityCriteria:
-  - label: death-of-a-loved-one.eligibilityCriteria.deceased-basics.label
+  - label: "About the person who died"
     description: ""
     criteriaGroupKey: deceased-basics
     criteriaKeys:
@@ -35,7 +35,7 @@ eligibilityCriteria:
       - deceased_date_of_death
       - deceased_date_of_funeral
 
-  - label: death-of-a-loved-one.eligibilityCriteria.deceased-military.label
+  - label: "About the military service of the person who died"
     description: ""
     criteriaGroupKey: deceased-military
     criteriaKeys:
@@ -43,7 +43,7 @@ eligibilityCriteria:
       - deceased_death_circumstance
       - deceased_grave_headstone
 
-  - label: death-of-a-loved-one.eligibilityCriteria.applicant.label
+  - label: "About you (the person applying for benefits)"
     description: ""
     criteriaGroupKey: applicant
     criteriaKeys:
