@@ -23,7 +23,7 @@ eligibility:
     acceptableValues: ["child"]
   - criteriaKey: applicant_date_of_birth
     label: "You are under 18 years old (under 23 years old if attending a VA-approved school)."
-    acceptableValues: ["<18years"]
+    acceptableValues: [<18years]
   - criteriaKey: applicant_marital_status
     acceptableValues: ["unmarried"]
 ---

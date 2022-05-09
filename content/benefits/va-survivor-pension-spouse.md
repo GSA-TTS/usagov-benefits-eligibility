@@ -22,7 +22,8 @@ eligibility:
   - criteriaKey: applicant_relationship
     acceptableValues: ["spouse"]
   - criteriaKey: applicant_marital_status
-    acceptableValues: ["unmarried", "widowed"]
+    acceptableValues: ["unmarried", 
+    "widowed"]
   - criteriaKey: applicant_income
     acceptableValues: [true]
 ---

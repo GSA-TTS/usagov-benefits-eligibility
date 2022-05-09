@@ -24,5 +24,5 @@ eligibility:
         "a member of the National Guard or Reserves",
       ]
   - criteriaKey: applicant_high_school_diploma
-    acceptableValues: ["true"]
+    acceptableValues: [true]
 ---

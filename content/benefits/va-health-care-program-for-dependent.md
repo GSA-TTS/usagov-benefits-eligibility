@@ -16,5 +16,6 @@ eligibility:
   - criteriaKey: applicant_family_of_service_member
     acceptableValues: ["disabled due to a service-connected disability"]
   - criteriaKey: applicant_marital_status
-    acceptableValues: ["unmarried", "widowed"]
+    acceptableValues: ["unmarried",
+     "widowed"]
 ---

@@ -28,9 +28,13 @@ eligibility:
       ]
   - criteriaKey: deceased_date_of_funeral
     label: "The deceased's funeral/burial was within the last two years."
-    acceptableValues: [">2years"]
+    acceptableValues: [>2years]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]
+    acceptableValues: ["spouse", 
+    "child", 
+    "parent", 
+    "other family member", 
+    "personal or official representative"]
   - criteriaKey: applicant_paid_funeral_expenses
     acceptableValues: [true]
   - criteriaKey: applicant_funeral_reimbursment

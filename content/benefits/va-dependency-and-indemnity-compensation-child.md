@@ -18,7 +18,8 @@ eligibility:
     acceptableValues: ["yes"]
     label: "The deceased served in the active military, naval, or air service."
   - criteriaKey: deceased_service_status
-    acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable"]
+    acceptableValues: ["an active-duty service member", 
+    "discharged under conditions other than dishonorable"]
   - criteriaKey: deceased_death_circumstance
     acceptableValues:
       [
@@ -30,7 +31,7 @@ eligibility:
     acceptableValues: ["child"]
   - criteriaKey: applicant_date_of_birth
     label: "You are under 18 years old (under 23 years old if attending a VA-approved school)."
-    acceptableValues: ["<18years"]
+    acceptableValues: [<18years]
   - criteriaKey: applicant_marital_status
     acceptableValues: ["unmarried"]
 ---

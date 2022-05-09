@@ -33,5 +33,9 @@ eligibility:
         "died while eligible or receiving VA compensation",
       ]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]
+    acceptableValues: ["spouse", 
+    "child", 
+    "parent", 
+    "other family member", 
+    "personal or official representative"]
 ---

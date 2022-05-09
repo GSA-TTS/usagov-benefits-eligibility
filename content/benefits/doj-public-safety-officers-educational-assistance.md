@@ -18,5 +18,6 @@ eligibility:
     acceptableValues: [true]
     label: "The deceased served in the active military, naval, or air service."
   - criteriaKey: applicant_relationship
-    acceptableValues: [spouse, child]
+    acceptableValues: ["spouse", 
+    "child"]
 ---

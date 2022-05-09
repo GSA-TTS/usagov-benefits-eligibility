@@ -18,7 +18,8 @@ eligibility:
     acceptableValues: ["yes"]
     label: "The deceased served in the active military, naval, or air service."
   - criteriaKey: deceased_service_status
-    acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable"]
+    acceptableValues: ["an active-duty service member", 
+    "discharged under conditions other than dishonorable"]
   - criteriaKey: deceased_death_circumstance
     acceptableValues:
       [

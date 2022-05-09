@@ -25,5 +25,9 @@ eligibility:
         "a member of the National Guard or Reserves",
       ]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]
+    acceptableValues: ["spouse", 
+    "child", 
+    "parent", 
+    "other family member", 
+    "personal or official representative"]
 ---

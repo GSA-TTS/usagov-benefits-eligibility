@@ -17,5 +17,5 @@ eligibility:
     acceptableValues: ["disabled due to a service-connected disability"]
   - criteriaKey: applicant_date_of_birth
     label: "You are at least 18 years old."
-    acceptableValues: [">18years"]
+    acceptableValues: [>18years]
 ---

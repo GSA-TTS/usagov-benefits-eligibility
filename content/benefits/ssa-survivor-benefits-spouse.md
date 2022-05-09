@@ -16,12 +16,13 @@ eligibility:
   - criteriaKey: deceased_paid_into_SS
     acceptableValues: [true]
   - criteriaKey: applicant_relationship
-    acceptableValues: [spouse]
+    acceptableValues: ["spouse"]
   - criteriaKey: applicant_date_of_birth
     label: "You are at least 60 years old."
-    acceptableValues: [">60years"]
+    acceptableValues: [>60years]
   - criteriaKey: applicant_marital_status
-    acceptableValues: ["widowed", "divorced"]
+    acceptableValues: ["widowed", 
+    "divorced"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
 ---

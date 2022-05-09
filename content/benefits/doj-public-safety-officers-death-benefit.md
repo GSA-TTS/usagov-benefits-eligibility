@@ -16,5 +16,8 @@ eligibility:
   - criteriaKey: deceased_public_safety_officer
     acceptableValues: [true]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child", "parent", "other family member"]
+    acceptableValues: ["spouse", 
+    "child", 
+    "parent", 
+    "other family member"]
 ---

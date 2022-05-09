@@ -16,10 +16,10 @@ eligibility:
   - criteriaKey: deceased_paid_into_SS
     acceptableValues: [true]
   - criteriaKey: applicant_relationship
-    acceptableValues: [parent]
+    acceptableValues: ["parent"]
   - criteriaKey: applicant_date_of_birth
     label: "You are at least 62 years old and were dependent on the deceased for at least half of your support."
-    acceptableValues: [">62years"]
+    acceptableValues: [>62years]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
 ---

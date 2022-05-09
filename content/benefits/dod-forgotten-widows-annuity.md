@@ -20,7 +20,7 @@ eligibility:
   - criteriaKey: deceased_service_status
     acceptableValues: ["retired from the service"]
   - criteriaKey: deceased_date_of_death
-    acceptableValues: ["<01-01-1978"]
+    acceptableValues: [<01-01-1978]
     label: "The deceased died before 1978."
   - criteriaKey: applicant_relationship
     acceptableValues: [spouse]

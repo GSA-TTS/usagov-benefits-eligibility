@@ -27,5 +27,9 @@ eligibility:
   - criteriaKey: deceased_grave_headstone
     acceptableValues: [true]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]
+    acceptableValues: ["spouse", 
+    "child", 
+    "parent", 
+    "other family member", 
+    "personal or official representative"]
 ---

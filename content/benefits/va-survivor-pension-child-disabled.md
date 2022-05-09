@@ -24,7 +24,7 @@ eligibility:
     acceptableValues: ["child"]
   - criteriaKey: applicant_date_of_birth
     label: "You are at least 18 years old."
-    acceptableValues: [">18years"]
+    acceptableValues: [>18years]
   - criteriaKey: applicant_disability
     acceptableValues: [true]
   - criteriaKey: applicant_marital_status
