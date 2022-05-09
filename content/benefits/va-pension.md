@@ -2,10 +2,10 @@
 title: "Veteran's Pension"
 headline: "Veteran's Pension"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "military-service"
+  - retirement
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/pension/how-to-apply/

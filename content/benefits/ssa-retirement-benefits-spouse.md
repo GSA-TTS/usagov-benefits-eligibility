@@ -2,11 +2,11 @@
 title: "Retirement Benefits for Spouse"
 headline: "Retirement Benefits for Spouse"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "late-adulthood"
-  - "loss-of-job-and-low-income"
+  - retirement
+  - late-adulthood
+  - loss-of-job-and-low-income
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/retirement/

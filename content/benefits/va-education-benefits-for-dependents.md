@@ -2,10 +2,10 @@
 title: "Education Benefits (GI Bill) for Dependents"
 headline: "Education Benefits (GI Bill) for Dependents"
 tags:
-  - "educational assistance"
+  - educational assistance
 lifeEvents:
-  - "school-and-education"
-  - "military-service"
+  - school-and-education
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/education/survivor-dependent-benefits/

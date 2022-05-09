@@ -2,10 +2,10 @@
 title: "Civilian Health and Medical Program of the VA (CHAMPVA) for Child"
 headline: "Civilian Health and Medical Program of the VA (CHAMPVA) for Child"
 tags:
-  - "healthcare"
+  - healthcare
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/health-care/family-caregiver-benefits/champva/

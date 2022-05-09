@@ -2,10 +2,10 @@
 title: "Medicare with Retirement"
 headline: "Medicare with Retirement"
 tags:
-  - "healthcare"
+  - healthcare
 lifeEvents:
-  - "late-adulthood"
-  - "retirement"
+  - late-adulthood
+  - retirement
 source:
   name: "Centers for Medicare and Medicaid"
   link: https://www.medicare.gov/sign-up-change-plans/get-started-with-medicare

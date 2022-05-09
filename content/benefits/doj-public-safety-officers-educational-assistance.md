@@ -2,10 +2,10 @@
 title: "Public Safety Officers' Educational Assistance Program"
 headline: "Public Safety Officers' Educational Assistance Program"
 tags:
-  - "educational assistance"
+  - educational assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "school-and-education"
+  - death-of-a-loved-one
+  - school-and-education
 source:
   name: "U.S. Department of Justice"
   link: https://psob.bja.ojp.gov/PSOB_Education2018.pdf

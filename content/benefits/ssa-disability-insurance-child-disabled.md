@@ -2,10 +2,10 @@
 title: "Social Security Disability Insurance for Child with Disabilities"
 headline: "Social Security Disability Insurance for Child with Disabilities"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "disability"
-  - "loss-of-job-and-low-income"
+  - disability
+  - loss-of-job-and-low-income
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/disability/

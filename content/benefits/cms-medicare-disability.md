@@ -2,10 +2,10 @@
 title: "Medicare with Disability"
 headline: "Medicare with Disability"
 tags:
-  - "healthcare"
+  - healthcare
 lifeEvents:
-  - "late-adulthood"
-  - "disability"
+  - late-adulthood
+  - disability
 source:
   name: "Centers for Medicare and Medicaid"
   link: https://www.medicare.gov/sign-up-change-plans/get-started-with-medicare

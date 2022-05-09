@@ -2,10 +2,10 @@
 title: "Burial Benefits"
 headline: "Burial Benefits"
 tags:
-  - "burial and funeral assistance"
+  - burial and funeral assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "Department of Defense"
   link: https://www.dcms.uscg.mil/Portals/10/CG-1/PSC/PSD/docs/SurvivorsGuide2015.pdf?ver=2017-03-24-132033-397

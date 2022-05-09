@@ -2,10 +2,10 @@
 title: "Retirement Benefits"
 headline: "Retirement Benefits"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "late-adulthood"
+  - retirement
+  - late-adulthood
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/retirement/

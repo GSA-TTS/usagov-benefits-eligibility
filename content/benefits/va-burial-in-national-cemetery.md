@@ -2,10 +2,10 @@
 title: "Burial in VA National Cemetery"
 headline: "Burial in VA National Cemetery"
 tags:
-  - "burial and funeral assistance"
+  - burial and funeral assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/burials-memorials/eligibility/

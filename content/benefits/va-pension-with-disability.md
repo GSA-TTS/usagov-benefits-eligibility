@@ -2,10 +2,10 @@
 title: "Veteran's Pension with Disability"
 headline: "Veteran's Pension with Disability"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "disability"
-  - "military-service"
+  - disability
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/pension/how-to-apply/

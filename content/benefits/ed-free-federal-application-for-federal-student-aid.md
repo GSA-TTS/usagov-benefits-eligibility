@@ -2,10 +2,10 @@
 title: "Financial Aid for College or Career School"
 headline: "Financial Aid for College or Career School"
 tags:
-  - "educational assistance"
-  - "financial assistance"
+  - educational assistance
+  - financial assistance
 lifeEvents:
-  - "school-and-education"
+  - school-and-education
 source:
   name: "U.S. Department of Education"
   link: https://studentaid.gov/h/apply-for-aid/fafsa

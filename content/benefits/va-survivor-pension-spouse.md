@@ -2,10 +2,10 @@
 title: "Survivor Pension for Spouse"
 headline: "Survivor Pension for Spouse"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/pension/survivors-pension/

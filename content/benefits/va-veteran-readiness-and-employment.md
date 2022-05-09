@@ -2,11 +2,11 @@
 title: "Veteran Readiness and Employment (VR&E)"
 headline: "Veteran Readiness and Employment (VR&E)"
 tags:
-  - "educational assistance"
+  - educational assistance
 lifeEvents:
-  - "school-and-education"
-  - "military-service"
-  - "disability"
+  - school-and-education
+  - military-service
+  - disability
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/careers-employment/vocational-rehabilitation/eligibility/

@@ -2,10 +2,10 @@
 title: "Death Gratuity"
 headline: "Death Gratuity"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "Department of Defense"
   link: https://militarypay.defense.gov/Benefits/Death-Gratuity/

@@ -2,9 +2,9 @@
 title: "Home Loan Program"
 headline: "Home Loan Program"
 tags:
-  - "housing"
+  - housing
 lifeEvents:
-  - "military-service"
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/housing-assistance/home-loans/eligibility/

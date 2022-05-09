@@ -2,10 +2,10 @@
 title: "Survivor Benefit Plan"
 headline: "Survivor Benefit Plan"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "Department of Defense"
   link: https://militarypay.defense.gov/Benefits/Survivor-Benefit-Program/

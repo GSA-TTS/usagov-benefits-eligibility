@@ -2,12 +2,12 @@
 title: "Retirement Benefits for Child with Disabilities"
 headline: "Retirement Benefits for Child with Disabilities"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "late-adulthood"
-  - "disability"
-  - "loss-of-job-and-low-income"
+  - retirement
+  - late-adulthood
+  - disability
+  - loss-of-job-and-low-income
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/retirement/

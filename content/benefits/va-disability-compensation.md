@@ -2,10 +2,10 @@
 title: "Disability Compensation"
 headline: "Disability Compensation"
 tags:
-  - "educational assistance"
+  - educational assistance
 lifeEvents:
-  - "disability"
-  - "military-service"
+  - disability
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/disability/eligibility/

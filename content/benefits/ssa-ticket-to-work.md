@@ -2,9 +2,9 @@
 title: "Ticket to Work Program"
 headline: "Ticket to Work Program"
 tags:
-  - "training and jobs"
+  - training and jobs
 lifeEvents:
-  - "disability"
+  - disability
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/work/

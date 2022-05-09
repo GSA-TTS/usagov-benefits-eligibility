@@ -2,11 +2,11 @@
 title: "Education Benefits (GI Bill) for Survivors"
 headline: "Education Benefits (GI Bill) for Survivors"
 tags:
-  - "educational assistance"
+  - educational assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "school-and-education"
-  - "military-service"
+  - death-of-a-loved-one
+  - school-and-education
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/education/survivor-dependent-benefits/

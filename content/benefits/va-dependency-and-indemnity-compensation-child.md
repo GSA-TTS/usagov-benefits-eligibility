@@ -2,10 +2,10 @@
 title: "Dependency and Indemnity Compensation (DIC) for Child"
 headline: "Dependency and Indemnity Compensation (DIC) for Child"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/disability/dependency-indemnity-compensation/

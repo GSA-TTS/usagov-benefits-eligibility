@@ -2,10 +2,10 @@
 title: "Supplemental Security Income (SSI) for Child"
 headline: "Supplemental Security Income (SSI) for Child"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "disability"
-  - "loss-of-job-and-low-income"
+  - disability
+  - loss-of-job-and-low-income
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/disability/apply-child.html

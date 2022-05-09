@@ -2,9 +2,9 @@
 title: "Social Security Disability Insurance"
 headline: "Social Security Disability Insurance"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "disability"
+  - disability
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/disability/

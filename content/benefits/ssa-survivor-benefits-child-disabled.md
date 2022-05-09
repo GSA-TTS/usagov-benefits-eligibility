@@ -2,10 +2,10 @@
 title: "Survivors Benefits for Child with Disabilities"
 headline: "Survivors Benefits for Child with Disabilities"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "disability"
+  - death-of-a-loved-one
+  - disability
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/survivors/ifyou.html#h4

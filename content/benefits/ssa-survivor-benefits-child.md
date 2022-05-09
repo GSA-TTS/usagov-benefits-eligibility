@@ -2,9 +2,9 @@
 title: "Survivors Benefits for Child"
 headline: "Survivors Benefits for Child"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
+  - death-of-a-loved-one
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/survivors/ifyou.html#h4

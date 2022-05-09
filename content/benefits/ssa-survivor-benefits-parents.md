@@ -2,9 +2,9 @@
 title: "Survivors Benefits for Parents"
 headline: "Survivors Benefits for Parents"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
+  - death-of-a-loved-one
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/survivors/ifyou.html#h5

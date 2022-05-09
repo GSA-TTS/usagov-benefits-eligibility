@@ -2,9 +2,9 @@
 title: "Veterans Life Insurance"
 headline: "Veterans Life Insurance"
 tags:
-  - "life insurance"
+  - life insurance
 lifeEvents:
-  - "military-service"
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/life-insurance/options-eligibility/

@@ -2,9 +2,9 @@
 title: "The Program of Comprehensive Assistance for Family Caregivers"
 headline: "The Program of Comprehensive Assistance for Family Caregivers"
 tags:
-  - "healthcare"
+  - healthcare
 lifeEvents:
-  - "military-service"
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/family-member-benefits/comprehensive-assistance-for-family-caregivers/

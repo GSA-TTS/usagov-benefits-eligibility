@@ -2,10 +2,10 @@
 title: "Retirement Benefits for Child"
 headline: "Retirement Benefits for Child"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "loss-of-job-and-low-income"
+  - retirement
+  - loss-of-job-and-low-income
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/retirement/

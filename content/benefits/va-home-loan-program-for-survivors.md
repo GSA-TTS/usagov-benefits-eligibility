@@ -2,10 +2,10 @@
 title: "Home Loan Program for Survivors"
 headline: "Home Loan Program for Survivors"
 tags:
-  - "housing"
+  - housing
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/housing-assistance/home-loans/surviving-spouse/

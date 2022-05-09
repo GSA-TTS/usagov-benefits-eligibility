@@ -2,9 +2,9 @@
 title: "Civilian Health and Medical Program of the VA (CHAMPVA)"
 headline: "Civilian Health and Medical Program of the VA (CHAMPVA)"
 tags:
-  - "healthcare"
+  - healthcare
 lifeEvents:
-  - "military-service"
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/health-care/family-caregiver-benefits/champva/

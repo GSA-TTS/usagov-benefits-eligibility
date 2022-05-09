@@ -2,9 +2,9 @@
 title: "Disaster Recovery - Individual Assistance"
 headline: "Disaster Recovery - Individual Assistance"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "national-emergency-and-disaster"
+  - national-emergency-and-disaster
 source:
   name: "FEMA"
   link: https://www.disasterassistance.gov/

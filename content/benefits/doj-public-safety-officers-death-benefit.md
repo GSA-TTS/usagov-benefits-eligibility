@@ -2,9 +2,9 @@
 title: "Public Safety Officers' Death Benefits"
 headline: "Public Safety Officers' Death Benefits"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
+  - death-of-a-loved-one
 source:
   name: "U.S. Department of Justice"
   link: https://psob.bja.ojp.gov/PSOB_FactSheet2019.pdf

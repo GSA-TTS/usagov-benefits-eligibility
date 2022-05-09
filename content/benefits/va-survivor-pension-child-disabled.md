@@ -2,11 +2,11 @@
 title: "Survivor Pension for Child with Disabilities"
 headline: "Survivor Pension for Child with Disabilities"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
-  - "disability"
+  - death-of-a-loved-one
+  - military-service
+  - disability
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/pension/survivors-pension/

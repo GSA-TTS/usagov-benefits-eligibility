@@ -2,9 +2,9 @@
 title: "Survivors Benefits for Mothers/Fathers"
 headline: "Survivors Benefits for Mothers/Fathers"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "death-of-a-loved-one"
+  - death-of-a-loved-one
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/forms/ssa-5.html

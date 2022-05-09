@@ -2,9 +2,9 @@
 title: "Veteran's Health Care Benefits"
 headline: "Veteran's Health Care Benefits"
 tags:
-  - "healthcare"
+  - healthcare
 lifeEvents:
-  - "military-service"
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/health-care/eligibility/

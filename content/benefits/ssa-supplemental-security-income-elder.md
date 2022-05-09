@@ -2,11 +2,11 @@
 title: "Supplemental Security Income (SSI)"
 headline: "Supplemental Security Income (SSI)"
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "loss-of-job-and-low-income"
-  - "late-adulthood"
+  - retirement
+  - loss-of-job-and-low-income
+  - late-adulthood
 source:
   name: "Social Security Administration"
   link: https://www.ssa.gov/benefits/ssi/65older.html

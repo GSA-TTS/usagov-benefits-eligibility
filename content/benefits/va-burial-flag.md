@@ -2,10 +2,10 @@
 title: "Burial Flag"
 headline: "Burial Flag"
 tags:
-  - "memorial"
+  - memorial
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.va.gov/burials-memorials/memorial-items/burial-flags/

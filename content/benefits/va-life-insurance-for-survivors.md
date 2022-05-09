@@ -2,10 +2,10 @@
 title: "Veterans Life Insurance for Surviving Beneficiaries"
 headline: "Veterans Life Insurance for Surviving Beneficiaries"
 tags:
-  - "life insurance"
+  - life insurance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
   name: "U.S. Department of Veteran Affairs"
   link: https://www.benefits.va.gov/INSURANCE/sglivgli.asp

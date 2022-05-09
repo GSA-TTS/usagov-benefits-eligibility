@@ -2,7 +2,7 @@
 title: "COVID-19 Funeral Assistance"
 headline: "COVID-19 Funeral Assistance"
 tags:
-  - "burial and funeral assistance"
+  - burial and funeral assistance
 lifeEvents:
   - death-of-a-loved-one
   - national-emergency-and-disaster
