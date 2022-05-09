@@ -46,7 +46,7 @@ for fileOrDir in keys:
         for file in allFiles[fileOrDir]:
             usedVariables = {}
             filePath = file['path']
-            baseTitle = filePath.split('/')[-1]
+            baseTitle = filePath.split('/')[-1].replace('.md','')
             title = filePath.replace('.md', '.json').replace('./content/', '')
             newLines = []
             jsonData = {}
