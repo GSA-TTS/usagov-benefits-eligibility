@@ -66,7 +66,7 @@ for fileOrDir in keys:
                         newLines.append(line)
                 f.close()
             with open(os.path.join(localesPath, title), 'w') as f:
-                f.write(json.dumps(jsonData))     
+                f.write(json.dumps(jsonData, indent=4))     
                 f.close()
             with open(filePath, 'w') as f:
                 f.write(''.join(newLines))       
