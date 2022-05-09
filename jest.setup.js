@@ -13,3 +13,4 @@ config.mocks["i18n"] = {
 
 config.mocks.$t = (msg) => translations[locale][msg]
 config.mocks.switchLocalePath = (msg) => msg
+config.mocks.localePath = (i) => i``
