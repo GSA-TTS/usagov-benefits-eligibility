@@ -2,8 +2,8 @@ import json
 import os
 import re
 
-localesPath = "../locales/en/"
-mdPath = "../content/"
+localesPath = "./locales/en/"
+mdPath = "./content/"
 
 ignoreFiles = [
     ".DS_Store",
@@ -75,8 +75,7 @@ for fileOrDir in keys:
                             nestedLevel = variableDelim.split('.')[1]
                             if jsonData.get(topLevel) is None:
                                 jsonData[topLevel] = {}
-                            else:
-                                jsonData[topLevel][nestedLevel] = nline.replace('"', '').replace('[','').replace(']', '').strip()
+                            jsonData[topLevel][nestedLevel] = nline.replace('"', '').replace('[','').replace(']', '').strip()
                         else:
                             jsonData[variableDelim] = nline.replace('"', '').replace('[','').replace(']','').strip()
                         bline = line.split('"')[0] + baseTitle + '.' + variableDelim + line.split('"')[2]
@@ -91,5 +90,7 @@ for fileOrDir in keys:
             with open(filePath, 'w') as f:
                 f.write(''.join(newLines))       
                 f.close() 
+            break
+        break
 # now that we have all the content files and their paths 
 # we just need to find the information to put into the json files
