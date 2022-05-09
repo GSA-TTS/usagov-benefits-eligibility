@@ -1,6 +1,6 @@
 ---
-title: "Supplemental Security Income (SSI)"
-headline: "Supplemental Security Income (SSI)"
+title: ssa-supplemental-security-income-elder.title
+headline: ssa-supplemental-security-income-elder.headline
 tags:
   - financial assistance
 lifeEvents:
@@ -8,15 +8,15 @@ lifeEvents:
   - loss-of-job-and-low-income
   - late-adulthood
 source:
-  name: "Social Security Administration"
+  name: ssa-supplemental-security-income-elder.source.name
   link: https://www.ssa.gov/benefits/ssi/65older.html
 
-summary: "Provides financial assistance to older, blind, and people with disabilities to help meet basic needs for food, clothing, and shelter."
+summary: ssa-supplemental-security-income-elder.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_date_of_birth
-    label: "You are at least 65 years old."
+    label: ssa-supplemental-security-income-elder.eligibility.label
     acceptableValues: [>65years]
   - criteriaKey: applicant_income
     acceptableValues: [true]

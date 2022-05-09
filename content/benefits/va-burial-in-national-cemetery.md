@@ -1,35 +1,35 @@
 ---
-title: "Burial in VA National Cemetery"
-headline: "Burial in VA National Cemetery"
+title: va-burial-in-national-cemetery.title
+headline: va-burial-in-national-cemetery.headline
 tags:
   - burial and funeral assistance
 lifeEvents:
   - death-of-a-loved-one
   - military-service
 source:
-  name: "U.S. Department of Veteran Affairs"
+  name: va-burial-in-national-cemetery.source.name
   link: https://www.va.gov/burials-memorials/eligibility/
 
-summary: "Veterans, service members, and some family members may be eligible for burial in a VA national cemetery."
+summary: va-burial-in-national-cemetery.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: deceased_served_in_active_military
-    acceptableValues: ["yes"]
-    label: "The deceased served in the active military, naval, or air service."
+    acceptableValues: [va-burial-in-national-cemetery.eligibility.acceptableValues]
+    label: va-burial-in-national-cemetery.eligibility.label
   - criteriaKey: deceased_service_status
     acceptableValues:
       [
-        "an active-duty service member",
-        "discharged under conditions other than dishonorable",
-        "a member of the National Guard or Reserves",
+        va-burial-in-national-cemetery.eligibility.acceptableValues1,
+        va-burial-in-national-cemetery.eligibility.acceptableValues2,
+        va-burial-in-national-cemetery.eligibility.acceptableValues3,
       ]
   - criteriaKey: deceased_death_circumstance
     acceptableValues:
       [
-        "died while on active duty",
-        "died as a result of a service-connected disability or illness",
-        "died while receiving or traveling to receive VA care",
-        "died while eligible or receiving VA compensation",
+        va-burial-in-national-cemetery.eligibility.acceptableValues4,
+        va-burial-in-national-cemetery.eligibility.acceptableValues5,
+        va-burial-in-national-cemetery.eligibility.acceptableValues6,
+        va-burial-in-national-cemetery.eligibility.acceptableValues7,
       ]
 ---

@@ -1,0 +1,16 @@
+{
+    "va-dependency-and-indemnity-compensation-spouse.title": "Dependency and Indemnity Compensation (DIC) for Spouse",
+    "va-dependency-and-indemnity-compensation-spouse.headline": "Dependency and Indemnity Compensation (DIC) for Spouse",
+    "va-dependency-and-indemnity-compensation-spouse.source.name": "U.S. Department of Veteran Affairs",
+    "va-dependency-and-indemnity-compensation-spouse.summary": "Tax-free financial assistance may be available to surviving family members of a service member or a veteran.",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.acceptableValues": "yes",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.label": "The deceased served in the active military, naval, or air service.",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.acceptableValues1": "an active-duty service member,",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.acceptableValues2": "discharged under conditions other than dishonorable",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.acceptableValues3": "died while on active duty,",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.acceptableValues4": "died as a result of a service-connected disability or illness,",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.acceptableValues5": "died while eligible or receiving VA compensation,",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.acceptableValues6": "spouse",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.acceptableValues7": "unmarried,",
+    "va-dependency-and-indemnity-compensation-spouse.eligibility.acceptableValues8": "widowed"
+}

@@ -1,0 +1,15 @@
+{
+    "va-health-care-program-for-surviving-spouse.title": "Civilian Health and Medical Program of the VA (CHAMPVA) for Spouse",
+    "va-health-care-program-for-surviving-spouse.headline": "Civilian Health and Medical Program of the VA (CHAMPVA) for Spouse",
+    "va-health-care-program-for-surviving-spouse.source.name": "U.S. Department of Veteran Affairs",
+    "va-health-care-program-for-surviving-spouse.summary": "As a surviving spouse of a veteran you may be eligible for health insurance that covers the cost of some of your health care services and supplies, including pharmacy benefits.",
+    "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues": "yes",
+    "va-health-care-program-for-surviving-spouse.eligibility.label": "The deceased served in the active military, naval, or air service.",
+    "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues1": "an active-duty service member,",
+    "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues2": "discharged under conditions other than dishonorable",
+    "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues3": "died while on active duty,",
+    "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues4": "died as a result of a service-connected disability or illness",
+    "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues5": "spouse",
+    "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues6": "unmarried,",
+    "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues7": "widowed"
+}

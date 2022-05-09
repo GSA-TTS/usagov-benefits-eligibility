@@ -257,7 +257,7 @@ export default {
                   translateObject(item)
               }
           } else {
-              if (typeof object[key] === "string" && object[key].indexOf(chosenEvent + ".") !== -1) {
+              if (typeof object[key] === "string" && object[key].indexOf(".") !== -1) {
                   object[key] = this.$t(object[key])
               }
           }
@@ -279,9 +279,12 @@ export default {
     for (const related of lifeEvent.relatedKeys || []) {
       lifeEvent.related.push(await this.$content("life-events", related).fetch())
     }
-    
+    const translatedBenefits = lifeEventBenefits.map((benefit) => {
+      const translatedBenefit = translateObject(benefit)
+      return translatedBenefit
+    })
     this.lifeEvent = translateObject(lifeEvent)
-    this.allLifeEventBenefits = this.lifeEventBenefits = translateObject(lifeEventBenefits)
+    this.allLifeEventBenefits = this.lifeEventBenefits = translatedBenefits
   },
   /* istanbul ignore next */
   head() {

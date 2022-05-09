@@ -1,0 +1,16 @@
+{
+    "va-medallion.title": "Veteran\u2019s Medallion",
+    "va-medallion.headline": "Burial marker for veterans",
+    "va-medallion.source.name": "U.S. Department of Veteran Affairs",
+    "va-medallion.summary": "Some veterans who are buried in a private cemetery, including veterans of the National Guard, may be eligible for a headstone medallion.",
+    "va-medallion.eligibility.acceptableValues": "yes",
+    "va-medallion.eligibility.label": "The deceased served in the active military, naval, or air service.",
+    "va-medallion.eligibility.acceptableValues1": "an active-duty service member,",
+    "va-medallion.eligibility.acceptableValues2": "discharged under conditions other than dishonorable,",
+    "va-medallion.eligibility.acceptableValues3": "a member of the National Guard or Reserves,",
+    "va-medallion.eligibility.acceptableValues4": "spouse,",
+    "va-medallion.eligibility.acceptableValues5": "child,",
+    "va-medallion.eligibility.acceptableValues6": "parent,",
+    "va-medallion.eligibility.acceptableValues7": "other family member,",
+    "va-medallion.eligibility.acceptableValues8": "personal or official representative"
+}

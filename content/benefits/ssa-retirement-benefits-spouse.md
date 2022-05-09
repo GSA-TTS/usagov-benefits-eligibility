@@ -1,6 +1,6 @@
 ---
-title: "Retirement Benefits for Spouse"
-headline: "Retirement Benefits for Spouse"
+title: ssa-retirement-benefits-spouse.title
+headline: ssa-retirement-benefits-spouse.headline
 tags:
   - financial assistance
 lifeEvents:
@@ -8,19 +8,19 @@ lifeEvents:
   - late-adulthood
   - loss-of-job-and-low-income
 source:
-  name: "Social Security Administration"
+  name: ssa-retirement-benefits-spouse.source.name
   link: https://www.ssa.gov/benefits/retirement/
 
-summary: "Social Security is part of the retirement plan for almost every American worker. It provides replacement income for qualified retirees and their families."
+summary: ssa-retirement-benefits-spouse.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_date_of_birth
-    label: "You are at least 62 years old."
+    label: ssa-retirement-benefits-spouse.eligibility.label
     acceptableValues: [>62years]
   - criteriaKey: applicant_marital_status
-    acceptableValues: ["now married", 
-    "divorced"]
+    acceptableValues: [ssa-retirement-benefits-spouse.eligibility.acceptableValues, 
+    ssa-retirement-benefits-spouse.eligibility.acceptableValues1]
   - criteriaKey: applicant_child_spouse_SS
     acceptableValues: [true]
   - criteriaKey: applicant_citizen_status

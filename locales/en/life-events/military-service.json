@@ -1,0 +1,18 @@
+{
+    "military-service.title": "Military service",
+    "military-service.summary": "Service members and veterans have many benefits available to them, including educational assistance, home loans, and life insurance.",
+    "military-service.lede": "",
+    "military-service.secondaryHeadline": "Military service benefits",
+    "military-service.eligibilityCriteriaDescription": "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results.",
+    "military-service.topLevelFilter.label": "Start here",
+    "military-service.topLevelFilter.label1": "",
+    "military-service.topLevelFilter.disableGroupWhen": "no",
+    "military-service.topLevelFilter.label2": "",
+    "military-service.topLevelFilter.disableGroupWhen1": "no",
+    "military-service.eligibilityCriteria.label": "About you (the person applying for benefits)",
+    "military-service.eligibilityCriteria.description": "",
+    "military-service.eligibilityCriteria.label1": "About your military service",
+    "military-service.eligibilityCriteria.description1": "",
+    "military-service.eligibilityCriteria.label2": "About the military service of the person who died",
+    "military-service.eligibilityCriteria.description2": ""
+}
