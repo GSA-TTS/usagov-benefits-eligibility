@@ -38,11 +38,12 @@ for file in files:
         else:
             allFiles[file] = {"path": os.path.join(mdPath, file)}
 
+usedVariables = []
 keys = list(allFiles.keys())
 for fileOrDir in keys:
         for file in allFiles[fileOrDir]:
             filePath = file['path']
-            title = filePath.split('/')[len(filePath.split('/')) - 1].replace('.md', '.json')
+            title = filePath.replace('.md', '.json').replace('./content/', '')
             newLines = []
             jsonData = {}
             with open(filePath, 'r') as f:
@@ -52,6 +53,8 @@ for fileOrDir in keys:
                     nline = line
                     if ':' in line:
                         if '  ' in line:
+                            if '.' in variableDelim:
+                                variableDelim = variableDelim.split('.')[0]
                             variableDelim += '.' + line.split(':')[0].strip().replace('-', '').replace(' ', '')
                         else:
                             variableDelim = line.split(':')[0].strip().replace('-', '').replace(' ', '')
@@ -59,7 +62,19 @@ for fileOrDir in keys:
                     if '---' in line or line == '\n':
                         newLines.append(line)
                     elif line.count('"') == 2:
-                        jsonData[variableDelim] = nline.replace('"', '')
+                        if usedVariables.count(variableDelim) > 0:
+                            variableDelim = variableDelim + str(usedVariables.count(variableDelim))
+                        else:
+                            usedVariables.append(variableDelim)
+                        if '.' in variableDelim:
+                            topLevel = variableDelim.split('.')[0]
+                            nestedLevel = variableDelim.split('.')[1]
+                            if jsonData.get(topLevel) is None:
+                                jsonData[topLevel] = {}
+                            else:
+                                jsonData[topLevel][nestedLevel] = nline.replace('"', '').replace('[','').replace(']', '')
+                        else:
+                            jsonData[variableDelim] = nline.replace('"', '').replace('[','').replace(']','')
                         bline = line.split('"')[0] + variableDelim + line.split('"')[2]
                         newLines.append(bline)
                     else:
@@ -71,7 +86,5 @@ for fileOrDir in keys:
             with open(filePath, 'w') as f:
                 f.write(''.join(newLines))       
                 f.close()   
-            break
-        break
 # now that we have all the content files and their paths 
 # we just need to find the information to put into the json files
