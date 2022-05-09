@@ -44,6 +44,7 @@ noNumbers = r'[0-9]'
 keys = list(allFiles.keys())
 for fileOrDir in keys:
         for file in allFiles[fileOrDir]:
+            usedVariables = {}
             filePath = file['path']
             title = filePath.replace('.md', '.json').replace('./content/', '')
             newLines = []
