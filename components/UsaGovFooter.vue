@@ -28,7 +28,7 @@
                         <a
                           class="margin-bottom-3"
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/about'
                               : 'https://www.usa.gov/espanol/acerca-de-usagov-en-espanol'
                           "
@@ -39,9 +39,7 @@
                       <li class="usa-footer__secondary-link">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
-                              ? 'https://www.usa.gov/media'
-                              : 'https://www.usa.gov/espanol/medios'
+                            $i18n.locale === 'en' ? 'https://www.usa.gov/media' : 'https://www.usa.gov/espanol/medios'
                           "
                           >{{ $t("footer.GroupOne.linkTwo") }}</a
                         >
@@ -50,9 +48,7 @@
                       <li class="usa-footer__secondary-link">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
-                              ? 'https://www.usa.gov/developer'
-                              : 'https://www.usa.gov/developer'
+                            $i18n.locale === 'en' ? 'https://www.usa.gov/developer' : 'https://www.usa.gov/developer'
                           "
                           >{{ $t("footer.GroupOne.linkThree") }}</a
                         >
@@ -61,7 +57,7 @@
                       <li class="usa-footer__secondary-link">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/site-issue-report-form'
                               : 'https://www.usa.gov/espanol/reporte-problemas-en-este-sitio-web'
                           "
@@ -72,9 +68,7 @@
                       <li class="usa-footer__secondary-link">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
-                              ? 'https://www.usa.gov/#tpcs'
-                              : 'https://www.usa.gov/espanol/#tpcs'
+                            $i18n.locale === 'en' ? 'https://www.usa.gov/#tpcs' : 'https://www.usa.gov/espanol/#tpcs'
                           "
                           >{{ $t("footer.GroupOne.linkFive") }}</a
                         >
@@ -92,7 +86,7 @@
                       <li class="usa-footer__secondary-link">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/phone'
                               : 'https://www.usa.gov/espanol/centro-de-llamadas'
                           "
@@ -103,7 +97,7 @@
                       <li class="usa-footer__secondary-link">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://usa.gov/espanol/contactenos'
                               : 'https://www.usa.gov/contact'
                           "

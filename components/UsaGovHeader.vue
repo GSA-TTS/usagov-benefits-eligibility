@@ -6,9 +6,6 @@
       >{{ $t("skipnav") }}</a
     >
     <TheBanner />
-    <p>
-      {{ this.$i18n.locale === "en" ? "English" : "Español" }}
-    </p>
     <header
       class="usa-header usa-header--extended"
       data-stickyheight="22">
@@ -50,7 +47,7 @@
             <li class="usa-nav__primary-item">
               <a
                 class="usa-nav__link"
-                :href="this.$i18n.locale === 'en' ? 'https://www.usa.gov/#tpcs' : 'https://www.usa.gov/espanol/#tpcs'">
+                :href="$i18n.locale === 'en' ? 'https://www.usa.gov/#tpcs' : 'https://www.usa.gov/espanol/#tpcs'">
                 <span>{{ $t("header.GroupOne") }}</span>
               </a>
             </li>
@@ -71,7 +68,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/branches-of-government'
                               : 'https://www.usa.gov/espanol/programas-sociales'
                           "
@@ -81,7 +78,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/budget'
                               : 'https://www.usa.gov/espanol/prestamos-y-subvenciones'
                           "
@@ -91,7 +88,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/statistics'
                               : 'https://www.usa.gov/espanol/ayuda-financiera-para-estudiantes'
                           "
@@ -105,7 +102,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/history'
                               : 'https://www.usa.gov/espanol/seguro-social'
                           "
@@ -115,7 +112,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/flag'
                               : 'https://www.usa.gov/espanol/asistencia-alimentaria'
                           "
@@ -125,7 +122,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/life-in-the-us'
                               : 'https://www.usa.gov/espanol/pago-facturas'
                           "
@@ -139,7 +136,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/presidents'
                               : 'https://www.usa.gov/espanol/desempleo'
                           "
@@ -149,7 +146,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/agencies'
                               : 'https://www.usa.gov/espanol/beneficios-familias-militares'
                           "
@@ -159,7 +156,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/laws'
                               : 'https://www.usa.gov/espanol/jubilacion'
                           "
@@ -169,7 +166,7 @@
                     </ul>
                   </div>
                   <div
-                    v-if="this.$i18n.locale === 'es'"
+                    v-if="$i18n.locale === 'es'"
                     class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
@@ -180,20 +177,20 @@
                 </div>
                 <div class="topic-link topic-nav-flag">
                   <img
-                    v-if="this.$i18n.locale === 'en'"
+                    v-if="$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_About_USA_White.svg"
                     alt="U.S. Flag"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
-                    v-if="this.$i18n.locale === 'es'"
+                    v-if="$i18n.locale === 'es'"
                     src="https://www.usa.gov/images/Topic_Icon_Benefit_White.svg"
                     alt="Dinero"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <a
                     :href="
-                      this.$i18n.locale === 'en'
+                      $i18n.locale === 'en'
                         ? 'https://www.usa.gov/about-the-us'
                         : 'https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios'
                     "
@@ -220,7 +217,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/benefits'
                               : 'https://www.usa.gov/espanol/deportacion'
                           "
@@ -230,7 +227,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/state-social-services'
                               : 'https://www.usa.gov/espanol/viajes-dentro-estados-unidos'
                           "
@@ -240,7 +237,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/help-with-bills'
                               : 'https://www.usa.gov/espanol/viajes-al-exterior'
                           "
@@ -254,7 +251,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/grants'
                               : 'https://www.usa.gov/espanol/pasaportes-documentos-de-viaje'
                           "
@@ -264,7 +261,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/food-help'
                               : 'https://www.usa.gov/espanol/naturalizacion'
                           "
@@ -274,7 +271,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/about-social-security'
                               : 'https://www.usa.gov/espanol/residencia-permanente'
                           "
@@ -288,7 +285,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/finding-home'
                               : 'https://www.usa.gov/espanol/registros-de-entrada'
                           "
@@ -298,7 +295,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/financial-aid'
                               : 'https://www.usa.gov/espanol/inmigrantes-noresidentes'
                           "
@@ -308,7 +305,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/military-assistance'
                               : 'https://www.usa.gov/espanol/tramites-migratorios'
                           "
@@ -330,13 +327,13 @@
                 </div>
                 <div class="topic-link topic-nav-benefit">
                   <img
-                    v-if="this.$i18n.locale === 'en'"
+                    v-if="$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_Benefit_White.svg"
                     alt="U.S. Money"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
-                    v-if="this.$i18n.locale === 'es'"
+                    v-if="$i18n.locale === 'es'"
                     src="https://www.usa.gov/images/Topic_Icon_Immigration_White.svg"
                     alt="World Globe"
                     width="55"
@@ -344,7 +341,7 @@
                   <a
                     class="usa-button"
                     :href="
-                      this.$i18n.locale === 'en'
+                      $i18n.locale === 'en'
                         ? 'https://www.usa.gov/benefits-grants-loans'
                         : 'https://www.usa.gov/espanol/ciudadania-inmigracion-viajes'
                     "
@@ -370,7 +367,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/federal-agencies'
                               : 'https://www.usa.gov/espanol/seguros-personales'
                           "
@@ -380,7 +377,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/state-tribal-governments'
                               : 'https://www.usa.gov/espanol/gasto-ahorro-inversion'
                           "
@@ -390,7 +387,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/elected-officials'
                               : 'https://www.usa.gov/espanol/credito'
                           "
@@ -404,7 +401,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/forms'
                               : 'https://www.usa.gov/espanol/impuestos'
                           "
@@ -414,7 +411,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/buy-from-government'
                               : 'https://www.usa.gov/espanol/dinero-sin-reclamar'
                           "
@@ -424,7 +421,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/about-the-us'
                               : 'https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios'
                           "
@@ -438,7 +435,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/branches-of-government'
                               : 'https://www.usa.gov/espanol/proteccion-consumidor'
                           "
@@ -453,13 +450,13 @@
                 </div>
                 <div class="topic-link topic-nav-agencies">
                   <img
-                    v-if="this.$i18n.locale === 'en'"
+                    v-if="$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_Elected_Officials_White.svg"
                     alt="person in front of government building"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
-                    v-if="this.$i18n.locale === 'es'"
+                    v-if="$i18n.locale === 'es'"
                     src="https://www.usa.gov/images/Topic_Icon_Money_White.svg"
                     alt="person in front of government building"
                     width="55"
@@ -467,7 +464,7 @@
                   <a
                     class="usa-button"
                     :href="
-                      this.$i18n.locale === 'en' ? 'https://www.usa.gov/agencies' : 'https://www.usa.gov/espanol/dinero'
+                      $i18n.locale === 'en' ? 'https://www.usa.gov/agencies' : 'https://www.usa.gov/espanol/dinero'
                     "
                     >{{ $t("header.GroupFour.title") }}</a
                   >
@@ -491,7 +488,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/job-search'
                               : 'https://www.usa.gov/espanol/funcionarios-elegidos'
                           "
@@ -501,7 +498,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/unemployment'
                               : 'https://www.usa.gov/espanol/agencias-estatales'
                           "
@@ -511,7 +508,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/labor-laws'
                               : 'https://www.usa.gov/espanol/consulados-embajadas'
                           "
@@ -525,7 +522,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/federal-employees'
                               : 'https://www.usa.gov/espanol/agencias-gobierno'
                           "
@@ -535,7 +532,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/retirement'
                               : 'https://www.usa.gov/espanol/acerca-de-estados-unidos'
                           "
@@ -550,13 +547,13 @@
                 </div>
                 <div class="topic-link topic-nav-job">
                   <img
-                    v-if="this.$i18n.locale === 'en'"
+                    v-if="$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_Job_White.svg"
                     alt="suitcase"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
-                    v-if="this.$i18n.locale === 'es'"
+                    v-if="$i18n.locale === 'es'"
                     src="https://www.usa.gov/images/Topic_Icon_Elected_Officials_White.svg"
                     alt="building with people"
                     width="55"
@@ -564,7 +561,7 @@
                   <a
                     class="usa-button"
                     :href="
-                      this.$i18n.locale === 'en'
+                      $i18n.locale === 'en'
                         ? 'https://www.usa.gov/jobs-and-unemployment'
                         : 'https://www.usa.gov/espanol/directorios'
                     "
@@ -590,7 +587,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/taxes'
                               : 'https://www.usa.gov/espanol/presentar-queja'
                           "
@@ -600,7 +597,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/credit-and-debt'
                               : 'https://www.usa.gov/espanol/telecomunicaciones'
                           "
@@ -610,7 +607,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/spend-save-invest'
                               : 'https://www.usa.gov/espanol/telemercadeo-correo-basura'
                           "
@@ -624,7 +621,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/unclaimed-money'
                               : 'https://www.usa.gov/espanol/estafas-fraudes'
                           "
@@ -634,7 +631,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/currency'
                               : 'https://www.usa.gov/espanol/dinero'
                           "
@@ -644,7 +641,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/benefits-grants-loans'
                               : 'https://www.usa.gov/espanol/estados-consumidor'
                           "
@@ -669,13 +666,13 @@
                 </div>
                 <div class="topic-link topic-nav-tax">
                   <img
-                    v-if="this.$i18n.locale === 'en'"
+                    v-if="$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_Money_White.svg"
                     alt="money sign"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
-                    v-if="this.$i18n.locale === 'es'"
+                    v-if="$i18n.locale === 'es'"
                     src="https://www.usa.gov/images/Topic_Icon_Consumer_White.svg"
                     alt="hand  holding a credit card"
                     width="55"
@@ -683,7 +680,7 @@
                   <a
                     class="usa-button"
                     :href="
-                      this.$i18n.locale === 'en'
+                      $i18n.locale === 'en'
                         ? 'https://www.usa.gov/money'
                         : 'https://www.usa.gov/espanol/proteccion-consumidor'
                     "
@@ -709,7 +706,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/travel-abroad'
                               : 'https://www.usa.gov/espanol/empleo-capacitacion-laboral'
                           "
@@ -719,7 +716,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/immigration-and-citizenship'
                               : 'https://www.usa.gov/espanol/jubilacion'
                           "
@@ -729,7 +726,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/visas-and-visitors'
                               : 'https://www.usa.gov/espanol/desempleo'
                           "
@@ -743,7 +740,7 @@
                       <li class="usa-nav__submenu-item">
                         <a
                           :href="
-                            this.$i18n.locale === 'en'
+                            $i18n.locale === 'en'
                               ? 'https://www.usa.gov/recreation-and-travel'
                               : 'https://www.usa.gov/espanol/negocios-y-organizaciones-ONG'
                           "
@@ -755,13 +752,13 @@
                 </div>
                 <li class="topic-link topic-nav-globe">
                   <img
-                    v-if="this.$i18n.locale === 'en'"
+                    v-if="$i18n.locale === 'en'"
                     src="https://www.usa.gov/images/Topic_Icon_Immigration_White.svg"
                     alt="earth globe"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
-                    v-if="this.$i18n.locale === 'es'"
+                    v-if="$i18n.locale === 'es'"
                     src="https://www.usa.gov/images/Topic_Icon_Job_White.svg"
                     alt="briefcase"
                     width="55"
@@ -769,7 +766,7 @@
                   <a
                     class="usa-button"
                     :href="
-                      this.$i18n.locale === 'en'
+                      $i18n.locale === 'en'
                         ? 'https://www.usa.gov/travel-and-immigration'
                         : 'https://www.usa.gov/espanol/trabajo-y-desempleo'
                     "
