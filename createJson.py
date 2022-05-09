@@ -40,38 +40,44 @@ for file in files:
 
 keys = list(allFiles.keys())
 for fileOrDir in keys:
-        for file in allFiles[fileOrDir]:
-            filePath = file['path']
-            title = filePath.split('/')[len(filePath.split('/')) - 1].replace('.md', '.json')
-            newLines = []
-            jsonData = {}
-            with open(filePath, 'r') as f:
-                data = f.readlines()
-                variableDelim = ''
-                for line in data:
-                    nline = line
-                    if ':' in line:
-                        if '  ' in line:
-                            variableDelim += '.' + line.split(':')[0].strip().replace('-', '').replace(' ', '')
-                        else:
-                            variableDelim = line.split(':')[0].strip().replace('-', '').replace(' ', '')
-                        nline = line.split(':')[1].strip()
-                    if '---' in line or line == '\n':
-                        newLines.append(line)
-                    elif line.count('"') == 2:
-                        jsonData[variableDelim] = nline.replace('"', '')
-                        bline = line.split('"')[0] + variableDelim + line.split('"')[2]
-                        newLines.append(bline)
+    for file in allFiles[fileOrDir]:
+        filePath = file["path"]
+        title = filePath.split("/")[len(filePath.split("/")) - 1].replace(
+            ".md", ".json"
+        )
+        newLines = []
+        jsonData = {}
+        with open(filePath, "r") as f:
+            data = f.readlines()
+            variableDelim = ""
+            for line in data:
+                nline = line
+                if ":" in line:
+                    if "  " in line:
+                        variableDelim += "." + line.split(":")[0].strip().replace(
+                            "-", ""
+                        ).replace(" ", "")
                     else:
-                        newLines.append(line)
-                f.close()
-            with open(os.path.join(localesPath, title), 'w') as f:
-                f.write(json.dumps(jsonData, indent=4))     
-                f.close()
-            with open(filePath, 'w') as f:
-                f.write(''.join(newLines))       
-                f.close()   
-            break
+                        variableDelim = (
+                            line.split(":")[0].strip().replace("-", "").replace(" ", "")
+                        )
+                    nline = line.split(":")[1].strip()
+                if "---" in line or line == "\n":
+                    newLines.append(line)
+                elif line.count('"') == 2:
+                    jsonData[variableDelim] = nline.replace('"', "")
+                    bline = line.split('"')[0] + variableDelim + line.split('"')[2]
+                    newLines.append(bline)
+                else:
+                    newLines.append(line)
+            f.close()
+        with open(os.path.join(localesPath, title), "w") as f:
+            f.write(json.dumps(jsonData, indent=4))
+            f.close()
+        with open(filePath, "w") as f:
+            f.write("".join(newLines))
+            f.close()
         break
-# now that we have all the content files and their paths 
+    break
+# now that we have all the content files and their paths
 # we just need to find the information to put into the json files
