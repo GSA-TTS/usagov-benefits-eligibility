@@ -46,6 +46,7 @@ for fileOrDir in keys:
         for file in allFiles[fileOrDir]:
             usedVariables = {}
             filePath = file['path']
+            baseTitle = filePath.split('/')[-1]
             title = filePath.replace('.md', '.json').replace('./content/', '')
             newLines = []
             jsonData = {}
@@ -79,7 +80,7 @@ for fileOrDir in keys:
                                 jsonData[topLevel][nestedLevel] = nline.replace('"', '').replace('[','').replace(']', '').strip()
                         else:
                             jsonData[variableDelim] = nline.replace('"', '').replace('[','').replace(']','').strip()
-                        bline = line.split('"')[0] + variableDelim + line.split('"')[2]
+                        bline = line.split('"')[0] + baseTitle + '.' + variableDelim + line.split('"')[2]
                         variableDelim = re.sub(noNumbers, '', variableDelim)
                         newLines.append(bline)
                     else:
