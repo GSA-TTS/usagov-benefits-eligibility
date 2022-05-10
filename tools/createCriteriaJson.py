@@ -17,7 +17,7 @@ with open(criteriaFile, mode='r') as file:
         # translate the options in the csv
         if row [2] == 'select' or row[2] == 'radio':
             options = row[3].split(';')
-            i = 0
+            i = 1
             newString = ''
             for val in options:
                 jsonKey = 'criteria.'+key+'.values'+str(i)
