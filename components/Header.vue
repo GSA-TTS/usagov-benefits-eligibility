@@ -19,7 +19,7 @@
               title="USAGov Logo"
               aria-label="USAGov Logo">
               <img
-                class="circle-5 desktop:circle-10 margin-right-2 tablet:margin-right-1"
+                class="circle-5 desktop:circle-10 margin-right-1"
                 src="~/assets/img/logo-img-usagov.png"
                 alt="USAGov Logo" />
             </nuxt-link>
@@ -32,7 +32,7 @@
             </nuxt-link>
           </em>
         </div>
-        <button class="usa-menu-btn print:display-none">Menu</button>
+        <button class="usa-menu-btn print:display-none">{{ $t("header.menu") }}</button>
       </div>
       <nav
         aria-label="Primary navigation"
@@ -51,24 +51,42 @@
             </ul>
             <form
               class="usa-search"
-              role="search">
+              role="search"
+              action="https://search.usa.gov/search"
+              method="get"
+              name="search_form"
+              accept-charset="UTF-8">
               <label
                 class="usa-sr-only"
                 for="extended-search-field-small"
                 >Search small</label
               >
               <input
-                id="extended-search-field-small"
-                ref="search"
-                class="usa-input"
+                v-if="$i18n.locale === 'en'"
+                id="affiliate"
+                name="affiliate"
+                type="hidden"
+                value="usagov" />
+              <input
+                v-if="$i18n.locale === 'es'"
+                id="affiliate"
+                name="affiliate"
+                type="hidden"
+                value="gobiernousa_only" />
+              <input
+                id="search-field-small"
                 type="search"
-                name="search"
-                :value="query" />
+                name="query"
+                :placeholder="$t('header.meta.placeholder')"
+                onfocus="this.placeholder = ''"
+                class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
+                autocomplete="off"
+                aria-autocomplete="list"
+                aria-haspopup="true" />
               <button
                 class="usa-button"
-                type="submit"
-                @click="doSearch">
-                <span class="usa-sr-only">Search</span>
+                type="submit">
+                <span class="usa-sr-only">{{ $t("header.meta.search") }}</span>
                 <svg
                   class="usa-icon text-middle usa-icon--size-3"
                   aria-hidden="true"
@@ -86,7 +104,7 @@
               <nuxt-link
                 to="/"
                 class="usa-nav__link">
-                <span>Benefits by life event</span>
+                <span>{{ $t("utilityNav.linkOne") }}</span>
               </nuxt-link>
             </li>
             <li
@@ -152,13 +170,6 @@ export default {
         this.$route.matched[0].path &&
         this.$route.matched[0].path === "/:slug"
       )
-    },
-    doSearch(evt) {
-      this.$router.push({
-        path: "/search/",
-        query: { q: this.$refs.search.value },
-      })
-      evt.preventDefault()
     },
   },
 }

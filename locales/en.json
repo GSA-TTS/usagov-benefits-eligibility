@@ -1,5 +1,4 @@
 {
-  "message": "Hello!",
   "projectName": "Benefits Eligibility Awareness Resource",
   "banner": {
     "official": "An official website of the United States government",
@@ -92,6 +91,7 @@
     },
     "meta": {
       "search": "Search",
+      "placeholder": "Search All Government",
       "back": "Benefits, Grants, Loans",
       "language": "Español"
     }

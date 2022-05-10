@@ -16,13 +16,19 @@
           <em class="usa-logo__text">
             <a
               href="https://www.usa.gov/"
-              title="USAGov Logo"
-              ><img
+              title="USAGov Logo">
+              <img
+                v-if="$i18n.locale === 'en'"
                 class="circle-5 desktop:circle-10 margin-right-2 tablet:margin-right-1"
                 src="@/assets/img/logo-img-usagov.png"
                 alt="USAGov Logo"
-                width="80"
-            /></a>
+                width="80" />
+              <img
+                v-if="$i18n.locale === 'es'"
+                class="margin-right-2 tablet:margin-right-1 width-10 tablet:width-card"
+                src="https://app-usa-modeast-prod-a01239f-ecas.s3.amazonaws.com/Logo_USAGov_Spanish.png"
+                alt="USAGov Logo" />
+            </a>
           </em>
         </div>
         <button class="usa-menu-btn">{{ $t("header.menu") }}</button>
@@ -794,15 +800,22 @@
                   >{{ $t("header.meta.search") }}</label
                 >
                 <input
+                  v-if="$i18n.locale === 'en'"
                   id="affiliate"
                   name="affiliate"
                   type="hidden"
                   value="usagov" />
                 <input
+                  v-if="$i18n.locale === 'es'"
+                  id="affiliate"
+                  name="affiliate"
+                  type="hidden"
+                  value="gobiernousa_only" />
+                <input
                   id="search-field-small"
                   type="search"
                   name="query"
-                  placeholder=""
+                  :placeholder="$t('header.meta.placeholder')"
                   onfocus="this.placeholder = ''"
                   class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
                   autocomplete="off"
@@ -818,6 +831,42 @@
                 </button>
               </div>
             </form>
+            <!-- <form
+              v-if="$i18n.locale === 'es'"
+              action="https://search.usa.gov/search"
+              method="get"
+              name="search_form"
+              accept-charset="UTF-8"
+              class="usa-search usa-search--small">
+              <div
+                role="search"
+                aria-labelledby="top-srch">
+                <label
+                  id="top-srch"
+                  class="usa-sr-only"
+                  for="search-field-small">
+                  {{ $t("header.meta.search") }}
+                </label>
+                <input
+                  id="affiliate"
+                  name="affiliate"
+                  type="hidden"
+                  value="gobiernousa_only" />
+                <input
+                  id="search-field-small"
+                  type="search"
+                  name="query"
+                  :placeholder="$t('header.meta.placeholder')"
+                  onfocus="this.placeholder = ''"
+                  class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  aria-haspopup="true" />
+                <button type="submit">
+                  <span class="usa-sr-only">Buscar</span>
+                </button>
+              </div>
+            </form> -->
             <ul class="usa-nav__secondary-links width-full">
               <li class="usa-nav__secondary-item">
                 <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>

@@ -1,5 +1,4 @@
 {
-  "message": "Hola!",
   "projectName": "Buscador de beneficios",
   "banner": {
     "official": "Un sitio oficial del Gobierno de Estados Unidos",
@@ -93,6 +92,7 @@
     },
     "meta": {
       "search": "Busque en USAGov en Español",
+      "placeholder": "Busque en USAGov",
       "back": "Beneficios, Subvenciones, Préstamos",
       "language": "English"
     }
