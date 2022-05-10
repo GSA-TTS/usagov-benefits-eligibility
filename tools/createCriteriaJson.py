@@ -10,7 +10,7 @@ with open(criteriaFile, mode='r') as file:
         
         # column 1 is the label
         label = row[1]
-        key = 'criteria.'+row[0]
+        key = 'criteria.'+row[0]+'.label'
         row[1] = key
         translatedJson[key] = label
         
@@ -34,5 +34,5 @@ with open(outputFile, mode='w') as file:
     file.close()
     
 with open(criteriaFile, mode='w') as file:
-    file.writelines(lines)
+    csv.writer(file).writerows(lines)
     file.close()
