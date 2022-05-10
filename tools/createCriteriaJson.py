@@ -10,9 +10,9 @@ with open(criteriaFile, mode='r') as file:
         
         # column 1 is the label
         label = row[1]
-        key = 'criteria.'+row[0]+'.label'
-        row[1] = key
-        translatedJson[key] = label
+        key = 'criteria.'+row[0]
+        row[1] = key+'.label'
+        translatedJson[key+'.label'] = label
         
         # translate the options in the csv
         if row [2] == 'select' or row[2] == 'radio':
@@ -20,7 +20,7 @@ with open(criteriaFile, mode='r') as file:
             i = 1
             newString = ''
             for val in options:
-                jsonKey = 'criteria.'+key+'.values'+str(i)
+                jsonKey = key+'.values'+str(i)
                 translatedJson[jsonKey] = val
                 i+=1
                 newString = jsonKey + ';' + newString
