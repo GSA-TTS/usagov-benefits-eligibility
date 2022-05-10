@@ -37,8 +37,6 @@ applicant_paid_funeral_expenses,You paid for the funeral/burial expenses.,boolea
 applicant_funeral_reimbursment,You were NOT reimbursed for the funeral/burial cost by any organization or government agency.,boolean,TRUE,
 applicant-military,,,,
 applicant_served_in_active_military,"Did you serve in the active military, naval or air service?",radio,yes; no,
-applicant_service_status,One of the following describes your service status:,select,an active-duty service member; discharged under conditions other than dishonorable; retired from the service; a member of the National Guard or Reserves
+applicant_service_status,One of the following describes your service status:,select,an active-duty service member; discharged under conditions other than dishonorable; retired from the service; a member of the National Guard or Reserves,
 applicant_minimum_service_requirement,You served for at least 90 days of active-duty service.,boolean,TRUE,
 applicant_service_disability,"Your disability was caused, or made worse by your active-duty military service.",boolean,TRUE,
-
-

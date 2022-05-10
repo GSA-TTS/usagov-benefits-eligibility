@@ -3,7 +3,26 @@
     <div class="grid-container">
       <div class="grid-row">
         <div class="grid-col">
-          <nuxt-content :document="disclaimer" />
+          <div class="usa-summary-box bg-transparent border-transparent"
+            role="region"
+            aria-labelledby="summary-box-key-information-disclaimer"
+          >
+            <div class="usa-summary-box__body">
+              <h2 class="usa-summary-box__heading" id="summary-box-key-information-disclaimer">
+                {{disclaimer.heading}}
+              </h2>
+              <div class="usa-summary-box__text">
+                <ul class="usa-list">
+                  <li style="max-width: unset;">
+                    {{disclaimer.bullet}}
+                  </li>
+                  <li style="max-width: unset;">
+                      {{disclaimer.bullet1}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -161,6 +180,7 @@
 </template>
 
 <script>
+import tObj from '~/services/translation'
 export default {
   data() {
     return {
@@ -168,7 +188,7 @@ export default {
     }
   },
   async fetch() {
-    this.disclaimer = await this.$content("disclaimer").fetch()
+    this.disclaimer = tObj.call(this, await this.$content("disclaimer").fetch())
   },
   methods: {
     getUrl() {

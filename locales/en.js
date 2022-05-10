@@ -85,5 +85,6 @@ export default Object.assign(
   require("./en/types/educational-assistance.json"),
   require("./en/types/housing.json"),
   require("./en/en.json"),
+  require("./en/disclaimer.json"),
   require("./en/landing-page.json")
 )
