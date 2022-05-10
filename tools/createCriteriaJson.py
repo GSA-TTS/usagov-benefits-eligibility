@@ -1,12 +1,12 @@
 import os, csv, json
 
-criteriaFile = '../content/criteria.csv'
+criteriaFile = './content/criteria.csv'
 
 translatedJson = {}
 lines = []
 with open(criteriaFile, mode='r') as file:
-    criteriaFile = csv.reader(file, delimiter=',')
-    for row in criteriaFile:
+    criteriaFileReader = csv.reader(file, delimiter=',')
+    for row in criteriaFileReader:
         
         # column 1 is the label
         label = row[1]
@@ -28,9 +28,9 @@ with open(criteriaFile, mode='r') as file:
         lines.append(row)
     file.close()
     
-outputFile = '../locales/en/criteria.json'
+outputFile = './locales/en/criteria.json'
 with open(outputFile, mode='w') as file:
-    file.write(json.dumps(translatedJson, indent=4))
+    file.writelines(json.dumps(translatedJson, indent=4))
     file.close()
     
 with open(criteriaFile, mode='w') as file:
