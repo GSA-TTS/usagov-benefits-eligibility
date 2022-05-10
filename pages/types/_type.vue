@@ -111,9 +111,9 @@
 
 <script>
 import _ from "lodash"
+import tObj from "~/services/translation"
 import mapTags from "~/mixins/MapTags"
 import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
-import tObj from '~/services/translation'
 
 export default {
   components: {
@@ -135,23 +135,25 @@ export default {
   },
   async fetch() {
     this.benefitTopic = _.capitalize(_.lowerCase(this.$route.params.type))
-    const lifeEventBenefits = await this.$content("benefits")
-      .where({
-        tags: { $contains: _.lowerCase(this.$route.params.type) },
-      })
-      .sortBy("title")
-      .fetch()
-    const translatedBenefits = lifeEventBenefits.map(benefit => tObj(benefit, this.$t))
-    const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
+    const lifeEventBenefits = tObj.call(
+      this,
+      await this.$content("benefits")
+        .where({
+          tags: { $contains: _.lowerCase(this.$route.params.type) },
+        })
+        .sortBy("title")
+        .fetch()
+    )
+    const allEligibilityCriteria = tObj.call(this, await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     // eslint-d
 
-    this.topic = await this.$content("types", this.$route.params.type).fetch()
+    this.topic = tObj.call(this, await this.$content("types", this.$route.params.type).fetch())
     this.topic.related = []
     for (const related of this.topic.relatedKeys || []) {
-      this.topic.related.push(await this.$content("types", related).fetch())
+      this.topic.related.push(tObj.call(this, await this.$content("types", related).fetch()))
     }
-    this.lifeEventBenefits = translatedBenefits
+    this.lifeEventBenefits = lifeEventBenefits
   },
   /* istanbul ignore next */
   head() {

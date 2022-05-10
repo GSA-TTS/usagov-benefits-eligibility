@@ -25,8 +25,8 @@
 export default {
   data() {
     return {
-      isUsaGov: this.$config.oneEventVersion !== false
+      isUsaGov: this.$config.oneEventVersion !== false,
     }
-  }
+  },
 }
 </script>

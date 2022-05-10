@@ -1,18 +1,32 @@
-const translateObject = (object, t) => {
-    for (const key in object) {
-        if (typeof object[key] === "object") {
-            translateObject(object[key])
-        } else if (typeof object[key] === "array") {
-            for (const item of object[key]) {
-                translateObject(item)
-            }
-        } else {
-            if (typeof object[key] === "string" && object[key].indexOf(".") !== -1) {
-                object[key] = t(object[key])
-            }
-        }
-    }
-    return object
+function translateObject(object, delimeter = "") {
+  // function must be bound
+  // need to go through the object and translate each key
+  if (Object.hasOwnProperty.call(object, "path")) {
+    delimeter = object.path.split("/").pop()
   }
+  for (const key in object) {
+    const value = object[key]
+    switch (typeof value) {
+      case "string":
+        if (value.includes(delimeter + ".")) {
+          object[key] = this.$t(value)
+        }
+        break
+      case "object":
+        if (value !== null) {
+          translateObject.call(this, value, delimeter)
+        }
+        break
+      case "array":
+        for (const item in value) {
+          translateObject.call(this, value[item], delimeter)
+        }
+        break
+      default:
+        break
+    }
+  }
+  return object
+}
 
 export default translateObject

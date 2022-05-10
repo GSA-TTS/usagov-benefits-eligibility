@@ -16,9 +16,11 @@ eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_family_of_service_member
     acceptableValues:
-      [va-education-benefits-for-dependents.eligibility.acceptableValues, 
-      va-education-benefits-for-dependents.eligibility.acceptableValues1,
-      va-education-benefits-for-dependents.eligibility.acceptableValues2]
+      [
+        va-education-benefits-for-dependents.eligibility.acceptableValues,
+        va-education-benefits-for-dependents.eligibility.acceptableValues1,
+        va-education-benefits-for-dependents.eligibility.acceptableValues2,
+      ]
   - criteriaKey: applicant_high_school_diploma
     acceptableValues: [true]
 ---

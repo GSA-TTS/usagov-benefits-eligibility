@@ -1,10 +1,10 @@
 {
-    "va-education-benefits.title": "Education Benefits (GI Bill)",
-    "va-education-benefits.headline": "Education Benefits (GI Bill)",
-    "va-education-benefits.source.name": "U.S. Department of Veteran Affairs",
-    "va-education-benefits.summary": "VA education benefits through GI Bill can help you pay your tuition, pick out a school, choose a career, and more.",
-    "va-education-benefits.eligibility.acceptableValues": "yes",
-    "va-education-benefits.eligibility.acceptableValues1": "an active-duty service member,",
-    "va-education-benefits.eligibility.acceptableValues2": "discharged under conditions other than dishonorable,",
-    "va-education-benefits.eligibility.acceptableValues3": "a member of the National Guard or Reserves,"
+  "va-education-benefits.title": "Education Benefits (GI Bill)",
+  "va-education-benefits.headline": "Education Benefits (GI Bill)",
+  "va-education-benefits.source.name": "U.S. Department of Veteran Affairs",
+  "va-education-benefits.summary": "VA education benefits through GI Bill can help you pay your tuition, pick out a school, choose a career, and more.",
+  "va-education-benefits.eligibility.acceptableValues": "yes",
+  "va-education-benefits.eligibility.acceptableValues1": "an active-duty service member,",
+  "va-education-benefits.eligibility.acceptableValues2": "discharged under conditions other than dishonorable,",
+  "va-education-benefits.eligibility.acceptableValues3": "a member of the National Guard or Reserves,"
 }

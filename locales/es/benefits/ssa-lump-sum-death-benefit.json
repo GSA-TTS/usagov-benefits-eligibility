@@ -1,9 +1,9 @@
 {
-    "ssa-lump-sum-death-benefit.title": "Lump-Sum Death Benefit",
-    "ssa-lump-sum-death-benefit.headline": "Need text here",
-    "ssa-lump-sum-death-benefit.source.name": "Social Security Administration",
-    "ssa-lump-sum-death-benefit.summary": "The surviving spouse of a deceased person who qualified for Social Security benefits may be eligible for a $255 financial assistance.",
-    "ssa-lump-sum-death-benefit.eligibility.label": "The deceased died within the last two years.",
-    "ssa-lump-sum-death-benefit.eligibility.acceptableValues": "spouse,",
-    "ssa-lump-sum-death-benefit.eligibility.acceptableValues1": "child"
+  "ssa-lump-sum-death-benefit.title": "Lump-Sum Death Benefit",
+  "ssa-lump-sum-death-benefit.headline": "Need text here",
+  "ssa-lump-sum-death-benefit.source.name": "Social Security Administration",
+  "ssa-lump-sum-death-benefit.summary": "The surviving spouse of a deceased person who qualified for Social Security benefits may be eligible for a $255 financial assistance.",
+  "ssa-lump-sum-death-benefit.eligibility.label": "The deceased died within the last two years.",
+  "ssa-lump-sum-death-benefit.eligibility.acceptableValues": "spouse,",
+  "ssa-lump-sum-death-benefit.eligibility.acceptableValues1": "child"
 }

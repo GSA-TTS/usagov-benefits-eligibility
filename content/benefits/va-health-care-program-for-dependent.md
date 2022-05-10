@@ -16,6 +16,9 @@ eligibility:
   - criteriaKey: applicant_family_of_service_member
     acceptableValues: [va-health-care-program-for-dependent.eligibility.acceptableValues]
   - criteriaKey: applicant_marital_status
-    acceptableValues: [va-health-care-program-for-dependent.eligibility.acceptableValues1,
-     va-health-care-program-for-dependent.eligibility.acceptableValues2]
+    acceptableValues:
+      [
+        va-health-care-program-for-dependent.eligibility.acceptableValues1,
+        va-health-care-program-for-dependent.eligibility.acceptableValues2,
+      ]
 ---

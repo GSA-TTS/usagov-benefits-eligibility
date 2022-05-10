@@ -76,12 +76,12 @@ export default {
     kebabCase: _.kebabCase,
     mapAgencies(agencies) {
       return agencies.map((agency) => {
-        const slug = _.kebabCase(agency)
+        const slug = _.kebabCase(this.$t(agency))
         if (this.contentAgencies[slug]) {
           return this.contentAgencies[slug]
         } else {
           return {
-            title: agency,
+            title: this.$t(agency),
             slug,
           }
         }

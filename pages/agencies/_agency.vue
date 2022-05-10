@@ -109,7 +109,7 @@
 
 <script>
 import _ from "lodash"
-import tObj from '~/services/translation'
+import tObj from "~/services/translation"
 import mapTags from "~/mixins/MapTags"
 import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
@@ -132,12 +132,14 @@ export default {
     }
   },
   async fetch() {
+    // const translated = []
+
     const slug = this.$route.params.agency.startsWith("u-s-")
       ? _.lowerCase(this.$route.params.agency).replace(/^u s /, "u.s. ")
       : _.lowerCase(this.$route.params.agency)
     const agencyRegex = new RegExp(_.escapeRegExp(slug), "i")
     const lifeEventBenefits = await this.$content("benefits").sortBy("title").fetch()
-    const translatedBenefits = lifeEventBenefits.map(benefit => tObj(benefit, this.$t))
+    const translatedBenefits = lifeEventBenefits.map((benefit) => tObj.call(this, benefit))
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     this.lifeEventBenefits = translatedBenefits.filter(
@@ -145,7 +147,7 @@ export default {
     )
     this.benefitAgency = this.lifeEventBenefits[0]?.source?.name
     // eslint-disable-next-line node/handle-callback-err
-    this.agency = await this.$content("agencies", this.$route.params.agency).fetch()
+    this.agency = tObj.call(this, await this.$content("agencies", this.$route.params.agency).fetch())
     this.agency.related = []
     for (const related of this.agency.relatedKeys || []) {
       this.agency.related.push(await this.$content("agencies", related).fetch())

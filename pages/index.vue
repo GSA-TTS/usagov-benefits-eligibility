@@ -53,7 +53,6 @@
 </template>
 
 <script>
-
 export default {
   layout: "default",
   async asyncData({ $content }) {

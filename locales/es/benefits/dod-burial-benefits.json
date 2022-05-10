@@ -1,14 +1,14 @@
 {
-    "dod-burial-benefits.title": "Burial Benefits",
-    "dod-burial-benefits.headline": "Burial Benefits",
-    "dod-burial-benefits.source.name": "Department of Defense",
-    "dod-burial-benefits.summary": "Assistance transporting and intering your loved one may be available, as well as travel support for the surviving spouse, children, and immediate family members of the service member.",
-    "dod-burial-benefits.eligibility.acceptableValues": "yes",
-    "dod-burial-benefits.eligibility.label": "The deceased served in the active military, naval, or air service.",
-    "dod-burial-benefits.eligibility.acceptableValues1": "an active-duty service member",
-    "dod-burial-benefits.eligibility.acceptableValues2": "died while on active duty",
-    "dod-burial-benefits.eligibility.acceptableValues3": "spouse,",
-    "dod-burial-benefits.eligibility.acceptableValues4": "child,",
-    "dod-burial-benefits.eligibility.acceptableValues5": "parent,",
-    "dod-burial-benefits.eligibility.acceptableValues6": "other family member"
+  "dod-burial-benefits.title": "Burial Benefits",
+  "dod-burial-benefits.headline": "Burial Benefits",
+  "dod-burial-benefits.source.name": "Department of Defense",
+  "dod-burial-benefits.summary": "Assistance transporting and intering your loved one may be available, as well as travel support for the surviving spouse, children, and immediate family members of the service member.",
+  "dod-burial-benefits.eligibility.acceptableValues": "yes",
+  "dod-burial-benefits.eligibility.label": "The deceased served in the active military, naval, or air service.",
+  "dod-burial-benefits.eligibility.acceptableValues1": "an active-duty service member",
+  "dod-burial-benefits.eligibility.acceptableValues2": "died while on active duty",
+  "dod-burial-benefits.eligibility.acceptableValues3": "spouse,",
+  "dod-burial-benefits.eligibility.acceptableValues4": "child,",
+  "dod-burial-benefits.eligibility.acceptableValues5": "parent,",
+  "dod-burial-benefits.eligibility.acceptableValues6": "other family member"
 }

@@ -1,10 +1,10 @@
 {
-    "va-home-loan-program.title": "Home Loan Program",
-    "va-home-loan-program.headline": "Home Loan Program",
-    "va-home-loan-program.source.name": "U.S. Department of Veteran Affairs",
-    "va-home-loan-program.summary": "VA housing assistance can help veterans and service members to buy, build or improve a home, or refinance a home loan.",
-    "va-home-loan-program.eligibility.acceptableValues": "yes",
-    "va-home-loan-program.eligibility.acceptableValues1": "an active-duty service member,",
-    "va-home-loan-program.eligibility.acceptableValues2": "discharged under conditions other than dishonorable,",
-    "va-home-loan-program.eligibility.acceptableValues3": "a member of the National Guard or Reserves,"
+  "va-home-loan-program.title": "Home Loan Program",
+  "va-home-loan-program.headline": "Home Loan Program",
+  "va-home-loan-program.source.name": "U.S. Department of Veteran Affairs",
+  "va-home-loan-program.summary": "VA housing assistance can help veterans and service members to buy, build or improve a home, or refinance a home loan.",
+  "va-home-loan-program.eligibility.acceptableValues": "yes",
+  "va-home-loan-program.eligibility.acceptableValues1": "an active-duty service member,",
+  "va-home-loan-program.eligibility.acceptableValues2": "discharged under conditions other than dishonorable,",
+  "va-home-loan-program.eligibility.acceptableValues3": "a member of the National Guard or Reserves,"
 }

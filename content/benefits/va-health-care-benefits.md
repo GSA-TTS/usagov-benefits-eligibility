@@ -17,6 +17,5 @@ eligibility:
     acceptableValues: [va-health-care-benefits.eligibility.acceptableValues]
   - criteriaKey: applicant_service_status
     acceptableValues:
-      [va-health-care-benefits.eligibility.acceptableValues1, 
-      va-health-care-benefits.eligibility.acceptableValues2]
+      [va-health-care-benefits.eligibility.acceptableValues1, va-health-care-benefits.eligibility.acceptableValues2]
 ---

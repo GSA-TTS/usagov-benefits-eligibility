@@ -59,7 +59,7 @@
           <label
             class="usa-label display-inline margin-right-1"
             for="benefitSort"
-          >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
+            >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
             <select
               id="benefitSort"
               class="usa-select margin-left-auto width-card display-inline-block"
@@ -144,7 +144,7 @@
               <label
                 class="usa-label"
                 for="benefitSortMobile"
-              >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
+                >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
               >
               <select
                 id="benefitSortMobile"
@@ -215,7 +215,7 @@
 <script>
 import _ from "lodash"
 import { mapGetters, mapState } from "vuex"
-import tObj from '~/services/translation'
+import tObj from "~/services/translation"
 import mapTags from "~/mixins/MapTags"
 
 export default {
@@ -237,11 +237,11 @@ export default {
         summary: "",
         eligibilityCriteria: [],
         relatedKeys: [],
-        related: []
+        related: [],
       },
       lifeEventBenefits: [],
       allLifeEventBenefits: [],
-      sort: "relevance"
+      sort: "relevance",
     }
   },
 
@@ -249,15 +249,13 @@ export default {
     const chosenEvent =
       this.$config.oneEventVersion === false ? this.$route.params.lifeEvent : this.$config.oneEventVersion
 
-    
     const lifeEvent = await this.$content("life-events", chosenEvent).fetch()
     const lifeEventBenefits = await this.$content("benefits")
       .where({
-        lifeEvents: { $contains: chosenEvent }
+        lifeEvents: { $contains: chosenEvent },
       })
       .sortBy("title")
       .fetch()
-
     const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
 
@@ -265,13 +263,13 @@ export default {
     for (const related of lifeEvent.relatedKeys || []) {
       lifeEvent.related.push(await this.$content("life-events", related).fetch())
     }
-    this.lifeEvent = lifeEvent
-    this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits
+    this.lifeEvent = tObj.call(this, lifeEvent)
+    this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits.map((benefit) => tObj.call(this, benefit))
   },
   /* istanbul ignore next */
   head() {
     return {
-      title: this.lifeEvent.secondaryHeadline
+      title: this.lifeEvent.secondaryHeadline,
     }
   },
   computed: {
@@ -280,24 +278,24 @@ export default {
     },
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
-      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria"
+      getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria",
     }),
     ...mapState({
-      eligibilityCriteria: (state) => state.criteria.eligibilityCriteria
-    })
+      eligibilityCriteria: (state) => state.criteria.eligibilityCriteria,
+    }),
   },
   watch: {
     eligibilityCriteria: {
       handler() {
         this.sortBenefits()
       },
-      deep: true
+      deep: true,
     },
     lifeEvent: {
       handler() {
         this.sortBenefits()
-      }
-    }
+      },
+    },
   },
   beforeDestroy() {
     /* istanbul ignore next */
@@ -305,9 +303,6 @@ export default {
   },
   mounted() {
     this.$root.$on("tag:click", this.tagClick)
-    this.lifeEvent = tObj(this.lifeEvent, this.$t)
-    const translatedBenefits = this.lifeEventBenefits.map((benefit) => tObj(benefit, this.$t))
-    this.lifeEventBenefits = this.allLifeEventBenefits = translatedBenefits
   },
   methods: {
     clearCriteria() {
@@ -374,8 +369,8 @@ export default {
       this.lifeEventBenefits = this.allLifeEventBenefits
       this.sortBenefits()
       this.$nextTick(() => this.$refs.accordion.focus())
-    }
-  }
+    },
+  },
 }
 </script>
 
