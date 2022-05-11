@@ -30,7 +30,6 @@ const oneEvent = oneEventVersion()
 
 export default {
   publicRuntimeConfig: {
-    tagManagerKey: process.env.BRANCH === "main" ? process.env.GOOGLE_TAG_MANAGER_KEY : null,
     branchName: process.env.BRANCH,
     oneEventVersion: oneEvent,
   },
@@ -70,8 +69,10 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n", "@nuxtjs/dotenv"],
-
+  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n", "@nuxtjs/dotenv", "@nuxtjs/gtm"],
+  gtm: {
+    id: "GTM-P2F6CBK",
+  },
   i18n: {
     locales: ["en", "es"],
     defaultLocale: "en",

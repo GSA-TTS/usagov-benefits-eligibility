@@ -1,6 +1,5 @@
 <template>
   <div>
-    <GoogleTagManagerHeader />
     <div v-if="isUsaGov">
       <div>
         <UsaGovHeader />
@@ -17,7 +16,6 @@
       </main>
       <Footer />
     </div>
-    <GoogleTagManagerFooter />
   </div>
 </template>
 
@@ -25,8 +23,8 @@
 export default {
   data() {
     return {
-      isUsaGov: this.$config.oneEventVersion !== false
+      isUsaGov: this.$config.oneEventVersion !== false,
     }
-  }
+  },
 }
 </script>
