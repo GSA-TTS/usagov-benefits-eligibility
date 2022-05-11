@@ -90,11 +90,6 @@ export default {
     defaultLocale: "en",
   },
 
-  env: {
-    searchGovUrl: "https://search.usa.gov/api/v2/search/i14y",
-    searchGovAccessKey: "5S6Psw6bydi_cmKJXx_v0k0Bo2WIk1aJdZzTgtDVjIg=",
-    searchGovAffiliate: "bears-mvp",
-  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 

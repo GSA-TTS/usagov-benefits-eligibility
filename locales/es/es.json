@@ -1,5 +1,4 @@
 {
-  "message": "Hola!",
   "projectName": "Buscador de beneficios",
   "banner": {
     "official": "Un sitio oficial del Gobierno de Estados Unidos",
@@ -16,6 +15,11 @@
   },
   "skipnav": "Saltar al contenido principal",
   "returnToTop": "Regresar arriba",
+  "utilityNav": {
+    "linkOne": "Beneficios por eventos de vida",
+    "linkTwo": "Beneficios por tipo",
+    "linkThree": "Beneficios por agencia"
+  },
   "header": {
     "menu": "MENÚ",
     "main": "Navegación Principal",
@@ -88,6 +92,7 @@
     },
     "meta": {
       "search": "Busque en USAGov en Español",
+      "placeholder": "Busque en USAGov",
       "back": "Beneficios, Subvenciones, Préstamos",
       "language": "English"
     }
