@@ -1,6 +1,5 @@
 <template>
   <div>
-    <GoogleTagManagerHeader />
     <div v-if="isUsaGov">
       <div>
         <UsaGovHeader />
@@ -17,7 +16,6 @@
       </main>
       <Footer />
     </div>
-    <GoogleTagManagerFooter />
   </div>
 </template>
 
