@@ -183,9 +183,12 @@ describe("Accordion", () => {
       const wrapper = shallowMount(Accordion, {
         propsData,
         store,
+        mocks: {
+          $t: (val) => val 
+        }
       })
       const text = wrapper.vm.getCriteriaMatchLanguage([{}])
-      expect(text).toBe("(you are not eligible)")
+      expect(text).toBe("(not_eligible)")
     })
     it("nothing selected", () => {
       getters = {

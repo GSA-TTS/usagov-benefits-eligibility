@@ -32,7 +32,7 @@ const mockContent = {
       },
     ],
   },
-  benefit: {
+  benefit: [{
     slug: THIS_LIFE_EVENT_SLUG,
     agency: "Benefit Agency",
     headline: "Benefit One",
@@ -49,18 +49,26 @@ const mockContent = {
       { criteriaKey: "criteriaKey2", acceptableValues: [true] },
       { criteriaKey: "virtualCriteriaKey1" },
     ],
-  },
+  }],
   criteria: {
     body: [
       {
         criteriaKey: "criteriaKey1",
-        label: "Benefit criteria label 1.",
+        criteria: {
+          criteriaKey: {
+            label: "Benefit criteria label 1.",
+          }
+        },
         type: "boolean",
         values: [true],
       },
       {
         criteriaKey: "criteriaKey2",
-        label: "Benefit criteria label 2.",
+        criteria: {
+          criteriaKey: {
+            label: "Benefit criteria label 2.",
+          }
+        },
         type: "boolean",
         values: [true],
       },
@@ -127,8 +135,7 @@ describe("Life Event page", () => {
       where: () => contentMock,
       sortBy: () => contentMock,
       fetch: () => {
-        console.log(contentRequest)
-        return Promise.resolve(Object.assign({}, mockContent[contentRequest]))
+        return Promise.resolve(Object.assign([], mockContent[contentRequest]))
       },
     }
     const $content = (path, path2, path3 = "") => {

@@ -215,7 +215,7 @@
 <script>
 import _ from "lodash"
 import { mapGetters, mapState } from "vuex"
-import tObj from "~/services/translation"
+import { tObj, tCsv } from "~/services/translation"
 import mapTags from "~/mixins/MapTags"
 
 export default {
@@ -256,9 +256,10 @@ export default {
       })
       .sortBy("title")
       .fetch()
-    const allEligibilityCriteria = (tObj.call(this, await this.$content("criteria").fetch())).body
+    const allEligibilityCriteria = (tCsv.call(this, await this.$content("criteria").fetch())).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
-
+    console.log(lifeEventBenefits)
+    debugger
     lifeEvent.related = []
     for (const related of lifeEvent.relatedKeys || []) {
       lifeEvent.related.push(await this.$content("life-events", related).fetch())

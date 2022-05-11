@@ -117,6 +117,20 @@
       "language": "Español"
     }
   },
+  "buttons": {
+    "open_all": "Open All",
+    "close_all": "Close All",
+    "my_selections": "my selections"
+  },
+  "radio": {
+    "not_applicable": "not applicable"
+  },
+  "shareResults": {
+    "description": "Copy a link to this page with the criteria you selected above. Make sure to share it only with those you trust as\nyour answers will be visible.",
+    "linkCopied": "Link with my selections is copied",
+    "copy": "Copy my selections",
+    "email": "Email my selections"
+  },
   "footer": {
     "GroupOne": {
       "header": "About USA.gov",

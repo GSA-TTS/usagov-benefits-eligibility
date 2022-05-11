@@ -50,7 +50,7 @@
         <label
           :for="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`"
           class="usa-radio__label tablet:margin-top-1"
-          >not applicable</label
+          >{{$t('radio.not_applicable')}}</label
         >
       </div>
     </template>

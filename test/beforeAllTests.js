@@ -6,7 +6,6 @@ import { config } from "@vue/test-utils"
 
 export default function beforeAllTests() {
   // Automatically register all components
-  const internationalizaiton = require("../locales/en")
   const fileComponents = glob.sync(path.join(__dirname, "../components/**/*.vue"))
   for (const file of fileComponents) {
     const name = file.match(/(\w*)\.vue$/)[1]
@@ -23,7 +22,6 @@ export default function beforeAllTests() {
   }
   config.provide["$i18n"] = { locale: "en" }
   config.provide["i18n"] = { locale: "en" }
-  config.mocks.$t = (key) => internationalizaiton["default"][key]
   Vue.use(Vuex)
   process.server = true
 }

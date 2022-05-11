@@ -1,6 +1,7 @@
-import { shallowMount } from "@vue/test-utils"
+import { shallowMount, mount } from "@vue/test-utils"
 import Page from "@/pages/agencies/index.vue"
 import beforeAllTests from "@/test/beforeAllTests"
+import internationalizaiton from "@/locales/en.js"
 
 describe("pages/agencies/index.vue", () => {
   const content = {
@@ -52,7 +53,11 @@ describe("pages/agencies/index.vue", () => {
       contentRequest = path
       return contentMock
     }
-    const wrapper = shallowMount(Page)
+    const wrapper = shallowMount(Page, {
+      mocks: {
+        $t: (val) => val
+      },
+    })
     const data = await wrapper.vm.$options.asyncData({ $content, i18n: { locale: "en" } })
     wrapper.vm.contentAgencies = data.contentAgencies
     const results = wrapper.vm.mapAgencies(content.benefits.map((b) => b.source.name))

@@ -220,7 +220,7 @@
 </template>
 
 <script>
-import tObj from '~/services/translation'
+import { tObj } from '~/services/translation'
 export default {
   data() {
     return {
