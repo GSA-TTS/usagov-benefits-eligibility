@@ -36,7 +36,7 @@ describe("pages/types/_type.vue", () => {
               { title: "Two", summary: "Two summary", lifeEvents: [] },
             ],
             criteria: {
-              body: []
+              body: [],
             },
             types: {
               relatedKeys: ["one"],

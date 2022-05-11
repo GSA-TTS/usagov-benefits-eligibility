@@ -68,7 +68,7 @@ describe("pages/agencies/_agency.vue", () => {
         $fetchState,
         $route,
         $store,
-        $t: (val) => val
+        $t: (val) => val,
       },
     })
     await wrapper.vm.$options.fetch.apply(wrapper.vm)

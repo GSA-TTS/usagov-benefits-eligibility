@@ -45,7 +45,7 @@
           <h3
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
-            {{$t('accordion.provided')}}
+            {{ $t("accordion.provided") }}
             <a
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
@@ -79,7 +79,7 @@
               target="_blank"
               :aria-label="`How to apply for ${benefit.title}`"
               class="usa-button print:display-none">
-              {{$t('accordion.apply')}}
+              {{ $t("accordion.apply") }}
             </a>
             <!-- //NOSONAR -->
           </li>
@@ -192,9 +192,9 @@ export default {
 
     getCriteriaMatchLanguage(eligibilityCriteria) {
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
-        return "("+this.$t('not_eligible')+")"
+        return "(" + this.$t("not_eligible") + ")"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
-        return "("+this.$t('eligible')+")"
+        return "(" + this.$t("eligible") + ")"
       }
       return null
     },

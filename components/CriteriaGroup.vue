@@ -42,7 +42,7 @@
           :class="{
             'criteria-group-empty': hasNoResponses(getCriteriaMap(criteriaGroup.criteriaKeys)),
           }">
-          {{$t('criteria_group.non_selected')}}
+          {{ $t("criteria_group.non_selected") }}
         </p>
       </fieldset>
     </template>

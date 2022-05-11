@@ -3,21 +3,23 @@
     <div class="grid-container">
       <div class="grid-row">
         <div class="grid-col">
-          <div class="usa-summary-box bg-transparent border-transparent"
+          <div
+            class="usa-summary-box bg-transparent border-transparent"
             role="region"
-            aria-labelledby="summary-box-key-information-disclaimer"
-          >
+            aria-labelledby="summary-box-key-information-disclaimer">
             <div class="usa-summary-box__body">
-              <h2 class="usa-summary-box__heading" id="summary-box-key-information-disclaimer">
-                {{disclaimer.heading}}
+              <h2
+                class="usa-summary-box__heading"
+                id="summary-box-key-information-disclaimer">
+                {{ disclaimer.heading }}
               </h2>
               <div class="usa-summary-box__text">
                 <ul class="usa-list">
-                  <li style="max-width: unset;">
-                    {{disclaimer.bullet}}
+                  <li style="max-width: unset">
+                    {{ disclaimer.bullet }}
                   </li>
-                  <li style="max-width: unset;">
-                      {{disclaimer.bullet1}}
+                  <li style="max-width: unset">
+                    {{ disclaimer.bullet1 }}
                   </li>
                 </ul>
               </div>
@@ -220,7 +222,7 @@
 </template>
 
 <script>
-import { tObj } from '~/services/translation'
+import { tObj } from "~/services/translation"
 export default {
   props: {
     testEnv: {

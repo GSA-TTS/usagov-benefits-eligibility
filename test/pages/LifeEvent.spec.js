@@ -32,24 +32,26 @@ const mockContent = {
       },
     ],
   },
-  benefit: [{
-    slug: THIS_LIFE_EVENT_SLUG,
-    agency: "Benefit Agency",
-    headline: "Benefit One",
-    identifier: "benefitOne",
-    lifeEvents: ["bereavement", THIS_LIFE_EVENT_SLUG],
-    provider: "Federal Government",
-    source: { name: "Dept. of Benefit One", link: "#" },
-    summary: "Benefit one summary.",
-    tags: ["burial honors"],
-    title: "Benefit One Title",
-    toc: [],
-    eligibility: [
-      { criteriaKey: "criteriaKey1", acceptableValues: [true] },
-      { criteriaKey: "criteriaKey2", acceptableValues: [true] },
-      { criteriaKey: "virtualCriteriaKey1" },
-    ],
-  }],
+  benefit: [
+    {
+      slug: THIS_LIFE_EVENT_SLUG,
+      agency: "Benefit Agency",
+      headline: "Benefit One",
+      identifier: "benefitOne",
+      lifeEvents: ["bereavement", THIS_LIFE_EVENT_SLUG],
+      provider: "Federal Government",
+      source: { name: "Dept. of Benefit One", link: "#" },
+      summary: "Benefit one summary.",
+      tags: ["burial honors"],
+      title: "Benefit One Title",
+      toc: [],
+      eligibility: [
+        { criteriaKey: "criteriaKey1", acceptableValues: [true] },
+        { criteriaKey: "criteriaKey2", acceptableValues: [true] },
+        { criteriaKey: "virtualCriteriaKey1" },
+      ],
+    },
+  ],
   criteria: {
     body: [
       {
@@ -57,7 +59,7 @@ const mockContent = {
         criteria: {
           criteriaKey: {
             label: "Benefit criteria label 1.",
-          }
+          },
         },
         type: "boolean",
         values: [true],
@@ -67,7 +69,7 @@ const mockContent = {
         criteria: {
           criteriaKey: {
             label: "Benefit criteria label 2.",
-          }
+          },
         },
         type: "boolean",
         values: [true],

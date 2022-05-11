@@ -9,7 +9,9 @@
       role="img">
       <use xlink:href="~/assets/img/sprite.svg#print" />
     </svg>
-    <span class="text-middle">Print <span v-if="showSelections">{{$t('buttons.my_selections')}}</span></span>
+    <span class="text-middle"
+      >Print <span v-if="showSelections">{{ $t("buttons.my_selections") }}</span></span
+    >
   </button>
 </template>
 

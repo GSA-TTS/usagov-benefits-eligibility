@@ -256,7 +256,7 @@ export default {
       })
       .sortBy("title")
       .fetch()
-    const allEligibilityCriteria = (tCsv.call(this, await this.$content("criteria").fetch())).body
+    const allEligibilityCriteria = tCsv.call(this, await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     console.log(lifeEventBenefits)
     debugger

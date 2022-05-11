@@ -17,7 +17,7 @@
     </div>
     <h2 class="font-sans-md">Sharing and printing</h2>
     <p class="usa-prose">
-      {{$t('shareResults.description')}}
+      {{ $t("shareResults.description") }}
     </p>
     <div class="margin-bottom-1">
       <span :class="{ 'usa-tooltip': alert, 'display-inline-block': true, 'width-full': true }">
@@ -35,7 +35,7 @@
           role="tooltip"
           :aria-hidden="!alert"
           style="left: 15%; top: -4rem">
-          {{$t('shareResults.linkCopied')}}
+          {{ $t("shareResults.linkCopied") }}
         </span>
       </span>
     </div>
@@ -50,7 +50,7 @@
           role="img">
           <use xlink:href="~/assets/img/sprite.svg#share" />
         </svg>
-        <span class="text-middle">{{$t('shareResults.copy')}}</span>
+        <span class="text-middle">{{ $t("shareResults.copy") }}</span>
       </button>
     </div>
     <div class="margin-bottom-1">
@@ -69,7 +69,7 @@
           role="img">
           <use xlink:href="~/assets/img/sprite.svg#mail" />
         </svg>
-        <span class="text-middle">{{$t('shareResults.email')}}</span>
+        <span class="text-middle">{{ $t("shareResults.email") }}</span>
       </button>
     </div>
   </div>

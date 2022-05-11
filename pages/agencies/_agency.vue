@@ -140,7 +140,7 @@ export default {
     const agencyRegex = new RegExp(_.escapeRegExp(slug), "i")
     const lifeEventBenefits = await this.$content("benefits").sortBy("title").fetch()
     const translatedBenefits = lifeEventBenefits.map((benefit) => tObj.call(this, benefit))
-    const allEligibilityCriteria = (tCsv.call(this, await this.$content("criteria").fetch())).body
+    const allEligibilityCriteria = tCsv.call(this, await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     this.lifeEventBenefits = translatedBenefits.filter(
       (benefit) => benefit?.source?.name && agencyRegex.test(benefit.source.name)

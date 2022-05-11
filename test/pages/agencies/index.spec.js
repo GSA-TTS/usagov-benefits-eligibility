@@ -55,7 +55,7 @@ describe("pages/agencies/index.vue", () => {
     }
     const wrapper = shallowMount(Page, {
       mocks: {
-        $t: (val) => val
+        $t: (val) => val,
       },
     })
     const data = await wrapper.vm.$options.asyncData({ $content, i18n: { locale: "en" } })

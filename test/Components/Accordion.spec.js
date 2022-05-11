@@ -184,8 +184,8 @@ describe("Accordion", () => {
         propsData,
         store,
         mocks: {
-          $t: (val) => val 
-        }
+          $t: (val) => val,
+        },
       })
       const text = wrapper.vm.getCriteriaMatchLanguage([{}])
       expect(text).toBe("(not_eligible)")

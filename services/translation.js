@@ -34,11 +34,11 @@ function translateCsv(csvRows) {
   for (let i = 0; i < csvRows.body.length; i++) {
     const newRow = csvRows.body[i]
     newRow.label = this.$t(newRow.criteria.criteriaKey.label)
-    if(newRow.values.includes(';')) {
-      newRow.values = newRow.values.split(';')
-      let newRowValueString = ''
-      for(let j = 0; j < newRow.values.length; j++) {
-        newRowValueString += this.$t(newRow.values[j]) + '; '
+    if (newRow.values.includes(";")) {
+      newRow.values = newRow.values.split(";")
+      let newRowValueString = ""
+      for (let j = 0; j < newRow.values.length; j++) {
+        newRowValueString += this.$t(newRow.values[j]) + "; "
       }
       newRow.values = newRowValueString.slice(0, -4)
     }
@@ -49,5 +49,5 @@ function translateCsv(csvRows) {
 
 module.exports = {
   tObj: translateObject,
-  tCsv: translateCsv
-} 
+  tCsv: translateCsv,
+}
