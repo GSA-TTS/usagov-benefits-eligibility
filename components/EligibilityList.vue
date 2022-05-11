@@ -5,8 +5,8 @@
       <span
         v-if="showMatchingCount"
         class="print:display-none">
-        (You must meet all criteria. You currently meet
-        {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} of {{ benefitEligibilityCriteria.length }}).
+        ({{$t('eligibilityList.you_must')}}
+        {{ getTotalEligibleCriteria(benefitEligibilityCriteria) }} {{$t('eligibilityList.of')}} {{ benefitEligibilityCriteria.length }}).
       </span>
     </h3>
     <client-only>
@@ -73,9 +73,9 @@
     </client-only>
     <p
       class="text-white bg-base-darker print:text-black print:bg-white font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
-      <strong>Additional eligibility criteria may apply.</strong>
-      Please review the full requirements at
-      <span class="print:display-none">"How to apply."</span
+      <strong>{{$t('eligibilityList.additional')}}</strong>
+      {{$t('eligibilityList.review')}}
+      <span class="print:display-none">{{$t('accordian.apply')}}</span
       ><span class="display-none print:display-inline">{{ benefitSource }}</span>
     </p>
   </div>

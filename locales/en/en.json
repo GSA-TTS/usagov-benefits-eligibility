@@ -14,6 +14,27 @@
       "secureDetailsLockPostfix": "or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites."
     }
   },
+  "accordion": {
+    "provided": "Provided by",
+    "apply": "How to Apply",
+    "not_eligible": "you are not eligible",
+    "eligible": "you might be eligible"
+  },
+  "criteria_group": {
+    "non_selected": "No eligibility criteria selected"
+  },
+  "dateInput": {
+    "month": "Month",
+    "day": "Day",
+    "year": "Year",
+    "Please enter a valid date.": "Please enter a valid date."
+  },
+  "eligibilityList": {
+    "you_must": "You must meet all criteria. You currently meet",
+    "of": "of",
+    "additional": "Additional eligibility criteria may apply.",
+    "review": "Please review the full requirements at"
+  },
   "skipnav": "Skip to main content",
   "returnToTop": "Return to top",
   "header": {

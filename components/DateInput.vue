@@ -9,7 +9,7 @@
         <label
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-month`"
-          >Month</label
+          >{{$t('dateInput.month')}}</label
         >
         <input
           :id="`${uniqueId}-${criteriaKey}-month`"
@@ -27,7 +27,7 @@
         <label
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-day`"
-          >Day</label
+          >{{$t('dateInput.day')}}</label
         >
         <input
           :id="`${uniqueId}-${criteriaKey}-day`"
@@ -45,7 +45,7 @@
         <label
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-year`"
-          >Year</label
+          >{{$t('dateInput.year')}}</label
         >
         <input
           :id="`${uniqueId}-${criteriaKey}-year`"
@@ -65,7 +65,7 @@
       :id="`${errUniqueId}-input-error-message`"
       v:show="errorMessage"
       class="usa-error-message"
-      >{{ errorMessage }}</span
+      >{{ $t(errorMessage) }}</span
     >
   </fieldset>
 </template>
