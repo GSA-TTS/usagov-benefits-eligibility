@@ -27,7 +27,7 @@ eligibility:
     acceptableValues: [va-health-care-program-for-surviving-child.eligibility.acceptableValues5]
   - criteriaKey: applicant_date_of_birth
     label: va-health-care-program-for-surviving-child.eligibility.label1
-    acceptableValues: [<18years]
+    acceptableValues: ["<18years"]
   - criteriaKey: applicant_marital_status
     acceptableValues: [va-health-care-program-for-surviving-child.eligibility.acceptableValues6]
 ---

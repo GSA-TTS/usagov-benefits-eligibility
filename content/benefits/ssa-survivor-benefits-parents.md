@@ -19,7 +19,7 @@ eligibility:
     acceptableValues: [ssa-survivor-benefits-parents.eligibility.acceptableValues]
   - criteriaKey: applicant_date_of_birth
     label: ssa-survivor-benefits-parents.eligibility.label
-    acceptableValues: [>62years]
+    acceptableValues: [">62years"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
 ---

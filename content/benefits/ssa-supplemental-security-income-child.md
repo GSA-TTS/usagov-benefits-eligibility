@@ -20,7 +20,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: applicant_date_of_birth
     label: ssa-supplemental-security-income-child.eligibility.label
-    acceptableValues: [<18years]
+    acceptableValues: ["<18years"]
   - criteriaKey: applicant_income
     acceptableValues: [true]
   - criteriaKey: applicant_citizen_status

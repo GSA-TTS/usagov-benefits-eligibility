@@ -17,7 +17,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: deceased_date_of_death
     label: ssa-lump-sum-death-benefit.eligibility.label
-    acceptableValues: [<2years]
+    acceptableValues: ["<2years"]
   - criteriaKey: applicant_relationship
     acceptableValues: [ssa-lump-sum-death-benefit.eligibility.acceptableValues, 
     ssa-lump-sum-death-benefit.eligibility.acceptableValues1]

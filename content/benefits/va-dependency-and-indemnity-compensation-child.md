@@ -31,7 +31,7 @@ eligibility:
     acceptableValues: [va-dependency-and-indemnity-compensation-child.eligibility.acceptableValues6]
   - criteriaKey: applicant_date_of_birth
     label: va-dependency-and-indemnity-compensation-child.eligibility.label1
-    acceptableValues: [<18years]
+    acceptableValues: ["<18years"]
   - criteriaKey: applicant_marital_status
     acceptableValues: [va-dependency-and-indemnity-compensation-child.eligibility.acceptableValues7]
 ---
