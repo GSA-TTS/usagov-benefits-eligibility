@@ -884,6 +884,7 @@
           {{ $t("header.meta.back") }}
         </a>
         <button
+          v-if="$config.languageToggleActive"
           id="language-toggle-button"
           class="language-toggle-mobile"
           @click="switchLanguage">

@@ -133,6 +133,7 @@
             </li>
             <li class="usa-nav__primary-item tablet:margin-left-auto">
               <button
+                v-if="$config.languageToggleActive"
                 id="language-toggle-button"
                 class="language-toggle-mobile usa-button"
                 @click="switchLanguage">
