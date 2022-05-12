@@ -132,13 +132,12 @@
               </nuxt-link>
             </li>
             <li class="usa-nav__primary-item tablet:margin-left-auto">
-              <a
+              <button
                 class="language-toggle-mobile usa-button"
-                href="https://www.usa.gov/espanol/"
-                lang="es"
-                xml:lang="es">
+                @click="switchLanguage"
+                >
                 {{ $t("header.meta.language") }}
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -160,7 +159,16 @@ export default {
       this.isLifeEventPage = this.doesRouteMatchLifeEventPages()
     },
   },
-  methods: {
+  methods: {    
+    switchLanguage(){
+      if(this.$config.languageToggleActive){
+        if(this.$i18n.locale === 'en'){
+          this.$i18n.locale = 'es';
+        } else {
+          this.$i18n.locale = 'en';
+        }
+      }
+    },
     doesRouteMatchLifeEventPages() {
       /* istanbul ignore next */
       return (

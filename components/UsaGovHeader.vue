@@ -883,18 +883,30 @@
           class="back-benefit font-serif-md">
           {{ $t("header.meta.back") }}
         </a>
-        <a
+        <button
           class="language-toggle-mobile"
-          href="https://www.usa.gov/espanol/"
-          lang="es"
-          xml:lang="es">
+          @click="switchLanguage">
           {{ $t("header.meta.language") }}
-        </a>
+        </button>
       </div>
     </div>
   </div>
 </template>
-
+<script>
+export default {
+  methods: {
+    switchLanguage(){
+      if(this.$config.languageToggleActive){
+        if(this.$i18n.locale === 'en'){
+          this.$i18n.locale = 'es';
+        } else {
+          this.$i18n.locale = 'en';
+        }
+      }
+    }
+  }
+}
+</script>
 <style
   lang="scss"
   scoped>
