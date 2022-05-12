@@ -1,6 +1,20 @@
 # Python i18n tools
+(Mainly readme for devs)  
+In this directory there are three python scripts to help with the i18n flow of bears. (For the future could be used to allow content managers to not have to change the way that they put in content files, i.e. could incorporate the logic of each of the python scripts into the build process)
+## How to run    
+Python 3 required.
+(again these were created initally for a one time use but are being left to save the logic)    
 
-In this directory there are three python scripts to help with the i18n flow of bears.
+`in root directory`  
+`python3 tools/createCriteriaJson.py`  
+`python3 tools/createJson.py`  
+`python3 tools/createEnEsJs.py`
+
+<small>
+(slight bug: go into the `locales/es.js` and find the line containing `require('es/en.json')` and replace it with `require('es/es.json')`)    
+</small>  
+<br>
+<br>
 
 ## `createCriteriaJson.py`
 
