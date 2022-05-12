@@ -13,6 +13,16 @@
       "secureDetailsLockPostfix": "o https:// significa que usted se conectó de forma segura a un sitio web .gov. Comparta información sensible sólo en sitios web oficiales y seguros."
     }
   },
+  "eligibilityList": {
+    "heading": "Criterios clave de elegibilidad",
+    "you_must": "Debe cumplir con todos los criterios. Actualmente te encuentras",
+    "of": "de",
+    "additional": "Pueden aplicarse criterios de elegibilidad adicionales.",
+    "review": "Por favor revise los requisitos completos en",
+    "match": "Este criterio coincidió",
+    "remove": "Este criterio eliminó este beneficio",
+    "noMatch": "Este criterio no ha coincidido"
+  },
   "skipnav": "Saltar al contenido principal",
   "returnToTop": "Regresar arriba",
   "utilityNav": {
