@@ -11,7 +11,6 @@ const MOCK_CRITERIA = {
   label: LABEL,
   type: "boolean",
   response: false,
-  location: "benefit-card",
 }
 
 describe("<CheckBox/>", () => {
@@ -69,22 +68,5 @@ describe("<CheckBox/>", () => {
     await wrapper.find(CHECKBOX_INPUT_STYLE).setChecked()
     expect(wrapper.find(CHECKBOX_INPUT_STYLE).element.checked).toBeTruthy()
     expect(actions.updateResponse).toHaveBeenCalled()
-  })
-  test("when checkbox is selected it must have correct styling", async () => {
-    const MOCK_CHECKBOX_SELECTED = {
-      criteriaKey: "deceased_served_in_active_military",
-      label: LABEL,
-      type: "boolean",
-      response: true,
-      location: "benefit-card",
-    }
-
-    const wrapper = shallowMount(CheckBox, {
-      propsData: { ...MOCK_CHECKBOX_SELECTED },
-      store,
-    })
-    await wrapper.find(CHECKBOX_INPUT_STYLE).setChecked()
-    expect(wrapper.find(CHECKBOX_INPUT_STYLE).element.checked).toBeTruthy()
-    expect(wrapper.find("label").classes()).toContain("text-success")
   })
 })
