@@ -1,4 +1,0 @@
-{
-  "jest.jestCommandLine": "npm run test --",
-  "superBG.opacity": 32
-}
