@@ -262,7 +262,7 @@ describe("Life Event page", () => {
     expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("two,one,three")
   })
 
-  it("should expand and collapse all accordian cards", async () => {
+  it("should expand and collapse all accordion cards", async () => {
     const $content = createContentMock([
       {
         collectionName: LIFE_EVENTS_DIRECTORY,

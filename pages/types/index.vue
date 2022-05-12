@@ -3,9 +3,9 @@
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
-          <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">Benefits by type</h1>
+          <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">{{ $t("types.sort") }}</h1>
           <p class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
-            If you know the specific type of benefit you are looking for, select it below.
+            {{ $t("types.heading") }}
           </p>
         </div>
       </div>

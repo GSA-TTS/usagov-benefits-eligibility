@@ -75,7 +75,7 @@
       class="text-white bg-base-darker print:text-black print:bg-white font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
       <strong>{{ $t("eligibilityList.additional") }}</strong>
       {{ $t("eligibilityList.review") }}
-      <span class="print:display-none">{{ $t("accordian.apply") }}</span
+      <span class="print:display-none">{{ $t("accordion.apply") }}</span
       ><span class="display-none print:display-inline">{{ benefitSource }}</span>
     </p>
   </div>

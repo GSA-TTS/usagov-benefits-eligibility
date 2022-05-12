@@ -27,21 +27,21 @@
               class="usa-button usa-button--unstyled open-all"
               aria-controls="acc-id"
               @click="openAll">
-              Open All
+              {{ $t("lifeEvent.buttonLabel1") }}
             </button>
             /
             <button
               class="usa-button usa-button--unstyled close-all"
               aria-controls="acc-id"
               @click="closeAll">
-              Close All
+              {{ $t("lifeEvent.buttonLabel2") }}
             </button>
             /
             <button
               class="usa-button usa-button--unstyled clear-all"
               aria-controls="acc-id"
               @click="clearCriteria">
-              Clear Selections
+              {{ $t("lifeEvent.buttonLabel3") }}
             </button>
           </div>
         </div>
@@ -53,31 +53,31 @@
             v-if="$fetchState.pending"
             class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
             <div class="usa-alert__body">
-              <p class="usa-alert__text">Fetching benefits...</p>
+              <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.pending") }}</p>
             </div>
           </div>
           <div
             v-if="$fetchState.error"
             class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
-              <p class="usa-alert__text">Error while fetching benefits.</p>
+              <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.error") }}</p>
             </div>
           </div>
           <div
             v-if="lifeEventBenefits && lifeEventBenefits.length == 0"
             class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
-              <p class="usa-alert__text">No matching benefits found.</p>
+              <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.none") }}</p>
             </div>
           </div>
           <!-- Mobile meta sort and open -->
           <div class="tablet:display-none">
-            <h2 class="font-heading-lg margin-top-1">Benefits Results</h2>
+            <h2 class="font-heading-lg margin-top-1">{{ $t("lifeEvent.benefits") }} {{ $t("lifeEvent.results") }}</h2>
             <button
               class="usa-button clear-all"
               aria-controls="acc-id"
               @click="clearCriteria">
-              Clear Selections
+              {{ $t("lifeEvent.buttonLabel3") }}
             </button>
             <OpenCloseButtons
               :is-open-active-prop="true"

@@ -27,7 +27,7 @@
       </div>
       <!-- Desktop meta sort and open -->
       <div
-        aria-label="Benefit accordian controls"
+        aria-label="Benefit accordion controls"
         role="complementary"
         class="display-none tablet:display-flex grid-row grid-gap print:display-none">
         <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
@@ -37,21 +37,21 @@
               class="usa-button usa-button--unstyled open-all"
               aria-controls="acc-id"
               @click="openAll">
-              Open All
+              {{ $t("lifeEvent.buttonLabel1") }}
             </button>
             /
             <button
               class="usa-button usa-button--unstyled close-all"
               aria-controls="acc-id"
               @click="closeAll">
-              Close All
+              {{ $t("lifeEvent.buttonLabel2") }}
             </button>
             /
             <button
               class="usa-button usa-button--unstyled clear-all"
               aria-controls="acc-id"
               @click="clearCriteria">
-              Clear Selections
+              {{ $t("lifeEvent.buttonLabel3") }}
             </button>
           </div>
         </div>
@@ -59,7 +59,7 @@
           <label
             class="usa-label display-inline margin-right-1"
             for="benefitSort"
-            >Showing {{ lifeEventBenefits.length }} related benefits sorted by:
+            >{{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }} {{ $t("lifeEvent.labelShowText2") }}
             <select
               id="benefitSort"
               class="usa-select margin-left-auto width-card display-inline-block"
@@ -69,12 +69,12 @@
               <option
                 value="relevance"
                 :selected="sort === 'relevance'">
-                Relevance
+                {{ $t("lifeEvent.option1") }}
               </option>
               <option
                 value="title"
                 :selected="sort === 'title'">
-                Title (A-Z)
+                {{ $t("lifeEvent.option2") }}
               </option>
             </select>
           </label>
@@ -84,13 +84,13 @@
       <div class="grid-row grid-gap print:display-block">
         <div
           class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade padding-2 radius-md">
-          <h2 class="display-none print:display-block">Eligibility criteria</h2>
+          <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
           <div>
             <div v-if="filter">
               <div
                 class="margin-bottom-3"
                 role="alert">
-                Currently viewing
+                {{ $t("lifeEvent.currentlyViewing") }}
                 <span class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
                   <button
                     class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
@@ -118,7 +118,7 @@
                   aria-labelledby="eligibility-section-criteria-icon-title"
                   focusable="false"
                   role="img">
-                  <title id="eligibility-section-criteria-icon-title">Important information</title>
+                  <title id="eligibility-section-criteria-icon-title">{{ $t("lifeEvent.important") }}</title>
                   <use xlink:href="~/assets/img/sprite.svg#priority_high" />
                 </svg>
               </div>
@@ -135,16 +135,19 @@
         </div>
         <div class="margin-top-2 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <!-- Mobile meta sort and open -->
-          <h2 class="tablet:display-none font-heading-lg margin-top-6">Benefits Results</h2>
+          <h2 class="tablet:display-none font-heading-lg margin-top-6">
+            {{ $t("lifeEvent.benefits") }}{{ $t("lifeEvent.results") }}
+          </h2>
           <div
-            aria-label="Benefit accordian controls"
+            aria-label="Benefit accordion controls"
             role="complementary"
             class="tablet:display-none print:display-none">
             <div class="margin-y-2 print:display-none">
               <label
                 class="usa-label"
                 for="benefitSortMobile"
-                >Showing {{ lifeEventBenefits.length }} related benefits sorted by:</label
+                >{{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }}
+                {{ $t("lifeEvent.labelShowText2") }}</label
               >
               <select
                 id="benefitSortMobile"
@@ -154,12 +157,12 @@
                 <option
                   value="relevance"
                   :selected="sort === 'relevance'">
-                  Relevance
+                  {{ $t("lifeEvent.option1") }}
                 </option>
                 <option
                   value="title"
                   :selected="sort === 'title'">
-                  Title (A-Z)
+                  {{ $t("lifeEvent.option2") }}
                 </option>
               </select>
             </div>
@@ -172,29 +175,30 @@
 
           <div class="grid-row grid-gap display-none print:display-block break-before-always">
             <div class="grid-col margin-bottom-3">
-              <h2 class="display-none print:display-block">Benefits</h2>
-              Showing {{ lifeEventBenefits.length }} related benefits sorted by {{ sort }}.
+              <h2 class="display-none print:display-block">{{ $t("lifeEvent.benefits") }}</h2>
+              {{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }} {{ $t("lifeEvent.labelShowText2") }}
+              {{ sort }}.
             </div>
           </div>
           <div
             v-if="$fetchState.pending"
             class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
             <div class="usa-alert__body">
-              <p class="usa-alert__text">Fetching benefits...</p>
+              <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.pending") }}</p>
             </div>
           </div>
           <div
             v-if="$fetchState.error"
             class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
-              <p class="usa-alert__text">Error while fetching benefits.</p>
+              <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.error") }}</p>
             </div>
           </div>
           <div
             v-if="lifeEventBenefits && lifeEventBenefits.length == 0"
             class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
-              <p class="usa-alert__text">No matching benefits found.</p>
+              <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.none") }}</p>
             </div>
           </div>
           <Accordion
@@ -258,8 +262,7 @@ export default {
       .fetch()
     const allEligibilityCriteria = tCsv.call(this, await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
-    console.log(lifeEventBenefits)
-    debugger
+    
     lifeEvent.related = []
     for (const related of lifeEvent.relatedKeys || []) {
       lifeEvent.related.push(await this.$content("life-events", related).fetch())

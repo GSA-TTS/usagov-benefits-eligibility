@@ -151,5 +151,31 @@
       "buttonText": "Sign Up"
     },
     "subFooter": "USAGov is the Official Guide to Government Information and Services"
+  },
+  "lifeEvent": {
+    "buttonLabel1": "Open All",
+    "buttonLabel2": "Close All",
+    "buttonLabel3": "Clear Selections",
+    "important": "Important information",
+    "benefits": "Benefits",
+    "results": "Results",
+    "labelShowText": "Showing",
+    "labelShowText2": "related benefits sorted by:",
+    "option1": "Relevance",
+    "option2": "Title (A-Z)",
+    "eligibilityCriteria": "Eligibility Criteria",
+    "currentlyViewing": "Currently viewing",
+    "fetchState": {
+      "pending": "Fetching benefits...",
+      "error": "Error while fetching benefits.",
+      "none": "No matching benefits found."
+    }
+  },
+  "types": {
+    "heading": "If you know the specific type of benefit you are looking for, select it below.",
+    "sort": "Benefits by type"
+  },
+  "agency": {
+    "sort": "Benefits by agency"
   }
 }
