@@ -38,7 +38,7 @@ const mockContent2 = {
 describe("LifeEventsPage", () => {
   beforeAll(async () => {
     config.mocks.$route = {
-      fullPath: '/death-of-a-loved-one',
+      fullPath: "/death-of-a-loved-one",
     }
     config.mocks.$router = {
       push: jest.fn(),

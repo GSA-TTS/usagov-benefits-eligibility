@@ -28,7 +28,7 @@ describe("<UsaGovHeader />", () => {
     expect(wrapper.vm).toBeTruthy()
     const esButton = wrapper.find("#language-toggle-button")
     esButton.trigger("click")
-    config.mocks.$i18n.locale = 'es'
+    config.mocks.$i18n.locale = "es"
     esButton.trigger("click")
   })
 })

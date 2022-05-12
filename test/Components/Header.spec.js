@@ -8,14 +8,16 @@ describe("Header", () => {
   })
 
   it("should be a Vue instance", () => {
-    const wrapper = mount(Header, {mocks: {
-      $router: {
-        push: jest.fn(),
+    const wrapper = mount(Header, {
+      mocks: {
+        $router: {
+          push: jest.fn(),
+        },
+        $config: {
+          languageToggleActive: true,
+        },
       },
-      $config: {
-        languageToggleActive: true,
-      },
-    },})
+    })
     expect(wrapper.vm).toBeTruthy()
   })
 
@@ -34,7 +36,7 @@ describe("Header", () => {
     const esButton = wrapper.find("#language-toggle-button")
     esButton.trigger("click")
     await wrapper.vm.$nextTick()
-    config.mocks.$i18n.locale = 'es'
+    config.mocks.$i18n.locale = "es"
     esButton.trigger("click")
     await wrapper.vm.$nextTick()
   })

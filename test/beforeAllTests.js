@@ -18,20 +18,26 @@ export default function beforeAllTests() {
     locale: "en",
     setLocale: (locale) => {
       config.mocks.$i18n.locale = locale
-    }
+    },
   }
   config.mocks["i18n"] = {
     locale: "en",
     setLocale: (locale) => {
       config.mocks.$i18n.locale = locale
-    }
+    },
   }
-  config.provide["$i18n"] = { locale: "en", setLocale: (locale) => {
-    config.mocks.$i18n.locale = locale
-  } }
-  config.provide["i18n"] = { locale: "en", setLocale: (locale) => {
-    config.mocks.$i18n.locale = locale
-  } }
+  config.provide["$i18n"] = {
+    locale: "en",
+    setLocale: (locale) => {
+      config.mocks.$i18n.locale = locale
+    },
+  }
+  config.provide["i18n"] = {
+    locale: "en",
+    setLocale: (locale) => {
+      config.mocks.$i18n.locale = locale
+    },
+  }
   Vue.use(Vuex)
   process.server = true
 }
