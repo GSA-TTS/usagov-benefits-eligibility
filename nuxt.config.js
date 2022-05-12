@@ -31,7 +31,7 @@ const oneEvent = oneEventVersion()
 export default {
   publicRuntimeConfig: {
     // This is used to toggle whether or not internationalization is enabled
-    languageToggleActive: true,
+    languageToggleActive: false,
     branchName: process.env.BRANCH,
     oneEventVersion: oneEvent,
   },
