@@ -37,7 +37,7 @@
               <nuxt-link
                 class="display-block height-full margin-x-1"
                 style="text-decoration: none; outline-offset: 0.25rem"
-                :to="event.slug">
+                :to="localePath(event.slug)">
                 <Card
                   :card-body="$t(event.summary)"
                   :card-title="$t(event.title)"

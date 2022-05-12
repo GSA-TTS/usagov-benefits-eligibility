@@ -21,7 +21,7 @@
               class="usa-card desktop:grid-col-6"
               :aria-label="$t(tag.title)">
               <nuxt-link
-                :to="`/types/${tag.slug}`"
+                :to="localePath(`/types/${tag.slug}`)"
                 class="display-block height-full margin-x-1"
                 style="text-decoration: none; outline-offset: 0.25rem">
                 <Card

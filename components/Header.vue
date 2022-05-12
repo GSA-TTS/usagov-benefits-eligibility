@@ -164,7 +164,7 @@ export default {
    switchLanguage() {
       let route = ""
       const locale = this.$i18n.locale
-      const oneEventString = !this.$config.oneEventVersion ? this.$config.oneEventVersion : ""
+      const oneEventString = !this.$config.oneEventVersion ? '': this.$config.oneEventVersion
       if (locale === "en") {
         route = `/es/${oneEventString}`
         this.$i18n.setLocale('es')
