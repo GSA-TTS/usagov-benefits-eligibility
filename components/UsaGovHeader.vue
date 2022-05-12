@@ -895,16 +895,16 @@
 <script>
 export default {
   methods: {
-    switchLanguage(){
-      if(this.$config.languageToggleActive){
-        if(this.$i18n.locale === 'en'){
-          this.$i18n.locale = 'es';
+    switchLanguage() {
+      if (this.$config.languageToggleActive) {
+        if (this.$i18n.locale === "en") {
+          this.$i18n.locale = "es"
         } else {
-          this.$i18n.locale = 'en';
+          this.$i18n.locale = "en"
         }
       }
-    }
-  }
+    },
+  },
 }
 </script>
 <style

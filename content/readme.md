@@ -2,11 +2,11 @@
 
 ## Internationalization Support Toggle
 
-To toggle on the internationalization support feature, set the `languageToggleActive` to `true` in the `nuxt.config.js` file.  
+To toggle on the internationalization support feature, set the `languageToggleActive` to `true` in the `nuxt.config.js` file.
 
 Now when creating or editing content files, any text that will be shown to the user and translated, needs  
 to be in the markdown files' corresponding `json` file. It must also be referenced in the `dot notation`.  
-Here is an example:  
+Here is an example:
 
 ```yaml
 // centers-for-medicare-and-medicaid.md
@@ -29,6 +29,7 @@ relatedKeys:
 }
 
 ```
+
 Since I want the `title, summary, and lede` to be text, and I know that it will be shown to the user, I will need to reference them using the `dot notation`. This notation is as follows `[name of the file].[name of variable]`. See a more complex example below.
 
 ```yaml

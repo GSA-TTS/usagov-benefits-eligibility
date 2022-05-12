@@ -134,8 +134,7 @@
             <li class="usa-nav__primary-item tablet:margin-left-auto">
               <button
                 class="language-toggle-mobile usa-button"
-                @click="switchLanguage"
-                >
+                @click="switchLanguage">
                 {{ $t("header.meta.language") }}
               </button>
             </li>
@@ -159,13 +158,13 @@ export default {
       this.isLifeEventPage = this.doesRouteMatchLifeEventPages()
     },
   },
-  methods: {    
-    switchLanguage(){
-      if(this.$config.languageToggleActive){
-        if(this.$i18n.locale === 'en'){
-          this.$i18n.locale = 'es';
+  methods: {
+    switchLanguage() {
+      if (this.$config.languageToggleActive) {
+        if (this.$i18n.locale === "en") {
+          this.$i18n.locale = "es"
         } else {
-          this.$i18n.locale = 'en';
+          this.$i18n.locale = "en"
         }
       }
     },
