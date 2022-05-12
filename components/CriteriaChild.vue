@@ -8,8 +8,7 @@
         :criteria-key="criteriaKey"
         :label="getCriterionLabel()"
         :response="response"
-        :is-disabled="isGroupKeyDisabled"
-        location="left-rail" />
+        :is-disabled="isGroupKeyDisabled" />
     </div>
     <div
       v-if="type === 'date'"
@@ -31,8 +30,7 @@
         :values="values"
         :response="response"
         :criteria-index="criteriaGroupKey"
-        :is-disabled="isGroupKeyDisabled"
-        location="left-rail" />
+        :is-disabled="isGroupKeyDisabled" />
     </div>
 
     <div
@@ -43,8 +41,7 @@
         :label="getCriterionLabel()"
         :values="values"
         :response="response"
-        :is-disabled="isGroupKeyDisabled"
-        location="left-rail" />
+        :is-disabled="isGroupKeyDisabled" />
     </div>
   </div>
 </template>

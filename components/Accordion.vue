@@ -189,7 +189,7 @@ export default {
       }
       return "border-gray-30"
     },
-
+    // TODO: FSP@10x- may need to look at this closer
     getCriteriaMatchLanguage(eligibilityCriteria) {
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
         return "(" + this.$t("not_eligible") + ")"
