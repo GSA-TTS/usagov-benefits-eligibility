@@ -16,7 +16,6 @@ describe("<UsaGovHeader />", () => {
 
   it("does toggle lang", () => {
     const wrapper = mount(UsaGovHeader, {
-      $i18n: { locale: "en" },
       mocks: {
         $router: {
           push: jest.fn(),
@@ -29,6 +28,7 @@ describe("<UsaGovHeader />", () => {
     expect(wrapper.vm).toBeTruthy()
     const esButton = wrapper.find("#language-toggle-button")
     esButton.trigger("click")
+    config.mocks.$i18n.locale = 'es'
     esButton.trigger("click")
   })
 })

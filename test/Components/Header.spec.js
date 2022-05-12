@@ -1,4 +1,4 @@
-import { mount } from "@vue/test-utils"
+import { config, mount } from "@vue/test-utils"
 import Header from "@/components/Header.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
@@ -8,13 +8,19 @@ describe("Header", () => {
   })
 
   it("should be a Vue instance", () => {
-    const wrapper = mount(Header)
+    const wrapper = mount(Header, {mocks: {
+      $router: {
+        push: jest.fn(),
+      },
+      $config: {
+        languageToggleActive: true,
+      },
+    },})
     expect(wrapper.vm).toBeTruthy()
   })
 
-  it("does toggle lang", () => {
+  it("does toggle lang", async () => {
     const wrapper = mount(Header, {
-      $i18n: { locale: "en" },
       mocks: {
         $router: {
           push: jest.fn(),
@@ -27,7 +33,10 @@ describe("Header", () => {
     expect(wrapper.vm).toBeTruthy()
     const esButton = wrapper.find("#language-toggle-button")
     esButton.trigger("click")
+    await wrapper.vm.$nextTick()
+    config.mocks.$i18n.locale = 'es'
     esButton.trigger("click")
+    await wrapper.vm.$nextTick()
   })
 
   it("should change links based on routes", () => {
