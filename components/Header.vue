@@ -161,16 +161,16 @@ export default {
     },
   },
   methods: {
-   switchLanguage() {
+    switchLanguage() {
       let route = ""
       const locale = this.$i18n.locale
-      const oneEventString = !this.$config.oneEventVersion ? '': this.$config.oneEventVersion
+      const oneEventString = !this.$config.oneEventVersion ? "" : this.$config.oneEventVersion
       if (locale === "en") {
         route = `/es/${oneEventString}`
-        this.$i18n.setLocale('es')
+        this.$i18n.setLocale("es")
       } else {
         route = `/${oneEventString}`
-        this.$i18n.setLocale('en')
+        this.$i18n.setLocale("en")
       }
       this.$router.push(route)
     },
