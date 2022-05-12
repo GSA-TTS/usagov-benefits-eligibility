@@ -29,6 +29,27 @@ describe("Header", () => {
         },
         $config: {
           languageToggleActive: true,
+          oneEventVersion: 'death-of-a-loved-one'
+        },
+      },
+    })
+    expect(wrapper.vm).toBeTruthy()
+    const esButton = wrapper.find("#language-toggle-button")
+    esButton.trigger("click")
+    await wrapper.vm.$nextTick()
+    config.mocks.$i18n.locale = "es"
+    esButton.trigger("click")
+    await wrapper.vm.$nextTick()
+  })
+
+  it("does toggle lang full", async () => {
+    const wrapper = mount(Header, {
+      mocks: {
+        $router: {
+          push: jest.fn(),
+        },
+        $config: {
+          languageToggleActive: true,
         },
       },
     })
