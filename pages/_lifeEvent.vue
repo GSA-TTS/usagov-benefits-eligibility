@@ -262,7 +262,7 @@ export default {
       .fetch()
     const allEligibilityCriteria = tCsv.call(this, await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
-    
+
     lifeEvent.related = []
     for (const related of lifeEvent.relatedKeys || []) {
       lifeEvent.related.push(await this.$content("life-events", related).fetch())
