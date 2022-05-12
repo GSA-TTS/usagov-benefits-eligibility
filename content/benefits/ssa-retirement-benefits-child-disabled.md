@@ -1,26 +1,26 @@
 ---
-title: "Retirement Benefits for Child with Disabilities"
-headline: "Retirement Benefits for Child with Disabilities"
+title: ssa-retirement-benefits-child-disabled.title
+headline: ssa-retirement-benefits-child-disabled.headline
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "late-adulthood"
-  - "disability"
-  - "loss-of-job-and-low-income"
+  - retirement
+  - late-adulthood
+  - disability
+  - loss-of-job-and-low-income
 source:
-  name: "Social Security Administration"
+  name: ssa-retirement-benefits-child-disabled.source.name
   link: https://www.ssa.gov/benefits/retirement/
 
-summary: "Social Security is part of the retirement plan for almost every American worker. It provides replacement income for qualified retirees and their families."
+summary: ssa-retirement-benefits-child-disabled.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_date_of_birth
-    label: "You are at least 18 years old."
-    acceptableValues: [">18years"]
+    label: ssa-retirement-benefits-child-disabled.eligibility.label
+    acceptableValues: [>18years]
   - criteriaKey: applicant_marital_status
-    acceptableValues: ["unmarried"]
+    acceptableValues: [ssa-retirement-benefits-child-disabled.eligibility.acceptableValues]
   - criteriaKey: applicant_disability
     acceptableValues: [true]
   - criteriaKey: applicant_ability_to_work

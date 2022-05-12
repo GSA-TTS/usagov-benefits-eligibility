@@ -1,15 +1,15 @@
 ---
-title: "Social Security Disability Insurance"
-headline: "Social Security Disability Insurance"
+title: ssa-disability-insurance.title
+headline: ssa-disability-insurance.headline
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "disability"
+  - disability
 source:
-  name: "Social Security Administration"
+  name: ssa-disability-insurance.source.name
   link: https://www.ssa.gov/benefits/disability/
 
-summary: "Provides financial assistance to people with disabilities."
+summary: ssa-disability-insurance.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.

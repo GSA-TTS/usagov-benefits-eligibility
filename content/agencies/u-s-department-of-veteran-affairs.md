@@ -1,5 +1,5 @@
 ---
-title: "U.S. Department of Veteran Affairs"
-summary: "Provides a wide range of benefits in support of veterans, service members, and their families."
-lede: "Provides a wide range of benefits in support of veterans, service members, and their families."
+title: u-s-department-of-veteran-affairs.title
+summary: u-s-department-of-veteran-affairs.summary
+lede: u-s-department-of-veteran-affairs.lede
 ---

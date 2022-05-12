@@ -1,26 +1,26 @@
 ---
 # yaml front matter here
-title: "Retirement"
-summary: "Find out what financial, health care, and other benefits may be available as you enter this next phase of your life."
-lede: ""
-secondaryHeadline: "Retirement benefits"
+title: retirement.title
+summary: retirement.summary
+lede: retirement.lede
+secondaryHeadline: retirement.secondaryHeadline
 
-eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
+eligibilityCriteriaDescription: retirement.eligibilityCriteriaDescription
 
 topLevelFilter:
-  - label: "Start here"
+  - label: retirement.topLevelFilter.label
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
 
-  - label: ""
+  - label: retirement.topLevelFilter.label1
     criteriaKey: applicant_served_in_active_military
     disableGroupKey: applicant-military
-    disableGroupWhen: ["no"]
+    disableGroupWhen: [retirement.topLevelFilter.disableGroupWhen]
 
 eligibilityCriteria:
-  - label: "About you (the person applying for benefits)"
-    description: ""
+  - label: retirement.eligibilityCriteria.label
+    description: retirement.eligibilityCriteria.description
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_paid_into_SS
@@ -32,8 +32,8 @@ eligibilityCriteria:
       - applicant_care_for_child
       - applicant_citizen_status
 
-  - label: "About your military service"
-    description: ""
+  - label: retirement.eligibilityCriteria.label1
+    description: retirement.eligibilityCriteria.description1
     criteriaGroupKey: applicant-military
     criteriaKeys:
       - applicant_service_status

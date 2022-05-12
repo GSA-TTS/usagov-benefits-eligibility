@@ -1,31 +1,31 @@
 ---
 # yaml front matter here
-title: "Death of a loved one"
-summary: "If you have lost a loved one, you may qualify for help, including assistance with burial or funeral costs, financial support, and more."
-lede: ""
-secondaryHeadline: "Government assistance after losing a loved one"
+title: death-of-a-loved-one.title
+summary: death-of-a-loved-one.summary
+lede: death-of-a-loved-one.lede
+secondaryHeadline: death-of-a-loved-one.secondaryHeadline
 
-eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
+eligibilityCriteriaDescription: death-of-a-loved-one.eligibilityCriteriaDescription
 
 topLevelFilter:
-  - label: "Start here"
+  - label: death-of-a-loved-one.topLevelFilter.label
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
 
-  - label: ""
+  - label: death-of-a-loved-one.topLevelFilter.label1
     criteriaKey: applicant_relationship
     disableGroupKey:
     disableGroupWhen:
 
-  - label: ""
+  - label: death-of-a-loved-one.topLevelFilter.label2
     criteriaKey: deceased_served_in_active_military
     disableGroupKey: deceased-military
-    disableGroupWhen: ["no"]
+    disableGroupWhen: [death-of-a-loved-one.topLevelFilter.disableGroupWhen]
 
 eligibilityCriteria:
-  - label: "About the person who died"
-    description: ""
+  - label: death-of-a-loved-one.eligibilityCriteria.label
+    description: death-of-a-loved-one.eligibilityCriteria.description
     criteriaGroupKey: deceased-basics
     criteriaKeys:
       - deceased_paid_into_SS
@@ -35,16 +35,16 @@ eligibilityCriteria:
       - deceased_date_of_death
       - deceased_date_of_funeral
 
-  - label: "About the military service of the person who died"
-    description: ""
+  - label: death-of-a-loved-one.eligibilityCriteria.label1
+    description: death-of-a-loved-one.eligibilityCriteria.description1
     criteriaGroupKey: deceased-military
     criteriaKeys:
       - deceased_service_status
       - deceased_death_circumstance
       - deceased_grave_headstone
 
-  - label: "About you (the person applying for benefits)"
-    description: ""
+  - label: death-of-a-loved-one.eligibilityCriteria.label2
+    description: death-of-a-loved-one.eligibilityCriteria.description2
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_marital_status

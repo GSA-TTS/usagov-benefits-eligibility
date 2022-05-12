@@ -1,21 +1,22 @@
 ---
-title: "Social Security Disability Insurance for Mothers/Fathers"
-headline: "Social Security Disability Insurance for Mothers/Fathers"
+title: ssa-disability-insurance-mothers-fathers.title
+headline: ssa-disability-insurance-mothers-fathers.headline
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "disability"
-  - "loss-of-job-and-low-income"
+  - disability
+  - loss-of-job-and-low-income
 source:
-  name: "Social Security Administration"
+  name: ssa-disability-insurance-mothers-fathers.source.name
   link: https://www.ssa.gov/benefits/disability/
 
-summary: "Provides financial assistance to people with disabilities and their family members."
+summary: ssa-disability-insurance-mothers-fathers.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_marital_status
-    acceptableValues: ["unmarried", "divorced"]
+    acceptableValues: [ssa-disability-insurance-mothers-fathers.eligibility.acceptableValues, 
+    ssa-disability-insurance-mothers-fathers.eligibility.acceptableValues1]
   - criteriaKey: applicant_care_for_child
     acceptableValues: [true]
   - criteriaKey: applicant_citizen_status

@@ -1,25 +1,25 @@
 ---
-title: "Veterans Life Insurance"
-headline: "Veterans Life Insurance"
+title: va-life-insurance-for-veterans.title
+headline: va-life-insurance-for-veterans.headline
 tags:
-  - "life insurance"
+  - life insurance
 lifeEvents:
-  - "military-service"
+  - military-service
 source:
-  name: "U.S. Department of Veteran Affairs"
+  name: va-life-insurance-for-veterans.source.name
   link: https://www.va.gov/life-insurance/options-eligibility/
 
-summary: "VA Life Insurance programs are available for veterans, service members, and their spouses and dependent children."
+summary: va-life-insurance-for-veterans.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_served_in_active_military
-    acceptableValues: ["yes"]
+    acceptableValues: [va-life-insurance-for-veterans.eligibility.acceptableValues]
   - criteriaKey: applicant_service_status
     acceptableValues:
       [
-        "an active-duty service member",
-        "discharged under conditions other than dishonorable",
-        "retired from the service",
+        va-life-insurance-for-veterans.eligibility.acceptableValues1,
+        va-life-insurance-for-veterans.eligibility.acceptableValues2,
+        va-life-insurance-for-veterans.eligibility.acceptableValues3,
       ]
 ---

@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils"
+import { config, shallowMount } from "@vue/test-utils"
 import Page from "~/pages/agencies/_agency.vue"
 import beforeAllTests from "~/test/beforeAllTests"
 
@@ -43,9 +43,9 @@ describe("pages/agencies/_agency.vue", () => {
                 lifeEvents: ["Three", "Four"],
               },
               { title: "Two", summary: "Two summary", source: { name: SOURCE_NAME }, lifeEvents: [] },
-              { title: "Three", summary: "Three summary", source: { name: "U.S. One Two" }, lifeEvents: [] },
+              { title: "Three", summary: "Three summary", source: { name: "US One Two" }, lifeEvents: [] },
             ],
-            criteria: [],
+            criteria: { body: [] },
           }[contentRequest]
         )
       },
@@ -68,13 +68,14 @@ describe("pages/agencies/_agency.vue", () => {
         $fetchState,
         $route,
         $store,
+        $t: (val) => val,
       },
     })
     await wrapper.vm.$options.fetch.apply(wrapper.vm)
     expect(wrapper.vm.benefitAgency).toBe(SOURCE_NAME)
     expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("One,Two")
 
-    $route.params.agency = "u-s-one-two"
+    $route.params.agency = "us-one-two"
     const wrapper2 = shallowMount(Page, {
       mocks: {
         $content,
@@ -84,7 +85,7 @@ describe("pages/agencies/_agency.vue", () => {
       },
     })
     await wrapper2.vm.$options.fetch.apply(wrapper2.vm)
-    expect(wrapper2.vm.benefitAgency).toBe("U.S. One Two")
+    expect(wrapper2.vm.benefitAgency).toBe("US One Two")
   })
 
   it("should expand,collapse, and clear all accordion cards", async () => {

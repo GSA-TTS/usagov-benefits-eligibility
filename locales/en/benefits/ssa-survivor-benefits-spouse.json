@@ -1,0 +1,10 @@
+{
+  "ssa-survivor-benefits-spouse.title": "Survivors Benefits for Spouse",
+  "ssa-survivor-benefits-spouse.headline": "Survivors Benefits for Spouse",
+  "ssa-survivor-benefits-spouse.source.name": "Social Security Administration",
+  "ssa-survivor-benefits-spouse.summary": "Social Security survivors benefits are paid to a surviving spouse of eligible workers, and under certain circumstances, to a surviving divorced spouse of eligible workers.",
+  "ssa-survivor-benefits-spouse.eligibility.acceptableValues": "spouse",
+  "ssa-survivor-benefits-spouse.eligibility.label": "You are at least 60 years old.",
+  "ssa-survivor-benefits-spouse.eligibility.acceptableValues1": "widowed,",
+  "ssa-survivor-benefits-spouse.eligibility.acceptableValues2": "divorced"
+}

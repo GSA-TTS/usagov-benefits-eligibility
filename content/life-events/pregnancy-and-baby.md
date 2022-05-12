@@ -1,15 +1,15 @@
 ---
 # yaml front matter here
-title: "Pregnancy and new baby"
-summary: "Discover what benefits are available during pregnancy and when you have a new child, either through birth or adoption."
-lede: ""
-secondaryHeadline: "Pregnancy and new baby benefits"
+title: pregnancy-and-baby.title
+summary: pregnancy-and-baby.summary
+lede: pregnancy-and-baby.lede
+secondaryHeadline: pregnancy-and-baby.secondaryHeadline
 
-eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
+eligibilityCriteriaDescription: pregnancy-and-baby.eligibilityCriteriaDescription
 
 eligibilityCriteria:
-  - label: "About you (the person applying for benefits)"
-    description: ""
+  - label: pregnancy-and-baby.eligibilityCriteria.label
+    description: pregnancy-and-baby.eligibilityCriteria.description
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_date_of_birth

@@ -1,0 +1,9 @@
+{
+  "ssa-disability-insurance-spouse.title": "Social Security Disability Insurance for Spouse",
+  "ssa-disability-insurance-spouse.headline": "Social Security Disability Insurance for Spouse",
+  "ssa-disability-insurance-spouse.source.name": "Social Security Administration",
+  "ssa-disability-insurance-spouse.summary": "Provides financial assistance to people with disabilities and their family members.",
+  "ssa-disability-insurance-spouse.eligibility.label": "You are at least 62 years old.",
+  "ssa-disability-insurance-spouse.eligibility.acceptableValues": "now married,",
+  "ssa-disability-insurance-spouse.eligibility.acceptableValues1": "divorced"
+}

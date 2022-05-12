@@ -1,21 +1,21 @@
 ---
 # yaml front matter here
-title: "Getting older"
-summary: "As you get older and your needs change, there may be benefits available to help you with expenses, health care, and other new challenges."
-lede: ""
-secondaryHeadline: "Late adulthood benefits"
+title: late-adulthood.title
+summary: late-adulthood.summary
+lede: late-adulthood.lede
+secondaryHeadline: late-adulthood.secondaryHeadline
 
-eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
+eligibilityCriteriaDescription: late-adulthood.eligibilityCriteriaDescription
 
 topLevelFilter:
-  - label: "Start here"
+  - label: late-adulthood.topLevelFilter.label
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
 
 eligibilityCriteria:
-  - label: "About you (the person applying for benefits)"
-    description: ""
+  - label: late-adulthood.eligibilityCriteria.label
+    description: late-adulthood.eligibilityCriteria.description
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_paid_into_SS

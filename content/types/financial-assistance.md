@@ -1,5 +1,5 @@
 ---
-title: "Financial assistance"
-summary: "Help and financial support, including assistance for people with low incomes."
-lede: "Help and financial support, including assistance for people with low incomes."
+title: financial-assistance.title
+summary: financial-assistance.summary
+lede: financial-assistance.lede
 ---

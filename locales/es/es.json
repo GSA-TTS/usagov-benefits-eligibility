@@ -1,0 +1,121 @@
+{
+  "projectName": "Buscador de beneficios",
+  "banner": {
+    "official": "Un sitio oficial del Gobierno de Estados Unidos",
+    "know": "Así es como usted puede verificarlo",
+    "dropdown": {
+      "official": "Los sitios web oficiales usan .gov",
+      "officialDetailsDotGovPrefix": "Un sitio web",
+      "officialDetails": " pertenece a una organización oficial del Gobierno de Estados Unidos.",
+      "secure": "Los sitios web seguros .gov usan HTTPS",
+      "secureDetailsLockPrefix": "Un",
+      "secureDetailsLockStrong": "candado",
+      "secureDetailsLockPostfix": "o https:// significa que usted se conectó de forma segura a un sitio web .gov. Comparta información sensible sólo en sitios web oficiales y seguros."
+    }
+  },
+  "skipnav": "Saltar al contenido principal",
+  "returnToTop": "Regresar arriba",
+  "utilityNav": {
+    "linkOne": "Beneficios por eventos de vida",
+    "linkTwo": "Beneficios por tipo",
+    "linkThree": "Beneficios por agencia"
+  },
+  "header": {
+    "menu": "MENÚ",
+    "main": "Navegación Principal",
+    "GroupOne": "Todos los temas y servicios",
+    "GroupTwo": {
+      "title": "Ayuda financiera y beneficios",
+      "linkOne": "Programas sociales del Gobierno",
+      "linkTwo": "Préstamos y subvenciones",
+      "linkThree": "Ayuda financiera para estudiantes",
+      "linkFour": "Seguro Social",
+      "linkFive": "Asistencia alimentaria",
+      "linkSix": "Pago de facturas",
+      "linkSeven": "Ayuda disponible por desempleo",
+      "linkEight": "Beneficios para miembros de las Fuerzas Armadas",
+      "linkNine": "Jubilación",
+      "linkTen": "Vivienda de renta asequible"
+    },
+    "GroupThree": {
+      "title": "Ciudadanía, inmigración y viajes",
+      "linkOne": "Deportación",
+      "linkTwo": "Viajes dentro Estados Unidos",
+      "linkThree": "Viajes al exterior",
+      "linkFour": "Pasaporte estadounidense",
+      "linkFive": "Ciudadanía y naturalización",
+      "linkSix": "Residencia permanente Green Card",
+      "linkSeven": "Entradas y salidas de EE. UU.",
+      "linkEight": "Visas para extranjeros",
+      "linkNine": "Temas migratorios comunes",
+      "linkTen": "",
+      "linkEleven": ""
+    },
+    "GroupFour": {
+      "title": "Dinero e impuestos",
+      "linkOne": "Seguros personales",
+      "linkTwo": "Gasto, ahorro e inversión",
+      "linkThree": "Informes y puntajes de crédito",
+      "linkFour": "Impuestos",
+      "linkFive": "Dinero sin reclamar",
+      "linkSix": "Ayuda financiera y beneficios",
+      "linkSeven": "Temas del consumidor",
+      "linkEight": ""
+    },
+    "GroupFive": {
+      "title": "Directorios del Gobierno",
+      "linkOne": "Funcionarios elegidos",
+      "linkTwo": "Gobiernos estatales",
+      "linkThree": "Consulados y embajadas",
+      "linkFour": "Agencias del Gobierno",
+      "linkFive": "Acerca de EE. UU.",
+      "linkSix": ""
+    },
+    "GroupSix": {
+      "title": "Temas del consumidor",
+      "linkOne": "Presentar una queja",
+      "linkTwo": "Telecomunicaciones",
+      "linkThree": "Telemercadeo insistente y correo basura",
+      "linkFour": "Estafas y fraudes",
+      "linkFive": "Dinero e impuestos",
+      "linkSix": "Oficinas estatales de protección al consumidor",
+      "linkSeven": "",
+      "linkEight": "",
+      "linkNine": ""
+    },
+    "GroupSeven": {
+      "title": "Trabajo y desempleo",
+      "linkOne": "Empleo y capacitación laboral",
+      "linkTwo": "Jubilación",
+      "linkThree": "Ayuda disponible por desempleo",
+      "linkFour": "Pequeñas empresas"
+    },
+    "meta": {
+      "search": "Busque en USAGov en Español",
+      "placeholder": "Busque en USAGov",
+      "back": "Beneficios, Subvenciones, Préstamos",
+      "language": "English"
+    }
+  },
+  "footer": {
+    "GroupOne": {
+      "header": "Sobre USAGov en Español",
+      "linkOne": "Acerca de nosotros y avisos de este sitio",
+      "linkTwo": "Medios",
+      "linkThree": "Desarrolladores (en inglés)",
+      "linkFour": "Reporte problemas en este sitio",
+      "linkFive": "Todos los temas y servicios"
+    },
+    "GroupTwo": {
+      "header": "Envíenos sus preguntas",
+      "linkOne": "Llame al 1-844-USAGOV1 (1-844-872-4681)",
+      "linkTwo": "In English"
+    },
+    "GroupThree": {
+      "header": "Subscríbase para recibir información actualizada",
+      "formLabel": "Escriba su email",
+      "buttonText": "Subscríbase ahora"
+    },
+    "subFooter": "USAGov en Español es la guía oficial de información y servicios del Gobierno"
+  }
+}

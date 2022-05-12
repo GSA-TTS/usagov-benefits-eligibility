@@ -1,16 +1,16 @@
 ---
-title: "Medicare with Disability"
-headline: "Medicare with Disability"
+title: cms-medicare-disability.title
+headline: cms-medicare-disability.headline
 tags:
-  - "healthcare"
+  - healthcare
 lifeEvents:
-  - "late-adulthood"
-  - "disability"
+  - late-adulthood
+  - disability
 source:
-  name: "Centers for Medicare and Medicaid"
+  name: cms-medicare-disability.source.name
   link: https://www.medicare.gov/sign-up-change-plans/get-started-with-medicare
 
-summary: "Health insurance program for Americans aged 65 and older, and for people with disabilities."
+summary: cms-medicare-disability.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.

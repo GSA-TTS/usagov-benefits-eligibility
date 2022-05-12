@@ -1,21 +1,21 @@
 ---
-title: "Medicare with Retirement"
-headline: "Medicare with Retirement"
+title: cms-medicare-retirement.title
+headline: cms-medicare-retirement.headline
 tags:
-  - "healthcare"
+  - healthcare
 lifeEvents:
-  - "late-adulthood"
-  - "retirement"
+  - late-adulthood
+  - retirement
 source:
-  name: "Centers for Medicare and Medicaid"
+  name: cms-medicare-retirement.source.name
   link: https://www.medicare.gov/sign-up-change-plans/get-started-with-medicare
 
-summary: "Health insurance program for Americans aged 65 and older, and for people with disabilities."
+summary: cms-medicare-retirement.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_date_of_birth
-    label: "You are at least 65 years old."
+    label: cms-medicare-retirement.eligibility.label
     acceptableValues: [">65years"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]

@@ -3,13 +3,34 @@
     <div class="grid-container">
       <div class="grid-row">
         <div class="grid-col">
-          <nuxt-content :document="disclaimer" />
+          <div
+            class="usa-summary-box bg-transparent border-transparent"
+            role="region"
+            aria-labelledby="summary-box-key-information-disclaimer">
+            <div class="usa-summary-box__body">
+              <h2
+                class="usa-summary-box__heading"
+                id="summary-box-key-information-disclaimer">
+                {{ disclaimer.heading }}
+              </h2>
+              <div class="usa-summary-box__text">
+                <ul class="usa-list">
+                  <li style="max-width: unset">
+                    {{ disclaimer.bullet }}
+                  </li>
+                  <li style="max-width: unset">
+                    {{ disclaimer.bullet1 }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <footer class="usa-footer usa-footer--slim print:display-none">
       <div class="grid-container usa-footer__return-to-top">
-        <nuxt-link :to="{ path: getUrl(), hash: '#' }">Return to top</nuxt-link>
+        <nuxt-link :to="{ path: getUrl(), hash: '#' }">{{ $t("returnToTop") }}</nuxt-link>
       </div>
       <div class="usa-footer__primary-section padding-bottom-7">
         <div class="usa-footer__primary-container grid-row">
@@ -21,31 +42,57 @@
                 <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
                   <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
                     <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
-                      About USA.gov
+                      {{ $t("footer.GroupOne.header") }}
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
                       <li class="usa-footer__secondary-link">
                         <a
                           class="margin-bottom-3"
-                          href="https://www.usa.gov/about"
-                          >About Us and Site Notices</a
+                          :href="
+                            $i18n.locale === 'en'
+                              ? 'https://www.usa.gov/about'
+                              : 'https://www.usa.gov/espanol/acerca-de-usagov-en-espanol'
+                          "
+                          >{{ $t("footer.GroupOne.linkOne") }}</a
                         >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/media">For the Media</a>
+                        <a
+                          :href="
+                            $i18n.locale === 'en' ? 'https://www.usa.gov/media' : 'https://www.usa.gov/espanol/medios'
+                          "
+                          >{{ $t("footer.GroupOne.linkTwo") }}</a
+                        >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/developer">For Developers</a>
+                        <a
+                          :href="
+                            $i18n.locale === 'en' ? 'https://www.usa.gov/developer' : 'https://www.usa.gov/developer'
+                          "
+                          >{{ $t("footer.GroupOne.linkThree") }}</a
+                        >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/site-issue-report-form">Report a Website Issue</a>
+                        <a
+                          :href="
+                            $i18n.locale === 'en'
+                              ? 'https://www.usa.gov/site-issue-report-form'
+                              : 'https://www.usa.gov/espanol/reporte-problemas-en-este-sitio-web'
+                          "
+                          >{{ $t("footer.GroupOne.linkFour") }}</a
+                        >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/#tpcs">All Topics and Services</a>
+                        <a
+                          :href="
+                            $i18n.locale === 'en' ? 'https://www.usa.gov/#tpcs' : 'https://www.usa.gov/espanol/#tpcs'
+                          "
+                          >{{ $t("footer.GroupOne.linkFive") }}</a
+                        >
                       </li>
                     </ul>
                   </section>
@@ -54,15 +101,29 @@
                 <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
                   <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
                     <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
-                      Ask USA.gov a Question
+                      {{ $t("footer.GroupTwo.header") }}
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
                       <li class="usa-footer__secondary-link">
-                        <a href="https://www.usa.gov/phone">Call 1-844-USAGOV1 (1-844-872-4681)</a>
+                        <a
+                          :href="
+                            $i18n.locale === 'en'
+                              ? 'https://www.usa.gov/phone'
+                              : 'https://www.usa.gov/espanol/centro-de-llamadas'
+                          "
+                          >{{ $t("footer.GroupTwo.linkOne") }}</a
+                        >
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a href="https://usa.gov/espanol/contactenos">En Español</a>
+                        <a
+                          :href="
+                            $i18n.locale === 'en'
+                              ? 'https://usa.gov/espanol/contactenos'
+                              : 'https://www.usa.gov/contact'
+                          "
+                          >{{ $t("footer.GroupTwo.linkTwo") }}</a
+                        >
                       </li>
                     </ul>
                   </section>
@@ -71,7 +132,7 @@
                 <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
                   <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
                     <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
-                      Sign Up to Receive Email Updates
+                      {{ $t("footer.GroupThree.header") }}
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
                       <li class="usa-footer__secondary-link">
@@ -81,7 +142,7 @@
                           <label
                             class="usa-label text-white margin-top-1"
                             for="email-2"
-                            >Enter your email</label
+                            >{{ $t("footer.GroupThree.formLabel") }}</label
                           >
                           <input
                             id="email-2"
@@ -91,7 +152,7 @@
                           <button
                             class="usa-button width-card"
                             type="submit">
-                            Sign Up
+                            {{ $t("footer.GroupThree.buttonText") }}
                           </button>
                         </form>
                       </li>
@@ -151,7 +212,7 @@
             class="usa-identifier__identity"
             aria-label="Agency description">
             <p class="usa-identifier__identity-disclaimer text-normal margin-y-3">
-              USAGov is the Official Guide to Government Information and Services
+              {{ $t("footer.subFooter") }}
             </p>
           </div>
         </div>
@@ -161,6 +222,7 @@
 </template>
 
 <script>
+import { tObj } from "~/services/translation"
 export default {
   data() {
     return {
@@ -168,7 +230,7 @@ export default {
     }
   },
   async fetch() {
-    this.disclaimer = await this.$content("disclaimer").fetch()
+    this.disclaimer = tObj.call(this, await this.$content("disclaimer").fetch())
   },
   methods: {
     getUrl() {

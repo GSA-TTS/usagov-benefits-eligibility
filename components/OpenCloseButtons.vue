@@ -6,14 +6,14 @@
         :class="openButtonStyle"
         aria-controls="acc-id"
         @click="openAll">
-        Open All
+        {{ $t("lifeEvent.buttonLabel1") }}
       </button>
       <button
         class="usa-button close-all"
         :class="closeButtonStyle"
         aria-controls="acc-id"
         @click="closeAll">
-        Close All
+        {{ $t("lifeEvent.buttonLabel2") }}
       </button>
     </div>
   </div>
