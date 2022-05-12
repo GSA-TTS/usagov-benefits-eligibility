@@ -16,15 +16,15 @@ describe("Header", () => {
     const wrapper = mount(Header, {
       $i18n: { locale: "en" },
       mocks: {
-          $config: {
-              languageToggleActive: true,
-          }
-      }
+        $config: {
+          languageToggleActive: true,
+        },
+      },
     })
     expect(wrapper.vm).toBeTruthy()
-    const esButton = wrapper.find('#language-toggle-button')
-    esButton.trigger('click')
-    esButton.trigger('click')
+    const esButton = wrapper.find("#language-toggle-button")
+    esButton.trigger("click")
+    esButton.trigger("click")
   })
 
   it("should change links based on routes", () => {
