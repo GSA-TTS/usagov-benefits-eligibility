@@ -68,7 +68,7 @@ export default {
   },
   mounted() {
     if (this.$config.oneEventVersion !== false) {
-      this.$router.push("/" + this.$config.oneEventVersion)
+      this.$router.push(this.$route.fullPath + this.$config.oneEventVersion)
     }
   },
 }

@@ -16,6 +16,9 @@ describe("Header", () => {
     const wrapper = mount(Header, {
       $i18n: { locale: "en" },
       mocks: {
+        $router: {
+          push: jest.fn(),
+        },
         $config: {
           languageToggleActive: true,
         },

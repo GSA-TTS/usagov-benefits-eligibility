@@ -18,6 +18,9 @@ describe("<UsaGovHeader />", () => {
     const wrapper = mount(UsaGovHeader, {
       $i18n: { locale: "en" },
       mocks: {
+        $router: {
+          push: jest.fn(),
+        },
         $config: {
           languageToggleActive: true,
         },

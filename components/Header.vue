@@ -161,14 +161,18 @@ export default {
     },
   },
   methods: {
-    switchLanguage() {
-      if (this.$config.languageToggleActive) {
-        if (this.$i18n.locale === "en") {
-          this.$i18n.locale = "es"
-        } else {
-          this.$i18n.locale = "en"
-        }
+   switchLanguage() {
+      let route = ""
+      const locale = this.$i18n.locale
+      const oneEventString = !this.$config.oneEventVersion ? this.$config.oneEventVersion : ""
+      if (locale === "en") {
+        route = `/es/${oneEventString}`
+        this.$i18n.setLocale('es')
+      } else {
+        route = `/${oneEventString}`
+        this.$i18n.setLocale('en')
       }
+      this.$router.push(route)
     },
     doesRouteMatchLifeEventPages() {
       /* istanbul ignore next */

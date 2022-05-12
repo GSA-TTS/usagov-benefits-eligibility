@@ -20,7 +20,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: deceased_date_of_funeral
     label: fema-covid-19-funeral-assistance.eligibility.label
-    acceptableValues: [>01-20-2020]
+    acceptableValues: [">01-20-2020"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
   - criteriaKey: applicant_paid_funeral_expenses
