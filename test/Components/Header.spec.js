@@ -12,6 +12,21 @@ describe("Header", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
+  it("does toggle lang", () => {
+    const wrapper = mount(Header, {
+      $i18n: { locale: "en" },
+      mocks: {
+          $config: {
+              languageToggleActive: true,
+          }
+      }
+    })
+    expect(wrapper.vm).toBeTruthy()
+    const esButton = wrapper.find('#language-toggle-button')
+    esButton.trigger('click')
+    esButton.trigger('click')
+  })
+
   it("should change links based on routes", () => {
     const $route = {
       matched: [],

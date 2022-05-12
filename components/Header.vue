@@ -133,6 +133,7 @@
             </li>
             <li class="usa-nav__primary-item tablet:margin-left-auto">
               <button
+                id="language-toggle-button"
                 class="language-toggle-mobile usa-button"
                 @click="switchLanguage">
                 {{ $t("header.meta.language") }}

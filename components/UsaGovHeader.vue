@@ -884,6 +884,7 @@
           {{ $t("header.meta.back") }}
         </a>
         <button
+          id="language-toggle-button"
           class="language-toggle-mobile"
           @click="switchLanguage">
           {{ $t("header.meta.language") }}
