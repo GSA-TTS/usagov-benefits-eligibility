@@ -20,7 +20,7 @@ eligibility:
     acceptableValues: [ssa-survivor-benefits-spouse-disabled.eligibility.acceptableValues]
   - criteriaKey: applicant_date_of_birth
     label: ssa-survivor-benefits-spouse-disabled.eligibility.label
-    acceptableValues: [>50years]
+    acceptableValues: [">50years"]
   - criteriaKey: applicant_marital_status
     acceptableValues: [ssa-survivor-benefits-spouse-disabled.eligibility.acceptableValues1, 
     ssa-survivor-benefits-spouse-disabled.eligibility.acceptableValues2]

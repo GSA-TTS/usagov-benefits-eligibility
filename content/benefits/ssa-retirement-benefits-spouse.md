@@ -17,7 +17,7 @@ eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_date_of_birth
     label: ssa-retirement-benefits-spouse.eligibility.label
-    acceptableValues: [>62years]
+    acceptableValues: [">62years"]
   - criteriaKey: applicant_marital_status
     acceptableValues: [ssa-retirement-benefits-spouse.eligibility.acceptableValues, 
     ssa-retirement-benefits-spouse.eligibility.acceptableValues1]

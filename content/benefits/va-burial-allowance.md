@@ -28,7 +28,7 @@ eligibility:
       ]
   - criteriaKey: deceased_date_of_funeral
     label: va-burial-allowance.eligibility.label1
-    acceptableValues: [>2years]
+    acceptableValues: [">2years"]
   - criteriaKey: applicant_relationship
     acceptableValues: [va-burial-allowance.eligibility.acceptableValues5, 
     va-burial-allowance.eligibility.acceptableValues6, 

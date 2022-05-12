@@ -19,7 +19,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: applicant_date_of_birth
     label: ssa-ticket-to-work.eligibility.label
-    acceptableValues: [>18years, <64years]
+    acceptableValues: [">18years", "<64years"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
 ---

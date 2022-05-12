@@ -18,7 +18,7 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: applicant_date_of_birth
     label: ssa-retirement-benefits.eligibility.label
-    acceptableValues: [>62years]
+    acceptableValues: [">62years"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
 ---

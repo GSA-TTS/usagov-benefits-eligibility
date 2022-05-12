@@ -24,7 +24,7 @@ eligibility:
     acceptableValues: [va-survivor-pension-child-disabled.eligibility.acceptableValues2]
   - criteriaKey: applicant_date_of_birth
     label: va-survivor-pension-child-disabled.eligibility.label1
-    acceptableValues: [>18years]
+    acceptableValues: [">18years"]
   - criteriaKey: applicant_disability
     acceptableValues: [true]
   - criteriaKey: applicant_marital_status

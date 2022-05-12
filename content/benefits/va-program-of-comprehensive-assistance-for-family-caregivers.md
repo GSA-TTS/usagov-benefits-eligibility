@@ -17,5 +17,5 @@ eligibility:
     acceptableValues: [va-program-of-comprehensive-assistance-for-family-caregivers.eligibility.acceptableValues]
   - criteriaKey: applicant_date_of_birth
     label: va-program-of-comprehensive-assistance-for-family-caregivers.eligibility.label
-    acceptableValues: [>18years]
+    acceptableValues: [">18years"]
 ---
