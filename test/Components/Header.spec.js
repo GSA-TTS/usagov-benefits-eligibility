@@ -29,7 +29,7 @@ describe("Header", () => {
         },
         $config: {
           languageToggleActive: true,
-          oneEventVersion: 'death-of-a-loved-one'
+          oneEventVersion: "death-of-a-loved-one",
         },
       },
     })

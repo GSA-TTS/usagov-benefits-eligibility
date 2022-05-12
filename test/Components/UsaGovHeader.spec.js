@@ -22,7 +22,7 @@ describe("<UsaGovHeader />", () => {
         },
         $config: {
           languageToggleActive: true,
-          oneEventVersion: 'death-of-a-loved-one'
+          oneEventVersion: "death-of-a-loved-one",
         },
       },
     })
@@ -40,8 +40,8 @@ describe("<UsaGovHeader />", () => {
           push: jest.fn(),
         },
         $config: {
-          languageToggleActive: true
-        }
+          languageToggleActive: true,
+        },
       },
     })
     expect(wrapper.vm).toBeTruthy()
