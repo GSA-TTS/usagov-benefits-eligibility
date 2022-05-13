@@ -36,6 +36,5 @@ for fileOrDir in allFiles:
             for key in fileData:
                 if ',' in fileData[key]:
                     fileData[key] = fileData[key].replace(',', '')
-            f.write(json.dumps(fileData, indent=4))
             f.close()
         json.dump(fileData, open(file['path'], 'w'), indent=4)
