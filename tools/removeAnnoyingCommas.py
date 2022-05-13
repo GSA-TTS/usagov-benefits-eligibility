@@ -30,10 +30,12 @@ for file in files:
             
 for fileOrDir in allFiles:
     for file in allFiles[fileOrDir]:
-        with open(file['path'], mode='r+') as f:
-            data = json.load(f)
-            for key in data:
-                if ',' in data[key]:
-                    data[key] = data[key].replace(',', '')
-            f.write(json.dumps(data, indent=4))
+        fileData = {}
+        with open(file['path'], mode='r') as f:
+            fileData = json.load(f)
+            for key in fileData:
+                if ',' in fileData[key]:
+                    fileData[key] = fileData[key].replace(',', '')
+            f.write(json.dumps(fileData, indent=4))
             f.close()
+        json.dump(fileData, open(file['path'], 'w'), indent=4)
