@@ -1,8 +1,8 @@
 {
-  "ssa-disability-insurance-child.title": "Social Security Disability Insurance for Child",
-  "ssa-disability-insurance-child.headline": "Social Security Disability Insurance for Child",
-  "ssa-disability-insurance-child.source.name": "Social Security Administration",
-  "ssa-disability-insurance-child.summary": "Provides financial assistance to people with disabilities and their family members.",
-  "ssa-disability-insurance-child.eligibility.label": "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school).",
-  "ssa-disability-insurance-child.eligibility.acceptableValues": "unmarried"
+    "ssa-disability-insurance-child.title": "Social Security Disability Insurance for Child",
+    "ssa-disability-insurance-child.headline": "Social Security Disability Insurance for Child",
+    "ssa-disability-insurance-child.source.name": "Social Security Administration",
+    "ssa-disability-insurance-child.summary": "Provides financial assistance to people with disabilities and their family members.",
+    "ssa-disability-insurance-child.eligibility.label": "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school).",
+    "ssa-disability-insurance-child.eligibility.acceptableValues": "unmarried"
 }

@@ -1,9 +1,9 @@
 {
-  "doj-public-safety-officers-educational-assistance.title": "Public Safety Officers' Educational Assistance Program",
-  "doj-public-safety-officers-educational-assistance.headline": "Public Safety Officers' Educational Assistance Program",
-  "doj-public-safety-officers-educational-assistance.source.name": "U.S. Department of Justice",
-  "doj-public-safety-officers-educational-assistance.summary": "Financial assistance for higher education is available to spouses and children of police, fire, and emergency public safety officers killed in the line of duty.",
-  "doj-public-safety-officers-educational-assistance.eligibility.label": "The deceased served in the active military, naval, or air service.",
-  "doj-public-safety-officers-educational-assistance.eligibility.acceptableValues": "spouse,",
-  "doj-public-safety-officers-educational-assistance.eligibility.acceptableValues1": "child"
+    "doj-public-safety-officers-educational-assistance.title": "Public Safety Officers' Educational Assistance Program",
+    "doj-public-safety-officers-educational-assistance.headline": "Public Safety Officers' Educational Assistance Program",
+    "doj-public-safety-officers-educational-assistance.source.name": "U.S. Department of Justice",
+    "doj-public-safety-officers-educational-assistance.summary": "Financial assistance for higher education is available to spouses and children of police fire and emergency public safety officers killed in the line of duty.",
+    "doj-public-safety-officers-educational-assistance.eligibility.label": "The deceased served in the active military naval or air service.",
+    "doj-public-safety-officers-educational-assistance.eligibility.acceptableValues": "spouse",
+    "doj-public-safety-officers-educational-assistance.eligibility.acceptableValues1": "child"
 }
