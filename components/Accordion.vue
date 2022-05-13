@@ -192,7 +192,7 @@ export default {
     // TODO: FSP@10x- may need to look at this closer
     getCriteriaMatchLanguage(eligibilityCriteria) {
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
-        return "(" + this.$t("not_eligible") + ")"
+        return "(" + this.$t("accordion.not_eligible") + ")"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
         return "(" + this.$t("eligible") + ")"
       }
