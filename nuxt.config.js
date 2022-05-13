@@ -117,6 +117,7 @@ export default {
 
   generate: {
     dir: "_site",
+    routes: getLifeEvents().map((le) => `/${le}`),
   },
 
   router: {
