@@ -182,11 +182,5 @@
     "day": "Day",
     "year": "Year",
     "Please enter a valid date.": "Please enter a valid date."
-  },
-  "eligibilityList": {
-    "you_must": "You must meet all criteria. You currently meet",
-    "of": "of",
-    "additional": "Additional eligibility criteria may apply.",
-    "review": "Please review the full requirements at"
   }
 }
