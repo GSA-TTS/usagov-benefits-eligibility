@@ -1,12 +1,12 @@
 {
-    "va-survivor-pension-child.title": "Survivor Pension for Child",
-    "va-survivor-pension-child.headline": "Survivor Pension for Child",
-    "va-survivor-pension-child.source.name": "U.S. Department of Veteran Affairs",
-    "va-survivor-pension-child.summary": "Monthly payments may be available to qualified surviving dependent children of wartime veterans who meet certain income and net worth limits.",
-    "va-survivor-pension-child.eligibility.acceptableValues": "yes",
-    "va-survivor-pension-child.eligibility.label": "The deceased served in the active military naval or air service.",
-    "va-survivor-pension-child.eligibility.acceptableValues1": "discharged under conditions other than dishonorable",
-    "va-survivor-pension-child.eligibility.acceptableValues2": "child",
-    "va-survivor-pension-child.eligibility.label1": "You are under 18 years old (under 23 years old if attending a VA-approved school).",
-    "va-survivor-pension-child.eligibility.acceptableValues3": "unmarried"
+  "va-survivor-pension-child.title": "Survivor Pension for Child",
+  "va-survivor-pension-child.headline": "Survivor Pension for Child",
+  "va-survivor-pension-child.source.name": "U.S. Department of Veteran Affairs",
+  "va-survivor-pension-child.summary": "Monthly payments may be available to qualified surviving dependent children of wartime veterans who meet certain income and net worth limits.",
+  "va-survivor-pension-child.eligibility.acceptableValues": "yes",
+  "va-survivor-pension-child.eligibility.label": "The deceased served in the active military naval or air service.",
+  "va-survivor-pension-child.eligibility.acceptableValues1": "discharged under conditions other than dishonorable",
+  "va-survivor-pension-child.eligibility.acceptableValues2": "child",
+  "va-survivor-pension-child.eligibility.label1": "You are under 18 years old (under 23 years old if attending a VA-approved school).",
+  "va-survivor-pension-child.eligibility.acceptableValues3": "unmarried"
 }

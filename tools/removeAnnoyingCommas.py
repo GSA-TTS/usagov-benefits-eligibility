@@ -1,6 +1,7 @@
-import os, json
+import json
+import os
 
-localesDir = './locales/en/'
+localesDir = "./locales/en/"
 files = os.listdir(localesDir)
 
 ignoreFiles = [
@@ -8,7 +9,7 @@ ignoreFiles = [
     "disclaimer.json",
     "criteria.json",
     "landing-page.json",
-    "en.json"
+    "en.json",
 ]
 
 allFiles = {"agencies": [], "benefits": [], "life-events": [], "types": []}
@@ -28,14 +29,14 @@ for file in files:
                     )
         else:
             allFiles[file] = {"path": os.path.join(localesDir, file)}
-            
+
 for fileOrDir in allFiles:
     for file in allFiles[fileOrDir]:
         fileData = {}
-        with open(file["path"], mode='r') as f:
+        with open(file["path"], mode="r") as f:
             fileData = json.load(f)
             for key in fileData:
-                if ',' in fileData[key]:
-                    fileData[key] = fileData[key].replace(',', '')
+                if "," in fileData[key]:
+                    fileData[key] = fileData[key].replace(",", "")
             f.close()
-        json.dump(fileData, open(file["path"], 'w'), indent=4)
+        json.dump(fileData, open(file["path"], "w"), indent=4)
