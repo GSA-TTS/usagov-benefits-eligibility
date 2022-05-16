@@ -24,8 +24,6 @@ eligibility:
         va-headstone-grave-marker.eligibility.acceptableValues2,
         va-headstone-grave-marker.eligibility.acceptableValues3,
       ]
-  - criteriaKey: deceased_buried_in_unmarked_grave
-    acceptableValues: [true]
   - criteriaKey: deceased_grave_headstone
     acceptableValues: [true]
   - criteriaKey: applicant_relationship

@@ -21,6 +21,6 @@ eligibility:
         va-education-benefits-for-dependents.eligibility.acceptableValues1,
         va-education-benefits-for-dependents.eligibility.acceptableValues2,
       ]
-  - criteriaKey: applicant_high_school_diploma
+  - criteriaKey: applicant_high-school_diploma
     acceptableValues: [true]
 ---

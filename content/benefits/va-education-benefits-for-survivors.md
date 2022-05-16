@@ -27,6 +27,6 @@ eligibility:
   - criteriaKey: applicant_relationship
     acceptableValues: [va-education-benefits-for-survivors.eligibility.acceptableValues5, 
     va-education-benefits-for-survivors.eligibility.acceptableValues6]
-  - criteriaKey: applicant_high_school_diploma
+  - criteriaKey: applicant_high-school_diploma
     acceptableValues: [true]
 ---

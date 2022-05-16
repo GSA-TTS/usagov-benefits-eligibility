@@ -7,8 +7,8 @@
   "dod-burial-benefits.eligibility.label": "The deceased served in the active military, naval, or air service.",
   "dod-burial-benefits.eligibility.acceptableValues1": "an active-duty service member",
   "dod-burial-benefits.eligibility.acceptableValues2": "died while on active duty",
-  "dod-burial-benefits.eligibility.acceptableValues3": "spouse,",
-  "dod-burial-benefits.eligibility.acceptableValues4": "child,",
-  "dod-burial-benefits.eligibility.acceptableValues5": "parent,",
+  "dod-burial-benefits.eligibility.acceptableValues3": "spouse",
+  "dod-burial-benefits.eligibility.acceptableValues4": "child",
+  "dod-burial-benefits.eligibility.acceptableValues5": "parent",
   "dod-burial-benefits.eligibility.acceptableValues6": "other family member"
 }

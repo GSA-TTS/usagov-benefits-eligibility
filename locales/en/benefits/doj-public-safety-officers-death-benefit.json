@@ -3,8 +3,8 @@
   "doj-public-safety-officers-death-benefit.headline": "Public Safety Officers' Death Benefits",
   "doj-public-safety-officers-death-benefit.source.name": "U.S. Department of Justice",
   "doj-public-safety-officers-death-benefit.summary": "A one-time benefit is available to eligible survivors of law enforcement officers, firefighters, and other first responders whose deaths were the direct result of an injury sustained in the line of duty on or after September 29, 1976.",
-  "doj-public-safety-officers-death-benefit.eligibility.acceptableValues": "spouse,",
-  "doj-public-safety-officers-death-benefit.eligibility.acceptableValues1": "child,",
-  "doj-public-safety-officers-death-benefit.eligibility.acceptableValues2": "parent,",
+  "doj-public-safety-officers-death-benefit.eligibility.acceptableValues": "spouse",
+  "doj-public-safety-officers-death-benefit.eligibility.acceptableValues1": "child",
+  "doj-public-safety-officers-death-benefit.eligibility.acceptableValues2": "parent",
   "doj-public-safety-officers-death-benefit.eligibility.acceptableValues3": "other family member"
 }

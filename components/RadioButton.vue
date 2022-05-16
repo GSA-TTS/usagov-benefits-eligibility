@@ -2,21 +2,13 @@
   <fieldset
     class="usa-fieldset"
     :class="disabledStyle">
-    <template v-if="location === 'left-rail'">
-      <legend
-        class="usa-legend usa-legend text-bold tablet:padding-top-1"
-        :class="disabledLabel">
-        {{ label }}
-      </legend>
-    </template>
-    <template v-else>
-      <legend
-        class="usa-legend usa-legend"
-        :class="selectedStyle">
-        {{ label }}
-      </legend>
-    </template>
-    <template v-for="(value, index) in values">
+    <legend
+      class="usa-legend usa-legend text-bold tablet:padding-top-1"
+      :class="disabledLabel">
+      {{ label }}
+    </legend>
+
+    <template v-for="value in values">
       <div
         :key="value"
         class="usa-radio tablet:padding-left-1">
@@ -35,31 +27,12 @@
           >{{ value }}</label
         >
       </div>
-      <div
-        v-if="location === 'benefit-card' && lastItem(index, values)"
-        :key="`${value}-${naUniqueId}`"
-        class="usa-radio tablet:padding-left-1">
-        <input
-          :id="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`"
-          class="usa-radio__input"
-          type="radio"
-          :name="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`"
-          :value="'not applicable'"
-          :checked="response === 'not applicable'"
-          @change="updateEligibilitySelected" />
-        <label
-          :for="`${uniqueId}-${criteriaKey}-${value}-${naUniqueId}`"
-          class="usa-radio__label tablet:margin-top-1"
-          >{{ $t("radio.not_applicable") }}</label
-        >
-      </div>
     </template>
   </fieldset>
 </template>
 
 <script>
 import _ from "lodash"
-const benefitCard = "benefit-card"
 
 export default {
   name: "RadioButton",
@@ -80,12 +53,6 @@ export default {
       type: [String, Object, Boolean],
       default: "No response provided",
     },
-    location: {
-      default: benefitCard,
-      validator: (value) => {
-        return ["left-rail", benefitCard].includes(value)
-      },
-    },
     isDisabled: {
       type: Boolean,
       default: false,
@@ -98,12 +65,6 @@ export default {
     }
   },
   computed: {
-    selectedStyle() {
-      if ((this.location === benefitCard && this.response === "not applicable") || typeof this.response === "object") {
-        return "text-base text-normal font-weight-normal"
-      }
-      return "text-bold"
-    },
     disabledStyle() {
       if (this.isDisabled) {
         return "border-2px border-dotted border-gray-30 padding-1"

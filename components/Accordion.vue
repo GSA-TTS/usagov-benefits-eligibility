@@ -189,12 +189,11 @@ export default {
       }
       return "border-gray-30"
     },
-
     getCriteriaMatchLanguage(eligibilityCriteria) {
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
-        return "(" + this.$t("not_eligible") + ")"
+        return "(" + this.$t("accordion.not_eligible") + ")"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
-        return "(" + this.$t("eligible") + ")"
+        return "(" + this.$t("accordion.eligible") + ")"
       }
       return null
     },
