@@ -36,7 +36,7 @@ for fileOrDir in allFiles:
         with open(file["path"], mode="r") as f:
             fileData = json.load(f)
             for key in fileData:
-                if "," in fileData[key] and 'acceptableValues' in key:
+                if "," in fileData[key] and "acceptableValues" in key:
                     fileData[key] = fileData[key].replace(",", "")
             f.close()
         json.dump(fileData, open(file["path"], "w"), indent=4)
