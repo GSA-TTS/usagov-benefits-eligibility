@@ -1,12 +1,12 @@
 {
-    "va-survivor-pension-spouse.title": "Survivor Pension for Spouse",
-    "va-survivor-pension-spouse.headline": "Survivor Pension for Spouse",
-    "va-survivor-pension-spouse.source.name": "U.S. Department of Veteran Affairs",
-    "va-survivor-pension-spouse.summary": "Monthly payments may be available to qualified surviving spouses of wartime veterans who meet certain income and net worth limits.",
-    "va-survivor-pension-spouse.eligibility.acceptableValues": "yes",
-    "va-survivor-pension-spouse.eligibility.label": "The deceased served in the active military, naval, or air service.",
-    "va-survivor-pension-spouse.eligibility.acceptableValues1": "discharged under conditions other than dishonorable",
-    "va-survivor-pension-spouse.eligibility.acceptableValues2": "spouse",
-    "va-survivor-pension-spouse.eligibility.acceptableValues3": "unmarried",
-    "va-survivor-pension-spouse.eligibility.acceptableValues4": "widowed"
+  "va-survivor-pension-spouse.title": "Survivor Pension for Spouse",
+  "va-survivor-pension-spouse.headline": "Survivor Pension for Spouse",
+  "va-survivor-pension-spouse.source.name": "U.S. Department of Veteran Affairs",
+  "va-survivor-pension-spouse.summary": "Monthly payments may be available to qualified surviving spouses of wartime veterans who meet certain income and net worth limits.",
+  "va-survivor-pension-spouse.eligibility.acceptableValues": "yes",
+  "va-survivor-pension-spouse.eligibility.label": "The deceased served in the active military, naval, or air service.",
+  "va-survivor-pension-spouse.eligibility.acceptableValues1": "discharged under conditions other than dishonorable",
+  "va-survivor-pension-spouse.eligibility.acceptableValues2": "spouse",
+  "va-survivor-pension-spouse.eligibility.acceptableValues3": "unmarried",
+  "va-survivor-pension-spouse.eligibility.acceptableValues4": "widowed"
 }
