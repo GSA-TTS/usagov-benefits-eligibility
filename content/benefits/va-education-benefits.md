@@ -23,6 +23,6 @@ eligibility:
         va-education-benefits.eligibility.acceptableValues2,
         va-education-benefits.eligibility.acceptableValues3,
       ]
-  - criteriaKey: applicant_high_school_diploma
+  - criteriaKey: applicant_high-school_diploma
     acceptableValues: [true]
 ---
