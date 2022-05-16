@@ -200,7 +200,7 @@ export default {
     getCriterionLabel(criterion) {
       return criterion.label || this.getCriterionByEligibilityKey(criterion.criteriaKey).label
     },
-    formatArrayWithSeparator(array, lastSeparator = "or") {
+    formatArrayWithSeparator(array = [], lastSeparator = "or") {
       return array.join(", ").replace(/, ((?:.(?!, ))+)$/, `, ${lastSeparator} $1`)
     },
   },
