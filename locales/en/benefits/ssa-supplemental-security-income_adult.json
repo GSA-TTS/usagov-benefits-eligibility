@@ -1,7 +1,7 @@
 {
-  "ssa-supplemental-security-income_adult.title": "Supplemental Security Income (SSI) for Adult",
-  "ssa-supplemental-security-income_adult.headline": "Supplemental Security Income (SSI) for Adult",
-  "ssa-supplemental-security-income_adult.source.name": "Social Security Administration",
-  "ssa-supplemental-security-income_adult.summary": "Provides financial assistance to older, blind, and people with disabilities to help meet basic needs for food, clothing, and shelter.",
-  "ssa-supplemental-security-income_adult.eligibility.label": "You are 18 to 64 years old."
+    "ssa-supplemental-security-income_adult.title": "Supplemental Security Income (SSI) for Adult",
+    "ssa-supplemental-security-income_adult.headline": "Supplemental Security Income (SSI) for Adult",
+    "ssa-supplemental-security-income_adult.source.name": "Social Security Administration",
+    "ssa-supplemental-security-income_adult.summary": "Provides financial assistance to older, blind, and people with disabilities to help meet basic needs for food, clothing, and shelter.",
+    "ssa-supplemental-security-income_adult.eligibility.label": "You are 18 to 64 years old."
 }
