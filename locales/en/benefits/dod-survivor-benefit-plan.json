@@ -4,12 +4,12 @@
   "dod-survivor-benefit-plan.source.name": "Department of Defense",
   "dod-survivor-benefit-plan.summary": "Survivors of deceased active duty service members and some retired and reserve members may be eligible for up to 55% of the member's retired pay.",
   "dod-survivor-benefit-plan.eligibility.acceptableValues": "yes",
-  "dod-survivor-benefit-plan.eligibility.label": "The deceased served in the active military naval or air service.",
-  "dod-survivor-benefit-plan.eligibility.acceptableValues1": "an active-duty service member",
-  "dod-survivor-benefit-plan.eligibility.acceptableValues2": "retired from the service",
+  "dod-survivor-benefit-plan.eligibility.label": "The deceased served in the active military, naval, or air service.",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues1": "an active-duty service member,",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues2": "retired from the service,",
   "dod-survivor-benefit-plan.eligibility.acceptableValues3": "a member of the National Guard or Reserves",
-  "dod-survivor-benefit-plan.eligibility.acceptableValues4": "died while on active duty",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues4": "died while on active duty,",
   "dod-survivor-benefit-plan.eligibility.acceptableValues5": "died while on inactive-duty training",
-  "dod-survivor-benefit-plan.eligibility.acceptableValues6": "spouse",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues6": "spouse,",
   "dod-survivor-benefit-plan.eligibility.acceptableValues7": "child"
 }

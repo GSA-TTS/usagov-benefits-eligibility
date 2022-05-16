@@ -2,8 +2,8 @@
   "va-health-care-program-for-dependent.title": "Civilian Health and Medical Program of the VA (CHAMPVA)",
   "va-health-care-program-for-dependent.headline": "Civilian Health and Medical Program of the VA (CHAMPVA)",
   "va-health-care-program-for-dependent.source.name": "U.S. Department of Veteran Affairs",
-  "va-health-care-program-for-dependent.summary": "As a dependent of a veteran you may be eligible for health insurance that covers the cost of some of your health care services and supplies including pharmacy benefits.",
+  "va-health-care-program-for-dependent.summary": "As a dependent of a veteran you may be eligible for health insurance that covers the cost of some of your health care services and supplies, including pharmacy benefits.",
   "va-health-care-program-for-dependent.eligibility.acceptableValues": "disabled due to a service-connected disability",
-  "va-health-care-program-for-dependent.eligibility.acceptableValues1": "unmarried",
+  "va-health-care-program-for-dependent.eligibility.acceptableValues1": "unmarried,",
   "va-health-care-program-for-dependent.eligibility.acceptableValues2": "widowed"
 }

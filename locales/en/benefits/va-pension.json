@@ -1,8 +1,9 @@
+
 {
   "va-pension.title": "Veteran's Pension",
   "va-pension.headline": "Veteran's Pension",
   "va-pension.source.name": "U.S. Department of Veteran Affairs",
-  "va-pension.summary": "Monthly payments to wartime veterans who meet certain age or disability requirements and who have income and net worth within certain limits.",
+  "va-pension.summary": "Monthly payments to wartime veterans who meet certain age or disability requirements, and who have income and net worth within certain limits.",
   "va-pension.eligibility.label": "You are at least 65 years old.",
   "va-pension.eligibility.acceptableValues": ">65years",
   "va-pension.eligibility.acceptableValues1": "yes",
