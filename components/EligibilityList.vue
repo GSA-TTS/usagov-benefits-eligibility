@@ -110,16 +110,7 @@
             :class="[
               'usa-icon-list__content',
               {
-                'text-success-dark text-bold': doesCriterionMatchSelection(criterion) === true,
-              },
-              {
-                'text-base-dark': doesCriterionMatchSelection(criterion) === null,
-              },
-              {
                 'print:text-base-darker': doesCriterionMatchSelection(criterion) === null,
-              },
-              {
-                'text-error-dark text-bold': doesCriterionMatchSelection(criterion) === false,
               },
             ]">
             <span>
