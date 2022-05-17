@@ -52,20 +52,20 @@
               </title>
               <use
                 v-if="doesCriterionMatchSelection(criterion) == true"
-                xlink:href="~/assets/img/sprite.svg#check_circle" />
+                xlink:href="~/assets/img/sprite.svg#check" />
               <use
                 v-else-if="doesCriterionMatchSelection(criterion) == false"
-                xlink:href="~/assets/img/sprite.svg#highlight_off" />
+                xlink:href="~/assets/img/sprite.svg#close" />
               <use
                 v-else
-                xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
+                xlink:href="~/assets/img/sprite.svg#remove" />
             </svg>
             <svg
               v-else
               class="usa-icon"
               :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img">
-              <use xlink:href="~/assets/img/sprite.svg#check_circle" />
+              <use xlink:href="~/assets/img/sprite.svg#check" />
             </svg>
           </div>
           <div
@@ -89,20 +89,20 @@
               role="img">
               <use
                 v-if="doesCriterionMatchSelection(criterion) == true"
-                xlink:href="~/assets/img/sprite.svg#check_circle" />
+                xlink:href="~/assets/img/sprite.svg#check" />
               <use
                 v-else-if="doesCriterionMatchSelection(criterion) == false"
-                xlink:href="~/assets/img/sprite.svg#highlight_off" />
+                xlink:href="~/assets/img/sprite.svg#close" />
               <use
                 v-else
-                xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
+                xlink:href="~/assets/img/sprite.svg#remove" />
             </svg>
             <svg
               v-else
               class="usa-icon"
               :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img">
-              <use xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
+              <use xlink:href="~/assets/img/sprite.svg#remove" />
             </svg>
           </div>
 
