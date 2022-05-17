@@ -5,7 +5,7 @@
     aria-labelledby="summary-box-key-information">
     <div class="usa-summary-box__body">
       <div class="usa-summary-box__text">
-        <form class="usa-form">
+        <div class="usa-form">
           <fieldset class="usa-fieldset">
             <template v-for="filter in topLevelFilters">
               <legend
@@ -32,7 +32,7 @@
               </div>
             </template>
           </fieldset>
-        </form>
+        </div>
       </div>
     </div>
   </div>
