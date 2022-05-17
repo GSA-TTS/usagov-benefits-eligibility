@@ -21,13 +21,13 @@
               'usa-icon-list__icon',
               'print:display-none',
               {
-                'text-success-dark text-bold': doesCriterionMatchSelection(criterion) === true,
+                'text-success-dark': doesCriterionMatchSelection(criterion) === true,
               },
               {
                 'text-base': doesCriterionMatchSelection(criterion) === null,
               },
               {
-                'text-error-dark text-bold': doesCriterionMatchSelection(criterion) === false,
+                'text-error-dark': doesCriterionMatchSelection(criterion) === false,
               },
             ]">
             <svg
