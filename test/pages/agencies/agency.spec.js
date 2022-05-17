@@ -24,7 +24,6 @@ describe("pages/agencies/_agency.vue", () => {
     expect(results.lifeEventBenefits).toBeTruthy()
   })
 
-
   it("should fetch benefits for a specific agency", async () => {
     let contentRequest
     const contentMock = {
@@ -97,8 +96,7 @@ describe("pages/agencies/_agency.vue", () => {
       fetch: () => {
         return Promise.resolve(
           {
-            agencies: {
-            },
+            agencies: {},
             benefits: [
               {
                 title: "One",

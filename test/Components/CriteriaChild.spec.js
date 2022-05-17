@@ -58,13 +58,15 @@ describe("CriteriaChild", () => {
   })
 
   test("test label using criterion", async () => {
-    await store.dispatch("criteria/populate", [{
-      criteriaKey: "myKey",
-      label: "bal bal",
-      type: "boolean",
-      values: "true",
-      acceptableValues: [true],
-    }])
+    await store.dispatch("criteria/populate", [
+      {
+        criteriaKey: "myKey",
+        label: "bal bal",
+        type: "boolean",
+        values: "true",
+        acceptableValues: [true],
+      },
+    ])
     const wrapper = mount(CriteriaChild, {
       store,
       propsData: {
