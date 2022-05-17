@@ -32,7 +32,7 @@
         class="usa-accordion__content usa-prose">
         <div
           v-if="benefit && benefit.tags.length > 0"
-          class="tags-container margin-top-1">
+          class="tags-container margin-top-1 print:display-none">
           <Tag
             v-for="tag in mapTags(benefit.tags)"
             :key="tag.name"

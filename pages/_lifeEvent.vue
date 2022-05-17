@@ -13,7 +13,7 @@
             class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
             {{ lifeEvent.lede }}
           </p>
-          <ol class="usa-process-list">
+          <ol class="usa-process-list print:display-none">
             <li
               v-for="step in landingPage.processListSteps"
               :key="step"

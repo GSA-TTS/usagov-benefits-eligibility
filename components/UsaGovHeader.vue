@@ -31,7 +31,7 @@
             </a>
           </em>
         </div>
-        <button class="usa-menu-btn">{{ $t("header.menu") }}</button>
+        <button class="usa-menu-btn print:display-none">{{ $t("header.menu") }}</button>
       </div>
 
       <nav
@@ -840,7 +840,7 @@
         </div>
       </nav>
     </header>
-    <div class="grid-container margin-y-2">
+    <div class="grid-container margin-y-2 print:display-none">
       <div class="display-row display-flex flex-justify flex-align-center">
         <a
           href="https://www.usa.gov/benefits-grants-loans"
