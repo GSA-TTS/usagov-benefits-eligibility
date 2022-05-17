@@ -24,6 +24,7 @@ describe("pages/agencies/_agency.vue", () => {
     expect(results.lifeEventBenefits).toBeTruthy()
   })
 
+
   it("should fetch benefits for a specific agency", async () => {
     let contentRequest
     const contentMock = {
@@ -86,6 +87,133 @@ describe("pages/agencies/_agency.vue", () => {
     })
     await wrapper2.vm.$options.fetch.apply(wrapper2.vm)
     expect(wrapper2.vm.benefitAgency).toBe("US One Two")
+  })
+
+  it("should fetch benefits for a specific agency (not related)", async () => {
+    let contentRequest
+    const contentMock = {
+      sortBy: () => contentMock,
+      where: () => contentMock,
+      fetch: () => {
+        return Promise.resolve(
+          {
+            agencies: {
+            },
+            benefits: [
+              {
+                title: "One",
+                summary: "One summary",
+                source: { name: SOURCE_NAME },
+                lifeEvents: ["Three", "Four"],
+              },
+              { title: "Two", summary: "Two summary", source: { name: SOURCE_NAME }, lifeEvents: [] },
+              { title: "Three", summary: "Three summary", source: { name: "US One Two" }, lifeEvents: [] },
+            ],
+            criteria: { body: [] },
+          }[contentRequest]
+        )
+      },
+    }
+    const $content = (path) => {
+      contentRequest = path
+      return contentMock
+    }
+    const $route = {
+      params: {
+        agency: "one-two-three",
+      },
+    }
+    const $store = {
+      dispatch: () => Promise.resolve(),
+    }
+    const wrapper = shallowMount(Page, {
+      mocks: {
+        $content,
+        $fetchState,
+        $route,
+        $store,
+        $t: (val) => val,
+      },
+    })
+    await wrapper.vm.$options.fetch.apply(wrapper.vm)
+    expect(wrapper.vm.benefitAgency).toBe(SOURCE_NAME)
+    expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("One,Two")
+
+    $route.params.agency = "one-two"
+    const wrapper2 = shallowMount(Page, {
+      mocks: {
+        $content,
+        $fetchState,
+        $route,
+        $store,
+      },
+    })
+    await wrapper2.vm.$options.fetch.apply(wrapper2.vm)
+    expect(wrapper2.vm.benefitAgency).toBe("One two three")
+  })
+
+  it("should fetch benefits for a specific agency (2nd condition slug)", async () => {
+    let contentRequest
+    const contentMock = {
+      sortBy: () => contentMock,
+      where: () => contentMock,
+      fetch: () => {
+        return Promise.resolve(
+          {
+            agencies: {
+              relatedKeys: ["one"],
+            },
+            benefits: [
+              {
+                title: "One",
+                summary: "One summary",
+                source: { name: SOURCE_NAME },
+                lifeEvents: ["Three", "Four"],
+              },
+              { title: "Two", summary: "Two summary", source: { name: SOURCE_NAME }, lifeEvents: [] },
+              { title: "Three", summary: "Three summary", source: { name: "US One Two" }, lifeEvents: [] },
+            ],
+            criteria: { body: [] },
+          }[contentRequest]
+        )
+      },
+    }
+    const $content = (path) => {
+      contentRequest = path
+      return contentMock
+    }
+    const $route = {
+      params: {
+        agency: "one-two-three",
+      },
+    }
+    const $store = {
+      dispatch: () => Promise.resolve(),
+    }
+    const wrapper = shallowMount(Page, {
+      mocks: {
+        $content,
+        $fetchState,
+        $route,
+        $store,
+        $t: (val) => val,
+      },
+    })
+    await wrapper.vm.$options.fetch.apply(wrapper.vm)
+    expect(wrapper.vm.benefitAgency).toBe(SOURCE_NAME)
+    expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("One,Two")
+
+    $route.params.agency = "one-two"
+    const wrapper2 = shallowMount(Page, {
+      mocks: {
+        $content,
+        $fetchState,
+        $route,
+        $store,
+      },
+    })
+    await wrapper2.vm.$options.fetch.apply(wrapper2.vm)
+    expect(wrapper2.vm.benefitAgency).toBe("One two three")
   })
 
   it("should expand,collapse, and clear all accordion cards", async () => {

@@ -57,7 +57,14 @@ describe("CriteriaChild", () => {
     expect(wrapper.find("label").text()).toBe("bal bal")
   })
 
-  test("test label using default", () => {
+  test("test label using criterion", async () => {
+    await store.dispatch("criteria/populate", [{
+      criteriaKey: "myKey",
+      label: "bal bal",
+      type: "boolean",
+      values: "true",
+      acceptableValues: [true],
+    }])
     const wrapper = mount(CriteriaChild, {
       store,
       propsData: {
@@ -68,7 +75,7 @@ describe("CriteriaChild", () => {
         response: "balkajdflkjslf",
       },
     })
-    expect(wrapper.find("label").text()).toBe("No label provided")
+    expect(wrapper.vm.getCriterionLabel()).toBe("bal bal")
   })
 
   test("no watcher created if no top-level filter is defined", () => {
