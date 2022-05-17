@@ -211,4 +211,8 @@ export default {
 .usa-icon-list {
   max-width: none;
 }
+.usa-icon {
+  height: 1.75rem;
+  width: 1.75rem;
+}
 </style>
