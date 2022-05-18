@@ -372,7 +372,7 @@ export default {
       this.filter = ""
       this.lifeEventBenefits = this.allLifeEventBenefits
       this.sortBenefits()
-      this.$nextTick(() => this.$refs.accordion.focus())
+    // this.$nextTick(() => this.$refs.accordion.focus())
     },
   },
 }

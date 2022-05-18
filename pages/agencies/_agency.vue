@@ -132,8 +132,6 @@ export default {
     }
   },
   async fetch() {
-    // const translated = []
-
     const slug = this.$route.params.agency.startsWith("u-s-")
       ? _.lowerCase(this.$route.params.agency).replace(/^u s /, "u.s. ")
       : _.lowerCase(this.$route.params.agency)
@@ -160,9 +158,6 @@ export default {
     }
   },
   methods: {
-    mapLifeEvents(lifeEvents) {
-      return lifeEvents.map((le) => _.lowerCase(le))
-    },
     openAll() {
       this.$refs.accordion.openAll()
     },

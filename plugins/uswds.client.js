@@ -1,3 +1,2 @@
-import uswds from "../assets/js/uswds"
-
-export default function () {}
+import uswds from "../assets/js/uswds" //NOSONAR
+export default function () {} //NOSONAR
