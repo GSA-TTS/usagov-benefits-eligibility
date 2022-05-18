@@ -50,6 +50,7 @@
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
+              rel="noopener"
               >{{ benefit.source.name }}</a
             >
             <!-- //NOSONAR -->
@@ -77,6 +78,7 @@
             <a
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
+              rel="noopener"
               :aria-label="`How to apply for ${benefit.title}`"
               class="usa-button print:display-none">
               {{ $t("accordion.apply") }}
