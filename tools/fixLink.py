@@ -1,4 +1,5 @@
-import json, os
+import json
+import os
 
 localesPath = "./locales/en/"
 mdPath = "./content/"
@@ -47,12 +48,12 @@ for fileOrDir in keys:
         baseTitle = filePath.split("/")[-1].replace(".md", "")
         title = filePath.replace(".md", ".json").replace("./content/", "")
         jsonData = {}
-        with open(filePath, 'r') as f:
+        with open(filePath, "r") as f:
             data = f.readlines()
             for line in data:
                 nline = line
-                if 'link: ' in line:
-                    link = line.split(': ')[1].replace('\n', '')
-                    jsonData[baseTitle+'.source.link'] = link
-                    line = line.split(': ')[0] + ': ' + baseTitle + '.source.link'
+                if "link: " in line:
+                    link = line.split(": ")[1].replace("\n", "")
+                    jsonData[baseTitle + ".source.link"] = link
+                    line = line.split(": ")[0] + ": " + baseTitle + ".source.link"
                     newLines.append()
