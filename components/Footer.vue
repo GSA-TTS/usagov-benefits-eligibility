@@ -45,7 +45,8 @@
                       {{ $t("footer.GroupOne.header") }}
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
-                      <li class="usa-footer__secondary-link">
+                      <li class="usa-footer__secondary-link">                        
+                        <!-- //NOSONAR -->
                         <a
                           class="margin-bottom-3"
                           :href="
@@ -57,7 +58,8 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">
+                      <li class="usa-footer__secondary-link">                    
+                        <!-- //NOSONAR -->
                         <a
                           :href="
                             $i18n.locale === 'en' ? 'https://www.usa.gov/media' : 'https://www.usa.gov/espanol/medios'
@@ -66,7 +68,8 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">
+                      <li class="usa-footer__secondary-link">                    
+                        <!-- //NOSONAR -->
                         <a
                           :href="
                             $i18n.locale === 'en' ? 'https://www.usa.gov/developer' : 'https://www.usa.gov/developer'
@@ -75,7 +78,8 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">
+                      <li class="usa-footer__secondary-link">                    
+                        <!-- //NOSONAR -->
                         <a
                           :href="
                             $i18n.locale === 'en'
@@ -86,7 +90,8 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">
+                      <li class="usa-footer__secondary-link">                    
+                        <!-- //NOSONAR -->
                         <a
                           :href="
                             $i18n.locale === 'en' ? 'https://www.usa.gov/#tpcs' : 'https://www.usa.gov/espanol/#tpcs'
@@ -104,7 +109,8 @@
                       {{ $t("footer.GroupTwo.header") }}
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
-                      <li class="usa-footer__secondary-link">
+                      <li class="usa-footer__secondary-link">                    
+                        <!-- //NOSONAR -->
                         <a
                           :href="
                             $i18n.locale === 'en'
@@ -115,7 +121,8 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">
+                      <li class="usa-footer__secondary-link">                   
+                        <!-- //NOSONAR -->
                         <a
                           :href="
                             $i18n.locale === 'en'
