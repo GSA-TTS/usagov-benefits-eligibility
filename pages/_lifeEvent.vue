@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="grid-row grid-gap print:display-block">
+      <div class="grid-row tablet:grid-gap-6 print:display-block">
         <div
           class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto padding-y-2 margin-top-0 padding-top-0">
           <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
