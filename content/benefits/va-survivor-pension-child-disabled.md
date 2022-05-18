@@ -9,7 +9,7 @@ lifeEvents:
   - disability
 source:
   name: va-survivor-pension-child-disabled.source.name
-  link: https://www.va.gov/pension/survivors-pension/
+  link: va-survivor-pension-child-disabled.source.link
 
 summary: va-survivor-pension-child-disabled.summary
 

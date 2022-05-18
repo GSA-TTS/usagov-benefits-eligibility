@@ -8,7 +8,7 @@ lifeEvents:
   - loss-of-job-and-low-income
 source:
   name: ssa-disability-insurance-child-disabled.source.name
-  link: https://www.ssa.gov/benefits/disability/
+  link: ssa-disability-insurance-child-disabled.source.link
 
 summary: ssa-disability-insurance-child-disabled.summary
 

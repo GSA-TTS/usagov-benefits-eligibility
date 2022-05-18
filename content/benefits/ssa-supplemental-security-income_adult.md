@@ -8,7 +8,7 @@ lifeEvents:
   - loss-of-job-and-low-income
 source:
   name: ssa-supplemental-security-income_adult.source.name
-  link: https://www.ssa.gov/benefits/ssi/adults.html
+  link: ssa-supplemental-security-income_adult.source.link
 
 summary: ssa-supplemental-security-income_adult.summary
 

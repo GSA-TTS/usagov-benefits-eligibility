@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-disability-compensation.source.name
-  link: https://www.va.gov/disability/eligibility/
+  link: va-disability-compensation.source.link
 
 summary: va-disability-compensation.summary
 

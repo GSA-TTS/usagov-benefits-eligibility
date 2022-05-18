@@ -9,7 +9,7 @@ lifeEvents:
   - loss-of-job-and-low-income
 source:
   name: ssa-retirement-benefits-mothers-fathers.source.name
-  link: https://www.ssa.gov/benefits/retirement/
+  link: ssa-retirement-benefits-mothers-fathers.source.link
 
 summary: ssa-retirement-benefits-mothers-fathers.summary
 

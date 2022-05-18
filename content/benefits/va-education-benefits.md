@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-education-benefits.source.name
-  link: https://www.va.gov/education/eligibility/
+  link: va-education-benefits.source.link
 
 summary: va-education-benefits.summary
 

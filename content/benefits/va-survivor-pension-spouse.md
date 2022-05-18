@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-survivor-pension-spouse.source.name
-  link: https://www.va.gov/pension/survivors-pension/
+  link: va-survivor-pension-spouse.source.link
 
 summary: va-survivor-pension-spouse.summary
 

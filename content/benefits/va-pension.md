@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-pension.source.name
-  link: https://www.va.gov/pension/how-to-apply/
+  link: va-pension.source.link
 
 summary: va-pension.summary
 
