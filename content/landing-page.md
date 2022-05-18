@@ -1,9 +1,9 @@
 ---
-title: "Help during life's major events"
-summary: "Life’s big milestones can be challenging, but figuring out which federal government benefits might be available to help shouldn’t be. Get started here."
+title: landing-page.title
+summary: landing-page.summary
 lifeEvent: death-of-a-loved-one
 processListSteps:
-  - "Answer a few questions"
-  - "Review a custom list of potential federal benefits"
-  - "Find out how to apply"
+  - landing-page.processListSteps.value1
+  - landing-page.processListSteps.value2
+  - landing-page.processListSteps.value3
 ---

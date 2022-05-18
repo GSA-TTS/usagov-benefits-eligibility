@@ -9,7 +9,7 @@ lifeEvents:
   - late-adulthood
 source:
   name: ssa-supplemental-security-income-elder.source.name
-  link: https://www.ssa.gov/benefits/ssi/65older.html
+  link: ssa-supplemental-security-income-elder.source.link
 
 summary: ssa-supplemental-security-income-elder.summary
 

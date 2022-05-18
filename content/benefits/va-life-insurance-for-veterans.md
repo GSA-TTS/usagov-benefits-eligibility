@@ -7,7 +7,7 @@ lifeEvents:
   - military-service
 source:
   name: va-life-insurance-for-veterans.source.name
-  link: https://www.va.gov/life-insurance/options-eligibility/
+  link: va-life-insurance-for-veterans.source.link
 
 summary: va-life-insurance-for-veterans.summary
 

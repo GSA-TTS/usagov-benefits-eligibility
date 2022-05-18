@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-dependency-and-indemnity-compensation-parent.source.name
-  link: https://www.va.gov/disability/dependency-indemnity-compensation/
+  link: va-dependency-and-indemnity-compensation-parent.source.link
 
 summary: va-dependency-and-indemnity-compensation-parent.summary
 

@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-home-loan-program-for-survivors.source.name
-  link: https://www.va.gov/housing-assistance/home-loans/surviving-spouse/
+  link: va-home-loan-program-for-survivors.source.link
 
 summary: va-home-loan-program-for-survivors.summary
 

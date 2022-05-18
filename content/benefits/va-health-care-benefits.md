@@ -7,7 +7,7 @@ lifeEvents:
   - military-service
 source:
   name: va-health-care-benefits.source.name
-  link: https://www.va.gov/health-care/eligibility/
+  link: va-health-care-benefits.source.link
 
 summary: va-health-care-benefits.summary
 

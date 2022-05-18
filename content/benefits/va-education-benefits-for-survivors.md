@@ -9,7 +9,7 @@ lifeEvents:
   - military-service
 source:
   name: va-education-benefits-for-survivors.source.name
-  link: https://www.va.gov/education/survivor-dependent-benefits/
+  link: va-education-benefits-for-survivors.source.link
 
 summary: va-education-benefits-for-survivors.summary
 

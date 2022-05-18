@@ -7,7 +7,7 @@ lifeEvents:
   - disability
 source:
   name: ssa-ticket-to-work.source.name
-  link: https://www.ssa.gov/work/
+  link: ssa-ticket-to-work.source.link
 
 summary: ssa-ticket-to-work.summary
 

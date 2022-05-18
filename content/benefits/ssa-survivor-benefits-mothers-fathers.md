@@ -7,7 +7,7 @@ lifeEvents:
   - death-of-a-loved-one
 source:
   name: ssa-survivor-benefits-mothers-fathers.source.name
-  link: https://www.ssa.gov/forms/ssa-5.html
+  link: ssa-survivor-benefits-mothers-fathers.source.link
 
 summary: ssa-survivor-benefits-mothers-fathers.summary
 

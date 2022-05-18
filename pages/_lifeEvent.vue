@@ -307,6 +307,7 @@ export default {
   },
   mounted() {
     this.$root.$on("tag:click", this.tagClick)
+    this.landingPage = tObj.call(this, this.landingPage)
   },
   methods: {
     clearCriteria() {
