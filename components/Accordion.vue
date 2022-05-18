@@ -49,7 +49,9 @@
             <!-- //NOSONAR --><a
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
-              target="_blank">{{ benefit.source.name }}</a>
+              target="_blank"
+              rel="noopener"
+              >{{ benefit.source.name }}</a>
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -74,6 +76,7 @@
             <!-- //NOSONAR --><a
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
+              rel="noopener"
               :aria-label="`How to apply for ${benefit.title}`"
               class="usa-button print:display-none">
               {{ $t("accordion.apply") }}
