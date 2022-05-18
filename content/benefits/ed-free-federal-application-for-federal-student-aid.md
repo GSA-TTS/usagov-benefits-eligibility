@@ -8,7 +8,7 @@ lifeEvents:
   - school-and-education
 source:
   name: ed-free-federal-application-for-federal-student-aid.source.name
-  link: https://studentaid.gov/h/apply-for-aid/fafsa
+  link: ed-free-fed
 
 summary: ed-free-federal-application-for-federal-student-aid.summary
 

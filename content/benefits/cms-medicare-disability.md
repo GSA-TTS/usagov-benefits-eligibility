@@ -8,7 +8,7 @@ lifeEvents:
   - disability
 source:
   name: cms-medicare-disability.source.name
-  link: https://www.medicare.gov/sign-up-change-plans/get-started-with-medicare
+  link: cms-medicare-disability.source.link
 
 summary: cms-medicare-disability.summary
 

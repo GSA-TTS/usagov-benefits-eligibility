@@ -1,5 +1,7 @@
 {
-  "title": "\"Help during life's major events\"",
-  "summary": "\"Life\u2019s big milestones can be challenging, but figuring out which federal government benefits might be available to help shouldn\u2019t be. Get started here.\"",
-  "processListSteps": ""
+  "landing-page.title": "\"Help during life's major events\"",
+  "landing-page.summary": "\"Life\u2019s big milestones can be challenging, but figuring out which federal government benefits might be available to help shouldn\u2019t be. Get started here.\"",
+  "landing-page.processListSteps.value1": "Answer a few questions" , 
+  "landing-page.processListSteps.value2": "Review a custom list of potential federal benefits" , 
+  "landing-page.processListSteps.value3": "Find out how to apply" 
 }

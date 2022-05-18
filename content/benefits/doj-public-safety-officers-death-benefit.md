@@ -7,7 +7,7 @@ lifeEvents:
   - death-of-a-loved-one
 source:
   name: doj-public-safety-officers-death-benefit.source.name
-  link: https://psob.bja.ojp.gov/PSOB_FactSheet2019.pdf
+  link: doj-public-safety-officers-death-benefit.source.link
 
 summary: doj-public-safety-officers-death-benefit.summary
 
