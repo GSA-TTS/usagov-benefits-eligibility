@@ -66,7 +66,6 @@ export default {
     },
     label: {
       type: String,
-      default: "No label provided",
     },
     type: {
       type: String,
@@ -86,7 +85,7 @@ export default {
     },
     criteria: {
       type: Object,
-      default: () => {},
+      default: () => {return {}},
     },
     topLevelFilters: {
       type: Array,
