@@ -14,7 +14,7 @@ Python 3 required.
 `python3 tools/createEnEsJs.py`
 
 <small>
-(slight bug: go into the `locales/es.js` and find the line containing `require('es/en.json')` and replace it with `require('es/es.json')`)    
+(slight bug: go into the `locales/es.js` and find the line containing `require('es/en.json')` and replace it with `require('es/es.json')`)
 </small>  
 <br>
 <br>
