@@ -1,16 +1,16 @@
 ---
-title: "Financial Aid for College or Career School"
-headline: "Financial Aid for College or Career School"
+title: ed-free-federal-application-for-federal-student-aid.title
+headline: ed-free-federal-application-for-federal-student-aid.headline
 tags:
-  - "educational assistance"
-  - "financial assistance"
+  - educational assistance
+  - financial assistance
 lifeEvents:
-  - "school-and-education"
+  - school-and-education
 source:
-  name: "U.S. Department of Education"
-  link: https://studentaid.gov/h/apply-for-aid/fafsa
+  name: ed-free-federal-application-for-federal-student-aid.source.name
+  link: ed-free-federal-application-for-federal-student-aid.source.link
 
-summary: "Apply for federal student aid—grants, work-study funds, and loans—to help pay for college or career school."
+summary: ed-free-federal-application-for-federal-student-aid.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.

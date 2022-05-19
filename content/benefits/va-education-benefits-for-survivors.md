@@ -1,29 +1,32 @@
 ---
-title: "Education Benefits (GI Bill) for Survivors"
-headline: "Education Benefits (GI Bill) for Survivors"
+title: va-education-benefits-for-survivors.title
+headline: va-education-benefits-for-survivors.headline
 tags:
-  - "educational assistance"
+  - educational assistance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "school-and-education"
-  - "military-service"
+  - death-of-a-loved-one
+  - school-and-education
+  - military-service
 source:
-  name: "U.S. Department of Veteran Affairs"
-  link: https://www.va.gov/education/survivor-dependent-benefits/
+  name: va-education-benefits-for-survivors.source.name
+  link: va-education-benefits-for-survivors.source.link
 
-summary: "VA education benefits (also called Chapter 35 benefits) or job training through a GI Bill program may be available for dependents and survivors of a veteran."
+summary: va-education-benefits-for-survivors.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: deceased_served_in_active_military
-    acceptableValues: ["yes"]
-    label: "The deceased served in the active military, naval, or air service."
+    acceptableValues: [va-education-benefits-for-survivors.eligibility.acceptableValues]
+    label: va-education-benefits-for-survivors.eligibility.label
   - criteriaKey: deceased_service_status
-    acceptableValues: ["an active-duty service member", "discharged under conditions other than dishonorable"]
+    acceptableValues: [va-education-benefits-for-survivors.eligibility.acceptableValues1, 
+    va-education-benefits-for-survivors.eligibility.acceptableValues2]
   - criteriaKey: deceased_death_circumstance
-    acceptableValues: ["died while on active duty", "died as a result of a service-connected disability or illness"]
+    acceptableValues: [va-education-benefits-for-survivors.eligibility.acceptableValues3, 
+    va-education-benefits-for-survivors.eligibility.acceptableValues4]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child"]
-  - criteriaKey: applicant_high_school_diploma
+    acceptableValues: [va-education-benefits-for-survivors.eligibility.acceptableValues5, 
+    va-education-benefits-for-survivors.eligibility.acceptableValues6]
+  - criteriaKey: applicant_high-school_diploma
     acceptableValues: [true]
 ---

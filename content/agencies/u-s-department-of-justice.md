@@ -1,5 +1,5 @@
 ---
-title: "U.S. Department of Justice"
-summary: "Offers financial and educational support to help families of fallen public safety officers."
-lede: "Offers financial and educational support to help families of fallen public safety officers."
+title: u-s-department-of-justice.title
+summary: u-s-department-of-justice.summary
+lede: u-s-department-of-justice.lede
 ---

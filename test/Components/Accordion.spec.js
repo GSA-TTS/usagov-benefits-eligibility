@@ -167,7 +167,7 @@ describe("Accordion", () => {
   })
 
   describe("getCriteriaMatchLanguage tests", () => {
-    it("false value for critiera selected", () => {
+    it("false value for criteria selected", () => {
       getters = {
         doesCriterionMatchSelection: () => jest.fn().mockReturnValue(false).mockReturnValueOnce(false),
         getTotalEligibleCriteria: () => jest.fn().mockReturnValue(2).mockReturnValueOnce(3).mockReturnValueOnce(0),
@@ -183,9 +183,12 @@ describe("Accordion", () => {
       const wrapper = shallowMount(Accordion, {
         propsData,
         store,
+        mocks: {
+          $t: (val) => val,
+        },
       })
       const text = wrapper.vm.getCriteriaMatchLanguage([{}])
-      expect(text).toBe("(you are not eligible)")
+      expect(text).toBe("(accordion.not_eligible)")
     })
     it("nothing selected", () => {
       getters = {

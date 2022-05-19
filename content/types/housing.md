@@ -1,5 +1,5 @@
 ---
-title: "Housing"
-summary: "Help with subsidized housing and home loans."
-lede: "Help with subsidized housing and home loans."
+title: housing.title
+summary: housing.summary
+lede: housing.lede
 ---

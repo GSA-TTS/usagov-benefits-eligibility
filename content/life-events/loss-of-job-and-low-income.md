@@ -1,21 +1,21 @@
 ---
 # yaml front matter here
-title: "Loss of job and low income"
-summary: "There may be benefits available to help you with a recent job loss or if you have low income, including financial help and retraining."
-lede: ""
-secondaryHeadline: "Loss of job and low income benefits"
+title: loss-of-job-and-low-income.title
+summary: loss-of-job-and-low-income.summary
+lede: loss-of-job-and-low-income.lede
+secondaryHeadline: loss-of-job-and-low-income.secondaryHeadline
 
-eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
+eligibilityCriteriaDescription: loss-of-job-and-low-income.eligibilityCriteriaDescription
 
 topLevelFilter:
-  - label: "Start here"
+  - label: loss-of-job-and-low-income.topLevelFilter.label
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
 
 eligibilityCriteria:
-  - label: "About you (the person applying for benefits)"
-    description: ""
+  - label: loss-of-job-and-low-income.eligibilityCriteria.label
+    description: loss-of-job-and-low-income.eligibilityCriteria.description
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_paid_into_SS

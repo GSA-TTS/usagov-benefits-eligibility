@@ -1,46 +1,46 @@
 ---
 # yaml front matter here
-title: "Military service"
-summary: "Service members and veterans have many benefits available to them, including educational assistance, home loans, and life insurance."
-lede: ""
-secondaryHeadline: "Military service benefits"
+title: military-service.title
+summary: military-service.summary
+lede: military-service.lede
+secondaryHeadline: military-service.secondaryHeadline
 
-eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
+eligibilityCriteriaDescription: military-service.eligibilityCriteriaDescription
 
 topLevelFilter:
-  - label: "Start here"
+  - label: military-service.topLevelFilter.label
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
 
-  - label: ""
+  - label: military-service.topLevelFilter.label1
     criteriaKey: applicant_served_in_active_military
     disableGroupKey: applicant-military
-    disableGroupWhen: ["no"]
+    disableGroupWhen: [military-service.topLevelFilter.disableGroupWhen]
 
-  - label: ""
+  - label: military-service.topLevelFilter.label2
     criteriaKey: applicant_lost_a_service_member
     disableGroupKey: deceased-military
-    disableGroupWhen: ["no"]
+    disableGroupWhen: [military-service.topLevelFilter.disableGroupWhen1]
 
 eligibilityCriteria:
-  - label: "About you (the person applying for benefits)"
-    description: ""
+  - label: military-service.eligibilityCriteria.label
+    description: military-service.eligibilityCriteria.description
     criteriaGroupKey: applicant-basics
     criteriaKeys:
       - applicant_disability
       - applicant_marital_status
 
-  - label: "About your military service"
-    description: ""
+  - label: military-service.eligibilityCriteria.label1
+    description: military-service.eligibilityCriteria.description1
     criteriaGroupKey: applicant-military
     criteriaKeys:
       - applicant_service_status
       - applicant_minimum_service_requirement
       - applicant_service_disability
 
-  - label: "About the military service of the person who died"
-    description: ""
+  - label: military-service.eligibilityCriteria.label2
+    description: military-service.eligibilityCriteria.description2
     criteriaGroupKey: deceased-military
     criteriaKeys:
       - deceased_service_status

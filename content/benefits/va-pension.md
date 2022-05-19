@@ -1,26 +1,26 @@
 ---
-title: "Veteran's Pension"
-headline: "Veteran's Pension"
+title: va-pension.title
+headline: va-pension.headline
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "military-service"
+  - retirement
+  - military-service
 source:
-  name: "U.S. Department of Veteran Affairs"
-  link: https://www.va.gov/pension/how-to-apply/
+  name: va-pension.source.name
+  link: va-pension.source.link
 
-summary: "Monthly payments to wartime veterans who meet certain age or disability requirements, and who have income and net worth within certain limits."
+summary: va-pension.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_date_of_birth
-    label: "You are at least 65 years old."
-    acceptableValues: [">65years"]
+    label: va-pension.eligibility.label
+    acceptableValues: [va-pension.eligibility.acceptableValues]
   - criteriaKey: applicant_served_in_active_military
-    acceptableValues: ["yes"]
+    acceptableValues: [va-pension.eligibility.acceptableValues1]
   - criteriaKey: applicant_service_status
-    acceptableValues: ["discharged under conditions other than dishonorable"]
+    acceptableValues: [va-pension.eligibility.acceptableValues2]
   - criteriaKey: applicant_income
     acceptableValues: [true]
 ---

@@ -1,21 +1,11 @@
 <template>
   <div :class="disabledStyle">
-    <template v-if="location === 'left-rail'">
-      <label
-        class="usa-label margin-top-0 tablet:padding-top-1 text-bold"
-        :class="disabledLabel"
-        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`">
-        {{ label }}
-      </label>
-    </template>
-    <template v-else>
-      <label
-        class="usa-label margin-top-0"
-        style="font-weight: inherit"
-        :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`">
-        {{ label }}
-      </label>
-    </template>
+    <label
+      class="usa-label margin-top-0 tablet:padding-top-1 text-bold"
+      :class="disabledLabel"
+      :for="`${uniqueId}-${criteriaKey}-${criteriaIndex}`">
+      {{ label }}
+    </label>
     <select
       :id="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       class="usa-select"
@@ -58,12 +48,6 @@ export default {
     criteriaIndex: {
       type: [Number, String],
       default: "no index provided",
-    },
-    location: {
-      default: "benefit-card",
-      validator: (value) => {
-        return ["left-rail", "benefit-card"].includes(value)
-      },
     },
     isDisabled: {
       type: Boolean,

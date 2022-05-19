@@ -1,30 +1,33 @@
 ---
-title: "Veterans Life Insurance for Surviving Beneficiaries"
-headline: "Veterans Life Insurance for Surviving Beneficiaries"
+title: va-life-insurance-for-survivors.title
+headline: va-life-insurance-for-survivors.headline
 tags:
-  - "life insurance"
+  - life insurance
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
-  name: "U.S. Department of Veteran Affairs"
-  link: https://www.benefits.va.gov/INSURANCE/sglivgli.asp
+  name: va-life-insurance-for-survivors.source.name
+  link: va-life-insurance-for-survivors.source.link
 
-summary: "Financial payment from a veteran's or service member's life insurance policy may be available."
+summary: va-life-insurance-for-survivors.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: deceased_served_in_active_military
-    acceptableValues: ["yes"]
-    label: "The deceased served in the active military, naval, or air service."
+    acceptableValues: [va-life-insurance-for-survivors.eligibility.acceptableValues]
+    label: va-life-insurance-for-survivors.eligibility.label
   - criteriaKey: deceased_service_status
     acceptableValues:
       [
-        "an active-duty service member",
-        "discharged under conditions other than dishonorable",
-        "retired from the service",
-        "a member of the National Guard or Reserves",
+        va-life-insurance-for-survivors.eligibility.acceptableValues1,
+        va-life-insurance-for-survivors.eligibility.acceptableValues2,
+        va-life-insurance-for-survivors.eligibility.acceptableValues3,
+        va-life-insurance-for-survivors.eligibility.acceptableValues4,
       ]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child", "parent", "other family member"]
+    acceptableValues: [va-life-insurance-for-survivors.eligibility.acceptableValues5, 
+    va-life-insurance-for-survivors.eligibility.acceptableValues6, 
+    va-life-insurance-for-survivors.eligibility.acceptableValues7, 
+    va-life-insurance-for-survivors.eligibility.acceptableValues8]
 ---

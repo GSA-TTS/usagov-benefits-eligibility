@@ -1,0 +1,10 @@
+{
+  "va-health-care-benefits.title": "Veteran's Health Care Benefits",
+  "va-health-care-benefits.headline": "Veteran's Health Care Benefits",
+  "va-health-care-benefits.source.name": "U.S. Department of Veteran Affairs",
+  "va-health-care-benefits.source.link": "https://www.va.gov/health-care/eligibility/",
+  "va-health-care-benefits.summary": "You may be eligible for VA health care benefits if you served in the active military, naval, or air service that covers regular checkups with your primary care provider and appointments with specialists.",
+  "va-health-care-benefits.eligibility.acceptableValues": "yes",
+  "va-health-care-benefits.eligibility.acceptableValues1": "discharged under conditions other than dishonorable",
+  "va-health-care-benefits.eligibility.acceptableValues2": "a member of the National Guard or Reserves"
+}

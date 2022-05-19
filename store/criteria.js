@@ -10,7 +10,6 @@ export const state = () => ({
 export const mutations = {
   // payload must include a criteriaKey and the new response / selected value
   updateResponse(theState, { criteriaKey, response }) {
-    // TODO: make sure the response matches one of the available criterion values
     Vue.set(theState.eligibilityCriteria[criteriaKey], "response", response)
     const hashedData = getters.getHashResponses(theState)
     localStorage.setItem("responseData", JSON.stringify(hashedData))
@@ -70,16 +69,8 @@ export const getters = {
     if (!theGetters.isCriterionSelected(criterion) || !criterion.acceptableValues) {
       return null
     }
-    // catch for invalid criteria key that haven't been moved to dates
-    if (
-      criterion.acceptableValues.some((val) => {
-        return ["true", "false"].includes(val.toString())
-      })
-    ) {
-      return null
-    }
     // need this to be swapped if passing in a state I.E. testing
-    const userInputDate = criterion.TEST
+    const userInputDate = criterion.test
       ? Date.parse(theGetters.getResponseByEligibilityKey(theState)(criterion.criteriaKey))
       : Date.parse(theGetters.getResponseByEligibilityKey(criterion.criteriaKey))
     return validateDateAgainstAcceptance({
@@ -87,11 +78,9 @@ export const getters = {
       userInputDate,
     })
   },
-  doesCriterionMatchSelection: (theState, theGetters) => (criterion) => {
+  doesCriterionMatchSelection: (_theState, theGetters) => (criterion) => {
     if (theGetters.getCriterionByEligibilityKey(criterion.criteriaKey).type === "date") {
-      return criterion.TEST
-        ? theGetters.doesCriterionDateMatch(theState)(criterion)
-        : theGetters.doesCriterionDateMatch(criterion)
+      return theGetters.doesCriterionDateMatch(criterion)
     } else {
       if (!criterion.acceptableValues) {
         return null
@@ -135,7 +124,7 @@ export const getters = {
     return responses
   },
   getTotalEligibleCriteria:
-    (theState, theGetters) =>
+    (_theState, theGetters) =>
     (benefitEligibilityCriteria = []) => {
       if (benefitEligibilityCriteria && benefitEligibilityCriteria.length < 1) {
         return 0
@@ -147,7 +136,7 @@ export const getters = {
       }
     },
   getTotalIneligibleCriteria:
-    (theState, theGetters) =>
+    (_theState, theGetters) =>
     (benefitEligibilityCriteria = []) => {
       if (benefitEligibilityCriteria && benefitEligibilityCriteria.length < 1) {
         return 0
@@ -158,13 +147,13 @@ export const getters = {
         return matchingCriteria.length
       }
     },
-  isCriterionSelected: (theState, theGetters) => (criterion) => {
+  isCriterionSelected: (_theState, theGetters) => (criterion) => {
     return !!theGetters.getCriterionByEligibilityKey(criterion.criteriaKey).response
   },
 }
 
 export const actions = {
-  async populate({ commit, theState }, criteriaArray = []) {
+  async populate({ commit, _theState }, criteriaArray = []) {
     for (const criterion of criteriaArray) {
       const criteriaKey = criterion.criteriaKey
       criterion.criteriaKeyHash = await stringToHash(criteriaKey)
@@ -172,7 +161,7 @@ export const actions = {
     commit("populateCriterion", { criterionArray: criteriaArray })
   },
 
-  clear({ commit, theState }, criteriaArray = []) {
+  clear({ commit, _theState }, _criteriaArray = []) {
     commit("clearSelectedCriteria", {})
   },
 

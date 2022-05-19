@@ -1,23 +1,21 @@
 <template>
-  <div v-if="isUsaGov">
-    <GoogleTagManagerHeader></GoogleTagManagerHeader>
-    <div>
-      <UsaGovHeader />
+  <div>
+    <div v-if="isUsaGov">
+      <div>
+        <UsaGovHeader />
+        <main id="main-content">
+          <Nuxt />
+        </main>
+        <UsaGovFooter />
+      </div>
+    </div>
+    <div v-else>
+      <Header />
       <main id="main-content">
         <Nuxt />
       </main>
-      <UsaGovFooter />
+      <Footer />
     </div>
-    <GoogleTagManagerFooter></GoogleTagManagerFooter>
-  </div>
-  <div v-else>
-    <GoogleTagManagerHeader></GoogleTagManagerHeader>
-    <Header />
-    <main id="main-content">
-      <Nuxt />
-    </main>
-    <Footer />
-    <GoogleTagManagerFooter></GoogleTagManagerFooter>
   </div>
 </template>
 

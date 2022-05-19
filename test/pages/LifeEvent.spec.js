@@ -1,4 +1,4 @@
-import { config, shallowMount } from "@vue/test-utils"
+import { config, shallowMount, mount } from "@vue/test-utils"
 import { Store } from "vuex"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
@@ -32,35 +32,45 @@ const mockContent = {
       },
     ],
   },
-  benefit: {
-    slug: THIS_LIFE_EVENT_SLUG,
-    agency: "Benefit Agency",
-    headline: "Benefit One",
-    identifier: "benefitOne",
-    lifeEvents: ["bereavement", THIS_LIFE_EVENT_SLUG],
-    provider: "Federal Government",
-    source: { name: "Dept. of Benefit One", link: "#" },
-    summary: "Benefit one summary.",
-    tags: ["burial honors"],
-    title: "Benefit One Title",
-    toc: [],
-    eligibility: [
-      { criteriaKey: "criteriaKey1", acceptableValues: [true] },
-      { criteriaKey: "criteriaKey2", acceptableValues: [true] },
-      { criteriaKey: "virtualCriteriaKey1" },
-    ],
-  },
+  benefit: [
+    {
+      slug: THIS_LIFE_EVENT_SLUG,
+      agency: "Benefit Agency",
+      headline: "Benefit One",
+      identifier: "benefitOne",
+      lifeEvents: ["bereavement", THIS_LIFE_EVENT_SLUG],
+      provider: "Federal Government",
+      source: { name: "Dept. of Benefit One", link: "#" },
+      summary: "Benefit one summary.",
+      tags: ["burial honors"],
+      title: "Benefit One Title",
+      toc: [],
+      eligibility: [
+        { criteriaKey: "criteriaKey1", acceptableValues: [true] },
+        { criteriaKey: "criteriaKey2", acceptableValues: [true] },
+        { criteriaKey: "virtualCriteriaKey1" },
+      ],
+    },
+  ],
   criteria: {
     body: [
       {
         criteriaKey: "criteriaKey1",
-        label: "Benefit criteria label 1.",
+        criteria: {
+          criteriaKey: {
+            label: "Benefit criteria label 1.",
+          },
+        },
         type: "boolean",
         values: [true],
       },
       {
         criteriaKey: "criteriaKey2",
-        label: "Benefit criteria label 2.",
+        criteria: {
+          criteriaKey: {
+            label: "Benefit criteria label 2.",
+          },
+        },
         type: "boolean",
         values: [true],
       },
@@ -94,6 +104,7 @@ describe("Life Event page", () => {
     config.mocks.$config = {
       oneEventVersion: false,
     }
+    config.mocks.lifeEvent = {}
     await beforeAllTests()
   })
 
@@ -121,20 +132,24 @@ describe("Life Event page", () => {
   })
 
   it("should display the page content", async () => {
-    const $content = createContentMock([
-      {
-        collectionName: LIFE_EVENTS_DIRECTORY,
-        items: [{ ...mockContent.lifeEvent }],
+    let contentRequest
+    const contentMock = {
+      where: () => contentMock,
+      sortBy: () => contentMock,
+      fetch: () => {
+        return Promise.resolve(Object.assign([], mockContent[contentRequest]))
       },
-      {
-        collectionName: BENEFITS_DIRECTORY,
-        items: [{ ...mockContent.benefit }],
-      },
-      {
-        collectionName: CRITERIA_DIRECTORY,
-        items: [{ ...mockContent.criteria }],
-      },
-    ])
+    }
+    const $content = (path, path2, path3 = "") => {
+      if (path === "life-events") {
+        contentRequest = "lifeEvent"
+      } else if (path === "benefits") {
+        contentRequest = "benefit"
+      } else {
+        contentRequest = path
+      }
+      return contentMock
+    }
     const wrapper = shallowMount(LifeEventPage, {
       mocks: vueMocks({ $content, ...mockContent }),
       store,
@@ -247,7 +262,7 @@ describe("Life Event page", () => {
     expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("two,one,three")
   })
 
-  it("should expand and collapse all accordian cards", async () => {
+  it("should expand and collapse all accordion cards", async () => {
     const $content = createContentMock([
       {
         collectionName: LIFE_EVENTS_DIRECTORY,

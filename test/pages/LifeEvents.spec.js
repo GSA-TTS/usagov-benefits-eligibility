@@ -1,10 +1,24 @@
 import { config, shallowMount, mount } from "@vue/test-utils"
 import LifeEventsPage from "~/pages/index.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import { createContentMock } from "@/test/mockContent"
-import jestConfig from "~/jest.config"
-
 const mockContent = {
+  "life-events": [
+    {
+      slug: "testSlug",
+      title: "testTitle",
+      summary: "test summary",
+    },
+  ],
+  "landing-page": [
+    {
+      title: "landing title",
+      summary: "landing summary",
+      processListSteps: ["one", "two", "three"],
+    },
+  ],
+}
+
+const mockContent2 = {
   lifeEvents: [
     {
       slug: "testSlug",
@@ -21,13 +35,13 @@ const mockContent = {
   ],
 }
 
-const LIFE_EVENTS_DIRECTORY = "life-events"
-const LANDING_PAGE_FILE = "landing-page"
-
 describe("LifeEventsPage", () => {
   beforeAll(async () => {
-    config.mocks.$config = {
-      oneEventVersion: false,
+    config.mocks.$route = {
+      fullPath: "/death-of-a-loved-one",
+    }
+    config.mocks.$router = {
+      push: jest.fn(),
     }
     await beforeAllTests()
   })
@@ -41,9 +55,6 @@ describe("LifeEventsPage", () => {
     config.mocks.$config = {
       oneEventVersion: "death-of-a-loved-one",
     }
-    config.mocks.$router = {
-      push: jest.fn(),
-    }
     const wrapper = shallowMount(LifeEventsPage)
     expect(wrapper.vm).toBeTruthy()
     config.mocks.$config = {
@@ -53,25 +64,29 @@ describe("LifeEventsPage", () => {
 
   it("displays a list of one life event", async () => {
     const wrapper = shallowMount(LifeEventsPage)
-    await wrapper.setData(mockContent)
+    await wrapper.setData(mockContent2)
     expect(wrapper.find(".usa-card-group").exists()).toBeTruthy()
     expect(wrapper.findAll(".usa-card").length).toBe(1)
   })
 
   it("asyncData() fetches the given data", async () => {
-    const $content = createContentMock([
-      {
-        collectionName: LIFE_EVENTS_DIRECTORY,
-        items: mockContent.lifeEvents,
+    let contentRequest
+    const contentMock = {
+      only: () => contentMock,
+      sortBy: () => contentMock,
+      fetch: () => {
+        return Promise.resolve(mockContent[contentRequest])
       },
-      {
-        collectionName: LANDING_PAGE_FILE,
-        items: mockContent.landingPage,
-      },
-    ])
-    const asyncItems = await LifeEventsPage.asyncData({ $content })
-
-    expect(mockContent).toMatchObject(asyncItems)
-    expect($content).toHaveBeenCalledWith(LIFE_EVENTS_DIRECTORY)
+    }
+    const $content = (path, path2) => {
+      if (path !== "en") {
+        contentRequest = path
+      } else {
+        contentRequest = path2
+      }
+      return contentMock
+    }
+    const asyncItems = await LifeEventsPage.asyncData({ $content, i18n: { locale: "en" } })
+    expect(mockContent2).toMatchObject(asyncItems)
   })
 })

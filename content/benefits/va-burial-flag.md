@@ -1,29 +1,33 @@
 ---
-title: "Burial Flag"
-headline: "Burial Flag"
+title: va-burial-flag.title
+headline: va-burial-flag.headline
 tags:
-  - "memorial"
+  - memorial
 lifeEvents:
-  - "death-of-a-loved-one"
-  - "military-service"
+  - death-of-a-loved-one
+  - military-service
 source:
-  name: "U.S. Department of Veteran Affairs"
-  link: https://www.va.gov/burials-memorials/memorial-items/burial-flags/
+  name: va-burial-flag.source.name
+  link: va-burial-flag.source.link
 
-summary: "VA provides a United States flag to drape on a casket (or coffin) or place with an urn in honor of the military service of a veteran or reservist."
+summary: va-burial-flag.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: deceased_served_in_active_military
-    acceptableValues: ["yes"]
-    label: "The deceased served in the active military, naval, or air service."
+    acceptableValues: [va-burial-flag.eligibility.acceptableValues]
+    label: va-burial-flag.eligibility.label
   - criteriaKey: deceased_service_status
     acceptableValues:
       [
-        "an active-duty service member",
-        "discharged under conditions other than dishonorable",
-        "a member of the National Guard or Reserves",
+        va-burial-flag.eligibility.acceptableValues1,
+        va-burial-flag.eligibility.acceptableValues2,
+        va-burial-flag.eligibility.acceptableValues3,
       ]
   - criteriaKey: applicant_relationship
-    acceptableValues: ["spouse", "child", "parent", "other family member", "personal or official representative"]
+    acceptableValues: [va-burial-flag.eligibility.acceptableValues4, 
+    va-burial-flag.eligibility.acceptableValues5, 
+    va-burial-flag.eligibility.acceptableValues6, 
+    va-burial-flag.eligibility.acceptableValues7, 
+    va-burial-flag.eligibility.acceptableValues8]
 ---

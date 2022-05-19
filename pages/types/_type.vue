@@ -17,7 +17,9 @@
       </div>
 
       <div class="grid-row grid-gap print:display-block">
-        <div class="tablet:grid-col margin-bottom-3">Showing {{ lifeEventBenefits.length }} benefits</div>
+        <div class="tablet:grid-col margin-bottom-3">
+          {{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }} {{ $t("lifeEvent.labelShowText2") }}
+        </div>
       </div>
 
       <div class="display-none tablet:display-flex grid-row grid-gap print:display-block">
@@ -27,21 +29,21 @@
               class="usa-button usa-button--unstyled open-all"
               aria-controls="acc-id"
               @click="openAll">
-              Open All
+              {{ $t("lifeEvent.buttonLabel1") }}
             </button>
             /
             <button
               class="usa-button usa-button--unstyled close-all"
               aria-controls="acc-id"
               @click="closeAll">
-              Close All
+              {{ $t("lifeEvent.buttonLabel2") }}
             </button>
             /
             <button
               class="usa-button usa-button--unstyled clear-all"
               aria-controls="acc-id"
               @click="clearCriteria">
-              Clear Selections
+              {{ $t("lifeEvent.buttonLabel3") }}
             </button>
           </div>
         </div>
@@ -53,31 +55,31 @@
             v-if="$fetchState.pending"
             class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
             <div class="usa-alert__body">
-              <p class="usa-alert__text">Fetching benefits...</p>
+              <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.pending") }}</p>
             </div>
           </div>
           <div
             v-if="$fetchState.error"
             class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
-              <p class="usa-alert__text">Error while fetching benefits.</p>
+              <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.error") }}</p>
             </div>
           </div>
           <div
             v-if="lifeEventBenefits && lifeEventBenefits.length == 0"
             class="usa-alert usa-alert--error usa-alert--slim">
             <div class="usa-alert__body">
-              <p class="usa-alert__text">No matching benefits found.</p>
+              <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.none") }}</p>
             </div>
           </div>
           <!-- Mobile meta sort and open -->
           <div class="tablet:display-none">
-            <h2 class="font-heading-lg margin-top-1">Benefits Results</h2>
+            <h2 class="font-heading-lg margin-top-1">{{ $t("lifeEvent.benefits") }} {{ $t("lifeEvent.results") }}</h2>
             <button
               class="usa-button clear-all"
               aria-controls="acc-id"
               @click="clearCriteria">
-              Clear Selections
+              {{ $t("lifeEvent.buttonLabel3") }}
             </button>
             <OpenCloseButtons
               :is-open-active-prop="true"
@@ -111,6 +113,7 @@
 
 <script>
 import _ from "lodash"
+import { tObj, tCsv } from "~/services/translation"
 import mapTags from "~/mixins/MapTags"
 import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
@@ -134,21 +137,23 @@ export default {
   },
   async fetch() {
     this.benefitTopic = _.capitalize(_.lowerCase(this.$route.params.type))
-    const lifeEventBenefits = await this.$content("benefits")
-      .where({
-        tags: { $contains: _.lowerCase(this.$route.params.type) },
-      })
-      .sortBy("title")
-      .fetch()
-    const allEligibilityCriteria = (await this.$content("criteria").fetch()).body
+    const lifeEventBenefits = tObj.call(
+      this,
+      await this.$content("benefits")
+        .where({
+          tags: { $contains: _.lowerCase(this.$route.params.type) },
+        })
+        .sortBy("title")
+        .fetch()
+    )
+    const allEligibilityCriteria = tCsv.call(this, await this.$content("criteria").fetch()).body
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
     // eslint-d
-    
-    this.topic = await this.$content("types", this.$route.params.type)
-      .fetch()
+
+    this.topic = tObj.call(this, await this.$content("types", this.$route.params.type).fetch())
     this.topic.related = []
     for (const related of this.topic.relatedKeys || []) {
-      this.topic.related.push(await this.$content("types", related).fetch())
+      this.topic.related.push(tObj.call(this, await this.$content("types", related).fetch()))
     }
     this.lifeEventBenefits = lifeEventBenefits
   },
@@ -159,9 +164,6 @@ export default {
     }
   },
   methods: {
-    mapLifeEvents(lifeEvents) {
-      return lifeEvents.map((le) => _.lowerCase(le))
-    },
     openAll() {
       this.$refs.accordion.openAll()
     },

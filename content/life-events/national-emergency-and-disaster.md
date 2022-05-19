@@ -1,22 +1,22 @@
 ---
 # yaml front matter here
-title: "National emergency and disaster"
-summary: "If you have experience a national emergency or a disaster, help may be available, including temporary housing and financial help."
-lede: ""
-secondaryHeadline: "National emergency and disaster benefits"
+title: national-emergency-and-disaster.title
+summary: national-emergency-and-disaster.summary
+lede: national-emergency-and-disaster.lede
+secondaryHeadline: national-emergency-and-disaster.secondaryHeadline
 
-eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
+eligibilityCriteriaDescription: national-emergency-and-disaster.eligibilityCriteriaDescription
 
 eligibilityCriteria:
-  - label: "About you (the person applying for benefits)"
-    description: ""
+  - label: national-emergency-and-disaster.eligibilityCriteria.label
+    description: national-emergency-and-disaster.eligibilityCriteria.description
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_declared_disaster
       - applicant_citizen_status
 
-  - label: "Did you lose a loved one due to national emergency or disaster?"
-    description: ""
+  - label: national-emergency-and-disaster.eligibilityCriteria.label1
+    description: national-emergency-and-disaster.eligibilityCriteria.description1
     criteriaGroupKey: deceased
     criteriaKeys:
       - deceased_died_of_COVID
