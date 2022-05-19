@@ -8,12 +8,16 @@ describe("Footer", () => {
   })
 
   it("is a Vue instance", () => {
-    const wrapper = mount(Footer)
+    const wrapper = mount(Footer, {
+      $i18n: { locale: "en" },
+    })
     expect(wrapper.vm).toBeTruthy()
   })
 
   it("should fetch a disclaimer", async () => {
-    const wrapper = mount(Footer)
+    const wrapper = mount(Footer, {
+      $i18n: { locale: "en" },
+    })
     const disclaimer = { body: "disclaimer" }
     wrapper.vm.$options.$content = () => ({
       fetch: () => {

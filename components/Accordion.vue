@@ -45,14 +45,13 @@
           <h3
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
-            Provided by
-            <a
+            {{ $t("accordion.provided") }}
+            <!-- //NOSONAR --><a
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
-              >{{ benefit.source.name }}</a
-            >
-            <!-- //NOSONAR -->
+              rel="noopener"
+              >{{ benefit.source.name }}</a>
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -74,14 +73,14 @@
           style="padding-left: 0"
           :aria-label="`Choices for ${benefit.title}`">
           <li class="usa-button-group__item">
-            <a
+            <!-- //NOSONAR --><a
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
+              rel="noopener"
               :aria-label="`How to apply for ${benefit.title}`"
               class="usa-button print:display-none">
-              How to Apply
+              {{ $t("accordion.apply") }}
             </a>
-            <!-- //NOSONAR -->
           </li>
         </ul>
       </div>
@@ -189,12 +188,11 @@ export default {
       }
       return "border-gray-30"
     },
-
     getCriteriaMatchLanguage(eligibilityCriteria) {
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
-        return "(you are not eligible)"
+        return "(" + this.$t("accordion.not_eligible") + ")"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
-        return "(you might be eligible)"
+        return "(" + this.$t("accordion.eligible") + ")"
       }
       return null
     },

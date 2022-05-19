@@ -1,31 +1,31 @@
 ---
 # yaml front matter here
-title: "School and education"
-summary: "Find out what help is available as you pursue your education, including loans, grants, and guidance."
-lede: ""
-secondaryHeadline: "School and education benefits"
+title: school-and-education.title
+summary: school-and-education.summary
+lede: school-and-education.lede
+secondaryHeadline: school-and-education.secondaryHeadline
 
-eligibilityCriteriaDescription: "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results."
+eligibilityCriteriaDescription: school-and-education.eligibilityCriteriaDescription
 
 topLevelFilter:
-  - label: "Start here"
+  - label: school-and-education.topLevelFilter.label
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
 
-  - label: ""
+  - label: school-and-education.topLevelFilter.label1
     criteriaKey: applicant_served_in_active_military
     disableGroupKey: applicant-military
-    disableGroupWhen: ["no"]
+    disableGroupWhen: [school-and-education.topLevelFilter.disableGroupWhen]
 
-  - label: ""
+  - label: school-and-education.topLevelFilter.label2
     criteriaKey: applicant_lost_a_family_member
     disableGroupKey: applicant-relationships
-    disableGroupWhen: ["no"]
+    disableGroupWhen: [school-and-education.topLevelFilter.disableGroupWhen1]
 
 eligibilityCriteria:
-  - label: "About you (the person applying for benefits)"
-    description: ""
+  - label: school-and-education.eligibilityCriteria.label
+    description: school-and-education.eligibilityCriteria.description
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_high-school_diploma
@@ -33,16 +33,16 @@ eligibilityCriteria:
       - applicant_citizen_status
       - applicant_family_of_service_member
 
-  - label: "About your military service"
-    description: ""
+  - label: school-and-education.eligibilityCriteria.label1
+    description: school-and-education.eligibilityCriteria.description1
     criteriaGroupKey: applicant-military
     criteriaKeys:
       - applicant_service_status
       - applicant_disability
       - applicant_service_disability
 
-  - label: "About the person who died"
-    description: ""
+  - label: school-and-education.eligibilityCriteria.label2
+    description: school-and-education.eligibilityCriteria.description2
     criteriaGroupKey: applicant-relationships
     criteriaKeys:
       - applicant_relationship

@@ -1,23 +1,23 @@
 ---
-title: "Retirement Benefits"
-headline: "Retirement Benefits"
+title: ssa-retirement-benefits.title
+headline: ssa-retirement-benefits.headline
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "late-adulthood"
+  - retirement
+  - late-adulthood
 source:
-  name: "Social Security Administration"
-  link: https://www.ssa.gov/benefits/retirement/
+  name: ssa-retirement-benefits.source.name
+  link: ssa-retirement-benefits.source.link
 
-summary: "Social Security is part of the retirement plan for almost every American worker. It provides replacement income for qualified retirees and their families."
+summary: ssa-retirement-benefits.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_paid_into_SS
     acceptableValues: [true]
   - criteriaKey: applicant_date_of_birth
-    label: "You are at least 62 years old."
+    label: ssa-retirement-benefits.eligibility.label
     acceptableValues: [">62years"]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]

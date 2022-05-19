@@ -1,22 +1,23 @@
 ---
-title: "Retirement Benefits for Mothers/Fathers"
-headline: "Retirement Benefits for Mothers/Fathers"
+title: ssa-retirement-benefits-mothers-fathers.title
+headline: ssa-retirement-benefits-mothers-fathers.headline
 tags:
-  - "financial assistance"
+  - financial assistance
 lifeEvents:
-  - "retirement"
-  - "late-adulthood"
-  - "loss-of-job-and-low-income"
+  - retirement
+  - late-adulthood
+  - loss-of-job-and-low-income
 source:
-  name: "Social Security Administration"
-  link: https://www.ssa.gov/benefits/retirement/
+  name: ssa-retirement-benefits-mothers-fathers.source.name
+  link: ssa-retirement-benefits-mothers-fathers.source.link
 
-summary: "Social Security is part of the retirement plan for almost every American worker. It provides replacement income for qualified retirees and their families."
+summary: ssa-retirement-benefits-mothers-fathers.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_marital_status
-    acceptableValues: ["unmarried", "divorced"]
+    acceptableValues: [ssa-retirement-benefits-mothers-fathers.eligibility.acceptableValues, 
+    ssa-retirement-benefits-mothers-fathers.eligibility.acceptableValues1]
   - criteriaKey: applicant_care_for_child
     acceptableValues: [true]
   - criteriaKey: applicant_citizen_status

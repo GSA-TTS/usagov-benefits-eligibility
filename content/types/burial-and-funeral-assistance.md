@@ -1,7 +1,7 @@
 ---
-title: "Burial and funeral assistance"
-summary: "Financial or transportation assistance, in addition to burial in a VA national cemetery and memorials for some deceased veterans."
-lede: "Financial or transportation assistance, in addition to burial in a VA national cemetery and memorials for some deceased veterans."
+title: burial-and-funeral-assistance.title
+summary: burial-and-funeral-assistance.summary
+lede: burial-and-funeral-assistance.lede
 
 relatedKeys:
   - financial-assistance

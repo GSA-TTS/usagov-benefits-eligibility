@@ -3,9 +3,9 @@
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
-          <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">Benefits by type</h1>
+          <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">{{ $t("types.sort") }}</h1>
           <p class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
-            If you know the specific type of benefit you are looking for, select it below.
+            {{ $t("types.heading") }}
           </p>
         </div>
       </div>
@@ -19,16 +19,16 @@
               v-for="tag in mapTags(lifeEventTags)"
               :key="tag.slug"
               class="usa-card desktop:grid-col-6"
-              :aria-label="tag.title">
+              :aria-label="$t(tag.title)">
               <nuxt-link
-                :to="`/types/${tag.slug}`"
+                :to="localePath(`/types/${tag.slug}`)"
                 class="display-block height-full margin-x-1"
                 style="text-decoration: none; outline-offset: 0.25rem">
                 <Card
-                  :card-title="tag.title"
+                  :card-title="$t(tag.title)"
                   card-title-heading-level="h2"
                   :card-container-classes="['hover:border-base-light', 'margin-x-0']"
-                  :card-body="tag.summary" />
+                  :card-body="$t(tag.summary)" />
               </nuxt-link>
             </li>
           </ul>

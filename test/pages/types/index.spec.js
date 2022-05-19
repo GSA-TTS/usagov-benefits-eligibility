@@ -38,7 +38,7 @@ describe("pages/types/_type.vue", () => {
       return contentMock
     }
     const wrapper = shallowMount(Page)
-    const result = await wrapper.vm.$options.asyncData({ $content })
+    const result = await wrapper.vm.$options.asyncData({ $content, i18n: { locale: "en" } })
     expect(result.lifeEventTags.join()).toBe("five,four,one,three,two")
   })
 

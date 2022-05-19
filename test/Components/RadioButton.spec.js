@@ -98,7 +98,6 @@ describe("<Radio/>", () => {
     const choices = wrapper.findAll('input[type="radio"]')
     await choices.at(0).setChecked()
     expect(choices.at(0).element.value).toBe(VALUE_ONE)
-    expect(wrapper.find(".text-base").classes()).toContain("font-weight-normal")
   })
 
   test("component has disabled styles when disabled", () => {

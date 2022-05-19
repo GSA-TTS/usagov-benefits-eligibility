@@ -14,6 +14,30 @@ export default function beforeAllTests() {
   config.stubs.NuxtLink = { template: "<a><slot /></a>" }
   config.stubs.NuxtContent = { template: "<div><slot /></div>" }
   config.stubs.ClientOnly = { template: "<div><slot /></div>" }
+  config.mocks.$i18n = {
+    locale: "en",
+    setLocale: (locale) => {
+      config.mocks.$i18n.locale = locale
+    },
+  }
+  config.mocks["i18n"] = {
+    locale: "en",
+    setLocale: (locale) => {
+      config.mocks.$i18n.locale = locale
+    },
+  }
+  config.provide["$i18n"] = {
+    locale: "en",
+    setLocale: (locale) => {
+      config.mocks.$i18n.locale = locale
+    },
+  }
+  config.provide["i18n"] = {
+    locale: "en",
+    setLocale: (locale) => {
+      config.mocks.$i18n.locale = locale
+    },
+  }
   Vue.use(Vuex)
   process.server = true
 }

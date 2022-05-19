@@ -1,7 +1,7 @@
 ---
-title: "Centers for Medicare and Medicaid"
-summary: "Administers Medicare, Medicaid, and the Health Insurance Exchanges."
-lede: "Administers Medicare, Medicaid, and the Health Insurance Exchanges."
+title: centers-for-medicare-and-medicaid.title
+summary: centers-for-medicare-and-medicaid.summary
+lede: centers-for-medicare-and-medicaid.lede
 
 relatedKeys:
   - social-security-administration

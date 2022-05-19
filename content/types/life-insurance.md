@@ -1,5 +1,5 @@
 ---
-title: "Life Insurance"
-summary: "Life insurance, especially insurance associated with military service."
-lede: "Life insurance, especially insurance associated with military service."
+title: life-insurance.title
+summary: life-insurance.summary
+lede: life-insurance.lede
 ---

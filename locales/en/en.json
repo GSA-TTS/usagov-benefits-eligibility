@@ -1,0 +1,185 @@
+{
+  "projectName": "Benefits Eligibility Awareness Resource",
+  "banner": {
+    "official": "An official website of the United States government",
+    "know": "Here’s how you know",
+    "dropdown": {
+      "official": "Official websites use .gov",
+      "officialDetailsDotGovPrefix": "A ",
+      "officialDetails": " website belongs to an official government organization in the United States.",
+      "secure": "Secure .gov websites use HTTPS",
+      "secureDetailsLockPrefix": "A",
+      "secureDetailsLockStrong": "lock",
+      "secureDetailsLockPostfix": "or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites."
+    }
+  },
+  "accordion": {
+    "provided": "Provided by",
+    "apply": "How to Apply",
+    "not_eligible": "you are not eligible",
+    "eligible": "you might be eligible"
+  },
+  "criteria_group": {
+    "non_selected": "No eligibility criteria selected"
+  },
+  "dateInput": {
+    "month": "Month",
+    "day": "Day",
+    "year": "Year",
+    "Please enter a valid date.": "Please enter a valid date."
+  },
+  "eligibilityList": {
+    "heading": "Key eligibility criteria",
+    "you_must": "You must meet all criteria. You currently meet",
+    "of": "of",
+    "additional": "Additional eligibility criteria may apply.",
+    "review": "Please review the full requirements at",
+    "match": "This criteria matched",
+    "remove": "This criteria removed this benefit",
+    "noMatch": "This criteria has not matched"
+  },
+  "skipnav": "Skip to main content",
+  "returnToTop": "Return to top",
+  "utilityNav": {
+    "linkOne": "Benefits by life events",
+    "linkTwo": "Benefits by type",
+    "linkThree": "Benefits by agency"
+  },
+  "header": {
+    "menu": "MENU",
+    "main": "Main Navigation",
+    "GroupOne": "All Topics and Services",
+    "GroupTwo": {
+      "title": "About the U.S.",
+      "linkOne": "Branches of the U.S. Government",
+      "linkTwo": "Budget of the U.S. Government",
+      "linkThree": "Data and Statistics About the U.S.",
+      "linkFour": "History and Historical Documents",
+      "linkFive": "American Flag",
+      "linkSix": "Learn About Life in the U.S.",
+      "linkSeven": "Presidents, Vice Presidents, and First Ladies",
+      "linkEight": "Government Agencies and Elected Officials",
+      "linkNine": "Laws and Legal Issues"
+    },
+    "GroupThree": {
+      "title": "Benefits, Grants, Loans",
+      "linkOne": "Benefits",
+      "linkTwo": "State Social Service Agencies",
+      "linkThree": "Help with Bills",
+      "linkFour": "Grants and Loans",
+      "linkFive": "Food Assistance",
+      "linkSix": "Social Security Questions",
+      "linkSeven": "Affordable Rental Housing",
+      "linkEight": "Financial Aid for Students",
+      "linkNine": "Military Programs and Benefits",
+      "linkTen": "Retirement",
+      "linkEleven": "Unemployment Help"
+    },
+    "GroupFour": {
+      "title": "Government Agencies and Elected Officials",
+      "linkOne": "A-Z Index of U.S. Government Agencies",
+      "linkTwo": "State, Local, and Tribal Governments",
+      "linkThree": "Contact Elected Officials",
+      "linkFour": "Forms, by Agency",
+      "linkFive": "Buying from the U.S. Government",
+      "linkSix": "About the U.S.",
+      "linkSeven": "Branches of the U.S. Government",
+      "linkEight": "Budget of the U.S. Government"
+    },
+    "GroupFive": {
+      "title": "Jobs and Unemployment",
+      "linkOne": "Looking for a New Job",
+      "linkTwo": "Unemployment Help",
+      "linkThree": "Labor Laws and Issues",
+      "linkFour": "U.S. Government Employees",
+      "linkFive": "Retirement",
+      "linkSix": "Small Business"
+    },
+    "GroupSix": {
+      "title": "Money and Taxes",
+      "linkOne": "Taxes",
+      "linkTwo": "Credit and Debt",
+      "linkThree": "Spending, Saving and Investing",
+      "linkFour": "Unclaimed Money from the Government",
+      "linkFive": "Currency",
+      "linkSix": "Benefits, Grants, Loans",
+      "linkSeven": "Consumer Issues",
+      "linkEight": "Housing",
+      "linkNine": "Retirement"
+    },
+    "GroupSeven": {
+      "title": "Travel and Immigration",
+      "linkOne": "Passports and International Travel",
+      "linkTwo": "Immigration and Citizenship",
+      "linkThree": "Visas and Visiting the U.S.",
+      "linkFour": "Recreation and Travel within the U.S."
+    },
+    "meta": {
+      "search": "Search",
+      "placeholder": "Search All Government",
+      "back": "Benefits, Grants, Loans",
+      "language": "Español"
+    }
+  },
+  "buttons": {
+    "open_all": "Open All",
+    "close_all": "Close All",
+    "my_selections": "my selections"
+  },
+  "radio": {
+    "not_applicable": "not applicable"
+  },
+  "shareResults": {
+    "description": "Copy a link to this page with the criteria you selected above. Make sure to share it only with those you trust as\nyour answers will be visible.",
+    "linkCopied": "Link with my selections is copied",
+    "copy": "Copy my selections",
+    "email": "Email my selections"
+  },
+  "footer": {
+    "GroupOne": {
+      "header": "About USA.gov",
+      "linkOne": "About Us and Site Notices",
+      "linkTwo": "For the Media",
+      "linkThree": "For Developers",
+      "linkFour": "Report a Website Issue",
+      "linkFive": "All Topics and Services"
+    },
+    "GroupTwo": {
+      "header": "Ask USA.gov a Question",
+      "linkOne": "Call 1-844-USAGOV1 (1-844-872-4681)",
+      "linkTwo": "En Español"
+    },
+    "GroupThree": {
+      "header": "Sign Up to Receive Email Updates",
+      "formLabel": "Enter your email",
+      "buttonText": "Sign Up"
+    },
+    "subFooter": "USAGov is the Official Guide to Government Information and Services"
+  },
+  "lifeEvent": {
+    "buttonLabel1": "Open All",
+    "buttonLabel2": "Close All",
+    "buttonLabel3": "Clear Selections",
+    "important": "Important information",
+    "benefits": "Benefits",
+    "results": "Results",
+    "labelShowText": "Showing",
+    "labelShowText2": "related benefits sorted by:",
+    "option1": "Relevance",
+    "option2": "Title (A-Z)",
+    "eligibilityCriteria": "Eligibility Criteria",
+    "currentlyViewing": "Currently viewing",
+    "fetchState": {
+      "pending": "Fetching benefits...",
+      "error": "Error while fetching benefits.",
+      "none": "No matching benefits found."
+    }
+  },
+  "types": {
+    "heading": "If you know the specific type of benefit you are looking for, select it below.",
+    "sort": "Benefits by type"
+  },
+  "agency": {
+    "sort": "Benefits by agency"
+  }
+}
