@@ -13,79 +13,32 @@
             class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
             {{ lifeEvent.lede }}
           </p>
-          <ol class="usa-process-list">
+          <ol class="usa-process-list margin-bottom-5">
             <li
-              v-for="step in landingPage.processListSteps"
+              v-for="(step, index) in landingPage.processListSteps"
               :key="step"
               class="usa-process-list__item padding-bottom-4">
-              <p class="usa-process-list__heading font-sans-md tablet:font-sans-lg line-height-sans-1">
+              <p
+                class="usa-process-list__heading font-sans-md tablet:font-sans-lg line-height-sans-1 usagov-heading--blue">
                 {{ step }}
               </p>
+              <div v-if="index == 1">
+                <p>{{ disclaimer.bullet }}</p>
+                <p>{{ disclaimer.bullet1 }}</p>
+              </div>
             </li>
           </ol>
         </div>
       </div>
-      <!-- Desktop meta sort and open -->
-      <div
-        aria-label="Benefit accordion controls"
-        role="complementary"
-        class="display-none tablet:display-flex grid-row grid-gap print:display-none">
-        <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div>
-        <div class="tablet:grid-col-4 desktop:grid-col-3 display-flex flex-align-center margin-y-2 print:display-none">
-          <div>
-            <button
-              class="usa-button usa-button--unstyled open-all"
-              aria-controls="acc-id"
-              @click="openAll">
-              {{ $t("lifeEvent.buttonLabel1") }}
-            </button>
-            /
-            <button
-              class="usa-button usa-button--unstyled close-all"
-              aria-controls="acc-id"
-              @click="closeAll">
-              {{ $t("lifeEvent.buttonLabel2") }}
-            </button>
-            /
-            <button
-              class="usa-button usa-button--unstyled clear-all"
-              aria-controls="acc-id"
-              @click="clearCriteria">
-              {{ $t("lifeEvent.buttonLabel3") }}
-            </button>
-          </div>
-        </div>
-        <div class="grid-col margin-y-2 text-right">
-          <label
-            class="usa-label display-inline margin-right-1"
-            for="benefitSort"
-            >{{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }} {{ $t("lifeEvent.labelShowText2") }}
-            <select
-              id="benefitSort"
-              class="usa-select margin-left-auto width-card display-inline-block"
-              name="benefitSort"
-              aria-label="Sort benefits by"
-              @change="sortChange">
-              <option
-                value="relevance"
-                :selected="sort === 'relevance'">
-                {{ $t("lifeEvent.option1") }}
-              </option>
-              <option
-                value="title"
-                :selected="sort === 'title'">
-                {{ $t("lifeEvent.option2") }}
-              </option>
-            </select>
-          </label>
-        </div>
-      </div>
 
-      <div class="grid-row grid-gap print:display-block">
+      <div class="grid-row tablet:grid-gap-6 print:display-block">
         <div
-          class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade padding-2 radius-md">
+          class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto padding-y-2 margin-top-0 padding-top-0">
           <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
           <div>
+            <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
+              {{ $t("eligibilityList.left-rail-heading") }}
+            </h2>
             <div v-if="filter">
               <div
                 class="margin-bottom-3"
@@ -112,32 +65,89 @@
               </div>
             </div>
             <div class="margin-bottom-2 display-flex print:display-none">
-              <div class="text-primary">
+              <div class="text-ink">
                 <svg
-                  class="usa-icon usa-icon--size-3"
+                  class="usa-icon usa-icon--size-3 margin-right-1"
                   aria-labelledby="eligibility-section-criteria-icon-title"
                   focusable="false"
                   role="img">
                   <title id="eligibility-section-criteria-icon-title">{{ $t("lifeEvent.important") }}</title>
-                  <use xlink:href="~/assets/img/sprite.svg#priority_high" />
+                  <use xlink:href="~/assets/img/sprite.svg#warning" />
                 </svg>
               </div>
               <div class="font-body-md usa-icon-list">
                 {{ lifeEvent.eligibilityCriteriaDescription }}
               </div>
             </div>
-
+          </div>
+          <div class="shade">
             <CriteriaGroup
               :life-event-criteria="lifeEvent.eligibilityCriteria"
               :top-level-filters="lifeEvent.topLevelFilter" />
-            <share-results @print="openAll()" />
+            <div class="padding-2">
+              <share-results @print="openAll()" />
+            </div>
           </div>
         </div>
         <div class="margin-top-2 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
-          <!-- Mobile meta sort and open -->
-          <h2 class="tablet:display-none font-heading-lg margin-top-6">
-            {{ $t("lifeEvent.benefits") }}{{ $t("lifeEvent.results") }}
+          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
+            {{ $t("eligibilityList.right-rail-heading") }}
           </h2>
+          <!-- Desktop meta sort and open -->
+          <div
+            aria-label="Benefit accordion controls"
+            role="complementary"
+            class="display-none tablet:display-flex grid-row grid-gap print:display-none">
+            <div class="tablet:grid-col desktop:grid-col display-flex flex-align-center margin-y-2 print:display-none">
+              <div>
+                <button
+                  class="usa-button usa-button--unstyled open-all"
+                  aria-controls="acc-id"
+                  @click="openAll">
+                  {{ $t("lifeEvent.buttonLabel1") }}
+                </button>
+                /
+                <button
+                  class="usa-button usa-button--unstyled close-all"
+                  aria-controls="acc-id"
+                  @click="closeAll">
+                  {{ $t("lifeEvent.buttonLabel2") }}
+                </button>
+                /
+                <button
+                  class="usa-button usa-button--unstyled clear-all"
+                  aria-controls="acc-id"
+                  @click="clearCriteria">
+                  {{ $t("lifeEvent.buttonLabel3") }}
+                </button>
+              </div>
+            </div>
+            <div class="grid-col-auto margin-y-2 text-right">
+              <label
+                class="usa-label display-inline"
+                for="benefitSort"
+                >{{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }} {{ $t("lifeEvent.labelShowText2") }}
+                <select
+                  id="benefitSort"
+                  class="usa-select margin-left-auto width-card display-inline-block"
+                  name="benefitSort"
+                  aria-label="Sort benefits by"
+                  @change="sortChange">
+                  <option
+                    value="relevance"
+                    :selected="sort === 'relevance'">
+                    {{ $t("lifeEvent.option1") }}
+                  </option>
+                  <option
+                    value="title"
+                    :selected="sort === 'title'">
+                    {{ $t("lifeEvent.option2") }}
+                  </option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <!-- Mobile meta sort and open -->
           <div
             aria-label="Benefit accordion controls"
             role="complementary"
@@ -246,6 +256,7 @@ export default {
       lifeEventBenefits: [],
       allLifeEventBenefits: [],
       sort: "relevance",
+      disclaimer: {},
     }
   },
 
@@ -269,6 +280,7 @@ export default {
     }
     this.lifeEvent = tObj.call(this, lifeEvent)
     this.allLifeEventBenefits = this.lifeEventBenefits = lifeEventBenefits.map((benefit) => tObj.call(this, benefit))
+    this.disclaimer = tObj.call(this, await this.$content("disclaimer").fetch())
   },
   /* istanbul ignore next */
   head() {
@@ -373,15 +385,32 @@ export default {
       this.filter = ""
       this.lifeEventBenefits = this.allLifeEventBenefits
       this.sortBenefits()
-    // this.$nextTick(() => this.$refs.accordion.focus())
+      // this.$nextTick(() => this.$refs.accordion.focus())
     },
   },
 }
 </script>
 
-<style scoped>
+<style
+  type="scss"
+  scoped>
+.shade {
+  background-color: #ebe6de;
+}
 .benefit-list-move {
   transition: transform 2s;
+}
+.usagov-header--font-size {
+  font-size: 1.45rem;
+}
+/* process list */
+.usa-process-list__item::before {
+  background-color: #154285;
+  color: #fff;
+  border: 0.25rem solid transparent;
+}
+.usa-process-list__item {
+  border-left: 0.5rem solid #ebe6de;
 }
 
 /*
@@ -391,6 +420,9 @@ uswds breakpoints https://designsystem.digital.gov/utilities/layout-grid/
 @media only screen and (min-width: 640px) {
   .usa-process-list > .usa-process-list__item:last-child {
     padding-bottom: 0;
+  }
+  .usagov-header--font-size {
+    font-size: 1.75rem;
   }
 }
 </style>

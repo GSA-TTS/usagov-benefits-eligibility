@@ -840,11 +840,11 @@
         </div>
       </nav>
     </header>
-    <div class="grid-container margin-y-2">
+    <nav class="grid-container margin-y-2">
       <div class="display-row display-flex flex-justify flex-align-center">
         <a
           href="https://www.usa.gov/benefits-grants-loans"
-          class="back-benefit font-serif-md">
+          class="back-benefit font-serif-md text-bold">
           {{ $t("header.meta.back") }}
         </a>
         <button
@@ -855,7 +855,7 @@
           {{ $t("header.meta.language") }}
         </button>
       </div>
-    </div>
+    </nav>
   </div>
 </template>
 <script>
