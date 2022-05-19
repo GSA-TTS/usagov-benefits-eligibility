@@ -36,7 +36,9 @@
           class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto padding-y-2 margin-top-0 padding-top-0">
           <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
           <div>
-            <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">Answer a Few Questions</h2>
+            <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
+              {{ $t("eligibilityList.left-rail-heading") }}
+            </h2>
             <div v-if="filter">
               <div
                 class="margin-bottom-3"
@@ -88,7 +90,9 @@
           </div>
         </div>
         <div class="margin-top-2 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
-          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">Potential Federal Benefits</h2>
+          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
+            {{ $t("eligibilityList.right-rail-heading") }}
+          </h2>
           <!-- Desktop meta sort and open -->
           <div
             aria-label="Benefit accordion controls"
@@ -144,9 +148,6 @@
             </div>
           </div>
           <!-- Mobile meta sort and open -->
-          <h2 class="tablet:display-none font-heading-lg margin-top-6">
-            {{ $t("lifeEvent.benefits") }}{{ $t("lifeEvent.results") }}
-          </h2>
           <div
             aria-label="Benefit accordion controls"
             role="complementary"
@@ -400,7 +401,7 @@ export default {
   transition: transform 2s;
 }
 .usagov-header--font-size {
-  font-size: 1.75rem;
+  font-size: 1.45rem;
 }
 /* process list */
 .usa-process-list__item::before {
@@ -419,6 +420,9 @@ uswds breakpoints https://designsystem.digital.gov/utilities/layout-grid/
 @media only screen and (min-width: 640px) {
   .usa-process-list > .usa-process-list__item:last-child {
     padding-bottom: 0;
+  }
+  .usagov-header--font-size {
+    font-size: 1.75rem;
   }
 }
 </style>
