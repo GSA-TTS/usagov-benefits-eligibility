@@ -8,7 +8,7 @@ lifeEvents:
   - school-and-education
 source:
   name: doj-public-safety-officers-educational-assistance.source.name
-  link: https://psob.bja.ojp.gov/PSOB_Education2018.pdf
+  link: doj-public-safety-officers-educational-assistance.source.link
 
 summary: doj-public-safety-officers-educational-assistance.summary
 

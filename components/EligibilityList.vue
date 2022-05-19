@@ -21,13 +21,13 @@
               'usa-icon-list__icon',
               'print:display-none',
               {
-                'text-success-dark text-bold': doesCriterionMatchSelection(criterion) === true,
+                'text-success-dark': doesCriterionMatchSelection(criterion) === true,
               },
               {
                 'text-base': doesCriterionMatchSelection(criterion) === null,
               },
               {
-                'text-error-dark text-bold': doesCriterionMatchSelection(criterion) === false,
+                'text-error-dark': doesCriterionMatchSelection(criterion) === false,
               },
             ]">
             <svg
@@ -52,20 +52,20 @@
               </title>
               <use
                 v-if="doesCriterionMatchSelection(criterion) == true"
-                xlink:href="~/assets/img/sprite.svg#check_circle" />
+                xlink:href="~/assets/img/sprite.svg#check" />
               <use
                 v-else-if="doesCriterionMatchSelection(criterion) == false"
-                xlink:href="~/assets/img/sprite.svg#highlight_off" />
+                xlink:href="~/assets/img/sprite.svg#close" />
               <use
                 v-else
-                xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
+                xlink:href="~/assets/img/sprite.svg#remove" />
             </svg>
             <svg
               v-else
               class="usa-icon"
               :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img">
-              <use xlink:href="~/assets/img/sprite.svg#check_circle" />
+              <use xlink:href="~/assets/img/sprite.svg#check" />
             </svg>
           </div>
           <div
@@ -89,20 +89,20 @@
               role="img">
               <use
                 v-if="doesCriterionMatchSelection(criterion) == true"
-                xlink:href="~/assets/img/sprite.svg#check_circle" />
+                xlink:href="~/assets/img/sprite.svg#check" />
               <use
                 v-else-if="doesCriterionMatchSelection(criterion) == false"
-                xlink:href="~/assets/img/sprite.svg#highlight_off" />
+                xlink:href="~/assets/img/sprite.svg#close" />
               <use
                 v-else
-                xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
+                xlink:href="~/assets/img/sprite.svg#remove" />
             </svg>
             <svg
               v-else
               class="usa-icon"
               :aria-labelledby="`eligibility-icon-${criterion.criteriaKey}-title-${_uid}`"
               role="img">
-              <use xlink:href="~/assets/img/sprite.svg#radio_button_unchecked" />
+              <use xlink:href="~/assets/img/sprite.svg#remove" />
             </svg>
           </div>
 
@@ -110,16 +110,7 @@
             :class="[
               'usa-icon-list__content',
               {
-                'text-success-dark text-bold': doesCriterionMatchSelection(criterion) === true,
-              },
-              {
-                'text-base-dark': doesCriterionMatchSelection(criterion) === null,
-              },
-              {
                 'print:text-base-darker': doesCriterionMatchSelection(criterion) === null,
-              },
-              {
-                'text-error-dark text-bold': doesCriterionMatchSelection(criterion) === false,
               },
             ]">
             <span>
@@ -210,5 +201,9 @@ export default {
 <style scoped>
 .usa-icon-list {
   max-width: none;
+}
+.usa-icon {
+  height: 1.75rem;
+  width: 1.75rem;
 }
 </style>

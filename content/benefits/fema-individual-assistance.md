@@ -7,7 +7,7 @@ lifeEvents:
   - national-emergency-and-disaster
 source:
   name: fema-individual-assistance.source.name
-  link: https://www.disasterassistance.gov/
+  link: fema-individual-assistance.source.link
 
 summary: fema-individual-assistance.summary
 

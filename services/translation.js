@@ -37,8 +37,8 @@ function translateCsv(csvRows) {
     if (newRow.values.includes(";")) {
       newRow.values = newRow.values.split(";")
       let newRowValueString = ""
-      for (let j = 0; j < newRow.values.length; j++) {
-        newRowValueString += this.$t(newRow.values[j]) + "; "
+      for (const value of newRow.values) {
+        newRowValueString += this.$t(value) + "; "
       }
       newRow.values = newRowValueString.slice(0, -4)
     }

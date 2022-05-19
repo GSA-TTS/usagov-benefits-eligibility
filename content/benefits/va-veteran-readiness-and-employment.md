@@ -9,7 +9,7 @@ lifeEvents:
   - disability
 source:
   name: va-veteran-readiness-and-employment.source.name
-  link: https://www.va.gov/careers-employment/vocational-rehabilitation/eligibility/
+  link: va-veteran-readiness-and-employment.source.link
 
 summary: va-veteran-readiness-and-employment.summary
 

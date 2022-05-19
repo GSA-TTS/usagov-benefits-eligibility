@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-life-insurance-for-survivors.source.name
-  link: https://www.benefits.va.gov/INSURANCE/sglivgli.asp
+  link: va-life-insurance-for-survivors.source.link
 
 summary: va-life-insurance-for-survivors.summary
 

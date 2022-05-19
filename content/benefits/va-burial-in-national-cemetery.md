@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-burial-in-national-cemetery.source.name
-  link: https://www.va.gov/burials-memorials/eligibility/
+  link: va-burial-in-national-cemetery.source.link
 
 summary: va-burial-in-national-cemetery.summary
 

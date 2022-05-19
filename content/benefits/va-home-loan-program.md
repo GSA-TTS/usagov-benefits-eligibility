@@ -7,7 +7,7 @@ lifeEvents:
   - military-service
 source:
   name: va-home-loan-program.source.name
-  link: https://www.va.gov/housing-assistance/home-loans/eligibility/
+  link: va-home-loan-program.source.link
 
 summary: va-home-loan-program.summary
 

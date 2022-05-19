@@ -8,7 +8,7 @@ lifeEvents:
   - retirement
 source:
   name: cms-medicare-retirement.source.name
-  link: https://www.medicare.gov/sign-up-change-plans/get-started-with-medicare
+  link: cms-medicare-retirement.source.link
 
 summary: cms-medicare-retirement.summary
 

@@ -7,7 +7,7 @@ lifeEvents:
   - military-service
 source:
   name: va-program-of-comprehensive-assistance-for-family-caregivers.source.name
-  link: https://www.va.gov/family-member-benefits/comprehensive-assistance-for-family-caregivers/
+  link: va-program-of-comprehensive-assistance-for-family-caregivers.source.link
 
 summary: va-program-of-comprehensive-assistance-for-family-caregivers.summary
 

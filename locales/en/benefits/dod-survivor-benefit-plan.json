@@ -2,6 +2,7 @@
   "dod-survivor-benefit-plan.title": "Survivor Benefit Plan",
   "dod-survivor-benefit-plan.headline": "Survivor Benefit Plan",
   "dod-survivor-benefit-plan.source.name": "Department of Defense",
+  "dod-survivor-benefit-plan.source.link": "https://militarypay.defense.gov/Benefits/Survivor-Benefit-Program/",
   "dod-survivor-benefit-plan.summary": "Survivors of deceased active duty service members and some retired and reserve members may be eligible for up to 55% of the member's retired pay.",
   "dod-survivor-benefit-plan.eligibility.acceptableValues": "yes",
   "dod-survivor-benefit-plan.eligibility.label": "The deceased served in the active military, naval, or air service.",

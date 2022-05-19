@@ -8,7 +8,7 @@ lifeEvents:
   - pregnancy-and-baby
 source:
   name: cms-medicaid.source.name
-  link: https://www.medicaid.gov/
+  link: cms-medicaid.source.link
 
 summary: cms-medicaid.summary
 

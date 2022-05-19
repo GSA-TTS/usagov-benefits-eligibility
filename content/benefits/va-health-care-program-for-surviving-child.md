@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-health-care-program-for-surviving-child.source.name
-  link: https://www.va.gov/health-care/family-caregiver-benefits/champva/
+  link: va-health-care-program-for-surviving-child.source.link
 
 summary: va-health-care-program-for-surviving-child.summary
 

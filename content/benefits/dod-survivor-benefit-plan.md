@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: dod-survivor-benefit-plan.source.name
-  link: https://militarypay.defense.gov/Benefits/Survivor-Benefit-Program/
+  link: dod-survivor-benefit-plan.source.link
 
 summary: dod-survivor-benefit-plan.summary
 

@@ -46,13 +46,12 @@
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
             {{ $t("accordion.provided") }}
-            <a
+            <!-- //NOSONAR --><a
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
-              >{{ benefit.source.name }}</a
-            >
-            <!-- //NOSONAR -->
+              rel="noopener"
+              >{{ benefit.source.name }}</a>
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -74,14 +73,14 @@
           style="padding-left: 0"
           :aria-label="`Choices for ${benefit.title}`">
           <li class="usa-button-group__item">
-            <a
+            <!-- //NOSONAR --><a
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
+              rel="noopener"
               :aria-label="`How to apply for ${benefit.title}`"
               class="usa-button print:display-none">
               {{ $t("accordion.apply") }}
             </a>
-            <!-- //NOSONAR -->
           </li>
         </ul>
       </div>
