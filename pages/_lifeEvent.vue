@@ -18,7 +18,8 @@
               v-for="(step, index) in landingPage.processListSteps"
               :key="step"
               class="usa-process-list__item padding-bottom-4">
-              <p class="usa-process-list__heading font-sans-md tablet:font-sans-lg line-height-sans-1">
+              <p
+                class="usa-process-list__heading font-sans-md tablet:font-sans-lg line-height-sans-1 usagov-heading--blue">
                 {{ step }}
               </p>
               <div v-if="index == 1">
@@ -35,7 +36,7 @@
           class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto padding-y-2 margin-top-0 padding-top-0">
           <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
           <div>
-            <h2 class="font-family-serif usagov--header">Answer a Few Questions</h2>
+            <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">Answer a Few Questions</h2>
             <div v-if="filter">
               <div
                 class="margin-bottom-3"
@@ -77,21 +78,22 @@
               </div>
             </div>
           </div>
-          <div class="padding-2 shade">
+          <div class="shade">
             <CriteriaGroup
               :life-event-criteria="lifeEvent.eligibilityCriteria"
               :top-level-filters="lifeEvent.topLevelFilter" />
-            <share-results @print="openAll()" />
+            <div class="padding-2">
+              <share-results @print="openAll()" />
+            </div>
           </div>
         </div>
         <div class="margin-top-2 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
-          <h2 class="font-family-serif usagov--header">Potential Federal Benefits</h2>
+          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">Potential Federal Benefits</h2>
           <!-- Desktop meta sort and open -->
           <div
             aria-label="Benefit accordion controls"
             role="complementary"
             class="display-none tablet:display-flex grid-row grid-gap print:display-none">
-            <!-- <div class="tablet:grid-col-5 desktop:grid-col-4 margin-y-2 print:display-none"></div> -->
             <div class="tablet:grid-col desktop:grid-col display-flex flex-align-center margin-y-2 print:display-none">
               <div>
                 <button
@@ -391,11 +393,13 @@ export default {
 <style
   type="scss"
   scoped>
+.shade {
+  background-color: #ebe6de;
+}
 .benefit-list-move {
   transition: transform 2s;
 }
-.usagov--header {
-  color: #154285;
+.usagov-header--font-size {
   font-size: 1.75rem;
 }
 /* process list */
@@ -407,9 +411,7 @@ export default {
 .usa-process-list__item {
   border-left: 0.5rem solid #ebe6de;
 }
-.usa-process-list__heading {
-  color: #154285;
-}
+
 /*
 tablet and higher
 uswds breakpoints https://designsystem.digital.gov/utilities/layout-grid/

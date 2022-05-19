@@ -17,7 +17,7 @@
         :class="getBorderColor(benefit.eligibility)">
         <button
           ref="accordionButtons"
-          class="usa-accordion__button"
+          class="usa-accordion__button usagov-heading--blue"
           aria-expanded="false"
           :aria-controls="`acc-content-${benefit.slug}`">
           {{ benefit.title }}
@@ -51,7 +51,8 @@
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
               rel="noopener"
-              >{{ benefit.source.name }}</a>
+              >{{ benefit.source.name }}</a
+            >
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -210,9 +211,20 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style
+  lang="scss"
+  scoped>
 .benefit-list-move {
   transition: transform 1s;
+}
+.usa-accordion__button {
+  background-color: transparent;
+  border-right: 3px solid #ebe6de;
+  border-top: 3px solid #ebe6de;
+  border-bottom: 3px solid #ebe6de;
+  &:hover {
+    color: #154285;
+  }
 }
 
 @media print {

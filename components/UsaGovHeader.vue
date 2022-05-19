@@ -844,7 +844,7 @@
       <div class="display-row display-flex flex-justify flex-align-center">
         <a
           href="https://www.usa.gov/benefits-grants-loans"
-          class="back-benefit font-serif-md">
+          class="back-benefit font-serif-md text-bold">
           {{ $t("header.meta.back") }}
         </a>
         <button
