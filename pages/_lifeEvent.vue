@@ -64,7 +64,7 @@
                 </span>
               </div>
             </div>
-            <div class="margin-bottom-2 display-flex print:display-none">
+            <div class="tablet:margin-top-6 margin-bottom-2 display-flex print:display-none">
               <div class="text-ink">
                 <svg
                   class="usa-icon usa-icon--size-3 margin-right-1"
@@ -213,6 +213,7 @@
           </div>
           <Accordion
             ref="accordion"
+            class="tablet:margin-top-9"
             :life-event-benefits="lifeEventBenefits"
             :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
@@ -423,6 +424,9 @@ uswds breakpoints https://designsystem.digital.gov/utilities/layout-grid/
   }
   .usagov-header--font-size {
     font-size: 1.75rem;
+  }
+  .usa-process-list > .usa-process-list__item {
+    max-width: 84ex;
   }
 }
 </style>
