@@ -44,7 +44,7 @@ function checkSelectedAndExists(userInputDate) {
   if (userInputDate === "" || userInputDate === null) {
     return null
   }
-  userInputDate = toDate(userInputDate)
+  userInputDate = toDate(new Date(userInputDate))
   const dateData = [userInputDate.getFullYear(), userInputDate.getMonth(), userInputDate.getDate()]
   return isExists(...dateData)
 }
@@ -58,7 +58,7 @@ function figureOutAcceptanceDate(value, determiner) {
 }
 
 function checkUserDate(userInputDate, determiner, operator, acceptanceDate) {
-  userInputDate = toDate(userInputDate)
+  userInputDate = toDate(new Date(userInputDate))
   // first will check if the users inputted date is in the future
   if (isFuture(userInputDate)) {
     return false
