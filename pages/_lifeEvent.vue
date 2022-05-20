@@ -5,7 +5,7 @@
         <div class="tablet:grid-col">
           <h1
             v-if="lifeEventTitle"
-            class="font-heading-lg tablet:font-heading-xl margin-top-8 text-secondary">
+            class="font-heading-lg tablet:font-heading-xl tablet:margin-top-4 text-secondary">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
           <p
@@ -32,8 +32,7 @@
       </div>
 
       <div class="grid-row tablet:grid-gap print:display-block">
-        <div
-          class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto padding-y-2 margin-top-0 padding-top-0">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0">
           <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
           <div>
             <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
@@ -80,7 +79,7 @@
               </div>
             </div>
           </div>
-          <div class="shade">
+          <div class="desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade">
             <CriteriaGroup
               :life-event-criteria="lifeEvent.eligibilityCriteria"
               :top-level-filters="lifeEvent.topLevelFilter" />
@@ -214,7 +213,7 @@
           </div>
           <Accordion
             ref="accordion"
-            class="tablet:margin-top-9"
+            class="tablet:margin-top-5"
             :life-event-benefits="lifeEventBenefits"
             :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
