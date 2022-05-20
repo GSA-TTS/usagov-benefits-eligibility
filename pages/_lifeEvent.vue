@@ -5,7 +5,7 @@
         <div class="tablet:grid-col">
           <h1
             v-if="lifeEventTitle"
-            class="font-heading-lg tablet:font-heading-xl margin-top-6 text-secondary">
+            class="font-heading-lg tablet:font-heading-xl margin-top-8 text-secondary">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
           <p
