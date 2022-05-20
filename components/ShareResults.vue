@@ -1,7 +1,7 @@
 <template>
   <div class="margin-bottom-4 margin-top-neg-3 print:display-none">
     <div
-      class="tablet:padding-left-1 display-block margin-bottom-5 border-bottom border-gray-30 border-width-2px break-inside-avoid padding-bottom-4">
+      class="tablet:padding-left-3 display-block margin-bottom-5 border-bottom border-gray-30 border-width-2px break-inside-avoid padding-bottom-4">
       <button
         class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white clear-selections"
         @click="clearCriteria">
@@ -15,7 +15,7 @@
         <span class="text-middle">Clear my selections</span>
       </button>
     </div>
-    <div class="tablet:padding-left-1">
+    <div class="tablet:padding-left-3">
       <h2 class="font-sans-md">Sharing and printing</h2>
       <p class="usa-prose">
         {{ $t("shareResults.description") }}

@@ -5,7 +5,7 @@
         <div class="tablet:grid-col">
           <h1
             v-if="lifeEventTitle"
-            class="font-heading-lg tablet:font-heading-xl margin-top-6 text-secondary">
+            class="font-heading-lg tablet:font-heading-xl tablet:margin-top-4 text-secondary">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
           <p
@@ -31,40 +31,15 @@
         </div>
       </div>
 
-      <div class="grid-row tablet:grid-gap-6 print:display-block">
-        <div
-          class="tablet:grid-col-5 desktop:grid-col-4 desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto padding-y-2 margin-top-0 padding-top-0">
+      <div class="grid-row tablet:grid-gap print:display-block">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0">
           <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
           <div>
             <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
               {{ $t("eligibilityList.left-rail-heading") }}
             </h2>
-            <div v-if="filter">
-              <div
-                class="margin-bottom-3"
-                role="alert">
-                {{ $t("lifeEvent.currentlyViewing") }}
-                <span class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
-                  <button
-                    class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
-                    style="padding: 0.25rem; text-decoration: none"
-                    :title="`Remove the ${filter} filter`"
-                    :aria-label="`Remove the ${filter} filter`"
-                    data-position="top"
-                    @click="clearFilter">
-                    <span class="text-middle text-white">{{ filter }}</span>
-                    <svg
-                      class="usa-icon text-white text-middle"
-                      aria-hidden="true"
-                      focusable="false"
-                      role="img">
-                      <use xlink:href="~/assets/img/sprite.svg#close" />
-                    </svg>
-                  </button>
-                </span>
-              </div>
-            </div>
-            <div class="margin-bottom-2 display-flex print:display-none">
+
+            <div class="tablet:margin-top-6 margin-bottom-2 display-flex print:display-none">
               <div class="text-ink">
                 <svg
                   class="usa-icon usa-icon--size-3 margin-right-1"
@@ -80,7 +55,7 @@
               </div>
             </div>
           </div>
-          <div class="shade">
+          <div class="desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade">
             <CriteriaGroup
               :life-event-criteria="lifeEvent.eligibilityCriteria"
               :top-level-filters="lifeEvent.topLevelFilter" />
@@ -89,7 +64,8 @@
             </div>
           </div>
         </div>
-        <div class="margin-top-2 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
+        <div
+          class="margin-top-2 tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
             {{ $t("eligibilityList.right-rail-heading") }}
           </h2>
@@ -145,6 +121,29 @@
                   </option>
                 </select>
               </label>
+            </div>
+          </div>
+          <div v-if="filter">
+            <div role="alert">
+              {{ $t("lifeEvent.currentlyViewing") }}
+              <span class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
+                <button
+                  class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
+                  style="padding: 0.25rem; text-decoration: none"
+                  :title="`Remove the ${filter} filter`"
+                  :aria-label="`Remove the ${filter} filter`"
+                  data-position="top"
+                  @click="clearFilter">
+                  <span class="text-middle text-white">{{ filter }}</span>
+                  <svg
+                    class="usa-icon text-white text-middle"
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img">
+                    <use xlink:href="~/assets/img/sprite.svg#close" />
+                  </svg>
+                </button>
+              </span>
             </div>
           </div>
           <!-- Mobile meta sort and open -->
@@ -213,6 +212,7 @@
           </div>
           <Accordion
             ref="accordion"
+            class="tablet:margin-top-2"
             :life-event-benefits="lifeEventBenefits"
             :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
@@ -324,6 +324,7 @@ export default {
   methods: {
     clearCriteria() {
       this.$store.dispatch("criteria/clear")
+      this.clearFilter()
       this.sortBenefits()
     },
 
@@ -385,7 +386,8 @@ export default {
       this.filter = ""
       this.lifeEventBenefits = this.allLifeEventBenefits
       this.sortBenefits()
-      // this.$nextTick(() => this.$refs.accordion.focus())
+      // eslint-disable-next-line vue/valid-next-tick
+      setTimeout(() => this.$nextTick(() => this.$refs.accordion.focus()), 250)
     },
   },
 }
@@ -423,6 +425,9 @@ uswds breakpoints https://designsystem.digital.gov/utilities/layout-grid/
   }
   .usagov-header--font-size {
     font-size: 1.75rem;
+  }
+  .usa-process-list > .usa-process-list__item {
+    max-width: 84ex;
   }
 }
 </style>

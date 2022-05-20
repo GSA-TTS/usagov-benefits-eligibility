@@ -942,6 +942,7 @@ $AZ-button-disabled: #859cba;
   background-color: $aqua-blue;
   color: $black;
 }
+
 // SEARCH
 @media only screen and(min-width: 60em) {
   header [role="search"] {
@@ -970,6 +971,20 @@ $AZ-button-disabled: #859cba;
 @media only screen and (max-width: 64em) {
   .usa-nav__primary a:not(.usa-button):not(.usa-current):not(.usa-nav__link) {
     color: white;
+  }
+}
+@media (min-width: 64em) {
+  .usa-nav__primary button {
+    padding-right: 2rem;
+    padding-bottom: 1.9rem;
+    padding-left: 1rem;
+    color: #4b4b4d;
+    font-size: 1rem;
+    font-weight: 700;
+    width: initial;
+  }
+  .usa-nav__primary > .usa-nav__primary-item {
+    font-size: 1rem;
   }
 }
 </style>
