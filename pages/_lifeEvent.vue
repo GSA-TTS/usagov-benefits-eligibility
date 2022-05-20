@@ -324,6 +324,7 @@ export default {
   methods: {
     clearCriteria() {
       this.$store.dispatch("criteria/clear")
+      this.clearFilter()
       this.sortBenefits()
     },
 
@@ -385,7 +386,8 @@ export default {
       this.filter = ""
       this.lifeEventBenefits = this.allLifeEventBenefits
       this.sortBenefits()
-      // this.$nextTick(() => this.$refs.accordion.focus())
+      // eslint-disable-next-line vue/valid-next-tick
+      setTimeout(() => this.$nextTick(() => this.$refs.accordion.focus()), 250)
     },
   },
 }
