@@ -222,9 +222,26 @@ export default {
   border-right: 3px solid #ebe6de;
   border-top: 3px solid #ebe6de;
   border-bottom: 3px solid #ebe6de;
+  color: #154285;
+  filter: grayscale(50%);
   &:hover {
     color: #154285;
   }
+}
+.usa-accordion--bordered .usa-accordion__content {
+  border-bottom-color: #ebe6de;
+  border-left-color: #ebe6de;
+  border-right-color: #ebe6de;
+}
+
+.usa-accordion__button[aria-expanded="false"] {
+  background-image: url(../assets/img/blue-plus.svg), linear-gradient(transparent, transparent);
+  background-size: 0.75rem;
+}
+
+.usa-accordion__button[aria-expanded="true"] {
+  background-image: url(../assets/img/blue-minus.svg), linear-gradient(transparent, transparent);
+  background-size: 0.75rem;
 }
 
 @media print {
