@@ -38,31 +38,7 @@
             <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
               {{ $t("eligibilityList.left-rail-heading") }}
             </h2>
-            <div v-if="filter">
-              <div
-                class="margin-bottom-3"
-                role="alert">
-                {{ $t("lifeEvent.currentlyViewing") }}
-                <span class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
-                  <button
-                    class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
-                    style="padding: 0.25rem; text-decoration: none"
-                    :title="`Remove the ${filter} filter`"
-                    :aria-label="`Remove the ${filter} filter`"
-                    data-position="top"
-                    @click="clearFilter">
-                    <span class="text-middle text-white">{{ filter }}</span>
-                    <svg
-                      class="usa-icon text-white text-middle"
-                      aria-hidden="true"
-                      focusable="false"
-                      role="img">
-                      <use xlink:href="~/assets/img/sprite.svg#close" />
-                    </svg>
-                  </button>
-                </span>
-              </div>
-            </div>
+
             <div class="tablet:margin-top-6 margin-bottom-2 display-flex print:display-none">
               <div class="text-ink">
                 <svg
@@ -147,6 +123,29 @@
               </label>
             </div>
           </div>
+          <div v-if="filter">
+            <div role="alert">
+              {{ $t("lifeEvent.currentlyViewing") }}
+              <span class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
+                <button
+                  class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
+                  style="padding: 0.25rem; text-decoration: none"
+                  :title="`Remove the ${filter} filter`"
+                  :aria-label="`Remove the ${filter} filter`"
+                  data-position="top"
+                  @click="clearFilter">
+                  <span class="text-middle text-white">{{ filter }}</span>
+                  <svg
+                    class="usa-icon text-white text-middle"
+                    aria-hidden="true"
+                    focusable="false"
+                    role="img">
+                    <use xlink:href="~/assets/img/sprite.svg#close" />
+                  </svg>
+                </button>
+              </span>
+            </div>
+          </div>
           <!-- Mobile meta sort and open -->
           <div
             aria-label="Benefit accordion controls"
@@ -213,7 +212,7 @@
           </div>
           <Accordion
             ref="accordion"
-            class="tablet:margin-top-5"
+            class="tablet:margin-top-2"
             :life-event-benefits="lifeEventBenefits"
             :life-event-criteria="lifeEvent.eligibilityCriteria" />
         </div>
