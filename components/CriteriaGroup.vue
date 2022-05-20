@@ -23,7 +23,7 @@
             class="line-height-sans-4 font-sans-sm">
             {{ criteriaGroup.description }}
           </p>
-          <section class="margin-y-3 tablet:padding-left-1">
+          <section class="margin-y-3 tablet:padding-left-3">
             <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)">
               <CriteriaChild
                 :key="criterion.criteriaKey"
