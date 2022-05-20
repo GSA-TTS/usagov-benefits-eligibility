@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-presidential-memorial-certificate.source.name
-  link: https://www.va.gov/burials-memorials/memorial-items/presidential-memorial-certificates/
+  link: va-presidential-memorial-certificate.source.link
 
 summary: va-presidential-memorial-certificate.summary
 

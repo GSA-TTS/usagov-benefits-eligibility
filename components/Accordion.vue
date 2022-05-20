@@ -17,7 +17,7 @@
         :class="getBorderColor(benefit.eligibility)">
         <button
           ref="accordionButtons"
-          class="usa-accordion__button"
+          class="usa-accordion__button usagov-heading--blue"
           aria-expanded="false"
           :aria-controls="`acc-content-${benefit.slug}`">
           {{ benefit.title }}
@@ -46,13 +46,13 @@
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
             {{ $t("accordion.provided") }}
-            <a
+            <!-- //NOSONAR --><a
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
+              rel="noopener"
               >{{ benefit.source.name }}</a
             >
-            <!-- //NOSONAR -->
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -74,14 +74,14 @@
           style="padding-left: 0"
           :aria-label="`Choices for ${benefit.title}`">
           <li class="usa-button-group__item">
-            <a
+            <!-- //NOSONAR --><a
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
+              rel="noopener"
               :aria-label="`How to apply for ${benefit.title}`"
               class="usa-button print:display-none">
               {{ $t("accordion.apply") }}
             </a>
-            <!-- //NOSONAR -->
           </li>
         </ul>
       </div>
@@ -189,12 +189,11 @@ export default {
       }
       return "border-gray-30"
     },
-
     getCriteriaMatchLanguage(eligibilityCriteria) {
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
-        return "(" + this.$t("not_eligible") + ")"
+        return "(" + this.$t("accordion.not_eligible") + ")"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
-        return "(" + this.$t("eligible") + ")"
+        return "(" + this.$t("accordion.eligible") + ")"
       }
       return null
     },
@@ -212,9 +211,20 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style
+  lang="scss"
+  scoped>
 .benefit-list-move {
   transition: transform 1s;
+}
+.usa-accordion__button {
+  background-color: transparent;
+  border-right: 3px solid #ebe6de;
+  border-top: 3px solid #ebe6de;
+  border-bottom: 3px solid #ebe6de;
+  &:hover {
+    color: #154285;
+  }
 }
 
 @media print {

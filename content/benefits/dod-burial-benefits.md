@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: dod-burial-benefits.source.name
-  link: https://www.dcms.uscg.mil/Portals/10/CG-1/PSC/PSD/docs/SurvivorsGuide2015.pdf?ver=2017-03-24-132033-397
+  link: dod-burial-benefits.source.link
 
 summary: dod-burial-benefits.summary
 

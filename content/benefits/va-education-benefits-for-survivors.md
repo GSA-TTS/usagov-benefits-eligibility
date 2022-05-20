@@ -9,7 +9,7 @@ lifeEvents:
   - military-service
 source:
   name: va-education-benefits-for-survivors.source.name
-  link: https://www.va.gov/education/survivor-dependent-benefits/
+  link: va-education-benefits-for-survivors.source.link
 
 summary: va-education-benefits-for-survivors.summary
 
@@ -27,6 +27,6 @@ eligibility:
   - criteriaKey: applicant_relationship
     acceptableValues: [va-education-benefits-for-survivors.eligibility.acceptableValues5, 
     va-education-benefits-for-survivors.eligibility.acceptableValues6]
-  - criteriaKey: applicant_high_school_diploma
+  - criteriaKey: applicant_high-school_diploma
     acceptableValues: [true]
 ---

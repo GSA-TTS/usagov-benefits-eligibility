@@ -40,13 +40,6 @@ export default {
       type: [String, Object, Boolean],
       default: "No response provided",
     },
-    location: {
-      type: String,
-      default: benefitCard,
-      validator: (value) => {
-        return ["left-rail", benefitCard].includes(value)
-      },
-    },
     isDisabled: {
       type: Boolean,
       default: false,

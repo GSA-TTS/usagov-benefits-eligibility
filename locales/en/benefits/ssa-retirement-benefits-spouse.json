@@ -2,8 +2,9 @@
   "ssa-retirement-benefits-spouse.title": "Retirement Benefits for Spouse",
   "ssa-retirement-benefits-spouse.headline": "Retirement Benefits for Spouse",
   "ssa-retirement-benefits-spouse.source.name": "Social Security Administration",
+  "ssa-retirement-benefits-spouse.source.link": "https://www.ssa.gov/benefits/retirement/",
   "ssa-retirement-benefits-spouse.summary": "Social Security is part of the retirement plan for almost every American worker. It provides replacement income for qualified retirees and their families.",
   "ssa-retirement-benefits-spouse.eligibility.label": "You are at least 62 years old.",
-  "ssa-retirement-benefits-spouse.eligibility.acceptableValues": "now married,",
+  "ssa-retirement-benefits-spouse.eligibility.acceptableValues": "now married",
   "ssa-retirement-benefits-spouse.eligibility.acceptableValues1": "divorced"
 }

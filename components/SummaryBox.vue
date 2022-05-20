@@ -1,11 +1,11 @@
 <template>
   <div
-    class="usa-summary-box margin-bottom-2"
+    class="usa-summary-box margin-bottom-2 text-white"
     role="region"
     aria-labelledby="summary-box-key-information">
     <div class="usa-summary-box__body">
       <div class="usa-summary-box__text">
-        <form class="usa-form">
+        <div class="usa-form">
           <fieldset class="usa-fieldset">
             <template v-for="filter in topLevelFilters">
               <legend
@@ -32,7 +32,7 @@
               </div>
             </template>
           </fieldset>
-        </form>
+        </div>
       </div>
     </div>
   </div>
@@ -65,3 +65,15 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.usa-summary-box {
+  color: white;
+  background-color: #11385b;
+  border: none;
+}
+.usa-summary-box .usa-checkbox__label,
+.usa-summary-box .usa-radio__label {
+  color: white;
+}
+</style>

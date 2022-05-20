@@ -1,33 +1,5 @@
 <template>
   <div>
-    <div class="grid-container">
-      <div class="grid-row">
-        <div class="grid-col">
-          <div
-            class="usa-summary-box bg-transparent border-transparent"
-            role="region"
-            aria-labelledby="summary-box-key-information-disclaimer">
-            <div class="usa-summary-box__body">
-              <h2
-                class="usa-summary-box__heading"
-                id="summary-box-key-information-disclaimer">
-                {{ disclaimer.heading }}
-              </h2>
-              <div class="usa-summary-box__text">
-                <ul class="usa-list">
-                  <li style="max-width: unset">
-                    {{ disclaimer.bullet }}
-                  </li>
-                  <li style="max-width: unset">
-                    {{ disclaimer.bullet1 }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <footer class="usa-footer usa-footer--slim print:display-none">
       <div class="grid-container usa-footer__return-to-top">
         <nuxt-link :to="{ path: getUrl(), hash: '#' }">{{ $t("returnToTop") }}</nuxt-link>

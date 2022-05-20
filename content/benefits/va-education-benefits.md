@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-education-benefits.source.name
-  link: https://www.va.gov/education/eligibility/
+  link: va-education-benefits.source.link
 
 summary: va-education-benefits.summary
 
@@ -23,6 +23,6 @@ eligibility:
         va-education-benefits.eligibility.acceptableValues2,
         va-education-benefits.eligibility.acceptableValues3,
       ]
-  - criteriaKey: applicant_high_school_diploma
+  - criteriaKey: applicant_high-school_diploma
     acceptableValues: [true]
 ---

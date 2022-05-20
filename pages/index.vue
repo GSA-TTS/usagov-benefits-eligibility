@@ -37,7 +37,7 @@
               <nuxt-link
                 class="display-block height-full margin-x-1"
                 style="text-decoration: none; outline-offset: 0.25rem"
-                :to="localePath(event.slug)">
+                :to="localePath(`/${event.slug}`)">
                 <Card
                   :card-body="$t(event.summary)"
                   :card-title="$t(event.title)"
@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import { tObj } from "~/services/translation"
 export default {
   layout: "default",
   async asyncData({ $content }) {
@@ -70,6 +71,7 @@ export default {
     if (this.$config.oneEventVersion !== false) {
       this.$router.push(this.$route.fullPath + this.$config.oneEventVersion)
     }
+    this.landingPage = tObj.call(this, this.landingPage)
   },
 }
 </script>

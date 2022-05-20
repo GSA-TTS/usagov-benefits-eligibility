@@ -7,7 +7,7 @@ lifeEvents:
   - death-of-a-loved-one
 source:
   name: ssa-survivor-benefits-child.source.name
-  link: https://www.ssa.gov/benefits/survivors/ifyou.html#h4
+  link: ssa-survivor-benefits-child.source.link
 
 summary: ssa-survivor-benefits-child.summary
 

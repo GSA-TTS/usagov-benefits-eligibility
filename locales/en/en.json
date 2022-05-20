@@ -29,10 +29,16 @@
     "Please enter a valid date.": "Please enter a valid date."
   },
   "eligibilityList": {
+    "left-rail-heading": "Answer a Few Questions",
+    "right-rail-heading": "Potential Federal Benefits",
+    "heading": "Key eligibility criteria",
     "you_must": "You must meet all criteria. You currently meet",
     "of": "of",
     "additional": "Additional eligibility criteria may apply.",
-    "review": "Please review the full requirements at"
+    "review": "Please review the full requirements at",
+    "match": "This criteria matched",
+    "remove": "This criteria removed this benefit",
+    "noMatch": "This criteria has not matched"
   },
   "skipnav": "Skip to main content",
   "returnToTop": "Return to top",

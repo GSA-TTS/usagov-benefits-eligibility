@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-headstone-grave-marker.source.name
-  link: https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/
+  link: va-headstone-grave-marker.source.link
 
 summary: va-headstone-grave-marker.summary
 
@@ -24,8 +24,6 @@ eligibility:
         va-headstone-grave-marker.eligibility.acceptableValues2,
         va-headstone-grave-marker.eligibility.acceptableValues3,
       ]
-  - criteriaKey: deceased_buried_in_unmarked_grave
-    acceptableValues: [true]
   - criteriaKey: deceased_grave_headstone
     acceptableValues: [true]
   - criteriaKey: applicant_relationship

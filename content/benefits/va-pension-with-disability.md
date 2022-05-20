@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-pension-with-disability.source.name
-  link: https://www.va.gov/pension/how-to-apply/
+  link: va-pension-with-disability.source.link
 
 summary: va-pension-with-disability.summary
 

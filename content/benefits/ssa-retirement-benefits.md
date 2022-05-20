@@ -8,7 +8,7 @@ lifeEvents:
   - late-adulthood
 source:
   name: ssa-retirement-benefits.source.name
-  link: https://www.ssa.gov/benefits/retirement/
+  link: ssa-retirement-benefits.source.link
 
 summary: ssa-retirement-benefits.summary
 

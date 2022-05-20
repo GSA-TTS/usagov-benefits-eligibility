@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: dod-forgotten-widows-annuity.source.name
-  link: https://militarypay.defense.gov/Portals/3/Documents/acmss.pdf
+  link: dod-forgotten-widows-annuity.source.link
 
 summary: dod-forgotten-widows-annuity.summary
 
