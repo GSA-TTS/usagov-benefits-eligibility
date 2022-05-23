@@ -40,7 +40,7 @@ export default {
   target: "static",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Benefit finder",
+    title: "Benefits Finder | USAGov",
     htmlAttrs: {
       lang: "en",
     },
@@ -50,7 +50,32 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "Answer a few questions. Review a custom list of potential benefits. Find out how to apply.",
+        content:
+          "Answer a few questions and get matched to federal government assistance. Find financial, health care, burial, education, and other benefits.",
+      },
+      {
+        property: "og:url",
+        content: "https://www.usa.gov/about-the-us",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:title",
+        content: "Official Guide to Government Information and Services | USAGov",
+      },
+      {
+        property: "og:description",
+        content: "USA.gov can help you start your search for government information by topic and agency.",
+      },
+      {
+        property: "og:image",
+        content: "https://www.usa.gov/images/facebook_share_thumbnail.png",
+      },
+      {
+        property: "og:image:secure_url",
+        content: "https://www.usa.gov/images/facebook_share_thumbnail.png",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: sitePrefix + "USA_Fav_Icon152_default.png" }],
