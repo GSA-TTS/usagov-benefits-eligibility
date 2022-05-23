@@ -1,4 +1,4 @@
-import { config, mount, shallowMount } from "@vue/test-utils"
+import { mount } from "@vue/test-utils"
 import UsaGovFooter from "@/components/UsaGovFooter.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
