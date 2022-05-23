@@ -142,10 +142,6 @@ h1.text-secondary {
   }
 }
 
-.shade {
-  background-color: #ebe6de;
-}
-
 .usa-search [type="submit"] {
   @include u-padding-x(1);
 }
@@ -169,4 +165,8 @@ h1.text-secondary {
     background-color: color("gray-cool-5");
     color: #1b1b1b;
   }
+}
+
+.usagov-heading--blue {
+  color: $blue;
 }
