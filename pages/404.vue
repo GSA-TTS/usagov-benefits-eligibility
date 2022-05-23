@@ -6,65 +6,58 @@
           <header>
             <h2>
               <a
-                href="/contact"
+                :href="$t('404.sidenav.linkOne')"
                 class="url">
-                <span>Contact USA.gov</span>
+                <span>{{ $t("404.sidenav.linkOneText") }}</span>
               </a>
             </h2>
           </header>
           <ul>
             <li>
               <a
-                href="/phone"
+                :href="$t('404.sidenav.linkTwo')"
                 class="url">
-                <span>Call USA.gov</span>
+                <span>{{ $t("404.sidenav.linkTwoText") }}</span>
               </a>
             </li>
 
             <li>
               <a
-                href="/chat"
+                :href="$t('404.sidenav.linkThree')"
                 class="url">
-                <span>Chat with USA.gov</span>
+                <span>{{ $t("404.sidenav.linkThreeText") }}</span>
               </a>
             </li>
 
             <li>
               <a
-                href="/how-to-use"
+                :href="$t('404.sidenav.linkFour')"
                 class="url">
-                <span>Find What You Need with USA.gov</span>
+                <span>{{ $t("404.sidenav.linkFourText") }}</span>
               </a>
             </li>
           </ul>
         </div>
       </div>
       <div class="tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block tablet:padding-left-6">
-        <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">Page Not Found</h1>
+        <h1 class="font-heading-lg tablet:font-heading-xl margin-top-0 text-secondary">{{ $t("404.heading") }}</h1>
         <p>
-          We can't find the page you're looking for. It might have been removed, had its name changed, or is temporarily
-          unavailable.
+          {{ $t("404.paragraphOne") }}
         </p>
-        <p>
-          If you typed the URL directly, check your spelling and capitalization. Our URLs look like this:&nbsp;<strong
-            >usa.gov/example-one</strong
-          >
-          and <strong>usa.gov/espanol/ejemplo-uno</strong>.<br /><br /><strong>Note:</strong> When typing a Spanish URL,
-          use the "n" instead of the "ñ" in the address bar.
-        </p>
-        <p>
-          You can browse our <a href="/topics">topics page</a> or <a href="/espanol/#tpcs">servicios</a> (in Spanish),
-          use our search engine, or <a href="/contact">contact us</a> if you still have a question.
-        </p>
+        <p v-html="$t('404.paragraphTwo')" />
+        <p v-html="$t('404.paragraphThree')" />
         <div id="cntctbx">
-          <h2 id="">Do you have a question?</h2>
+          <h2 id="">{{ $t("404.contactBox.header") }}</h2>
           <p>
-            Ask a real person any government-related question for free. They'll get you the answer or let you know where
-            to find it.
+            {{ $t("404.contactBox.paragraph") }}
           </p>
           <ul>
-            <li><a href="/phone">Talk to a live USA.gov agent</a></li>
-            <li><a href="/chat">Web Chat with a live USA.gov agent</a></li>
+            <li>
+              <a :href="$t('404.contactBox.list.bulletOneLink')">{{ $t("404.contactBox.list.bulletOneText") }}</a>
+            </li>
+            <li>
+              <a :href="$t('404.contactBox.list.bulletTwoLink')">{{ $t("404.contactBox.list.bulletTwoText") }}</a>
+            </li>
           </ul>
         </div>
       </div>
