@@ -8,8 +8,13 @@ describe("<UsaGovFooter />", () => {
   })
 
   it("is a Vue instance", () => {
-    const wrapper = mount(UsaGovFooter, {
+    const wrapper = shallowMount(UsaGovFooter, {
       $i18n: { locale: "en" },
+      mocks: {
+        window: {
+          scrollTo: jest.fn(),
+        }
+      }
     })
     expect(wrapper.vm).toBeTruthy()
   })

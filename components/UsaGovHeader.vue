@@ -1,10 +1,5 @@
 <template>
   <div>
-    <a
-      class="usa-skipnav"
-      href="#main-content"
-      >{{ $t("skipnav") }}</a
-    >
     <TheBanner />
     <header
       class="usa-header usa-header--extended"
