@@ -49,6 +49,60 @@
               src="@/assets/img/close.svg"
               alt="Close" />
           </button>
+          <div class="usa-nav__secondary flex-row">
+            <form
+              action="https://search.usa.gov/search"
+              method="get"
+              name="search_form"
+              accept-charset="UTF-8"
+              class="usa-search usa-search--small">
+              <div
+                role="search"
+                aria-labelledby="top-srch">
+                <label
+                  id="top-srch"
+                  class="usa-sr-only"
+                  for="search-field-small"
+                  >{{ $t("header.meta.search") }}</label
+                >
+                <input
+                  v-if="$i18n.locale === 'en'"
+                  id="affiliate"
+                  name="affiliate"
+                  type="hidden"
+                  value="usagov" />
+                <input
+                  v-if="$i18n.locale === 'es'"
+                  id="affiliate"
+                  name="affiliate"
+                  type="hidden"
+                  value="gobiernousa_only" />
+                <input
+                  id="search-field-small"
+                  type="search"
+                  name="query"
+                  :placeholder="$t('header.meta.placeholder')"
+                  onfocus="this.placeholder = ''"
+                  class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  aria-haspopup="true" />
+                <button
+                  class="usa-button"
+                  type="submit">
+                  <img
+                    src="https://www.usa.gov/images/search-dark.svg"
+                    class="usa-search__submit-icon"
+                    alt="Search" />
+                </button>
+              </div>
+            </form>
+            <ul class="usa-nav__secondary-links width-full">
+              <li class="usa-nav__secondary-item">
+                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
+              </li>
+            </ul>
+          </div>
           <ul class="usa-nav__primary usa-accordion usa-accordion-escapable">
             <li class="usa-nav__primary-item">
               <a
@@ -782,69 +836,14 @@
               </div>
             </li>
           </ul>
-
-          <div class="usa-nav__secondary flex-row">
-            <form
-              action="https://search.usa.gov/search"
-              method="get"
-              name="search_form"
-              accept-charset="UTF-8"
-              class="usa-search usa-search--small">
-              <div
-                role="search"
-                aria-labelledby="top-srch">
-                <label
-                  id="top-srch"
-                  class="usa-sr-only"
-                  for="search-field-small"
-                  >{{ $t("header.meta.search") }}</label
-                >
-                <input
-                  v-if="$i18n.locale === 'en'"
-                  id="affiliate"
-                  name="affiliate"
-                  type="hidden"
-                  value="usagov" />
-                <input
-                  v-if="$i18n.locale === 'es'"
-                  id="affiliate"
-                  name="affiliate"
-                  type="hidden"
-                  value="gobiernousa_only" />
-                <input
-                  id="search-field-small"
-                  type="search"
-                  name="query"
-                  :placeholder="$t('header.meta.placeholder')"
-                  onfocus="this.placeholder = ''"
-                  class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
-                  autocomplete="off"
-                  aria-autocomplete="list"
-                  aria-haspopup="true" />
-                <button
-                  class="usa-button"
-                  type="submit">
-                  <img
-                    src="https://www.usa.gov/images/search-dark.svg"
-                    class="usa-search__submit-icon"
-                    alt="Search" />
-                </button>
-              </div>
-            </form>
-            <ul class="usa-nav__secondary-links width-full">
-              <li class="usa-nav__secondary-item">
-                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
-              </li>
-            </ul>
-          </div>
         </div>
       </nav>
     </header>
-    <div class="grid-container margin-y-2">
+    <nav class="grid-container margin-y-2">
       <div class="display-row display-flex flex-justify flex-align-center">
         <a
           href="https://www.usa.gov/benefits-grants-loans"
-          class="back-benefit font-serif-md">
+          class="back-benefit font-serif-md text-bold">
           {{ $t("header.meta.back") }}
         </a>
         <button
@@ -855,7 +854,7 @@
           {{ $t("header.meta.language") }}
         </button>
       </div>
-    </div>
+    </nav>
   </div>
 </template>
 <script>
@@ -942,6 +941,7 @@ $AZ-button-disabled: #859cba;
   background-color: $aqua-blue;
   color: $black;
 }
+
 // SEARCH
 @media only screen and(min-width: 60em) {
   header [role="search"] {
@@ -970,6 +970,20 @@ $AZ-button-disabled: #859cba;
 @media only screen and (max-width: 64em) {
   .usa-nav__primary a:not(.usa-button):not(.usa-current):not(.usa-nav__link) {
     color: white;
+  }
+}
+@media (min-width: 64em) {
+  .usa-nav__primary button {
+    padding-right: 2rem;
+    padding-bottom: 1.9rem;
+    padding-left: 1rem;
+    color: #4b4b4d;
+    font-size: 1rem;
+    font-weight: 700;
+    width: initial;
+  }
+  .usa-nav__primary > .usa-nav__primary-item {
+    font-size: 1rem;
   }
 }
 </style>

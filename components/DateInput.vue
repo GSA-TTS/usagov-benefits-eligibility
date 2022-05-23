@@ -15,7 +15,7 @@
           :id="`${uniqueId}-${criteriaKey}-month`"
           v-model="month"
           :class="inputClass"
-          aria-describedby="monthinput"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-month`"
           :name="`${uniqueId}-${criteriaKey}-month`"
           type="text"
           maxlength="2"
@@ -33,7 +33,7 @@
           :id="`${uniqueId}-${criteriaKey}-day`"
           v-model="day"
           :class="inputClass"
-          aria-describedby="dayinput"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-day`"
           :name="`${uniqueId}-${criteriaKey}-day`"
           type="text"
           maxlength="2"
@@ -51,7 +51,7 @@
           :id="`${uniqueId}-${criteriaKey}-year`"
           v-model="year"
           :class="inputClass"
-          aria-describedby="yearinput"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-year`"
           :name="`${uniqueId}-${criteriaKey}-year`"
           type="text"
           minlength="4"
@@ -200,10 +200,6 @@ export default {
 
 .usa-memorable-date {
   margin-bottom: 0.5rem;
-}
-
-.usa-legend--empty {
-  color: #1b1b1b;
 }
 
 .bears-label--error,
