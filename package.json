@@ -60,7 +60,7 @@
     "eslint-plugin-vuejs-accessibility": "^1.1.1",
     "fibers": "^5.0.1",
     "gulp": "^4.0.2",
-    "jest": "^27.5.1",
+    "jest": "^28.1.0",
     "lodash": "^4.17.21",
     "nuxt-i18n": "^6.28.1",
     "pa11y-ci": "^3.0.1",
