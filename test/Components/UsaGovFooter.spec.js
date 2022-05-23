@@ -13,8 +13,8 @@ describe("<UsaGovFooter />", () => {
       mocks: {
         window: {
           scrollTo: jest.fn(),
-        }
-      }
+        },
+      },
     })
     expect(wrapper.vm).toBeTruthy()
   })

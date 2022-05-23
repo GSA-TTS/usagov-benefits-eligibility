@@ -13,8 +13,8 @@ describe("Footer", () => {
       mocks: {
         window: {
           scrollTo: jest.fn(),
-        }
-      }
+        },
+      },
     })
     expect(wrapper.vm).toBeTruthy()
   })
