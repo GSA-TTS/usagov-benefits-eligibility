@@ -124,5 +124,12 @@ export default {
     base: process.env.NODE_ENV !== "production" ? undefined : sitePrefix,
     linkActiveClass: "usa-current",
     linkExactActiveClass: "usa-current",
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: "custom",
+        path: "*",
+        component: resolve(__dirname, "pages/404.vue"),
+      })
+    },
   },
 }
