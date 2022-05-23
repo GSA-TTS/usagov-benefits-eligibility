@@ -1,4 +1,4 @@
-import { config, shallowMount, mount } from "@vue/test-utils"
+import { config, shallowMount } from "@vue/test-utils"
 import { Store } from "vuex"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"

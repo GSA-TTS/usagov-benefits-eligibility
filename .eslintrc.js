@@ -3,6 +3,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    jest: true
   },
   parserOptions: {
     parser: "@babel/eslint-parser",
@@ -15,7 +16,7 @@ module.exports = {
     "plugin:sonarjs/recommended",
     "prettier",
   ],
-  plugins: ["vuejs-accessibility", "promise", "sonarjs"],
+  plugins: ["vuejs-accessibility", "promise", "sonarjs", "jest"],
   // add your custom rules here
   rules: {
     "comma-dangle": 0,
