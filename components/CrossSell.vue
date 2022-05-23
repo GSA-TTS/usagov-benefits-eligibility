@@ -48,7 +48,6 @@ export default {
     },
     cards: {
       type: Array,
-      required: true,
       default: () => [],
     },
   },
