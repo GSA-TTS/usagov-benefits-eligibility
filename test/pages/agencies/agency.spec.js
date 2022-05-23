@@ -1,4 +1,4 @@
-import { config, shallowMount } from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils"
 import Page from "~/pages/agencies/_agency.vue"
 import beforeAllTests from "~/test/beforeAllTests"
 
