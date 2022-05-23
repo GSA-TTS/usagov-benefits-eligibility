@@ -14,6 +14,8 @@
     }
   },
   "eligibilityList": {
+    "left-rail-heading": "Responda Algunas Preguntas",
+    "right-rail-heading": "Beneficios Federales Potenciales",
     "heading": "Criterios clave de elegibilidad",
     "you_must": "Debe cumplir con todos los criterios. Actualmente te encuentras",
     "of": "de",

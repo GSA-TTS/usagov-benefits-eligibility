@@ -202,10 +202,6 @@ export default {
   margin-bottom: 0.5rem;
 }
 
-.usa-legend--empty {
-  color: #1b1b1b;
-}
-
 .bears-label--error,
 .bears-label--success {
   color: #71767a;

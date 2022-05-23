@@ -9,8 +9,8 @@
             aria-labelledby="summary-box-key-information-disclaimer">
             <div class="usa-summary-box__body">
               <h2
-                class="usa-summary-box__heading"
-                id="summary-box-key-information-disclaimer">
+                id="summary-box-key-information-disclaimer"
+                class="usa-summary-box__heading">
                 {{ disclaimer.heading }}
               </h2>
               <div class="usa-summary-box__text">
@@ -45,7 +45,7 @@
                       {{ $t("footer.GroupOne.header") }}
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
-                      <li class="usa-footer__secondary-link">                        
+                      <li class="usa-footer__secondary-link">
                         <!-- //NOSONAR -->
                         <a
                           class="margin-bottom-3"
@@ -58,7 +58,7 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">                    
+                      <li class="usa-footer__secondary-link">
                         <!-- //NOSONAR -->
                         <a
                           :href="
@@ -68,7 +68,7 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">                    
+                      <li class="usa-footer__secondary-link">
                         <!-- //NOSONAR -->
                         <a
                           :href="
@@ -78,7 +78,7 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">                    
+                      <li class="usa-footer__secondary-link">
                         <!-- //NOSONAR -->
                         <a
                           :href="
@@ -90,7 +90,7 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">                    
+                      <li class="usa-footer__secondary-link">
                         <!-- //NOSONAR -->
                         <a
                           :href="
@@ -109,7 +109,7 @@
                       {{ $t("footer.GroupTwo.header") }}
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
-                      <li class="usa-footer__secondary-link">                    
+                      <li class="usa-footer__secondary-link">
                         <!-- //NOSONAR -->
                         <a
                           :href="
@@ -121,7 +121,7 @@
                         >
                       </li>
 
-                      <li class="usa-footer__secondary-link">                   
+                      <li class="usa-footer__secondary-link">
                         <!-- //NOSONAR -->
                         <a
                           :href="
