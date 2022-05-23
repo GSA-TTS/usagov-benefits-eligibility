@@ -184,5 +184,31 @@
     "day": "Day",
     "year": "Year",
     "Please enter a valid date.": "Please enter a valid date."
+  },
+  "404": {
+    "sidenav": {
+      "linkOne": "https://www.usa.gov/espanol/contactenos",
+      "linkOneText": "Contáctenos",
+      "linkTwo": "https://www.usa.gov/espanol/chat",
+      "linkTwoText": "Chat",
+      "linkThree": "https://www.usa.gov/espanol/forma-de-uso",
+      "linkThreeText": "Encuentre lo que necesita en USAGov en Español",
+      "linkFour": "https://www.usa.gov/espanol/centro-de-llamadas",
+      "linkFourText": "Llame gratis a USAGov en Español"
+    },
+    "contactBox": {
+      "header": "¿Tiene una pregunta?",
+      "paragraph": "Pregúntenos de forma gratuita sobre el Gobierno de Estados Unidos. Nuestros agentes le responderán directamente o le dirán dónde puede encontrar la respuesta que necesita.",
+      "list": {
+        "bulletOneText": "Llame y hable con un agente de USAGov en Español",
+        "bulletOneLink": "https://www.usa.gov/espanol/centro-de-llamadas",
+        "bulletTwoText": "Chatee con un agente de USAGov en Español",
+        "bulletTwoLink": "https://www.usa.gov/espanol/chat"
+      }
+    },
+    "heading": "No se encontró la página",
+    "paragraphOne": "Lo sentimos, pero puede que la página que busca haya sido eliminada, se le haya cambiado el nombre o no esté disponible por ahora.",
+    "paragraphTwo": "Si escribió el URL a mano, verifique su ortografía y el uso de mayúsculas. Nuestros URLs aparecen así: <strong>usa.gov/espanol/ejemplo-uno</strong>.",
+    "paragraphThree": "Puede ir a nuestra página de&nbsp;<a href='https://www.usa.gov/espanol/servicios-informacion'>servicios</a>&nbsp;para buscar la información que necesita por tema, usar nuestro buscador o&nbsp;<a href='https://www.usa.gov/espanol/contactenos'>contactarnos</a>&nbsp;si aún tiene alguna duda."
   }
 }
