@@ -53,7 +53,7 @@ export default {
         content: "Answer a few questions. Review a custom list of potential benefits. Find out how to apply.",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: sitePrefix + "favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: sitePrefix + "USA_Fav_Icon152_default.png" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
