@@ -1,4 +1,4 @@
-import { mount } from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils"
 import UsaGovFooter from "@/components/UsaGovFooter.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
@@ -20,7 +20,7 @@ describe("<UsaGovFooter />", () => {
   })
 
   it("should fetch a disclaimer", async () => {
-    const wrapper = mount(UsaGovFooter, {
+    const wrapper = shallowMount(UsaGovFooter, {
       $i18n: { locale: "en" },
     })
     const disclaimer = { body: "disclaimer" }
