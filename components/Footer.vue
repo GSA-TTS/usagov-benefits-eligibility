@@ -210,7 +210,7 @@
       </div>
     </footer>
 
-    <div class="usa-identifier bg-black">
+    <div class="usa-identifier bg-black print:display-none">
       <section
         class="usa-identifier__section usa-identifier__section--masthead"
         aria-label="Agency identifier">

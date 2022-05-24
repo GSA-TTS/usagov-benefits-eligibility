@@ -20,19 +20,19 @@ export default function beforeAllTests() {
       config.mocks.$i18n.locale = locale
     },
   }
-  config.mocks["i18n"] = {
+  config.mocks.i18n = {
     locale: "en",
     setLocale: (locale) => {
       config.mocks.$i18n.locale = locale
     },
   }
-  config.provide["$i18n"] = {
+  config.provide.$i18n = {
     locale: "en",
     setLocale: (locale) => {
       config.mocks.$i18n.locale = locale
     },
   }
-  config.provide["i18n"] = {
+  config.provide.i18n = {
     locale: "en",
     setLocale: (locale) => {
       config.mocks.$i18n.locale = locale

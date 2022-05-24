@@ -1,7 +1,6 @@
-import { shallowMount, mount } from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils"
 import Page from "@/pages/agencies/index.vue"
 import beforeAllTests from "@/test/beforeAllTests"
-import internationalizaiton from "@/locales/en.js"
 
 describe("pages/agencies/index.vue", () => {
   const content = {
