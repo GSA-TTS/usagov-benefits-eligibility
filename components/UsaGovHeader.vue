@@ -839,7 +839,9 @@
         </div>
       </nav>
     </header>
-    <nav class="grid-container margin-y-2 print:display-none">
+    <nav
+      class="grid-container margin-y-2 print:display-none"
+      aria-label="secondary navigation">
       <div class="display-row display-flex flex-justify flex-align-center">
         <a
           href="https://www.usa.gov/benefits-grants-loans"
