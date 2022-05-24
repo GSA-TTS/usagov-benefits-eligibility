@@ -164,9 +164,6 @@ export default {
     }
   },
   methods: {
-    mapLifeEvents(lifeEvents) {
-      return lifeEvents.map((le) => _.lowerCase(le))
-    },
     openAll() {
       this.$refs.accordion.openAll()
     },

@@ -1,7 +1,7 @@
 <template>
-  <div class="margin-bottom-4 print:display-none">
+  <div class="margin-bottom-4 margin-top-neg-3 print:display-none">
     <div
-      class="display-block margin-bottom-5 border-bottom border-gray-30 border-width-2px break-inside-avoid padding-bottom-4">
+      class="tablet:padding-left-3 display-block margin-bottom-5 border-bottom border-gray-30 border-width-2px break-inside-avoid padding-bottom-4">
       <button
         class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white clear-selections"
         @click="clearCriteria">
@@ -15,62 +15,64 @@
         <span class="text-middle">Clear my selections</span>
       </button>
     </div>
-    <h2 class="font-sans-md">Sharing and printing</h2>
-    <p class="usa-prose">
-      {{ $t("shareResults.description") }}
-    </p>
-    <div class="margin-bottom-1">
-      <span :class="{ 'usa-tooltip': alert, 'display-inline-block': true, 'width-full': true }">
-        <input
-          class="usa-input"
-          type="text"
-          readonly
-          aria-label="URL of website with responses saved"
-          :value="url"
-          data-position="top"
-          @click="copy"
-          @blur="blur" />
-        <span
-          :class="{ 'usa-tooltip__body': true, 'is-set': alert, 'usa-tooltip__body--top': true, 'is-visible': alert }"
-          role="tooltip"
-          :aria-hidden="!alert"
-          style="left: 15%; top: -4rem">
-          {{ $t("shareResults.linkCopied") }}
+    <div class="tablet:padding-left-3">
+      <h2 class="font-sans-md">Sharing and printing</h2>
+      <p class="usa-prose">
+        {{ $t("shareResults.description") }}
+      </p>
+      <div class="margin-bottom-1">
+        <span :class="{ 'usa-tooltip': alert, 'display-inline-block': true, 'width-full': true }">
+          <input
+            class="usa-input"
+            type="text"
+            readonly
+            aria-label="URL of website with responses saved"
+            :value="url"
+            data-position="top"
+            @click="copy"
+            @blur="blur" />
+          <span
+            :class="{ 'usa-tooltip__body': true, 'is-set': alert, 'usa-tooltip__body--top': true, 'is-visible': alert }"
+            role="tooltip"
+            :aria-hidden="!alert"
+            style="left: 15%; top: -4rem">
+            {{ $t("shareResults.linkCopied") }}
+          </span>
         </span>
-      </span>
-    </div>
-    <div class="margin-bottom-1">
-      <button
-        class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white copy-selections"
-        @click="copy">
-        <svg
-          class="usa-icon text-middle"
-          aria-hidden="true"
-          focusable="false"
-          role="img">
-          <use xlink:href="~/assets/img/sprite.svg#share" />
-        </svg>
-        <span class="text-middle">{{ $t("shareResults.copy") }}</span>
-      </button>
-    </div>
-    <div class="margin-bottom-1">
-      <print
-        :show-selections="true"
-        @print="$emit('print')" />
-    </div>
-    <div class="margin-bottom-1">
-      <button
-        class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white"
-        @click="email">
-        <svg
-          class="usa-icon text-middle"
-          aria-hidden="true"
-          focusable="false"
-          role="img">
-          <use xlink:href="~/assets/img/sprite.svg#mail" />
-        </svg>
-        <span class="text-middle">{{ $t("shareResults.email") }}</span>
-      </button>
+      </div>
+      <div class="margin-bottom-1">
+        <button
+          class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white copy-selections"
+          @click="copy">
+          <svg
+            class="usa-icon text-middle"
+            aria-hidden="true"
+            focusable="false"
+            role="img">
+            <use xlink:href="~/assets/img/sprite.svg#share" />
+          </svg>
+          <span class="text-middle">{{ $t("shareResults.copy") }}</span>
+        </button>
+      </div>
+      <div class="margin-bottom-1">
+        <print
+          :show-selections="true"
+          @print="$emit('print')" />
+      </div>
+      <div class="margin-bottom-1">
+        <button
+          class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white"
+          @click="email">
+          <svg
+            class="usa-icon text-middle"
+            aria-hidden="true"
+            focusable="false"
+            role="img">
+            <use xlink:href="~/assets/img/sprite.svg#mail" />
+          </svg>
+          <span class="text-middle">{{ $t("shareResults.email") }}</span>
+        </button>
+      </div>
     </div>
   </div>
 </template>

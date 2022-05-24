@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-burial-allowance.source.name
-  link: https://www.va.gov/burials-memorials/veterans-burial-allowance/
+  link: va-burial-allowance.source.link
 
 summary: va-burial-allowance.summary
 

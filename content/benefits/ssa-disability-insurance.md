@@ -7,7 +7,7 @@ lifeEvents:
   - disability
 source:
   name: ssa-disability-insurance.source.name
-  link: https://www.ssa.gov/benefits/disability/
+  link: ssa-disability-insurance.source.link
 
 summary: ssa-disability-insurance.summary
 

@@ -17,7 +17,7 @@
         :class="getBorderColor(benefit.eligibility)">
         <button
           ref="accordionButtons"
-          class="usa-accordion__button"
+          class="usa-accordion__button usagov-heading--blue"
           aria-expanded="false"
           :aria-controls="`acc-content-${benefit.slug}`">
           {{ benefit.title }}
@@ -46,13 +46,13 @@
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
             {{ $t("accordion.provided") }}
-            <a
+            <!-- //NOSONAR --><a
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
+              rel="noopener"
               >{{ benefit.source.name }}</a
             >
-            <!-- //NOSONAR -->
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -74,14 +74,14 @@
           style="padding-left: 0"
           :aria-label="`Choices for ${benefit.title}`">
           <li class="usa-button-group__item">
-            <a
+            <!-- //NOSONAR --><a
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
+              rel="noopener"
               :aria-label="`How to apply for ${benefit.title}`"
               class="usa-button print:display-none">
               {{ $t("accordion.apply") }}
             </a>
-            <!-- //NOSONAR -->
           </li>
         </ul>
       </div>
@@ -211,9 +211,37 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style
+  lang="scss"
+  scoped>
 .benefit-list-move {
   transition: transform 1s;
+}
+.usa-accordion__button {
+  background-color: transparent;
+  border-right: 3px solid #ebe6de;
+  border-top: 3px solid #ebe6de;
+  border-bottom: 3px solid #ebe6de;
+  color: #154285;
+  filter: grayscale(50%);
+  &:hover {
+    color: #154285;
+  }
+}
+.usa-accordion--bordered .usa-accordion__content {
+  border-bottom-color: #ebe6de;
+  border-left-color: #ebe6de;
+  border-right-color: #ebe6de;
+}
+
+.usa-accordion__button[aria-expanded="false"] {
+  background-image: url(../assets/img/blue-plus.svg), linear-gradient(transparent, transparent);
+  background-size: 0.75rem;
+}
+
+.usa-accordion__button[aria-expanded="true"] {
+  background-image: url(../assets/img/blue-minus.svg), linear-gradient(transparent, transparent);
+  background-size: 0.75rem;
 }
 
 @media print {

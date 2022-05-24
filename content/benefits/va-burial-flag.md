@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-burial-flag.source.name
-  link: https://www.va.gov/burials-memorials/memorial-items/burial-flags/
+  link: va-burial-flag.source.link
 
 summary: va-burial-flag.summary
 

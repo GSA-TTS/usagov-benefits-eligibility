@@ -8,7 +8,7 @@ lifeEvents:
   - loss-of-job-and-low-income
 source:
   name: ssa-disability-insurance-spouse.source.name
-  link: https://www.ssa.gov/benefits/disability/
+  link: ssa-disability-insurance-spouse.source.link
 
 summary: ssa-disability-insurance-spouse.summary
 

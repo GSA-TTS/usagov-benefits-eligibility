@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: va-medallion.source.name
-  link: https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/
+  link: va-medallion.source.link
 
 summary: va-medallion.summary
 

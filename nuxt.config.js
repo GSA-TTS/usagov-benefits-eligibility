@@ -19,7 +19,7 @@ if (process.env.NODE_ENV !== "test") {
 // Figure out one life event version
 const landingPageMd = fs.readFileSync("./content/landing-page.md", "utf8")
 const oneEventVersion = () => {
-  if (landingPageMd.indexOf("lifeEvent:") !== -1) {
+  if (landingPageMd.includes("lifeEvent:")) {
     const eventChosen = landingPageMd.split("lifeEvent:")[1].split("\n")[0].trim()
     return eventChosen
   } else {
@@ -53,7 +53,7 @@ export default {
         content: "Answer a few questions. Review a custom list of potential benefits. Find out how to apply.",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: sitePrefix + "favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: sitePrefix + "USA_Fav_Icon152_default.png" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -124,5 +124,12 @@ export default {
     base: process.env.NODE_ENV !== "production" ? undefined : sitePrefix,
     linkActiveClass: "usa-current",
     linkExactActiveClass: "usa-current",
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: "custom",
+        path: "*",
+        component: resolve(__dirname, "pages/404.vue"),
+      })
+    },
   },
 }

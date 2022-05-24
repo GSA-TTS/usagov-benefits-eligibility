@@ -8,7 +8,7 @@ lifeEvents:
   - loss-of-job-and-low-income
 source:
   name: ssa-supplemental-security-income-child.source.name
-  link: https://www.ssa.gov/benefits/disability/apply-child.html
+  link: ssa-supplemental-security-income-child.source.link
 
 summary: ssa-supplemental-security-income-child.summary
 

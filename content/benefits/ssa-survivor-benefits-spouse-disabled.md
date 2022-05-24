@@ -8,7 +8,7 @@ lifeEvents:
   - disability
 source:
   name: ssa-survivor-benefits-spouse-disabled.source.name
-  link: https://www.ssa.gov/benefits/survivors/ifyou.html#h2
+  link: ssa-survivor-benefits-spouse-disabled.source.link
 
 summary: ssa-survivor-benefits-spouse-disabled.summary
 

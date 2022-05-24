@@ -29,6 +29,8 @@
     "Please enter a valid date.": "Please enter a valid date."
   },
   "eligibilityList": {
+    "left-rail-heading": "Answer a Few Questions",
+    "right-rail-heading": "Potential Federal Benefits",
     "heading": "Key eligibility criteria",
     "you_must": "You must meet all criteria. You currently meet",
     "of": "of",
@@ -181,5 +183,31 @@
   },
   "agency": {
     "sort": "Benefits by agency"
+  },
+  "404": {
+    "sidenav": {
+      "linkOne": "https://usa.gov/contact",
+      "linkOneText": "Contact USA.gov",
+      "linkTwo": "https://usa.gov/phone",
+      "linkTwoText": "Call USA.gov",
+      "linkThree": "https://usa.gov/chat",
+      "linkThreeText": "Chat with USA.gov",
+      "linkFour": "https://usa.gov/how-to-use",
+      "linkFourText": "Find What You Need with USA.gov"
+    },
+    "contactBox": {
+      "header": "Contact Us",
+      "paragraph": "Ask a real person any government-related question for free. They'll get you the answer or let you know where to find it.",
+      "list": {
+        "bulletOneText": "Talk to a live USA.gov agent",
+        "bulletOneLink": "https://usa.gov/phone",
+        "bulletTwoText": "Web Chat with a live USA.gov agent",
+        "bulletTwoLink": "https://usa.gov/chat"
+      }
+    },
+    "heading": "Page Not Found",
+    "paragraphOne": "We can't find the page you're looking for. It might have been removed, had its name changed, or is temporarily unavailable.",
+    "paragraphTwo": "If you typed the URL directly, check your spelling and capitalization. Our URLs look like this:&nbsp;<strong>usa.gov/example-one</strong> and <strong>usa.gov/espanol/ejemplo-uno</strong>.<br /><br /><strong>Note:</strong> When typing a Spanish URL, use the 'n' instead of the 'ñ' in the address bar.",
+    "paragraphThree": "You can browse our <a href='https://usa.gov/topics'>topics page</a> or <a href='https://usa.gov/espanol#tpcs'>servicios</a> (in Spanish), use our search engine, or <a href='https://usa.gov/contact'>contact us</a> if you still have a question."
   }
 }

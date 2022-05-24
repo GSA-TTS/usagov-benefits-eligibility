@@ -8,7 +8,7 @@ lifeEvents:
   - disability
 source:
   name: ssa-survivor-benefits-child-disabled.source.name
-  link: https://www.ssa.gov/benefits/survivors/ifyou.html#h4
+  link: ssa-survivor-benefits-child-disabled.source.link
 
 summary: ssa-survivor-benefits-child-disabled.summary
 

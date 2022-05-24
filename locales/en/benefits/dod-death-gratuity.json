@@ -2,6 +2,7 @@
   "dod-death-gratuity.title": "Death Gratuity",
   "dod-death-gratuity.headline": "Death Gratuity",
   "dod-death-gratuity.source.name": "Department of Defense",
+  "dod-death-gratuity.source.link": "https://militarypay.defense.gov/Benefits/Death-Gratuity/",
   "dod-death-gratuity.summary": "Death Gratuity is a tax free payment of $100,000 to eligible survivors of members of the Armed Forces, who died while on active duty or while serving in certain reserve statuses.",
   "dod-death-gratuity.eligibility.acceptableValues": "yes",
   "dod-death-gratuity.eligibility.label": "The deceased served in the active military, naval, or air service.",

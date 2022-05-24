@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import { tObj } from "~/services/translation"
 export default {
   layout: "default",
   async asyncData({ $content }) {
@@ -70,6 +71,7 @@ export default {
     if (this.$config.oneEventVersion !== false) {
       this.$router.push(this.$route.fullPath + this.$config.oneEventVersion)
     }
+    this.landingPage = tObj.call(this, this.landingPage)
   },
 }
 </script>

@@ -1,7 +1,8 @@
 {
-  "va-life-insurance-for-survivors.title": "Veterans Life Insurance for Surviving Beneficiaries",
-  "va-life-insurance-for-survivors.headline": "Veterans Life Insurance for Surviving Beneficiaries",
+  "va-life-insurance-for-survivors.title": "Veteran's Life Insurance for Surviving Beneficiaries",
+  "va-life-insurance-for-survivors.headline": "Veteran's Life Insurance for Surviving Beneficiaries",
   "va-life-insurance-for-survivors.source.name": "U.S. Department of Veteran Affairs",
+  "va-life-insurance-for-survivors.source.link": "https://www.benefits.va.gov/INSURANCE/sglivgli.asp",
   "va-life-insurance-for-survivors.summary": "Financial payment from a veteran's or service member's life insurance policy may be available.",
   "va-life-insurance-for-survivors.eligibility.acceptableValues": "yes",
   "va-life-insurance-for-survivors.eligibility.label": "The deceased served in the active military, naval, or air service.",

@@ -7,7 +7,7 @@ lifeEvents:
   - death-of-a-loved-one
 source:
   name: ssa-lump-sum-death-benefit.source.name
-  link: https://www.ssa.gov/benefits/survivors/ifyou.html#h7
+  link: ssa-lump-sum-death-benefit.source.link
 
 summary: ssa-lump-sum-death-benefit.summary
 

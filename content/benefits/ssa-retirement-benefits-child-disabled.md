@@ -10,7 +10,7 @@ lifeEvents:
   - loss-of-job-and-low-income
 source:
   name: ssa-retirement-benefits-child-disabled.source.name
-  link: https://www.ssa.gov/benefits/retirement/
+  link: ssa-retirement-benefits-child-disabled.source.link
 
 summary: ssa-retirement-benefits-child-disabled.summary
 

@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: dod-death-gratuity.source.name
-  link: https://militarypay.defense.gov/Benefits/Death-Gratuity/
+  link: dod-death-gratuity.source.link
 
 summary: dod-death-gratuity.summary
 

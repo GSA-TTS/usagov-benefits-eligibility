@@ -8,7 +8,7 @@ lifeEvents:
   - national-emergency-and-disaster
 source:
   name: fema-covid-19-funeral-assistance.source.name
-  link: https://www.fema.gov/disasters/coronavirus/economic/funeral-assistance
+  link: fema-covid-19-funeral-assistance.source.link
 
 summary: fema-covid-19-funeral-assistance.summary
 

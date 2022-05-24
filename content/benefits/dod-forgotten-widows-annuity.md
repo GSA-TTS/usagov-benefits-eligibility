@@ -8,7 +8,7 @@ lifeEvents:
   - military-service
 source:
   name: dod-forgotten-widows-annuity.source.name
-  link: https://militarypay.defense.gov/Portals/3/Documents/acmss.pdf
+  link: dod-forgotten-widows-annuity.source.link
 
 summary: dod-forgotten-widows-annuity.summary
 
@@ -20,7 +20,7 @@ eligibility:
   - criteriaKey: deceased_service_status
     acceptableValues: [dod-forgotten-widows-annuity.eligibility.acceptableValues1]
   - criteriaKey: deceased_date_of_death
-    acceptableValues: ["<01-01-197"]
+    acceptableValues: ["<01-01-1978"]
     label: dod-forgotten-widows-annuity.eligibility.label1
   - criteriaKey: applicant_relationship
     acceptableValues: [spouse]
