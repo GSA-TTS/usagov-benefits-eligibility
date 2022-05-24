@@ -1,5 +1,11 @@
 <template>
   <div>
+    <a
+      class="usa-skipnav"
+      href="#main-content"
+      @click.prevent="skipLink"
+      >{{ $t("skipnav") }}</a
+    >
     <TheBanner />
     <header
       class="usa-header usa-header--extended"
@@ -855,6 +861,15 @@
 <script>
 export default {
   methods: {
+    skipLink() {
+      const skipLink = document.getElementById("main-content")
+      if (skipLink) {
+        skipLink.scrollIntoView({
+          block: "start",
+          behavior: "smooth",
+        })
+      }
+    },
     switchLanguage() {
       let route = ""
       const locale = this.$i18n.locale
