@@ -2,7 +2,11 @@
   <div>
     <footer class="usa-footer usa-footer--slim print:display-none">
       <div class="grid-container usa-footer__return-to-top">
-        <a @click="scrollToTop">{{ $t("returnToTop") }}</a>
+        <a
+          href="#"
+          @click.prevent="scrollToTop"
+          >{{ $t("returnToTop") }}</a
+        >
       </div>
       <div class="usa-footer__primary-section padding-bottom-7">
         <div class="usa-footer__primary-container grid-row">
@@ -216,7 +220,7 @@ export default {
       return this.$route?.fullPath
     },
     scrollToTop() {
-      window.scrollTo({top: 0, left: 0, behavior: "smooth"})
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
     },
   },
 }
