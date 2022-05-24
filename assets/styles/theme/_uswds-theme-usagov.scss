@@ -29,6 +29,13 @@ $AZ-button-disabled: #859cba;
 }
 
 @media print {
+  body {
+    margin: 0;
+    color: #000 !important;
+    background-color: #fff;
+    font: 10pt Georgia, "Times New Roman", Times, serif;
+    line-height: 1;
+  }
   .break-inside-avoid {
     page-break-inside: avoid;
     break-inside: avoid;
@@ -145,15 +152,6 @@ h1.text-secondary {
 .usa-search [type="submit"] {
   @include u-padding-x(1);
 }
-
-/* .usa-tag {
-  background-color: color('gray-cool-5');
-  .usa-tooltip {
-    .usa-button--outline.usa-button--inverse.usa-button--unstyled {
-      color: color('gray-90');
-    }
-  }
-} */
 
 .usa-accordion {
   .usa-tag {
