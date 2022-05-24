@@ -1,6 +1,6 @@
 <template>
   <div
-    class="usa-summary-box margin-bottom-2 text-white"
+    class="usa-summary-box margin-bottom-2 text-white print:text-black print:bg-white"
     role="region"
     aria-labelledby="summary-box-key-information">
     <div class="usa-summary-box__body">
@@ -13,7 +13,7 @@
                 :key="`legend-${filter.criteriaKey}-${uniqueId}`">
                 <h2
                   id="summary-box-key-information"
-                  class="usa-summary-box__heading">
+                  class="usa-summary-box__heading print:text-black">
                   {{ filter.label }}
                 </h2>
               </legend>
@@ -28,7 +28,7 @@
                   :values="criterion.values.split('; ')"
                   :criteria-group-key="criterion.criterionKey"
                   :response="criterion.response"
-                  class="margin-y-2 tablet:margin-y-3" />
+                  class="margin-y-2 tablet:margin-y-3 print:text-black" />
               </div>
             </template>
           </fieldset>
@@ -75,5 +75,11 @@ export default {
 .usa-summary-box .usa-checkbox__label,
 .usa-summary-box .usa-radio__label {
   color: white;
+}
+@media print {
+  #summary-box-key-information {
+    margin-top: -1.5rem;
+    color: black;
+  }
 }
 </style>

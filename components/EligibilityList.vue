@@ -132,7 +132,7 @@
       </ul>
     </client-only>
     <p
-      class="text-white bg-base-darker print:text-black print:bg-white font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
+      class="print-meta text-white bg-base-darker print:text-black print:bg-white font-sans-xs padding-x-2 padding-y-1 margin-bottom-0 radius-bottom-sm">
       <strong>{{ $t("eligibilityList.additional") }}</strong>
       {{ $t("eligibilityList.review") }}
       <span class="print:display-none">{{ $t("accordion.apply") }}</span>
@@ -205,5 +205,15 @@ export default {
 .usa-icon {
   height: 1.75rem;
   width: 1.75rem;
+}
+@media print {
+  .usa-icon-list {
+    padding: 0;
+    margin-top: 0;
+    line-height: 1;
+  }
+  .print-meta {
+    margin-top: -1rem;
+  }
 }
 </style>

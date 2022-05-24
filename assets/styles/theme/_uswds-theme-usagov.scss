@@ -29,6 +29,13 @@ $AZ-button-disabled: #859cba;
 }
 
 @media print {
+  body {
+    margin: 0;
+    color: #000 !important;
+    background-color: #fff;
+    font: 10pt Georgia, "Times New Roman", Times, serif;
+    line-height: 1;
+  }
   .break-inside-avoid {
     page-break-inside: avoid;
     break-inside: avoid;

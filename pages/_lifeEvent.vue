@@ -5,7 +5,7 @@
         <div class="tablet:grid-col">
           <h1
             v-if="lifeEventTitle"
-            class="font-heading-lg tablet:font-heading-xl tablet:margin-top-4 text-secondary">
+            class="font-heading-lg tablet:font-heading-xl tablet:margin-top-4 text-secondary print:text-black">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
           <p
@@ -13,7 +13,7 @@
             class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
             {{ lifeEvent.lede }}
           </p>
-          <ol class="usa-process-list margin-bottom-5">
+          <ol class="usa-process-list margin-bottom-5 print:display-none">
             <li
               v-for="(step, index) in landingPage.processListSteps"
               :key="step"
@@ -35,7 +35,7 @@
         <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0">
           <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
           <div>
-            <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
+            <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
               {{ $t("eligibilityList.left-rail-heading") }}
             </h2>
 
@@ -66,7 +66,7 @@
         </div>
         <div
           class="margin-top-2 tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
-          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue">
+          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
             {{ $t("eligibilityList.right-rail-heading") }}
           </h2>
           <!-- Desktop meta sort and open -->
@@ -182,7 +182,7 @@
               @close-all="closeAll" />
           </div>
 
-          <div class="grid-row grid-gap display-none print:display-block break-before-always">
+          <div class="grid-row grid-gap display-none print:display-block">
             <div class="grid-col margin-bottom-3">
               <h2 class="display-none print:display-block">{{ $t("lifeEvent.benefits") }}</h2>
               {{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }} {{ $t("lifeEvent.labelShowText2") }}
