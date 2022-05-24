@@ -32,7 +32,7 @@
       </div>
 
       <div class="grid-row tablet:grid-gap print:display-block">
-        <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0 print:display-none">
           <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
           <div>
             <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
