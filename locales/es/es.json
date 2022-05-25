@@ -86,14 +86,21 @@
     },
     "GroupFour": {
       "title": "Dinero e impuestos",
+      "titleUrl": "https://www.usa.gov/espanol/dinero",
       "linkOne": "Seguros personales",
+      "linkOneUrl": "https://www.usa.gov/espanol/seguros-personales",
       "linkTwo": "Gasto, ahorro e inversión",
+      "linkTwoUrl": "https://www.usa.gov/espanol/gasto-ahorro-inversion",
       "linkThree": "Informes y puntajes de crédito",
+      "linkThreeUrl": "https://www.usa.gov/espanol/credito",
       "linkFour": "Impuestos",
+      "linkFourUrl": "https://www.usa.gov/espanol/impuestos",
       "linkFive": "Dinero sin reclamar",
+      "linkFiveUrl": "https://www.usa.gov/espanol/dinero-sin-reclamar",
       "linkSix": "Ayuda financiera y beneficios",
+      "linkSixUrl": "https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios",
       "linkSeven": "Temas del consumidor",
-      "linkEight": ""
+      "linkSevenUrl": "https://www.usa.gov/espanol/proteccion-consumidor"
     },
     "GroupFive": {
       "title": "Directorios del Gobierno",

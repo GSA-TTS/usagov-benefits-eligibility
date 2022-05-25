@@ -104,14 +104,23 @@
     },
     "GroupFour": {
       "title": "Government Agencies and Elected Officials",
+      "titleUrl": "https://www.usa.gov/agencies",
       "linkOne": "A-Z Index of U.S. Government Agencies",
+      "linkOneUrl": "https://www.usa.gov/federal-agencies",
       "linkTwo": "State, Local, and Tribal Governments",
+      "linkTwoUrl": "https://www.usa.gov/state-tribal-governments",
       "linkThree": "Contact Elected Officials",
+      "linkThreeUrl": "https://www.usa.gov/elected-officials",
       "linkFour": "Forms, by Agency",
+      "linkFourUrl": "https://www.usa.gov/forms",
       "linkFive": "Buying from the U.S. Government",
+      "linkFiveUrl": "https://www.usa.gov/buy-from-government",
       "linkSix": "About the U.S.",
+      "linkSixUrl": "https://www.usa.gov/about-the-us",
       "linkSeven": "Branches of the U.S. Government",
-      "linkEight": "Budget of the U.S. Government"
+      "linkSevenUrl": "https://www.usa.gov/branches-of-government",
+      "linkEight": "Budget of the U.S. Government",
+      "linkEightUrl": "https://www.usa.gov/budget"
     },
     "GroupFive": {
       "title": "Jobs and Unemployment",
