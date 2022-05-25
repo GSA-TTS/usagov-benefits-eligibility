@@ -3,6 +3,7 @@
     <a
       class="usa-skipnav"
       href="#main-content"
+      @click.prevent="skipLink"
       >{{ $t("skipnav") }}</a
     >
     <TheBanner />
@@ -862,6 +863,15 @@
 <script>
 export default {
   methods: {
+    skipLink() {
+      const skipLink = document.getElementById("main-content")
+      if (skipLink) {
+        skipLink.scrollIntoView({
+          block: "start",
+          behavior: "smooth",
+        })
+      }
+    },
     switchLanguage() {
       let route = ""
       const locale = this.$i18n.locale
