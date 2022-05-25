@@ -37,10 +37,11 @@
     "main": "Navegación Principal",
     "GroupOne": {
       "title": "Todos los temas y servicios",
-      "linkOneUrl": "https://www.usa.gov/espanol/#tpcs"
+      "titleUrl": "https://www.usa.gov/espanol/#tpcs"
     },
     "GroupTwo": {
       "title": "Ayuda financiera y beneficios",
+      "titleUrl": "https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios",
       "linkOne": "Programas sociales del Gobierno",
       "linkOneUrl": "https://www.usa.gov/espanol/programas-sociales",
       "linkTwo": "Préstamos y subvenciones",
@@ -63,17 +64,25 @@
     },
     "GroupThree": {
       "title": "Ciudadanía, inmigración y viajes",
+      "titleUrl": "https://www.usa.gov/espanol/ciudadania-inmigracion-viajes",
       "linkOne": "Deportación",
+      "linkOneUrl": "https://www.usa.gov/espanol/deportacion",
       "linkTwo": "Viajes dentro Estados Unidos",
+      "linkTwoUrl": "https://www.usa.gov/espanol/viajes-dentro-estados-unidos",
       "linkThree": "Viajes al exterior",
+      "linkThreeUrl": "https://www.usa.gov/espanol/viajes-al-exterior",
       "linkFour": "Pasaporte estadounidense",
+      "linkFourUrl": "https://www.usa.gov/espanol/pasaportes-documentos-de-viaje",
       "linkFive": "Ciudadanía y naturalización",
+      "linkFiveUrl": "https://www.usa.gov/espanol/naturalizacion",
       "linkSix": "Residencia permanente Green Card",
+      "linkSixUrl": "https://www.usa.gov/espanol/residencia-permanente",
       "linkSeven": "Entradas y salidas de EE. UU.",
+      "linkSevenUrl": "https://www.usa.gov/espanol/registros-de-entrada",
       "linkEight": "Visas para extranjeros",
+      "linkEightUrl": "https://www.usa.gov/espanol/inmigrantes-noresidentes",
       "linkNine": "Temas migratorios comunes",
-      "linkTen": "",
-      "linkEleven": ""
+      "linkNineUrl": "https://www.usa.gov/espanol/tramites-migratorios"
     },
     "GroupFour": {
       "title": "Dinero e impuestos",

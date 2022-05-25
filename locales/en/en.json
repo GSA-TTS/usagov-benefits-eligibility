@@ -52,10 +52,11 @@
     "main": "Main Navigation",
     "GroupOne": {
       "title": "All Topics and Services",
-      "linkOneUrl": "https://www.usa.gov/#tpcs"
+      "titleUrl": "https://www.usa.gov/#tpcs"
     },
     "GroupTwo": {
       "title": "About the U.S.",
+      "titleUrl": "https://www.usa.gov/about-the-us",
       "linkOne": "Branches of the U.S. Government",
       "linkOneUrl": "https://www.usa.gov/branches-of-government",
       "linkTwo": "Budget of the U.S. Government",
@@ -77,17 +78,29 @@
     },
     "GroupThree": {
       "title": "Benefits, Grants, Loans",
+      "titleUrl": "https://www.usa.gov/benefits-grants-loans",
       "linkOne": "Benefits",
+      "linkOneUrl": "https://www.usa.gov/benefits",
       "linkTwo": "State Social Service Agencies",
+      "linkTwoUrl": "https://www.usa.gov/state-social-services",
       "linkThree": "Help with Bills",
+      "linkThreeUrl": "https://www.usa.gov/help-with-bills",
       "linkFour": "Grants and Loans",
+      "linkFourUrl": "https://www.usa.gov/grants",
       "linkFive": "Food Assistance",
+      "linkFiveUrl": "https://www.usa.gov/food-help",
       "linkSix": "Social Security Questions",
+      "linkSixUrl": "https://www.usa.gov/about-social-security",
       "linkSeven": "Affordable Rental Housing",
+      "linkSevenUrl": "https://www.usa.gov/finding-home",
       "linkEight": "Financial Aid for Students",
+      "linkEightUrl": "https://www.usa.gov/financial-aid",
       "linkNine": "Military Programs and Benefits",
+      "linkNineUrl": "https://www.usa.gov/military-assistance",
       "linkTen": "Retirement",
-      "linkEleven": "Unemployment Help"
+      "linkTenUrl": "https://www.usa.gov/retirement",
+      "linkEleven": "Unemployment Help",
+      "linkElevenUrl": "https://www.usa.gov/unemployment"
     },
     "GroupFour": {
       "title": "Government Agencies and Elected Officials",
