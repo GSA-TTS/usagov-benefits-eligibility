@@ -1,4 +1,0 @@
-# One month for image files
-<filesMatch ".(jpg|jpeg|png|gif|ico|webp|svg)$">
-Header set Cache-Control "max-age=2592000, public"
-</filesMatch>
