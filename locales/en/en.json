@@ -124,12 +124,19 @@
     },
     "GroupFive": {
       "title": "Jobs and Unemployment",
+      "titleUrl": "https://www.usa.gov/jobs-and-unemployment",
       "linkOne": "Looking for a New Job",
+      "linkOneUrl": "https://www.usa.gov/job-search",
       "linkTwo": "Unemployment Help",
+      "linkTwoUrl": "https://www.usa.gov/unemployment",
       "linkThree": "Labor Laws and Issues",
+      "linkThreeUrl": "https://www.usa.gov/labor-laws",
       "linkFour": "U.S. Government Employees",
+      "linkFourUrl": "https://www.usa.gov/federal-employees",
       "linkFive": "Retirement",
-      "linkSix": "Small Business"
+      "linkFiveUrl": "https://www.usa.gov/retirement",
+      "linkSix": "Small Business",
+      "linkSixUrl": "https://www.usa.gov/business"
     },
     "GroupSix": {
       "title": "Money and Taxes",

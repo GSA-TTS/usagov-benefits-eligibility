@@ -208,7 +208,7 @@
                     class="display-none tablet:display-inline va-middle" />
 
                   <a
-                    :href="sanitizedHeadingUrl($t('header.GroupTwo.linkNineUrl'))"
+                    :href="sanitizedHeadingUrl($t('header.GroupTwo.titleUrl'))"
                     class="usa-button">
                     {{ $t("header.GroupTwo.title") }}
                   </a>
@@ -425,61 +425,40 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/job-search'
-                              : 'https://www.usa.gov/espanol/funcionarios-elegidos'
-                          "
-                          >{{ $t("header.GroupFive.linkOne") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkOneUrl'))">
+                          {{ $t("header.GroupFive.linkOne") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/unemployment'
-                              : 'https://www.usa.gov/espanol/agencias-estatales'
-                          "
-                          >{{ $t("header.GroupFive.linkTwo") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkTwoUrl'))">
+                          {{ $t("header.GroupFive.linkTwo") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/labor-laws'
-                              : 'https://www.usa.gov/espanol/consulados-embajadas'
-                          "
-                          >{{ $t("header.GroupFive.linkThree") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkThreeUrl'))">
+                          {{ $t("header.GroupFive.linkThree") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/federal-employees'
-                              : 'https://www.usa.gov/espanol/agencias-gobierno'
-                          "
-                          >{{ $t("header.GroupFive.linkFour") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkFourUrl'))">
+                          {{ $t("header.GroupFive.linkFour") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/retirement'
-                              : 'https://www.usa.gov/espanol/acerca-de-estados-unidos'
-                          "
-                          >{{ $t("header.GroupFive.linkFive") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkFiveUrl'))">
+                          {{ $t("header.GroupFive.linkFive") }}
+                        </a>
                       </li>
-                      <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/business">{{ $t("header.GroupFive.linkSix") }}</a>
+                      <li
+                        v-if="$i18n.locale === 'en'"
+                        class="usa-nav__submenu-item">
+                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkSixUrl'))">
+                          {{ $t("header.GroupFive.linkSix") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -499,13 +478,9 @@
                     class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
-                    :href="
-                      $i18n.locale === 'en'
-                        ? 'https://www.usa.gov/jobs-and-unemployment'
-                        : 'https://www.usa.gov/espanol/directorios'
-                    "
-                    >{{ $t("header.GroupFive.title") }}</a
-                  >
+                    :href="sanitizedHeadingUrl($t('header.GroupFive.titleUrl'))">
+                    {{ $t("header.GroupFive.title") }}
+                  </a>
                 </div>
               </div>
             </li>

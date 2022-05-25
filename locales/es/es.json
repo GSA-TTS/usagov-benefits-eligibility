@@ -104,12 +104,17 @@
     },
     "GroupFive": {
       "title": "Directorios del Gobierno",
+      "titleUrl": "https://www.usa.gov/espanol/directorios",
       "linkOne": "Funcionarios elegidos",
+      "linkOneUrl": "https://www.usa.gov/espanol/funcionarios-elegidos",
       "linkTwo": "Gobiernos estatales",
+      "linkTwoUrl": "https://www.usa.gov/espanol/agencias-estatales",
       "linkThree": "Consulados y embajadas",
+      "linkThreeUrl": "https://www.usa.gov/espanol/consulados-embajadas",
       "linkFour": "Agencias del Gobierno",
+      "linkFourUrl": "https://www.usa.gov/espanol/agencias-gobierno",
       "linkFive": "Acerca de EE. UU.",
-      "linkSix": ""
+      "linkFiveUrl": "https://www.usa.gov/espanol/acerca-de-estados-unidos"
     },
     "GroupSix": {
       "title": "Temas del consumidor",
