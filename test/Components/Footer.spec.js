@@ -1,4 +1,4 @@
-import { mount } from "@vue/test-utils"
+import { mount, shallowMount } from "@vue/test-utils"
 import Footer from "@/components/Footer.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
@@ -8,8 +8,13 @@ describe("Footer", () => {
   })
 
   it("is a Vue instance", () => {
-    const wrapper = mount(Footer, {
+    const wrapper = shallowMount(Footer, {
       $i18n: { locale: "en" },
+      mocks: {
+        window: {
+          scrollTo: jest.fn(),
+        },
+      },
     })
     expect(wrapper.vm).toBeTruthy()
   })

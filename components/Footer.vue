@@ -30,7 +30,11 @@
     </div>
     <footer class="usa-footer usa-footer--slim print:display-none">
       <div class="grid-container usa-footer__return-to-top">
-        <nuxt-link :to="{ path: getUrl(), hash: '#' }">{{ $t("returnToTop") }}</nuxt-link>
+        <a
+          href="#"
+          @click.prevent="scrollToTop"
+          >{{ $t("returnToTop") }}</a
+        >
       </div>
       <div class="usa-footer__primary-section padding-bottom-7">
         <div class="usa-footer__primary-container grid-row">
@@ -210,7 +214,7 @@
       </div>
     </footer>
 
-    <div class="usa-identifier bg-black">
+    <div class="usa-identifier bg-black print:display-none">
       <section
         class="usa-identifier__section usa-identifier__section--masthead"
         aria-label="Agency identifier">
@@ -242,6 +246,9 @@ export default {
   methods: {
     getUrl() {
       return this.$route?.fullPath
+    },
+    scrollToTop() {
+      window.scrollTo(0, 0)
     },
   },
 }

@@ -23,7 +23,11 @@
             class="line-height-sans-4 font-sans-sm">
             {{ criteriaGroup.description }}
           </p>
-          <section class="margin-y-3 tablet:padding-left-3">
+          <section
+            class="margin-y-3 tablet:padding-left-3"
+            :class="{
+              'print:display-none': hasNoResponses(getCriteriaMap(criteriaGroup.criteriaKeys)),
+            }">
             <template v-for="criterion in getCriteriaMap(criteriaGroup.criteriaKeys)">
               <CriteriaChild
                 :key="criterion.criteriaKey"

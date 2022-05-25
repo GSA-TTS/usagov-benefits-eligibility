@@ -10,7 +10,7 @@
     <article
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
-      class="break-inside-avoid margin-bottom-2">
+      class="margin-bottom-2">
       <h2
         :id="`acc-h-${benefit.slug}-${cid}`"
         class="usa-accordion__heading border-left-105"
@@ -32,7 +32,7 @@
         class="usa-accordion__content usa-prose">
         <div
           v-if="benefit && benefit.tags.length > 0"
-          class="tags-container margin-top-1">
+          class="tags-container margin-top-1 print:display-none">
           <Tag
             v-for="tag in mapTags(benefit.tags)"
             :key="tag.name"
@@ -247,6 +247,18 @@ export default {
 @media print {
   .usa-accordion--bordered .usa-accordion__content.usa-prose {
     display: block !important;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0 1 0 1;
+  }
+
+  h3,
+  p,
+  .usa-prose .eligibility-list-container,
+  .usa-icon-list__item {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 1 0 1;
   }
 }
 </style>

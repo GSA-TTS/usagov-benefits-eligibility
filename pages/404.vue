@@ -113,7 +113,6 @@ a {
   padding: 1px 0 5px 0;
   header h2 {
     background: #fff;
-    font-size: 100%;
     margin: 3px auto 0 auto;
     padding: 10px 10px 10px 0px;
     color: #154285;
