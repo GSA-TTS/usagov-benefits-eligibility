@@ -162,10 +162,15 @@
     },
     "GroupSeven": {
       "title": "Travel and Immigration",
+      "titleUrl": "https://www.usa.gov/travel-and-immigration",
       "linkOne": "Passports and International Travel",
+      "linkOneUrl": "https://www.usa.gov/travel-abroad",
       "linkTwo": "Immigration and Citizenship",
+      "linkTwoUrl": "https://www.usa.gov/immigration-and-citizenship",
       "linkThree": "Visas and Visiting the U.S.",
-      "linkFour": "Recreation and Travel within the U.S."
+      "linkThreeUrl": "https://www.usa.gov/visas-and-visitors",
+      "linkFour": "Recreation and Travel within the U.S.",
+      "linkFourUrl": "https://www.usa.gov/recreation-and-travel"
     },
     "meta": {
       "search": "Search",

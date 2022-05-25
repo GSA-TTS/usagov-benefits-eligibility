@@ -134,10 +134,15 @@
     },
     "GroupSeven": {
       "title": "Trabajo y desempleo",
+      "titleUrl": "https://www.usa.gov/espanol/trabajo-y-desempleo",
       "linkOne": "Empleo y capacitación laboral",
+      "linkOneUrl": "https://www.usa.gov/espanol/empleo-capacitacion-laboral",
       "linkTwo": "Jubilación",
+      "linkTwoUrl": "https://www.usa.gov/espanol/jubilacion",
       "linkThree": "Ayuda disponible por desempleo",
-      "linkFour": "Pequeñas empresas"
+      "linkThreeUrl": "https://www.usa.gov/espanol/desempleo",
+      "linkFour": "Pequeñas empresas",
+      "linkFourUrl": "https://www.usa.gov/espanol/negocios-y-organizaciones-ONG"
     },
     "meta": {
       "search": "Busque en USAGov en Español",

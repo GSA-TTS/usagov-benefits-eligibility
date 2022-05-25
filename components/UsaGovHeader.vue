@@ -592,48 +592,28 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/travel-abroad'
-                              : 'https://www.usa.gov/espanol/empleo-capacitacion-laboral'
-                          "
-                          >{{ $t("header.GroupSeven.linkOne") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSeven.linkOneUrl'))">
+                          {{ $t("header.GroupSeven.linkOne") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/immigration-and-citizenship'
-                              : 'https://www.usa.gov/espanol/jubilacion'
-                          "
-                          >{{ $t("header.GroupSeven.linkTwo") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSeven.linkTwoUrl'))">
+                          {{ $t("header.GroupSeven.linkTwo") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/visas-and-visitors'
-                              : 'https://www.usa.gov/espanol/desempleo'
-                          "
-                          >{{ $t("header.GroupSeven.linkThree") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSeven.linkThreeUrl'))">
+                          {{ $t("header.GroupSeven.linkThree") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/recreation-and-travel'
-                              : 'https://www.usa.gov/espanol/negocios-y-organizaciones-ONG'
-                          "
-                          >{{ $t("header.GroupSeven.linkFour") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSeven.linkFourUrl'))">
+                          {{ $t("header.GroupSeven.linkFour") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -653,13 +633,9 @@
                     class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
-                    :href="
-                      $i18n.locale === 'en'
-                        ? 'https://www.usa.gov/travel-and-immigration'
-                        : 'https://www.usa.gov/espanol/trabajo-y-desempleo'
-                    "
-                    >{{ $t("header.GroupSeven.title") }}</a
-                  >
+                    :href="sanitizedHeadingUrl($t('header.GroupSeven.titleUrl'))">
+                    {{ $t("header.GroupSeven.title") }}
+                  </a>
                 </li>
               </div>
             </li>
