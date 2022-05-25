@@ -152,7 +152,7 @@ export default {
     extendRoutes(routes, resolve) {
       routes.push({
         name: "custom",
-        path: "*",
+        path: "/:lang/*",
         component: resolve(__dirname, "pages/404.vue"),
       })
     },
