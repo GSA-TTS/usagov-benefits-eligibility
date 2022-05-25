@@ -42,14 +42,23 @@
     "GroupTwo": {
       "title": "Ayuda financiera y beneficios",
       "linkOne": "Programas sociales del Gobierno",
+      "linkOneUrl": "https://www.usa.gov/espanol/programas-sociales",
       "linkTwo": "Préstamos y subvenciones",
+      "linkTwoUrl": "https://www.usa.gov/espanol/prestamos-y-subvenciones",
       "linkThree": "Ayuda financiera para estudiantes",
+      "linkThreeUrl": "https://www.usa.gov/espanol/ayuda-financiera-para-estudiantes",
       "linkFour": "Seguro Social",
+      "linkFourUrl": "https://www.usa.gov/espanol/seguro-social",
       "linkFive": "Asistencia alimentaria",
+      "linkFiveUrl": "https://www.usa.gov/espanol/asistencia-alimentaria",
       "linkSix": "Pago de facturas",
+      "linkSixUrl": "https://www.usa.gov/espanol/pago-facturas",
       "linkSeven": "Ayuda disponible por desempleo",
+      "linkSevenUrl": "https://www.usa.gov/espanol/desempleo",
       "linkEight": "Beneficios para miembros de las Fuerzas Armadas",
+      "linkEightUrl": "https://www.usa.gov/espanol/beneficios-familias-militares",
       "linkNine": "Jubilación",
+      "linkNineUrl": "https://www.usa.gov/espanol/jubilacion",
       "linkTen": "Vivienda de renta asequible"
     },
     "GroupThree": {

@@ -57,14 +57,23 @@
     "GroupTwo": {
       "title": "About the U.S.",
       "linkOne": "Branches of the U.S. Government",
+      "linkOneUrl": "https://www.usa.gov/branches-of-government",
       "linkTwo": "Budget of the U.S. Government",
+      "linkTwoUrl": "https://www.usa.gov/budget",
       "linkThree": "Data and Statistics About the U.S.",
+      "linkThreeUrl": "https://www.usa.gov/statistics",
       "linkFour": "History and Historical Documents",
+      "linkFourUrl": "https://www.usa.gov/history",
       "linkFive": "American Flag",
+      "linkFiveUrl": "https://www.usa.gov/flag",
       "linkSix": "Learn About Life in the U.S.",
+      "linkSixUrl": "https://www.usa.gov/life-in-the-us",
       "linkSeven": "Presidents, Vice Presidents, and First Ladies",
+      "linkSevenUrl": "https://www.usa.gov/presidents",
       "linkEight": "Government Agencies and Elected Officials",
-      "linkNine": "Laws and Legal Issues"
+      "linkEightUrl": "https://www.usa.gov/agencies",
+      "linkNine": "Laws and Legal Issues",
+      "linkNineUrl": "https://www.usa.gov/laws"
     },
     "GroupThree": {
       "title": "Benefits, Grants, Loans",

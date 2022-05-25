@@ -127,102 +127,57 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/branches-of-government'
-                              : 'https://www.usa.gov/espanol/programas-sociales'
-                          "
-                          >{{ $t("header.GroupTwo.linkOne") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkOneUrl'))"
+                          >{{ $t("header.GroupTwo.linkOne") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/budget'
-                              : 'https://www.usa.gov/espanol/prestamos-y-subvenciones'
-                          "
-                          >{{ $t("header.GroupTwo.linkTwo") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkTwoUrl'))">
+                          {{ $t("header.GroupTwo.linkTwo") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/statistics'
-                              : 'https://www.usa.gov/espanol/ayuda-financiera-para-estudiantes'
-                          "
-                          >{{ $t("header.GroupTwo.linkThree") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkThreeUrl'))">
+                          {{ $t("header.GroupTwo.linkThree") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/history'
-                              : 'https://www.usa.gov/espanol/seguro-social'
-                          "
-                          >{{ $t("header.GroupTwo.linkFour") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkFourUrl'))">
+                          {{ $t("header.GroupTwo.linkFour") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/flag'
-                              : 'https://www.usa.gov/espanol/asistencia-alimentaria'
-                          "
-                          >{{ $t("header.GroupTwo.linkFive") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkFiveUrl'))">
+                          {{ $t("header.GroupTwo.linkFive") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/life-in-the-us'
-                              : 'https://www.usa.gov/espanol/pago-facturas'
-                          "
-                          >{{ $t("header.GroupTwo.linkSix") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkSixUrl'))">
+                          {{ $t("header.GroupTwo.linkSix") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/presidents'
-                              : 'https://www.usa.gov/espanol/desempleo'
-                          "
-                          >{{ $t("header.GroupTwo.linkSeven") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkSevenUrl'))">
+                          {{ $t("header.GroupTwo.linkSeven") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/agencies'
-                              : 'https://www.usa.gov/espanol/beneficios-familias-militares'
-                          "
-                          >{{ $t("header.GroupTwo.linkEight") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkEightUrl'))">
+                          {{ $t("header.GroupTwo.linkEight") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/laws'
-                              : 'https://www.usa.gov/espanol/jubilacion'
-                          "
-                          >{{ $t("header.GroupTwo.linkNine") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkNineUrl'))">
+                          {{ $t("header.GroupTwo.linkNine") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
