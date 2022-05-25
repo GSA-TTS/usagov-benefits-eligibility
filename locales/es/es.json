@@ -118,15 +118,19 @@
     },
     "GroupSix": {
       "title": "Temas del consumidor",
+      "titleUrl": "https://www.usa.gov/espanol/trabajo-y-desempleo",
       "linkOne": "Presentar una queja",
+      "linkOneUrl": "https://www.usa.gov/espanol/presentar-queja",
       "linkTwo": "Telecomunicaciones",
+      "linkTwoUrl": "https://www.usa.gov/espanol/telecomunicaciones",
       "linkThree": "Telemercadeo insistente y correo basura",
+      "linkThreeUrl": "https://www.usa.gov/espanol/telemercadeo-correo-basura",
       "linkFour": "Estafas y fraudes",
+      "linkFourUrl": "https://www.usa.gov/espanol/estafas-fraudes",
       "linkFive": "Dinero e impuestos",
+      "linkFiveUrl": "https://www.usa.gov/espanol/dinero",
       "linkSix": "Oficinas estatales de protección al consumidor",
-      "linkSeven": "",
-      "linkEight": "",
-      "linkNine": ""
+      "linkSixUrl": "https://www.usa.gov/espanol/estados-consumidor"
     },
     "GroupSeven": {
       "title": "Trabajo y desempleo",

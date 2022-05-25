@@ -140,15 +140,25 @@
     },
     "GroupSix": {
       "title": "Money and Taxes",
+      "titleUrl": "https://www.usa.gov/travel-and-immigration",
       "linkOne": "Taxes",
+      "linkOneUrl": "https://www.usa.gov/taxes",
       "linkTwo": "Credit and Debt",
+      "linkTwoUrl": "https://www.usa.gov/credit-and-debt",
       "linkThree": "Spending, Saving and Investing",
+      "linkThreeUrl": "https://www.usa.gov/spend-save-invest",
       "linkFour": "Unclaimed Money from the Government",
+      "linkFourUrl": "https://www.usa.gov/unclaimed-money",
       "linkFive": "Currency",
+      "linkFiveUrl": "https://www.usa.gov/currency",
       "linkSix": "Benefits, Grants, Loans",
+      "linkSixUrl": "https://www.usa.gov/benefits-grants-loans",
       "linkSeven": "Consumer Issues",
+      "linkSevenUrl": "https://www.usa.gov/consumer",
       "linkEight": "Housing",
-      "linkNine": "Retirement"
+      "linkEightUrl": "https://www.usa.gov/housing",
+      "linkNine": "Retirement",
+      "linkNineUrl": "https://www.usa.gov/retirement"
     },
     "GroupSeven": {
       "title": "Travel and Immigration",

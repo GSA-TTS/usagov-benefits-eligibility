@@ -499,81 +499,59 @@
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/taxes'
-                              : 'https://www.usa.gov/espanol/presentar-queja'
-                          "
-                          >{{ $t("header.GroupSix.linkOne") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkOneUrl'))">
+                          {{ $t("header.GroupSix.linkOne") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/credit-and-debt'
-                              : 'https://www.usa.gov/espanol/telecomunicaciones'
-                          "
-                          >{{ $t("header.GroupSix.linkTwo") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkTwoUrl'))">
+                          {{ $t("header.GroupSix.linkTwo") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/spend-save-invest'
-                              : 'https://www.usa.gov/espanol/telemercadeo-correo-basura'
-                          "
-                          >{{ $t("header.GroupSix.linkThree") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkThreeUrl'))">
+                          {{ $t("header.GroupSix.linkThree") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
                   <div class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/unclaimed-money'
-                              : 'https://www.usa.gov/espanol/estafas-fraudes'
-                          "
-                          >{{ $t("header.GroupSix.linkFour") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkFourUrl'))">
+                          {{ $t("header.GroupSix.linkFour") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/currency'
-                              : 'https://www.usa.gov/espanol/dinero'
-                          "
-                          >{{ $t("header.GroupSix.linkFive") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkFiveUrl'))">
+                          {{ $t("header.GroupSix.linkFive") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/benefits-grants-loans'
-                              : 'https://www.usa.gov/espanol/estados-consumidor'
-                          "
-                          >{{ $t("header.GroupSix.linkSix") }}</a
-                        >
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkSixUrl'))">
+                          {{ $t("header.GroupSix.linkSix") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
-                  <div class="usa-col">
+                  <div
+                    v-if="$i18n.locale === 'en'"
+                    class="usa-col">
                     <ul class="usa-nav__submenu-list">
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/consumer">{{ $t("header.GroupSix.linkSeven") }}</a>
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkSevenUrl'))">
+                          {{ $t("header.GroupSix.linkSeven") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/housing">{{ $t("header.GroupSix.linkEight") }}</a>
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkEightUrl'))">
+                          {{ $t("header.GroupSix.linkEight") }}
+                        </a>
                       </li>
                       <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/retirement">{{ $t("header.GroupSix.linkNine") }}</a>
+                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkNineUrl'))">
+                          {{ $t("header.GroupSix.linkNine") }}
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -593,13 +571,9 @@
                     class="display-none tablet:display-inline va-middle" />
                   <a
                     class="usa-button"
-                    :href="
-                      $i18n.locale === 'en'
-                        ? 'https://www.usa.gov/money'
-                        : 'https://www.usa.gov/espanol/proteccion-consumidor'
-                    "
-                    >{{ $t("header.GroupSix.title") }}</a
-                  >
+                    :href="sanitizedHeadingUrl($t('header.GroupSix.titleUrl'))">
+                    {{ $t("header.GroupSix.title") }}
+                  </a>
                 </div>
               </div>
             </li>
