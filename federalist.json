@@ -17,7 +17,7 @@
     },
     {
       "/*": {
-        "cache-control": "public, max-age=60, immutable"
+        "cache-control": "public, max-age=60, must-revalidate"
       }
     }
   ]
