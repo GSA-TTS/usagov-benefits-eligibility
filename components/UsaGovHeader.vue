@@ -108,8 +108,8 @@
             <li class="usa-nav__primary-item">
               <a
                 class="usa-nav__link"
-                :href="$i18n.locale === 'en' ? 'https://www.usa.gov/#tpcs' : 'https://www.usa.gov/espanol/#tpcs'">
-                <span>{{ $t("header.GroupOne") }}</span>
+                :href="sanitizedHeadingUrl($t('header.GroupOne.linkOneUrl'))">
+                <span>{{ $t("header.GroupOne.title") }}</span>
               </a>
             </li>
             <li class="usa-nav__primary-item">
@@ -861,8 +861,17 @@
   </div>
 </template>
 <script>
+import sanitizeUrl from "~/mixins/SanitizeBears"
 export default {
+  mixins: [sanitizeUrl],
   methods: {
+    sanitizedHeadingUrl(benefitUrl, defaultValue = "#") {
+      if (benefitUrl && benefitUrl.length > 0) {
+        return this.sanitizeUrl(benefitUrl)
+      } else {
+        return defaultValue
+      }
+    },
     skipLink() {
       const skipLink = document.getElementById("main-content")
       if (skipLink) {

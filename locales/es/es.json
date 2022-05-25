@@ -35,7 +35,10 @@
   "header": {
     "menu": "MENÚ",
     "main": "Navegación Principal",
-    "GroupOne": "Todos los temas y servicios",
+    "GroupOne": {
+      "title": "Todos los temas y servicios",
+      "linkOneUrl": "https://www.usa.gov/espanol/#tpcs"
+    },
     "GroupTwo": {
       "title": "Ayuda financiera y beneficios",
       "linkOne": "Programas sociales del Gobierno",
