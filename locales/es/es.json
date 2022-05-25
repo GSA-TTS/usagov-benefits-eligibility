@@ -156,15 +156,22 @@
     "GroupOne": {
       "header": "Sobre USAGov en Español",
       "linkOne": "Acerca de nosotros y avisos de este sitio",
+      "linkOneUrl": "https://www.usa.gov/espanol/acerca-de-usagov-en-espanol",
       "linkTwo": "Medios",
+      "linkTwoUrl": "https://www.usa.gov/espanol/medios",
       "linkThree": "Desarrolladores (en inglés)",
+      "linkThreeUrl": "https://www.usa.gov/developer",
       "linkFour": "Reporte problemas en este sitio",
-      "linkFive": "Todos los temas y servicios"
+      "linkFourUrl": "https://www.usa.gov/espanol/reporte-problemas-en-este-sitio-web",
+      "linkFive": "Todos los temas y servicios",
+      "linkFiveUrl": "https://www.usa.gov/espanol/#tpcs"
     },
     "GroupTwo": {
       "header": "Envíenos sus preguntas",
       "linkOne": "Llame al 1-844-USAGOV1 (1-844-872-4681)",
-      "linkTwo": "In English"
+      "linkOneUrl": "https://www.usa.gov/espanol/centro-de-llamadas",
+      "linkTwo": "In English",
+      "linkTwoUrl": "https://www.usa.gov/contact"
     },
     "GroupThree": {
       "header": "Subscríbase para recibir información actualizada",

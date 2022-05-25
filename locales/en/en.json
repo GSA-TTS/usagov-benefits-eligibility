@@ -198,15 +198,22 @@
     "GroupOne": {
       "header": "About USA.gov",
       "linkOne": "About Us and Site Notices",
+      "linkOneUrl": "https://www.usa.gov/about",
       "linkTwo": "For the Media",
+      "linkTwoUrl": "https://www.usa.gov/media",
       "linkThree": "For Developers",
+      "linkThreeUrl": "https://www.usa.gov/developer",
       "linkFour": "Report a Website Issue",
-      "linkFive": "All Topics and Services"
+      "linkFourUrl": "https://www.usa.gov/site-issue-report-form",
+      "linkFive": "All Topics and Services",
+      "linkFiveUrl": "https://www.usa.gov/#tpcs"
     },
     "GroupTwo": {
       "header": "Ask USA.gov a Question",
       "linkOne": "Call 1-844-USAGOV1 (1-844-872-4681)",
-      "linkTwo": "En Español"
+      "linkOneUrl": "https://www.usa.gov/phone",
+      "linkTwo": "En Español",
+      "linkTwoUrl": "https://usa.gov/espanol/contactenos"
     },
     "GroupThree": {
       "header": "Sign Up to Receive Email Updates",

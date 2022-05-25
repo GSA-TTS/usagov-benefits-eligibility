@@ -24,51 +24,29 @@
                       <li class="usa-footer__secondary-link">
                         <a
                           class="margin-bottom-3"
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/about'
-                              : 'https://www.usa.gov/espanol/acerca-de-usagov-en-espanol'
-                          "
-                          >{{ $t("footer.GroupOne.linkOne") }}</a
-                        >
+                          :href="sanitizedBearsUrl($t('footer.GroupOne.linkOneUrl'))">
+                          {{ $t("footer.GroupOne.linkOne") }}
+                        </a>
                       </li>
-
                       <li class="usa-footer__secondary-link">
-                        <a
-                          :href="
-                            $i18n.locale === 'en' ? 'https://www.usa.gov/media' : 'https://www.usa.gov/espanol/medios'
-                          "
-                          >{{ $t("footer.GroupOne.linkTwo") }}</a
-                        >
+                        <a :href="sanitizedBearsUrl($t('footer.GroupOne.linkTwoUrl'))">
+                          {{ $t("footer.GroupOne.linkTwo") }}
+                        </a>
                       </li>
-
                       <li class="usa-footer__secondary-link">
-                        <a
-                          :href="
-                            $i18n.locale === 'en' ? 'https://www.usa.gov/developer' : 'https://www.usa.gov/developer'
-                          "
-                          >{{ $t("footer.GroupOne.linkThree") }}</a
-                        >
+                        <a :href="sanitizedBearsUrl($t('footer.GroupOne.linkThreeUrl'))">
+                          {{ $t("footer.GroupOne.linkThree") }}
+                        </a>
                       </li>
-
                       <li class="usa-footer__secondary-link">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/site-issue-report-form'
-                              : 'https://www.usa.gov/espanol/reporte-problemas-en-este-sitio-web'
-                          "
-                          >{{ $t("footer.GroupOne.linkFour") }}</a
-                        >
+                        <a :href="sanitizedBearsUrl($t('footer.GroupOne.linkFourUrl'))">
+                          {{ $t("footer.GroupOne.linkFour") }}
+                        </a>
                       </li>
-
                       <li class="usa-footer__secondary-link">
-                        <a
-                          :href="
-                            $i18n.locale === 'en' ? 'https://www.usa.gov/#tpcs' : 'https://www.usa.gov/espanol/#tpcs'
-                          "
-                          >{{ $t("footer.GroupOne.linkFive") }}</a
-                        >
+                        <a :href="sanitizedBearsUrl($t('footer.GroupOne.linkFiveUrl'))">
+                          {{ $t("footer.GroupOne.linkFive") }}
+                        </a>
                       </li>
                     </ul>
                   </section>
@@ -81,25 +59,15 @@
                     </h2>
                     <ul class="usa-list usa-list--unstyled">
                       <li class="usa-footer__secondary-link">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://www.usa.gov/phone'
-                              : 'https://www.usa.gov/espanol/centro-de-llamadas'
-                          "
-                          >{{ $t("footer.GroupTwo.linkOne") }}</a
-                        >
+                        <a :href="sanitizedBearsUrl($t('footer.GroupTwo.linkOneUrl'))">
+                          {{ $t("footer.GroupTwo.linkOne") }}
+                        </a>
                       </li>
 
                       <li class="usa-footer__secondary-link">
-                        <a
-                          :href="
-                            $i18n.locale === 'en'
-                              ? 'https://usa.gov/espanol/contactenos'
-                              : 'https://www.usa.gov/contact'
-                          "
-                          >{{ $t("footer.GroupTwo.linkTwo") }}</a
-                        >
+                        <a :href="sanitizedBearsUrl($t('footer.GroupTwo.linkTwoUrl'))">
+                          {{ $t("footer.GroupTwo.linkTwo") }}
+                        </a>
                       </li>
                     </ul>
                   </section>
@@ -199,7 +167,9 @@
 
 <script>
 import { tObj } from "~/services/translation"
+import sanitizeUrl from "~/mixins/SanitizeBears"
 export default {
+  mixins: [sanitizeUrl],
   props: {
     testEnv: {
       type: Boolean,
@@ -216,6 +186,13 @@ export default {
     this.disclaimer = tObj.call(this, await this.$content("disclaimer").fetch())
   },
   methods: {
+    sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
+      if (benefitUrl && benefitUrl.length > 0) {
+        return this.sanitizeUrl(benefitUrl)
+      } else {
+        return defaultValue
+      }
+    },
     getUrl() {
       return this.$route?.fullPath
     },
@@ -233,4 +210,3 @@ export default {
   background-color: transparent;
 }
 </style>
-`
