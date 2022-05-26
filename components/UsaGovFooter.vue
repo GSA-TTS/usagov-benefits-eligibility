@@ -116,7 +116,7 @@
               href="https://www.facebook.com/USAgov">
               <img
                 alt="Facebook"
-                src="https://www.usa.gov/sites/all/themes/usa/images/Icon_Connect_Facebook.png" />
+                src="~/assets/img/social-icons/Icon_Connect_Facebook.png" />
             </a>
 
             <a
@@ -124,7 +124,7 @@
               href="https://twitter.com/USAgov">
               <img
                 alt="Twitter"
-                src="https://www.usa.gov/sites/all/themes/usa/images/Icon_Connect_Twitter.png" />
+                src="~/assets/img/social-icons/Icon_Connect_Twitter.png" />
             </a>
 
             <a
@@ -132,7 +132,7 @@
               href="https://www.youtube.com/usagov1">
               <img
                 alt="YouTube"
-                src="https://www.usa.gov/sites/all/themes/usa/images/Icon_Connect_Youtube.png" />
+                src="~/assets/img/social-icons/Icon_Connect_Youtube.png" />
             </a>
 
             <a
@@ -140,7 +140,7 @@
               href="https://www.instagram.com/usagov/">
               <img
                 alt="Instagram"
-                src="https://www.usa.gov/sites/all/themes/usa/images/Icon_Connect_Instragram.png" />
+                src="~/assets/img/social-icons/Icon_Connect_Instragram.png" />
             </a>
           </div>
         </div>

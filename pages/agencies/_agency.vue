@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="$config.oneEventVersion === false">
     <section class="grid-container">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col">
@@ -155,6 +155,11 @@ export default {
   head() {
     return {
       title: this.benefitAgency,
+    }
+  },
+  mounted() {
+    if (this.$config.oneEventVersion !== false) {
+      this.$router.push(this.$route.fullPath.split('agencies')[0]+ this.$config.oneEventVersion)
     }
   },
   methods: {
