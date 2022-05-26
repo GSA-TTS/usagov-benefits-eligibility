@@ -3,12 +3,17 @@ import Page from "~/pages/agencies/_agency.vue"
 import beforeAllTests from "~/test/beforeAllTests"
 
 const SOURCE_NAME = "One two three"
+const SOURCE_NAME_TWO = "one-two-three"
+const SUMMARY = "One summary"
+const SUMMARY_TWO = "Two summary"
+const SUMMARY_THREE = "Three summary"
+const NAME = "US One Two"
 
 describe("pages/agencies/_agency.vue", () => {
   let $fetchState
 
-  beforeAll(async () => {
-    await beforeAllTests()
+  beforeAll(() => {
+    beforeAllTests()
     $fetchState = {
       pending: false,
       error: false,
@@ -38,12 +43,12 @@ describe("pages/agencies/_agency.vue", () => {
             benefits: [
               {
                 title: "One",
-                summary: "One summary",
+                summary: SUMMARY,
                 source: { name: SOURCE_NAME },
                 lifeEvents: ["Three", "Four"],
               },
-              { title: "Two", summary: "Two summary", source: { name: SOURCE_NAME }, lifeEvents: [] },
-              { title: "Three", summary: "Three summary", source: { name: "US One Two" }, lifeEvents: [] },
+              { title: "Two", summary: SUMMARY_TWO, source: { name: SOURCE_NAME }, lifeEvents: [] },
+              { title: "Three", summary: SUMMARY_THREE, source: { name: NAME }, lifeEvents: [] },
             ],
             criteria: { body: [] },
           }[contentRequest]
@@ -56,7 +61,7 @@ describe("pages/agencies/_agency.vue", () => {
     }
     const $route = {
       params: {
-        agency: "one-two-three",
+        agency: SOURCE_NAME_TWO,
       },
     }
     const $store = {
@@ -85,7 +90,7 @@ describe("pages/agencies/_agency.vue", () => {
       },
     })
     await wrapper2.vm.$options.fetch.apply(wrapper2.vm)
-    expect(wrapper2.vm.benefitAgency).toBe("US One Two")
+    expect(wrapper2.vm.benefitAgency).toBe(NAME)
   })
 
   it("should fetch benefits for a specific agency (not related)", async () => {
@@ -100,12 +105,12 @@ describe("pages/agencies/_agency.vue", () => {
             benefits: [
               {
                 title: "One",
-                summary: "One summary",
+                summary: SUMMARY,
                 source: { name: SOURCE_NAME },
                 lifeEvents: ["Three", "Four"],
               },
-              { title: "Two", summary: "Two summary", source: { name: SOURCE_NAME }, lifeEvents: [] },
-              { title: "Three", summary: "Three summary", source: { name: "US One Two" }, lifeEvents: [] },
+              { title: "Two", summary: SUMMARY_TWO, source: { name: SOURCE_NAME }, lifeEvents: [] },
+              { title: "Three", summary: SUMMARY_THREE, source: { name: NAME }, lifeEvents: [] },
             ],
             criteria: { body: [] },
           }[contentRequest]
@@ -118,7 +123,7 @@ describe("pages/agencies/_agency.vue", () => {
     }
     const $route = {
       params: {
-        agency: "one-two-three",
+        agency: SOURCE_NAME_TWO,
       },
     }
     const $store = {
@@ -147,7 +152,7 @@ describe("pages/agencies/_agency.vue", () => {
       },
     })
     await wrapper2.vm.$options.fetch.apply(wrapper2.vm)
-    expect(wrapper2.vm.benefitAgency).toBe("One two three")
+    expect(wrapper2.vm.benefitAgency).toBe(SOURCE_NAME)
   })
 
   it("should fetch benefits for a specific agency (2nd condition slug)", async () => {
@@ -164,12 +169,12 @@ describe("pages/agencies/_agency.vue", () => {
             benefits: [
               {
                 title: "One",
-                summary: "One summary",
+                summary: SUMMARY,
                 source: { name: SOURCE_NAME },
                 lifeEvents: ["Three", "Four"],
               },
-              { title: "Two", summary: "Two summary", source: { name: SOURCE_NAME }, lifeEvents: [] },
-              { title: "Three", summary: "Three summary", source: { name: "US One Two" }, lifeEvents: [] },
+              { title: "Two", summary: SUMMARY_TWO, source: { name: SOURCE_NAME }, lifeEvents: [] },
+              { title: "Three", summary: SUMMARY_THREE, source: { name: NAME }, lifeEvents: [] },
             ],
             criteria: { body: [] },
           }[contentRequest]
@@ -182,7 +187,7 @@ describe("pages/agencies/_agency.vue", () => {
     }
     const $route = {
       params: {
-        agency: "one-two-three",
+        agency: SOURCE_NAME_TWO,
       },
     }
     const $store = {
@@ -211,7 +216,7 @@ describe("pages/agencies/_agency.vue", () => {
       },
     })
     await wrapper2.vm.$options.fetch.apply(wrapper2.vm)
-    expect(wrapper2.vm.benefitAgency).toBe("One two three")
+    expect(wrapper2.vm.benefitAgency).toBe(SOURCE_NAME)
   })
 
   it("should expand,collapse, and clear all accordion cards", async () => {
