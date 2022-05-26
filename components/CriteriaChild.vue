@@ -85,7 +85,9 @@ export default {
     },
     criteria: {
       type: Object,
-      default: () => {return {}},
+      default: () => {
+        return {}
+      },
     },
     topLevelFilters: {
       type: Array,
