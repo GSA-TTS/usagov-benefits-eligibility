@@ -150,6 +150,18 @@ export default {
     linkActiveClass: "usa-current",
     linkExactActiveClass: "usa-current",
     extendRoutes(routes, resolve) {
+      if(oneEventVersion) {
+        routes.push({
+          name: "agencies",
+          path: "/:lang/agencies/*",
+          component: resolve(__dirname, "pages/404.vue"),
+        })
+        routes.push({
+          name: "types",
+          path: "/:lang/types/*",
+          component: resolve(__dirname, "pages/404.vue"),
+        })
+      }
       routes.push({
         name: "custom",
         path: "/:lang/*",
