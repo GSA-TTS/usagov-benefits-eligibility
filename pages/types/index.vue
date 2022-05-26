@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="$config.oneEventVersion === false">
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
@@ -68,6 +68,11 @@ export default {
   head() {
     return {
       title: "Benefits by type",
+    }
+  },
+  mounted() {
+    if (this.$config.oneEventVersion !== false) {
+      this.$router.push(this.$route.fullPath.split('types')[0]+ this.$config.oneEventVersion)
     }
   },
   methods: {

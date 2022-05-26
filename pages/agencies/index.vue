@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="$config.oneEventVersion === false">
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-10">
@@ -64,6 +64,11 @@ export default {
     return {
       agencies: [],
       contentAgencies: {},
+    }
+  },
+  mounted() {
+    if (this.$config.oneEventVersion !== false) {
+      this.$router.push(this.$route.fullPath.split('agencies')[0]+ this.$config.oneEventVersion)
     }
   },
   /* istanbul ignore next */
