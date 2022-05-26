@@ -27,7 +27,7 @@
               <img
                 v-if="$i18n.locale === 'es'"
                 class="margin-right-2 tablet:margin-right-1 width-10 tablet:width-card"
-                src="https://app-usa-modeast-prod-a01239f-ecas.s3.amazonaws.com/Logo_USAGov_Spanish.png"
+                src="@/assets/img/logo_usagov_spanish.png"
                 alt="USAGov Logo" />
             </a>
           </em>
@@ -92,7 +92,7 @@
                   class="usa-button"
                   type="submit">
                   <img
-                    src="https://www.usa.gov/images/search-dark.svg"
+                    src="@/assets/img/search-dark.svg"
                     class="usa-search__submit-icon"
                     alt="Search" />
                 </button>
@@ -196,13 +196,13 @@
                 <div class="topic-link topic-nav-flag">
                   <img
                     v-if="$i18n.locale === 'en'"
-                    src="https://www.usa.gov/images/Topic_Icon_About_USA_White.svg"
+                    src="@/assets/img/Topic_Icon_About_USA_White.svg"
                     alt="U.S. Flag"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
                     v-if="$i18n.locale === 'es'"
-                    src="https://www.usa.gov/images/Topic_Icon_Benefit_White.svg"
+                    src="@/assets/img/Topic_Icon_Benefit_White.svg"
                     alt="Dinero"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
@@ -304,13 +304,13 @@
                 <div class="topic-link topic-nav-benefit">
                   <img
                     v-if="$i18n.locale === 'en'"
-                    src="https://www.usa.gov/images/Topic_Icon_Benefit_White.svg"
+                    src="@/assets/img/Topic_Icon_Benefit_White.svg"
                     alt="U.S. Money"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
                     v-if="$i18n.locale === 'es'"
-                    src="https://www.usa.gov/images/Topic_Icon_Immigration_White.svg"
+                    src="@/assets/img/Topic_Icon_Immigration_White.svg"
                     alt="World Globe"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
@@ -392,13 +392,13 @@
                 <div class="topic-link topic-nav-agencies">
                   <img
                     v-if="$i18n.locale === 'en'"
-                    src="https://www.usa.gov/images/Topic_Icon_Elected_Officials_White.svg"
+                    src="@/assets/img/Topic_Icon_Elected_Officials_White.svg"
                     alt="person in front of government building"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
                     v-if="$i18n.locale === 'es'"
-                    src="https://www.usa.gov/images/Topic_Icon_Money_White.svg"
+                    src="@/assets/img/Topic_Icon_Money_White.svg"
                     alt="person in front of government building"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
@@ -466,13 +466,13 @@
                 <div class="topic-link topic-nav-job">
                   <img
                     v-if="$i18n.locale === 'en'"
-                    src="https://www.usa.gov/images/Topic_Icon_Job_White.svg"
+                    src="@/assets/img/Topic_Icon_Job_White.svg"
                     alt="suitcase"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
                     v-if="$i18n.locale === 'es'"
-                    src="https://www.usa.gov/images/Topic_Icon_Elected_Officials_White.svg"
+                    src="@/assets/img/Topic_Icon_Elected_Officials_White.svg"
                     alt="building with people"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
@@ -559,14 +559,14 @@
                 <div class="topic-link topic-nav-tax">
                   <img
                     v-if="$i18n.locale === 'en'"
-                    src="https://www.usa.gov/images/Topic_Icon_Money_White.svg"
+                    src="@/assets/img/Topic_Icon_Money_White.svg"
                     alt="money sign"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
                     v-if="$i18n.locale === 'es'"
-                    src="https://www.usa.gov/images/Topic_Icon_Consumer_White.svg"
-                    alt="hand  holding a credit card"
+                    src="@/assets/img/Topic_Icon_Consumer_White.svg"
+                    alt="hand holding a credit card"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <a
@@ -621,13 +621,13 @@
                 <li class="topic-link topic-nav-globe">
                   <img
                     v-if="$i18n.locale === 'en'"
-                    src="https://www.usa.gov/images/Topic_Icon_Immigration_White.svg"
+                    src="@/assets/img/Topic_Icon_Immigration_White.svg"
                     alt="earth globe"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />
                   <img
                     v-if="$i18n.locale === 'es'"
-                    src="https://www.usa.gov/images/Topic_Icon_Job_White.svg"
+                    src="@/assets/img/Topic_Icon_Job_White.svg"
                     alt="briefcase"
                     width="55"
                     class="display-none tablet:display-inline va-middle" />

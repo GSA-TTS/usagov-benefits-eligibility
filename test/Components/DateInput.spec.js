@@ -6,12 +6,13 @@ import { state as criteriaState, mutations, getters } from "~/store/criteria"
 
 const LABEL = "Testing DateInput Label"
 const CRITERIA_KEY = "applicant_senior"
+const BENEFIT_CARD = "benefit-card"
 const PROPS_DATA = {
   criteriaKey: CRITERIA_KEY,
   label: LABEL,
   response: "test",
   dateResponse: "11-14-1999",
-  location: "benefit-card",
+  location: BENEFIT_CARD,
   test: true,
 }
 
@@ -81,7 +82,7 @@ describe("DateInput", () => {
         criteriaKey: CRITERIA_KEY,
         label: LABEL,
         response: null,
-        location: "benefit-card",
+        location: BENEFIT_CARD,
         dateResponse: null,
         test: true,
       },
@@ -118,7 +119,7 @@ describe("DateInput", () => {
         label: LABEL,
         response: "test",
         dateResponse: "11-14-9999",
-        location: "benefit-card",
+        location: BENEFIT_CARD,
         test: true,
       },
       store,

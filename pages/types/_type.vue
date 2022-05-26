@@ -135,11 +135,6 @@ export default {
       },
     }
   },
-  mounted() {
-    if (this.$config.oneEventVersion !== false) {
-      this.$router.push(this.$route.fullPath.split('types')[0]+ this.$config.oneEventVersion)
-    }
-  },
   async fetch() {
     this.benefitTopic = _.capitalize(_.lowerCase(this.$route.params.type))
     const lifeEventBenefits = tObj.call(
@@ -162,12 +157,17 @@ export default {
     }
     this.lifeEventBenefits = lifeEventBenefits
   },
-  /* istanbul ignore next */
   head() {
     return {
       title: this.benefitTopic,
     }
   },
+  mounted() {
+    if (this.$config.oneEventVersion !== false) {
+      this.$router.push(this.$route.fullPath.split("types")[0] + this.$config.oneEventVersion)
+    }
+  },
+  /* istanbul ignore next */
   methods: {
     openAll() {
       this.$refs.accordion.openAll()

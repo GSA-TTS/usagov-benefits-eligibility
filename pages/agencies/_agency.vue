@@ -144,7 +144,6 @@ export default {
       (benefit) => benefit?.source?.name && agencyRegex.test(benefit.source.name)
     )
     this.benefitAgency = this.lifeEventBenefits[0]?.source?.name
-    // eslint-disable-next-line node/handle-callback-err
     this.agency = tObj.call(this, await this.$content("agencies", this.$route.params.agency).fetch())
     this.agency.related = []
     for (const related of this.agency.relatedKeys || []) {
@@ -159,7 +158,7 @@ export default {
   },
   mounted() {
     if (this.$config.oneEventVersion !== false) {
-      this.$router.push(this.$route.fullPath.split('agencies')[0]+ this.$config.oneEventVersion)
+      this.$router.push(this.$route.fullPath.split("agencies")[0] + this.$config.oneEventVersion)
     }
   },
   methods: {
