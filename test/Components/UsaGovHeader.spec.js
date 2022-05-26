@@ -51,3 +51,20 @@ describe("<UsaGovHeader />", () => {
     esButton.trigger("click")
   })
 })
+
+describe("sanitizedBenefitUrl tests", () => {
+  it("text example.com", () => {
+    const wrapper = shallowMount(UsaGovHeader, {})
+    const url = wrapper.vm.sanitizedHeadingUrl("http://www.example.com")
+    expect(url).toBe("http://www.example.com")
+  })
+  it("sanitizedBenefitUrl about:blank if javascript is injected", () => {
+    const wrapper = shallowMount(UsaGovHeader, {})
+    const url = wrapper.vm.sanitizedHeadingUrl({
+      source: {
+        link: "javascript:somethingBad('dd')",
+      },
+    })
+    expect(url).toBe("#")
+  })
+})

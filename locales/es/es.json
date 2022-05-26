@@ -35,77 +35,120 @@
   "header": {
     "menu": "MENÚ",
     "main": "Navegación Principal",
-    "GroupOne": "Todos los temas y servicios",
+    "GroupOne": {
+      "title": "Todos los temas y servicios",
+      "titleUrl": "https://www.usa.gov/espanol/#tpcs"
+    },
     "GroupTwo": {
       "title": "Ayuda financiera y beneficios",
+      "titleUrl": "https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios",
       "linkOne": "Programas sociales del Gobierno",
+      "linkOneUrl": "https://www.usa.gov/espanol/programas-sociales",
       "linkTwo": "Préstamos y subvenciones",
+      "linkTwoUrl": "https://www.usa.gov/espanol/prestamos-y-subvenciones",
       "linkThree": "Ayuda financiera para estudiantes",
+      "linkThreeUrl": "https://www.usa.gov/espanol/ayuda-financiera-para-estudiantes",
       "linkFour": "Seguro Social",
+      "linkFourUrl": "https://www.usa.gov/espanol/seguro-social",
       "linkFive": "Asistencia alimentaria",
+      "linkFiveUrl": "https://www.usa.gov/espanol/asistencia-alimentaria",
       "linkSix": "Pago de facturas",
+      "linkSixUrl": "https://www.usa.gov/espanol/pago-facturas",
       "linkSeven": "Ayuda disponible por desempleo",
+      "linkSevenUrl": "https://www.usa.gov/espanol/desempleo",
       "linkEight": "Beneficios para miembros de las Fuerzas Armadas",
+      "linkEightUrl": "https://www.usa.gov/espanol/beneficios-familias-militares",
       "linkNine": "Jubilación",
+      "linkNineUrl": "https://www.usa.gov/espanol/jubilacion",
       "linkTen": "Vivienda de renta asequible"
     },
     "GroupThree": {
       "title": "Ciudadanía, inmigración y viajes",
+      "titleUrl": "https://www.usa.gov/espanol/ciudadania-inmigracion-viajes",
       "linkOne": "Deportación",
+      "linkOneUrl": "https://www.usa.gov/espanol/deportacion",
       "linkTwo": "Viajes dentro Estados Unidos",
+      "linkTwoUrl": "https://www.usa.gov/espanol/viajes-dentro-estados-unidos",
       "linkThree": "Viajes al exterior",
+      "linkThreeUrl": "https://www.usa.gov/espanol/viajes-al-exterior",
       "linkFour": "Pasaporte estadounidense",
+      "linkFourUrl": "https://www.usa.gov/espanol/pasaportes-documentos-de-viaje",
       "linkFive": "Ciudadanía y naturalización",
+      "linkFiveUrl": "https://www.usa.gov/espanol/naturalizacion",
       "linkSix": "Residencia permanente Green Card",
+      "linkSixUrl": "https://www.usa.gov/espanol/residencia-permanente",
       "linkSeven": "Entradas y salidas de EE. UU.",
+      "linkSevenUrl": "https://www.usa.gov/espanol/registros-de-entrada",
       "linkEight": "Visas para extranjeros",
+      "linkEightUrl": "https://www.usa.gov/espanol/inmigrantes-noresidentes",
       "linkNine": "Temas migratorios comunes",
-      "linkTen": "",
-      "linkEleven": ""
+      "linkNineUrl": "https://www.usa.gov/espanol/tramites-migratorios"
     },
     "GroupFour": {
       "title": "Dinero e impuestos",
+      "titleUrl": "https://www.usa.gov/espanol/dinero",
       "linkOne": "Seguros personales",
+      "linkOneUrl": "https://www.usa.gov/espanol/seguros-personales",
       "linkTwo": "Gasto, ahorro e inversión",
+      "linkTwoUrl": "https://www.usa.gov/espanol/gasto-ahorro-inversion",
       "linkThree": "Informes y puntajes de crédito",
+      "linkThreeUrl": "https://www.usa.gov/espanol/credito",
       "linkFour": "Impuestos",
+      "linkFourUrl": "https://www.usa.gov/espanol/impuestos",
       "linkFive": "Dinero sin reclamar",
+      "linkFiveUrl": "https://www.usa.gov/espanol/dinero-sin-reclamar",
       "linkSix": "Ayuda financiera y beneficios",
+      "linkSixUrl": "https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios",
       "linkSeven": "Temas del consumidor",
-      "linkEight": ""
+      "linkSevenUrl": "https://www.usa.gov/espanol/proteccion-consumidor"
     },
     "GroupFive": {
       "title": "Directorios del Gobierno",
+      "titleUrl": "https://www.usa.gov/espanol/directorios",
       "linkOne": "Funcionarios elegidos",
+      "linkOneUrl": "https://www.usa.gov/espanol/funcionarios-elegidos",
       "linkTwo": "Gobiernos estatales",
+      "linkTwoUrl": "https://www.usa.gov/espanol/agencias-estatales",
       "linkThree": "Consulados y embajadas",
+      "linkThreeUrl": "https://www.usa.gov/espanol/consulados-embajadas",
       "linkFour": "Agencias del Gobierno",
+      "linkFourUrl": "https://www.usa.gov/espanol/agencias-gobierno",
       "linkFive": "Acerca de EE. UU.",
-      "linkSix": ""
+      "linkFiveUrl": "https://www.usa.gov/espanol/acerca-de-estados-unidos"
     },
     "GroupSix": {
       "title": "Temas del consumidor",
+      "titleUrl": "https://www.usa.gov/espanol/trabajo-y-desempleo",
       "linkOne": "Presentar una queja",
+      "linkOneUrl": "https://www.usa.gov/espanol/presentar-queja",
       "linkTwo": "Telecomunicaciones",
+      "linkTwoUrl": "https://www.usa.gov/espanol/telecomunicaciones",
       "linkThree": "Telemercadeo insistente y correo basura",
+      "linkThreeUrl": "https://www.usa.gov/espanol/telemercadeo-correo-basura",
       "linkFour": "Estafas y fraudes",
+      "linkFourUrl": "https://www.usa.gov/espanol/estafas-fraudes",
       "linkFive": "Dinero e impuestos",
+      "linkFiveUrl": "https://www.usa.gov/espanol/dinero",
       "linkSix": "Oficinas estatales de protección al consumidor",
-      "linkSeven": "",
-      "linkEight": "",
-      "linkNine": ""
+      "linkSixUrl": "https://www.usa.gov/espanol/estados-consumidor"
     },
     "GroupSeven": {
       "title": "Trabajo y desempleo",
+      "titleUrl": "https://www.usa.gov/espanol/trabajo-y-desempleo",
       "linkOne": "Empleo y capacitación laboral",
+      "linkOneUrl": "https://www.usa.gov/espanol/empleo-capacitacion-laboral",
       "linkTwo": "Jubilación",
+      "linkTwoUrl": "https://www.usa.gov/espanol/jubilacion",
       "linkThree": "Ayuda disponible por desempleo",
-      "linkFour": "Pequeñas empresas"
+      "linkThreeUrl": "https://www.usa.gov/espanol/desempleo",
+      "linkFour": "Pequeñas empresas",
+      "linkFourUrl": "https://www.usa.gov/espanol/negocios-y-organizaciones-ONG"
     },
     "meta": {
       "search": "Busque en USAGov en Español",
       "placeholder": "Busque en USAGov",
       "back": "Beneficios, Subvenciones, Préstamos",
+      "backUrl": "https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios",
       "language": "English"
     }
   },
@@ -113,15 +156,22 @@
     "GroupOne": {
       "header": "Sobre USAGov en Español",
       "linkOne": "Acerca de nosotros y avisos de este sitio",
+      "linkOneUrl": "https://www.usa.gov/espanol/acerca-de-usagov-en-espanol",
       "linkTwo": "Medios",
+      "linkTwoUrl": "https://www.usa.gov/espanol/medios",
       "linkThree": "Desarrolladores (en inglés)",
+      "linkThreeUrl": "https://www.usa.gov/developer",
       "linkFour": "Reporte problemas en este sitio",
-      "linkFive": "Todos los temas y servicios"
+      "linkFourUrl": "https://www.usa.gov/espanol/reporte-problemas-en-este-sitio-web",
+      "linkFive": "Todos los temas y servicios",
+      "linkFiveUrl": "https://www.usa.gov/espanol/#tpcs"
     },
     "GroupTwo": {
       "header": "Envíenos sus preguntas",
       "linkOne": "Llame al 1-844-USAGOV1 (1-844-872-4681)",
-      "linkTwo": "In English"
+      "linkOneUrl": "https://www.usa.gov/espanol/centro-de-llamadas",
+      "linkTwo": "In English",
+      "linkTwoUrl": "https://www.usa.gov/contact"
     },
     "GroupThree": {
       "header": "Subscríbase para recibir información actualizada",

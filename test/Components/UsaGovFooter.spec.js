@@ -34,3 +34,20 @@ describe("<UsaGovFooter />", () => {
     expect(wrapper.vm.$options.disclaimer).toBe(disclaimer)
   })
 })
+
+describe("sanitizedBenefitUrl tests", () => {
+  it("text example.com", () => {
+    const wrapper = shallowMount(UsaGovFooter, {})
+    const url = wrapper.vm.sanitizedBearsUrl("http://www.example.com")
+    expect(url).toBe("http://www.example.com")
+  })
+  it("sanitizedBenefitUrl about:blank if javascript is injected", () => {
+    const wrapper = shallowMount(UsaGovFooter, {})
+    const url = wrapper.vm.sanitizedBearsUrl({
+      source: {
+        link: "javascript:somethingBad('dd')",
+      },
+    })
+    expect(url).toBe("#")
+  })
+})
