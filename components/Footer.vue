@@ -4,7 +4,7 @@
       <div class="grid-row">
         <div class="grid-col">
           <div
-            class="usa-summary-box bg-transparent border-transparent footer-summary-box"
+            class="usa-summary-box footer-summary-box"
             role="region"
             aria-labelledby="summary-box-key-information-disclaimer">
             <div class="usa-summary-box__body">
