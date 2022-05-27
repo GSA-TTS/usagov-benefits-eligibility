@@ -4,7 +4,7 @@
       <div class="grid-row">
         <div class="grid-col">
           <div
-            class="usa-summary-box bg-transparent border-transparent"
+            class="usa-summary-box footer-summary-box"
             role="region"
             aria-labelledby="summary-box-key-information-disclaimer">
             <div class="usa-summary-box__body">
@@ -230,3 +230,13 @@ export default {
   },
 }
 </script>
+
+<style
+  lang="scss"
+  scoped>
+.footer-summary-box {
+  border-color: transparent;
+  background-color: transparent;
+  color: #1b1b1b;
+}
+</style>
