@@ -66,6 +66,7 @@ export default {
     },
     label: {
       type: String,
+      default: "No label provided",
     },
     type: {
       type: String,
