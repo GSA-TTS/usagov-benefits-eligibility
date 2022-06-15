@@ -16,7 +16,7 @@
           :id="`${uniqueId}-${criteriaKey}-${value}`"
           class="usa-radio__input"
           type="radio"
-          :name="`${uniqueId}-${criteriaKey}-${value}`"
+          :name="`${uniqueId}-${criteriaKey}`"
           :value="value"
           :checked="response === value"
           :disabled="isDisabled"
