@@ -3,6 +3,12 @@
     <legend :class="legendClass">
       {{ label }}
     </legend>
+    <h2
+      v-show="errorMessage"
+      :id="`${errUniqueId}-input-error-message`"
+      class="usa-error-message padding-x-1 margin-bottom-0 radius-sm font-body-md">
+      {{ $t(errorMessage) }}
+    </h2>
     <div class="usa-memorable-date">
       <!-- lower margin of the label -->
       <div class="usa-form-group usa-form-group--month">
@@ -61,12 +67,6 @@
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
     </div>
-    <span
-      v-show="errorMessage"
-      :id="`${errUniqueId}-input-error-message`"
-      class="usa-error-message padding-x-1 radius-sm">
-      {{ $t(errorMessage) }}
-    </span>
   </fieldset>
 </template>
 
