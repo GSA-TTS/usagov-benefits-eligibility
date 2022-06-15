@@ -46,13 +46,14 @@
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
             {{ $t("accordion.provided") }}
-            <!-- //NOSONAR --><a
+            <!-- //NOSONAR -->
+            <a
               class="usa-link"
               :href="sanitizedBenefitUrl(benefit)"
               target="_blank"
               rel="noopener"
-              >{{ benefit.source.name }}</a
-            >
+              >{{ benefit.source.name }}
+            </a>
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -68,22 +69,17 @@
             :show-icons="showIcons"
             :show-matching-count="showMatchingCount" />
         </fieldset>
-        <ul
+        <div
           v-if="benefit.source && benefit.source.link"
-          class="usa-button-group"
-          style="padding-left: 0"
-          :aria-label="`Choices for ${benefit.title}`">
-          <li class="usa-button-group__item">
-            <!-- //NOSONAR --><a
-              :href="sanitizedBenefitUrl(benefit)"
-              target="_blank"
-              rel="noopener"
-              :aria-label="`How to apply for ${benefit.title}`"
-              class="usa-button print:display-none">
-              {{ $t("accordion.apply") }}
-            </a>
-          </li>
-        </ul>
+          class="margin-top-205">
+          <a
+            :href="sanitizedBenefitUrl(benefit)"
+            class="usa-button print:display-none"
+            target="_blank"
+            rel="noopener">
+            {{ $t("accordion.apply") }}
+          </a>
+        </div>
       </div>
     </article>
   </transition-group>
@@ -214,6 +210,10 @@ export default {
 <style
   lang="scss"
   scoped>
+.usa-button {
+  background-color: #00bde3;
+  color: #000000;
+}
 .benefit-list-move {
   transition: transform 1s;
 }
