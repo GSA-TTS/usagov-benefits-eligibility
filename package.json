@@ -38,8 +38,7 @@
     "jest-environment-jsdom": "^28.1.0",
     "nth-check": ">=2.1.0",
     "nuxt": "^2.15.8",
-    "prismjs": "^1.27.0",
-    "webpack": "^4.46.0"
+    "prismjs": "^1.27.0"
   },
   "devDependencies": {
     "@lokidb/loki": "^2.1.0",
@@ -53,7 +52,6 @@
     "axe-core": "^4.4.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^28.0.2",
-    "copy-webpack-plugin": "^10.2.0",
     "eslint": "8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
