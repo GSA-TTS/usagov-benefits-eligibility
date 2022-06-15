@@ -17,7 +17,8 @@
     "provided": "Provided by",
     "apply": "How to Apply",
     "not_eligible": "you are not eligible",
-    "eligible": "you might be eligible"
+    "eligible": "you might be eligible",
+    "unknown": "more info needed"
   },
   "criteria_group": {
     "non_selected": "No eligibility criteria selected"

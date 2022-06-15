@@ -191,7 +191,7 @@ export default {
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
         return "(" + this.$t("accordion.eligible") + ")"
       }
-      return null
+      return "(" + this.$t("accordion.unknown") + ")"
     },
     toggleAccordion(expanded) {
       if (this.$refs.accordionButtons) {
