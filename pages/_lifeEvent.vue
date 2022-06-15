@@ -107,7 +107,6 @@
                   id="benefitSort"
                   class="usa-select margin-left-auto width-card display-inline-block"
                   name="benefitSort"
-                  aria-label="Sort benefits by"
                   @change="sortChange">
                   <option
                     value="relevance"
