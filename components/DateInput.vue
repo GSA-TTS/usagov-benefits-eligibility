@@ -62,11 +62,11 @@
       </div>
     </div>
     <span
+      v-show="errorMessage"
       :id="`${errUniqueId}-input-error-message`"
-      v:show="errorMessage"
-      class="usa-error-message"
-      >{{ $t(errorMessage) }}</span
-    >
+      class="usa-error-message padding-x-1 radius-sm">
+      {{ $t(errorMessage) }}
+    </span>
   </fieldset>
 </template>
 
@@ -189,7 +189,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style
+  lang="scss"
+  scoped>
+.usa-error-message {
+  background-color: #e52207;
+  color: white;
+}
 .usa-legend {
   margin-bottom: -0.6875rem;
 }
