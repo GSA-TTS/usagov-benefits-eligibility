@@ -18,7 +18,7 @@
         :label="getCriterionLabel()"
         :response="doesCriterionDateMatch(getCriterionByEligibilityKey(criteriaKey))"
         :date-response="getCriterionByEligibilityKey(criteriaKey).response"
-        location="left-rail" />
+        :location="location" />
     </div>
 
     <div
@@ -93,6 +93,13 @@ export default {
     topLevelFilters: {
       type: Array,
       default: () => [],
+    },
+    location: {
+      type: String,
+      default: "left-rail",
+      validator: (value) => {
+        return ["benefit-card", "left-rail", "top-level"].includes(value)
+      },
     },
   },
   data() {
