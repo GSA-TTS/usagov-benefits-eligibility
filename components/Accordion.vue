@@ -68,7 +68,8 @@
             :href="sanitizedBenefitUrl(benefit)"
             class="usa-button print:display-none"
             target="_blank"
-            rel="noopener">
+            rel="noopener"
+            role="button">
             {{ $t("accordion.apply") }}
           </a>
         </div>
