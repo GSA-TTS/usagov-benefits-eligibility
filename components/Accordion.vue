@@ -45,15 +45,7 @@
           <h3
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
-            {{ $t("accordion.provided") }}
-            <!-- //NOSONAR -->
-            <a
-              class="usa-link"
-              :href="sanitizedBenefitUrl(benefit)"
-              target="_blank"
-              rel="noopener"
-              >{{ benefit.source.name }}
-            </a>
+            {{ $t("accordion.provided") }} {{ benefit.source.name }}
           </h3>
         </template>
         <fieldset class="usa-fieldset">
