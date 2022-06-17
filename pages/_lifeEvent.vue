@@ -209,6 +209,12 @@
               <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.none") }}</p>
             </div>
           </div>
+          <p
+            id="acc-id"
+            class="sr-only"
+            aria-live="assertive">
+            {{ accordionMessage }}
+          </p>
           <Accordion
             ref="accordion"
             class="tablet:margin-top-2"
@@ -256,6 +262,7 @@ export default {
       allLifeEventBenefits: [],
       sort: "relevance",
       disclaimer: {},
+      accordionMessage: "",
     }
   },
 
@@ -321,6 +328,7 @@ export default {
     this.landingPage = tObj.call(this, this.landingPage)
   },
   methods: {
+    changeMessage() {},
     clearCriteria() {
       this.$store.dispatch("criteria/clear")
       this.clearFilter()
@@ -346,9 +354,11 @@ export default {
     },
     closeAll() {
       this.$refs.accordion.closeAll()
+      this.accordionMessage = "All accordions closed"
     },
     openAll() {
       this.$refs.accordion.openAll()
+      this.accordionMessage = "All accordions open"
     },
     sortChange(event) {
       this.sort = event.target.value
@@ -378,12 +388,12 @@ export default {
       })
       this.filter = tag
       this.sortBenefits()
-      // eslint-disable-next-line vue/valid-next-tick
     },
     clearFilter() {
       this.filter = ""
       this.lifeEventBenefits = this.allLifeEventBenefits
       this.sortBenefits()
+      this.accordionMessage = "Selections cleared"
     },
   },
 }
