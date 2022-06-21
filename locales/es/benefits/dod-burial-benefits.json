@@ -8,8 +8,8 @@
   "dod-burial-benefits.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
   "dod-burial-benefits.eligibility.acceptableValues1": "miembro del servicio activo",
   "dod-burial-benefits.eligibility.acceptableValues2": "falleció en servicio activo",
-  "dod-burial-benefits.eligibility.acceptableValues3": "cónyuge,",
-  "dod-burial-benefits.eligibility.acceptableValues4": "hijo/hija,",
-  "dod-burial-benefits.eligibility.acceptableValues5": "padre/madre,",
+  "dod-burial-benefits.eligibility.acceptableValues3": "cónyuge",
+  "dod-burial-benefits.eligibility.acceptableValues4": "hijo/hija",
+  "dod-burial-benefits.eligibility.acceptableValues5": "padre/madre",
   "dod-burial-benefits.eligibility.acceptableValues6": "otro familiar"
 }
