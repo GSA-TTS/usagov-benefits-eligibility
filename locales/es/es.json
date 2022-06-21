@@ -17,18 +17,18 @@
     "left-rail-heading": "Responda Algunas Preguntas",
     "right-rail-heading": "Beneficios Federales Potenciales",
     "heading": "Criterios clave de elegibilidad",
-    "you_must": "Debe cumplir con todos los criterios. Actualmente te encuentras",
+    "you_must": "Debe cumplir todos los criterios. Actualmente cumple",
     "of": "de",
-    "additional": "Pueden aplicarse criterios de elegibilidad adicionales.",
-    "review": "Por favor revise los requisitos completos en",
+    "additional": "Tal vez haya criterios de elegibilidad adicionales.",
+    "review": "Examine todos los requisitos en",
     "match": "Este criterio coincidió",
     "remove": "Este criterio eliminó este beneficio",
     "noMatch": "Este criterio no ha coincidido"
   },
-  "skipnav": "Saltar al contenido principal",
-  "returnToTop": "Regresar arriba",
+  "skipnav": "Ir al contenido principal",
+  "returnToTop": "Volver al principio",
   "utilityNav": {
-    "linkOne": "Beneficios por eventos de vida",
+    "linkOne": "Beneficios por acontecimientos de vida",
     "linkTwo": "Beneficios por tipo",
     "linkThree": "Beneficios por agencia"
   },
@@ -207,33 +207,33 @@
     "sort": "Benefits by agency"
   },
   "buttons": {
-    "open_all": "Open All",
-    "close_all": "Close All",
-    "my_selections": "my selections"
+    "open_all": "Abrir todo",
+    "close_all": "Cerrar todo",
+    "my_selections": "mis selecciones"
   },
   "radio": {
-    "not_applicable": "not applicable"
+    "not_applicable": "no corresponde"
   },
   "shareResults": {
-    "description": "Copy a link to this page with the criteria you selected above. Make sure to share it only with those you trust as\nyour answers will be visible.",
-    "linkCopied": "Link with my selections is copied",
-    "copy": "Copy my selections",
-    "email": "Email my selections"
+    "description": "Copiar un enlace a esta página con los criterios que seleccionó arriba. Comparta solo con receptores de confianza porque se verán sus respuestas.",
+    "linkCopied": "Copia del enlace con mis selecciones",
+    "copy": "Copiar mis selecciones",
+    "email": "Enviar por email mis selecciones"
   },
   "accordion": {
-    "provided": "Provided by",
-    "apply": "How to Apply",
-    "not_eligible": "you are not eligible",
-    "eligible": "you might be eligible"
+    "provided": "Suministrado por",
+    "apply": "Cómo presentar una solicitud",
+    "not_eligible": "usted no es elegible",
+    "eligible": "usted podría ser elegible"
   },
   "criteria_group": {
-    "non_selected": "No eligibility criteria selected"
+    "non_selected": "No se seleccionaron criterios de elegibilidad"
   },
   "dateInput": {
-    "month": "Month",
-    "day": "Day",
-    "year": "Year",
-    "Please enter a valid date.": "Please enter a valid date."
+    "month": "Mes",
+    "day": "Día",
+    "year": "Año",
+    "Please enter a valid date.": "Ingrese una fecha válida."
   },
   "404": {
     "sidenav": {
