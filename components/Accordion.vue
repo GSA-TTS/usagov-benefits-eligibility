@@ -30,9 +30,6 @@
         :id="`acc-content-${benefit.slug}`"
         ref="accordionContents"
         class="usa-accordion__content usa-prose">
-        <div
-          v-if="benefit && benefit.tags.length > 0"
-          class="tags-container margin-top-1 print:display-none"></div>
         <template v-if="benefit.source && benefit.source.link && benefit.source.name">
           <h3
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
@@ -88,7 +85,7 @@ export default {
   props: {
     expanded: {
       type: Boolean,
-      requierd: false,
+      required: false,
       default: false,
     },
     lifeEventBenefits: {
