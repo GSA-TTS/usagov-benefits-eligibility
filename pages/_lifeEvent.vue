@@ -215,6 +215,13 @@
             aria-live="assertive">
             {{ accordionMessage }}
           </p>
+          <!-- TODO: Add count of eligible results -->
+          <p
+            id="matching-count"
+            class="sr-only"
+            aria-live="assertive">
+            {{ matchingBenefitMessage }}
+          </p>
           <Accordion
             ref="accordion"
             class="tablet:margin-top-2"
@@ -263,6 +270,7 @@ export default {
       sort: "relevance",
       disclaimer: {},
       accordionMessage: "",
+      matchingBenefitMessage: "No matching benefits",
     }
   },
 
@@ -379,6 +387,7 @@ export default {
           benefit.inverseMatchRatio =
             1 - matches / (benefit.eligibility.length - virtualBenefitEligibility) + (ineligible ? forceToBottom : 0)
         })
+        this.matchingBenefitMessage = `${this.lifeEventBenefits.length} matching benefits`
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
       }
     },

@@ -10,6 +10,7 @@
       :value="`${uniqueId}-${criteriaKey}`"
       :checked="response === true"
       :disabled="isDisabled"
+      aria-controls="matching-count"
       @change="updateEligibilityChecked($event, criteriaKey)" />
     <label
       class="usa-checkbox__label"
