@@ -1,0 +1,15 @@
+{
+  "dod-survivor-benefit-plan.title": "Plan de beneficios para sobrevivientes",
+  "dod-survivor-benefit-plan.headline": "Plan de beneficios para sobrevivientes",
+  "dod-survivor-benefit-plan.source.name": "Departamento de Defensa",
+  "dod-survivor-benefit-plan.summary": "Los sobrevivientes de miembros del servicio activo y algunos miembros retirados y de la reserva fallecidos pueden ser elegibles para recibir hasta el 55% de la jubilación del miembro.",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues": "sí",
+  "dod-survivor-benefit-plan.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues1": "miembro del servicio activo,",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues2": "se retiró del servicio,",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues3": "miembro de la Guardia Nacional o las Reservas",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues4": "falleció en servicio activo,",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues5": "falleció durante instrucción para servicio inactivo",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues6": "cónyuge,",
+  "dod-survivor-benefit-plan.eligibility.acceptableValues7": "hijo/hija"
+}

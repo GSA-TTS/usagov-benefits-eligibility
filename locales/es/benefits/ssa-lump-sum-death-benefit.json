@@ -1,0 +1,9 @@
+{
+  "ssa-lump-sum-death-benefit.title": "Beneficio de suma global por muerte ",
+  "ssa-lump-sum-death-benefit.headline": "Need text here",
+  "ssa-lump-sum-death-benefit.source.name": "Administración del Seguro Social",
+  "ssa-lump-sum-death-benefit.summary": "El cónyuge sobreviviente de una persona fallecida que calificaba para recibir beneficios del Seguro Social puede ser elegible para recibir una asistencia financiera de $255.",
+  "ssa-lump-sum-death-benefit.eligibility.label": "La persona falleció en los últimos dos años.",
+  "ssa-lump-sum-death-benefit.eligibility.acceptableValues": "cónyuge,",
+  "ssa-lump-sum-death-benefit.eligibility.acceptableValues1": "hijo/hija"
+}

@@ -1,0 +1,14 @@
+{
+  "dod-burial-benefits.title": "Beneficios de entierro",
+  "dod-burial-benefits.headline": "Beneficios de entierro",
+  "dod-burial-benefits.source.name": "Departamento de Defensa",
+  "dod-burial-benefits.summary": "Podría ofrecerse asistencia con el transporte y el entierro de su ser querido, así como asistencia para el viaje del cónyuge, los niños y los familiares directos sobrevivientes del miembro de las Fuerzas Armadas. ",
+  "dod-burial-benefits.eligibility.acceptableValues": "sí",
+  "dod-burial-benefits.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "dod-burial-benefits.eligibility.acceptableValues1": "miembro del servicio activo",
+  "dod-burial-benefits.eligibility.acceptableValues2": "falleció en servicio activo",
+  "dod-burial-benefits.eligibility.acceptableValues3": "cónyuge,",
+  "dod-burial-benefits.eligibility.acceptableValues4": "hijo/hija,",
+  "dod-burial-benefits.eligibility.acceptableValues5": "padre/madre,",
+  "dod-burial-benefits.eligibility.acceptableValues6": "otro familiar"
+}
