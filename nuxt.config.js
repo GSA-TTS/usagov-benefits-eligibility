@@ -111,7 +111,7 @@ export default {
       },
     ],
     lazy: true,
-    langDir: "locales/",
+    langDir: "locales",
     defaultLocale: "en",
   },
 
