@@ -66,39 +66,16 @@
         </div>
         <div
           class="margin-top-2 tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
-          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
+          <h2
+            class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none margin-bottom-0">
             {{ $t("eligibilityList.right-rail-heading") }}
           </h2>
           <!-- Desktop meta sort and open -->
           <div
             aria-label="Benefit accordion controls"
             role="complementary"
-            class="display-none tablet:display-flex grid-row grid-gap print:display-none">
-            <div class="tablet:grid-col desktop:grid-col display-flex flex-align-center margin-y-2 print:display-none">
-              <div>
-                <button
-                  class="usa-button usa-button--unstyled open-all"
-                  aria-controls="acc-id"
-                  @click="openAll">
-                  {{ $t("lifeEvent.buttonLabel1") }}
-                </button>
-                /
-                <button
-                  class="usa-button usa-button--unstyled close-all"
-                  aria-controls="acc-id"
-                  @click="closeAll">
-                  {{ $t("lifeEvent.buttonLabel2") }}
-                </button>
-                /
-                <button
-                  class="usa-button usa-button--unstyled clear-all"
-                  aria-controls="acc-id"
-                  @click="clearCriteria">
-                  {{ $t("lifeEvent.buttonLabel3") }}
-                </button>
-              </div>
-            </div>
-            <div class="grid-col-auto margin-y-2 text-right">
+            class="display-none tablet:display-block print:display-none margin-bottom-4">
+            <div class="display-flex flex-row flex-justify-end text-right">
               <label
                 class="usa-label display-inline"
                 for="benefitSort"
@@ -120,6 +97,12 @@
                   </option>
                 </select>
               </label>
+            </div>
+            <div class="display-flex flex-row flex-justify-end">
+              <OpenCloseButtons
+                :is-close-active-prop="true"
+                @open-all="openAll"
+                @close-all="closeAll" />
             </div>
           </div>
 
@@ -204,7 +187,9 @@
             ref="accordion"
             class="tablet:margin-top-2"
             :life-event-benefits="lifeEventBenefits"
-            :life-event-criteria="lifeEvent.eligibilityCriteria" />
+            :life-event-criteria="lifeEvent.eligibilityCriteria"
+            :show-icons="true"
+            :show-matching-count="true" />
         </div>
       </div>
     </section>

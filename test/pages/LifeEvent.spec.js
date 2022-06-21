@@ -1,4 +1,4 @@
-import { config, shallowMount } from "@vue/test-utils"
+import { config, mount, shallowMount } from "@vue/test-utils"
 import { Store } from "vuex"
 import beforeAllTests from "@/test/beforeAllTests"
 import { createContentMock } from "@/test/mockContent"
@@ -233,7 +233,7 @@ describe("Life Event page", () => {
         items: [{ ...mockContent.criteria }],
       },
     ])
-    const wrapper = shallowMount(LifeEventPage, {
+    const wrapper = mount(LifeEventPage, {
       mocks: vueMocks({ $content, ...mockContent }),
       store,
     })
@@ -263,19 +263,5 @@ describe("Life Event page", () => {
     expect(openAllSpy).toHaveBeenCalled()
     await wrapper.find(".usa-button.close-all").trigger("click")
     expect(closeAllSpy).toHaveBeenCalled()
-  })
-
-  it("should clear all filters", async () => {
-    const clearAllSoy = jest.fn()
-    store.dispatch = clearAllSoy
-
-    const wrapper = shallowMount(LifeEventPage, {
-      mocks: vueMocks(mockContent),
-      store,
-    })
-
-    await wrapper.find(".usa-button.clear-all").trigger("click")
-    expect(clearAllSoy).toHaveBeenCalled()
-    expect(clearAllSoy.mock.calls[0][0]).toBe("criteria/clear")
   })
 })
