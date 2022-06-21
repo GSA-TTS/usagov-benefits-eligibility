@@ -122,29 +122,7 @@
               </label>
             </div>
           </div>
-          <div v-if="filter">
-            <div role="alert">
-              {{ $t("lifeEvent.currentlyViewing") }}
-              <span class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
-                <button
-                  class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
-                  style="padding: 0.25rem; text-decoration: none"
-                  :title="`Remove the ${filter} filter`"
-                  :aria-label="`Remove the ${filter} filter`"
-                  data-position="top"
-                  @click="clearFilter">
-                  <span class="text-middle text-white">{{ filter }}</span>
-                  <svg
-                    class="usa-icon text-white text-middle"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img">
-                    <use xlink:href="~/assets/img/sprite.svg#close" />
-                  </svg>
-                </button>
-              </span>
-            </div>
-          </div>
+
           <!-- Mobile meta sort and open -->
           <div
             aria-label="Benefit accordion controls"
@@ -242,11 +220,9 @@
 import _ from "lodash"
 import { mapGetters, mapState } from "vuex"
 import { tObj, tCsv } from "~/services/translation"
-import mapTags from "~/mixins/MapTags"
 
 export default {
   name: "LifeEvent",
-  mixins: [mapTags],
   layout: "default",
   async asyncData({ $content }) {
     const landingPage = await $content("landing-page").fetch()
@@ -327,22 +303,16 @@ export default {
       },
     },
   },
-  beforeDestroy() {
-    /* istanbul ignore next */
-    this.$root.$off("tag:click", this.tagClick)
-  },
+
   mounted() {
-    this.$root.$on("tag:click", this.tagClick)
     this.landingPage = tObj.call(this, this.landingPage)
   },
   methods: {
     changeMessage() {},
     clearCriteria() {
       this.$store.dispatch("criteria/clear")
-      this.clearFilter()
       this.sortBenefits()
     },
-
     getVirtualCriteria() {
       const lifeEventCriteria = Object.fromEntries(
         this.lifeEvent.eligibilityCriteria
@@ -390,19 +360,6 @@ export default {
         this.matchingBenefitMessage = `${this.lifeEventBenefits.length} matching benefits`
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
       }
-    },
-    tagClick(tag) {
-      this.lifeEventBenefits = _.filter(this.allLifeEventBenefits, (benefit) => {
-        return benefit.tags.includes(tag)
-      })
-      this.filter = tag
-      this.sortBenefits()
-    },
-    clearFilter() {
-      this.filter = ""
-      this.lifeEventBenefits = this.allLifeEventBenefits
-      this.sortBenefits()
-      this.accordionMessage = "Selections cleared"
     },
   },
 }

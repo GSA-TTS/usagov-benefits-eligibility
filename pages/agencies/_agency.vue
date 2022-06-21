@@ -88,9 +88,8 @@
             ref="accordion"
             :life-event-benefits="lifeEventBenefits"
             :expanded="true"
-            :show-icons="false"
-            :show-matching-count="false"
-            :tag-click="false" />
+            :show-icons="true"
+            :show-matching-count="false" />
         </div>
       </div>
 

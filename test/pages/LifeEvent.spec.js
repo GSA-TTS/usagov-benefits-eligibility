@@ -9,7 +9,7 @@ const THIS_LIFE_EVENT_SLUG = "this-life-event"
 const LIFE_EVENTS_DIRECTORY = "life-events"
 const CRITERIA_DIRECTORY = "criteria"
 const BENEFITS_DIRECTORY = "benefits"
-const SECENONDARY_HEADLINE = "test life event secondary headline"
+const SECONDARY_HEADLINE = "test life event secondary headline"
 const mockContent = {
   landingPage: {
     title: "landing title",
@@ -22,7 +22,7 @@ const mockContent = {
     title: "test life event title",
     summary: "test life event summary",
     lede: "test life event lede",
-    secondaryHeadline: SECENONDARY_HEADLINE,
+    secondaryHeadline: SECONDARY_HEADLINE,
     eligibilityCriteria: [
       {
         label: "first group label",
@@ -42,7 +42,7 @@ const mockContent = {
       provider: "Federal Government",
       source: { name: "Dept. of Benefit One", link: "#" },
       summary: "Benefit one summary.",
-      tags: ["burial honors"],
+
       title: "Benefit One Title",
       toc: [],
       eligibility: [
@@ -157,8 +157,8 @@ describe("Life Event page", () => {
 
     await wrapper.vm.$options.fetch.apply(wrapper.vm)
     await wrapper.vm.$nextTick()
-    expect(wrapper.find("h1").text()).toBe(SECENONDARY_HEADLINE)
-    expect(wrapper.vm.lifeEventTitle).toBe(SECENONDARY_HEADLINE)
+    expect(wrapper.find("h1").text()).toBe(SECONDARY_HEADLINE)
+    expect(wrapper.vm.lifeEventTitle).toBe(SECONDARY_HEADLINE)
   })
 
   it("should sort the results", async () => {
@@ -216,50 +216,6 @@ describe("Life Event page", () => {
     await wrapper.find("#benefitSort").findAll("option").at(0).setSelected()
     expect(wrapper.vm.getTotalEligibleCriteria).toHaveBeenCalled()
     expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("two,three,one,four")
-  })
-
-  it("should filter tags", () => {
-    const $content = createContentMock([
-      {
-        collectionName: LIFE_EVENTS_DIRECTORY,
-        items: [{ ...mockContent.lifeEvent }],
-      },
-      {
-        collectionName: BENEFITS_DIRECTORY,
-        items: [{ ...mockContent.benefit }],
-      },
-      {
-        collectionName: CRITERIA_DIRECTORY,
-        items: [{ ...mockContent.criteria }],
-      },
-    ])
-    const wrapper = shallowMount(LifeEventPage, {
-      mocks: vueMocks({ $content, ...mockContent }),
-      store,
-    })
-    wrapper.vm.lifeEventBenefits = wrapper.vm.allLifeEventBenefits = [
-      {
-        title: "two",
-        eligibility: [{}, {}, {}],
-        tags: ["tagOne"],
-      },
-      {
-        title: "one",
-        eligibility: [{}, {}, {}],
-        tags: ["tagOne", "tagTwo"],
-      },
-      {
-        title: "three",
-        eligibility: [{}, {}, {}],
-        tags: ["tagThree"],
-      },
-    ]
-    wrapper.vm.tagClick("tagOne")
-    expect(wrapper.vm.filter).toBe("tagOne")
-    expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("two,one")
-    wrapper.vm.clearFilter()
-    expect(wrapper.vm.filter).toBe("")
-    expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("two,one,three")
   })
 
   it("should expand and collapse all accordion cards", async () => {

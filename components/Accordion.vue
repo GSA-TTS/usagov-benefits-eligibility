@@ -32,15 +32,7 @@
         class="usa-accordion__content usa-prose">
         <div
           v-if="benefit && benefit.tags.length > 0"
-          class="tags-container margin-top-1 print:display-none">
-          <Tag
-            v-for="tag in mapTags(benefit.tags)"
-            :key="tag.name"
-            :name="tag.name"
-            :click="tagClick"
-            :title="tag.title"
-            :aria-label="tag.title" />
-        </div>
+          class="tags-container margin-top-1 print:display-none"></div>
         <template v-if="benefit.source && benefit.source.link && benefit.source.name">
           <h3
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
@@ -115,11 +107,6 @@ export default {
       default: true,
     },
     showIcons: {
-      type: Boolean,
-      required: false,
-      default: true,
-    },
-    tagClick: {
       type: Boolean,
       required: false,
       default: true,
