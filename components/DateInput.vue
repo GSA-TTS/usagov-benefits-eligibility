@@ -6,7 +6,7 @@
     <div
       class="usa-hint margin-top-1 margin-bottom-neg-105"
       :class="topLevelStyle">
-      mm/dd/yyyy
+      For example: 4 28 1986
     </div>
     <h2
       v-if="errorMessage"
@@ -204,7 +204,7 @@ export default {
   lang="scss"
   scoped>
 .usa-error-message {
-  background-color: #e52207;
+  background-color: #b50909;
   color: white;
 }
 .usa-legend {
@@ -231,7 +231,7 @@ export default {
 }
 
 .usa-legend--error {
-  color: red;
+  color: #b50909;
   font-weight: 700;
 }
 </style>
