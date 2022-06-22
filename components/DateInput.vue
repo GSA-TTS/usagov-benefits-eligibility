@@ -4,7 +4,7 @@
       {{ label }}
     </legend>
     <div
-      class="usa-hint margin-top-1 margin-bottom-neg-105"
+      class="usa-hint margin-top-105 margin-bottom-neg-105"
       :class="topLevelStyle">
       For example: 4 28 1986
     </div>
