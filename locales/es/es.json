@@ -181,16 +181,17 @@
     "subFooter": "USAGov en Español es la guía oficial de información y servicios del Gobierno"
   },
   "lifeEvent": {
-    "buttonLabel1": "Open All",
-    "buttonLabel2": "Close All",
-    "buttonLabel3": "Clear Selections",
+    "buttonLabel1": "Abrir Todo",
+    "buttonLabel2": "Cierra Todo",
+    "buttonLabel3": "Limpiar Selecciones",
+    "buttonLabel4": "Limpiar mis selecciones",
     "important": "Important information",
     "benefits": "Benefits",
     "results": "Results",
-    "labelShowText": "Showing",
-    "labelShowText2": "related benefits sorted by:",
-    "option1": "Relevance",
-    "option2": "Title (A-Z)",
+    "labelShowText": "Mostrando",
+    "labelShowText2": "beneficios relacionados ordenados por:",
+    "option1": "Relevancia",
+    "option2": "Título (A-Z)",
     "eligibilityCriteria": "Eligibility Criteria",
     "currentlyViewing": "Currently viewing",
     "fetchState": {
@@ -214,7 +215,11 @@
   "radio": {
     "not_applicable": "not applicable"
   },
+  "dropDown": {
+    "select": "Seleccione"
+  },
   "shareResults": {
+    "heading": "Compartir e imprimir",
     "description": "Copy a link to this page with the criteria you selected above. Make sure to share it only with those you trust as\nyour answers will be visible.",
     "linkCopied": "Link with my selections is copied",
     "copy": "Copy my selections",

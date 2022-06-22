@@ -12,7 +12,7 @@
       :name="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       :disabled="isDisabled"
       @change="updateEligibilitySelected($event, criteriaKey)">
-      <option :value="null">- Select -</option>
+      <option :value="null">-{{ $t("dropDown.select") }}-</option>
       <option
         v-for="option in values"
         :key="option"

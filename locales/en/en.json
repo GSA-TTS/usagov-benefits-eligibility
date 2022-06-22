@@ -188,7 +188,11 @@
   "radio": {
     "not_applicable": "not applicable"
   },
+  "dropDown": {
+    "select": "Select"
+  },
   "shareResults": {
+    "heading": "Sharing and printing",
     "description": "Copy a link to this page with the criteria you selected above. Make sure to share it only with those you trust as\nyour answers will be visible.",
     "linkCopied": "Link with my selections is copied",
     "copy": "Copy my selections",
@@ -226,6 +230,7 @@
     "buttonLabel1": "Open All",
     "buttonLabel2": "Close All",
     "buttonLabel3": "Clear Selections",
+    "buttonLabel4": "Clear my selections",
     "important": "Important information",
     "benefits": "Potential Federal Benefits",
     "results": "Results",
