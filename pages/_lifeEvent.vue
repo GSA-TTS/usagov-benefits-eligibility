@@ -176,13 +176,20 @@
             aria-live="assertive">
             {{ accordionMessage }}
           </p>
-          <!-- TODO: Add count of eligible results -->
+
+          <!-- TODO: Add count of eligible results for screenreader -->
           <p
             id="matching-count"
             class="sr-only"
             aria-live="assertive">
-            {{ matchingBenefitMessage }}
+            You match
+            {{ countEligibleBenefits() }} benefits.
           </p>
+          <!-- TODO: Sample output here -->
+
+          // get count of matching results
+
+          <pre>{{ countEligibleBenefits() }}</pre>
           <Accordion
             ref="accordion"
             class="tablet:margin-top-2"
@@ -345,6 +352,9 @@ export default {
         this.matchingBenefitMessage = `${this.lifeEventBenefits.length} matching benefits`
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
       }
+    },
+    countEligibleBenefits() {
+      return this.lifeEventBenefits.filter((benefit) => benefit.matches > 0).length
     },
   },
 }
