@@ -13,7 +13,7 @@
           role="img">
           <use xlink:href="~/assets/img/sprite.svg#highlight_off" />
         </svg>
-        <span class="text-middle">Clear my selections</span>
+        <span class="text-middle"> {{ $t("lifeEvent.buttonLabel4") }}</span>
       </button>
       <p
         id="button-msg"
@@ -23,7 +23,7 @@
       </p>
     </div>
     <div class="tablet:padding-left-3">
-      <h2 class="font-sans-md">Sharing and printing</h2>
+      <h2 class="font-sans-md">{{ $t("shareResults.heading") }}</h2>
       <p class="usa-prose">
         {{ $t("shareResults.description") }}
       </p>
