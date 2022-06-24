@@ -16,6 +16,7 @@
           :id="`${uniqueId}-${criteriaKey}-${value}`"
           class="usa-radio__input"
           type="radio"
+          aria-controls="matching-count"
           :name="`${uniqueId}-${criteriaKey}`"
           :value="value"
           :checked="response === value"
