@@ -5,8 +5,7 @@
     class="usa-accordion usa-accordion--bordered"
     name="benefit-list"
     tag="section"
-    aria-multiselectable="true"
-    aria-live="polite">
+    aria-multiselectable="true">
     <article
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
