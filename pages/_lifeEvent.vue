@@ -190,6 +190,7 @@
           // get count of matching results
 
           <pre>{{ countEligibleBenefits() }}</pre>
+
           <Accordion
             ref="accordion"
             class="tablet:margin-top-2"
@@ -239,6 +240,8 @@ export default {
       disclaimer: {},
       accordionMessage: "",
       matchingBenefitMessage: "No matching benefits",
+
+      isReducedMotion: false,
     }
   },
 
@@ -298,6 +301,9 @@ export default {
 
   mounted() {
     this.landingPage = tObj.call(this, this.landingPage)
+    this.isReducedMotion =
+      window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+      window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
   },
   methods: {
     changeMessage() {},
@@ -350,7 +356,13 @@ export default {
             1 - matches / (benefit.eligibility.length - virtualBenefitEligibility) + (ineligible ? forceToBottom : 0)
         })
         this.matchingBenefitMessage = `${this.lifeEventBenefits.length} matching benefits`
-        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
+        if (this.isReducedMotion) {
+          setTimeout(() => {
+            this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
+          }, 2000)
+        } else {
+          this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
+        }
       }
     },
     countEligibleBenefits() {
