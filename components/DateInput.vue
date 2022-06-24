@@ -3,7 +3,9 @@
     <legend :class="legendClass">
       {{ label }}
     </legend>
-    <div class="usa-memorable-date">
+    <div
+      v-if="$i18n.locale === 'en'"
+      class="usa-memorable-date">
       <!-- lower margin of the label -->
       <div class="usa-form-group usa-form-group--month">
         <label
@@ -61,12 +63,74 @@
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
     </div>
+    <div
+      v-if="$i18n.locale === 'es'"
+      class="usa-memorable-date">
+      <!-- lower margin of the label -->
+      <div class="usa-form-group usa-form-group--day">
+        <label
+          :class="labelClass"
+          :for="`${uniqueId}-${criteriaKey}-day`"
+          >{{ $t("dateInput.day") }}</label
+        >
+        <input
+          :id="`${uniqueId}-${criteriaKey}-day`"
+          v-model="day"
+          :class="inputClass"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-day`"
+          :name="`${uniqueId}-${criteriaKey}-day`"
+          type="text"
+          maxlength="2"
+          pattern="[0-9]*"
+          inputmode="numeric"
+          @change="updateEligibilityDate(criteriaKey)" />
+      </div>
+
+      <div class="usa-form-group usa-form-group--month">
+        <label
+          :class="labelClass"
+          :for="`${uniqueId}-${criteriaKey}-month`"
+          >{{ $t("dateInput.month") }}</label
+        >
+        <input
+          :id="`${uniqueId}-${criteriaKey}-month`"
+          v-model="month"
+          :class="inputClass"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-month`"
+          :name="`${uniqueId}-${criteriaKey}-month`"
+          type="text"
+          maxlength="2"
+          pattern="[0-9]*"
+          inputmode="numeric"
+          @change="updateEligibilityDate(criteriaKey)" />
+      </div>
+
+      <div class="usa-form-group usa-form-group--year">
+        <label
+          :class="labelClass"
+          :for="`${uniqueId}-${criteriaKey}-year`"
+          >{{ $t("dateInput.year") }}</label
+        >
+        <input
+          :id="`${uniqueId}-${criteriaKey}-year`"
+          v-model="year"
+          :class="inputClass"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-year`"
+          :name="`${uniqueId}-${criteriaKey}-year`"
+          type="text"
+          minlength="4"
+          maxlength="4"
+          pattern="[0-9]*"
+          inputmode="numeric"
+          @change="updateEligibilityDate(criteriaKey)" />
+      </div>
+    </div>
     <span
       :id="`${errUniqueId}-input-error-message`"
       v:show="errorMessage"
-      class="usa-error-message"
-      >{{ $t(errorMessage) }}</span
-    >
+      class="usa-error-message">
+      {{ $t(errorMessage) }}
+    </span>
   </fieldset>
 </template>
 
