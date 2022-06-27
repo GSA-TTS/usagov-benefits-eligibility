@@ -262,8 +262,8 @@ export default {
   background-color: #00bde3;
   color: #000000;
 }
-.benefit-list-move /* apply transition to moving elements */ {
-  transition: all 0s ease;
+.benefit-list-move {
+  transition: transform 1s;
 }
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
