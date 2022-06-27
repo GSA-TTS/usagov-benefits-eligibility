@@ -278,6 +278,7 @@ export default {
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria",
+      doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
     }),
     ...mapState({
       eligibilityCriteria: (state) => state.criteria.eligibilityCriteria,
@@ -354,7 +355,12 @@ export default {
       }
     },
     countEligibleBenefits() {
-      return this.lifeEventBenefits.filter((benefit) => benefit.matches > 0).length
+      return this.lifeEventBenefits.filter((benefit) => {
+        if (benefit.eligibility.some((c) => this.doesCriterionMatchSelection(c) === false)) {
+          return false
+        }
+        return this.getTotalEligibleCriteria(benefit.eligibility) >= 1
+      }).length
     },
   },
 }
