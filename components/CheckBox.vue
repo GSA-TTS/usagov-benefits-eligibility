@@ -24,8 +24,6 @@
 <script>
 import _ from "lodash"
 
-const benefitCard = "benefit-card"
-
 export default {
   name: "CheckBox",
   props: {
@@ -53,12 +51,6 @@ export default {
   },
 
   computed: {
-    selectedStyle() {
-      if (this.location === benefitCard && this.response === true) {
-        return "text-success text-bold"
-      }
-      return null
-    },
     disabledStyle() {
       if (this.isDisabled) {
         return "border-2px border-dotted border-gray-30 padding-1"
