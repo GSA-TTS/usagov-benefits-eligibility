@@ -1,73 +1,5 @@
 <template>
   <TransitionGroup
-    v-if="isReducedMotion"
-    id="acc-id"
-    ref="accordion"
-    class="usa-accordion usa-accordion--bordered list"
-    aria-multiselectable="true"
-    name="list"
-    tag="section">
-    >
-    <article
-      v-for="benefit in lifeEventBenefits"
-      :key="`acc-key-${benefit.slug}`"
-      class="margin-bottom-2">
-      <h2
-        :id="`acc-h-${benefit.slug}-${cid}`"
-        class="usa-accordion__heading border-left-105"
-        :class="getBorderColor(benefit.eligibility)">
-        <button
-          ref="accordionButtons"
-          class="usa-accordion__button usagov-heading--blue"
-          aria-expanded="false"
-          :aria-controls="`acc-content-${benefit.slug}`">
-          {{ benefit.title }}
-          <span class="text-normal">
-            {{ getCriteriaMatchLanguage(benefit.eligibility) }}
-          </span>
-        </button>
-      </h2>
-      <div
-        :id="`acc-content-${benefit.slug}`"
-        ref="accordionContents"
-        class="usa-accordion__content usa-prose">
-        <template v-if="benefit.source && benefit.source.link && benefit.source.name">
-          <h3
-            class="font-sans-xs text-normal text-base-dark margin-bottom-0"
-            style="font-size: 1rem">
-            {{ $t("accordion.provided") }} {{ benefit.source.name }}
-          </h3>
-        </template>
-        <fieldset class="usa-fieldset">
-          <legend
-            class="usa-prose"
-            style="max-width: unset">
-            {{ benefit.summary }}
-          </legend>
-          <EligibilityList
-            :benefit-eligibility-criteria="benefit.eligibility"
-            :benefit-source="sanitizedBenefitUrl(benefit, '')"
-            :heading-classes="['bg-primary', 'text-white']"
-            :show-icons="showIcons"
-            :show-matching-count="showMatchingCount" />
-        </fieldset>
-        <div
-          v-if="benefit.source && benefit.source.link"
-          class="margin-top-205">
-          <a
-            :href="sanitizedBenefitUrl(benefit)"
-            class="usa-button print:display-none"
-            target="_blank"
-            rel="noopener"
-            role="button">
-            {{ $t("accordion.apply") }}
-          </a>
-        </div>
-      </div>
-    </article>
-  </TransitionGroup>
-  <TransitionGroup
-    v-else
     id="acc-id"
     ref="accordion"
     class="usa-accordion usa-accordion--bordered"
@@ -181,7 +113,6 @@ export default {
       accordionInit: false,
       cid: _.uniqueId("c"),
       lifeEventCriteriaKeys: [],
-      isReducedMotion: false,
     }
   },
   computed: {
@@ -210,9 +141,6 @@ export default {
     if (this.lifeEventBenefits.length > 0) {
       this.toggleAccordion(this.expanded)
     }
-    this.isReducedMotion =
-      window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
-      window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
   },
   methods: {
     closeAll() {
@@ -265,23 +193,25 @@ export default {
 .benefit-list-move {
   transition: transform 1s;
 }
-.list-move, /* apply transition to moving elements */
-.list-enter-active,
-.list-leave-active {
-  transition: all 0s ease;
-}
+@media (prefers-reduced-motion) {
+  .benefit-list-move, /* apply transition to moving elements */
+  .benefit-list-enter-active,
+  .benefit-list-leave-active {
+    transition: all 0s ease;
+  }
+  .benefit-list-enter-from,
+  .benefit-list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
 
-.list-enter-from,
-.list-leave-to {
-  opacity: 0;
-  transform: translateX(30px);
-}
-
-/* ensure leaving items are taken out of layout flow so that moving
+  /* ensure leaving items are taken out of layout flow so that moving
    animations can be calculated correctly. */
-.list-leave-active {
-  position: absolute;
+  .benefit-list-leave-active {
+    position: absolute;
+  }
 }
+
 .usa-accordion__button {
   background-color: transparent;
   border-right: 3px solid #ebe6de;
