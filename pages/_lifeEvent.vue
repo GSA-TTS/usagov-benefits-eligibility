@@ -240,8 +240,6 @@ export default {
       disclaimer: {},
       accordionMessage: "",
       matchingBenefitMessage: "No matching benefits",
-
-      isReducedMotion: false,
     }
   },
 
@@ -298,12 +296,8 @@ export default {
       },
     },
   },
-
   mounted() {
     this.landingPage = tObj.call(this, this.landingPage)
-    this.isReducedMotion =
-      window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
-      window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
   },
   methods: {
     changeMessage() {},
@@ -356,13 +350,7 @@ export default {
             1 - matches / (benefit.eligibility.length - virtualBenefitEligibility) + (ineligible ? forceToBottom : 0)
         })
         this.matchingBenefitMessage = `${this.lifeEventBenefits.length} matching benefits`
-        if (this.isReducedMotion) {
-          setTimeout(() => {
-            this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
-          }, 2000)
-        } else {
-          this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
-        }
+        this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
       }
     },
     countEligibleBenefits() {
@@ -377,9 +365,6 @@ export default {
   scoped>
 .shade {
   background-color: #ebe6de;
-}
-.benefit-list-move {
-  transition: transform 2s;
 }
 .usagov-header--font-size {
   font-size: 1.45rem;
