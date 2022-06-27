@@ -228,7 +228,7 @@ describe("Life Event page", () => {
     expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("four,one,three,two")
     await wrapper.find("#benefitSort").findAll("option").at(0).setSelected()
     expect(wrapper.vm.getTotalEligibleCriteria).toHaveBeenCalled()
-    expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("two,three,one,four")
+    expect(wrapper.vm.lifeEventBenefits.map((b) => b.title).join()).toBe("one,three,two,four")
   })
 
   it("should expand and collapse all accordion cards", async () => {
