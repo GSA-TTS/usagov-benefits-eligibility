@@ -36,9 +36,9 @@
     "of": "of",
     "additional": "Additional eligibility criteria may apply.",
     "review": "Please review the full requirements at",
-    "match": "This criteria matched",
-    "remove": "This criteria removed this benefit",
-    "noMatch": "This criteria has not matched"
+    "match": "You meet this criterion",
+    "remove": "You do not meet this criterion",
+    "noMatch": "You did not provide info for this criterion"
   },
   "skipnav": "Skip to main content",
   "returnToTop": "Return to top",
