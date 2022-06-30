@@ -14,16 +14,16 @@
     }
   },
   "eligibilityList": {
-    "left-rail-heading": "Responda Algunas Preguntas",
+    "left-rail-heading": "Responda Unas Preguntas",
     "right-rail-heading": "Beneficios Federales Potenciales",
-    "heading": "Criterios clave de elegibilidad",
+    "heading": "Principales criterios de elegibilidad",
     "you_must": "Debe cumplir todos los criterios. Actualmente cumple",
     "of": "de",
-    "additional": "Tal vez haya criterios de elegibilidad adicionales.",
+    "additional": "Puede haber criterios de elegibilidad adicionales.",
     "review": "Examine todos los requisitos en",
-    "match": "Este criterio coincidió",
-    "remove": "Este criterio eliminó este beneficio",
-    "noMatch": "Este criterio no ha coincidido"
+    "match": "Usted cumple este criterio",
+    "remove": "Usted no cumple este criterio",
+    "noMatch": "Usted no brindó información para este criterio"
   },
   "skipnav": "Ir al contenido principal",
   "returnToTop": "Volver al principio",
@@ -181,30 +181,30 @@
     "subFooter": "USAGov en Español es la guía oficial de información y servicios del Gobierno"
   },
   "lifeEvent": {
-    "buttonLabel1": "Open All",
-    "buttonLabel2": "Close All",
-    "buttonLabel3": "Clear Selections",
-    "important": "Important information",
-    "benefits": "Benefits",
-    "results": "Results",
-    "labelShowText": "Showing",
-    "labelShowText2": "related benefits sorted by:",
-    "option1": "Relevance",
-    "option2": "Title (A-Z)",
-    "eligibilityCriteria": "Eligibility Criteria",
-    "currentlyViewing": "Currently viewing",
+    "buttonLabel1": "Abrir todo",
+    "buttonLabel2": "Cerrar todo",
+    "buttonLabel3": "Borrar selecciones",
+    "important": "Información importante",
+    "benefits": "Beneficios federales potenciales",
+    "results": "Resultados",
+    "labelShowText": "Mostrando",
+    "labelShowText2": "beneficios relacionados ordenados por:",
+    "option1": "Relevancia",
+    "option2": "Título (A-Z)",
+    "eligibilityCriteria": "Criterios de elegibilidad",
+    "currentlyViewing": "Viendo actualmente",
     "fetchState": {
-      "pending": "Fetching benefits...",
-      "error": "Error while fetching benefits.",
-      "none": "No matching benefits found."
+      "pending": "Buscando beneficios...",
+      "error": "Error al buscar beneficios.",
+      "none": "No se encontraron beneficios que coincidan."
     }
   },
   "types": {
-    "heading": "If you know the specific type of benefit you are looking for, select it below.",
-    "sort": "Benefits by type"
+    "heading": "Si conoce el tipo específico de beneficio que está buscando, selecciónelo abajo.",
+    "sort": "Beneficios por tipo"
   },
   "agency": {
-    "sort": "Benefits by agency"
+    "sort": "Beneficios por agencia"
   },
   "buttons": {
     "open_all": "Abrir todo",
