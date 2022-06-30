@@ -14,7 +14,6 @@
       @change="updateEligibilityChecked($event, criteriaKey)" />
     <label
       class="usa-checkbox__label"
-      :class="selectedStyle"
       :for="`${uniqueId}-${criteriaKey}`">
       {{ label }}
     </label>
@@ -73,9 +72,7 @@ export default {
 }
 </script>
 
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 .my-fieldset {
   font-size: 1.06rem;
   line-height: 1.3;

@@ -184,6 +184,7 @@
     "buttonLabel1": "Abrir todo",
     "buttonLabel2": "Cerrar todo",
     "buttonLabel3": "Borrar selecciones",
+    "buttonLabel4": "Borrar mis selecciones",
     "important": "Información importante",
     "benefits": "Beneficios federales potenciales",
     "results": "Resultados",
@@ -218,6 +219,7 @@
     "select": "Seleccione"
   },
   "shareResults": {
+    "heading": "Compartir e imprimir",
     "description": "Copiar un enlace a esta página con los criterios que seleccionó arriba. Comparta solo con receptores de confianza porque se verán sus respuestas.",
     "linkCopied": "Copia del enlace con mis selecciones",
     "copy": "Copiar mis selecciones",
@@ -227,7 +229,8 @@
     "provided": "Suministrado por",
     "apply": "Cómo presentar una solicitud",
     "not_eligible": "usted no es elegible",
-    "eligible": "usted podría ser elegible"
+    "eligible": "usted podría ser elegible",
+    "unknown": "se necesita más información"
   },
   "criteria_group": {
     "non_selected": "No se seleccionaron criterios de elegibilidad"
