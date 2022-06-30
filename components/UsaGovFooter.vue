@@ -78,29 +78,25 @@
                     <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
                       {{ $t("footer.GroupThree.header") }}
                     </h2>
-                    <ul class="usa-list usa-list--unstyled">
-                      <li class="usa-footer__secondary-link">
-                        <form
-                          action="https://connect.usa.gov/subscribe"
-                          method="get">
-                          <label
-                            class="usa-label text-white margin-top-1"
-                            for="email-2"
-                            >{{ $t("footer.GroupThree.formLabel") }}</label
-                          >
-                          <input
-                            id="email-2"
-                            name="email"
-                            type="email"
-                            class="usa-input margin-bottom-3 width-mobile" />
-                          <button
-                            class="usa-button width-card"
-                            type="submit">
-                            {{ $t("footer.GroupThree.buttonText") }}
-                          </button>
-                        </form>
-                      </li>
-                    </ul>
+                    <form
+                      action="https://connect.usa.gov/subscribe"
+                      method="get">
+                      <label
+                        class="usa-label text-white margin-top-1"
+                        for="email-2"
+                        >{{ $t("footer.GroupThree.formLabel") }}</label
+                      >
+                      <input
+                        id="email-2"
+                        name="email"
+                        type="email"
+                        class="usa-input margin-bottom-3 width-mobile" />
+                      <button
+                        class="usa-button width-card"
+                        type="submit">
+                        {{ $t("footer.GroupThree.buttonText") }}
+                      </button>
+                    </form>
                   </section>
                 </div>
               </div>

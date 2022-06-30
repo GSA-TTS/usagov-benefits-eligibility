@@ -214,6 +214,9 @@
   "radio": {
     "not_applicable": "no corresponde"
   },
+  "dropDown": {
+    "select": "Seleccione"
+  },
   "shareResults": {
     "description": "Copiar un enlace a esta página con los criterios que seleccionó arriba. Comparta solo con receptores de confianza porque se verán sus respuestas.",
     "linkCopied": "Copia del enlace con mis selecciones",

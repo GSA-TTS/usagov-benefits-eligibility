@@ -206,9 +206,12 @@ describe("Accordion", () => {
       const wrapper = shallowMount(Accordion, {
         propsData,
         store,
+        mocks: {
+          $t: (val) => val,
+        },
       })
       const text = wrapper.vm.getCriteriaMatchLanguage([{}])
-      expect(text).toBe(null)
+      expect(text).toBe("(accordion.unknown)")
     })
   })
 })

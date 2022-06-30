@@ -7,16 +7,6 @@
         class="usa-card__heading">
         {{ cardTitle }}
       </component>
-      <div
-        v-if="cardTags && cardTags.length > 0"
-        class="tags-container margin-top-1">
-        <Tag
-          v-for="tag in cardTags"
-          :key="tag.name"
-          :name="tag.name"
-          :click="cardTagsEmitClick"
-          :title="tag.title" />
-      </div>
     </header>
     <div class="usa-card__body">
       <slot name="source"></slot>
@@ -49,18 +39,6 @@ export default {
       type: Array,
       required: false,
       default: () => [],
-    },
-    cardTagsEmitClick: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-    cardTags: {
-      type: Array,
-      required: false,
-      default: () => {
-        return []
-      },
     },
   },
   data() {

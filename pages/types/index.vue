@@ -72,7 +72,7 @@ export default {
   },
   mounted() {
     if (this.$config.oneEventVersion !== false) {
-      this.$router.push(this.$route.fullPath.split('types')[0]+ this.$config.oneEventVersion)
+      this.$router.push(this.$route.fullPath.split("types")[0] + this.$config.oneEventVersion)
     }
   },
   methods: {
