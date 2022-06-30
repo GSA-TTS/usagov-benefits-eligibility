@@ -77,7 +77,7 @@ describe("CriteriaChild", () => {
         response: "balkajdflkjslf",
       },
     })
-    expect(wrapper.vm.getCriterionLabel()).toBe("bal bal")
+    expect(wrapper.vm.getCriterionLabel()).toBe("No label provided")
   })
 
   test("no watcher created if no top-level filter is defined", () => {

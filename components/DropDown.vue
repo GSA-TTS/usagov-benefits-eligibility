@@ -9,6 +9,7 @@
     <select
       :id="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       class="usa-select"
+      aria-controls="matching-count"
       :name="`${uniqueId}-${criteriaKey}-${criteriaIndex}`"
       :disabled="isDisabled"
       @change="updateEligibilitySelected($event, criteriaKey)">

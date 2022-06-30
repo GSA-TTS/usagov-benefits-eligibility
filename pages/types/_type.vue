@@ -91,9 +91,8 @@
             ref="accordion"
             :life-event-benefits="lifeEventBenefits"
             :expanded="true"
-            :show-icons="false"
-            :show-matching-count="false"
-            :tag-click="false" />
+            :show-icons="true"
+            :show-matching-count="false" />
         </div>
       </div>
 
@@ -114,14 +113,12 @@
 <script>
 import _ from "lodash"
 import { tObj, tCsv } from "~/services/translation"
-import mapTags from "~/mixins/MapTags"
 import OpenCloseButtons from "~/components/OpenCloseButtons.vue"
 
 export default {
   components: {
     OpenCloseButtons,
   },
-  mixins: [mapTags],
   data() {
     return {
       benefitTopic: "",

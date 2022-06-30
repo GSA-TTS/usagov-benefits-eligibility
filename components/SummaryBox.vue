@@ -28,6 +28,7 @@
                   :values="criterion.values.split('; ')"
                   :criteria-group-key="criterion.criterionKey"
                   :response="criterion.response"
+                  location="top-level"
                   class="margin-y-2 tablet:margin-y-3 print:text-black" />
               </div>
             </template>

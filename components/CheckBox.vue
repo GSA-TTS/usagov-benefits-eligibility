@@ -10,6 +10,7 @@
       :value="`${uniqueId}-${criteriaKey}`"
       :checked="response === true"
       :disabled="isDisabled"
+      aria-controls="matching-count"
       @change="updateEligibilityChecked($event, criteriaKey)" />
     <label
       class="usa-checkbox__label"
@@ -22,8 +23,6 @@
 
 <script>
 import _ from "lodash"
-
-const benefitCard = "benefit-card"
 
 export default {
   name: "CheckBox",
@@ -52,12 +51,6 @@ export default {
   },
 
   computed: {
-    selectedStyle() {
-      if (this.location === benefitCard && this.response === true) {
-        return "text-success text-bold"
-      }
-      return null
-    },
     disabledStyle() {
       if (this.isDisabled) {
         return "border-2px border-dotted border-gray-30 padding-1"

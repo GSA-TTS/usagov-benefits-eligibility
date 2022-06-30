@@ -66,39 +66,16 @@
         </div>
         <div
           class="margin-top-2 tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
-          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
+          <h2
+            class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none margin-bottom-0">
             {{ $t("eligibilityList.right-rail-heading") }}
           </h2>
           <!-- Desktop meta sort and open -->
           <div
             aria-label="Benefit accordion controls"
             role="complementary"
-            class="display-none tablet:display-flex grid-row grid-gap print:display-none">
-            <div class="tablet:grid-col desktop:grid-col display-flex flex-align-center margin-y-2 print:display-none">
-              <div>
-                <button
-                  class="usa-button usa-button--unstyled open-all"
-                  aria-controls="acc-id"
-                  @click="openAll">
-                  {{ $t("lifeEvent.buttonLabel1") }}
-                </button>
-                /
-                <button
-                  class="usa-button usa-button--unstyled close-all"
-                  aria-controls="acc-id"
-                  @click="closeAll">
-                  {{ $t("lifeEvent.buttonLabel2") }}
-                </button>
-                /
-                <button
-                  class="usa-button usa-button--unstyled clear-all"
-                  aria-controls="acc-id"
-                  @click="clearCriteria">
-                  {{ $t("lifeEvent.buttonLabel3") }}
-                </button>
-              </div>
-            </div>
-            <div class="grid-col-auto margin-y-2 text-right">
+            class="display-none tablet:display-block print:display-none margin-bottom-4">
+            <div class="display-flex flex-row flex-justify-end text-right">
               <label
                 class="usa-label display-inline"
                 for="benefitSort"
@@ -107,7 +84,6 @@
                   id="benefitSort"
                   class="usa-select margin-left-auto width-card display-inline-block"
                   name="benefitSort"
-                  aria-label="Sort benefits by"
                   @change="sortChange">
                   <option
                     value="relevance"
@@ -122,30 +98,14 @@
                 </select>
               </label>
             </div>
-          </div>
-          <div v-if="filter">
-            <div role="alert">
-              {{ $t("lifeEvent.currentlyViewing") }}
-              <span class="usa-tag bg-secondary display-inline-flex margin-left-05 padding-0 usa-button-group__item">
-                <button
-                  class="usa-tooltip usa-button usa-button--unstyled usa-button--outline usa-button--inverse text-uppercase margin-left-05 border-left border-accent-cool-light padding-x-05 font-sans-3xs"
-                  style="padding: 0.25rem; text-decoration: none"
-                  :title="`Remove the ${filter} filter`"
-                  :aria-label="`Remove the ${filter} filter`"
-                  data-position="top"
-                  @click="clearFilter">
-                  <span class="text-middle text-white">{{ filter }}</span>
-                  <svg
-                    class="usa-icon text-white text-middle"
-                    aria-hidden="true"
-                    focusable="false"
-                    role="img">
-                    <use xlink:href="~/assets/img/sprite.svg#close" />
-                  </svg>
-                </button>
-              </span>
+            <div class="display-flex flex-row flex-justify-end">
+              <OpenCloseButtons
+                :is-close-active-prop="true"
+                @open-all="openAll"
+                @close-all="closeAll" />
             </div>
           </div>
+
           <!-- Mobile meta sort and open -->
           <div
             aria-label="Benefit accordion controls"
@@ -210,11 +170,26 @@
               <p class="usa-alert__text">{{ $t("lifeEvent.fetchState.none") }}</p>
             </div>
           </div>
+          <p
+            id="acc-id"
+            class="sr-only"
+            aria-live="assertive">
+            {{ accordionMessage }}
+          </p>
+          <p
+            id="matching-count"
+            class="sr-only"
+            aria-live="assertive">
+            You match
+            {{ countEligibleBenefits() }} benefits.
+          </p>
           <Accordion
             ref="accordion"
             class="tablet:margin-top-2"
             :life-event-benefits="lifeEventBenefits"
-            :life-event-criteria="lifeEvent.eligibilityCriteria" />
+            :life-event-criteria="lifeEvent.eligibilityCriteria"
+            :show-icons="true"
+            :show-matching-count="true" />
         </div>
       </div>
     </section>
@@ -230,11 +205,9 @@
 import _ from "lodash"
 import { mapGetters, mapState } from "vuex"
 import { tObj, tCsv } from "~/services/translation"
-import mapTags from "~/mixins/MapTags"
 
 export default {
   name: "LifeEvent",
-  mixins: [mapTags],
   layout: "default",
   async asyncData({ $content }) {
     const landingPage = await $content("landing-page").fetch()
@@ -257,6 +230,8 @@ export default {
       allLifeEventBenefits: [],
       sort: "relevance",
       disclaimer: {},
+      accordionMessage: "",
+      matchingBenefitMessage: "No matching benefits",
     }
   },
 
@@ -295,6 +270,7 @@ export default {
     ...mapGetters({
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
       getTotalIneligibleCriteria: "criteria/getTotalIneligibleCriteria",
+      doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
     }),
     ...mapState({
       eligibilityCriteria: (state) => state.criteria.eligibilityCriteria,
@@ -313,21 +289,15 @@ export default {
       },
     },
   },
-  beforeDestroy() {
-    /* istanbul ignore next */
-    this.$root.$off("tag:click", this.tagClick)
-  },
   mounted() {
-    this.$root.$on("tag:click", this.tagClick)
     this.landingPage = tObj.call(this, this.landingPage)
   },
   methods: {
+    changeMessage() {},
     clearCriteria() {
       this.$store.dispatch("criteria/clear")
-      this.clearFilter()
       this.sortBenefits()
     },
-
     getVirtualCriteria() {
       const lifeEventCriteria = Object.fromEntries(
         this.lifeEvent.eligibilityCriteria
@@ -347,9 +317,11 @@ export default {
     },
     closeAll() {
       this.$refs.accordion.closeAll()
+      this.accordionMessage = "All accordions closed"
     },
     openAll() {
       this.$refs.accordion.openAll()
+      this.accordionMessage = "All accordions open"
     },
     sortChange(event) {
       this.sort = event.target.value
@@ -370,21 +342,17 @@ export default {
           benefit.inverseMatchRatio =
             1 - matches / (benefit.eligibility.length - virtualBenefitEligibility) + (ineligible ? forceToBottom : 0)
         })
+        this.matchingBenefitMessage = `${this.lifeEventBenefits.length} matching benefits`
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
       }
     },
-    tagClick(tag) {
-      this.lifeEventBenefits = _.filter(this.allLifeEventBenefits, (benefit) => {
-        return benefit.tags.includes(tag)
-      })
-      this.filter = tag
-      this.sortBenefits()
-      // eslint-disable-next-line vue/valid-next-tick
-    },
-    clearFilter() {
-      this.filter = ""
-      this.lifeEventBenefits = this.allLifeEventBenefits
-      this.sortBenefits()
+    countEligibleBenefits() {
+      return this.lifeEventBenefits.filter((benefit) => {
+        if (benefit.eligibility.some((c) => this.doesCriterionMatchSelection(c) === false)) {
+          return false
+        }
+        return this.getTotalEligibleCriteria(benefit.eligibility) >= 1
+      }).length
     },
   },
 }
@@ -395,9 +363,6 @@ export default {
   scoped>
 .shade {
   background-color: #ebe6de;
-}
-.benefit-list-move {
-  transition: transform 2s;
 }
 .usagov-header--font-size {
   font-size: 1.45rem;

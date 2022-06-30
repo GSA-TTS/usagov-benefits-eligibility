@@ -4,15 +4,25 @@
       {{ label }}
     </legend>
     <div
+      class="usa-hint margin-top-105 margin-bottom-neg-105"
+      :class="topLevelStyle">
+      For example: 4 28 1986
+    </div>
+    <h2
+      v-if="errorMessage"
+      :id="`${errUniqueId}-input-error-message`"
+      class="usa-error-message padding-x-1 margin-bottom-0 radius-sm font-body-md">
+      {{ $t(errorMessage) }}
+    </h2>
+    <div
       v-if="$i18n.locale === 'en'"
       class="usa-memorable-date">
-      <!-- lower margin of the label -->
       <div class="usa-form-group usa-form-group--month">
         <label
           :class="labelClass"
-          :for="`${uniqueId}-${criteriaKey}-month`"
-          >{{ $t("dateInput.month") }}</label
-        >
+          :for="`${uniqueId}-${criteriaKey}-month`">
+          {{ $t("dateInput.month") }}
+        </label>
         <input
           :id="`${uniqueId}-${criteriaKey}-month`"
           v-model="month"
@@ -23,14 +33,15 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
+          placeholder="MM"
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--day">
         <label
           :class="labelClass"
-          :for="`${uniqueId}-${criteriaKey}-day`"
-          >{{ $t("dateInput.day") }}</label
-        >
+          :for="`${uniqueId}-${criteriaKey}-day`">
+          {{ $t("dateInput.day") }}
+        </label>
         <input
           :id="`${uniqueId}-${criteriaKey}-day`"
           v-model="day"
@@ -41,6 +52,7 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
+          placeholder="DD"
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
       <div class="usa-form-group usa-form-group--year">
@@ -60,19 +72,19 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
+          placeholder="YYYY"
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
     </div>
     <div
       v-if="$i18n.locale === 'es'"
       class="usa-memorable-date">
-      <!-- lower margin of the label -->
       <div class="usa-form-group usa-form-group--day">
         <label
           :class="labelClass"
-          :for="`${uniqueId}-${criteriaKey}-day`"
-          >{{ $t("dateInput.day") }}</label
-        >
+          :for="`${uniqueId}-${criteriaKey}-day`">
+          {{ $t("dateInput.day") }}
+        </label>
         <input
           :id="`${uniqueId}-${criteriaKey}-day`"
           v-model="day"
@@ -83,15 +95,15 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
+          placeholder="DD"
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
-
       <div class="usa-form-group usa-form-group--month">
         <label
           :class="labelClass"
-          :for="`${uniqueId}-${criteriaKey}-month`"
-          >{{ $t("dateInput.month") }}</label
-        >
+          :for="`${uniqueId}-${criteriaKey}-month`">
+          {{ $t("dateInput.month") }}
+        </label>
         <input
           :id="`${uniqueId}-${criteriaKey}-month`"
           v-model="month"
@@ -102,9 +114,9 @@
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
+          placeholder="MM"
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
-
       <div class="usa-form-group usa-form-group--year">
         <label
           :class="labelClass"
@@ -122,15 +134,10 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
+          placeholder="YYYY"
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
     </div>
-    <span
-      :id="`${errUniqueId}-input-error-message`"
-      v:show="errorMessage"
-      class="usa-error-message">
-      {{ $t(errorMessage) }}
-    </span>
   </fieldset>
 </template>
 
@@ -159,9 +166,9 @@ export default {
     },
     location: {
       type: String,
-      default: "benefit-card",
+      default: "left-rail",
       validator: (value) => {
-        return ["benefit-card", "left-rail"].includes(value)
+        return ["benefit-card", "left-rail", "top-level"].includes(value)
       },
     },
     test: {
@@ -180,6 +187,9 @@ export default {
     }
   },
   computed: {
+    topLevelStyle() {
+      return this.location === "top-level" ? "text-gray-30" : "text-base-darker"
+    },
     selectedStyle() {
       return this.location === "left-rail" ? "text-bold" : ""
     },
@@ -253,13 +263,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style
+  lang="scss"
+  scoped>
+.usa-error-message {
+  background-color: #b50909;
+  color: white;
+}
 .usa-legend {
   margin-bottom: -0.6875rem;
-}
-
-.usa-hint {
-  color: red;
 }
 
 .usa-memorable-date {
@@ -282,7 +294,7 @@ export default {
 }
 
 .usa-legend--error {
-  color: red;
+  color: #b50909;
   font-weight: 700;
 }
 </style>

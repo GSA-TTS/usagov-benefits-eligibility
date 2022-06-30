@@ -1,12 +1,11 @@
 <template>
-  <transition-group
+  <TransitionGroup
     id="acc-id"
     ref="accordion"
     class="usa-accordion usa-accordion--bordered"
     name="benefit-list"
     tag="section"
-    aria-multiselectable="true"
-    aria-live="polite">
+    aria-multiselectable="true">
     <article
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
@@ -30,29 +29,11 @@
         :id="`acc-content-${benefit.slug}`"
         ref="accordionContents"
         class="usa-accordion__content usa-prose">
-        <div
-          v-if="benefit && benefit.tags.length > 0"
-          class="tags-container margin-top-1 print:display-none">
-          <Tag
-            v-for="tag in mapTags(benefit.tags)"
-            :key="tag.name"
-            :name="tag.name"
-            :click="tagClick"
-            :title="tag.title"
-            :aria-label="tag.title" />
-        </div>
         <template v-if="benefit.source && benefit.source.link && benefit.source.name">
           <h3
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
-            {{ $t("accordion.provided") }}
-            <!-- //NOSONAR --><a
-              class="usa-link"
-              :href="sanitizedBenefitUrl(benefit)"
-              target="_blank"
-              rel="noopener"
-              >{{ benefit.source.name }}</a
-            >
+            {{ $t("accordion.provided") }} {{ benefit.source.name }}
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -68,25 +49,21 @@
             :show-icons="showIcons"
             :show-matching-count="showMatchingCount" />
         </fieldset>
-        <ul
+        <div
           v-if="benefit.source && benefit.source.link"
-          class="usa-button-group"
-          style="padding-left: 0"
-          :aria-label="`Choices for ${benefit.title}`">
-          <li class="usa-button-group__item">
-            <!-- //NOSONAR --><a
-              :href="sanitizedBenefitUrl(benefit)"
-              target="_blank"
-              rel="noopener"
-              :aria-label="`How to apply for ${benefit.title}`"
-              class="usa-button print:display-none">
-              {{ $t("accordion.apply") }}
-            </a>
-          </li>
-        </ul>
+          class="margin-top-205">
+          <a
+            :href="sanitizedBenefitUrl(benefit)"
+            class="usa-button print:display-none"
+            target="_blank"
+            rel="noopener"
+            role="button">
+            {{ $t("accordion.apply") }}
+          </a>
+        </div>
       </div>
     </article>
-  </transition-group>
+  </TransitionGroup>
 </template>
 
 <script>
@@ -107,7 +84,7 @@ export default {
   props: {
     expanded: {
       type: Boolean,
-      requierd: false,
+      required: false,
       default: false,
     },
     lifeEventBenefits: {
@@ -126,11 +103,6 @@ export default {
       default: true,
     },
     showIcons: {
-      type: Boolean,
-      required: false,
-      default: true,
-    },
-    tagClick: {
       type: Boolean,
       required: false,
       default: true,
@@ -195,7 +167,7 @@ export default {
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
         return "(" + this.$t("accordion.eligible") + ")"
       }
-      return null
+      return "(" + this.$t("accordion.unknown") + ")"
     },
     toggleAccordion(expanded) {
       if (this.$refs.accordionButtons) {
@@ -214,9 +186,32 @@ export default {
 <style
   lang="scss"
   scoped>
+.usa-button {
+  background-color: #00bde3;
+  color: #000000;
+}
 .benefit-list-move {
   transition: transform 1s;
 }
+@media (prefers-reduced-motion) {
+  .benefit-list-move, /* apply transition to moving elements */
+  .benefit-list-enter-active,
+  .benefit-list-leave-active {
+    transition: all 0s ease;
+  }
+  .benefit-list-enter-from,
+  .benefit-list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  /* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+  .benefit-list-leave-active {
+    position: absolute;
+  }
+}
+
 .usa-accordion__button {
   background-color: transparent;
   border-right: 3px solid #ebe6de;

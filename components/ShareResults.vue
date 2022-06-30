@@ -4,6 +4,7 @@
       class="tablet:padding-left-3 display-block margin-bottom-5 border-bottom border-gray-30 border-width-2px break-inside-avoid padding-bottom-4">
       <button
         class="usa-button usa-button--outline width-full tablet:width-card-lg bg-white clear-selections"
+        aria-controls="button-msg"
         @click="clearCriteria">
         <svg
           class="usa-icon text-middle"
@@ -14,6 +15,12 @@
         </svg>
         <span class="text-middle"> {{ $t("lifeEvent.buttonLabel4") }}</span>
       </button>
+      <p
+        id="button-msg"
+        class="sr-only"
+        aria-live="assertive">
+        {{ filterMessage }}
+      </p>
     </div>
     <div class="tablet:padding-left-3">
       <h2 class="font-sans-md">{{ $t("shareResults.heading") }}</h2>
@@ -81,6 +88,7 @@ export default {
   data() {
     return {
       alert: false,
+      filterMessage: "",
     }
   },
   computed: {
@@ -154,6 +162,7 @@ export default {
     async copy() {
       await navigator.clipboard.writeText(this.url)
       this.alert = true
+      this.filterMessage = this.$t("shareResults.linkCopied")
       /* istanbul ignore next */
       setTimeout(() => {
         this.alert = false
@@ -161,6 +170,7 @@ export default {
     },
 
     clearCriteria() {
+      this.filterMessage = "Selections cleared"
       this.$store.dispatch("criteria/clear")
     },
 
