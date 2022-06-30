@@ -38,8 +38,8 @@
             <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
               {{ $t("eligibilityList.left-rail-heading") }}
             </h2>
-
-            <div class="tablet:margin-top-6 margin-bottom-2 display-flex print:display-none">
+            <!-- TODO: this one -->
+            <div class="tablet:margin-top-2 margin-bottom-5 display-flex print:display-none">
               <div class="text-ink">
                 <svg
                   class="usa-icon usa-icon--size-3 margin-right-1"
@@ -71,11 +71,13 @@
             {{ $t("eligibilityList.right-rail-heading") }}
           </h2>
           <!-- Desktop meta sort and open -->
+          <!-- TODO: this one -->
           <div
             aria-label="Benefit accordion controls"
             role="complementary"
-            class="display-none tablet:display-block print:display-none margin-bottom-4">
-            <div class="display-flex flex-row flex-justify-end text-right">
+            class="display-none tablet:display-block print:display-none margin-bottom-6"
+            :class="spanishStyle">
+            <div class="display-block text-right">
               <label
                 class="usa-label display-inline"
                 for="benefitSort"
@@ -275,6 +277,12 @@ export default {
     ...mapState({
       eligibilityCriteria: (state) => state.criteria.eligibilityCriteria,
     }),
+    spanishStyle() {
+      if (this.$i18n.locale === "es") {
+        return "margin-bottom-10"
+      }
+      return null
+    },
   },
   watch: {
     eligibilityCriteria: {
@@ -358,9 +366,7 @@ export default {
 }
 </script>
 
-<style
-  type="scss"
-  scoped>
+<style type="scss" scoped>
 .shade {
   background-color: #ebe6de;
 }

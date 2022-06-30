@@ -239,6 +239,8 @@
     "month": "Mes",
     "day": "Día",
     "year": "Año",
+    "year-placeholder": "AAAA",
+    "example": "Por ejemplo",
     "Please enter a valid date.": "Ingrese una fecha válida."
   },
   "404": {

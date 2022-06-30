@@ -27,6 +27,8 @@
     "month": "Month",
     "day": "Day",
     "year": "Year",
+    "year-placeholder": "YYYY",
+    "example": "For example",
     "Please enter a valid date.": "Please enter a valid date."
   },
   "eligibilityList": {
