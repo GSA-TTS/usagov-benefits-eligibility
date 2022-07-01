@@ -113,7 +113,6 @@ export default {
       accordionInit: false,
       cid: _.uniqueId("c"),
       lifeEventCriteriaKeys: [],
-      // active: false,
     }
   },
   computed: {
@@ -138,7 +137,6 @@ export default {
       this.toggleAccordion(this.expanded)
       this.accordionInit = true
     }
-    // this.active = true
   },
   mounted() {
     if (this.lifeEventBenefits.length > 0) {
@@ -165,10 +163,6 @@ export default {
       return "border-gray-30"
     },
     getCriteriaMatchLanguage(eligibilityCriteria) {
-      // return null if there are no eligibility criteria
-      // if (eligibilityCriteria.length === 0) {
-      //   return null
-      // }
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
         return "(" + this.$t("accordion.not_eligible") + ")"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
