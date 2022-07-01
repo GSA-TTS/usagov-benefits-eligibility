@@ -211,7 +211,7 @@ describe("Accordion", () => {
         },
       })
       const text = wrapper.vm.getCriteriaMatchLanguage([{}])
-      expect(text).toBe("(accordion.unknown)")
+      expect(text).toBe(null)
     })
   })
 })
