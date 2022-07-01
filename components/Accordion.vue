@@ -113,12 +113,14 @@ export default {
       accordionInit: false,
       cid: _.uniqueId("c"),
       lifeEventCriteriaKeys: [],
+      // active: false,
     }
   },
   computed: {
     ...mapGetters({
       doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
+      getActiveState: "criteria/getActiveState",
     }),
   },
   beforeCreate() {
@@ -136,6 +138,7 @@ export default {
       this.toggleAccordion(this.expanded)
       this.accordionInit = true
     }
+    // this.active = true
   },
   mounted() {
     if (this.lifeEventBenefits.length > 0) {
@@ -162,12 +165,19 @@ export default {
       return "border-gray-30"
     },
     getCriteriaMatchLanguage(eligibilityCriteria) {
+      // return null if there are no eligibility criteria
+      // if (eligibilityCriteria.length === 0) {
+      //   return null
+      // }
       if (eligibilityCriteria.some((c) => this.doesCriterionMatchSelection(c) === false)) {
         return "(" + this.$t("accordion.not_eligible") + ")"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
         return "(" + this.$t("accordion.eligible") + ")"
+      } else if (this.getActiveState) {
+        return "(" + this.$t("accordion.unknown") + ")"
+      } else {
+        return null
       }
-      return "(" + this.$t("accordion.unknown") + ")"
     },
     toggleAccordion(expanded) {
       if (this.$refs.accordionButtons) {
@@ -183,9 +193,7 @@ export default {
   },
 }
 </script>
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 .usa-button {
   background-color: #00bde3;
   color: #000000;
