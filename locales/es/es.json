@@ -14,21 +14,21 @@
     }
   },
   "eligibilityList": {
-    "left-rail-heading": "Responda Algunas Preguntas",
+    "left-rail-heading": "Responda Unas Preguntas",
     "right-rail-heading": "Beneficios Federales Potenciales",
-    "heading": "Criterios clave de elegibilidad",
-    "you_must": "Debe cumplir con todos los criterios. Actualmente te encuentras",
+    "heading": "Principales criterios de elegibilidad",
+    "you_must": "Debe cumplir todos los criterios. Actualmente cumple",
     "of": "de",
-    "additional": "Pueden aplicarse criterios de elegibilidad adicionales.",
-    "review": "Por favor revise los requisitos completos en",
-    "match": "Este criterio coincidió",
-    "remove": "Este criterio eliminó este beneficio",
-    "noMatch": "Este criterio no ha coincidido"
+    "additional": "Puede haber criterios de elegibilidad adicionales.",
+    "review": "Examine todos los requisitos en",
+    "match": "Usted cumple este criterio",
+    "remove": "Usted no cumple este criterio",
+    "noMatch": "Usted no brindó información para este criterio"
   },
-  "skipnav": "Saltar al contenido principal",
-  "returnToTop": "Regresar arriba",
+  "skipnav": "Ir al contenido principal",
+  "returnToTop": "Volver al principio",
   "utilityNav": {
-    "linkOne": "Beneficios por eventos de vida",
+    "linkOne": "Beneficios por acontecimientos de vida",
     "linkTwo": "Beneficios por tipo",
     "linkThree": "Beneficios por agencia"
   },
@@ -181,65 +181,67 @@
     "subFooter": "USAGov en Español es la guía oficial de información y servicios del Gobierno"
   },
   "lifeEvent": {
-    "buttonLabel1": "Abrir Todo",
-    "buttonLabel2": "Cierra Todo",
-    "buttonLabel3": "Limpiar Selecciones",
-    "buttonLabel4": "Limpiar mis selecciones",
-    "important": "Important information",
-    "benefits": "Benefits",
-    "results": "Results",
+    "buttonLabel1": "Abrir todo",
+    "buttonLabel2": "Cerrar todo",
+    "buttonLabel3": "Borrar selecciones",
+    "buttonLabel4": "Borrar mis selecciones",
+    "important": "Información importante",
+    "benefits": "Beneficios federales potenciales",
+    "results": "Resultados",
     "labelShowText": "Mostrando",
     "labelShowText2": "beneficios relacionados ordenados por:",
     "option1": "Relevancia",
     "option2": "Título (A-Z)",
-    "eligibilityCriteria": "Eligibility Criteria",
-    "currentlyViewing": "Currently viewing",
+    "eligibilityCriteria": "Criterios de elegibilidad",
+    "currentlyViewing": "Viendo actualmente",
     "fetchState": {
-      "pending": "Fetching benefits...",
-      "error": "Error while fetching benefits.",
-      "none": "No matching benefits found."
+      "pending": "Buscando beneficios...",
+      "error": "Error al buscar beneficios.",
+      "none": "No se encontraron beneficios que coincidan."
     }
   },
   "types": {
-    "heading": "If you know the specific type of benefit you are looking for, select it below.",
-    "sort": "Benefits by type"
+    "heading": "Si conoce el tipo específico de beneficio que está buscando, selecciónelo abajo.",
+    "sort": "Beneficios por tipo"
   },
   "agency": {
-    "sort": "Benefits by agency"
+    "sort": "Beneficios por agencia"
   },
   "buttons": {
-    "open_all": "Open All",
-    "close_all": "Close All",
-    "my_selections": "my selections"
+    "open_all": "Abrir todo",
+    "close_all": "Cerrar todo",
+    "my_selections": "mis selecciones"
   },
   "radio": {
-    "not_applicable": "not applicable"
+    "not_applicable": "no corresponde"
   },
   "dropDown": {
     "select": "Seleccione"
   },
   "shareResults": {
     "heading": "Compartir e imprimir",
-    "description": "Copy a link to this page with the criteria you selected above. Make sure to share it only with those you trust as\nyour answers will be visible.",
-    "linkCopied": "Link with my selections is copied",
-    "copy": "Copy my selections",
-    "email": "Email my selections"
+    "description": "Copiar un enlace a esta página con los criterios que seleccionó arriba. Comparta solo con receptores de confianza porque se verán sus respuestas.",
+    "linkCopied": "Copia del enlace con mis selecciones",
+    "copy": "Copiar mis selecciones",
+    "email": "Enviar por email mis selecciones"
   },
   "accordion": {
-    "provided": "Provided by",
-    "apply": "How to Apply",
-    "not_eligible": "you are not eligible",
-    "eligible": "you might be eligible",
+    "provided": "Suministrado por",
+    "apply": "Cómo presentar una solicitud",
+    "not_eligible": "usted no es elegible",
+    "eligible": "usted podría ser elegible",
     "unknown": "se necesita más información"
   },
   "criteria_group": {
-    "non_selected": "No eligibility criteria selected"
+    "non_selected": "No se seleccionaron criterios de elegibilidad"
   },
   "dateInput": {
-    "month": "Month",
-    "day": "Day",
-    "year": "Year",
-    "Please enter a valid date.": "Please enter a valid date."
+    "month": "Mes",
+    "day": "Día",
+    "year": "Año",
+    "year-placeholder": "AAAA",
+    "example": "Por ejemplo",
+    "Please enter a valid date.": "Ingrese una fecha válida."
   },
   "404": {
     "sidenav": {

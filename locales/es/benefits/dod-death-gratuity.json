@@ -1,0 +1,17 @@
+{
+  "dod-death-gratuity.title": "Prima por fallecimiento",
+  "dod-death-gratuity.headline": "Prima por fallecimiento",
+  "dod-death-gratuity.source.name": "Departamento de Defensa",
+  "dod-death-gratuity.source.link": "https://militarypay.defense.gov/Benefits/Death-Gratuity/",
+  "dod-death-gratuity.summary": "La prima por fallecimiento es un pago exento de impuestos de $100,000 a sobrevivientes elegibles de miembros de las Fuerzas Armadas, que fallecieron en servicio activo o mientras prestaban servicio en ciertos niveles de la reserva.",
+  "dod-death-gratuity.eligibility.acceptableValues": "sí",
+  "dod-death-gratuity.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "dod-death-gratuity.eligibility.acceptableValues1": "miembro del servicio activo",
+  "dod-death-gratuity.eligibility.acceptableValues2": "miembro de la Guardia Nacional o las Reservas",
+  "dod-death-gratuity.eligibility.acceptableValues3": "falleció en servicio activo",
+  "dod-death-gratuity.eligibility.acceptableValues4": "falleció durante instrucción para servicio inactivo",
+  "dod-death-gratuity.eligibility.acceptableValues5": "cónyuge",
+  "dod-death-gratuity.eligibility.acceptableValues6": "hijo/hija",
+  "dod-death-gratuity.eligibility.acceptableValues7": "padre/madre",
+  "dod-death-gratuity.eligibility.acceptableValues8": "otro familiar"
+}

@@ -6,7 +6,7 @@
     <div
       class="usa-hint margin-top-105 margin-bottom-neg-105"
       :class="topLevelStyle">
-      For example: 4 28 1986
+      {{ $t("dateInput.example") }}: 4 28 1986
     </div>
     <h2
       v-if="errorMessage"
@@ -72,7 +72,7 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
-          placeholder="YYYY"
+          :placeholder="$t('dateInput.year-placeholder')"
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
     </div>
@@ -134,7 +134,7 @@
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
-          placeholder="YYYY"
+          :placeholder="$t('dateInput.year-placeholder')"
           @change="updateEligibilityDate(criteriaKey)" />
       </div>
     </div>
@@ -263,9 +263,7 @@ export default {
 }
 </script>
 
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 .usa-error-message {
   background-color: #b50909;
   color: white;

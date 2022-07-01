@@ -1,0 +1,13 @@
+{
+  "va-survivor-pension-child.title": "Pensión para hijo/hija sobreviviente",
+  "va-survivor-pension-child.headline": "Pensión para hijo/hija sobreviviente",
+  "va-survivor-pension-child.source.name": "Departamento de Asuntos de los Veteranos de EE. UU.",
+  "va-survivor-pension-child.source.link": "https://www.va.gov/pension/survivors-pension/",
+  "va-survivor-pension-child.summary": "Puede haber pagos mensuales disponibles para hijos/hijas sobrevivientes dependientes y calificados de veteranos de guerra que satisfacen ciertos límites de ingresos y patrimonio neto.",
+  "va-survivor-pension-child.eligibility.acceptableValues": "sí",
+  "va-survivor-pension-child.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "va-survivor-pension-child.eligibility.acceptableValues1": "dada de baja en condiciones que no son deshonrosas",
+  "va-survivor-pension-child.eligibility.acceptableValues2": "hijo/hija",
+  "va-survivor-pension-child.eligibility.label1": "Usted tiene menos de 18 años (menos de 23 años si asiste a una escuela aprobada por VA).",
+  "va-survivor-pension-child.eligibility.acceptableValues3": "soltero"
+}

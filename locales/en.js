@@ -86,6 +86,6 @@ export default Object.assign(
   require("./en/types/housing.json"),
   require("./en/criteria.json"),
   require("./en/en.json"),
-  require("./en/disclaimer.json"),
-  require("./en/landing-page.json")
+  require("./en/landing-page.json"),
+  require("./en/disclaimer.json")
 )

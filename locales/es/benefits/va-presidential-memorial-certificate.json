@@ -1,0 +1,21 @@
+{
+  "va-presidential-memorial-certificate.title": "Certificado presidencial conmemorativo",
+  "va-presidential-memorial-certificate.headline": "Certificado presidencial conmemorativo",
+  "va-presidential-memorial-certificate.source.name": "Departamento de Asuntos de los Veteranos de EE. UU.",
+  "va-presidential-memorial-certificate.source.link": "https://www.va.gov/burials-memorials/memorial-items/presidential-memorial-certificates/",
+  "va-presidential-memorial-certificate.summary": "Un certificado presidencial conmemorativo (PMC, sigla en inglés) es un certificado grabado en papel firmado por el presidente actual que se expide para honrar el servicio militar de un veterano o reservista.",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues": "sí",
+  "va-presidential-memorial-certificate.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues1": "miembro del servicio activo",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues3": "miembro de la Guardia Nacional o las Reservas",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues4": "falleció en servicio activo",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues5": "falleció como resultado de una discapacidad o enfermedad relacionada con el servicio",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues6": "falleció mientras recibía o viajaba para recibir atención del Departamento de Asuntos de los Veteranos (VA, sigla en inglés)",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues7": "falleció mientras era elegible para recibir compensación de VA o mientras la recibía",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues8": "cónyuge",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues9": "hijo/hija",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues10": "padre/madre",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues11": "otro familiar",
+  "va-presidential-memorial-certificate.eligibility.acceptableValues12": "representante personal u oficial"
+}

@@ -1,15 +1,15 @@
 import os
 
 LANGUAGE = "en"
-jsonDir = "./locales/" + LANGUAGE + "/"
 
-allFiles = {"agencies": [], "benefits": [], "life-events": [], "types": []}
 ignoreFiles = [
     ".DS_Store",
 ]
 
 
 def lang():
+    allFiles = {"agencies": [], "benefits": [], "life-events": [], "types": []}
+    jsonDir = "./locales/" + LANGUAGE + "/"
     files = os.listdir(jsonDir)
     for file in files:
         if file in ignoreFiles:
