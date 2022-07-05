@@ -119,6 +119,7 @@ export default {
     ...mapGetters({
       doesCriterionMatchSelection: "criteria/doesCriterionMatchSelection",
       getTotalEligibleCriteria: "criteria/getTotalEligibleCriteria",
+      getActiveState: "criteria/getActiveState",
     }),
   },
   beforeCreate() {
@@ -166,8 +167,11 @@ export default {
         return "(" + this.$t("accordion.not_eligible") + ")"
       } else if (this.getTotalEligibleCriteria(eligibilityCriteria) >= 1) {
         return "(" + this.$t("accordion.eligible") + ")"
+      } else if (this.getActiveState) {
+        return "(" + this.$t("accordion.unknown") + ")"
+      } else {
+        return null
       }
-      return "(" + this.$t("accordion.unknown") + ")"
     },
     toggleAccordion(expanded) {
       if (this.$refs.accordionButtons) {
@@ -183,9 +187,7 @@ export default {
   },
 }
 </script>
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 .usa-button {
   background-color: #00bde3;
   color: #000000;

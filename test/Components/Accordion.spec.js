@@ -24,6 +24,7 @@ describe("Accordion", () => {
     getters = {
       doesCriterionMatchSelection: () => jest.fn().mockReturnValue(true).mockReturnValueOnce(false),
       getTotalEligibleCriteria: () => jest.fn().mockReturnValue(2).mockReturnValueOnce(3).mockReturnValueOnce(0),
+      getActiveState: () => jest.fn().mockReturnValue(false),
     }
     store = new Store({
       modules: {
@@ -194,6 +195,7 @@ describe("Accordion", () => {
       getters = {
         doesCriterionMatchSelection: () => jest.fn().mockReturnValue(null),
         getTotalEligibleCriteria: () => jest.fn().mockReturnValue(0),
+        getActiveState: () => jest.fn().mockReturnValue(false),
       }
       store = new Store({
         modules: {

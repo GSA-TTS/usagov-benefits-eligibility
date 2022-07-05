@@ -5,6 +5,7 @@ import { validateDateAgainstAcceptance } from "~/services/dateHelper"
 export const state = () => ({
   eligibilityCriteria: {},
   hashToCriteria: {},
+  active: false,
 })
 
 export const mutations = {
@@ -13,6 +14,7 @@ export const mutations = {
     Vue.set(theState.eligibilityCriteria[criteriaKey], "response", response)
     const hashedData = getters.getHashResponses(theState)
     localStorage.setItem("responseData", JSON.stringify(hashedData))
+    theState.active = true
   },
 
   preloadedResponses(theState, { valueArray }) {
@@ -20,6 +22,7 @@ export const mutations = {
       const criteriaKey = theState.hashToCriteria[param.criteriaKeyHash]
       if (theState.eligibilityCriteria[criteriaKey] != null) {
         Vue.set(theState.eligibilityCriteria[criteriaKey], "response", param.response)
+        theState.active = true
       }
     }
 
@@ -47,6 +50,7 @@ export const mutations = {
       Vue.set(theState.eligibilityCriteria[criteriaKey], "response", null)
     }
     localStorage.setItem("responseData", JSON.stringify({}))
+    theState.active = false
   },
 }
 
@@ -149,6 +153,9 @@ export const getters = {
     },
   isCriterionSelected: (_theState, theGetters) => (criterion) => {
     return !!theGetters.getCriterionByEligibilityKey(criterion.criteriaKey).response
+  },
+  getActiveState: (theState) => {
+    return theState.active
   },
 }
 
