@@ -6,13 +6,13 @@
     <div
       class="usa-hint margin-top-105 margin-bottom-neg-105"
       :class="topLevelStyle">
-      {{ $t("dateInput.example") }}: 4 28 1986
+      {{ $t("dateInput.example") }}
     </div>
     <h2
       v-if="errorMessage"
       :id="`${errUniqueId}-input-error-message`"
       class="usa-error-message padding-x-1 margin-bottom-0 radius-sm font-body-md">
-      {{ $t(errorMessage) }}
+      {{ $t("dateInput.error_msg") }}
     </h2>
     <div
       v-if="$i18n.locale === 'en'"

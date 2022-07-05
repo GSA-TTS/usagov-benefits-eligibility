@@ -240,8 +240,8 @@
     "day": "Día",
     "year": "Año",
     "year-placeholder": "AAAA",
-    "example": "Por ejemplo",
-    "Please enter a valid date.": "Ingrese una fecha válida."
+    "example": "Por ejemplo: 28 4 1986",
+    "error_msg": "Por favor escriba una fecha valida."
   },
   "404": {
     "sidenav": {
