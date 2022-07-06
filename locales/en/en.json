@@ -199,7 +199,8 @@
     "description": "Copy a link to this page with the criteria you selected above. Make sure to share it only with those you trust as\nyour answers will be visible.",
     "linkCopied": "Link with my selections is copied",
     "copy": "Copy my selections",
-    "email": "Email my selections"
+    "email": "Email my selections",
+    "print": "Print my selections"
   },
   "footer": {
     "GroupOne": {
