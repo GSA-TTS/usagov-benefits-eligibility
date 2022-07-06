@@ -23,5 +23,5 @@ eligibility:
     acceptableValues: ["<01-01-1978"]
     label: dod-forgotten-widows-annuity.eligibility.label1
   - criteriaKey: applicant_relationship
-    acceptableValues: [spouse]
+    acceptableValues: [dod-forgotten-widows-annuity.eligibility.acceptableValues2]
 ---
