@@ -22,7 +22,7 @@ eligibility:
     label: ssa-survivor-benefits-child-disabled.eligibility.label
     acceptableValues: [">18years"]
   - criteriaKey: applicant_marital_status
-    acceptableValues: [unmarried]
+    acceptableValues: [ssa-survivor-benefits-child-disabled.eligibility.acceptableValues1]
   - criteriaKey: applicant_disability
     acceptableValues: [true]
   - criteriaKey: applicant_ability_to_work
