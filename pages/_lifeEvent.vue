@@ -31,47 +31,37 @@
         </div>
       </div>
 
-      <div class="grid-row tablet:grid-gap print:display-block">
+      <div class="grid-row">
         <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0 print:display-none">
           <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
-          <div>
-            <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
-              {{ $t("eligibilityList.left-rail-heading") }}
-            </h2>
-            <!-- TODO: this one -->
-            <div class="tablet:margin-top-2 margin-bottom-5 display-flex print:display-none">
-              <div class="text-ink">
-                <svg
-                  class="usa-icon usa-icon--size-3 margin-right-1"
-                  aria-labelledby="eligibility-section-criteria-icon-title"
-                  focusable="false"
-                  role="img">
-                  <title id="eligibility-section-criteria-icon-title">{{ $t("lifeEvent.important") }}</title>
-                  <use xlink:href="~/assets/img/sprite.svg#warning" />
-                </svg>
-              </div>
-              <div class="font-body-md usa-icon-list">
-                {{ lifeEvent.eligibilityCriteriaDescription }}
-              </div>
+          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
+            {{ $t("eligibilityList.left-rail-heading") }}
+          </h2>
+          <div class="grid-row">
+            <div class="grid-col-1 padding-top-1">
+              <svg
+                class="usa-icon usa-icon--size-3 margin-right-1 flex-align-self-start"
+                aria-labelledby="eligibility-section-criteria-icon-title"
+                focusable="false"
+                role="img">
+                <title id="eligibility-section-criteria-icon-title">{{ $t("lifeEvent.important") }}</title>
+                <use xlink:href="~/assets/img/sprite.svg#warning" />
+              </svg>
             </div>
-          </div>
-          <div class="desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade">
-            <CriteriaGroup
-              :life-event-criteria="lifeEvent.eligibilityCriteria"
-              :top-level-filters="lifeEvent.topLevelFilter" />
-            <div class="padding-2">
-              <share-results @print="openAll()" />
+            <div class="grid-col">
+              <p class="font-body-md usa-icon-list">
+                {{ lifeEvent.eligibilityCriteriaDescription }}
+              </p>
             </div>
           </div>
         </div>
         <div
-          class="margin-top-2 tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
+          class="tablet:margin-top-2 tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <h2
             class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none margin-bottom-0">
             {{ $t("eligibilityList.right-rail-heading") }}
           </h2>
           <!-- Desktop meta sort and open -->
-          <!-- TODO: this one -->
           <div
             aria-label="Benefit accordion controls"
             role="complementary"
@@ -107,7 +97,28 @@
                 @close-all="closeAll" />
             </div>
           </div>
+        </div>
+      </div>
 
+      <div class="grid-row print:display-block">
+        <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0 print:display-none">
+          <div class="desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade">
+            <CriteriaGroup
+              :life-event-criteria="lifeEvent.eligibilityCriteria"
+              :top-level-filters="lifeEvent.topLevelFilter" />
+            <div class="padding-2">
+              <share-results @print="openAll()" />
+            </div>
+          </div>
+        </div>
+        <div class="tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
+          <div class="grid-row grid-gap display-none print:display-block">
+            <div class="grid-col margin-bottom-3">
+              <h2 class="display-none print:display-block">{{ $t("lifeEvent.benefits") }}</h2>
+              {{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }} {{ $t("lifeEvent.labelShowText2") }}
+              {{ sort }}.
+            </div>
+          </div>
           <!-- Mobile meta sort and open -->
           <div
             aria-label="Benefit accordion controls"
@@ -137,19 +148,10 @@
                 </option>
               </select>
             </div>
-
             <OpenCloseButtons
               :is-close-active-prop="true"
               @open-all="openAll"
               @close-all="closeAll" />
-          </div>
-
-          <div class="grid-row grid-gap display-none print:display-block">
-            <div class="grid-col margin-bottom-3">
-              <h2 class="display-none print:display-block">{{ $t("lifeEvent.benefits") }}</h2>
-              {{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }} {{ $t("lifeEvent.labelShowText2") }}
-              {{ sort }}.
-            </div>
           </div>
           <div
             v-if="$fetchState.pending"
@@ -187,7 +189,6 @@
           </p>
           <Accordion
             ref="accordion"
-            class="tablet:margin-top-2"
             :life-event-benefits="lifeEventBenefits"
             :life-event-criteria="lifeEvent.eligibilityCriteria"
             :show-icons="true"
