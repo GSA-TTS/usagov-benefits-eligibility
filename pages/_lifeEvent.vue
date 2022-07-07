@@ -65,8 +65,7 @@
           <div
             aria-label="Benefit accordion controls"
             role="complementary"
-            class="display-none tablet:display-block print:display-none margin-bottom-6"
-            :class="spanishStyle">
+            class="display-none tablet:display-block print:display-none">
             <div class="display-block text-right">
               <label
                 class="usa-label display-inline"
@@ -278,12 +277,6 @@ export default {
     ...mapState({
       eligibilityCriteria: (state) => state.criteria.eligibilityCriteria,
     }),
-    spanishStyle() {
-      if (this.$i18n.locale === "es") {
-        return "margin-bottom-10"
-      }
-      return null
-    },
   },
   watch: {
     eligibilityCriteria: {
