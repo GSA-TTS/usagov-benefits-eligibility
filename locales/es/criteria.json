@@ -11,7 +11,7 @@
   "criteria.deceased_served_in_active_military.label": "¿La persona que falleció prestó servicio activo en el ejército, la marina o la fuerza aérea?",
   "criteria.deceased_served_in_active_military.values1": "sí",
   "criteria.deceased_served_in_active_military.values2": "no",
-  "criteria.deceased_service_status.label": "Situación de servicio de la persona fallecida es",
+  "criteria.deceased_service_status.label": "La situación de servicio de la persona fallecida es",
   "criteria.deceased_service_status.values1": "miembro del servicio activo",
   "criteria.deceased_service_status.values2": "dada de baja en condiciones que no son deshonrosas",
   "criteria.deceased_service_status.values3": "retirado del servicio",
