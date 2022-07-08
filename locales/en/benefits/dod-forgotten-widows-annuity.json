@@ -7,5 +7,6 @@
   "dod-forgotten-widows-annuity.eligibility.acceptableValues": "yes",
   "dod-forgotten-widows-annuity.eligibility.label": "The deceased served in the active military, naval, or air service.",
   "dod-forgotten-widows-annuity.eligibility.acceptableValues1": "retired from the service",
-  "dod-forgotten-widows-annuity.eligibility.label1": "The deceased died before 1978."
+  "dod-forgotten-widows-annuity.eligibility.label1": "The deceased died before 1978.",
+  "dod-forgotten-widows-annuity.eligibility.acceptableValues2": "spouse"
 }
