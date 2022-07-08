@@ -32,7 +32,6 @@
       </div>
 
       <div class="grid-row print:display-block">
-        <!-- TODO: Left Rail here -->
         <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0 print:display-none">
           <section class="left-rail-top margin-bottom-4">
             <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
@@ -66,7 +65,6 @@
             </div>
           </div>
         </div>
-        <!-- TODO: Right Column here -->
         <div class="tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
           <section
             class="right-rail-top margin-bottom-5"
