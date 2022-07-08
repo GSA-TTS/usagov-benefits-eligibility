@@ -31,50 +31,102 @@
         </div>
       </div>
 
-      <div class="grid-row">
+      <div class="grid-row print:display-block">
+        <!-- TODO: Left Rail here -->
         <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0 print:display-none">
-          <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
-          <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
-            {{ $t("eligibilityList.left-rail-heading") }}
-          </h2>
-          <div class="grid-row">
-            <div class="grid-col-1 padding-top-1">
-              <svg
-                class="usa-icon usa-icon--size-3 margin-right-1 flex-align-self-start"
-                aria-labelledby="eligibility-section-criteria-icon-title"
-                focusable="false"
-                role="img">
-                <title id="eligibility-section-criteria-icon-title">{{ $t("lifeEvent.important") }}</title>
-                <use xlink:href="~/assets/img/sprite.svg#warning" />
-              </svg>
+          <section class="left-rail-top margin-bottom-4">
+            <h2 class="display-none print:display-block">{{ $t("lifeEvent.eligibilityCriteria") }}</h2>
+            <h2 class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none">
+              {{ $t("eligibilityList.left-rail-heading") }}
+            </h2>
+            <div class="grid-row">
+              <div class="grid-col-1 padding-top-1">
+                <svg
+                  class="usa-icon usa-icon--size-3 margin-right-1 flex-align-self-start"
+                  aria-labelledby="eligibility-section-criteria-icon-title"
+                  focusable="false"
+                  role="img">
+                  <title id="eligibility-section-criteria-icon-title">{{ $t("lifeEvent.important") }}</title>
+                  <use xlink:href="~/assets/img/sprite.svg#warning" />
+                </svg>
+              </div>
+              <div class="grid-col">
+                <p class="font-body-md usa-icon-list">
+                  {{ lifeEvent.eligibilityCriteriaDescription }}
+                </p>
+              </div>
             </div>
-            <div class="grid-col">
-              <p class="font-body-md usa-icon-list">
-                {{ lifeEvent.eligibilityCriteriaDescription }}
-              </p>
+          </section>
+          <div class="desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade">
+            <CriteriaGroup
+              :life-event-criteria="lifeEvent.eligibilityCriteria"
+              :top-level-filters="lifeEvent.topLevelFilter" />
+            <div class="padding-2">
+              <share-results @print="openAll()" />
             </div>
           </div>
         </div>
-        <div
-          class="tablet:margin-top-2 tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
-          <h2
-            class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none margin-bottom-0">
-            {{ $t("eligibilityList.right-rail-heading") }}
-          </h2>
-          <!-- Desktop meta sort and open -->
-          <div
-            aria-label="Benefit accordion controls"
-            role="complementary"
-            class="display-none tablet:display-block print:display-none">
-            <div class="display-block text-right">
-              <label
-                class="usa-label display-inline"
-                for="benefitSort"
-                >{{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }} {{ $t("lifeEvent.labelShowText2") }}
+        <!-- TODO: Right Column here -->
+        <div class="tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
+          <section
+            class="right-rail-top margin-bottom-5"
+            :class="spanishStyle">
+            <h2
+              class="font-family-serif usagov-header--font-size usagov-heading--blue print:display-none margin-bottom-0">
+              {{ $t("eligibilityList.right-rail-heading") }}
+            </h2>
+            <!-- Desktop meta sort and open -->
+            <div
+              aria-label="Benefit accordion controls"
+              role="complementary"
+              class="display-none tablet:display-block print:display-none">
+              <div class="display-block text-right">
+                <label
+                  class="usa-label display-inline"
+                  for="benefitSort"
+                  >{{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }}
+                  {{ $t("lifeEvent.labelShowText2") }}
+                  <select
+                    id="benefitSort"
+                    class="usa-select margin-left-auto width-card display-inline-block"
+                    name="benefitSort"
+                    @change="sortChange">
+                    <option
+                      value="relevance"
+                      :selected="sort === 'relevance'">
+                      {{ $t("lifeEvent.option1") }}
+                    </option>
+                    <option
+                      value="title"
+                      :selected="sort === 'title'">
+                      {{ $t("lifeEvent.option2") }}
+                    </option>
+                  </select>
+                </label>
+              </div>
+              <div class="display-flex flex-row flex-justify-end">
+                <OpenCloseButtons
+                  :is-close-active-prop="true"
+                  @open-all="openAll"
+                  @close-all="closeAll" />
+              </div>
+            </div>
+            <!-- Mobile meta sort and open -->
+            <div
+              aria-label="Benefit accordion controls"
+              role="complementary"
+              class="tablet:display-none print:display-none">
+              <div class="margin-y-2 print:display-none">
+                <label
+                  class="usa-label"
+                  for="benefitSortMobile"
+                  >{{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }}
+                  {{ $t("lifeEvent.labelShowText2") }}</label
+                >
                 <select
-                  id="benefitSort"
-                  class="usa-select margin-left-auto width-card display-inline-block"
-                  name="benefitSort"
+                  id="benefitSortMobile"
+                  class="usa-select width-full"
+                  name="options"
                   @change="sortChange">
                   <option
                     value="relevance"
@@ -87,30 +139,13 @@
                     {{ $t("lifeEvent.option2") }}
                   </option>
                 </select>
-              </label>
-            </div>
-            <div class="display-flex flex-row flex-justify-end">
+              </div>
               <OpenCloseButtons
                 :is-close-active-prop="true"
                 @open-all="openAll"
                 @close-all="closeAll" />
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-row print:display-block">
-        <div class="tablet:grid-col-5 desktop:grid-col-4 padding-y-2 margin-top-0 padding-top-0 print:display-none">
-          <div class="desktop:position-sticky desktop:top-1 desktop:height-viewport desktop:overflow-y-auto shade">
-            <CriteriaGroup
-              :life-event-criteria="lifeEvent.eligibilityCriteria"
-              :top-level-filters="lifeEvent.topLevelFilter" />
-            <div class="padding-2">
-              <share-results @print="openAll()" />
-            </div>
-          </div>
-        </div>
-        <div class="tablet:padding-left-5 tablet:margin-top-0 tablet:grid-col-7 desktop:grid-col-8 print:display-block">
+          </section>
           <div class="grid-row grid-gap display-none print:display-block">
             <div class="grid-col margin-bottom-3">
               <h2 class="display-none print:display-block">{{ $t("lifeEvent.benefits") }}</h2>
@@ -118,40 +153,7 @@
               {{ sort }}.
             </div>
           </div>
-          <!-- Mobile meta sort and open -->
-          <div
-            aria-label="Benefit accordion controls"
-            role="complementary"
-            class="tablet:display-none print:display-none">
-            <div class="margin-y-2 print:display-none">
-              <label
-                class="usa-label"
-                for="benefitSortMobile"
-                >{{ $t("lifeEvent.labelShowText") }} {{ lifeEventBenefits.length }}
-                {{ $t("lifeEvent.labelShowText2") }}</label
-              >
-              <select
-                id="benefitSortMobile"
-                class="usa-select width-full"
-                name="options"
-                @change="sortChange">
-                <option
-                  value="relevance"
-                  :selected="sort === 'relevance'">
-                  {{ $t("lifeEvent.option1") }}
-                </option>
-                <option
-                  value="title"
-                  :selected="sort === 'title'">
-                  {{ $t("lifeEvent.option2") }}
-                </option>
-              </select>
-            </div>
-            <OpenCloseButtons
-              :is-close-active-prop="true"
-              @open-all="openAll"
-              @close-all="closeAll" />
-          </div>
+
           <div
             v-if="$fetchState.pending"
             class="usa-alert usa-alert--info usa-alert--no-icon usa-alert--slim">
@@ -277,6 +279,12 @@ export default {
     ...mapState({
       eligibilityCriteria: (state) => state.criteria.eligibilityCriteria,
     }),
+    spanishStyle() {
+      if (this.$i18n.locale === "es") {
+        return "margin-bottom-11"
+      }
+      return null
+    },
   },
   watch: {
     eligibilityCriteria: {
@@ -375,6 +383,9 @@ export default {
 }
 .usa-process-list__item {
   border-left: 0.5rem solid #ebe6de;
+}
+.margin-bottom-11 {
+  margin-bottom: 6rem;
 }
 
 /*
