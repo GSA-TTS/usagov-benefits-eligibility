@@ -53,11 +53,13 @@
           v-if="benefit.source && benefit.source.link"
           class="margin-top-205">
           <a
+            :id="`acc-source-link-${benefit.slug}`"
             :href="sanitizedBenefitUrl(benefit)"
             class="usa-button print:display-none"
             target="_blank"
             rel="noopener"
-            role="button">
+            role="button"
+            :aria-labelledby="`acc-source-link-${benefit.slug} acc-h-${benefit.slug}-${cid}`">
             {{ $t("accordion.apply") }}
           </a>
         </div>
