@@ -11,6 +11,8 @@
     <h2
       v-if="errorMessage"
       :id="`${errUniqueId}-input-error-message`"
+      role="alert"
+      tabindex="-1"
       class="usa-error-message padding-x-1 margin-bottom-0 radius-sm font-body-md">
       {{ $t("dateInput.error_msg") }}
     </h2>
