@@ -1,11 +1,11 @@
 <template>
   <TransitionGroup
-    id="acc-id"
     ref="accordion"
-    class="usa-accordion usa-accordion--bordered"
+    class="usa-accordion usa-accordion--multiselectable usa-accordion--bordered"
     name="benefit-list"
     tag="section"
-    aria-multiselectable="true">
+    aria-multiselectable="true"
+    data-allow-multiple>
     <article
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
