@@ -14,7 +14,7 @@
   "criteria.deceased_service_status.label": "La situación de servicio de la persona fallecida es",
   "criteria.deceased_service_status.values1": "miembro del servicio activo",
   "criteria.deceased_service_status.values2": "dada de baja en condiciones que no son deshonrosas",
-  "criteria.deceased_service_status.values3": "retirado del servicio",
+  "criteria.deceased_service_status.values3": "retirada del servicio",
   "criteria.deceased_service_status.values4": "miembro de la Guardia Nacional o las Reservas",
   "criteria.deceased_death_circumstance.label": "Una de las siguientes circunstancias se aplica a la persona fallecida",
   "criteria.deceased_death_circumstance.values1": "falleció en servicio activo",
