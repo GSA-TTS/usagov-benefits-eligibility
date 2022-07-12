@@ -11,6 +11,8 @@
     <h2
       v-if="errorMessage"
       :id="`${errUniqueId}-input-error-message`"
+      role="alert"
+      tabindex="-1"
       class="usa-error-message padding-x-1 margin-bottom-0 radius-sm font-body-md">
       {{ $t("dateInput.error_msg") }}
     </h2>
@@ -23,11 +25,16 @@
           :for="`${uniqueId}-${criteriaKey}-month`">
           {{ $t("dateInput.month") }}
         </label>
+        <p
+          :id="`${uniqueId}-${criteriaKey}-mm`"
+          class="usa-sr-only">
+          {{ $t("dateInput.month") }} (MM)
+        </p>
         <input
           :id="`${uniqueId}-${criteriaKey}-month`"
           v-model="month"
           :class="inputClass"
-          :aria-describedby="`${uniqueId}-${criteriaKey}-month`"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-mm`"
           :name="`${uniqueId}-${criteriaKey}-month`"
           type="text"
           maxlength="2"
@@ -42,11 +49,16 @@
           :for="`${uniqueId}-${criteriaKey}-day`">
           {{ $t("dateInput.day") }}
         </label>
+        <p
+          :id="`${uniqueId}-${criteriaKey}-dd`"
+          class="usa-sr-only">
+          {{ $t("dateInput.day") }} (DD)
+        </p>
         <input
           :id="`${uniqueId}-${criteriaKey}-day`"
           v-model="day"
           :class="inputClass"
-          :aria-describedby="`${uniqueId}-${criteriaKey}-day`"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-dd`"
           :name="`${uniqueId}-${criteriaKey}-day`"
           type="text"
           maxlength="2"
@@ -61,11 +73,16 @@
           :for="`${uniqueId}-${criteriaKey}-year`"
           >{{ $t("dateInput.year") }}</label
         >
+        <p
+          :id="`${uniqueId}-${criteriaKey}-yy`"
+          class="usa-sr-only">
+          {{ $t("dateInput.year") }} ({{ $t("dateInput.year-placeholder") }})
+        </p>
         <input
           :id="`${uniqueId}-${criteriaKey}-year`"
           v-model="year"
           :class="inputClass"
-          :aria-describedby="`${uniqueId}-${criteriaKey}-year`"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-yy`"
           :name="`${uniqueId}-${criteriaKey}-year`"
           type="text"
           minlength="4"
@@ -85,11 +102,16 @@
           :for="`${uniqueId}-${criteriaKey}-day`">
           {{ $t("dateInput.day") }}
         </label>
+        <p
+          :id="`${uniqueId}-${criteriaKey}-dd`"
+          class="usa-sr-only">
+          {{ $t("dateInput.day") }} (DD)
+        </p>
         <input
           :id="`${uniqueId}-${criteriaKey}-day`"
           v-model="day"
           :class="inputClass"
-          :aria-describedby="`${uniqueId}-${criteriaKey}-day`"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-dd`"
           :name="`${uniqueId}-${criteriaKey}-day`"
           type="text"
           maxlength="2"
@@ -104,11 +126,16 @@
           :for="`${uniqueId}-${criteriaKey}-month`">
           {{ $t("dateInput.month") }}
         </label>
+        <p
+          :id="`${uniqueId}-${criteriaKey}-mm`"
+          class="usa-sr-only">
+          {{ $t("dateInput.month") }} (MM)
+        </p>
         <input
           :id="`${uniqueId}-${criteriaKey}-month`"
           v-model="month"
           :class="inputClass"
-          :aria-describedby="`${uniqueId}-${criteriaKey}-month`"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-mm`"
           :name="`${uniqueId}-${criteriaKey}-month`"
           type="text"
           maxlength="2"
@@ -123,11 +150,16 @@
           :for="`${uniqueId}-${criteriaKey}-year`"
           >{{ $t("dateInput.year") }}</label
         >
+        <p
+          :id="`${uniqueId}-${criteriaKey}-yy`"
+          class="usa-sr-only">
+          {{ $t("dateInput.year") }} ({{ $t("dateInput.year-placeholder") }})
+        </p>
         <input
           :id="`${uniqueId}-${criteriaKey}-year`"
           v-model="year"
           :class="inputClass"
-          :aria-describedby="`${uniqueId}-${criteriaKey}-year`"
+          :aria-describedby="`${uniqueId}-${criteriaKey}-yy`"
           :name="`${uniqueId}-${criteriaKey}-year`"
           type="text"
           minlength="4"

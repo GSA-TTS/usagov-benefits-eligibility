@@ -1,11 +1,11 @@
 <template>
   <TransitionGroup
-    id="acc-id"
     ref="accordion"
-    class="usa-accordion usa-accordion--bordered"
+    class="usa-accordion usa-accordion--multiselectable usa-accordion--bordered"
     name="benefit-list"
     tag="section"
-    aria-multiselectable="true">
+    aria-multiselectable="true"
+    data-allow-multiple>
     <article
       v-for="benefit in lifeEventBenefits"
       :key="`acc-key-${benefit.slug}`"
@@ -53,11 +53,13 @@
           v-if="benefit.source && benefit.source.link"
           class="margin-top-205">
           <a
+            :id="`acc-source-link-${benefit.slug}`"
             :href="sanitizedBenefitUrl(benefit)"
             class="usa-button print:display-none"
             target="_blank"
             rel="noopener"
-            role="button">
+            role="button"
+            :aria-labelledby="`acc-source-link-${benefit.slug} acc-h-${benefit.slug}-${cid}`">
             {{ $t("accordion.apply") }}
           </a>
         </div>
