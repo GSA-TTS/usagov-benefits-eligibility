@@ -6,5 +6,5 @@
   "ssa-survivor-benefits-child.summary": "Social Security survivors benefits are paid to a child, stepchild, grandchild, or adopted child of eligible workers.",
   "ssa-survivor-benefits-child.eligibility.acceptableValues": "child",
   "ssa-survivor-benefits-child.eligibility.label": "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school).",
-  "ssa-survivor-benefits-child.eligibility.acceptableValues1": "unmarried"
+  "ssa-survivor-benefits-child.eligibility.acceptableValues1": "not married"
 }
