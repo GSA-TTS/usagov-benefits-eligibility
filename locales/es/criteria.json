@@ -1,7 +1,7 @@
 {
   "criteria.criteriaKey.label": "label",
   "criteria.deceased-basics.label": "",
-  "criteria.deceased_paid_into_SS.label": "La persona fallecida trabajaba y pagaba impuestos del Seguro Social sobre sus ingresos.",
+  "criteria.deceased_paid_into_SS.label": "La persona fallecida trabajó y pagó impuestos del Seguro Social sobre sus ingresos.",
   "criteria.deceased_died_of_COVID.label": "La persona falleció o seguramente falleció por COVID-19.",
   "criteria.deceased_death_location_is_US.label": "La persona falleció en EE. UU. o sus territorios.",
   "criteria.deceased_public_safety_officer.label": "La persona fallecida era un agente de seguridad pública que falleció en cumplimiento del deber.",
