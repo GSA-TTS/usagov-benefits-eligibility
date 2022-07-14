@@ -24,6 +24,7 @@
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-month`">
           {{ $t("dateInput.month") }}
+          {{ month }}
         </label>
         <p
           :id="`${uniqueId}-${criteriaKey}-mm`"
@@ -48,6 +49,7 @@
           :class="labelClass"
           :for="`${uniqueId}-${criteriaKey}-day`">
           {{ $t("dateInput.day") }}
+          {{ day }}
         </label>
         <p
           :id="`${uniqueId}-${criteriaKey}-dd`"
@@ -70,9 +72,10 @@
       <div class="usa-form-group usa-form-group--year">
         <label
           :class="labelClass"
-          :for="`${uniqueId}-${criteriaKey}-year`"
-          >{{ $t("dateInput.year") }}</label
-        >
+          :for="`${uniqueId}-${criteriaKey}-year`">
+          {{ $t("dateInput.year") }}
+          {{ year }}
+        </label>
         <p
           :id="`${uniqueId}-${criteriaKey}-yy`"
           class="usa-sr-only">
@@ -273,6 +276,18 @@ export default {
       const month = this.month
       const day = this.day
       const year = this.year
+      // const month = parseInt(this.month, 10)
+      // const day = parseInt(this.day, 10)
+      // const year = parseInt(this.year, 10)
+      // // check if month is valid
+      // if ((month !== "" && month > 12) || month < 1) {
+      //   this.errorMessage = "invalid month"
+      // }
+      // // check if day is valid
+      // if ((month !== "" && day > 31) || day < 1) {
+      //   this.errorMessage = "invalid day"
+      // }
+
       if (month !== "" && day !== "" && year !== "") {
         const date = `${month}-${day}-${year}`
         this.errorMessage = checkDateValid(date)
