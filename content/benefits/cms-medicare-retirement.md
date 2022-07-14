@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: cms-medicare-retirement.source.name
   link: cms-medicare-retirement.source.link
+  isEnglish: cms-medicare-retirement.source.linkIsEnglish
 
 summary: cms-medicare-retirement.summary
 
