@@ -105,8 +105,8 @@
               <div class="display-flex flex-row flex-justify-end">
                 <OpenCloseButtons
                   :is-close-active-prop="true"
-                  @open-all="openAll"
-                  @close-all="closeAll" />
+                  @open="openAll"
+                  @close="closeAll" />
               </div>
             </div>
             <!-- Mobile meta sort and open -->
@@ -140,8 +140,8 @@
               </div>
               <OpenCloseButtons
                 :is-close-active-prop="true"
-                @open-all="openAll"
-                @close-all="closeAll" />
+                @open="openAll"
+                @close="closeAll" />
             </div>
           </section>
           <div class="grid-row grid-gap display-none print:display-block">
