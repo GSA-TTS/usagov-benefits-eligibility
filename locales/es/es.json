@@ -241,7 +241,7 @@
     "day": "Día",
     "year": "Año",
     "year-placeholder": "AAAA",
-    "example": "Por ejemplo: 28 4 1986",
+    "example": "Por ejemplo: 28/4/1986",
     "error_msg": "Ingrese una fecha válida."
   },
   "404": {
