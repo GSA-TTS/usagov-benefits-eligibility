@@ -39,7 +39,7 @@
   "criteria.applicant_health_insurance.label": "No tiene seguro médico ni califica para Medicaid.",
   "criteria.applicant_dependents_children.label": "Usted está embarazada o tiene hijos/hijas dependientes que son menores de 19 años.",
   "criteria.applicant_declared_disaster.label": "Reside en una zona de catástrofe declarada.",
-  "criteria.applicant_high-school_diploma.label": "Usted tiene título secundario o equivalente.",
+  "criteria.applicant_high-school_diploma.label": "Usted tiene título de educación secundaria o equivalente.",
   "criteria.applicant_degree_cerificate_program.label": "Usted está inscrito o fue aceptado como alumno en un programa de grado o certificado elegible.",
   "criteria.applicant_disaster_zone.label": "¿Cuál es su código postal?",
   "criteria.applicant-relatonships.label": "",
