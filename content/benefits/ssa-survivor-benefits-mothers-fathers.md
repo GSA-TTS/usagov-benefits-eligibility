@@ -17,11 +17,11 @@ eligibility:
     acceptableValues: [true]
   - criteriaKey: applicant_relationship
     acceptableValues: [ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues]
+  - criteriaKey: applicant_care_for_child
+    acceptableValues: [true]
   - criteriaKey: applicant_marital_status
     acceptableValues: [ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues1, 
     ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues2]
-  - criteriaKey: applicant_care_for_child
-    acceptableValues: [true]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
 ---
