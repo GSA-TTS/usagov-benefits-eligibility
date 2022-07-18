@@ -32,6 +32,7 @@
   "criteria.applicant_marital_status.values2": "not married",
   "criteria.applicant_marital_status.values3": "widowed",
   "criteria.applicant_marital_status.values4": "divorced",
+  "criteria.applicant_marriage_length.label": "If divorced, your marriage lasted at least 10 years."
   "criteria.applicant_citizen_status.label": "You are a U.S. citizen or eligible non-citizen.",
   "criteria.applicant_disability.label": "You have a medically determinable physical or mental impairment (including an emotional or learning problem).",
   "criteria.applicant_ability_to_work.label": "You are unable to work for a year or more because of a disability or your disability is expected to result in death.",
