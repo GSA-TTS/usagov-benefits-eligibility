@@ -15,7 +15,7 @@
   "criteria.deceased_service_status.values1": "miembro del servicio activo",
   "criteria.deceased_service_status.values2": "dada de baja en condiciones que no son deshonrosas",
   "criteria.deceased_service_status.values3": "retirada del servicio",
-  "criteria.deceased_service_status.values4": "miembro de la Guardia Nacional o las Reservas",
+  "criteria.deceased_service_status.values4": "miembro de la Guardia Nacional/Reserva",
   "criteria.deceased_death_circumstance.label": "Una de las siguientes circunstancias se aplica a la persona fallecida:",
   "criteria.deceased_death_circumstance.values1": "falleció en servicio activo",
   "criteria.deceased_death_circumstance.values2": "falleció durante instrucción para servicio inactivo",
@@ -71,7 +71,7 @@
   "criteria.applicant_service_status.values1": "miembro del servicio activo",
   "criteria.applicant_service_status.values2": "dado de baja en condiciones que no son deshonrosas",
   "criteria.applicant_service_status.values3": "retirado del servicio",
-  "criteria.applicant_service_status.values4": "miembro de la Guardia Nacional o las Reservas",
+  "criteria.applicant_service_status.values4": "miembro de la Guardia Nacional/Reserva",
   "criteria.applicant_minimum_service_requirement.label": "Usted prestó servicio activo al menos 90 días.",
   "criteria.applicant_service_disability.label": "Su discapacidad fue causada o empeorada por su servicio militar activo."
 }
