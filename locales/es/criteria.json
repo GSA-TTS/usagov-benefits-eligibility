@@ -32,6 +32,7 @@
   "criteria.applicant_marital_status.values2": "no casado",
   "criteria.applicant_marital_status.values3": "viudo",
   "criteria.applicant_marital_status.values4": "divorciado",
+  "criteria.applicant_marriage_length.label": "Si es divorciado, su matrimonio duró al menos 10 años.",
   "criteria.applicant_citizen_status.label": "Usted es ciudadano de  EE. UU. o no ciudadano elegible.",
   "criteria.applicant_disability.label": "Usted tiene un impedimento físico o mental establecido por un médico (como un problema emocional o de aprendizaje).",
   "criteria.applicant_ability_to_work.label": "Usted no puede trabajar durante un año o más debido a una discapacidad o se espera que su discapacidad cause la muerte.",
