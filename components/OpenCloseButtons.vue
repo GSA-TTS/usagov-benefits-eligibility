@@ -56,20 +56,20 @@ export default {
   },
   methods: {
     openAll() {
+      this.$emit("open-all")
       if (this.isOpenActive) {
         return
       }
       this.isOpenActive = !this.isOpenActive
       this.isCloseActive = !this.isCloseActive
-      this.$emit("open-all")
     },
     closeAll() {
+      this.$emit("close-all")
       if (this.isCloseActive) {
         return
       }
       this.isCloseActive = !this.isCloseActive
       this.isOpenActive = !this.isOpenActive
-      this.$emit("close-all")
     },
   },
 }
