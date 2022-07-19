@@ -273,23 +273,23 @@ export default {
       const month = this.month
       const day = this.day
       const year = this.year
-      if (month !== "" && day !== "" && year !== "") {
-        const date = `${month}-${day}-${year}`
-        this.errorMessage = checkDateValid(date)
-        if (this.errorMessage === "") {
-          const localCriterion = {
-            criteriaKey: key,
-            response: date,
-          }
-          this.$store.dispatch("criteria/updateResponse", localCriterion)
-        } else {
-          const localCriterion = {
-            criteriaKey: key,
-            response: null,
-          }
-          this.$store.dispatch("criteria/updateResponse", localCriterion)
+      const allInputs = (month !== "" && day !== "" && year !== "")
+      const date = `${month}-${day}-${year}`
+      this.errorMessage = checkDateValid(month, day, year)
+      if (this.errorMessage === "" && allInputs) {
+        const localCriterion = {
+          criteriaKey: key,
+          response: date,
         }
+        this.$store.dispatch("criteria/updateResponse", localCriterion)
+      } else {
+        const localCriterion = {
+          criteriaKey: key,
+          response: null,
+        }
+        this.$store.dispatch("criteria/updateResponse", localCriterion)
       }
+      
     },
   },
 }
