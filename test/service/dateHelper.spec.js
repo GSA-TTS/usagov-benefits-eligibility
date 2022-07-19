@@ -235,12 +235,12 @@ describe("dateHelper", () => {
   })
 
   it("should return invalid when invalid user year", () => {
-    const ret = checkDateValid("", "", "1950",)
+    const ret = checkDateValid("", "", "1950")
     expect(ret).toBe("")
   })
 
   it("should return invalid when invalid user year", () => {
-    const ret = checkDateValid("11", "14", "9999",)
+    const ret = checkDateValid("11", "14", "9999")
     expect(ret).toBe("")
   })
 })

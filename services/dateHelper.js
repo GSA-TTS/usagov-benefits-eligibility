@@ -89,7 +89,7 @@ function applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate
 
 function validInputs(month, day, year) {
   let returnValue = ""
-  if (month !== '') {
+  if (month !== "") {
     month = parseInt(month)
     if (month < 1 || month > 12) {
       return ERRORMSG
@@ -97,7 +97,7 @@ function validInputs(month, day, year) {
   } else {
     returnValue = INCOMPLETE
   }
-  if (day !== '') {
+  if (day !== "") {
     day = parseInt(day)
     if (day < 1 || day > 31) {
       return ERRORMSG
@@ -105,9 +105,9 @@ function validInputs(month, day, year) {
   } else {
     returnValue = INCOMPLETE
   }
-  if (year !== '') {
+  if (year !== "") {
     year = parseInt(year)
-    if (year < 1 || year >= (new Date()).getFullYear()) {
+    if (year < 1 || year >= new Date().getFullYear()) {
       return ERRORMSG
     }
   } else {
@@ -118,7 +118,7 @@ function validInputs(month, day, year) {
 
 function checkDateValid(month, day, year) {
   const validityCheck = validInputs(month, day, year)
-  if(validityCheck !== INCOMPLETE && validityCheck !== ERRORMSG) {
+  if (validityCheck !== INCOMPLETE && validityCheck !== ERRORMSG) {
     const checkDate = toDate(Date.parse(month, day, year))
     if (isNaN(checkDate)) {
       return ERRORMSG
@@ -127,8 +127,8 @@ function checkDateValid(month, day, year) {
       return ERRORMSG
     }
     return ""
-  } 
-  return validityCheck === INCOMPLETE ? "": validityCheck
+  }
+  return validityCheck === INCOMPLETE ? "" : validityCheck
 }
 
 export { validateDateAgainstAcceptance, checkDateValid }
