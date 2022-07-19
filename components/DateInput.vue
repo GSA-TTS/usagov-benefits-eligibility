@@ -276,34 +276,21 @@ export default {
       const month = this.month
       const day = this.day
       const year = this.year
-      // const month = parseInt(this.month, 10)
-      // const day = parseInt(this.day, 10)
-      // const year = parseInt(this.year, 10)
-      // // check if month is valid
-      // if ((month !== "" && month > 12) || month < 1) {
-      //   this.errorMessage = "invalid month"
-      // }
-      // // check if day is valid
-      // if ((month !== "" && day > 31) || day < 1) {
-      //   this.errorMessage = "invalid day"
-      // }
-
-      if (month !== "" && day !== "" && year !== "") {
-        const date = `${month}-${day}-${year}`
-        this.errorMessage = checkDateValid(date)
-        if (this.errorMessage === "") {
-          const localCriterion = {
-            criteriaKey: key,
-            response: date,
-          }
-          this.$store.dispatch("criteria/updateResponse", localCriterion)
-        } else {
-          const localCriterion = {
-            criteriaKey: key,
-            response: null,
-          }
-          this.$store.dispatch("criteria/updateResponse", localCriterion)
+      const allInputs = month !== "" && day !== "" && year !== ""
+      const date = `${month}-${day}-${year}`
+      this.errorMessage = checkDateValid(month, day, year)
+      if (this.errorMessage === "" && allInputs) {
+        const localCriterion = {
+          criteriaKey: key,
+          response: date,
         }
+        this.$store.dispatch("criteria/updateResponse", localCriterion)
+      } else {
+        const localCriterion = {
+          criteriaKey: key,
+          response: null,
+        }
+        this.$store.dispatch("criteria/updateResponse", localCriterion)
       }
     },
   },
