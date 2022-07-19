@@ -1,6 +1,7 @@
 import { validateDateAgainstAcceptance, checkDateValid } from "~/services/dateHelper"
 
 const MOCK_DATE = "02-25-2021"
+const VALID_DATE = "Please enter a valid date."
 
 function getTestDateString(daysOffsetFromToday) {
   const testDte = new Date()
@@ -216,12 +217,12 @@ describe("dateHelper", () => {
 
   it("should return invalid when invalid user month", () => {
     const ret = checkDateValid("15", "", "")
-    expect(ret).toBe("Please enter a valid date.")
+    expect(ret).toBe(VALID_DATE)
   })
 
   it("should return valid when invalid user day", () => {
     const ret = checkDateValid("", "60", "")
-    expect(ret).toBe("Please enter a valid date.")
+    expect(ret).toBe(VALID_DATE)
   })
 
   it("should return invalid when invalid user day", () => {
@@ -231,7 +232,7 @@ describe("dateHelper", () => {
 
   it("should return valid when invalid user year", () => {
     const ret = checkDateValid("", "", "9999")
-    expect(ret).toBe("Please enter a valid date.")
+    expect(ret).toBe(VALID_DATE)
   })
 
   it("should return invalid when invalid user year", () => {
@@ -241,6 +242,6 @@ describe("dateHelper", () => {
 
   it("should return invalid when invalid user year", () => {
     const ret = checkDateValid("11", "14", "9999")
-    expect(ret).toBe("")
+    expect(ret).toBe(VALID_DATE)
   })
 })
