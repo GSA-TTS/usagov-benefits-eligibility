@@ -7,7 +7,7 @@
   "dod-death-gratuity.eligibility.acceptableValues": "yes",
   "dod-death-gratuity.eligibility.label": "The deceased served in the active military, naval, or air service.",
   "dod-death-gratuity.eligibility.acceptableValues1": "an active-duty service member",
-  "dod-death-gratuity.eligibility.acceptableValues2": "a member of the National Guard or Reserves",
+  "dod-death-gratuity.eligibility.acceptableValues2": "a member of the National Guard/Reserve",
   "dod-death-gratuity.eligibility.acceptableValues3": "died while on active duty",
   "dod-death-gratuity.eligibility.acceptableValues4": "died while on inactive-duty training",
   "dod-death-gratuity.eligibility.acceptableValues5": "spouse",

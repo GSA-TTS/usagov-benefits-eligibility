@@ -1,17 +1,17 @@
 {
   "va-headstone-grave-marker.title": "Lápida y marcador de tumba para veterano",
   "va-headstone-grave-marker.headline": "Lápida y marcador de tumba para veterano",
-  "va-headstone-grave-marker.source.name": "Departamento de Asuntos de los Veteranos de EE. UU.",
+  "va-headstone-grave-marker.source.name": "Departamento de Asuntos de los Veteranos de EE. UU. (VA, sigla en inglés)",
   "va-headstone-grave-marker.source.link": "https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/",
   "va-headstone-grave-marker.summary": "Puede haber una lápida, un marcador de tumba o un marcador de nicho disponibles para honrar a un veterano, miembro de las Fuerzas Armadas o familiar elegible.",
   "va-headstone-grave-marker.eligibility.acceptableValues": "sí",
-  "va-headstone-grave-marker.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "va-headstone-grave-marker.eligibility.label": "La persona fallecida prestó servicio activo en el Ejército, la Marina o la Fuerza Aérea.",
   "va-headstone-grave-marker.eligibility.acceptableValues1": "miembro del servicio activo",
   "va-headstone-grave-marker.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas",
-  "va-headstone-grave-marker.eligibility.acceptableValues3": "miembro de la Guardia Nacional o las Reservas",
+  "va-headstone-grave-marker.eligibility.acceptableValues3": "miembro de la Guardia Nacional/Reserva",
   "va-headstone-grave-marker.eligibility.acceptableValues4": "cónyuge",
   "va-headstone-grave-marker.eligibility.acceptableValues5": "hijo/hija",
   "va-headstone-grave-marker.eligibility.acceptableValues6": "padre/madre",
   "va-headstone-grave-marker.eligibility.acceptableValues7": "otro miembro de la familia",
-  "va-headstone-grave-marker.eligibility.acceptableValues8": "representante personal u oficial"
+  "va-headstone-grave-marker.eligibility.acceptableValues8": "representante personal/oficial"
 }

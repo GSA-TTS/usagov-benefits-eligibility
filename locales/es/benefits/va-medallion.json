@@ -1,17 +1,17 @@
 {
   "va-medallion.title": "Medallón para veterano",
   "va-medallion.headline": "Marcador de sepultura para veterano",
-  "va-medallion.source.name": "Departamento de Asuntos de los Veteranos de EE. UU.",
+  "va-medallion.source.name": "Departamento de Asuntos de los Veteranos de EE. UU. (VA, sigla en inglés)",
   "va-medallion.source.link": "https://www.va.gov/burials-memorials/memorial-items/headstones-markers-medallions/",
   "va-medallion.summary": "Algunos veteranos que fueron enterrados en un cementerio privado, incluidos los veteranos de la Guardia Nacional, pueden ser elegibles para la colocación de un medallón en la lápida.",
   "va-medallion.eligibility.acceptableValues": "sí",
-  "va-medallion.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "va-medallion.eligibility.label": "La persona fallecida prestó servicio activo en el Ejército, la Marina o la Fuerza Aérea.",
   "va-medallion.eligibility.acceptableValues1": "miembro del servicio activo",
   "va-medallion.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas",
-  "va-medallion.eligibility.acceptableValues3": "miembro de la Guardia Nacional o las Reservas",
+  "va-medallion.eligibility.acceptableValues3": "miembro de la Guardia Nacional/Reserva",
   "va-medallion.eligibility.acceptableValues4": "cónyuge",
   "va-medallion.eligibility.acceptableValues5": "hijo/hija",
   "va-medallion.eligibility.acceptableValues6": "padre/madre",
   "va-medallion.eligibility.acceptableValues7": "otro miembro de la familia",
-  "va-medallion.eligibility.acceptableValues8": "representante personal u oficial"
+  "va-medallion.eligibility.acceptableValues8": "representante personal/oficial"
 }

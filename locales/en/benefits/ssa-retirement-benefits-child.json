@@ -5,5 +5,5 @@
   "ssa-retirement-benefits-child.source.link": "https://www.ssa.gov/benefits/retirement/",
   "ssa-retirement-benefits-child.summary": "Social Security is part of the retirement plan for almost every American worker. It provides replacement income for qualified retirees and their families.",
   "ssa-retirement-benefits-child.eligibility.label": "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school).",
-  "ssa-retirement-benefits-child.eligibility.acceptableValues": "unmarried"
+  "ssa-retirement-benefits-child.eligibility.acceptableValues": "not married"
 }

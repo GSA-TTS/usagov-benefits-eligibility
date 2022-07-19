@@ -1,10 +1,10 @@
 {
-  "ssa-survivor-benefits-mothers-fathers.title": "Survivors Benefits for Mothers/Fathers",
-  "ssa-survivor-benefits-mothers-fathers.headline": "Survivors Benefits for Mothers/Fathers",
+  "ssa-survivor-benefits-mothers-fathers.title": "Survivor Benefits for Spouse with a Child (Mother/Father)",
+  "ssa-survivor-benefits-mothers-fathers.headline": "Survivor Benefits for Spouse with a Child (Mother/Father)",
   "ssa-survivor-benefits-mothers-fathers.source.name": "Social Security Administration",
   "ssa-survivor-benefits-mothers-fathers.source.link": "https://www.ssa.gov/forms/ssa-5.html",
-  "ssa-survivor-benefits-mothers-fathers.summary": "Social Security survivors benefits might be available to the person providing care for the deceased worker's child.",
-  "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues": "unmarried",
+  "ssa-survivor-benefits-mothers-fathers.summary": "Social Security survivors benefits might be available to the spouse or divorced spouse providing care for the deceased worker's child.",
+  "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues": "spouse",
   "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues1": "widowed",
   "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues2": "divorced"
 }

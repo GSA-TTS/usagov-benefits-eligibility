@@ -1,16 +1,16 @@
 {
-  "va-health-care-program-for-surviving-spouse.title": "Programa civil sanitario y médico de VA (CHAMPVA) para cónyuges ",
-  "va-health-care-program-for-surviving-spouse.headline": "Programa civil sanitario y médico de VA (CHAMPVA) para cónyuges",
-  "va-health-care-program-for-surviving-spouse.source.name": "Departamento de Asuntos de los Veteranos de EE. UU.",
+  "va-health-care-program-for-surviving-spouse.title": "Programa civil sanitario y médico de VA (CHAMPVA) para cónyuge",
+  "va-health-care-program-for-surviving-spouse.headline": "Programa civil sanitario y médico de VA (CHAMPVA) para cónyuge",
+  "va-health-care-program-for-surviving-spouse.source.name": "Departamento de Asuntos de los Veteranos de EE. UU. (VA, sigla en inglés)",
   "va-health-care-program-for-surviving-spouse.source.link": "https://www.va.gov/health-care/family-caregiver-benefits/champva/",
   "va-health-care-program-for-surviving-spouse.summary": "Como cónyuge sobreviviente de un veterano usted puede ser elegible para recibir seguro médico que cubra el costo de algunos de los servicios y los insumos para el cuidado de la salud, lo que incluye beneficios farmacéuticos.",
   "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues": "sí",
-  "va-health-care-program-for-surviving-spouse.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "va-health-care-program-for-surviving-spouse.eligibility.label": "La persona fallecida prestó servicio activo en el Ejército, la Marina o la Fuerza Aérea.",
   "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues1": "miembro del servicio activo",
   "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas",
   "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues3": "falleció en servicio activo",
-  "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues4": "falleció como resultado de una discapacidad o enfermedad relacionada con el servicio",
+  "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues4": "falleció como resultado de una discapacidad/enfermedad relacionada con el servicio",
   "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues5": "cónyuge",
-  "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues6": "no está casado",
+  "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues6": "no casado",
   "va-health-care-program-for-surviving-spouse.eligibility.acceptableValues7": "viudo"
 }
