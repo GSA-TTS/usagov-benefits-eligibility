@@ -5,5 +5,5 @@
   "ssa-disability-insurance-child-disabled.source.link": "https://www.ssa.gov/benefits/disability/",
   "ssa-disability-insurance-child-disabled.summary": "Provides financial assistance to people with disabilities and their family members.",
   "ssa-disability-insurance-child-disabled.eligibility.label": "You are at least 18 years old.",
-  "ssa-disability-insurance-child-disabled.eligibility.acceptableValues": "unmarried"
+  "ssa-disability-insurance-child-disabled.eligibility.acceptableValues": "not married"
 }

@@ -8,10 +8,10 @@
   "va-burial-flag.eligibility.label": "The deceased served in the active military, naval, or air service.",
   "va-burial-flag.eligibility.acceptableValues1": "an active-duty service member",
   "va-burial-flag.eligibility.acceptableValues2": "discharged under conditions other than dishonorable",
-  "va-burial-flag.eligibility.acceptableValues3": "a member of the National Guard or Reserves",
+  "va-burial-flag.eligibility.acceptableValues3": "a member of the National Guard/Reserve",
   "va-burial-flag.eligibility.acceptableValues4": "spouse",
   "va-burial-flag.eligibility.acceptableValues5": "child",
   "va-burial-flag.eligibility.acceptableValues6": "parent",
   "va-burial-flag.eligibility.acceptableValues7": "other family member",
-  "va-burial-flag.eligibility.acceptableValues8": "personal or official representative"
+  "va-burial-flag.eligibility.acceptableValues8": "personal/official representative"
 }

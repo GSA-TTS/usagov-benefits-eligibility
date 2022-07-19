@@ -28,7 +28,7 @@
     "day": "Day",
     "year": "Year",
     "year-placeholder": "YYYY",
-    "example": "For example: 4 28 1986",
+    "example": "For example: 4/28/1986",
     "error_msg": "Please enter a valid date."
   },
   "eligibilityList": {
