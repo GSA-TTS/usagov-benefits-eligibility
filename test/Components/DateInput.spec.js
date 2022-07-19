@@ -139,4 +139,13 @@ describe("DateInput", () => {
     expect(wrapper.vm.$data.day).toBe("14")
     expect(wrapper.vm.$data.year).toBe("1999")
   })
+
+  test("the watch functions for M/D/Y work correctly", () => {
+    const wrapper = shallowMount(DateInput, { propsData: PROPS_DATA, store })
+    wrapper.vm.$options.watch.dateResponse.call(wrapper.vm, "11-14-")
+    wrapper.vm.$data.year = ""
+    expect(wrapper.vm.$data.month).toBe("11")
+    expect(wrapper.vm.$data.day).toBe("14")
+    expect(wrapper.vm.$data.errorMessage).toBe("")
+  })
 })
