@@ -7,13 +7,13 @@
   "va-burial-allowance.eligibility.acceptableValues": "sí",
   "va-burial-allowance.eligibility.label": "La persona fallecida prestó servicio activo en el Ejército, la Marina o la Fuerza Aérea.",
   "va-burial-allowance.eligibility.acceptableValues1": "dada de baja en condiciones que no son deshonrosas",
-  "va-burial-allowance.eligibility.acceptableValues2": "falleció como resultado de una discapacidad o enfermedad relacionada con el servicio",
-  "va-burial-allowance.eligibility.acceptableValues3": "falleció mientras recibía o viajaba para recibir atención del VA",
-  "va-burial-allowance.eligibility.acceptableValues4": "falleció mientras era elegible para recibir compensación del VA o la recibía",
+  "va-burial-allowance.eligibility.acceptableValues2": "falleció como resultado de una discapacidad/enfermedad relacionada con el servicio",
+  "va-burial-allowance.eligibility.acceptableValues3": "falleció mientras recibía/viajaba a la atención del VA",
+  "va-burial-allowance.eligibility.acceptableValues4": "falleció mientras recibía/elegible para la compensación del VA",
   "va-burial-allowance.eligibility.label1": "El funeral o el entierro de la persona fallecida fue en los últimos dos años.",
   "va-burial-allowance.eligibility.acceptableValues5": "cónyuge",
   "va-burial-allowance.eligibility.acceptableValues6": "hijo/hija",
   "va-burial-allowance.eligibility.acceptableValues7": "padre/madre",
   "va-burial-allowance.eligibility.acceptableValues8": "otro miembro de la familia",
-  "va-burial-allowance.eligibility.acceptableValues9": "representante personal u oficial"
+  "va-burial-allowance.eligibility.acceptableValues9": "representante personal/oficial"
 }
