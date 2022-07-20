@@ -85,4 +85,44 @@ describe("EligibilityList", () => {
     expect(l1).toBe('Key named "myKey" not found')
     expect(l2).toBe("mylabel")
   })
+
+  test("last item to not be separated by a comma", () => {
+    const wrapper = shallowMount(EligibilityList, {
+      propsData: {
+        benefitEligibilityCriteria: MOCK_CRITERIA,
+      },
+      store,
+    })
+    // TODO: add test for last item not being separated by a comma
+  })
+
+  test("if English, last item to be separated by 'or'", () => {
+    const wrapper = shallowMount(EligibilityList, {
+      propsData: {
+        benefitEligibilityCriteria: MOCK_CRITERIA,
+      },
+      store,
+    })
+    // TODO: add test for last item being separated by or
+  })
+
+  test("if Spanish, separator should be 'o'", () => {
+    const wrapper = shallowMount(EligibilityList, {
+      propsData: {
+        benefitEligibilityCriteria: MOCK_CRITERIA,
+      },
+      store,
+    })
+    // TODO: add test for last item being separated by o
+  })
+
+  test("if Spanish and last item starts with an 'o' separator should be 'u'", () => {
+    const wrapper = shallowMount(EligibilityList, {
+      propsData: {
+        benefitEligibilityCriteria: MOCK_CRITERIA,
+      },
+      store,
+    })
+    // TODO: add test for last item being separated by u
+  })
 })
