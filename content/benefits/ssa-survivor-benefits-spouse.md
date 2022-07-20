@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: ssa-survivor-benefits-spouse.source.name
   link: ssa-survivor-benefits-spouse.source.link
+  isEnglish: ssa-survivor-benefits-spouse.source.linkIsEnglish
 
 summary: ssa-survivor-benefits-spouse.summary
 

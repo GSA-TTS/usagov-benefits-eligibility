@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: ssa-survivor-benefits-child.source.name
   link: ssa-survivor-benefits-child.source.link
+  isEnglish: ssa-survivor-benefits-child.source.linkIsEnglish
 
 summary: ssa-survivor-benefits-child.summary
 

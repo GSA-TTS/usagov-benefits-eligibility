@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-education-benefits.source.name
   link: va-education-benefits.source.link
+  isEnglish: va-education-benefits.source.linkIsEnglish
 
 summary: va-education-benefits.summary
 

@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: ssa-ticket-to-work.source.name
   link: ssa-ticket-to-work.source.link
+  isEnglish: ssa-ticket-to-work.source.linkIsEnglish
 
 summary: ssa-ticket-to-work.summary
 

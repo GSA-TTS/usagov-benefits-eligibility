@@ -8,7 +8,8 @@ lifeEvents:
 source:
   name: ssa-lump-sum-death-benefit.source.name
   link: ssa-lump-sum-death-benefit.source.link
-
+  isEnglish: ssa-lump-sum-death-benefit.source.linkIsEnglish
+  
 summary: ssa-lump-sum-death-benefit.summary
 
 eligibility:

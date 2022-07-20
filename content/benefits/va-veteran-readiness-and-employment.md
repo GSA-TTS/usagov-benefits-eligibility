@@ -10,6 +10,7 @@ lifeEvents:
 source:
   name: va-veteran-readiness-and-employment.source.name
   link: va-veteran-readiness-and-employment.source.link
+  isEnglish: va-veteran-readiness-and-employment.source.linkIsEnglish
 
 summary: va-veteran-readiness-and-employment.summary
 

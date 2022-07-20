@@ -9,6 +9,8 @@ lifeEvents:
 source:
   name: ssa-survivor-benefits-spouse-disabled.source.name
   link: ssa-survivor-benefits-spouse-disabled.source.link
+  isEnglish: ssa-survivor-benefits-spouse-disabled.source.linkIsEnglish
+
 
 summary: ssa-survivor-benefits-spouse-disabled.summary
 

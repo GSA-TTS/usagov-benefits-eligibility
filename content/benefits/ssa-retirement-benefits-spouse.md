@@ -10,6 +10,7 @@ lifeEvents:
 source:
   name: ssa-retirement-benefits-spouse.source.name
   link: ssa-retirement-benefits-spouse.source.link
+  isEnglish: ssa-retirement-benefits-spouse.source.linkIsEnglish
 
 summary: ssa-retirement-benefits-spouse.summary
 

@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-disability-compensation.source.name
   link: va-disability-compensation.source.link
+  isEnglish: va-disability-compensation.source.linkIsEnglish
 
 summary: va-disability-compensation.summary
 
