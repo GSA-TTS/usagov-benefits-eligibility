@@ -193,7 +193,11 @@ export default {
     },
     formatArrayWithSeparator(array = []) {
       // spanish uses o and english uses or
-      const separator = this.$i18n.locale === "es" ? "o" : "or"
+      let separator = this.$i18n.locale === "es" ? "o" : "or"
+      // if last item in array is starts with o, change seperator to u
+      const lastItem = array[array.length - 1]
+      const lastItemStartsWithO = lastItem.startsWith("o")
+      lastItemStartsWithO && (separator = "u")
       return array.join(", ").replace(/, ((?:.(?!, ))+)$/, ` ${separator} $1`)
     },
   },
