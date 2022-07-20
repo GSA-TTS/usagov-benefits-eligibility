@@ -191,8 +191,10 @@ export default {
     getCriterionLabel(criterion) {
       return criterion.label || this.getCriterionByEligibilityKey(criterion.criteriaKey).label
     },
-    formatArrayWithSeparator(array = [], lastSeparator = "or") {
-      return array.join(", ").replace(/, ((?:.(?!, ))+)$/, `, ${lastSeparator} $1`)
+    formatArrayWithSeparator(array = []) {
+      // spanish uses o and english uses or
+      const separator = this.$i18n.locale === "es" ? "o" : "or"
+      return array.join(", ").replace(/, ((?:.(?!, ))+)$/, ` ${separator} $1`)
     },
   },
 }
