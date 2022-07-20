@@ -33,7 +33,10 @@
           <h3
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
-            {{ $t("accordion.provided") }} {{ benefit.source.name }}
+            <span v-if="$i18n.locale === 'en'">
+              {{ $t("accordion.provided") }}
+            </span>
+            {{ benefit.source.name }}
           </h3>
         </template>
         <fieldset class="usa-fieldset">
