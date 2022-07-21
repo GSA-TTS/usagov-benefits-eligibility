@@ -86,16 +86,6 @@ describe("EligibilityList", () => {
     expect(l2).toBe("mylabel")
   })
 
-  test("last item to not be separated by a comma", () => {
-    const wrapper = shallowMount(EligibilityList, {
-      propsData: {
-        benefitEligibilityCriteria: MOCK_CRITERIA,
-      },
-      store,
-    })
-    // TODO: add test for last item not being separated by a comma
-  })
-
   test("if English, last item to be separated by 'or'", () => {
     const wrapper = shallowMount(EligibilityList, {
       propsData: {
@@ -103,26 +93,33 @@ describe("EligibilityList", () => {
       },
       store,
     })
-    // TODO: add test for last item being separated by or
+    const arrayWithSeparator = wrapper.vm.formatArrayWithSeparator(["a", "b", "c"])
+    expect(arrayWithSeparator).toBe("a, b or c")
   })
 
   test("if Spanish, separator should be 'o'", () => {
     const wrapper = shallowMount(EligibilityList, {
+      $i18n: { locale: "es" },
       propsData: {
         benefitEligibilityCriteria: MOCK_CRITERIA,
       },
       store,
     })
-    // TODO: add test for last item being separated by o
+    // TODO: add test for last item being separated by 'o'
+    const arrayWithSeparator = wrapper.vm.formatArrayWithSeparator(["a", "b", "c"])
+    expect(arrayWithSeparator).toBe("a, b, o c")
   })
 
   test("if Spanish and last item starts with an 'o' separator should be 'u'", () => {
     const wrapper = shallowMount(EligibilityList, {
+      $i18n: { locale: "es" },
       propsData: {
         benefitEligibilityCriteria: MOCK_CRITERIA,
       },
       store,
     })
-    // TODO: add test for last item being separated by u
+    // TODO: add test for last item being separated by 'u'
+    const arrayWithSeparator = wrapper.vm.formatArrayWithSeparator(["a", "b", "otter"])
+    expect(arrayWithSeparator).toBe("a, b, u otter")
   })
 })
