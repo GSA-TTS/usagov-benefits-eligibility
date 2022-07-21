@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: dod-burial-benefits.source.name
   link: dod-burial-benefits.source.link
+  isEnglish: dod-burial-benefits.source.linkIsEnglish
 
 summary: dod-burial-benefits.summary
 

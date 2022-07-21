@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: dod-death-gratuity.source.name
   link: dod-death-gratuity.source.link
+  isEnglish: dod-death-gratuity.source.linkIsEnglish
 
 summary: dod-death-gratuity.summary
 

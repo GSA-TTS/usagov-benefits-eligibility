@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: cms-medicaid.source.name
   link: cms-medicaid.source.link
+  isEnglish: cms-medicaid.source.linkIsEnglish
 
 summary: cms-medicaid.summary
 

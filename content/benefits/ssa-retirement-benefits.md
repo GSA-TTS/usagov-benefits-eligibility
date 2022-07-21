@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: ssa-retirement-benefits.source.name
   link: ssa-retirement-benefits.source.link
+  isEnglish: ssa-retirement-benefits.source.linkIsEnglish
 
 summary: ssa-retirement-benefits.summary
 

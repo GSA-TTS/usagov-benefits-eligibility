@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-burial-in-national-cemetery.source.name
   link: va-burial-in-national-cemetery.source.link
+  isEnglish: va-burial-in-national-cemetery.source.linkIsEnglish
 
 summary: va-burial-in-national-cemetery.summary
 

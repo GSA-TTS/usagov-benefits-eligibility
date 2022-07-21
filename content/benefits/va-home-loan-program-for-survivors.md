@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-home-loan-program-for-survivors.source.name
   link: va-home-loan-program-for-survivors.source.link
+  isEnglish: va-home-loan-program-for-survivors.source.linkIsEnglish
 
 summary: va-home-loan-program-for-survivors.summary
 

@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: dod-forgotten-widows-annuity.source.name
   link: dod-forgotten-widows-annuity.source.link
+  isEnglish: dod-forgotten-widows-annuity.source.linkIsEnglish
 
 summary: dod-forgotten-widows-annuity.summary
 
