@@ -1,6 +1,8 @@
 import { toDate, isEqual, isBefore, isAfter, sub, isFuture, isExists } from "date-fns"
 
 const DETERMINERS = ["months", "days", "years"]
+const ERRORMSG = "Please enter a valid date."
+const INCOMPLETE = "Please enter a complete date."
 
 function validateDateAgainstAcceptance({ criterion, userInputDate }) {
   let determiner = null
@@ -85,15 +87,48 @@ function applyOperatorToDate(userInputDate, determiner, operator, acceptanceDate
   }
 }
 
-function checkDateValid(userInputDate) {
-  const checkDate = toDate(Date.parse(userInputDate))
-  if (isNaN(checkDate)) {
-    return "Please enter a valid date."
+function validInputs(month, day, year) {
+  let returnValue = ""
+  if (month !== "") {
+    month = parseInt(month)
+    if (month < 1 || month > 12) {
+      return ERRORMSG
+    }
+  } else {
+    returnValue = INCOMPLETE
   }
-  if (isFuture(checkDate)) {
-    return "Please enter a valid date."
+  if (day !== "") {
+    day = parseInt(day)
+    if (day < 1 || day > 31) {
+      return ERRORMSG
+    }
+  } else {
+    returnValue = INCOMPLETE
   }
-  return ""
+  if (year !== "") {
+    year = parseInt(year)
+    if (year < 1 || year >= new Date().getFullYear()) {
+      return ERRORMSG
+    }
+  } else {
+    returnValue = INCOMPLETE
+  }
+  return returnValue
+}
+
+function checkDateValid(month, day, year) {
+  const validityCheck = validInputs(month, day, year)
+  if (validityCheck !== INCOMPLETE && validityCheck !== ERRORMSG) {
+    const checkDate = toDate(Date.parse(month, day, year))
+    if (isNaN(checkDate)) {
+      return ERRORMSG
+    }
+    if (isFuture(checkDate)) {
+      return ERRORMSG
+    }
+    return ""
+  }
+  return validityCheck === INCOMPLETE ? "" : validityCheck
 }
 
 export { validateDateAgainstAcceptance, checkDateValid }

@@ -1,17 +1,17 @@
 {
   "va-burial-flag.title": "Bandera para entierro",
   "va-burial-flag.headline": "Bandera para entierro",
-  "va-burial-flag.source.name": "Departamento de Asuntos de los Veteranos de EE. UU.",
+  "va-burial-flag.source.name": "Departamento de Asuntos de los Veteranos de EE. UU. (VA, sigla en inglés)",
   "va-burial-flag.source.link": "https://www.va.gov/burials-memorials/memorial-items/burial-flags/",
   "va-burial-flag.summary": "VA suministra una bandera de Estados Unidos para cubrir el ataúd (o féretro) con ella o colocarla con una urna en honor del servicio militar de un veterano o reservista.",
   "va-burial-flag.eligibility.acceptableValues": "sí",
-  "va-burial-flag.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "va-burial-flag.eligibility.label": "La persona fallecida prestó servicio activo en el Ejército, la Marina o la Fuerza Aérea.",
   "va-burial-flag.eligibility.acceptableValues1": "miembro del servicio activo",
   "va-burial-flag.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas",
-  "va-burial-flag.eligibility.acceptableValues3": "miembro de la Guardia Nacional o las Reservas",
+  "va-burial-flag.eligibility.acceptableValues3": "miembro de la Guardia Nacional/Reserva",
   "va-burial-flag.eligibility.acceptableValues4": "cónyuge",
   "va-burial-flag.eligibility.acceptableValues5": "hijo/hija",
   "va-burial-flag.eligibility.acceptableValues6": "padre/madre",
   "va-burial-flag.eligibility.acceptableValues7": "otro miembro de la familia",
-  "va-burial-flag.eligibility.acceptableValues8": "representante personal u oficial"
+  "va-burial-flag.eligibility.acceptableValues8": "representante personal/oficial"
 }

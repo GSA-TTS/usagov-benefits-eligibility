@@ -25,4 +25,6 @@ eligibility:
     ssa-survivor-benefits-spouse.eligibility.acceptableValues2]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]
+  - criteriaKey: applicant_marriage_length
+    acceptableValues: [true]
 ---

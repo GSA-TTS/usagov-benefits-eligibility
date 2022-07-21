@@ -1,16 +1,16 @@
 {
-  "va-health-care-program-for-surviving-child.title": "Programa civil sanitario y médico de VA (CHAMPVA) para hijos/hijas",
-  "va-health-care-program-for-surviving-child.headline": "Programa civil sanitario y médico de VA (CHAMPVA) para hijos/hijas",
-  "va-health-care-program-for-surviving-child.source.name": "Departamento de Asuntos de los Veteranos de EE. UU.",
+  "va-health-care-program-for-surviving-child.title": "Programa civil sanitario y médico de VA (CHAMPVA) para hijo/hija",
+  "va-health-care-program-for-surviving-child.headline": "Programa civil sanitario y médico de VA (CHAMPVA) para hijo/hija",
+  "va-health-care-program-for-surviving-child.source.name": "Departamento de Asuntos de los Veteranos de EE. UU. (VA, sigla en inglés)",
   "va-health-care-program-for-surviving-child.source.link": "https://www.va.gov/health-care/family-caregiver-benefits/champva/",
   "va-health-care-program-for-surviving-child.summary": "Como hijo/hija sobreviviente de un veterano usted puede ser elegible para recibir seguro médico que cubra el costo de algunos de los servicios y los insumos para el cuidado de la salud, lo que incluye beneficios farmacéuticos.",
   "va-health-care-program-for-surviving-child.eligibility.acceptableValues": "sí",
-  "va-health-care-program-for-surviving-child.eligibility.label": "La persona fallecida prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "va-health-care-program-for-surviving-child.eligibility.label": "La persona fallecida prestó servicio activo en el Ejército, la Marina o la Fuerza Aérea.",
   "va-health-care-program-for-surviving-child.eligibility.acceptableValues1": "miembro del servicio activo",
   "va-health-care-program-for-surviving-child.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas",
   "va-health-care-program-for-surviving-child.eligibility.acceptableValues3": "falleció en servicio activo",
-  "va-health-care-program-for-surviving-child.eligibility.acceptableValues4": "falleció como resultado de una discapacidad o enfermedad relacionada con el servicio",
+  "va-health-care-program-for-surviving-child.eligibility.acceptableValues4": "falleció como resultado de una discapacidad/enfermedad relacionada con el servicio",
   "va-health-care-program-for-surviving-child.eligibility.acceptableValues5": "hijo/hija",
   "va-health-care-program-for-surviving-child.eligibility.label1": "Usted tiene menos de 18 años (menos de 23 años si asiste a una escuela aprobada por VA).",
-  "va-health-care-program-for-surviving-child.eligibility.acceptableValues6": "no está casado"
+  "va-health-care-program-for-surviving-child.eligibility.acceptableValues6": "no casado"
 }
