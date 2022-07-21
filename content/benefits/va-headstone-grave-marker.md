@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-headstone-grave-marker.source.name
   link: va-headstone-grave-marker.source.link
+  isEnglish: va-headstone-grave-marker.source.linkIsEnglish
 
 summary: va-headstone-grave-marker.summary
 

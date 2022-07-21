@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: doj-public-safety-officers-death-benefit.source.name
   link: doj-public-safety-officers-death-benefit.source.link
+  isEnglish: doj-public-safety-officers-death-benefit.source.linkIsEnglish
 
 summary: doj-public-safety-officers-death-benefit.summary
 

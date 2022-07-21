@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-presidential-memorial-certificate.source.name
   link: va-presidential-memorial-certificate.source.link
+  isEnglish: va-presidential-memorial-certificate.source.linkIsEnglish
 
 summary: va-presidential-memorial-certificate.summary
 

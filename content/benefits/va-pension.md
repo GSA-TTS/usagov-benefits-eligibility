@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-pension.source.name
   link: va-pension.source.link
+  isEnglish: va-pension.source.linkIsEnglish
 
 summary: va-pension.summary
 

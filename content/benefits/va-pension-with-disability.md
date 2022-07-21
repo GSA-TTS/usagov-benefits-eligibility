@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-pension-with-disability.source.name
   link: va-pension-with-disability.source.link
+  isEnglish: va-pension-with-disability.source.linkIsEnglish
 
 summary: va-pension-with-disability.summary
 

@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-health-care-program-for-surviving-child.source.name
   link: va-health-care-program-for-surviving-child.source.link
+  isEnglish: va-health-care-program-for-surviving-child.source.linkIsEnglish
 
 summary: va-health-care-program-for-surviving-child.summary
 

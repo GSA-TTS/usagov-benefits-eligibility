@@ -10,6 +10,7 @@ lifeEvents:
 source:
   name: va-survivor-pension-child-disabled.source.name
   link: va-survivor-pension-child-disabled.source.link
+  isEnglish: va-survivor-pension-child-disabled.source.linkIsEnglish
 
 summary: va-survivor-pension-child-disabled.summary
 

@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: fema-individual-assistance.source.name
   link: fema-individual-assistance.source.link
+  isEnglish: fema-individual-assistance.source.linkIsEnglish
 
 summary: fema-individual-assistance.summary
 

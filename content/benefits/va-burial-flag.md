@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-burial-flag.source.name
   link: va-burial-flag.source.link
+  isEnglish: va-burial-flag.source.linkIsEnglish
 
 summary: va-burial-flag.summary
 

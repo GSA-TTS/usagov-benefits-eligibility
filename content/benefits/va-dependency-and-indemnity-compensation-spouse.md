@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-dependency-and-indemnity-compensation-spouse.source.name
   link: va-dependency-and-indemnity-compensation-spouse.source.link
+  isEnglish: va-dependency-and-indemnity-compensation-spouse.source.linkIsEnglish
 
 summary: va-dependency-and-indemnity-compensation-spouse.summary
 

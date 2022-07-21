@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: ssa-survivor-benefits-mothers-fathers.source.name
   link: ssa-survivor-benefits-mothers-fathers.source.link
+  isEnglish: ssa-survivor-benefits-mothers-fathers.source.linkIsEnglish
 
 summary: ssa-survivor-benefits-mothers-fathers.summary
 
