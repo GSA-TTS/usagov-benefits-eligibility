@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: va-program-of-comprehensive-assistance-for-family-caregivers.source.name
   link: va-program-of-comprehensive-assistance-for-family-caregivers.source.link
+  isEnglish: va-program-of-comprehensive-assistance-for-family-caregivers.source.linkIsEnglish
 
 summary: va-program-of-comprehensive-assistance-for-family-caregivers.summary
 

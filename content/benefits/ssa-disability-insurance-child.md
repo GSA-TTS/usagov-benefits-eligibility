@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: ssa-disability-insurance-child.source.name
   link: ssa-disability-insurance-child.source.link
+  isEnglish: ssa-disability-insurance-child.source.linkIsEnglish
 
 summary: ssa-disability-insurance-child.summary
 

@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-life-insurance-for-survivors.source.name
   link: va-life-insurance-for-survivors.source.link
+  isEnglish: va-life-insurance-for-survivors.source.linkIsEnglish
 
 summary: va-life-insurance-for-survivors.summary
 

@@ -3,6 +3,7 @@
   "va-survivor-pension-child-disabled.headline": "Pensión para hijo/hija sobreviviente con discapacidades",
   "va-survivor-pension-child-disabled.source.name": "Departamento de Asuntos de los Veteranos de EE. UU. (VA, sigla en inglés)",
   "va-survivor-pension-child-disabled.source.link": "https://www.va.gov/pension/survivors-pension/",
+  "va-survivor-pension-child-disabled.source.linkIsEnglish": "true",
   "va-survivor-pension-child-disabled.summary": "Puede haber pagos mensuales disponibles para hijos/hijas sobrevivientes dependientes y calificados de veteranos de guerra que satisfacen ciertos límites de ingresos y patrimonio neto.",
   "va-survivor-pension-child-disabled.eligibility.acceptableValues": "sí",
   "va-survivor-pension-child-disabled.eligibility.label": "La persona fallecida prestó servicio activo en el Ejército, la Marina o la Fuerza Aérea.",

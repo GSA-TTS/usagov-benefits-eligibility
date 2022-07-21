@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: ssa-supplemental-security-income-child.source.name
   link: ssa-supplemental-security-income-child.source.link
+  isEnglish: ssa-supplemental-security-income-child.source.linkIsEnglish
 
 summary: ssa-supplemental-security-income-child.summary
 

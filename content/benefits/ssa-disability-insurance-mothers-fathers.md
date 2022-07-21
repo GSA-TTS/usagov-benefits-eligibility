@@ -9,6 +9,8 @@ lifeEvents:
 source:
   name: ssa-disability-insurance-mothers-fathers.source.name
   link: ssa-disability-insurance-mothers-fathers.source.link
+  isEnglish: ssa-disability-insurance-mothers-fathers.source.linkIsEnglish
+
 
 summary: ssa-disability-insurance-mothers-fathers.summary
 
