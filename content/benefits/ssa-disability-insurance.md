@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: ssa-disability-insurance.source.name
   link: ssa-disability-insurance.source.link
+  isEnglish: ssa-disability-insurance.source.linkIsEnglish
 
 summary: ssa-disability-insurance.summary
 

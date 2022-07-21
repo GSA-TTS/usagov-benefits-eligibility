@@ -64,6 +64,8 @@
             role="button"
             :aria-labelledby="`acc-source-link-${benefit.slug} acc-h-${benefit.slug}-${cid}`">
             {{ $t("accordion.apply") }}
+
+            <span v-if="$i18n.locale === 'es' && benefit.source.isEnglish === 'true'"> (en inglés)</span>
           </a>
         </div>
       </div>

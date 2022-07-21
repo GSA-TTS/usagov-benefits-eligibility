@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-dependency-and-indemnity-compensation-child.source.name
   link: va-dependency-and-indemnity-compensation-child.source.link
+  isEnglish: va-dependency-and-indemnity-compensation-child.source.linkIsEnglish
 
 summary: va-dependency-and-indemnity-compensation-child.summary
 

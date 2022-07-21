@@ -10,6 +10,7 @@ lifeEvents:
 source:
   name: va-education-benefits-for-survivors.source.name
   link: va-education-benefits-for-survivors.source.link
+  isEnglish: va-education-benefits-for-survivors.source.linkIsEnglish
 
 summary: va-education-benefits-for-survivors.summary
 

@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-education-benefits-for-dependents.source.name
   link: va-education-benefits-for-dependents.source.link
+  isEnglish: va-education-benefits-for-dependents.source.linkIsEnglish
 
 summary: va-education-benefits-for-dependents.summary
 

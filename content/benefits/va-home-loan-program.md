@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: va-home-loan-program.source.name
   link: va-home-loan-program.source.link
+  isEnglish: va-home-loan-program.source.linkIsEnglish
 
 summary: va-home-loan-program.summary
 

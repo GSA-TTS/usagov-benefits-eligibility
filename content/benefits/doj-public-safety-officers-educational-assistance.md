@@ -9,6 +9,8 @@ lifeEvents:
 source:
   name: doj-public-safety-officers-educational-assistance.source.name
   link: doj-public-safety-officers-educational-assistance.source.link
+  isEnglish: doj-public-safety-officers-educational-assistance.source.linkIsEnglish
+
 
 summary: doj-public-safety-officers-educational-assistance.summary
 

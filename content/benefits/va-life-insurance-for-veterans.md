@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: va-life-insurance-for-veterans.source.name
   link: va-life-insurance-for-veterans.source.link
+  isEnglish: va-life-insurance-for-veterans.source.linkIsEnglish
 
 summary: va-life-insurance-for-veterans.summary
 

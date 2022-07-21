@@ -3,6 +3,7 @@
   "va-burial-flag.headline": "Bandera para entierro",
   "va-burial-flag.source.name": "Departamento de Asuntos de los Veteranos de EE. UU. (VA, sigla en inglés)",
   "va-burial-flag.source.link": "https://www.va.gov/burials-memorials/memorial-items/burial-flags/",
+  "va-burial-flag.source.linkIsEnglish": "true",
   "va-burial-flag.summary": "VA suministra una bandera de Estados Unidos para cubrir el ataúd (o féretro) con ella o colocarla con una urna en honor del servicio militar de un veterano o reservista.",
   "va-burial-flag.eligibility.acceptableValues": "sí",
   "va-burial-flag.eligibility.label": "La persona fallecida prestó servicio activo en el Ejército, la Marina o la Fuerza Aérea.",

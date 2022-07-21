@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-survivor-pension-spouse.source.name
   link: va-survivor-pension-spouse.source.link
+  isEnglish: va-survivor-pension-spouse.source.linkIsEnglish
 
 summary: va-survivor-pension-spouse.summary
 
