@@ -340,15 +340,16 @@ export default {
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, [this.sort])
       } else {
         const forceToBottom = 2048
-        const virtualCriteria = this.getVirtualCriteria()
         this.lifeEventBenefits.forEach((benefit) => {
           const matches = (benefit.matches = this.getTotalEligibleCriteria(benefit.eligibility))
-          const ineligible = this.getTotalIneligibleCriteria(benefit.eligibility) > 0
-          const virtualBenefitEligibility = (benefit.virtualBenefitEligibility = (benefit.eligibility || []).filter(
-            (c) => virtualCriteria[c.criteriaKey]
-          ).length)
-          benefit.inverseMatchRatio =
-            1 - matches / (benefit.eligibility.length - virtualBenefitEligibility) + (ineligible ? forceToBottom : 0)
+          const ineligible = this.getTotalIneligibleCriteria(benefit.eligibility) > 0 
+          const nonMatch = (ineligible ? forceToBottom : 0)      
+          // takes into account the amount of possible criteria there is too match vs the
+          // amount matched and then grades it in accordance (the 1 - is to invert the list)
+          // low the score the better. The last non match is used to force the benefit to 
+          // the bottom if there is any non matching criteria
+          benefit.inverseMatchRatio = 
+           1 - (matches / benefit.eligibility.length) + nonMatch
         })
         this.matchingBenefitMessage = `${this.lifeEventBenefits.length} matching benefits`
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
