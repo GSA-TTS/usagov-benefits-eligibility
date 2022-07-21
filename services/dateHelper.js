@@ -107,7 +107,7 @@ function validInputs(month, day, year) {
   }
   if (year !== "") {
     year = parseInt(year)
-    if (year < 1 || year >= new Date().getFullYear()) {
+    if (year < 1 || year > new Date().getFullYear()) {
       return ERRORMSG
     }
   } else {
