@@ -183,8 +183,8 @@
             id="matching-count"
             class="sr-only"
             aria-live="assertive">
-            You match
-            {{ countEligibleBenefits() }} benefits.
+            {{ $t("screenReader.match") }}
+            {{ countEligibleBenefits() }} {{ $t("screenReader.benefits") }}.
           </p>
           <Accordion
             ref="accordion"
@@ -233,7 +233,6 @@ export default {
       sort: "relevance",
       disclaimer: {},
       accordionMessage: "",
-      matchingBenefitMessage: "No matching benefits",
     }
   },
 
@@ -325,11 +324,11 @@ export default {
     },
     closeAll() {
       this.$refs.accordion.closeAll()
-      this.accordionMessage = "All accordions closed"
+      this.accordionMessage = this.$t("screenReader.close")
     },
     openAll() {
       this.$refs.accordion.openAll()
-      this.accordionMessage = "All accordions open"
+      this.accordionMessage = this.$t("screenReader.open")
     },
     sortChange(event) {
       this.sort = event.target.value
@@ -342,16 +341,14 @@ export default {
         const forceToBottom = 2048
         this.lifeEventBenefits.forEach((benefit) => {
           const matches = (benefit.matches = this.getTotalEligibleCriteria(benefit.eligibility))
-          const ineligible = this.getTotalIneligibleCriteria(benefit.eligibility) > 0 
-          const nonMatch = (ineligible ? forceToBottom : 0)      
+          const ineligible = this.getTotalIneligibleCriteria(benefit.eligibility) > 0
+          const nonMatch = ineligible ? forceToBottom : 0
           // takes into account the amount of possible criteria there is too match vs the
           // amount matched and then grades it in accordance (the 1 - is to invert the list)
-          // low the score the better. The last non match is used to force the benefit to 
+          // low the score the better. The last non match is used to force the benefit to
           // the bottom if there is any non matching criteria
-          benefit.inverseMatchRatio = 
-           1 - (matches / benefit.eligibility.length) + nonMatch
+          benefit.inverseMatchRatio = 1 - matches / benefit.eligibility.length + nonMatch
         })
-        this.matchingBenefitMessage = `${this.lifeEventBenefits.length} matching benefits`
         this.lifeEventBenefits = _.sortBy(this.lifeEventBenefits, ["inverseMatchRatio", "title"])
       }
     },
