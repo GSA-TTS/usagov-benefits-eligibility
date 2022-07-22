@@ -105,7 +105,6 @@ describe("EligibilityList", () => {
       store,
     })
     config.mocks.$i18n.locale = "es"
-    // TODO: add test for last item being separated by 'o'
     const arrayWithSeparator = wrapper.vm.formatArrayWithSeparator(["a", "b", "c"])
     expect(arrayWithSeparator).toBe("a, b o c")
   })
@@ -118,7 +117,6 @@ describe("EligibilityList", () => {
       store,
     })
     config.mocks.$i18n.locale = "es"
-    // TODO: add test for last item being separated by 'u'
     const arrayWithSeparator = wrapper.vm.formatArrayWithSeparator(["a", "b", "otter"])
     expect(arrayWithSeparator).toBe("a, b u otter")
   })
