@@ -282,5 +282,11 @@
     "paragraphOne": "We can't find the page you're looking for. It might have been removed, had its name changed, or is temporarily unavailable.",
     "paragraphTwo": "If you typed the URL directly, check your spelling and capitalization. Our URLs look like this:&nbsp;<strong>usa.gov/example-one</strong> and <strong>usa.gov/espanol/ejemplo-uno</strong>.<br /><br /><strong>Note:</strong> When typing a Spanish URL, use the 'n' instead of the 'ñ' in the address bar.",
     "paragraphThree": "You can browse our <a href='https://usa.gov/topics'>topics page</a> or <a href='https://usa.gov/espanol#tpcs'>servicios</a> (in Spanish), use our search engine, or <a href='https://usa.gov/contact'>contact us</a> if you still have a question."
+  },
+  "screenReader": {
+    "close": "All accordions closed",
+    "open": "All accordions opened",
+    "match": "You match",
+    "benefits": "benefits"
   }
 }
