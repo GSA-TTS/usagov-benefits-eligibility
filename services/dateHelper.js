@@ -107,7 +107,7 @@ function validInputs(month, day, year) {
   }
   if (year !== "") {
     year = parseInt(year)
-    if (year < 1 || year >= new Date().getFullYear()) {
+    if (year < 1 || year > new Date().getFullYear()) {
       return ERRORMSG
     }
   } else {
@@ -117,6 +117,14 @@ function validInputs(month, day, year) {
 }
 
 function checkDateValid(month, day, year) {
+  const invalidDateInput = [month, day, year].some((element) => {
+    if (element !== "") {
+      return !/\d+$/.test(element)
+    } else return false
+  })
+  if (invalidDateInput) {
+    return ERRORMSG
+  }
   const validityCheck = validInputs(month, day, year)
   if (validityCheck !== INCOMPLETE && validityCheck !== ERRORMSG) {
     const checkDate = toDate(Date.parse(month, day, year))
