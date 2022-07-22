@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils"
+import { config, shallowMount } from "@vue/test-utils"
 import { Store } from "vuex"
 import EligibilityList from "@/components/EligibilityList.vue"
 import beforeAllTests from "@/test/beforeAllTests"
@@ -84,5 +84,42 @@ describe("EligibilityList", () => {
     })
     expect(l1).toBe('Key named "myKey" not found')
     expect(l2).toBe("mylabel")
+  })
+
+  test("if English, last item to be separated by 'or'", () => {
+    const wrapper = shallowMount(EligibilityList, {
+      propsData: {
+        benefitEligibilityCriteria: MOCK_CRITERIA,
+      },
+      store,
+    })
+    const arrayWithSeparator = wrapper.vm.formatArrayWithSeparator(["a", "b", "c"])
+    expect(arrayWithSeparator).toBe("a, b or c")
+  })
+
+  test("if Spanish, separator should be 'o'", () => {
+    const wrapper = shallowMount(EligibilityList, {
+      propsData: {
+        benefitEligibilityCriteria: MOCK_CRITERIA,
+      },
+      store,
+    })
+    config.mocks.$i18n.locale = "es"
+    // TODO: add test for last item being separated by 'o'
+    const arrayWithSeparator = wrapper.vm.formatArrayWithSeparator(["a", "b", "c"])
+    expect(arrayWithSeparator).toBe("a, b o c")
+  })
+
+  test("if Spanish and last item starts with an 'o' separator should be 'u'", () => {
+    const wrapper = shallowMount(EligibilityList, {
+      propsData: {
+        benefitEligibilityCriteria: MOCK_CRITERIA,
+      },
+      store,
+    })
+    config.mocks.$i18n.locale = "es"
+    // TODO: add test for last item being separated by 'u'
+    const arrayWithSeparator = wrapper.vm.formatArrayWithSeparator(["a", "b", "otter"])
+    expect(arrayWithSeparator).toBe("a, b u otter")
   })
 })
