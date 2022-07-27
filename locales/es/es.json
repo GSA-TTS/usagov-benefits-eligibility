@@ -274,6 +274,7 @@
     "close": "Todos los acordeones cerrados",
     "open": "Todos los acordeones abiertos",
     "match": "Coincides con",
-    "benefits": "beneficios"
+    "benefits": "beneficios",
+    "clear": "Selecciones borradas"
   }
 }

@@ -170,7 +170,7 @@ export default {
     },
 
     clearCriteria() {
-      this.filterMessage = "Selections cleared"
+      this.filterMessage = this.$t("screenReader.clear")
       this.$store.dispatch("criteria/clear")
     },
 
