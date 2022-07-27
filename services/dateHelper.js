@@ -127,7 +127,7 @@ function checkDateValid(month, day, year) {
   }
   const validityCheck = validInputs(month, day, year)
   if (validityCheck !== INCOMPLETE && validityCheck !== ERRORMSG) {
-    const checkDate = toDate(Date.parse(month, day, year))
+    const checkDate = new Date(year, month, day)
     if (isNaN(checkDate)) {
       return ERRORMSG
     }
