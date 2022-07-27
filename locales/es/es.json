@@ -269,5 +269,12 @@
     "paragraphOne": "Lo sentimos, pero puede que la página que busca haya sido eliminada, se le haya cambiado el nombre o no esté disponible por ahora.",
     "paragraphTwo": "Si escribió el URL a mano, verifique su ortografía y el uso de mayúsculas. Nuestros URLs aparecen así: <strong>usa.gov/espanol/ejemplo-uno</strong>.",
     "paragraphThree": "Puede ir a nuestra página de&nbsp;<a href='https://www.usa.gov/espanol/servicios-informacion'>servicios</a>&nbsp;para buscar la información que necesita por tema, usar nuestro buscador o&nbsp;<a href='https://www.usa.gov/espanol/contactenos'>contactarnos</a>&nbsp;si aún tiene alguna duda."
+  },
+  "screenReader": {
+    "close": "Todos los acordeones cerrados",
+    "open": "Todos los acordeones abiertos",
+    "match": "Coincides con",
+    "benefits": "beneficios",
+    "clear": "Selecciones borradas"
   }
 }
