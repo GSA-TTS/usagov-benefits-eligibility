@@ -191,8 +191,16 @@ export default {
     getCriterionLabel(criterion) {
       return criterion.label || this.getCriterionByEligibilityKey(criterion.criteriaKey).label
     },
-    formatArrayWithSeparator(array = [], lastSeparator = "or") {
-      return array.join(", ").replace(/, ((?:.(?!, ))+)$/, `, ${lastSeparator} $1`)
+    formatArrayWithSeparator(array = []) {
+      // spanish uses o and english uses or
+      let separator = this.$i18n.locale === "es" ? "o" : "or"
+      // if last item in array is starts with o, change separator to u
+      if (this.$i18n.locale === "es") {
+        const lastItem = array[array.length - 1]
+        const lastItemStartsWithO = lastItem.startsWith("o")
+        lastItemStartsWithO && (separator = "u")
+      }
+      return array.join(", ").replace(/, ((?:.(?!, ))+)$/, ` ${separator} $1`)
     },
   },
 }

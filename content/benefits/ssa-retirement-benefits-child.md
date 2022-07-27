@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: ssa-retirement-benefits-child.source.name
   link: ssa-retirement-benefits-child.source.link
+  isEnglish: ssa-retirement-benefits-child.source.linkIsEnglish
 
 summary: ssa-retirement-benefits-child.summary
 

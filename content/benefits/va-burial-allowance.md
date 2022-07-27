@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-burial-allowance.source.name
   link: va-burial-allowance.source.link
+  isEnglish: va-burial-allowance.source.linkIsEnglish
 
 summary: va-burial-allowance.summary
 

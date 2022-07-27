@@ -3,6 +3,7 @@
   "dod-survivor-benefit-plan.headline": "Plan de beneficios para sobrevivientes",
   "dod-survivor-benefit-plan.source.name": "Departamento de Defensa",
   "dod-survivor-benefit-plan.source.link": "https://militarypay.defense.gov/Benefits/Survivor-Benefit-Program/",
+  "dod-survivor-benefit-plan.source.linkIsEnglish": "true",
   "dod-survivor-benefit-plan.summary": "Los sobrevivientes de miembros del servicio activo y algunos miembros retirados y de la reserva fallecidos pueden ser elegibles para recibir hasta el 55% de la jubilación del miembro.",
   "dod-survivor-benefit-plan.eligibility.acceptableValues": "sí",
   "dod-survivor-benefit-plan.eligibility.label": "La persona fallecida prestó servicio activo en el Ejército, la Marina o la Fuerza Aérea.",

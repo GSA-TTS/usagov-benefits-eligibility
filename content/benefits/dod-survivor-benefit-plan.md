@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: dod-survivor-benefit-plan.source.name
   link: dod-survivor-benefit-plan.source.link
+  isEnglish: dod-survivor-benefit-plan.source.linkIsEnglish
 
 summary: dod-survivor-benefit-plan.summary
 

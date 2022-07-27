@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: va-health-care-benefits.source.name
   link: va-health-care-benefits.source.link
+  isEnglish: va-health-care-benefits.source.linkIsEnglish
 
 summary: va-health-care-benefits.summary
 

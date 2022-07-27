@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-health-care-program-for-surviving-spouse.source.name
   link: va-health-care-program-for-surviving-spouse.source.link
+  isEnglish: va-health-care-program-for-surviving-spouse.source.linkIsEnglish
 
 summary: va-health-care-program-for-surviving-spouse.summary
 

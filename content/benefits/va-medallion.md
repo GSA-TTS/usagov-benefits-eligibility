@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: va-medallion.source.name
   link: va-medallion.source.link
+  isEnglish: va-medallion.source.linkIsEnglish
 
 summary: va-medallion.summary
 

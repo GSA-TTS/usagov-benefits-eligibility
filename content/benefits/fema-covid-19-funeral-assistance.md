@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: fema-covid-19-funeral-assistance.source.name
   link: fema-covid-19-funeral-assistance.source.link
+  isEnglish: fema-covid-19-funeral-assistance.source.linkIsEnglish
 
 summary: fema-covid-19-funeral-assistance.summary
 

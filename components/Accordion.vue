@@ -33,7 +33,10 @@
           <h3
             class="font-sans-xs text-normal text-base-dark margin-bottom-0"
             style="font-size: 1rem">
-            {{ $t("accordion.provided") }} {{ benefit.source.name }}
+            <span v-if="$i18n.locale === 'en'">
+              {{ $t("accordion.provided") }}
+            </span>
+            {{ benefit.source.name }}
           </h3>
         </template>
         <fieldset class="usa-fieldset">
@@ -61,6 +64,8 @@
             role="button"
             :aria-labelledby="`acc-source-link-${benefit.slug} acc-h-${benefit.slug}-${cid}`">
             {{ $t("accordion.apply") }}
+
+            <span v-if="$i18n.locale === 'es' && benefit.source.isEnglish === 'true'"> (en inglés)</span>
           </a>
         </div>
       </div>

@@ -8,6 +8,7 @@ lifeEvents:
 source:
   name: va-health-care-program-for-dependent.source.name
   link: va-health-care-program-for-dependent.source.link
+  isEnglish: va-health-care-program-for-dependent.source.linkIsEnglish
 
 summary: va-health-care-program-for-dependent.summary
 

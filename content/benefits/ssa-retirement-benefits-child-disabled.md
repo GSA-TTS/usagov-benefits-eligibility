@@ -11,6 +11,7 @@ lifeEvents:
 source:
   name: ssa-retirement-benefits-child-disabled.source.name
   link: ssa-retirement-benefits-child-disabled.source.link
+  isEnglish: ssa-retirement-benefits-child-disabled.source.linkIsEnglish
 
 summary: ssa-retirement-benefits-child-disabled.summary
 

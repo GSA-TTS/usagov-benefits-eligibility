@@ -9,6 +9,7 @@ lifeEvents:
 source:
   name: cms-medicare-disability.source.name
   link: cms-medicare-disability.source.link
+  isEnglish: cms-medicare-disability.source.linkIsEnglish
 
 summary: cms-medicare-disability.summary
 

@@ -9,6 +9,8 @@ lifeEvents:
 source:
   name: ssa-disability-insurance-spouse.source.name
   link: ssa-disability-insurance-spouse.source.link
+  isEnglish: ssa-disability-insurance-spouse.source.linkIsEnglish
+
 
 summary: ssa-disability-insurance-spouse.summary
 

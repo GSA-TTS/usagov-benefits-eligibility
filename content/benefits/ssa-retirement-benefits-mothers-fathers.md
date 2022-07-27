@@ -10,6 +10,7 @@ lifeEvents:
 source:
   name: ssa-retirement-benefits-mothers-fathers.source.name
   link: ssa-retirement-benefits-mothers-fathers.source.link
+  isEnglish: ssa-retirement-benefits-mothers-fathers.source.linkIsEnglish
 
 summary: ssa-retirement-benefits-mothers-fathers.summary
 
