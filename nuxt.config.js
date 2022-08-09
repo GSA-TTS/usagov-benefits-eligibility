@@ -10,7 +10,7 @@ const SITE_URLPREFIX =
 
 //const SITE_PREFIX = process.env.BRANCH === "staging" ? "/" : "/gsa/usagov-benefits-eligibility/"
 const SITE_PREFIX = process.env.SITE_PREFIX || "/site/gsa/usagov-benefits-eligibility/"
-  
+
 let printPrefix = SITE_URLPREFIX.split("/")
 if (process.env.NODE_ENV !== "test") {
   console.log("SITE_URLPREFIX:", printPrefix)
