@@ -17,7 +17,7 @@ describe("Card", () => {
       propsData: {
         cardTitle: CARD_TITLE,
         cardBody: CARD_BODY,
-        primaryButtonText: PRIMARY_BUTTON_TEXT,   
+        primaryButtonText: PRIMARY_BUTTON_TEXT,
         primaryButtonLink: PRIMARY_BUTTON_LINK,
       },
     })
