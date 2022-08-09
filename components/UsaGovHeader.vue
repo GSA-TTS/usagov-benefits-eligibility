@@ -700,9 +700,7 @@ export default {
   },
 }
 </script>
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 // Primary Colors
 $dark-blue: #11385b; //NOTE not currently in our code
 $aqua-blue: #02bfe7; //highlights action items and key areas (buttons, borders, etc)

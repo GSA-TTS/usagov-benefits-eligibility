@@ -231,9 +231,7 @@ export default {
 }
 </script>
 
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 .footer-summary-box {
   border-color: transparent;
   background-color: transparent;

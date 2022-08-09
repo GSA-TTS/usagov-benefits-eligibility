@@ -199,9 +199,7 @@ export default {
 }
 </script>
 
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 .usa-social-link {
   background-color: transparent;
 }
