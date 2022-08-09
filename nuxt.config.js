@@ -5,11 +5,11 @@ const getLifeEvents = function () {
   return files.map((f) => f.replace(/.md$/gi, ""))
 }
 
-const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : "/"
+//const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : "/"
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
-const SITE_PREFIX = process.env.BRANCH === 'main' ? '': "/site/gsa/usagov-benefits-eligibility/"
+const SITE_PREFIX = process.env.BRANCH === 'main' ? '/': "/site/gsa/usagov-benefits-eligibility/"
 
 if (process.env.NODE_ENV !== "test") {
   console.log("SITE_URLPREFIX:", SITE_URLPREFIX)
@@ -77,7 +77,7 @@ export default {
         content: "https://www.usa.gov/images/facebook_share_thumbnail.png",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: sitePrefix + "USA_Fav_Icon152_default.png" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: SITE_PREFIX + "USA_Fav_Icon152_default.png" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -134,7 +134,7 @@ export default {
     extractCSS: true,
     extend(config, { isClient, isDev }) {
       if (!isDev) {
-        config.output.publicPath = sitePrefix
+        config.output.publicPath = SITE_PREFIX
       }
     },
   },
@@ -145,7 +145,7 @@ export default {
   },
 
   router: {
-    base: process.env.NODE_ENV !== "production" ? undefined : sitePrefix,
+    base: process.env.NODE_ENV !== "production" ? undefined : SITE_PREFIX,
     linkActiveClass: "usa-current",
     linkExactActiveClass: "usa-current",
     extendRoutes(routes, resolve) {
