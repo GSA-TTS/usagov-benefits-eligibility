@@ -9,7 +9,7 @@ const getLifeEvents = function () {
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
-const SITE_PREFIX = process.env.BRANCH === 'staging' ? '/': "/site/gsa/usagov-benefits-eligibility/"
+const SITE_PREFIX = process.env.BRANCH === "staging" ? "/" : "/site/gsa/usagov-benefits-eligibility/"
 
 if (process.env.NODE_ENV !== "test") {
   console.log("SITE_URLPREFIX:", SITE_URLPREFIX)
