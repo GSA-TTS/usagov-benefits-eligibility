@@ -88,9 +88,7 @@ export default {
   },
 }
 </script>
-<style
-  type="scss"
-  scoped>
+<style type="scss" scoped>
 @media print {
   .criteria-group-empty {
     display: block;

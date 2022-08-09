@@ -69,9 +69,7 @@
 export default {}
 </script>
 
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 a {
   color: #154285;
   &:visited {
