@@ -5,7 +5,7 @@ const getLifeEvents = function () {
   return files.map((f) => f.replace(/.md$/gi, ""))
 }
 
-const sitePrefix = process.env.SITE_PREFIX === "default" ? `/${process.env.SITE_PREFIX}/` : "/"
+const sitePrefix = process.env.SITE_PREFIX === "default" ? `/${process.env.SITE_PREFIX}/` : "/" // varioable that controls asset p
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
