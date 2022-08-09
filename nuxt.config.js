@@ -6,7 +6,7 @@ const getLifeEvents = function () {
 }
 
 const sitePrefix = process.env.SITE_PREFIX ? `/${process.env.SITE_PREFIX}/` : "/"
-console.log('SITE PREFIX SMALL', sitePrefix)
+console.log("SITE PREFIX SMALL", sitePrefix)
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
 const SITE_PREFIX = process.env.SITE_PREFIX || ""
