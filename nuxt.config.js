@@ -9,7 +9,7 @@ const sitePrefix = process.env.SITE_PREFIX === 'default' ? `/${process.env.SITE_
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
-const SITE_PREFIX = process.env.SITE_PREFIX || "/site/gsa/usagov-benefits-eligibility/"
+const SITE_PREFIX = process.env.SITE_PREFIX || "/preview/gsa/usagov-benefits-eligibility/"
 if (process.env.NODE_ENV !== "test") {
   console.log("SITE_URLPREFIX:", SITE_URLPREFIX)
   console.log("SITE_PREFIX:", SITE_PREFIX)
