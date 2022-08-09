@@ -5,7 +5,13 @@ const getLifeEvents = function () {
   return files.map((f) => f.replace(/.md$/gi, ""))
 }
 
-const sitePrefix = ["preview"].includes(process.env.SITE_PREFIX.split("/"[0])) ? `/${process.env.SITE_PREFIX}/` : "/" // varioable that controls asset paths
+// check the first word to see if it includes the word "preview"
+const hasPreview = () => {
+  const words = process.env.SITE_PREFIX.split("/")
+  return words[0].includes("preview")
+}
+
+const sitePrefix = hasPreview ? `/${process.env.SITE_PREFIX}/` : "/" // variable that controls asset paths
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
