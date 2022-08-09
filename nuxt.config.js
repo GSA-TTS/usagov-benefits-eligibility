@@ -5,10 +5,10 @@ const getLifeEvents = function () {
   return files.map((f) => f.replace(/.md$/gi, ""))
 }
 
-// check the first word to see if it includes the word "preview"
+// check the first word to see if it is the word "preview"
 const hasPreview = () => {
   const words = process.env.SITE_PREFIX.split("/")
-  return words[0].includes("preview")
+  return words[0] === "preview"
 }
 
 const sitePrefix = hasPreview ? `/${process.env.SITE_PREFIX}/` : "/" // variable that controls asset paths
