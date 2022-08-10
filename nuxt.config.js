@@ -4,8 +4,8 @@ const getLifeEvents = function () {
   const files = fs.readdirSync("./content/life-events/")
   return files.map((f) => f.replace(/.md$/gi, ""))
 }
-
-const sitePrefix = process.env.SITE_PREFIX === "default" ? `/${process.env.SITE_PREFIX}/` : "/"
+// https://federalist.18f.gov/documentation/env-vars-on-federalist-builds/#default-environment-variables
+const sitePrefix = `${process.env.BASEURL}/` // basepath for assets
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
