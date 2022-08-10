@@ -7,12 +7,14 @@ const getLifeEvents = function () {
 
 // preview/gsa/usagov-benefits-eligibility/LG-test-theory is what is set for SITE_PREFIX
 // check the first word to see if it is the word "preview"
-const hasPreview = () => {
-  const words = process.env.SITE_PREFIX.split("/")
-  return words[0].trim().includes("preview")
-}
+// const hasPreview = () => {
+//   const words = process.env.SITE_PREFIX.split("/")
+//   return words[0].trim().includes("preview")
+// }
 
-const sitePrefix = hasPreview ? `/${process.env.SITE_PREFIX}/` : "/" // variable that controls asset paths
+// const sitePrefix = hasPreview ? `/${process.env.SITE_PREFIX}/` : "/" // variable that controls asset paths
+
+const sitePrefix = process.env.BASEURL // basepath for assets
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
