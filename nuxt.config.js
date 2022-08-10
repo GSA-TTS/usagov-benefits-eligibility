@@ -14,7 +14,7 @@ const getLifeEvents = function () {
 
 // const sitePrefix = hasPreview ? `/${process.env.SITE_PREFIX}/` : "/" // variable that controls asset paths
 
-const sitePrefix = process.env.BASEURL // basepath for assets
+const sitePrefix = `${process.env.BASEURL}/` // basepath for assets
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
