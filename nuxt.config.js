@@ -4,16 +4,7 @@ const getLifeEvents = function () {
   const files = fs.readdirSync("./content/life-events/")
   return files.map((f) => f.replace(/.md$/gi, ""))
 }
-
-// preview/gsa/usagov-benefits-eligibility/LG-test-theory is what is set for SITE_PREFIX
-// check the first word to see if it is the word "preview"
-// const hasPreview = () => {
-//   const words = process.env.SITE_PREFIX.split("/")
-//   return words[0].trim().includes("preview")
-// }
-
-// const sitePrefix = hasPreview ? `/${process.env.SITE_PREFIX}/` : "/" // variable that controls asset paths
-
+// https://federalist.18f.gov/documentation/env-vars-on-federalist-builds/#default-environment-variables
 const sitePrefix = `${process.env.BASEURL}/` // basepath for assets
 
 const SITE_URLPREFIX =
