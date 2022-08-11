@@ -69,7 +69,7 @@ export default {
   },
   mounted() {
     if (this.$config.oneEventVersion !== false) {
-      this.$router.push(this.$route.fullPath + this.$config.oneEventVersion)
+      this.$router.replace(this.$route.fullPath + this.$config.oneEventVersion)
     }
     this.landingPage = tObj.call(this, this.landingPage)
   },
