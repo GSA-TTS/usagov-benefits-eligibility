@@ -41,7 +41,7 @@ describe("LifeEventsPage", () => {
       fullPath: "/death-of-a-loved-one",
     }
     config.mocks.$router = {
-      push: jest.fn(),
+      replace: jest.fn(),
     }
     await beforeAllTests()
   })
