@@ -34,7 +34,13 @@ describe("Footer", () => {
   })
 
   it("test scrolltoTop function", () => {
-    const wrapper = mount(Footer, {})
+    const wrapper = mount(Footer, {
+      mocks: {
+        $config: {
+          oneEventVersion: false,
+        },
+      },
+    })
     const scrollTopEl = wrapper.find("#return-to-top")
     scrollTopEl.trigger("click")
     expect(wrapper.vm.scrollToTop).toBeTruthy()
