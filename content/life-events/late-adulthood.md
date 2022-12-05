@@ -24,4 +24,11 @@ eligibilityCriteria:
       - applicant_child_spouse_SS
       - applicant_marital_status
       - applicant_citizen_status
+
+  - label: late-adulthood.eligibilityCriteria.label1
+    description: disability.eligibilityCriteria.description1
+    criteriaGroupKey: applicant-military
+    criteriaKeys:
+      - applicant_service_status
+      - applicant_service_disability
 ---
