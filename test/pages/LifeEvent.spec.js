@@ -144,6 +144,27 @@ describe("Life Event page", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
+ 
+
+  it("spanish styles return correct margin", () => {
+    const additionalInfo = {...mockContent, $i18n: {locale: 'es'}}
+    const wrapper = shallowMount(LifeEventPage, {
+      mocks: vueMocks(additionalInfo),
+      store,
+    })
+    const margin = wrapper.vm.spanishStyle
+    expect(margin).toBe("margin-bottom-11")
+  })
+
+  it("should be able run its methods", () => {
+    const wrapper = shallowMount(LifeEventPage, {
+      mocks: vueMocks(mockContent),
+      store,
+    })
+    const getVirtualCriteriaResult = wrapper.vm.getVirtualCriteria()
+    expect(wrapper.vm).toBeTruthy()
+  })
+
   it("should display the page content", async () => {
     let contentRequest
     const contentMock = {

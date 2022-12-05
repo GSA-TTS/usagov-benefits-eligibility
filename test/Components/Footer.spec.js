@@ -1,4 +1,5 @@
 import { mount, shallowMount } from "@vue/test-utils"
+import * as Layout from "@/layouts/default.vue"
 import Footer from "@/components/Footer.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
@@ -34,14 +35,9 @@ describe("Footer", () => {
   })
 
   it("test scrolltoTop function", () => {
-    const wrapper = mount(Footer, {
-      mocks: {
-        $config: {
-          oneEventVersion: false,
-        },
-      },
-    })
-    const scrollTopEl = wrapper.find("#return-to-top")
+    const wrapper = shallowMount(Footer, {})
+    console.log(wrapper.html())
+    const scrollTopEl = wrapper.find("a", { id: "return-to-top" })
     scrollTopEl.trigger("click")
     expect(wrapper.vm.scrollToTop).toBeTruthy()
   })
