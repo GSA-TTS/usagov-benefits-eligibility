@@ -6,7 +6,6 @@ tags:
 lifeEvents:
   - retirement
   - loss-of-job-and-low-income
-  - late-adulthood
 source:
   name: ssa-supplemental-security-income-elder.source.name
   link: ssa-supplemental-security-income-elder.source.link
