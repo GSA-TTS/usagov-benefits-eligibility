@@ -36,7 +36,6 @@ describe("Footer", () => {
 
   it("test scrolltoTop function", () => {
     const wrapper = shallowMount(Footer, {})
-    console.log(wrapper.html())
     const scrollTopEl = wrapper.find("a", { id: "return-to-top" })
     scrollTopEl.trigger("click")
     expect(wrapper.vm.scrollToTop).toBeTruthy()

@@ -222,9 +222,6 @@ export default {
         return defaultValue
       }
     },
-    // getUrl() {
-    //   return this.$route?.fullPath
-    // },
     scrollToTop() {
       window.scrollTo(0, 0)
     },
