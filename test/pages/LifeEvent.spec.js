@@ -144,10 +144,8 @@ describe("Life Event page", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
- 
-
   it("spanish styles return correct margin", () => {
-    const additionalInfo = {...mockContent, $i18n: {locale: 'es'}}
+    const additionalInfo = { ...mockContent, $i18n: { locale: "es" } }
     const wrapper = shallowMount(LifeEventPage, {
       mocks: vueMocks(additionalInfo),
       store,
