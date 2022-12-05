@@ -19,8 +19,7 @@ topLevelFilter:
     disableGroupWhen: [disability.topLevelFilter.disableGroupWhen]
 
   - label: disability.topLevelFilter.label2
-    criteriaKey:
-      - applicant_lost_a_family_member
+    criteriaKey: applicant_lost_a_family_member
     disableGroupKey: applicant-relationships
     disableGroupWhen: [disability.topLevelFilter.disableGroupWhen1]
 
