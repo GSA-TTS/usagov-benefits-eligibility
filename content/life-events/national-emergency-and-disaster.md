@@ -7,6 +7,12 @@ secondaryHeadline: national-emergency-and-disaster.secondaryHeadline
 
 eligibilityCriteriaDescription: national-emergency-and-disaster.eligibilityCriteriaDescription
 
+topLevelFilter:
+  - label: national-emergency-and-disaster.topLevelFilter.label
+    criteriaKey: applicant_date_of_birth
+    disableGroupKey:
+    disableGroupWhen:
+
 eligibilityCriteria:
   - label: national-emergency-and-disaster.eligibilityCriteria.label
     description: national-emergency-and-disaster.eligibilityCriteria.description
