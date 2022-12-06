@@ -5,7 +5,6 @@ tags:
   - financial assistance
 lifeEvents:
   - retirement
-  - late-adulthood
 source:
   name: ssa-retirement-benefits.source.name
   link: ssa-retirement-benefits.source.link
