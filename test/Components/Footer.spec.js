@@ -1,5 +1,4 @@
 import { mount, shallowMount } from "@vue/test-utils"
-import * as Layout from "@/layouts/default.vue"
 import Footer from "@/components/Footer.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
