@@ -6,7 +6,7 @@ tags:
 lifeEvents:
   - retirement
   - disability
-  - loss-of-job-and-low-income
+  - financial-hardship
 source:
   name: ssa-retirement-benefits-child-disabled.source.name
   link: ssa-retirement-benefits-child-disabled.source.link
