@@ -5,7 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - retirement
-  - loss-of-job-and-low-income
+  - financial-hardship
 source:
   name: ssa-retirement-benefits-spouse.source.name
   link: ssa-retirement-benefits-spouse.source.link
