@@ -5,7 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - retirement
-  - loss-of-job-and-low-income
+  - financial-hardship
 source:
   name: ssa-supplemental-security-income-elder.source.name
   link: ssa-supplemental-security-income-elder.source.link
