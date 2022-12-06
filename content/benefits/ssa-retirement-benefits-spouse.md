@@ -5,7 +5,6 @@ tags:
   - financial assistance
 lifeEvents:
   - retirement
-  - late-adulthood
   - loss-of-job-and-low-income
 source:
   name: ssa-retirement-benefits-spouse.source.name

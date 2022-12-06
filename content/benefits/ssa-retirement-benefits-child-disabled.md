@@ -5,7 +5,6 @@ tags:
   - financial assistance
 lifeEvents:
   - retirement
-  - late-adulthood
   - disability
   - loss-of-job-and-low-income
 source:

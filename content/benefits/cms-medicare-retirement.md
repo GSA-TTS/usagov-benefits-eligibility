@@ -4,7 +4,6 @@ headline: cms-medicare-retirement.headline
 tags:
   - healthcare
 lifeEvents:
-  - late-adulthood
   - retirement
 source:
   name: cms-medicare-retirement.source.name

@@ -55,5 +55,4 @@ eligibilityCriteria:
 
 relatedKeys:
   - disability
-  - late-adulthood
 ---
