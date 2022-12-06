@@ -55,4 +55,5 @@ eligibilityCriteria:
 
 relatedKeys:
   - disability
+  - retirement
 ---
