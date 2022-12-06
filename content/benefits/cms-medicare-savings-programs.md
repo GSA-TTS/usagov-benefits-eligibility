@@ -5,6 +5,7 @@ tags:
   - healthcare
 lifeEvents:
   - financial-hardship
+  - disability
 source:
   name: cms-medicare-savings-programs.source.name
   link: cms-medicare-savings-programs.source.link
@@ -17,6 +18,8 @@ eligibility:
   - criteriaKey: applicant_date_of_birth
     label: cms-medicare-savings-programs.eligibility.label
     acceptableValues: [">65years"]
+  - criteriaKey: applicant_disability
+    acceptableValues: [true]
   - criteriaKey: applicant_income
     acceptableValues: [true]
 
