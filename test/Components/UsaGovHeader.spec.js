@@ -52,6 +52,13 @@ describe("<UsaGovHeader />", () => {
   })
 })
 
+it("test skipLink function", () => {
+  const wrapper = shallowMount(UsaGovHeader, {})
+  const skipLinkEl = wrapper.find(".usa-skipnav")
+  skipLinkEl.trigger("click")
+  expect(wrapper.vm.skipLink).toBeTruthy()
+})
+
 describe("sanitizedBenefitUrl tests", () => {
   it("text example.com", () => {
     const wrapper = shallowMount(UsaGovHeader, {})

@@ -3,10 +3,11 @@
     <footer class="usa-footer usa-footer--slim print:display-none">
       <div class="grid-container usa-footer__return-to-top">
         <a
+          id="return-to-top-link"
           href="#"
-          @click.prevent="scrollToTop"
-          >{{ $t("returnToTop") }}</a
-        >
+          @click.prevent="scrollToTop">
+          {{ $t("returnToTop") }}
+        </a>
       </div>
       <div class="usa-footer__primary-section padding-bottom-7">
         <div class="usa-footer__primary-container grid-row">
@@ -189,9 +190,6 @@ export default {
         return defaultValue
       }
     },
-    getUrl() {
-      return this.$route?.fullPath
-    },
     scrollToTop() {
       window.scrollTo(0, 0)
     },
@@ -199,9 +197,7 @@ export default {
 }
 </script>
 
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 .usa-social-link {
   background-color: transparent;
 }

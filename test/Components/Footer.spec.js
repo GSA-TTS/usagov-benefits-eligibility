@@ -32,6 +32,13 @@ describe("Footer", () => {
     await wrapper.vm.$options.fetch()
     expect(wrapper.vm.$options.disclaimer).toBe(disclaimer)
   })
+
+  it("test scrolltoTop function", () => {
+    const wrapper = shallowMount(Footer, {})
+    const scrollTopEl = wrapper.find("a", { id: "return-to-top" })
+    scrollTopEl.trigger("click")
+    expect(wrapper.vm.scrollToTop).toBeTruthy()
+  })
 })
 
 describe("sanitizedBenefitUrl tests", () => {
