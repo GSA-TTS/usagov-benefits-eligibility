@@ -765,7 +765,7 @@ $AZ-button-disabled: #859cba;
 }
 
 // SEARCH
-@media only screen and(min-width: 60em) {
+@media only screen and (min-width: 60em) {
   header [role="search"] {
     min-width: 20rem;
   }
