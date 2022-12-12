@@ -32,6 +32,5 @@ jobs:
       - name: Run pa11y
         uses: booleans-oss/pa11y-actions@v1
         with:
-          start: 'start'
-          port: '3000'          
-
+          start: "start"
+          port: "3000"
