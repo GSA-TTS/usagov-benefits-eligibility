@@ -24,17 +24,37 @@ jobs:
         with:
           node-version: 16
 
-      - name: Setup browser
-        uses: browser-actions/setup-chrome@latest
-
       - name: Install dependencies
         run: npm ci
 
       - name: Build site
-        run: npx gulp && npx nuxt generate
+        run: npm run generate
 
-      - name: Run pa11y
-        uses: booleans-oss/pa11y-actions@v1
+      - name: Test accessibility with pa11y
+        run: |
+          npm run start & \
+          timeout 22 \
+          sh -c 'until nc -z localhost 3000; do sleep 1; done' \
+          && npm run test:pa11y 2>&1 | tee pa11y_output.txt
+
+      - name: Read pa11y_output file.
+        id: pa11y_output
+        uses: juliangruber/read-file-action@v1
         with:
-          start: "run dev"
-          port: "3000"
+          path: ./pa11y_output.txt
+
+      - name: Comment on pull request.
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: "<details><summary>Pa11y testing results</summary>
+            ```${{ steps.pa11y_output.outputs.content }}```
+            </details>"
+
+      - name: Check for pa11y failures.
+        if: contains(steps.pa11y_output.outputs.content, 'errno 2')
+        run: |
+          echo "::error::The site is failing accessibility tests."
+          echo "Please review the comment in the pull request for details."
+          exit 1
+
