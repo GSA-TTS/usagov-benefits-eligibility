@@ -31,7 +31,7 @@ jobs:
         run: npm ci
 
       - name: Build site
-        run: npm run generate
+        run: npx nuxt generate
 
       - name: Run pa11y
         uses: booleans-oss/pa11y-actions@v1
