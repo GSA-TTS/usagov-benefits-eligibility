@@ -27,14 +27,14 @@ jobs:
       - name: Setup browser
         uses: browser-actions/setup-chrome@latest
 
-#      - name: Install dependencies
-#        run: npm ci
+      #      - name: Install dependencies
+      #        run: npm ci
 
-#      - name: Build site
-#        run: npm run generate
+      #      - name: Build site
+      #        run: npm run generate
 
       - name: Run pa11y
         uses: booleans-oss/pa11y-actions@v1
         with:
-          start: 'dev'
-          port: '3000'          
+          start: "dev"
+          port: "3000"
