@@ -40,7 +40,7 @@ jobs:
           timeout 120s \
             sh -c 'until nc -z localhost 3000; do sleep 1; done' \
           && sleep 120 \
-          && npm run pa11y-ci -- --sitemap http://localhost:3000/sitemap.xml 2>&1 | tee pa11y_output.txt
+          && npm run test:pa11y 2>&1 | tee pa11y_output.txt
 
       - name: Read pa11y_output file.
         id: pa11y_output
