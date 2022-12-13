@@ -36,5 +36,5 @@ jobs:
       - name: Run pa11y test
         uses: booleans-oss/pa11y-actions@v1
         with:
-          start: 'dev'
+          start: "dev"
           port: 3000
