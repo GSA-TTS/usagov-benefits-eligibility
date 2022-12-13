@@ -28,7 +28,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm ci && npm install pa11y-ci
+        run: npm ci && npm install pa11y pa11y-ci
 
       - name: Build the site
         run: npm run build && npx nuxt generate
