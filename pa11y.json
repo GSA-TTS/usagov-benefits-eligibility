@@ -1,0 +1,6 @@
+{
+  "chromeLaunchConfig": {
+    "ignoreHTTPSErrors": false,
+    "executablePath": "/usr/bin/google-chrome"
+  }
+}
