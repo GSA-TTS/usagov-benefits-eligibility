@@ -27,14 +27,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build the site
+        run: npm run build && npx nuxt generate
+
       - name: Test accessibility with pa11y
         run: |
           npm run dev & \
           timeout 120s \
             sh -c 'until nc -z localhost 3000; do sleep 1; done' \
-          && echo "Sleeping for one minute to make sure the dev server is up" \
-          && sleep 60 \
-          && echo "Done sleeping and ready to start testing" \
           && npm run test:pa11y 2>&1 | tee pa11y_output.txt
 
       - name: Read pa11y_output file.
