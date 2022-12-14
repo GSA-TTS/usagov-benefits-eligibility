@@ -17,8 +17,9 @@ eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_date_of_birth
     label: va-pension.eligibility.label
-    acceptableValues: [va-pension.eligibility.acceptableValues]
+    acceptableValues: [">65years"]
   - criteriaKey: applicant_served_in_active_military
+    label: va-pension.eligibility.label1
     acceptableValues: [va-pension.eligibility.acceptableValues1]
   - criteriaKey: applicant_service_status
     acceptableValues: [va-pension.eligibility.acceptableValues2]
