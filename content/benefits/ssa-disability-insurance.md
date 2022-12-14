@@ -5,6 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - disability
+  - retirement
 source:
   name: ssa-disability-insurance.source.name
   link: ssa-disability-insurance.source.link
