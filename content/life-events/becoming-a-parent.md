@@ -19,5 +19,7 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_income
+      - applicant_health_insurance
+      - applicant_dependents_children
       - applicant_citizen_status
 ---
