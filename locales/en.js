@@ -31,6 +31,7 @@ export default Object.assign(
   require("./en/benefits/ssa-ticket-to-work.json"),
   require("./en/benefits/va-pension-with-disability.json"),
   require("./en/benefits/ssa-retirement-benefits.json"),
+  require("./en/benefits/ssa-extra-help.json"),
   require("./en/benefits/ssa-survivor-benefits-spouse.json"),
   require("./en/benefits/va-education-benefits-for-dependents.json"),
   require("./en/benefits/va-burial-in-national-cemetery.json"),
