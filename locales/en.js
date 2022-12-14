@@ -63,6 +63,8 @@ export default Object.assign(
   require("./en/benefits/cms-medicaid.json"),
   require("./en/benefits/cms-medicare-disability.json"),
   require("./en/benefits/cms-medicare-savings-programs.json"),
+  require("./en/benefits/cms-childrens-health-insurance-program-child.json"),
+  require("./en/benefits/cms-childrens-health-insurance-program-parent.json"),
   require("./en/benefits/va-life-insurance-for-survivors.json"),
   require("./en/benefits/ssa-survivor-benefits-spouse-disabled.json"),
   require("./en/benefits/va-health-care-benefits.json"),
