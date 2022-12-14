@@ -24,13 +24,13 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_paid_into_SS
-      - applicant_marital_status
       - applicant_disability
       - applicant_ability_to_work
       - applicant_income
       - applicant_child_spouse_SS
       - applicant_care_for_child
       - applicant_citizen_status
+      - applicant_marital_status
 
   - label: retirement.eligibilityCriteria.label1
     description: retirement.eligibilityCriteria.description1
