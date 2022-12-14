@@ -50,4 +50,8 @@ eligibilityCriteria:
       - applicant_relationship
       - deceased_paid_into_SS
       - deceased_served_in_active_military
+
+relatedKeys:
+  - death-of-a-loved-one
+  - retirement
 ---
