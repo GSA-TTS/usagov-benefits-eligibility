@@ -5,7 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - death-of-a-loved-one
-  - disability
+  - financial-hardship
 source:
   name: ssa-survivor-benefits-spouse-disabled.source.name
   link: ssa-survivor-benefits-spouse-disabled.source.link
