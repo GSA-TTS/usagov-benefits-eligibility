@@ -18,10 +18,6 @@ topLevelFilter:
     disableGroupKey: applicant-military
     disableGroupWhen: [disability.topLevelFilter.disableGroupWhen]
 
-  - label: disability.topLevelFilter.label2
-    criteriaKey: applicant_lost_a_family_member
-    disableGroupKey: applicant-relationships
-    disableGroupWhen: [disability.topLevelFilter.disableGroupWhen1]
 
 eligibilityCriteria:
   - label: disability.eligibilityCriteria.label
@@ -43,13 +39,6 @@ eligibilityCriteria:
       - applicant_service_status
       - applicant_service_disability
 
-  - label: disability.eligibilityCriteria.label2
-    description: disability.eligibilityCriteria.description2
-    criteriaGroupKey: applicant-relationships
-    criteriaKeys:
-      - applicant_relationship
-      - deceased_paid_into_SS
-      - deceased_served_in_active_military
 
 relatedKeys:
   - death-of-a-loved-one
