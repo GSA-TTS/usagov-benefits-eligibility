@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - financial-hardship
   - disability
+  - retirement
 source:
   name: cms-medicare-savings-programs.source.name
   link: cms-medicare-savings-programs.source.link
