@@ -7,12 +7,9 @@
   "disability.topLevelFilter.label": "Start here",
   "disability.topLevelFilter.label1": "",
   "disability.topLevelFilter.disableGroupWhen": "no",
-  "disability.topLevelFilter.label2": "",
-  "disability.topLevelFilter.disableGroupWhen1": "no",
   "disability.eligibilityCriteria.label": "About you",
   "disability.eligibilityCriteria.description": "",
   "disability.eligibilityCriteria.label1": "About your military service",
   "disability.eligibilityCriteria.description1": "",
-  "disability.eligibilityCriteria.label2": "About the person who died",
-  "disability.eligibilityCriteria.description2": ""
+
 }
