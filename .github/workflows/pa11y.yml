@@ -21,19 +21,22 @@ jobs:
 
       - name: Checkout source
         uses: actions/checkout@v3
+  
+      - name: Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
 
-      - name: Use Node.js
+      - name: Use Node.js (.nvmrc)
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
 
       - name: Install dependencies
         run: npm ci
 
       - name: Test accessibility with pa11y
         run: |
-          which google-chrome \
-          && npm run dev & \
+          npm run dev & \
           timeout 120s \
             sh -c 'until nc -z localhost 3000; do sleep 1; done' \
           && sleep 120 \
