@@ -5,6 +5,7 @@ tags:
   - healthcare
 lifeEvents:
   - disability
+  - financial-hardship
 source:
   name: cms-medicare-disability.source.name
   link: cms-medicare-disability.source.link
