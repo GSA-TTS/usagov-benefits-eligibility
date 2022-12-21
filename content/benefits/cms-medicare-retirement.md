@@ -5,6 +5,7 @@ tags:
   - healthcare
 lifeEvents:
   - retirement
+  - financial-hardship
 source:
   name: cms-medicare-retirement.source.name
   link: cms-medicare-retirement.source.link
