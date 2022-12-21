@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - disability
   - military-service
+  - financial-hardship
 source:
   name: va-disability-compensation.source.name
   link: va-disability-compensation.source.link
