@@ -5,6 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - death-of-a-loved-one
+  - financial-hardship
 source:
   name: ssa-lump-sum-death-benefit.source.name
   link: ssa-lump-sum-death-benefit.source.link
