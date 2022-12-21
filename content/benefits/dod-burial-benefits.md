@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: dod-burial-benefits.source.name
   link: dod-burial-benefits.source.link
