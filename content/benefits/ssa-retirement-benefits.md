@@ -5,6 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - retirement
+  - financial-hardship
 source:
   name: ssa-retirement-benefits.source.name
   link: ssa-retirement-benefits.source.link
