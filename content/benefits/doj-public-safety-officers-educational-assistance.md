@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - school-and-education
+  - financial-hardship
 source:
   name: doj-public-safety-officers-educational-assistance.source.name
   link: doj-public-safety-officers-educational-assistance.source.link
