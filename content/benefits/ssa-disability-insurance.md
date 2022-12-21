@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - disability
   - retirement
+  - financial-hardship
 source:
   name: ssa-disability-insurance.source.name
   link: ssa-disability-insurance.source.link
