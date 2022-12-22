@@ -5,6 +5,9 @@
   "financial-hardship.secondaryHeadline": "Government assistance when experiencing financial hardship",
   "financial-hardship.eligibilityCriteriaDescription": "For the most accurate results, select the options that best describe your or the person applying for benefits situation. The list of benefits will reorder to prioritize the benefits you are most likely eligible for.",
   "financial-hardship.topLevelFilter.label": "Start here",
+  "financial-hardship.topLevelFilter.label1": "",
   "financial-hardship.eligibilityCriteria.label": "About you",
-  "financial-hardship.eligibilityCriteria.description": ""
+  "financial-hardship.eligibilityCriteria.description": "",
+  "financial-hardship.eligibilityCriteria.label1": "About your military service",
+  "financial-hardship.eligibilityCriteria.description1": ""
 }
