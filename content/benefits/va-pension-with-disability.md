@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - disability
   - military-service
+  - financial-hardship
 source:
   name: va-pension-with-disability.source.name
   link: va-pension-with-disability.source.link
