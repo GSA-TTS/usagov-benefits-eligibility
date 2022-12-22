@@ -7,6 +7,7 @@ lifeEvents:
   - school-and-education
   - military-service
   - disability
+  - financial-hardship
 source:
   name: va-veteran-readiness-and-employment.source.name
   link: va-veteran-readiness-and-employment.source.link
