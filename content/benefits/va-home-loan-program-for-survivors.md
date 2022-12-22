@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: va-home-loan-program-for-survivors.source.name
   link: va-home-loan-program-for-survivors.source.link
