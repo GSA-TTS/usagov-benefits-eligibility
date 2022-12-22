@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - retirement
   - military-service
+  - financial-hardship
 source:
   name: va-pension.source.name
   link: va-pension.source.link
