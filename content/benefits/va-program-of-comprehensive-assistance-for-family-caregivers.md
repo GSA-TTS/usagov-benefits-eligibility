@@ -5,6 +5,7 @@ tags:
   - healthcare
 lifeEvents:
   - military-service
+  - financial-hardship
 source:
   name: va-program-of-comprehensive-assistance-for-family-caregivers.source.name
   link: va-program-of-comprehensive-assistance-for-family-caregivers.source.link
