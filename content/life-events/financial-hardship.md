@@ -17,6 +17,11 @@ topLevelFilter:
     criteriaKey: applicant_served_in_active_military
     disableGroupKey: applicant-military
     disableGroupWhen: [financial-hardship.topLevelFilter.disableGroupWhen]
+        
+  - label: financial-hardship.topLevelFilter.label2
+    criteriaKey: applicant_lost_a_family_member
+    disableGroupKey: applicant-relationships
+    disableGroupWhen: [financial-hardship.topLevelFilter.disableGroupWhen1]
 
 eligibilityCriteria:
   - label: financial-hardship.eligibilityCriteria.label
@@ -36,11 +41,19 @@ eligibilityCriteria:
     description: financial-hardship.eligibilityCriteria.description1
     criteriaGroupKey: applicant-military
     criteriaKeys:
-      - applicant_service_disability
       - applicant_service_status
+      - applicant_service_disability
 
+  - label: financial-hardship.eligibilityCriteria.label2
+    description: financial-hardship.eligibilityCriteria.description2
+    criteriaGroupKey: applicant-relationships
+    criteriaKeys:
+      - applicant_relationship
+      - deceased_public_safety_officer
+      - deceased_served_in_active_military
+      - deceased_service_status
 
 relatedKeys:
-  - death-of-a-loved-one
+  - disability
   - retirement
 ---
