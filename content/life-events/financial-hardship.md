@@ -12,6 +12,11 @@ topLevelFilter:
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
+    
+  - label: financial-hardship.topLevelFilter.label1
+    criteriaKey: applicant_served_in_active_military
+    disableGroupKey: applicant-military
+    disableGroupWhen: [financial-hardship.topLevelFilter.disableGroupWhen]
 
 eligibilityCriteria:
   - label: financial-hardship.eligibilityCriteria.label
@@ -26,4 +31,16 @@ eligibilityCriteria:
       - applicant_care_for_child
       - applicant_marital_status
       - applicant_citizen_status
+
+  - label: financial-hardship.eligibilityCriteria.label1
+    description: financial-hardship.eligibilityCriteria.description1
+    criteriaGroupKey: applicant-military
+    criteriaKeys:
+      - applicant_service_disability
+      - applicant_service_status
+
+
+relatedKeys:
+  - death-of-a-loved-one
+  - retirement
 ---
