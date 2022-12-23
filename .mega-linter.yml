@@ -22,3 +22,9 @@ DISABLE_ERRORS: true
 
 # use prettier for JavaScript code formatting
 JAVASCRIPT_DEFAULT_STYLE: prettier
+
+# v6 supports SARIF reporters
+SARIF_REPORTER: true
+
+# only scan the files in This commit, not the entire history of the repo
+REPOSITORY_GITLEAKS_ARGUMENTS: --no-git

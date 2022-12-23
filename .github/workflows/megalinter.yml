@@ -81,3 +81,15 @@ jobs:
         with:
           branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
           commit_message: "[MegaLinter] Apply linters fixes"
+
+      - name: Check to see if the SARIF a was generated
+        id: sarif_file_exists
+        uses: andstor/file-existence-action@v2
+        with:
+          files: "megalinter-reports/megalinter-report.sarif"
+
+      - name: Upload MegaLinter scan results to GitHub Security tab
+        if: steps.sarif_file_exists.outputs.files_exists == 'true'
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: "megalinter-reports/megalinter-report.sarif"
