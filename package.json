@@ -73,7 +73,7 @@
     "tmpl": ">=1.0.5",
     "uswds": "^2.13.1",
     "vue-axe": "^2.4.4",
-    "vue-jest": "^3.0.7"
+    "vue-jest": "^4.0.1"
   },
   "browserslist": [
     ">0.2%",
