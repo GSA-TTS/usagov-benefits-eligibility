@@ -187,9 +187,7 @@ export default {
   },
 }
 </script>
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 // Primary Colors
 $dark-blue: #11385b; //NOTE not currently in our code
 $aqua-blue: #02bfe7; //highlights action items and key areas (buttons, borders, etc)
@@ -217,5 +215,9 @@ $AZ-button-disabled: #859cba;
   padding: 5px 20px 5px 20px;
   background: $dark-blue;
   font-size: 90%;
+}
+
+.usa-nav__primary button:hover {
+  background-color: #1a4480;
 }
 </style>
