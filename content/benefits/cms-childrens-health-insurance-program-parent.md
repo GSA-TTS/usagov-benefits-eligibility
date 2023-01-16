@@ -11,7 +11,7 @@ source:
   link: cms-childrens-health-insurance-program-parent.source.link
   isEnglish: cms-childrens-health-insurance-program-parent.source.linkIsEnglish
 
-summary: cms-medicare-savings-programs.summary
+summary: cms-childrens-health-insurance-program-parent.summary
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
