@@ -29,13 +29,13 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_paid_into_SS
+      - applicant_marital_status
       - applicant_income
       - applicant_high-school_diploma
       - applicant_disability
       - applicant_ability_to_work
       - applicant_child_spouse_SS
       - applicant_care_for_child
-      - applicant_marital_status
       - applicant_citizen_status
 
   - label: financial-hardship.eligibilityCriteria.label1
@@ -51,6 +51,7 @@ eligibilityCriteria:
     criteriaKeys:
       - deceased_paid_into_SS
       - deceased_public_safety_officer
+      - deceased_served_in_active_military
       - applicant_family_of_service_member
       - applicant_relationship
       - deceased_service_status
