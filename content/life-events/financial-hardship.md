@@ -49,6 +49,7 @@ eligibilityCriteria:
     description: financial-hardship.eligibilityCriteria.description2
     criteriaGroupKey: applicant-relationships
     criteriaKeys:
+      - deceased_date_of_death
       - deceased_paid_into_SS
       - deceased_public_safety_officer
       - deceased_served_in_active_military
@@ -57,7 +58,6 @@ eligibilityCriteria:
       - deceased_service_status
       - deceased_death_circumstance
       - deceased_grave_headstone
-      - deceased_date_of_death
 
 
 relatedKeys:
