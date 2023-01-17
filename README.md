@@ -45,7 +45,8 @@ $ npm run federalist:local
 $ npm run test
 $ npm run test:watch
 
-# you may want to look at additional scripts available in the package.json
+# you may want to look at additional scripts available in the
+# package.json
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
