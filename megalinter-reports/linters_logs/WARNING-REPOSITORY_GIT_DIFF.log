@@ -1,0 +1,29 @@
+Results of git_diff linter (version 2.36.3)
+See documentation on https://megalinter.io/6.18.0/descriptors/repository_git_diff/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /github/workspace
+Linter raw log:
+megalinter-reports/megalinter.log:285: trailing whitespace.
++		7  | 
+megalinter-reports/megalinter.log:287: trailing whitespace.
++		9  | 
+megalinter-reports/megalinter.log:294: trailing whitespace.
++		16 | 
+megalinter-reports/megalinter.log:296: trailing whitespace.
++		18 | 
+megalinter-reports/megalinter.log:298: trailing whitespace.
++		20 | 
+megalinter-reports/megalinter.log:300: trailing whitespace.
++		22 | 
+megalinter-reports/megalinter.log:303: trailing whitespace.
++		25 | 
+megalinter-reports/megalinter.log:305: trailing whitespace.
++		27 | 
+megalinter-reports/megalinter.log:307: trailing whitespace.
++		29 | 
+megalinter-reports/megalinter.log:309: trailing whitespace.
++		31 | 
+megalinter-reports/megalinter.log:314: trailing whitespace.
++		36 | 
+
