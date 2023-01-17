@@ -1,7 +1,7 @@
 {
-  "recommendations": [
-    "Bridgecrew.checkov",
-    "AquaSecurityOfficial.trivy-vulnerability-scanner",
-    "esbenp.prettier-vscode"
-  ]
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "Bridgecrew.checkov",
+        "AquaSecurityOfficial.trivy-vulnerability-scanner"
+    ]
 }
