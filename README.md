@@ -57,7 +57,7 @@ If one does not wish to use / install the build requirements on their
 local system, an alternative would be to use Docker. Docker is a
 containerization tool that allows for fresh, repeatable builds on
 a clean system. The artifact from a Docker build is an "image";
-when that image is run, it starts a "container."
+when that image is run, it starts a Docker "container."
 
 ### Building with Docker
 
