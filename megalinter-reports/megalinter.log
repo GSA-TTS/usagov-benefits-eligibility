@@ -11,7 +11,7 @@ The MegaLinter documentation can be found at:
 ::group::MegaLinter initialization (expand for details)
 GITHUB_REPOSITORY: GSA/usagov-benefits-eligibility
 GITHUB_REF: refs/heads/westest
-GITHUB_RUN_ID: 3943453700
+GITHUB_RUN_ID: 3943465011
 
 
 [Activation] REPOSITORY_GOODCHECK has been set inactive, as none of these files has been found: ['goodcheck.yml']
@@ -112,25 +112,25 @@ Kept [57] files on [57] found files
 | YAML         | v8r                      | .yml|.yaml          | 2              | no         |
 +--------------+--------------------------+---------------------+----------------+------------+
 ::endgroup::
-::group::[32m✅ Linted [YAML] files with [prettier] successfully - (0.42s)[0m (expand for details)
+::group::[32m✅ Linted [YAML] files with [prettier] successfully - (0.44s)[0m (expand for details)
 - Using [prettier v2.8.1] https://megalinter.io/6.18.0/descriptors/yaml_prettier
 - MegaLinter key: [YAML_PRETTIER]
 - Rules config: identified by [prettier]
 - Number of files analyzed: [2]
 ::endgroup::
-::group::[32m✅ Linted [MARKDOWN] files with [markdownlint] successfully - (0.32s)[0m (expand for details)
+::group::[32m✅ Linted [MARKDOWN] files with [markdownlint] successfully - (0.31s)[0m (expand for details)
 - Using [markdownlint v0.33.0] https://megalinter.io/6.18.0/descriptors/markdown_markdownlint
 - MegaLinter key: [MARKDOWN_MARKDOWNLINT]
 - Rules config: [.markdownlint.json]
 - Number of files analyzed: [2]
 ::endgroup::
-::group::[32m✅ Linted [MARKDOWN] files with [markdown-table-formatter] successfully - (0.2s)[0m (expand for details)
+::group::[32m✅ Linted [MARKDOWN] files with [markdown-table-formatter] successfully - (0.24s)[0m (expand for details)
 - Using [markdown-table-formatter v1.4.0] https://megalinter.io/6.18.0/descriptors/markdown_markdown_table_formatter
 - MegaLinter key: [MARKDOWN_MARKDOWN_TABLE_FORMATTER]
 - Rules config: identified by [markdown-table-formatter]
 - Number of files analyzed: [2]
 ::endgroup::
-::group::[32m✅ Linted [JSON] files with [eslint-plugin-jsonc] successfully - (0.77s)[0m (expand for details)
+::group::[32m✅ Linted [JSON] files with [eslint-plugin-jsonc] successfully - (0.76s)[0m (expand for details)
 - Using [eslint-plugin-jsonc v2.6.0] https://megalinter.io/6.18.0/descriptors/json_eslint_plugin_jsonc
 - MegaLinter key: [JSON_ESLINT_PLUGIN_JSONC]
 - Rules config: [.eslintrc-json.json]
@@ -142,13 +142,13 @@ Kept [57] files on [57] found files
 - Rules config: identified by [prettier]
 - Number of files analyzed: [26]
 ::endgroup::
-::group::[32m✅ Linted [JSON] files with [v8r] successfully - (4.37s)[0m (expand for details)
+::group::[32m✅ Linted [JSON] files with [v8r] successfully - (4.27s)[0m (expand for details)
 - Using [v8r v0.13.1] https://megalinter.io/6.18.0/descriptors/json_v8r
 - MegaLinter key: [JSON_V8R]
 - Rules config: identified by [v8r]
 - Number of files analyzed: [26]
 ::endgroup::
-::group::[33m✅ Linted [REPOSITORY] files with [gitleaks]: Found 2 non blocking error(s) - (7.35s)[0m (expand for details)
+::group::[33m✅ Linted [REPOSITORY] files with [gitleaks]: Found 2 non blocking error(s) - (7.58s)[0m (expand for details)
 - Using [gitleaks v8.15.2] https://megalinter.io/6.18.0/descriptors/repository_gitleaks
 - MegaLinter key: [REPOSITORY_GITLEAKS]
 - Rules config: [.gitleaks.toml]
@@ -184,18 +184,18 @@ Email:       tzajicek@flexion.us
 Date:        2021-08-10T14:44:28Z
 Fingerprint: 06c6515b961047c8dc7109c98e04f25d79ada994:nuxt.config.js:generic-api-key:107
 
-[90m9:31PM[0m [32mINF[0m 2365 commits scanned.
-[90m9:31PM[0m [32mINF[0m scan completed in 7.32s
-[90m9:31PM[0m [31mWRN[0m leaks found: 2
+[90m9:33PM[0m [32mINF[0m 2366 commits scanned.
+[90m9:33PM[0m [32mINF[0m scan completed in 7.55s
+[90m9:33PM[0m [31mWRN[0m leaks found: 2
 
 ::endgroup::
-::group::[32m✅ Linted [YAML] files with [v8r] successfully - (1.25s)[0m (expand for details)
+::group::[32m✅ Linted [YAML] files with [v8r] successfully - (1.23s)[0m (expand for details)
 - Using [v8r v0.13.1] https://megalinter.io/6.18.0/descriptors/yaml_v8r
 - MegaLinter key: [YAML_V8R]
 - Rules config: identified by [v8r]
 - Number of files analyzed: [2]
 ::endgroup::
-::group::[33m✅ Linted [MARKDOWN] files with [markdown-link-check]: Found 2 non blocking error(s) - (15.31s)[0m (expand for details)
+::group::[33m✅ Linted [MARKDOWN] files with [markdown-link-check]: Found 2 non blocking error(s) - (15.35s)[0m (expand for details)
 - Using [markdown-link-check v3.10.3] https://megalinter.io/6.18.0/descriptors/markdown_markdown_link_check
 - MegaLinter key: [MARKDOWN_MARKDOWN_LINK_CHECK]
 - Rules config: [.markdown-link-check.json]
@@ -277,19 +277,19 @@ FILE: /github/workspace/megalinter-reports/updated_sources/README.md
   [✖] (%3Chttps://nuxtjs.org%3E) → Status: 400
 
 ::endgroup::
-::group::[33m✅ Linted [REPOSITORY] files with [trivy]: Found 1 non blocking error(s) - (6.24s)[0m (expand for details)
+::group::[33m✅ Linted [REPOSITORY] files with [trivy]: Found 1 non blocking error(s) - (6.28s)[0m (expand for details)
 - Using [trivy v0.35.0] https://megalinter.io/6.18.0/descriptors/repository_trivy
 - MegaLinter key: [REPOSITORY_TRIVY]
 - Rules config: identified by [trivy]
 --Error detail:
-2023-01-17T21:31:40.117Z	[34mINFO[0m	Need to update DB
-2023-01-17T21:31:40.117Z	[34mINFO[0m	DB Repository: ghcr.io/aquasecurity/trivy-db
-2023-01-17T21:31:40.117Z	[34mINFO[0m	Downloading DB...
-23.03 MiB / 36.05 MiB [-------------------------------------->______________________] 63.87% ? p/s ?36.05 MiB / 36.05 MiB [----------------------------------------------------------->] 100.00% ? p/s ?36.05 MiB / 36.05 MiB [----------------------------------------------------------->] 100.00% ? p/s ?36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 21.70 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 21.70 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 21.70 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 20.30 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 20.30 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 20.30 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 18.99 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 18.99 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 18.99 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 17.77 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 17.77 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 17.77 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 16.62 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 16.62 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [-------------------------------------------------] 100.00% 10.68 MiB p/s 3.6s2023-01-17T21:31:44.439Z	[34mINFO[0m	Vulnerability scanning is enabled
-2023-01-17T21:31:44.439Z	[34mINFO[0m	Misconfiguration scanning is enabled
-2023-01-17T21:31:45.977Z	[34mINFO[0m	Number of language-specific files: 1
-2023-01-17T21:31:45.977Z	[34mINFO[0m	Detecting npm vulnerabilities...
-2023-01-17T21:31:45.991Z	[34mINFO[0m	Detected config files: 1
+2023-01-17T21:33:17.962Z	[34mINFO[0m	Need to update DB
+2023-01-17T21:33:17.962Z	[34mINFO[0m	DB Repository: ghcr.io/aquasecurity/trivy-db
+2023-01-17T21:33:17.962Z	[34mINFO[0m	Downloading DB...
+27.53 MiB / 36.05 MiB [---------------------------------------------->______________] 76.35% ? p/s ?36.05 MiB / 36.05 MiB [----------------------------------------------------------->] 100.00% ? p/s ?36.05 MiB / 36.05 MiB [----------------------------------------------------------->] 100.00% ? p/s ?36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 14.22 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 14.22 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 14.22 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 13.30 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 13.30 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 13.30 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 12.44 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 12.44 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 12.44 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 11.64 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 11.64 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 11.64 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 10.89 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 10.89 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [---------------------------------------------->] 100.00% 10.89 MiB p/s ETA 0s36.05 MiB / 36.05 MiB [-------------------------------------------------] 100.00% 10.57 MiB p/s 3.6s2023-01-17T21:33:22.266Z	[34mINFO[0m	Vulnerability scanning is enabled
+2023-01-17T21:33:22.266Z	[34mINFO[0m	Misconfiguration scanning is enabled
+2023-01-17T21:33:23.781Z	[34mINFO[0m	Number of language-specific files: 1
+2023-01-17T21:33:23.781Z	[34mINFO[0m	Detecting npm vulnerabilities...
+2023-01-17T21:33:23.829Z	[34mINFO[0m	Detected config files: 1
 
 package-lock.json (npm)
 =======================
@@ -374,13 +374,13 @@ See https://avd.aquasec.com/misconfig/ds002
 1 errors found[33;0m
 
 ::endgroup::
-::group::[32m✅ Linted [JSON] files with [jsonlint] successfully - (0.2s)[0m (expand for details)
+::group::[32m✅ Linted [JSON] files with [jsonlint] successfully - (0.21s)[0m (expand for details)
 - Using [jsonlint v11.7.0] https://megalinter.io/6.18.0/descriptors/json_jsonlint
 - MegaLinter key: [JSON_JSONLINT]
 - Rules config: identified by [jsonlint]
 - Number of files analyzed: [26]
 ::endgroup::
-::group::[33m✅ Linted [REPOSITORY] files with [checkov]: Found 1 non blocking error(s) - (9.62s)[0m (expand for details)
+::group::[33m✅ Linted [REPOSITORY] files with [checkov]: Found 1 non blocking error(s) - (9.9s)[0m (expand for details)
 - Using [checkov v2.1.244] https://megalinter.io/6.18.0/descriptors/repository_checkov
 - MegaLinter key: [REPOSITORY_CHECKOV]
 - Rules config: [.checkov.yml]
@@ -454,12 +454,12 @@ Passed checks: 185, Failed checks: 0, Skipped checks: 0
 - Rules config: [.yamllint.yml]
 - Number of files analyzed: [2]
 ::endgroup::
-::group::[32m✅ Linted [REPOSITORY] files with [git_diff] successfully - (0.02s)[0m (expand for details)
+::group::[32m✅ Linted [REPOSITORY] files with [git_diff] successfully - (0.03s)[0m (expand for details)
 - Using [git_diff v2.36.3] https://megalinter.io/6.18.0/descriptors/repository_git_diff
 - MegaLinter key: [REPOSITORY_GIT_DIFF]
 - Rules config: identified by [git_diff]
 ::endgroup::
-::group::[32m✅ Linted [REPOSITORY] files with [secretlint] successfully - (1.23s)[0m (expand for details)
+::group::[32m✅ Linted [REPOSITORY] files with [secretlint] successfully - (1.21s)[0m (expand for details)
 - Using [secretlint v6.0.2] https://megalinter.io/6.18.0/descriptors/repository_secretlint
 - MegaLinter key: [REPOSITORY_SECRETLINT]
 - Rules config: [.secretlintrc.json]
@@ -470,25 +470,25 @@ Passed checks: 185, Failed checks: 0, Skipped checks: 0
 | Descriptor     | Linter                   | Mode          | Files | Fixed | Errors | Elapsed time |
 +----------------+--------------------------+---------------+-------+-------+--------+--------------+
 | ◬ EDITORCONFIG | editorconfig-checker     | list_of_files |    57 |       |      1 |        0.03s |
-| ✅ JSON        | eslint-plugin-jsonc      | list_of_files |    26 |     0 |      0 |        0.77s |
-| ✅ JSON        | jsonlint                 | list_of_files |    26 |       |      0 |         0.2s |
+| ✅ JSON        | eslint-plugin-jsonc      | list_of_files |    26 |     0 |      0 |        0.76s |
+| ✅ JSON        | jsonlint                 | list_of_files |    26 |       |      0 |        0.21s |
 | ✅ JSON        | npm-package-json-lint    | project       |   n/a |       |      0 |        0.45s |
 | ✅ JSON        | prettier                 | list_of_files |    26 |    24 |      0 |        0.95s |
-| ✅ JSON        | v8r                      | list_of_files |    26 |       |      0 |        4.37s |
-| ✅ MARKDOWN    | markdownlint             | list_of_files |     2 |     0 |      0 |        0.32s |
-| ◬ MARKDOWN     | markdown-link-check      | list_of_files |     2 |       |      2 |       15.31s |
-| ✅ MARKDOWN    | markdown-table-formatter | list_of_files |     2 |     0 |      0 |         0.2s |
-| ◬ REPOSITORY   | checkov                  | project       |   n/a |       |      1 |        9.62s |
-| ◬ REPOSITORY   | gitleaks                 | project       |   n/a |       |      2 |        7.35s |
-| ✅ REPOSITORY  | git_diff                 | project       |   n/a |       |      0 |        0.02s |
-| ✅ REPOSITORY  | secretlint               | project       |   n/a |       |      0 |        1.23s |
-| ◬ REPOSITORY   | trivy                    | project       |   n/a |       |      1 |        6.24s |
-| ✅ YAML        | prettier                 | list_of_files |     2 |     1 |      0 |        0.42s |
-| ✅ YAML        | v8r                      | list_of_files |     2 |       |      0 |        1.25s |
+| ✅ JSON        | v8r                      | list_of_files |    26 |       |      0 |        4.27s |
+| ✅ MARKDOWN    | markdownlint             | list_of_files |     2 |     0 |      0 |        0.31s |
+| ◬ MARKDOWN     | markdown-link-check      | list_of_files |     2 |       |      2 |       15.35s |
+| ✅ MARKDOWN    | markdown-table-formatter | list_of_files |     2 |     0 |      0 |        0.24s |
+| ◬ REPOSITORY   | checkov                  | project       |   n/a |       |      1 |         9.9s |
+| ◬ REPOSITORY   | gitleaks                 | project       |   n/a |       |      2 |        7.58s |
+| ✅ REPOSITORY  | git_diff                 | project       |   n/a |       |      0 |        0.03s |
+| ✅ REPOSITORY  | secretlint               | project       |   n/a |       |      0 |        1.21s |
+| ◬ REPOSITORY   | trivy                    | project       |   n/a |       |      1 |        6.28s |
+| ✅ YAML        | prettier                 | list_of_files |     2 |     1 |      0 |        0.44s |
+| ✅ YAML        | v8r                      | list_of_files |     2 |       |      0 |        1.23s |
 | ✅ YAML        | yamllint                 | list_of_files |     2 |       |      0 |        0.19s |
 +----------------+--------------------------+---------------+-------+-------+--------+--------------+
 
 [GitHub Comment Reporter] Posted summary as comment on GSA/usagov-benefits-eligibility #PR605
-[Updated Sources Reporter] copied 5 fixed source files in folder /github/workspace/megalinter-reports/updated_sources.
+[Updated Sources Reporter] copied 6 fixed source files in folder /github/workspace/megalinter-reports/updated_sources.
 Download it from artifacts then copy-paste it in your local repo to apply linters updates
 [33m◬ Successfully linted all files, but with ignored errors[0m
