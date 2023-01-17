@@ -22,7 +22,7 @@ FILE: /github/workspace/README.md
   [✓] https://jestjs.io/
   [✓] https://federalistapp.18f.gov/
   [✓] https://federalist.18f.gov/documentation/
-  [✓] https://federalistapp.18f.gov/sites/983/builds
+  [✖] https://federalistapp.18f.gov/sites/983/builds
   [✖] (%3Chttps://nuxtjs.org%3E)
   [✓] https://vuejs.org/
   [✓] https://designsystem.digital.gov/
@@ -39,7 +39,8 @@ FILE: /github/workspace/README.md
 
   30 links checked.
 
-  ERROR: 1 dead links found!
+  ERROR: 2 dead links found!
+  [✖] https://federalistapp.18f.gov/sites/983/builds → Status: 0
   [✖] (%3Chttps://nuxtjs.org%3E) → Status: 400
 
 FILE: /github/workspace/megalinter-reports/updated_sources/README.md
