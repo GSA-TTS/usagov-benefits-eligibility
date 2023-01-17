@@ -452,6 +452,3 @@ Passed checks: 185, Failed checks: 0, Skipped checks: 0
 +----------------+--------------------------+---------------+-------+-------+--------+--------------+
 
 [GitHub Comment Reporter] No pull request has been found, so no comment has been posted
-[Updated Sources Reporter] copied 6 fixed source files in folder /github/workspace/megalinter-reports/updated_sources.
-Download it from artifacts then copy-paste it in your local repo to apply linters updates
-[33m◬ Successfully linted all files, but with ignored errors[0m
