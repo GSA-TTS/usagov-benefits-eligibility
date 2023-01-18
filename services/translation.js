@@ -51,10 +51,10 @@ function buildResponseArray(criteriaFile) {
   const responseArray = []
   for (const index in criteriaFile) {
     const object = criteriaFile[index]
-    if((object.values.match(/;/g) || []).length > 1) {
+    if ((object.values.match(/;/g) || []).length > 1) {
       const valuesArr = object.values.split(";")
       for (const value of valuesArr) {
-        if(value !== "") {
+        if (value !== "") {
           responseArray.push(value)
         }
       }
