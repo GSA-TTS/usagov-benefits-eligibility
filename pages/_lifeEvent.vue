@@ -206,7 +206,7 @@
 <script>
 import _ from "lodash"
 import { mapGetters, mapState } from "vuex"
-import { tObj, tCsv } from "~/services/translation"
+import { tObj, tCsv, bRAr } from "~/services/translation"
 
 export default {
   name: "LifeEvent",
@@ -247,7 +247,10 @@ export default {
       })
       .sortBy("title")
       .fetch()
-    const allEligibilityCriteria = tCsv.call(this, await this.$content("criteria").fetch()).body
+    const criteriaFile = (await this.$content("criteria").fetch()).body
+    const responseArray = bRAr.call(this, criteriaFile)
+    const allEligibilityCriteria = tCsv.call(this, criteriaFile)
+    await this.$store.dispatch("criteria/populateResponseHash", responseArray)
     await this.$store.dispatch("criteria/populate", allEligibilityCriteria)
 
     lifeEvent.related = []

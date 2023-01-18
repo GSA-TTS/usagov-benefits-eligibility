@@ -31,9 +31,9 @@ function translateObject(object, delimeter = "") {
 }
 
 function translateCsv(csvRows) {
-  for (let i = 0; i < csvRows.body.length; i++) {
-    const newRow = csvRows.body[i]
-    newRow.label = this.$t(newRow.criteria.criteriaKey.label)
+  for (let i = 0; i < csvRows.length; i++) {
+    const newRow = csvRows[i]
+    newRow.label = this.$t(newRow.criteriaKey.label)
     if (newRow.values.includes(";")) {
       newRow.values = newRow.values.split(";")
       let newRowValueString = ""
@@ -42,12 +42,29 @@ function translateCsv(csvRows) {
       }
       newRow.values = newRowValueString.slice(0, -4)
     }
-    csvRows.body[i] = newRow
+    csvRows[i] = newRow
   }
   return csvRows
+}
+
+function buildResponseArray(criteriaFile) {
+  const responseArray = []
+  for (const index in criteriaFile) {
+    const object = criteriaFile[index]
+    if((object.values.match(/;/g) || []).length > 1) {
+      const valuesArr = object.values.split(";")
+      for (const value of valuesArr) {
+        if(value !== "") {
+          responseArray.push(value)
+        }
+      }
+    }
+  }
+  return responseArray
 }
 
 module.exports = {
   tObj: translateObject,
   tCsv: translateCsv,
+  bRAr: buildResponseArray,
 }

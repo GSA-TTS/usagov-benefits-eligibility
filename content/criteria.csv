@@ -1,4 +1,4 @@
-criteriaKey,criteria.criteriaKey.label,type,values,
+criteriaKey,label,type,values,
 deceased-basics,criteria.deceased-basics.label,,,
 deceased_paid_into_SS,criteria.deceased_paid_into_SS.label,boolean,TRUE,
 deceased_died_of_COVID,criteria.deceased_died_of_COVID.label,boolean,TRUE,

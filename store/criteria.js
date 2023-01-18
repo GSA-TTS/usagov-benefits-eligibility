@@ -4,6 +4,7 @@ import { validateDateAgainstAcceptance } from "~/services/dateHelper"
 
 export const state = () => ({
   eligibilityCriteria: {},
+  responsesHash: {},
   hashToCriteria: {},
   active: false,
 })
@@ -28,6 +29,12 @@ export const mutations = {
 
     const hashedData = getters.getHashResponses(theState)
     localStorage.setItem("responseData", JSON.stringify(hashedData))
+  },
+
+  populateResponseHash(theState, { responseArr }) {
+    for (const response in responseArr) {
+      Vue.set(theState.responsesHash, response, responseArr[response])
+    }
   },
 
   populateCriterion(theState, { criterionArray }) {
@@ -160,6 +167,18 @@ export const getters = {
 }
 
 export const actions = {
+  async populateResponseHash({ commit, _theState }, responseArray) {
+    const newArr = {}
+    for (let i = 0; i < responseArray.length; i++) {
+      const response = responseArray[i]
+      const en = this.$i18n.t(response, 'en')
+      const es = this.$i18n.t(response, 'es')
+      const tKey = response
+      const hash = await stringToHash(tKey)
+      newArr[hash] = { en, es, tKey }
+    }
+    commit("populateResponseHash", { responseArr: newArr })
+  },
   async populate({ commit, _theState }, criteriaArray = []) {
     for (const criterion of criteriaArray) {
       const criteriaKey = criterion.criteriaKey
