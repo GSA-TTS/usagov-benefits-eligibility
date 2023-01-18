@@ -29,7 +29,7 @@ yarn-error.log*
 dist
 _site
 
-# USWDS 
+# USWDS
 /assets/fonts
 /assets/img
 /assets/js
@@ -44,3 +44,7 @@ report/
 # OWASP ZAP reports
 /report.md
 /zap.yaml
+
+# don't import the Megalinter reports
+megalinter-reports/
+report/
