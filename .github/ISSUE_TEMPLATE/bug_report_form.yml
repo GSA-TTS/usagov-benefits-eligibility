@@ -1,0 +1,48 @@
+---
+name: Bug Report
+description: Use this form to create a new Bug Report
+labels: ["bug", "needs refinement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Introduction
+
+  - type: markdown
+    attributes:
+      value: >
+        This form will guide you through creating a new Bug Report.
+
+        Bug Reports are used to report when something isn't working as-expected given the current
+        state of the project.  Bug Reports are not for requesting new stuff that isn't supposed
+        to be a part of the project as it is -- they're not for Feature Requests.  For those,
+        consider a User Story.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Required fields
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What's expected
+      description: "This is what you expected to happen."
+    validations:
+      required: true
+
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+      description: "This is what you actually saw happen, particularly where it was different than what you expected."
+    validations:
+      required: true
+
+  - type: textarea
+    id: replicate
+    attributes:
+      label: How to replicate
+      description: "Please tell us how we can replicate the problem.  A step-by-step walk-through is most helpful."
+    validations:
+      required: true
