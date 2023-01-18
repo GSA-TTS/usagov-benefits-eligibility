@@ -35,7 +35,7 @@ Email:       tzajicek@flexion.us
 Date:        2021-08-10T14:44:28Z
 Fingerprint: 06c6515b961047c8dc7109c98e04f25d79ada994:nuxt.config.js:generic-api-key:107
 
-[90m5:38AM[0m [32mINF[0m 2666 commits scanned.
-[90m5:38AM[0m [32mINF[0m scan completed in 8.89s
-[90m5:38AM[0m [31mWRN[0m leaks found: 2
+[90m5:40AM[0m [32mINF[0m 2667 commits scanned.
+[90m5:40AM[0m [32mINF[0m scan completed in 10.3s
+[90m5:40AM[0m [31mWRN[0m leaks found: 2
 
