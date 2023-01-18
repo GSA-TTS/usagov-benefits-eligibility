@@ -4,14 +4,14 @@ See documentation on https://megalinter.io/6.18.0/descriptors/repository_trivy/
 
 ❌ [ERROR] for workspace /github/workspace
 Linter raw log:
-2023-01-18T01:35:21.379Z	[34mINFO[0m	Need to update DB
-2023-01-18T01:35:21.379Z	[34mINFO[0m	DB Repository: ghcr.io/aquasecurity/trivy-db
-2023-01-18T01:35:21.379Z	[34mINFO[0m	Downloading DB...
-19.79 MiB / 36.09 MiB [--------------------------------->___________________________] 54.85% ? p/s ?36.09 MiB / 36.09 MiB [----------------------------------------------------------->] 100.00% ? p/s ?36.09 MiB / 36.09 MiB [----------------------------------------------------------->] 100.00% ? p/s ?36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 27.14 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 27.14 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 27.14 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 25.39 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 25.39 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 25.39 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [-------------------------------------------------] 100.00% 21.84 MiB p/s 1.9s2023-01-18T01:35:24.176Z	[34mINFO[0m	Vulnerability scanning is enabled
-2023-01-18T01:35:24.176Z	[34mINFO[0m	Misconfiguration scanning is enabled
-2023-01-18T01:35:25.902Z	[34mINFO[0m	Number of language-specific files: 1
-2023-01-18T01:35:25.902Z	[34mINFO[0m	Detecting npm vulnerabilities...
-2023-01-18T01:35:25.920Z	[34mINFO[0m	Detected config files: 1
+2023-01-18T01:36:55.419Z	[34mINFO[0m	Need to update DB
+2023-01-18T01:36:55.419Z	[34mINFO[0m	DB Repository: ghcr.io/aquasecurity/trivy-db
+2023-01-18T01:36:55.419Z	[34mINFO[0m	Downloading DB...
+26.74 MiB / 36.09 MiB [--------------------------------------------->_______________] 74.11% ? p/s ?36.09 MiB / 36.09 MiB [----------------------------------------------------------->] 100.00% ? p/s ?36.09 MiB / 36.09 MiB [----------------------------------------------------------->] 100.00% ? p/s ?36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 15.60 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 15.60 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 15.60 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 14.59 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [---------------------------------------------->] 100.00% 14.59 MiB p/s ETA 0s36.09 MiB / 36.09 MiB [-------------------------------------------------] 100.00% 24.70 MiB p/s 1.7s2023-01-18T01:36:57.466Z	[34mINFO[0m	Vulnerability scanning is enabled
+2023-01-18T01:36:57.466Z	[34mINFO[0m	Misconfiguration scanning is enabled
+2023-01-18T01:36:59.385Z	[34mINFO[0m	Number of language-specific files: 1
+2023-01-18T01:36:59.386Z	[34mINFO[0m	Detecting npm vulnerabilities...
+2023-01-18T01:36:59.404Z	[34mINFO[0m	Detected config files: 1
 
 package-lock.json (npm)
 =======================
