@@ -1,0 +1,81 @@
+Results of markdown-link-check linter (version 3.10.3)
+See documentation on https://megalinter.io/6.18.0/descriptors/markdown_markdown_link_check/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /github/workspace
+Linter raw log:
+
+FILE: /github/workspace/README.md
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/test.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml
+  [✓] https://nuxtjs.org
+  [✓] https://www.vagrantup.com/
+  [✓] https://www.virtualbox.org/
+  [✓] https://nuxtjs.org/
+  [✓] https://webpack.js.org
+  [✓] https://jestjs.io/
+  [✓] https://federalistapp.18f.gov/
+  [✓] https://federalist.18f.gov/documentation/
+  [✓] https://federalistapp.18f.gov/sites/983/builds
+  [✖] (%3Chttps://nuxtjs.org%3E)
+  [✓] https://vuejs.org/
+  [✓] https://designsystem.digital.gov/
+  [✓] https://dykraf.com/blog/nuxtjs-static-content-using-vuex#using-store-in-pages-with-disp
+  [✓] https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-js-application/
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/test.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml/badge.svg
+
+  30 links checked.
+
+  ERROR: 1 dead links found!
+  [✖] (%3Chttps://nuxtjs.org%3E) → Status: 400
+
+FILE: /github/workspace/megalinter-reports/updated_sources/README.md
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/test.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml
+  [✓] https://nuxtjs.org
+  [✓] https://www.vagrantup.com/
+  [✓] https://www.virtualbox.org/
+  [✓] https://nuxtjs.org/
+  [✓] https://webpack.js.org
+  [✓] https://jestjs.io/
+  [✓] https://federalistapp.18f.gov/
+  [✓] https://federalist.18f.gov/documentation/
+  [✓] https://federalistapp.18f.gov/sites/983/builds
+  [✖] (%3Chttps://nuxtjs.org%3E)
+  [✓] https://vuejs.org/
+  [✓] https://designsystem.digital.gov/
+  [✓] https://dykraf.com/blog/nuxtjs-static-content-using-vuex#using-store-in-pages-with-disp
+  [✓] https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-js-application/
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/test.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/megalinter.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/semgrep.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/woke.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml/badge.svg
+  [✓] https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml/badge.svg
+
+  30 links checked.
+
+  ERROR: 1 dead links found!
+  [✖] (%3Chttps://nuxtjs.org%3E) → Status: 400
+
