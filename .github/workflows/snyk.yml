@@ -5,6 +5,8 @@ name: Snyk Scan
 on:
   #  pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: '15 12 * * 1'
 
 jobs:
   security:
