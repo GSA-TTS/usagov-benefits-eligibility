@@ -131,7 +131,7 @@ export default {
         if (myTopLevelFilter.disableGroupWhen.includes(newValue)) {
           this.isGroupKeyDisabled = true
         }
-      })
+      }, { immediate: true })
     }
   },
   methods: {
