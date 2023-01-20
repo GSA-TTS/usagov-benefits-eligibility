@@ -26,7 +26,6 @@ export const mutations = {
         theState.active = true
       }
     }
-
     const hashedData = getters.getHashResponses(theState)
     localStorage.setItem("responseData", JSON.stringify(hashedData))
   },
@@ -171,8 +170,8 @@ export const actions = {
     const newArr = {}
     for (let i = 0; i < responseArray.length; i++) {
       const response = responseArray[i]
-      const en = this.$i18n.t(response, "en")
-      const es = this.$i18n.t(response, "es")
+      const en = this.$i18n.t(response, "en", null)
+      const es = this.$i18n.t(response, "es", null)
       const tKey = response
       const hash = await stringToHash(tKey)
       newArr[hash] = { en, es, tKey }
