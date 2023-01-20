@@ -73,7 +73,7 @@ export default {
   // redirect to usagov benefits page
   created() {
     // eslint-disable-next-line nuxt/no-globals-in-created
-    window.location.href = "https://beta.usa.gov/life-experiences"
+    window.location.href = this.$config.redirectUrl
   },
   mounted() {
     if (this.$config.oneEventVersion !== false) {
