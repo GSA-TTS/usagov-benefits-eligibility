@@ -32,7 +32,7 @@ export default {
     // This is used to toggle whether or not internationalization is enabled
     languageToggleActive: true,
     branchName: process.env.BRANCH,
-    oneEventVersion: oneEvent,
+    oneEventVersion: false,
   },
 
   // Target: https://go.nuxtjs.dev/config-target
