@@ -10,7 +10,7 @@
       </div>
     </div>
     <div v-else>
-      <Header />
+      <BetaUsaGovHeader />
       <main id="main-content">
         <Nuxt />
       </main>
