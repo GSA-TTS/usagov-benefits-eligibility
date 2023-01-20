@@ -71,6 +71,11 @@ export default {
       title: "Benefits by agency",
     }
   },
+  // redirect to usagov benefits page
+  created() {
+    // eslint-disable-next-line nuxt/no-globals-in-created
+    window.location.href = "https://beta.usa.gov/life-experiences"
+  },
   mounted() {
     if (this.$config.oneEventVersion !== false) {
       this.$router.push(this.$route.fullPath.split("agencies")[0] + this.$config.oneEventVersion)
