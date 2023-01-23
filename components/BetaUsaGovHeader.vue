@@ -33,11 +33,18 @@
               <em class="usa-logo-text">
                 <a
                   href="/"
-                  title="USAGov Logo"
-                  ><img
-                    src="/themes/custom/usagov/images/LOGO_betasite_USAGOV_v2.png"
+                  title="USAGov Logo">
+                  <img
+                    v-if="$i18n.locale === 'en'"
+                    src="~/assets/img/logo-beta.png"
                     alt="USAGov Logo"
-                /></a>
+                    class="maxw-10" />
+                  <img
+                    v-if="$i18n.locale === 'es'"
+                    src="~/assets/img/logo-beta-es.png"
+                    alt="USAGov en Español Logo"
+                    class="maxw-196" />
+                </a>
               </em>
             </div>
             <button class="usa-menu-btn">Menu</button>
@@ -151,4 +158,47 @@
   </header>
 </template>
 
-<style lang="scss" scoped></style>
+<script>
+import sanitizeUrl from "~/mixins/SanitizeBears"
+
+export default {
+  mixins: [sanitizeUrl],
+  methods: {
+    sanitizedHeadingUrl(benefitUrl, defaultValue = "#") {
+      if (benefitUrl && benefitUrl.length > 0) {
+        return this.sanitizeUrl(benefitUrl)
+      } else {
+        return defaultValue
+      }
+    },
+    skipLink() {
+      const skipLink = document.getElementById("main-content")
+      if (skipLink) {
+        skipLink.scrollIntoView({
+          block: "start",
+          behavior: "smooth",
+        })
+      }
+    },
+    switchLanguage() {
+      let route = ""
+      const locale = this.$i18n.locale
+      const oneEventString = !this.$config.oneEventVersion ? this.$config.oneEventVersion : ""
+      if (locale === "en") {
+        route = `/es/${oneEventString}`
+        this.$i18n.setLocale("es")
+      } else {
+        route = `/${oneEventString}`
+        this.$i18n.setLocale("en")
+      }
+      this.$router.push(route)
+    },
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.maxw-196 {
+  max-width: 12.3rem;
+}
+</style>
