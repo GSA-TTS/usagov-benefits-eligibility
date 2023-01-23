@@ -28,3 +28,7 @@ SARIF_REPORTER: true
 
 # only scan the files in This commit, not the entire history of the repo
 REPOSITORY_GITLEAKS_ARGUMENTS: --no-git
+
+# don't lint the generated code in the docs/ directory
+REPOSITORY_DEVSKIM_ARGUMENTS: --skip-git-ignored-files
+
