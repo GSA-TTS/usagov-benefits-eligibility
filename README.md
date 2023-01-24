@@ -166,7 +166,7 @@ docker build -t bears . \
 ## Design considerations
 
 - Some items we only render client-side this is because the data
-  relationships are not fully captured by [Nuxt.js](<(https://nuxtjs.org)>)
+  relationships are not fully captured by [Nuxt.js](<(<https://nuxtjs.org>)>)
   and by moving them client-side [Vue.js](https://vuejs.org/)
   is able to track those relationships.
 - The current print philosophy is that print is a different
