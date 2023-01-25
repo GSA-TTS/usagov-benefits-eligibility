@@ -320,7 +320,8 @@
       "form": {
         "label": "Search",
         "searchUrl": "https://search.usa.gov/search/",
-        "placeholder": "Search for a topic or service"
+        "placeholder": "Search for a topic or service",
+        "affliate": "usagov_all_gov"
       }
     }
   }

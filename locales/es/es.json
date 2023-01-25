@@ -276,5 +276,40 @@
     "match": "Coincides con",
     "benefits": "beneficios",
     "clear": "Selecciones borradas"
+  },
+  "beta": {
+    "alert": {
+      "site": "Este es un sitio beta.",
+      "status": "Es una nueva versión de",
+      "statusLink": "https://www.usa.gov/espanol/",
+      "usaGov": "USAGov en Español",
+      "main": ". que aún se está construyendo. Si no encuentra lo que busca, regrese al sitio principal"
+    },
+    "header": {
+      "languageToggle": "English",
+      "menu": "MENÚ",
+      "nav": {
+        "linkOneText": "Todos los temas y servicios",
+        "linkOneUrl": "https://beta.usa.gov/es#all_topics",
+        "linkTwoText": "Acerca de EE. UU. y directorios del Gobierno",
+        "linkTwoUrl": "https://beta.usa.gov/es/acerca-de-estados-unidos/",
+        "linkThreeText": "Dinero",
+        "linkThreeUrl": "https://beta.usa.gov/es/dinero",
+        "linkFourText": "Leyes y asuntos legales",
+        "linkFourUrl": "https://beta.usa.gov/es/leyes-y-asuntos-legales/",
+        "linkFiveText": "Estafas y fraudes",
+        "linkFiveUrl": "https://beta.usa.gov/es/estafas-y-fraudes/"
+      },
+      "secondaryNav": {
+        "linkOneText": "Llámenos al 1-844-USAGOV1",
+        "linkOneUrl": "https://beta.usa.gov/es/centro-de-llamadas"
+      },
+      "form": {
+        "label": "Buscar",
+        "searchUrl": "https://search.usa.gov/search/",
+        "placeholder": "Search for a topic or service",
+        "affliate": "usagov_es_all_gov"
+      }
+    }
   }
 }
