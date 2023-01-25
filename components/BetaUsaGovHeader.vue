@@ -149,7 +149,7 @@
                     id="affiliate"
                     name="affiliate"
                     type="hidden"
-                    value="usagov_all_gov" />
+                    :value="$t('beta.header.form.affliate')" />
                   <input
                     id="search-field-small"
                     class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
