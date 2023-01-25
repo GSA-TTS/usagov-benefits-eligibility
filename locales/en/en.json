@@ -289,5 +289,39 @@
     "match": "You match",
     "benefits": "benefits",
     "clear": "Selections cleared"
+  },
+  "beta": {
+    "alert": {
+      "site": "This is a beta site.",
+      "status": "It's an early, in-progress version of an improved",
+      "statusLink": "https://www.usa.gov/",
+      "usaGov": "USA.gov",
+      "main": ". If you don't find what you're looking for, return to the main site."
+    },
+    "header": {
+      "languageToggle": "Español",
+      "menu": "Menu",
+      "nav": {
+        "linkOneText": "All topics and services",
+        "linkOneUrl": "https://beta.usa.gov/#all_topics",
+        "linkTwoText": "About the U.S. and its government",
+        "linkTwoUrl": "https://beta.usa.gov/about-the-us/",
+        "linkThreeText": "Money",
+        "linkThreeUrl": "https://beta.usa.gov/money/",
+        "linkFourText": "Laws and legal issues",
+        "linkFourUrl": "https://beta.usa.gov/laws-and-legal-issues/",
+        "linkFiveText": "Scams and fraud",
+        "linkFiveUrl": "https://beta.usa.gov/scams-and-fraud/"
+      },
+      "secondaryNav": {
+        "linkOneText": "Call us at 1-844-USAGOV1",
+        "linkOneUrl": "https://beta.usa.gov/phone/"
+      },
+      "form": {
+        "label": "Search",
+        "searchUrl": "https://search.usa.gov/search/",
+        "placeholder": "Search for a topic or service"
+      }
+    }
   }
 }

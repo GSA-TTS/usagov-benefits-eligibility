@@ -7,15 +7,21 @@
       >{{ $t("skipnav") }}</a
     >
     <TheBanner />
-    <div>
-      <div class="usa-alert usa-alert--slim usa-alert--info">
-        <div class="usa-alert__body">
-          <strong>This is a beta site.</strong> It's an early, in-progress version of an improved
-          <a href="https://www.usa.gov/">USA.gov</a>. If you don't find what you're looking for, return to the main
-          site.
+    <!-- NOTE: Alert -->
+    <div class="bg-info-lighter padding-y-1px margin-0">
+      <div class="grid-container display-flex flex-align-center flex-align-start">
+        <img
+          src="@/assets/img/usa-icons/info.svg"
+          alt="" />
+        <div class="font-sans-xxs">
+          <strong>{{ $t("beta.alert.site") }}</strong>
+          {{ $t("beta.alert.status") }}
+          <a :href="sanitizedHeadingUrl($t('beta.alert.statusLink'))">{{ $t("beta.alert.usaGov") }}</a>
+          {{ $t("beta.alert.main") }}
         </div>
       </div>
     </div>
+
     <header
       id="header"
       class="usa-header usa-header--extended">
@@ -31,7 +37,7 @@
                 class="language-link usa-button"
                 hreflang="es"
                 @click="switchLanguage">
-                Español
+                {{ $t("beta.header.languageToggle") }}
               </button>
             </li>
           </ul>
@@ -59,7 +65,7 @@
                 </a>
               </em>
             </div>
-            <button class="usa-menu-btn">Menu</button>
+            <button class="usa-menu-btn">{{ $t("beta.header.menu") }}</button>
           </div>
           <nav
             aria-label="Primary navigation"
@@ -73,45 +79,45 @@
               <ul class="usa-nav__primary usa-accordion">
                 <li class="usa-nav__primary-item">
                   <a
-                    href="/#all_topics"
+                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkOneUrl'))"
                     class="usa-nav__link"
-                    ><span>All topics and services</span></a
+                    ><span>{{ $t("beta.header.nav.linkOneText") }}</span></a
                   >
                 </li>
                 <li
                   id="usa-nav__about"
                   class="usa-nav__primary-item">
                   <a
-                    href="/about-the-us"
+                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkTwoUrl'))"
                     class="usa-nav__link"
-                    ><span>About the U.S. and its government</span></a
+                    ><span>{{ $t("beta.header.nav.linkTwoText") }}</span></a
                   >
                 </li>
                 <li
                   id="usa-nav__money"
                   class="usa-nav__primary-item">
                   <a
-                    href="/money"
+                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkThreeUrl'))"
                     class="usa-nav__link"
-                    ><span>Money</span></a
+                    ><span>{{ $t("beta.header.nav.linkThreeText") }}</span></a
                   >
                 </li>
                 <li
                   id="usa-nav__law"
                   class="usa-nav__primary-item">
                   <a
-                    href="/laws-and-legal-issues"
+                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkFourUrl'))"
                     class="usa-nav__link"
-                    ><span>Laws and legal issues</span></a
+                    ><span>{{ $t("beta.header.nav.linkFourText") }}</span></a
                   >
                 </li>
                 <li
                   id="usa-nav__scams"
                   class="usa-nav__primary-item">
                   <a
-                    href="/scams-and-fraud"
+                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkFiveUrl'))"
                     class="usa-nav__link"
-                    ><span>Scams and fraud</span></a
+                    ><span>{{ $t("beta.header.nav.linkFiveText") }}</span></a
                   >
                 </li>
               </ul>
@@ -120,13 +126,15 @@
                   <span
                     id="top-phone"
                     class="usa-nav__secondary-item">
-                    <a href="https://beta.usa.gov/phone">Call us at 1-844-USAGOV1</a>
+                    <a :href="sanitizedHeadingUrl($t('beta.header.secondaryNav.linkOneUrl'))">{{
+                      $t("beta.header.secondaryNav.linkOneText")
+                    }}</a>
                   </span>
                 </span>
 
                 <form
                   class="usa-search usa-search--small"
-                  action="https://search.usa.gov/search"
+                  :action="sanitizedHeadingUrl($t('beta.header.form.searchUrl'))"
                   method="get"
                   name="search_form"
                   accept-charset="UTF-8"
@@ -135,7 +143,7 @@
                     id="top-srch"
                     class="usa-sr-only"
                     for="search-field-small"
-                    >Search</label
+                    >{{ $t("beta.header.form.label") }}</label
                   >
                   <input
                     id="affiliate"
@@ -147,7 +155,7 @@
                     class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
                     type="search"
                     name="query"
-                    placeholder="Search all government"
+                    :placeholder="$t('beta.header.form.placeholder')"
                     onfocus="this.placeholder = ''"
                     autocomplete="off"
                     aria-autocomplete="list"
@@ -158,7 +166,7 @@
                     <img
                       src="@/assets/img/search-dark.svg"
                       class="usa-search__submit-icon"
-                      alt="Search" />
+                      :alt="$t('beta.header.form.label')" />
                   </button>
                 </form>
               </div>
@@ -195,12 +203,12 @@ export default {
     switchLanguage() {
       let route = ""
       const locale = this.$i18n.locale
-      const oneEventString = !this.$config.oneEventVersion ? this.$config.oneEventVersion : ""
+
       if (locale === "en") {
-        route = `/es/${oneEventString}`
+        route = `/es/`
         this.$i18n.setLocale("es")
       } else {
-        route = `/${oneEventString}`
+        route = `/`
         this.$i18n.setLocale("en")
       }
       this.$router.push(route)
@@ -213,8 +221,14 @@ export default {
 .maxw-196 {
   max-width: 12.3rem;
 }
+.maxw-1024 {
+  max-width: 64rem;
+}
 .usa-banner {
   background-color: #f3f3f3;
+}
+.font-sans-xxs {
+  font-size: 0.9rem;
 }
 .language-switcher-language-url {
   margin-right: auto;
@@ -241,10 +255,13 @@ export default {
     background-color: #112f4e;
   }
 }
-
 .usa-header--extended [hreflang|="es"] {
   border-radius: 5px;
   border: 0;
+}
+// nav
+.usa-nav {
+  border-bottom: 1px solid #dfe1e2;
 }
 .usa-nav__secondary {
   flex-direction: row;
@@ -252,7 +269,6 @@ export default {
   bottom: 6rem;
   width: 32rem;
 }
-
 .usa-nav__secondary-links {
   width: 15rem;
   line-height: 1.1rem;
@@ -268,7 +284,6 @@ export default {
     }
   }
 }
-
 .usa-nav__secondary-item::after {
   float: right;
   color: #dfe1e2;
@@ -277,32 +292,8 @@ export default {
   font-size: 2rem;
   padding-bottom: 0.4rem;
 }
-
 .usa-logo {
   margin: 0.5rem 0 0.2em;
-}
-
-// alert
-.usa-alert__body {
-  max-width: 64rem;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
-  display: block;
-  font-size: 0.9rem;
-  position: relative;
-}
-.usa-alert--info {
-  border-left-color: #e7f6f8;
-  &::before {
-    background: url(~/assets/img/usa-icons/info.svg) no-repeat center/2rem 2rem;
-    width: 2rem;
-    position: absolute;
-    left: 257px;
-    top: -2px;
-    background-color: #1b1b1b;
-  }
 }
 
 @media only screen and (max-width: 64em) {
