@@ -283,7 +283,7 @@
       "status": "Es una nueva versión de",
       "statusLink": "https://www.usa.gov/espanol/",
       "usaGov": "USAGov en Español",
-      "main": ". que aún se está construyendo. Si no encuentra lo que busca, regrese al sitio principal"
+      "main": "que aún se está construyendo. Si no encuentra lo que busca, regrese al sitio principal."
     },
     "header": {
       "languageToggle": "English",
@@ -307,7 +307,7 @@
       "form": {
         "label": "Buscar",
         "searchUrl": "https://search.usa.gov/search/",
-        "placeholder": "Search for a topic or service",
+        "placeholder": "Busque en el Gobierno ...",
         "affliate": "usagov_es_all_gov"
       }
     }
