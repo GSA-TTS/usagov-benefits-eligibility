@@ -26,5 +26,12 @@ export default {
       isUsaGov: this.$config.oneEventVersion !== false,
     }
   },
+  head() {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale,
+      },
+    }
+  },
 }
 </script>
