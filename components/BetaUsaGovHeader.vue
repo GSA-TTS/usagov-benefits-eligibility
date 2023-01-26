@@ -8,7 +8,7 @@
     >
     <TheBanner />
     <!-- NOTE: Alert -->
-    <div class="bg-info-lighter padding-y-1px margin-0">
+    <div class="bg-info-lighter padding-y-05 margin-0">
       <div class="grid-container display-flex flex-align-center flex-align-start">
         <img
           src="@/assets/img/usa-icons/info.svg"
@@ -61,7 +61,7 @@
                     v-if="$i18n.locale === 'es'"
                     src="~/assets/img/logo-beta-es.png"
                     alt="USAGov en Español Logo"
-                    class="maxw-196" />
+                    class="es margin-left-1 tablet:margin-left-0 maxw-196" />
                 </a>
               </em>
             </div>
@@ -208,7 +208,7 @@ export default {
         route = `/es/`
         this.$i18n.setLocale("es")
       } else {
-        route = `/`
+        // route = `/`
         this.$i18n.setLocale("en")
       }
       this.$router.push(route)
@@ -218,18 +218,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// HELPERS
 .maxw-196 {
   max-width: 12.3rem;
 }
 .maxw-1024 {
   max-width: 64rem;
 }
-.usa-banner {
-  background-color: #f3f3f3;
+.maxw-6-2 {
+  max-width: 6.2rem;
 }
 .font-sans-xxs {
   font-size: 0.9rem;
 }
+// BANNER
+.usa-banner {
+  background-color: #f3f3f3;
+}
+
+// LANUAGE BUTTON
 .language-switcher-language-url {
   margin-right: auto;
   max-width: 64rem;
@@ -255,10 +262,7 @@ export default {
     background-color: #112f4e;
   }
 }
-.usa-header--extended [hreflang|="es"] {
-  border-radius: 5px;
-  border: 0;
-}
+
 // nav
 .usa-nav {
   border-bottom: 1px solid #dfe1e2;
@@ -296,6 +300,29 @@ export default {
   margin: 0.5rem 0 0.2em;
 }
 
+// SPANISH TWEAKS
+.usa-header--extended [hreflang|="es"] {
+  border-radius: 5px;
+  border: 0;
+}
+
+.usa-nav__secondary:lang(es) {
+  width: 33rem;
+  .usa-nav__secondary-links:lang(es) {
+    width: 17rem;
+  }
+  .usa-nav__secondary-item {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 64em) {
+  .usa-logo img.es {
+    max-width: 6.2rem;
+  }
+}
+
+// MEDIA QUERIES
 @media only screen and (max-width: 64em) {
   .usa-header--extended .usa-navbar {
     margin-top: 1rem;
