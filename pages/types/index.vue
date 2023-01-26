@@ -70,12 +70,10 @@ export default {
       title: "Benefits by type",
     }
   },
-  // redirect to usagov benefits page
-  created() {
-    // eslint-disable-next-line nuxt/no-globals-in-created
-    window.location.href = this.$config.redirectUrl
-  },
   mounted() {
+    // redirect to usagov benefits page
+    window.location.href = this.$config.redirectUrl
+
     if (this.$config.oneEventVersion !== false) {
       this.$router.push(this.$route.fullPath.split("types")[0] + this.$config.oneEventVersion)
     }

@@ -12,7 +12,7 @@
       <div class="grid-container display-flex flex-align-center flex-align-start">
         <img
           src="@/assets/img/usa-icons/info.svg"
-          alt="" />
+          alt="usa gov logo" />
         <div class="font-sans-xxs">
           <strong>{{ $t("beta.alert.site") }}</strong>
           {{ $t("beta.alert.status") }}
@@ -50,7 +50,7 @@
               class="usa-logo">
               <em class="usa-logo-text">
                 <a
-                  href="/"
+                  href="https://beta.usa.gov/life-experiences"
                   title="USAGov Logo">
                   <img
                     v-if="$i18n.locale === 'en'"
