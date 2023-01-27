@@ -8,10 +8,11 @@
   "financial-hardship.topLevelFilter.label1": "",
   "financial-hardship.topLevelFilter.disableGroupWhen": "no",
   "financial-hardship.topLevelFilter.label2": "",
+  "financial-hardship.topLevelFilter.label3": "",
   "financial-hardship.topLevelFilter.disableGroupWhen1": "no",
-  "financial-hardship.eligibilityCriteria.label": "About you",
+  "financial-hardship.eligibilityCriteria.label": "About you (the applicant)",
   "financial-hardship.eligibilityCriteria.description": "",
-  "financial-hardship.eligibilityCriteria.label1": "About your military service",
+  "financial-hardship.eligibilityCriteria.label1": "About your (the applicant's) military service",
   "financial-hardship.eligibilityCriteria.description1": "",
   "financial-hardship.eligibilityCriteria.label2": "About the person who died",
   "financial-hardship.eligibilityCriteria.description2": ""
