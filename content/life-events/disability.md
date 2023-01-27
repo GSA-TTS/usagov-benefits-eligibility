@@ -44,8 +44,8 @@ eligibilityCriteria:
     description: disability.eligibilityCriteria.description1
     criteriaGroupKey: applicant-military
     criteriaKeys:
-      - applicant_service_disability
       - applicant_service_status
+      - applicant_service_disability
 
 
 relatedKeys:
