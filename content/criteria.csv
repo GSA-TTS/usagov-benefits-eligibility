@@ -6,7 +6,7 @@ deceased_death_location_is_US,criteria.deceased_death_location_is_US.label,boole
 deceased_public_safety_officer,criteria.deceased_public_safety_officer.label,boolean,TRUE,
 deceased_date_of_death,criteria.deceased_date_of_death.label,date,,
 deceased_date_of_funeral,criteria.deceased_date_of_funeral.label,date,,
-deceased_miner,criteria.deceased_miner.label,radio,criteria.deceased_miner.values1;criteria.deceased_miner.values2;,
+deceased_miner,criteria.deceased_miner.label,boolean,TRUE,
 deceased-military,criteria.deceased-military.label,,,
 deceased_served_in_active_military,criteria.deceased_served_in_active_military.label,radio,criteria.deceased_served_in_active_military.values1;criteria.deceased_served_in_active_military.values2;,
 deceased_service_status,criteria.deceased_service_status.label,select,criteria.deceased_service_status.values1;criteria.deceased_service_status.values2;criteria.deceased_service_status.values3;criteria.deceased_service_status.values4;,
