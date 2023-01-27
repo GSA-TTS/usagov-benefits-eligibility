@@ -40,11 +40,11 @@ eligibilityCriteria:
       - applicant_public_safety_officer
       - applicant_miner
       - applicant_high-school_diploma
+      - applicant_marital_status
+      - applicant_family_of_service_member
       - applicant_child_spouse_SS
       - applicant_care_for_child
       - applicant_citizen_status
-      - applicant_marital_status
-      - applicant_family_of_service_member
 
   - label: financial-hardship.eligibilityCriteria.label1
     description: financial-hardship.eligibilityCriteria.description1
@@ -57,12 +57,12 @@ eligibilityCriteria:
     description: financial-hardship.eligibilityCriteria.description2
     criteriaGroupKey: applicant-relationships
     criteriaKeys:
+      - applicant_relationship
       - deceased_date_of_death
       - deceased_paid_into_SS
       - deceased_public_safety_officer
       - deceased_miner
       - deceased_served_in_active_military
-      - applicant_relationship
       - deceased_service_status
       - deceased_death_circumstance
       - deceased_grave_headstone
