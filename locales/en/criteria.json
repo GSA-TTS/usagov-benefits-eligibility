@@ -47,7 +47,7 @@
   "criteria.applicant_disaster_zone.label": "What is your zip code?",
   "criteria.applicant_miner.label": "You worked in the coal mining industry and you suffer from an illness caused by pneumoconiosis (black lung disease).",
   "criteria.applicant_public_safety_officer.label": "You are a public safety officer who was catastrophically injured in the line of duty.",
-  "criteria.applicant_american_indian.label": "You are a member of a federally recognized American Indian Tribe or an Alaska Native.",
+  "criteria.applicant_american_indian.label": "Are you (the applicant) a member of a federally recognized American Indian Tribe or an Alaska Native?",
   "criteria.applicant_american_indian.values1": "yes",
   "criteria.applicant_american_indian.values2": "no",
   "criteria.applicant-relatonships.label": "",
