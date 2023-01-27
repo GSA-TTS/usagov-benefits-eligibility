@@ -3,20 +3,18 @@
     <div class="usa-footer__primary-section">
       <div class="grid-container">
         <div class="grid-row grid-gap">
-          <div class="tablet:grid-col-8">left</div>
+          <div class="tablet:grid-col-8">
+            <ul>
+              <li
+                v-for="item in $t('beta.footer.column1')"
+                :key="item.uniqueId"
+                class="">
+                {{ item.linkText }}
+              </li>
+            </ul>
+          </div>
 
           <div class="tablet:grid-col-4">right</div>
-          <ul>
-            <li
-              v-for="item in beta.footer.column1"
-              :key="item.linkText"
-              class="usa-process-list__item padding-bottom-4">
-              <p>
-                {{ $t("item.linkText") }}
-                {{ item.linkText }}
-              </p>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
@@ -37,11 +35,13 @@ export default {
       required: false,
     },
   },
+
   data() {
     return {
       uniqueId: _.uniqueId("foo-"),
     }
   },
+
   switchLanguage() {
     let route = ""
     const locale = this.$i18n.locale
@@ -65,6 +65,9 @@ export default {
       } else {
         return defaultValue
       }
+    },
+    pushFilter(item) {
+      // console.log(category.name)
     },
   },
 }
