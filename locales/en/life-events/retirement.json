@@ -7,8 +7,9 @@
   "retirement.topLevelFilter.label": "Start here",
   "retirement.topLevelFilter.label1": "",
   "retirement.topLevelFilter.disableGroupWhen": "no",
-  "retirement.eligibilityCriteria.label": "About you",
+  "retirement.topLevelFilter.label2": "",
+  "retirement.eligibilityCriteria.label": "About you (the applicant)",
   "retirement.eligibilityCriteria.description": "",
-  "retirement.eligibilityCriteria.label1": "About your military service",
+  "retirement.eligibilityCriteria.label1": "About your (the applicant's) military service",
   "retirement.eligibilityCriteria.description1": ""
 }
