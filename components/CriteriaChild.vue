@@ -126,12 +126,16 @@ export default {
 
     if (myTopLevelFilter !== null) {
       const myCriteria = myTopLevelFilter.criteriaKey
-      this.$watch(`$store.state.criteria.eligibilityCriteria.${myCriteria}.response`, (newValue) => {
-        this.isGroupKeyDisabled = false
-        if (myTopLevelFilter.disableGroupWhen.includes(newValue)) {
-          this.isGroupKeyDisabled = true
-        }
-      }, { immediate: true })
+      this.$watch(
+        `$store.state.criteria.eligibilityCriteria.${myCriteria}.response`,
+        (newValue) => {
+          this.isGroupKeyDisabled = false
+          if (myTopLevelFilter.disableGroupWhen.includes(newValue)) {
+            this.isGroupKeyDisabled = true
+          }
+        },
+        { immediate: true }
+      )
     }
   },
   methods: {
@@ -141,9 +145,7 @@ export default {
   },
 }
 </script>
-<style
-  type="scss"
-  scoped>
+<style type="scss" scoped>
 .eligibility-criteria__child {
   border-left: 2px solid #dee1e2;
   margin-left: 0.25rem;

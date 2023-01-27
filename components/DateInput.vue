@@ -273,7 +273,7 @@ export default {
       const month = this.month
       const day = this.day
       const year = this.year
-      const allInputs = (month !== "" && day !== "" && year !== "")
+      const allInputs = month !== "" && day !== "" && year !== ""
       const date = `${month}-${day}-${year}`
       this.errorMessage = checkDateValid(month, day, year)
       if (this.errorMessage === "" && allInputs) {
@@ -289,7 +289,6 @@ export default {
         }
         this.$store.dispatch("criteria/updateResponse", localCriterion)
       }
-      
     },
   },
 }
