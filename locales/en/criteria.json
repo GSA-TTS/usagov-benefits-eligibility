@@ -51,7 +51,7 @@
   "criteria.applicant_american_indian.values1": "yes",
   "criteria.applicant_american_indian.values2": "no",
   "criteria.applicant-relatonships.label": "",
-  "criteria.applicant_lost_a_family_member.label": "Did you recently lose a loved one?",
+  "criteria.applicant_lost_a_family_member.label": "Did you (the applicant) recently lose a loved one?",
   "criteria.applicant_lost_a_family_member.values1": "yes",
   "criteria.applicant_lost_a_family_member.values2": "no",
   "criteria.applicant_lost_a_service_member.label": "Did you recently lose a loved one who served in the military?",
