@@ -10,11 +10,15 @@
       </div>
     </div>
     <div v-else>
+      <!-- Beta USA Header. /-->
       <BetaUsaGovHeader />
       <main id="main-content">
         <Nuxt />
       </main>
-      <Footer />
+      <!--Footer Disclaimer. /-->
+      <FooterDisclaimer />
+      <!-- Beta USA Footer. /-->
+      <BetaUsaGovFooter />
     </div>
   </div>
 </template>

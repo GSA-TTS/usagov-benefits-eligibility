@@ -298,6 +298,32 @@
       "usaGov": "USA.gov",
       "main": ". If you don't find what you're looking for, return to the main site."
     },
+
+    "footer": [
+      {
+        "column1": [
+          {
+            "linkText": "All topics and services",
+            "linkURL": "https://beta.usa.gov/#all_topics"
+          },
+          {
+            "linkText": "About the U.S. and its government",
+            "linkURL": "https://beta.usa.gov/about-the-us/"
+          }
+        ],
+        "column2": [
+          {
+            "linkText": "All topics and services",
+            "linkURL": "https://beta.usa.gov/#all_topics"
+          },
+          {
+            "linkText": "About the U.S. and its government",
+            "linkURL": "https://beta.usa.gov/about-the-us/"
+          }
+        ]
+      }
+    ],
+
     "header": {
       "languageToggle": "Español",
       "menu": "Menu",
