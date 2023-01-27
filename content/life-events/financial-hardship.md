@@ -35,7 +35,6 @@ eligibilityCriteria:
     criteriaKeys:
       - applicant_paid_into_SS
       - applicant_income
-      - applicant_marital_status
       - applicant_disability
       - applicant_ability_to_work
       - applicant_public_safety_officer
@@ -44,6 +43,8 @@ eligibilityCriteria:
       - applicant_child_spouse_SS
       - applicant_care_for_child
       - applicant_citizen_status
+      - applicant_marital_status
+      - applicant_family_of_service_member
 
   - label: financial-hardship.eligibilityCriteria.label1
     description: financial-hardship.eligibilityCriteria.description1
@@ -61,7 +62,6 @@ eligibilityCriteria:
       - deceased_public_safety_officer
       - deceased_miner
       - deceased_served_in_active_military
-      - applicant_family_of_service_member
       - applicant_relationship
       - deceased_service_status
       - deceased_death_circumstance
