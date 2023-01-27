@@ -17,6 +17,11 @@ topLevelFilter:
     criteriaKey: applicant_served_in_active_military
     disableGroupKey: applicant-military
     disableGroupWhen: [disability.topLevelFilter.disableGroupWhen]
+    
+  - label: disability.topLevelFilter.label2
+    criteriaKey: applicant_american_indian
+    disableGroupKey: 
+    disableGroupWhen:
 
 
 eligibilityCriteria:
@@ -26,9 +31,12 @@ eligibilityCriteria:
     criteriaKeys:
       - applicant_disability
       - applicant_ability_to_work
-      - applicant_child_spouse_SS
+      - applicant_disability_vision
       - applicant_paid_into_SS
       - applicant_income
+      - applicant_public_safety_officer
+      - applicant_miner
+      - applicant_child_spouse_SS
       - applicant_citizen_status
       - applicant_marital_status
 
