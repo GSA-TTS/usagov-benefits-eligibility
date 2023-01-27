@@ -298,28 +298,6 @@
       "usaGov": "USA.gov",
       "main": ". If you don't find what you're looking for, return to the main site."
     },
-    "footer": {
-      "column1": [
-        {
-          "linkText": "All topics and services",
-          "linkURL": "https://beta.usa.gov/#all_topics"
-        },
-        {
-          "linkText": "About the U.S. and its government",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
-        }
-      ],
-      "column2": [
-        {
-          "linkText": "All topics and services",
-          "linkURL": "https://beta.usa.gov/#all_topics"
-        },
-        {
-          "linkText": "About the U.S. and its government",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
-        }
-      ]
-    },
 
     "header": {
       "languageToggle": "Español",
@@ -346,6 +324,32 @@
         "placeholder": "Search for a topic or service",
         "affliate": "usagov_all_gov"
       }
+    },
+    "footer": {
+      "column1": [
+        {
+          "linkText": "All topics and services",
+          "linkURL": "https://beta.usa.gov/#all_topics"
+        },
+        {
+          "linkText": "About the U.S. and its government",
+          "linkURL": "https://www.usa.gov/federal-agencies"
+        },
+        {
+          "linkText": "Branches of government",
+          "linkURL": "https://beta.usa.gov/branches-of-government"
+        }
+      ],
+      "column2": [
+        {
+          "linkText": "Our mission and history",
+          "linkURL": "https://beta.usa.gov/#all_topics"
+        },
+        {
+          "linkText": "Privacy and security policies",
+          "linkURL": "https://beta.usa.gov/about-the-us/"
+        }
+      ]
     }
   }
 }

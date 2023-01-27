@@ -4,12 +4,13 @@
       <div class="grid-container">
         <div class="grid-row grid-gap">
           <div class="tablet:grid-col-8">
+            <!-- footer nav column 1-->
             <ul>
               <li
                 v-for="item in $t('beta.footer.column1')"
                 :key="item.uniqueId"
                 class="">
-                {{ item.linkText }}
+                <a :href="sanitizedBearsUrl(item.linkURL)">{{ item.linkText }}</a>
               </li>
             </ul>
           </div>
@@ -23,7 +24,6 @@
 
 <script>
 import _ from "lodash"
-// import { tObj } from "~/services/translation"
 import sanitizeUrl from "~/mixins/SanitizeBears"
 
 export default {

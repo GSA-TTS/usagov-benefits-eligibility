@@ -310,6 +310,32 @@
         "placeholder": "Busque en el Gobierno ...",
         "affliate": "usagov_es_all_gov"
       }
+    },
+    "footer": {
+      "column1": [
+        {
+          "linkText": "blah blah es",
+          "linkURL": "https://beta.usa.gov/#all_topics"
+        },
+        {
+          "linkText": "About the U.S. and its government",
+          "linkURL": "https://www.usa.gov/federal-agencies"
+        },
+        {
+          "linkText": "Branches of government",
+          "linkURL": "https://beta.usa.gov/branches-of-government"
+        }
+      ],
+      "column2": [
+        {
+          "linkText": "Our mission and history",
+          "linkURL": "https://beta.usa.gov/#all_topics"
+        },
+        {
+          "linkText": "Privacy and security policies",
+          "linkURL": "https://beta.usa.gov/about-the-us/"
+        }
+      ]
     }
   }
 }
