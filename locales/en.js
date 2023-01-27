@@ -72,6 +72,7 @@ export default Object.assign(
   require("./en/benefits/ssa-disability-insurance-child.json"),
   require("./en/benefits/va-survivor-pension-spouse.json"),
   require("./en/benefits/doj-public-safety-officers-death-benefit.json"),
+  require("./en/benefits/dol-division-of-coal-mine-workers-compensation-spouse.json"),
   require("./en/life-events/becoming-a-parent.json"),
   require("./en/life-events/military-service.json"),
   require("./en/life-events/national-emergency-and-disaster.json"),
