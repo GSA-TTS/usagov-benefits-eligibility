@@ -32,6 +32,7 @@ eligibilityCriteria:
       - deceased_died_of_COVID
       - deceased_death_location_is_US
       - deceased_public_safety_officer
+      - deceased_miner
       - deceased_date_of_death
       - deceased_date_of_funeral
 
