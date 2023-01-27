@@ -7,8 +7,9 @@
   "disability.topLevelFilter.label": "Start here",
   "disability.topLevelFilter.label1": "",
   "disability.topLevelFilter.disableGroupWhen": "no",
-  "disability.eligibilityCriteria.label": "About you",
+  "disability.topLevelFilter.label2": "",
+  "disability.eligibilityCriteria.label": "About you (the applicant)",
   "disability.eligibilityCriteria.description": "",
-  "disability.eligibilityCriteria.label1": "About your military service",
+  "disability.eligibilityCriteria.label1": "About your (the applicant's) military service",
   "disability.eligibilityCriteria.description1": ""
 }
