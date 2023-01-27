@@ -17,8 +17,13 @@ topLevelFilter:
     criteriaKey: applicant_served_in_active_military
     disableGroupKey: applicant-military
     disableGroupWhen: [financial-hardship.topLevelFilter.disableGroupWhen]
-        
+    
   - label: financial-hardship.topLevelFilter.label2
+    criteriaKey: applicant_american_indian
+    disableGroupKey: 
+    disableGroupWhen: 
+        
+  - label: financial-hardship.topLevelFilter.label3
     criteriaKey: applicant_lost_a_family_member
     disableGroupKey: applicant-relationships
     disableGroupWhen: [financial-hardship.topLevelFilter.disableGroupWhen1]
@@ -29,11 +34,13 @@ eligibilityCriteria:
     criteriaGroupKey: applicant
     criteriaKeys:
       - applicant_paid_into_SS
-      - applicant_marital_status
       - applicant_income
-      - applicant_high-school_diploma
+      - applicant_marital_status
       - applicant_disability
       - applicant_ability_to_work
+      - applicant_public_safety_officer
+      - applicant_miner
+      - applicant_high-school_diploma
       - applicant_child_spouse_SS
       - applicant_care_for_child
       - applicant_citizen_status
@@ -52,6 +59,7 @@ eligibilityCriteria:
       - deceased_date_of_death
       - deceased_paid_into_SS
       - deceased_public_safety_officer
+      - deceased_miner
       - deceased_served_in_active_military
       - applicant_family_of_service_member
       - applicant_relationship
