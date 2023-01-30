@@ -79,6 +79,7 @@ export default Object.assign(
   require("./en/benefits/dod-special-compensation.json"),
   require("./en/benefits/dod-thrift-savings-plan.json"),
   require("./en/benefits/doi-housing-improvement-program.json"),
+  require("./en/benefits/doi-financial-assistance-social-services.json"),
   require("./en/life-events/becoming-a-parent.json"),
   require("./en/life-events/military-service.json"),
   require("./en/life-events/national-emergency-and-disaster.json"),
