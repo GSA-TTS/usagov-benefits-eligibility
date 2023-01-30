@@ -12,6 +12,11 @@ topLevelFilter:
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
+    
+  - label: becoming-a-parent.topLevelFilter.label1
+    criteriaKey: applicant_american_indian
+    disableGroupKey: 
+    disableGroupWhen: 
 
 eligibilityCriteria:
   - label: becoming-a-parent.eligibilityCriteria.label
