@@ -82,6 +82,7 @@ export default Object.assign(
   require("./en/benefits/doi-financial-assistance-social-services.json"),
   require("./en/benefits/hhs-temporary-assistance-for-needy-families.json"),
   require("./en/benefits/doj-public-safety-officers-disability-benefits.json"),
+  require("./en/benefits/nls-braille-and-audio-reading-materials.json"),
   require("./en/life-events/becoming-a-parent.json"),
   require("./en/life-events/military-service.json"),
   require("./en/life-events/national-emergency-and-disaster.json"),
