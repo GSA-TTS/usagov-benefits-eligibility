@@ -20,7 +20,7 @@ eligibility:
   - criteriaKey: applicant_disability
     acceptableValues: [true]
   - criteriaKey: applicant_served_in_active_military
-    label: dod-special-compensation.eligibility.label1
+    label: dod-special-compensation.eligibility.label
     acceptableValues: [dod-special-compensation.eligibility.acceptableValues]
   - criteriaKey: applicant_service_status
     acceptableValues:
