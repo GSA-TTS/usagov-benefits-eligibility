@@ -77,6 +77,7 @@ export default Object.assign(
   require("./en/benefits/va-special-disability-benefits.json"),
   require("./en/benefits/dod-retirement-and-disability-payments.json"),
   require("./en/benefits/dod-special-compensation.json"),
+  require("./en/benefits/dod-thrift-savings-plan.json"),
   require("./en/life-events/becoming-a-parent.json"),
   require("./en/life-events/military-service.json"),
   require("./en/life-events/national-emergency-and-disaster.json"),
