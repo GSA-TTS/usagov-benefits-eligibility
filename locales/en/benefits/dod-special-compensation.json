@@ -1,0 +1,10 @@
+{
+  "dod-special-compensation.title": "Combat-Related Special Compensation (CRSC)",
+  "dod-special-compensation.headline": "Combat-Related Special Compensation (CRSC)",
+  "dod-special-compensation.source.name": "Department of Defense",
+  "dod-special-compensation.source.link": "https://militarypay.defense.gov/Benefits/New-Retired-Benefits-Program/",
+  "dod-special-compensation.summary": "This program provides a special monthly payment equivalent to the offset to military retired pay due to receipt of VA disability compensation determined to be combat-related.",
+  "dod-special-compensation.eligibility.label": "You served in the active military, naval or air service.",
+  "dod-special-compensation.eligibility.acceptableValues": "yes",
+  "dod-special-compensation.eligibility.acceptableValues1": "retired from the service"
+}
