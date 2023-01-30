@@ -2,7 +2,7 @@
 title: doj-public-safety-officers-disability-benefits.title
 headline: doj-public-safety-officers-disability-benefits.headline
 tags:
-  - educational assistance
+  - financial assistance
 lifeEvents:
   - disability
   - financial-hardship
