@@ -7,6 +7,7 @@ deceased_public_safety_officer,criteria.deceased_public_safety_officer.label,boo
 deceased_date_of_death,criteria.deceased_date_of_death.label,date,,
 deceased_date_of_funeral,criteria.deceased_date_of_funeral.label,date,,
 deceased_miner,criteria.deceased_miner.label,boolean,TRUE,
+deceased_american_indian,criteria.deceased_american_indian.label,radio,criteria.deceased_american_indian.values1;criteria.deceased_american_indian.values2;,
 deceased-military,criteria.deceased-military.label,,,
 deceased_served_in_active_military,criteria.deceased_served_in_active_military.label,radio,criteria.deceased_served_in_active_military.values1;criteria.deceased_served_in_active_military.values2;,
 deceased_service_status,criteria.deceased_service_status.label,select,criteria.deceased_service_status.values1;criteria.deceased_service_status.values2;criteria.deceased_service_status.values3;criteria.deceased_service_status.values4;,
