@@ -326,6 +326,7 @@
       }
     },
     "footer": {
+      "column1Title": "Government information",
       "column1": [
         {
           "linkText": "All topics and services",
@@ -340,6 +341,7 @@
           "linkURL": "https://beta.usa.gov/branches-of-government"
         }
       ],
+      "column2Title": "",
       "column2": [
         {
           "linkText": "Our mission and history",

@@ -91,11 +91,11 @@ $AZ-button-disabled: #859cba;
 
 .usa-footer {
   &__primary-section {
-    background-color: $dark-gray;
+    @include u-bg("gray-cool-10");
   }
 
   &__secondary-section {
-    background-color: $light-gray;
+    @include u-bg("cyan-10");
   }
 
   &__primary-link,
@@ -167,4 +167,8 @@ h1.text-secondary {
 
 .usagov-heading--blue {
   color: $blue;
+}
+
+.usa-identifier {
+  @include u-bg("blue-80v");
 }

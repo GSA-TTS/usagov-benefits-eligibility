@@ -76,6 +76,8 @@
                   src="@/assets/img/usa-icons/close.svg"
                   alt="Close" />
               </button>
+
+              <!-- Start main navigation. -->
               <ul class="usa-nav__primary usa-accordion">
                 <li class="usa-nav__primary-item">
                   <a

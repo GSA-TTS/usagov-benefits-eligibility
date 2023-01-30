@@ -5,6 +5,7 @@
         <div class="grid-row grid-gap">
           <div class="tablet:grid-col-8">
             <!-- footer nav column 1-->
+            <h2 class="usa-gov-footer__primary-link">{{ $t("beta.footer.column1Title") }}</h2>
             <ul>
               <li
                 v-for="item in $t('beta.footer.column1')"
@@ -19,6 +20,10 @@
         </div>
       </div>
     </div>
+
+    <div class="usa-footer__secondary-section">secondary</div>
+
+    <div class="usa-identifier">identifier</div>
   </footer>
 </template>
 
