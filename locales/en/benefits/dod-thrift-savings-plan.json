@@ -1,0 +1,10 @@
+{
+  "dod-thrift-savings-plan.title": "Thrift Savings Plan (TSP)",
+  "dod-thrift-savings-plan.headline": "Thrift Savings Plan (TSP)",
+  "dod-thrift-savings-plan.source.name": "Department of Defense",
+  "dod-thrift-savings-plan.source.link": "https://www.tsp.gov/",
+  "dod-thrift-savings-plan.summary": "The Thrift Savings Plan (TSP) is a Federal Government-sponsored retirement savings and investment plan available to members of the uniformed services. The TSP offers the same type of savings and tax benefits that many private corporations offer their employees under so-called "401(k)" plans. The retirement income that you receive from your TSP account will depend on how much you have contributed to your account during your working years and the earnings on those contributions.",
+  "dod-thrift-savings-plan.eligibility.label": "You are at least 60 years old.",
+  "dod-thrift-savings-plan.eligibility.label1": "You served in the active military, naval or air service.",
+  "dod-thrift-savings-plan.eligibility.acceptableValues": "yes"
+}
