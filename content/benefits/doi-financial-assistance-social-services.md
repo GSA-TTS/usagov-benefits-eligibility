@@ -8,7 +8,6 @@ lifeEvents:
   - disability
   - national-emergency-and-disaster
   - financial-hardship
-  - death-of-a-loved-one
   - becoming-a-parent
 source:
   name: doi-financial-assistance-social-services.source.name
