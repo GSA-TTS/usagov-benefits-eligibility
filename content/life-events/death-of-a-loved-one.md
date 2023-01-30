@@ -22,6 +22,11 @@ topLevelFilter:
     criteriaKey: deceased_served_in_active_military
     disableGroupKey: deceased-military
     disableGroupWhen: [death-of-a-loved-one.topLevelFilter.disableGroupWhen]
+    
+  - label: death-of-a-loved-one.topLevelFilter.label3
+    criteriaKey: deceased_american_indian
+    disableGroupKey: 
+    disableGroupWhen: 
 
 eligibilityCriteria:
   - label: death-of-a-loved-one.eligibilityCriteria.label
