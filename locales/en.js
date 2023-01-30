@@ -80,6 +80,7 @@ export default Object.assign(
   require("./en/benefits/dod-thrift-savings-plan.json"),
   require("./en/benefits/doi-housing-improvement-program.json"),
   require("./en/benefits/doi-financial-assistance-social-services.json"),
+  require("./en/benefits/doi-financial-assistance-social-services-burial.json"),
   require("./en/benefits/hhs-temporary-assistance-for-needy-families.json"),
   require("./en/benefits/doj-public-safety-officers-disability-benefits.json"),
   require("./en/benefits/nls-braille-and-audio-reading-materials.json"),
