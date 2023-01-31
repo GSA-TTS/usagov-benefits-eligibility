@@ -49,5 +49,7 @@ eligibilityCriteria:
       - applicant_relationship
       - deceased_service_status
       - deceased_death_circumstance
+      - deceased_date_of_death
+      - deceased_date_of_funeral
       - deceased_grave_headstone
 ---
