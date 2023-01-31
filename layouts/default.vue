@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- One life event version. -->
     <div v-if="isUsaGov">
       <div>
         <UsaGovHeader />
@@ -9,6 +10,7 @@
         <UsaGovFooter />
       </div>
     </div>
+    <!-- Multi life event version. (uses beta site design) -->
     <div v-else>
       <!-- Beta USA Header. /-->
       <BetaUsaGovHeader />
@@ -36,6 +38,19 @@ export default {
         lang: this.$i18n.locale,
       },
     }
+  },
+  switchLanguage() {
+    let route = ""
+    const locale = this.$i18n.locale
+
+    if (locale === "en") {
+      route = `/es/`
+      this.$i18n.setLocale("es")
+    } else {
+      // route = `/`
+      this.$i18n.setLocale("en")
+    }
+    this.$router.push(route)
   },
 }
 </script>
