@@ -9,9 +9,9 @@
   "military-service.topLevelFilter.disableGroupWhen": "no",
   "military-service.topLevelFilter.label2": "",
   "military-service.topLevelFilter.disableGroupWhen1": "no",
-  "military-service.eligibilityCriteria.label": "About you",
+  "military-service.eligibilityCriteria.label": "About you (the applicant)",
   "military-service.eligibilityCriteria.description": "",
-  "military-service.eligibilityCriteria.label1": "About your military service",
+  "military-service.eligibilityCriteria.label1": "About your (the applicant's) military service",
   "military-service.eligibilityCriteria.description1": "",
   "military-service.eligibilityCriteria.label2": "About the military service of the person who died",
   "military-service.eligibilityCriteria.description2": ""
