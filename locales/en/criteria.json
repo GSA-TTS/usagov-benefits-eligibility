@@ -57,7 +57,7 @@
   "criteria.applicant_lost_a_family_member.label": "Did you (the applicant) recently lose a loved one?",
   "criteria.applicant_lost_a_family_member.values1": "yes",
   "criteria.applicant_lost_a_family_member.values2": "no",
-  "criteria.applicant_lost_a_service_member.label": "Did you recently lose a loved one who served in the military?",
+  "criteria.applicant_lost_a_service_member.label": "Did you (the applicant) recently lose a loved one who served in the military?",
   "criteria.applicant_lost_a_service_member.values1": "yes",
   "criteria.applicant_lost_a_service_member.values2": "no",
   "criteria.applicant_child_spouse_SS.label": "You are a child, a spouse or a former spouse of a person who is receiving retirement or disability benefits.",
