@@ -28,8 +28,11 @@ eligibilityCriteria:
     description: military-service.eligibilityCriteria.description
     criteriaGroupKey: applicant-basics
     criteriaKeys:
+      - applicant_income
       - applicant_disability
+      - applicant_high-school_diploma
       - applicant_marital_status
+      - applicant_family_of_service_member
 
   - label: military-service.eligibilityCriteria.label1
     description: military-service.eligibilityCriteria.description1
@@ -43,8 +46,8 @@ eligibilityCriteria:
     description: military-service.eligibilityCriteria.description2
     criteriaGroupKey: deceased-military
     criteriaKeys:
+      - applicant_relationship
       - deceased_service_status
       - deceased_death_circumstance
       - deceased_grave_headstone
-      - applicant_relationship
 ---
