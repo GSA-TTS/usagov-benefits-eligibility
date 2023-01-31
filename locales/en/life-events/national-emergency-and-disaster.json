@@ -5,9 +5,9 @@
   "national-emergency-and-disaster.secondaryHeadline": "Government assistance after surviving natural disaster",
   "national-emergency-and-disaster.eligibilityCriteriaDescription": "For the most accurate results, select the options that best describe your or the person applying for benefits situation. The list of benefits will reorder to prioritize the benefits you are most likely eligible for.",
   "national-emergency-and-disaster.topLevelFilter.label": "Start here",
-  "national-emergency-and-disaster.label1": "",
-  "national-emergency-and-disaster.disableGroupWhen": "no",
-  "national-emergency-and-disaster.eligibilityCriteria.label": "About you",
+  "national-emergency-and-disaster.topLevelFilter.label1": "",
+  "national-emergency-and-disaster.topLevelFilter.disableGroupWhen": "no",
+  "national-emergency-and-disaster.eligibilityCriteria.label": "About you (the applicant)",
   "national-emergency-and-disaster.eligibilityCriteria.description": "",
   "national-emergency-and-disaster.eligibilityCriteria.label1": "About the person who died",
   "national-emergency-and-disaster.eligibilityCriteria.description1": ""
