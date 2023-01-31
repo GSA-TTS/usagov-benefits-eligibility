@@ -12,6 +12,11 @@ topLevelFilter:
     criteriaKey: applicant_date_of_birth
     disableGroupKey:
     disableGroupWhen:
+    
+  - label: national-emergency-and-disaster.topLevelFilter.label1
+    criteriaKey: applicant_loss_of_life_to_disaster
+    disableGroupKey: deceased
+    disableGroupWhen: [national-emergency-and-disaster.topLevelFilter.disableGroupWhen]
 
 eligibilityCriteria:
   - label: national-emergency-and-disaster.eligibilityCriteria.label
