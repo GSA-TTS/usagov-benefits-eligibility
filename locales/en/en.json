@@ -393,6 +393,40 @@
           "linkText": "Feature articles",
           "linkURL": "https://beta.usa.gov/#all_topics"
         }
+      ],
+      "social": [
+        {
+          "linkID": "social-10",
+          "linkURL": "https://www.facebook.com/USAgov",
+          "name": "Facebook",
+          "icon": "icon_facebook.svg",
+          "width": "32",
+          "height": "32"
+        },
+        {
+          "linkID": "social-20",
+          "linkURL": "https://www.facebook.com/USAgov",
+          "name": "Twitter USAGov",
+          "icon": "icon_twitter.svg",
+          "width": "39",
+          "height": "32"
+        },
+        {
+          "linkID": "social-30",
+          "linkURL": "https://www.facebook.com/USAgov",
+          "name": "YouTube",
+          "icon": "icon_youtube.svg",
+          "width": "40",
+          "height": "32"
+        },
+        {
+          "linkID": "social-40",
+          "linkURL": "https://www.facebook.com/USAgov",
+          "name": "Instagram",
+          "icon": "icon_instagram.svg",
+          "width": "32",
+          "height": "32"
+        }
       ]
     }
   }

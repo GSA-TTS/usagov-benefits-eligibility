@@ -39,18 +39,5 @@ export default {
       },
     }
   },
-  switchLanguage() {
-    let route = ""
-    const locale = this.$i18n.locale
-
-    if (locale === "en") {
-      route = `/es/`
-      this.$i18n.setLocale("es")
-    } else {
-      // route = `/`
-      this.$i18n.setLocale("en")
-    }
-    this.$router.push(route)
-  },
 }
 </script>

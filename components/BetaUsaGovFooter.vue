@@ -7,10 +7,12 @@
             <nav
               class="usa-footer__nav"
               aria-label="Footer navigation">
-              111 <BetaUsaGovFooterNav />222
+              <!-- Footer navigation component. -->
+              <BetaUsaGovFooterNav />
             </nav>
           </div>
 
+          <!-- Subscribe to the newsletter. -->
           <div class="tablet:grid-col-4">
             <div class="usa-sign-up">
               <h2 class="usa-sign-up__heading">{{ $t("footer.GroupThree.header") }}</h2>
@@ -64,61 +66,8 @@
               </div>
             </span>
           </div>
-
-          <div class="usa-footer__contact-links mobile-lg:grid-col-6">
-            <h4 class="usa-footer__contact-heading">Find us on social media</h4>
-
-            <div class="usa-footer__social-links en-links grid-row grid-gap-1">
-              <div class="grid-col-auto">
-                <a
-                  class="usa-social-link"
-                  href="https://www.facebook.com/USAgov"
-                  alt="Facebook USAGov">
-                  <img
-                    src="/themes/custom/usagov/images/facebook34.png"
-                    alt="Facebook USAGov" />
-                  <span>Facebook</span>
-                </a>
-              </div>
-
-              <div class="grid-col-auto">
-                <a
-                  class="usa-social-link"
-                  href="https://twitter.com/USAgov"
-                  alt="Twitter USAGov">
-                  <img
-                    src="/themes/custom/usagov/images/twitter34.png"
-                    alt="Twitter USAGov" />
-                  <span>Twitter</span>
-                </a>
-              </div>
-
-              <div class="grid-col-auto">
-                <a
-                  class="usa-social-link"
-                  href="https://www.youtube.com/usagov1"
-                  alt="YouTube USAGov">
-                  <img
-                    src="/themes/custom/usagov/images/youtube34.png"
-                    alt="Youtube USAGov" />
-                  <span>YouTube</span>
-                </a>
-              </div>
-
-              <div class="grid-col-auto">
-                <a
-                  class="usa-social-link"
-                  href="https://www.instagram.com/usagov/"
-                  alt="Instagram"
-                  usagov="">
-                  <img
-                    src="/themes/custom/usagov/images/instagram34.png"
-                    alt="Instagram USAGov" />
-                  <span>Instagram</span>
-                </a>
-              </div>
-            </div>
-          </div>
+          <!-- Footer social component. -->
+          <BetaUsaGovFooterSocial />
         </div>
       </div>
     </div>

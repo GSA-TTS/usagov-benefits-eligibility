@@ -316,18 +316,18 @@
       "column1": [
         {
           "linkID": "c1-10",
-          "linkText": "All topics and services",
-          "linkURL": "https://beta.usa.gov/#all_topics"
+          "linkText": "Todos los temas y servicios",
+          "linkURL": "https://beta.usa.gov/es#all_topics"
         },
         {
           "linkID": "c1-20",
-          "linkText": "About the U.S. and its government",
-          "linkURL": "https://www.usa.gov/federal-agencies"
+          "linkText": "Directorios de agencias y departamentos del Gobierno de EE. UU.",
+          "linkURL": "https://www.usa.gov/espanol/agencias-federales"
         },
         {
           "linkID": "c1-30",
-          "linkText": "Branches of government",
-          "linkURL": "https://beta.usa.gov/branches-of-government"
+          "linkText": "Ramas del Gobierno",
+          "linkURL": "https://beta.usa.gov/es/ramas-gobierno-estados-unidos"
         }
       ],
       "column2Title": "About Us",

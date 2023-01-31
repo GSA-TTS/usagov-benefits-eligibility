@@ -83,6 +83,10 @@ $AZ-button-disabled: #859cba;
   transform: translate(0, 25%);
 }
 
+.usa-social-link {
+  background-color: transparent;
+}
+
 @media (min-width: 64em) {
   .usa-navbar.position-relative > .usa-nav__secondary {
     bottom: 3rem;
@@ -171,4 +175,11 @@ h1.text-secondary {
 
 .usa-identifier {
   @include u-bg("blue-80v");
+}
+
+// visibility: hidden utility class.
+.is-hidden {
+  visibility: hidden;
+  opacity: opacity(0);
+  position: fixed;
 }

@@ -72,6 +72,7 @@ import sanitizeUrl from "~/mixins/SanitizeBears"
 export default {
   name: "BetaUsaGovFooterNav",
   mixins: [sanitizeUrl],
+
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
       if (benefitUrl && benefitUrl.length > 0) {
