@@ -11,33 +11,8 @@
               <BetaUsaGovFooterNav />
             </nav>
           </div>
-
-          <!-- Subscribe to the newsletter. -->
-          <div class="tablet:grid-col-4">
-            <div class="usa-sign-up">
-              <h2 class="usa-sign-up__heading">{{ $t("footer.GroupThree.header") }}</h2>
-              <form
-                class="usa-form"
-                action="https://connect.usa.gov/subscribe"
-                method="get">
-                <label
-                  class="usa-label"
-                  for="signup-email">
-                  {{ $t("footer.GroupThree.formLabel") }}
-                </label>
-                <input
-                  id="signup-email"
-                  class="usa-input"
-                  name="email"
-                  type="email" />
-                <button
-                  class="usa-button"
-                  type="submit">
-                  {{ $t("footer.GroupThree.buttonText") }}
-                </button>
-              </form>
-            </div>
-          </div>
+          <!-- Newsletter signup component-->
+          <BetaUsaGovFooterSignUp />
         </div>
       </div>
     </div>
@@ -66,7 +41,6 @@
               </div>
             </span>
           </div>
-
           <!-- Footer social component. -->
           <BetaUsaGovFooterSocial />
         </div>

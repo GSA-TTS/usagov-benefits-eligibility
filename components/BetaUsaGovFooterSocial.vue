@@ -28,7 +28,7 @@
 import sanitizeUrl from "~/mixins/SanitizeBears"
 
 export default {
-  name: "BetaUsaGovFooterNav",
+  name: "BetaUsaGovFooterSocial",
   mixins: [sanitizeUrl],
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
