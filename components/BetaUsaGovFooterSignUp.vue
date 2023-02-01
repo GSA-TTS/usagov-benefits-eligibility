@@ -28,19 +28,7 @@
 </template>
 
 <script>
-import sanitizeUrl from "~/mixins/SanitizeBears"
-
 export default {
   name: "BetaUsaGovFooterSignUp",
-  mixins: [sanitizeUrl],
-  methods: {
-    sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
-      if (benefitUrl && benefitUrl.length > 0) {
-        return this.sanitizeUrl(benefitUrl)
-      } else {
-        return defaultValue
-      }
-    },
-  },
 }
 </script>
