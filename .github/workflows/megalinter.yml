@@ -5,8 +5,8 @@ name: MegaLinter
 
 # yamllint disable-line rule:truthy
 on:
-  # Trigger mega-linter at every push. Action will also be visible from Pull Requests to main
-  push:
+  # Triggers mega-linter when a pull_request event's activity type is opened, synchronize, or reopened by default.
+  pull_request:
   workflow_dispatch:
 
 env: # Comment env block if you do not want to apply fixes
