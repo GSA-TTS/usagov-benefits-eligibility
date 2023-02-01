@@ -52,4 +52,8 @@ eligibilityCriteria:
       - deceased_date_of_death
       - deceased_date_of_funeral
       - deceased_grave_headstone
+
+relatedKeys:
+  - disability
+  - death-of-a-loved-one
 ---
