@@ -5,15 +5,15 @@
     <div class="usa-footer__social-links en-links grid-row grid-gap-1">
       <!-- Footer social links loop. -->
       <div
-        v-for="item in $t('beta.footer.social')"
-        :id="`social-id-${item.linkID}`"
-        :key="`social-id-${item.linkID}`"
+        v-for="item in $t('beta.footer.social.icons')"
+        :id="`social-id-${item.socialID}`"
+        :key="`social-id-${item.socialID}`"
         class="grid-col-auto">
         <a
           class="usa-social-link"
-          :href="sanitizedBearsUrl(item.linkURL)">
+          :href="sanitizedBearsUrl(item.socialURL)">
           <img
-            :src="require(`@/assets/img/${item.icon}`)"
+            :src="require(`@/assets/img/${item.icon}.svg`)"
             :alt="item.name"
             :width="item.width"
             :height="item.height" />

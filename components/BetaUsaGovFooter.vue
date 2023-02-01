@@ -22,11 +22,11 @@
                 method="get">
                 <label
                   class="usa-label"
-                  for="email">
+                  for="signup-email">
                   {{ $t("footer.GroupThree.formLabel") }}
                 </label>
                 <input
-                  :id="email"
+                  id="signup-email"
                   class="usa-input"
                   name="email"
                   type="email" />
@@ -66,13 +66,22 @@
               </div>
             </span>
           </div>
+
           <!-- Footer social component. -->
           <BetaUsaGovFooterSocial />
         </div>
       </div>
     </div>
 
-    <div class="usa-identifier">identifier</div>
+    <div class="usa-identifier">
+      <section
+        class="usa-identifier__section usa-identifier__section--masthead"
+        :aria-label="$t('footer.subFooterLabel')">
+        <div class="usa-identifier__container flex-justify-center">
+          {{ $t("footer.subFooter") }}
+        </div>
+      </section>
+    </div>
   </footer>
 </template>
 

@@ -102,13 +102,6 @@ $AZ-button-disabled: #859cba;
     @include u-bg("cyan-10");
   }
 
-  &__primary-link,
-  &__secondary-link > a,
-  &__secondary-link > a:visited,
-  &__secondary-link > a:hover {
-    color: color("white");
-  }
-
   &__primary-link:hover {
     cursor: unset;
     text-decoration: none;
@@ -171,10 +164,6 @@ h1.text-secondary {
 
 .usagov-heading--blue {
   color: $blue;
-}
-
-.usa-identifier {
-  @include u-bg("blue-80v");
 }
 
 // visibility: hidden utility class.
