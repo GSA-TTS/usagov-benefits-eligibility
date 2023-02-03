@@ -172,3 +172,21 @@ h1.text-secondary {
   opacity: opacity(0);
   position: fixed;
 }
+
+.usa-gov-footer__primary-link {
+  min-height: units(6);
+  font-size: size("ui", 7);
+}
+
+.usa-sign-up__heading {
+  @include u-font-family("ui");
+  font-size: size("ui", 8);
+}
+
+.usa-sign-up {
+  @include u-padding-top(5);
+}
+
+.usa-identifier__section {
+  @include u-padding-bottom(0);
+}
