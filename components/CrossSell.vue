@@ -3,13 +3,9 @@
     v-if="cards && cards.length"
     class="grid-container margin-top-8">
     <div class="grid-row grid-gap">
-      <div
-        class="tablet:grid-col border-top border-width-2px border-base-light margin-right-2"
-        style="padding-right: 0">
-        <h1 class="font-heading-lg tablet:font-heading-xl margin-y-5">
-          {{ title }}
-        </h1>
-      </div>
+      <h1 class="font-heading-lg tablet:font-heading-xl margin-y-5">
+        {{ title }}
+      </h1>
     </div>
 
     <div class="grid-row grid-gap">

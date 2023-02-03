@@ -30,7 +30,7 @@
                 <p>{{ $t("footer.GroupTwo.subHeader") }}</p>
 
                 <address class="usa-footer__address">
-                  <div class="usa-footer__contact-info grid-row grid-gap">
+                  <div class="usa-footer__contact-info">
                     <a
                       class="margin-bottom-3"
                       :href="sanitizedBearsUrl($t('footer.GroupOne.linkOneUrl'))">

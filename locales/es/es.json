@@ -168,7 +168,8 @@
     },
     "GroupTwo": {
       "header": "Envíenos sus preguntas",
-      "linkOne": "Llame al 1-844-USAGOV1 (1-844-872-4681)",
+      "subHeader": "Haga una pregunta a USAGov en Español al",
+      "linkOne": "1-844-USAGOV1 (1-844-872-4681)",
       "linkOneUrl": "https://www.usa.gov/espanol/centro-de-llamadas",
       "linkTwo": "In English",
       "linkTwoUrl": "https://www.usa.gov/contact"
@@ -378,7 +379,44 @@
           "linkText": "Feature articles",
           "linkURL": "https://beta.usa.gov/#all_topics"
         }
-      ]
+      ],
+      "social": {
+        "title": "Encuéntrenos en las redes sociales",
+        "icons": [
+          {
+            "socialID": "s-10",
+            "socialURL": "https://www.facebook.com/USAgov",
+            "name": "Facebook USAGov",
+            "icon": "icon_facebook",
+            "width": "32",
+            "height": "32"
+          },
+          {
+            "socialID": "s-20",
+            "socialURL": "https://www.facebook.com/USAgov",
+            "name": "Twitter USAGov",
+            "icon": "icon_twitter",
+            "width": "39",
+            "height": "32"
+          },
+          {
+            "socialID": "s-30",
+            "socialURL": "https://www.facebook.com/USAgov",
+            "name": "YouTube USAGov",
+            "icon": "icon_youtube",
+            "width": "40",
+            "height": "32"
+          },
+          {
+            "socialID": "s-40",
+            "socialURL": "https://www.facebook.com/USAgov",
+            "name": "Instagram USAGov",
+            "icon": "icon_instagram",
+            "width": "32",
+            "height": "32"
+          }
+        ]
+      }
     }
   }
 }

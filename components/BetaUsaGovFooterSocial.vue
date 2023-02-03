@@ -1,7 +1,7 @@
 <template>
   <!-- Footer social links. -->
   <div class="usa-footer__contact-links mobile-lg:grid-col-6">
-    <h2 class="usa-footer__contact-heading">Find us on social media</h2>
+    <h2 class="usa-footer__contact-heading">{{ $t("beta.footer.social.title") }}</h2>
     <div class="usa-footer__social-links en-links grid-row grid-gap-1">
       <!-- Footer social links loop. -->
       <div

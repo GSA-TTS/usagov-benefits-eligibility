@@ -219,7 +219,7 @@
     "GroupTwo": {
       "header": "USAGov Contact Center",
       "subHeader": "Ask USA.gov a question at",
-      "linkOne": "Call 1-844-USAGOV1 (1-844-872-4681)",
+      "linkOne": "1-844-USAGOV1 (1-844-872-4681)",
       "linkOneUrl": "https://www.usa.gov/phone",
       "linkTwo": "En Español",
       "linkTwoUrl": "https://usa.gov/espanol/contactenos"
@@ -396,7 +396,7 @@
         }
       ],
       "social": {
-        "social": "For media",
+        "title": "Find us on social media",
         "icons": [
           {
             "socialID": "s-10",
