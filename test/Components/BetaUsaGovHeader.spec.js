@@ -1,5 +1,5 @@
 import { config, mount, shallowMount } from "@vue/test-utils"
-import UsaGovHeader from "@/components/UsaGovHeader.vue"
+import BetaUsaGovHeader from "@/components/BetaUsaGovHeader.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
 describe("<UsaGovHeader />", () => {
@@ -8,33 +8,33 @@ describe("<UsaGovHeader />", () => {
   })
 
   it("is a Vue instance", () => {
-    const wrapper = mount(UsaGovHeader, {
+    const wrapper = mount(BetaUsaGovHeader, {
       $i18n: { locale: "en" },
     })
     expect(wrapper.vm).toBeTruthy()
   })
 
   it("does toggle lang", () => {
-    const wrapper = mount(UsaGovHeader, {
+    const wrapper = mount(BetaUsaGovHeader, {
       mocks: {
         $router: {
           push: jest.fn(),
         },
         $config: {
           languageToggleActive: true,
-          oneEventVersion: "death-of-a-loved-one",
+          oneEventVersion: false,
         },
       },
     })
     expect(wrapper.vm).toBeTruthy()
-    const esButton = wrapper.find("#language-toggle-button")
+    const esButton = wrapper.find(".language-link")
     esButton.trigger("click")
     config.mocks.$i18n.locale = "es"
     esButton.trigger("click")
   })
 
   it("does toggle lang full", () => {
-    const wrapper = mount(UsaGovHeader, {
+    const wrapper = mount(BetaUsaGovHeader, {
       mocks: {
         $router: {
           push: jest.fn(),
@@ -45,7 +45,7 @@ describe("<UsaGovHeader />", () => {
       },
     })
     expect(wrapper.vm).toBeTruthy()
-    const esButton = wrapper.find("#language-toggle-button")
+    const esButton = wrapper.find(".language-link")
     esButton.trigger("click")
     config.mocks.$i18n.locale = "es"
     esButton.trigger("click")
@@ -53,7 +53,7 @@ describe("<UsaGovHeader />", () => {
 })
 
 it("test skipLink function", () => {
-  const wrapper = shallowMount(UsaGovHeader, {})
+  const wrapper = shallowMount(BetaUsaGovHeader, {})
   const skipLinkEl = wrapper.find(".usa-skipnav")
   skipLinkEl.trigger("click")
   expect(wrapper.vm.skipLink).toBeTruthy()
@@ -61,12 +61,12 @@ it("test skipLink function", () => {
 
 describe("sanitizedBenefitUrl tests", () => {
   it("text example.com", () => {
-    const wrapper = shallowMount(UsaGovHeader, {})
+    const wrapper = shallowMount(BetaUsaGovHeader, {})
     const url = wrapper.vm.sanitizedHeadingUrl("http://www.example.com")
     expect(url).toBe("http://www.example.com")
   })
   it("sanitizedBenefitUrl about:blank if javascript is injected", () => {
-    const wrapper = shallowMount(UsaGovHeader, {})
+    const wrapper = shallowMount(BetaUsaGovHeader, {})
     const url = wrapper.vm.sanitizedHeadingUrl({
       source: {
         link: "javascript:somethingBad('dd')",
@@ -83,7 +83,7 @@ describe("skip link", () => {
     const stub = { scrollIntoView: jest.fn() }
     global.document.getElementById = jest.fn().mockReturnValue(stub)
 
-    wrapper = shallowMount(UsaGovHeader)
+    wrapper = shallowMount(BetaUsaGovHeader)
   })
 
   afterEach(() => {
