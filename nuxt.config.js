@@ -5,7 +5,7 @@ const getLifeEvents = function () {
   return files.map((f) => f.replace(/.md$/gi, ""))
 }
 // https://federalist.18f.gov/documentation/env-vars-on-federalist-builds/#default-environment-variables
-const sitePrefix = `${process.env.BASEURL}/` // basepath for assets
+const sitePrefix = process.env.BASEURL ? `${process.env.BASEURL}/` : ""
 
 const SITE_URLPREFIX =
   process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
@@ -85,7 +85,7 @@ export default {
   css: ["~/assets/styles/index.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/uswds.client.js", "~/plugins/axe.client.js"],
+  plugins: ["~/plugins/uswds.client.js", "~/plugins/axe.client.js", "~/plugins/i18n.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -146,7 +146,7 @@ export default {
   },
 
   router: {
-    base: process.env.NODE_ENV !== "production" ? undefined : sitePrefix,
+    base: process.env.NODE_ENV !== "production" ? "" : sitePrefix,
     linkActiveClass: "usa-current",
     linkExactActiveClass: "usa-current",
     extendRoutes(routes, resolve) {

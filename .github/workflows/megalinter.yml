@@ -5,8 +5,8 @@ name: MegaLinter
 
 # yamllint disable-line rule:truthy
 on:
-  # Trigger mega-linter at every push. Action will also be visible from Pull Requests to main
-  push:
+  # Triggers mega-linter when a pull_request event's activity type is opened, synchronize, or reopened by default.
+  pull_request:
   workflow_dispatch:
 
 env: # Comment env block if you do not want to apply fixes
@@ -59,7 +59,7 @@ jobs:
       - name: Create Pull Request with applied fixes
         id: cpr
         if: steps.ml.outputs.has_updated_sources == 1 && (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) && env.APPLY_FIXES_MODE == 'pull_request' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository)
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           commit-message: "[MegaLinter] Apply linters automatic fixes"
@@ -81,3 +81,15 @@ jobs:
         with:
           branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
           commit_message: "[MegaLinter] Apply linters fixes"
+
+      - name: Check to see if the SARIF a was generated
+        id: sarif_file_exists
+        uses: andstor/file-existence-action@v2
+        with:
+          files: "megalinter-reports/megalinter-report.sarif"
+
+      - name: Upload MegaLinter scan results to GitHub Security tab
+        if: steps.sarif_file_exists.outputs.files_exists == 'true'
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: "megalinter-reports/megalinter-report.sarif"
