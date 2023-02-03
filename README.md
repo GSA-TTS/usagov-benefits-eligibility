@@ -88,7 +88,7 @@ docker run \
 
 This will run the container in the foreground (replace the `--interactive`
 and `--tty` flags with `--detach` to have it run in the background). The
-`--expose` flag makes it so that connection attempts to the port BEARS
+`--publish` flag makes it so that connection attempts to the port BEARS
 runs on is accessible outside of the container (e.g., from a web browser
 on the local system).
 
