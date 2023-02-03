@@ -8,7 +8,7 @@
     data-allow-multiple>
     <article
       v-for="benefit in lifeEventBenefits"
-      :key="`acc-key-${benefit.slug}`"
+      :key="`acc-key-${benefit.title}`"
       class="margin-bottom-2">
       <h2
         :id="`acc-h-${benefit.slug}-${cid}`"
