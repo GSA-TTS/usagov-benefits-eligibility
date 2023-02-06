@@ -1,0 +1,97 @@
+---
+name: User Story
+description: Use this form to create a new user story
+labels: ["story", "needs refinement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Introduction
+
+  - type: markdown
+    attributes:
+      value: >
+        This form will guide you through creating a new [user story](https://www.agilealliance.org/glossary/user-stories/).
+
+        User stories capture requests and word them in terms of a persona
+        who may be making the request, the nature of their request, and
+        why the request adds value to the project.
+
+        User stories capture **what** a user wants, not **how** they want
+        it done.  They capture goals, not system interactions.
+
+        A good user story is as small as possible as long as it:
+
+          - Describes a user’s goal (what), not a system interaction (how)
+          - Is narrow, rather than shallow
+          - Is potentially shippable -- it can be experienced, is
+            understandable, a user could make use of it
+          - Is option-enabling - doesn’t specify implementation details
+
+        We write stories in this way so we can do the work in thin vertical
+        slices.  This results in little to no surprises by going through all
+        the layers. Rather than trying to do all of the research and then
+        all of the design, etc, you do just enough of each layer in order
+        to have something tangible that you can demo & build upon.
+
+        Think about what is the simplest path from beginning to end.  It’s
+        a basic user path, a happy path.  Think about the type of user
+        and what they would want to do.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Required fields
+
+  - type: input
+    id: persona
+    attributes:
+      label: User / Persona
+      description: 'A user story is viewed from the perspective of a user or persona, such "survey administrator" or "software engineer"'
+      placeholder: "(who) As a..."
+    validations:
+      required: true
+  - type: input
+    id: reason
+    attributes:
+      label: Reason / Justification
+      description: 'Finally, a user story involves a reason or a justification as to why the story should be completed -- an answer to "why should we do this?"'
+      placeholder: "(why) so that...."
+    validations:
+      required: true
+  - type: input
+    id: request
+    attributes:
+      label: Request
+      description: "Next, a user story includes the request; note: here we share what we want, not how we want it done"
+      placeholder: "(what) I want..."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Optional fields
+  - type: textarea
+    id: dod
+    attributes:
+      label: Definition of Done (DoD)
+      description: The Definition of Done is a list of criteria under which the team would consider this story complete; may include references to issues
+      value: "- [ ] "
+    validations:
+      required: false
+  - type: textarea
+    id: ac
+    attributes:
+      label: Acceptance Criteria (AC)
+      description: The Acceptance Criteria are a series of tests meant to confirm that things are working as-expected
+      value: "- [ ] "
+    validations:
+      required: false
+  - type: textarea
+    id: other
+    attributes:
+      label: Other Notes
+      description: List any additional notes (e.g., resources, links, diagrams, etc.) that the team may find useful or helpful when working on this user story.
+    validations:
+      required: false

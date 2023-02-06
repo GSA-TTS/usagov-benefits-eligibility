@@ -6,31 +6,42 @@ on:
   pull_request:
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: Building site and running pa11y-ci tests
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
 
     steps:
-      - name: Checkout source.
-        uses: actions/checkout@v2
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@latest
 
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
+
+      - name: Use Node.js (.nvmrc)
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site
-        run: npm run generate
-
       - name: Test accessibility with pa11y
         run: |
-          npm run start & \
-          timeout 22 \
-          sh -c 'until nc -z localhost 3000; do sleep 1; done' \
+          npm run dev & \
+          timeout 120s \
+            sh -c 'until nc -z localhost 3000; do sleep 1; done' \
+          && sleep 120 \
           && npm run test:pa11y 2>&1 | tee pa11y_output.txt
 
       - name: Read pa11y_output file.
@@ -39,8 +50,14 @@ jobs:
         with:
           path: ./pa11y_output.txt
 
+      - name: verify that pa11y successfully scanned the site
+        if: contains(steps.pa11y_output.outputs.content, 'ailed to run')
+        run: |
+          echo "::error::Pa11y failed to run."
+          exit 1
+
       - name: Comment on pull request.
-        uses: thollander/actions-comment-pull-request@v1
+        uses: thollander/actions-comment-pull-request@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: "<details><summary>Pa11y testing results</summary>

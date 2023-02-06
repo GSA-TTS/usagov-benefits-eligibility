@@ -33,6 +33,13 @@ describe("<UsaGovFooter />", () => {
     await wrapper.vm.$options.fetch()
     expect(wrapper.vm.$options.disclaimer).toBe(disclaimer)
   })
+
+  it("test scrolltoTop function", () => {
+    const wrapper = shallowMount(UsaGovFooter, {})
+    const scrollTopEl = wrapper.find("#return-to-top-link")
+    scrollTopEl.trigger("click")
+    expect(wrapper.vm.scrollToTop).toBeTruthy()
+  })
 })
 
 describe("sanitizedBenefitUrl tests", () => {

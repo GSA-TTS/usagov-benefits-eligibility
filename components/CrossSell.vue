@@ -23,7 +23,7 @@
               <nuxt-link
                 class="display-block height-full margin-x-1"
                 style="text-decoration: none; outline-offset: 0.25rem"
-                :to="card.slug">
+                :to="localePath(`/${card.slug}`)">
                 <Card
                   :card-body="card.summary"
                   :card-title="card.title"

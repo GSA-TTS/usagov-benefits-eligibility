@@ -618,7 +618,7 @@
                     </ul>
                   </div>
                 </div>
-                <li class="topic-link topic-nav-globe">
+                <div class="topic-link topic-nav-globe">
                   <img
                     v-if="$i18n.locale === 'en'"
                     src="@/assets/img/Topic_Icon_Immigration_White.svg"
@@ -636,7 +636,7 @@
                     :href="sanitizedHeadingUrl($t('header.GroupSeven.titleUrl'))">
                     {{ $t("header.GroupSeven.title") }}
                   </a>
-                </li>
+                </div>
               </div>
             </li>
           </ul>
@@ -700,9 +700,7 @@ export default {
   },
 }
 </script>
-<style
-  lang="scss"
-  scoped>
+<style lang="scss" scoped>
 // Primary Colors
 $dark-blue: #11385b; //NOTE not currently in our code
 $aqua-blue: #02bfe7; //highlights action items and key areas (buttons, borders, etc)
@@ -767,7 +765,7 @@ $AZ-button-disabled: #859cba;
 }
 
 // SEARCH
-@media only screen and(min-width: 60em) {
+@media only screen and (min-width: 60em) {
   header [role="search"] {
     min-width: 20rem;
   }

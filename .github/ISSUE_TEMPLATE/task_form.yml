@@ -1,0 +1,65 @@
+---
+name: Task
+description: Use this form to create a new Tasks
+labels: ["task", "needs refinement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Introduction
+
+  - type: markdown
+    attributes:
+      value: >
+        This form will guide you through creating a new Task.
+
+        Tasks are like User Stories, but are generally written from the
+        perspective of a member of the team, often to describe something
+        that needs to be done that users wouldn't see.  User Stories
+        describe requirements -- the what -- while Tasks describe
+        implementation -- the how.
+
+        Tasks, like User Stories, should be narrow, but not shallow;
+        they should have focus that is executable and scope-bound.
+
+        Typically, Tasks are designed to be something that can be done
+        in a single day (but more than a few minutes worth of work).
+
+        Often, Tasks are associated with and/or make reference to
+        User Stories.  It's also common for the Definition of Done
+        (DoD) from a User Story (the what) to be the starting point
+        for Tasks (the how).
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Required fields
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: The Description is the verbiage that describes the work that needs to be done
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Optional fields
+
+  - type: textarea
+    id: userstory
+    attributes:
+      label: User Story
+      description: "If any User Stories (the what) are related to this Task (the how), please #mention the issue number(s) here"
+    validations:
+      required: false
+
+  - type: textarea
+    id: adrs
+    attributes:
+      label: Architectural Decision Records (ADRs)
+      description: "If any Architectural Decision Records (ADRs) are relevant to the execution of this Task, please reference them here"
+    validations:
+      required: false
