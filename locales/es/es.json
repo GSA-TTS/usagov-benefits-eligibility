@@ -353,21 +353,21 @@
       "column3": [
         {
           "linkID": "c3-10",
-          "linkText": "Partner with us",
-          "linkURL": "https://beta.usa.gov/#all_topics"
+          "linkText": "Colabore con nosotros",
+          "linkURL": "https://www.usa.gov/espanol/colabore-con-nosotros#item-211505"
         },
         {
           "linkID": "c3-20",
-          "linkText": "USAGov blog",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
+          "linkText": "Blog de USAGov",
+          "linkURL": "https://blog.usa.gov/"
         }
       ],
       "column4Title": "Para medios de comunicación",
       "column4": [
         {
           "linkID": "c4-10",
-          "linkText": "Feature articles",
-          "linkURL": "https://beta.usa.gov/#all_topics"
+          "linkText": "Artículos de interés",
+          "linkURL": "https://beta.usa.gov/es/articulos"
         }
       ],
       "social": {
@@ -375,7 +375,7 @@
         "icons": [
           {
             "socialID": "s-10",
-            "socialURL": "https://www.facebook.com/USAgov",
+            "socialURL": "https://twitter.com/usagovespanol",
             "name": "Facebook USAGov",
             "icon": "icon_facebook",
             "width": "32",
@@ -383,7 +383,7 @@
           },
           {
             "socialID": "s-20",
-            "socialURL": "https://www.facebook.com/USAgov",
+            "socialURL": "https://twitter.com/usagovespanol",
             "name": "Twitter USAGov",
             "icon": "icon_twitter",
             "width": "39",
@@ -391,18 +391,10 @@
           },
           {
             "socialID": "s-30",
-            "socialURL": "https://www.facebook.com/USAgov",
+            "socialURL": "https://www.youtube.com/USAgovespanol",
             "name": "YouTube USAGov",
             "icon": "icon_youtube",
             "width": "40",
-            "height": "32"
-          },
-          {
-            "socialID": "s-40",
-            "socialURL": "https://www.facebook.com/USAgov",
-            "name": "Instagram USAGov",
-            "icon": "icon_instagram",
-            "width": "32",
             "height": "32"
           }
         ]
