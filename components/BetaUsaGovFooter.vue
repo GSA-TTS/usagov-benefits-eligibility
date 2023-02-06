@@ -4,6 +4,7 @@
       <div class="grid-container">
         <div class="grid-row grid-gap">
           <div class="tablet:grid-col-8">
+            <!-- start Footer navigation. -->
             <nav
               class="usa-footer__nav"
               aria-label="Footer navigation">
@@ -17,6 +18,7 @@
       </div>
     </div>
 
+    <!-- Lower contact info block. -->
     <div class="usa-footer__secondary-section">
       <div class="grid-container">
         <div class="grid-row grid-gap">
@@ -47,6 +49,9 @@
       </div>
     </div>
 
+    <!-- Footer usa identifier
+    "USAGov is the Official Guide..."
+    -->
     <div class="usa-identifier">
       <section
         class="usa-identifier__section usa-identifier__section--masthead"
@@ -63,6 +68,7 @@
 import sanitizeUrl from "~/mixins/SanitizeBears"
 
 export default {
+  name: "BetaUsaGovFooter",
   mixins: [sanitizeUrl],
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {

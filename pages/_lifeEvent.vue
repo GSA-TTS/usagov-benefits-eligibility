@@ -195,9 +195,8 @@
         </div>
       </div>
     </section>
-    <cross-sell
+    <CrossSell
       v-if="$config.oneEventVersion === false"
-      title="Other benefits that might be relevant to you."
       :cards="lifeEvent.related"
       class="print:display-none" />
   </div>

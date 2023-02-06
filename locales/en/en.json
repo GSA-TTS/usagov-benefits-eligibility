@@ -232,6 +232,9 @@
     "subFooterLabel": "USAGov tagline",
     "subFooter": "USAGov is the Official Guide to Government Information and Services"
   },
+  "crossSell": {
+    "title": "Other benefits that might be relevant to you."
+  },
   "lifeEvent": {
     "buttonLabel1": "Open All",
     "buttonLabel2": "Close All",
@@ -299,10 +302,6 @@
       "statusLink": "https://www.usa.gov/",
       "usaGov": "USA.gov",
       "main": ". If you don't find what you're looking for, return to the main site."
-    },
-
-    "relatedContent": {
-      "title": "Other benefits that might be relevant to you."
     },
 
     "header": {

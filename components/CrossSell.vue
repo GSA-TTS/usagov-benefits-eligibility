@@ -3,9 +3,9 @@
     v-if="cards && cards.length"
     class="grid-container margin-top-8">
     <div class="grid-row grid-gap">
-      <h1 class="font-heading-lg tablet:font-heading-xl margin-y-5">
-        {{ title }}
-      </h1>
+      <h2 class="font-heading-lg tablet:font-heading-xl margin-y-5">
+        {{ $t("crossSell.title") }}
+      </h2>
     </div>
 
     <div class="grid-row grid-gap">
@@ -37,6 +37,7 @@
 
 <script>
 export default {
+  name: "CrossSell",
   props: {
     title: {
       type: String,
