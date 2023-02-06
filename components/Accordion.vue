@@ -7,8 +7,8 @@
     aria-multiselectable="true"
     data-allow-multiple>
     <article
-      v-for="benefit in lifeEventBenefits"
-      :key="`acc-key-${benefit.slug}`"
+      v-for="(benefit, index) in lifeEventBenefits"
+      :key="`acc-key-${benefit.slug}-${index}`"
       class="margin-bottom-2">
       <h2
         :id="`acc-h-${benefit.slug}-${cid}`"
