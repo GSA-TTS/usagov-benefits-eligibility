@@ -31,6 +31,8 @@ export default Object.assign(
   require("./es/benefits/ssa-survivor-benefits-spouse-disabled.json"),
   require("./es/benefits/va-survivor-pension-spouse.json"),
   require("./es/benefits/doj-public-safety-officers-death-benefit.json"),
+  require("./es/benefits/doi-financial-assistance-social-services-burial.json"),
+  require("./es/benefits/dol-division-of-coal-mine-workers-compensation-spouse.json"),
   require("./es/life-events/death-of-a-loved-one.json"),
   require("./es/criteria.json"),
   require("./es/landing-page.json"),
