@@ -59,5 +59,8 @@ eligibilityCriteria:
       - applicant_funeral_reimbursment
       - applicant_citizen_status	
 
+relatedKeys:
+  - disability
+  - retirement
 
 ---
