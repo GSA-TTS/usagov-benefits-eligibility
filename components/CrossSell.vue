@@ -4,7 +4,7 @@
     class="grid-container margin-top-8">
     <div class="grid-row grid-gap">
       <h2 class="font-heading-lg tablet:font-heading-xl margin-y-5">
-        {{ $t("crossSell.title") }}
+        {{ title }}
       </h2>
     </div>
 
@@ -18,6 +18,7 @@
             :key="card.slug"
             class="usa-card desktop:grid-col-6"
             :aria-label="card.title">
+            <!-- TODO: if we keep related content, let's unwrap the card from the link -->
             <nuxt-link
               class="display-block height-full margin-x-1"
               style="text-decoration: none; outline-offset: 0.25rem"
