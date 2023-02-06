@@ -313,7 +313,7 @@
       }
     },
     "footer": {
-      "column1Title": "Government information",
+      "column1Title": "Información del Gobierno",
       "column1": [
         {
           "linkID": "c1-10",
@@ -331,35 +331,25 @@
           "linkURL": "https://beta.usa.gov/es/ramas-gobierno-estados-unidos"
         }
       ],
-      "column2Title": "About Us",
+      "column2Title": "Sobre nosotros",
       "column2": [
         {
           "linkID": "c2-10",
-          "linkText": "Our mission and history",
-          "linkURL": "https://beta.usa.gov/#all_topics"
+          "linkText": "Nuestra historia y misión",
+          "linkURL": "https://www.usa.gov/espanol/quienes-somos"
         },
         {
           "linkID": "c2-20",
-          "linkText": "Privacy and security policies",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
+          "linkText": "Políticas de privacidad y seguridad",
+          "linkURL": "https://beta.usa.gov/es/privacidad-seguridad"
         },
         {
           "linkID": "c2-30",
-          "linkText": "Accessibility policy",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
-        },
-        {
-          "linkID": "c2-40",
-          "linkText": "How to cite USA.gov",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
-        },
-        {
-          "linkID": "c2-50",
-          "linkText": "Real-time website data",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
+          "linkText": "Política de accesibilidad",
+          "linkURL": "https://beta.usa.gov/es/accesibilidad"
         }
       ],
-      "column3Title": "For federal agencies",
+      "column3Title": "Para agencias federales",
       "column3": [
         {
           "linkID": "c3-10",
@@ -372,7 +362,7 @@
           "linkURL": "https://beta.usa.gov/about-the-us/"
         }
       ],
-      "column4Title": "For media",
+      "column4Title": "Para medios de comunicación",
       "column4": [
         {
           "linkID": "c4-10",

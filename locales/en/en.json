@@ -301,6 +301,10 @@
       "main": ". If you don't find what you're looking for, return to the main site."
     },
 
+    "relatedContent": {
+      "title": "Other benefits that might be relevant to you."
+    },
+
     "header": {
       "languageToggle": "Español",
       "menu": "Menu",
