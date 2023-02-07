@@ -51,9 +51,9 @@ eligibilityCriteria:
       - applicant_care_for_child
       - applicant_paid_funeral_expenses
       - applicant_funeral_reimbursment
-      - applicant_citizen_status	
+      - applicant_citizen_status
 
 relatedKeys:
   - disability
-  - late-adulthood
+  - retirement
 ---

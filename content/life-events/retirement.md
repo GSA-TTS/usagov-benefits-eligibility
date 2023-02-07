@@ -37,4 +37,8 @@ eligibilityCriteria:
     criteriaGroupKey: applicant-military
     criteriaKeys:
       - applicant_service_status
+
+relatedKeys:
+  - death-of-a-loved-one
+  - disability
 ---
