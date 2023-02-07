@@ -20,7 +20,7 @@ topLevelFilter:
 
   - label: school-and-education.topLevelFilter.label2
     criteriaKey: applicant_lost_a_family_member
-    disableGroupKey: applicant-relationships
+    disableGroupKey: deceased
     disableGroupWhen: [school-and-education.topLevelFilter.disableGroupWhen1]
 
 eligibilityCriteria:
@@ -43,7 +43,7 @@ eligibilityCriteria:
 
   - label: school-and-education.eligibilityCriteria.label2
     description: school-and-education.eligibilityCriteria.description2
-    criteriaGroupKey: applicant-relationships
+    criteriaGroupKey: deceased
     criteriaKeys:
       - applicant_relationship
       - deceased_public_safety_officer

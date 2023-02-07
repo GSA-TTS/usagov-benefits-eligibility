@@ -5,7 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - disability
-  - loss-of-job-and-low-income
+  - financial-hardship
 source:
   name: ssa-disability-insurance-mothers-fathers.source.name
   link: ssa-disability-insurance-mothers-fathers.source.link

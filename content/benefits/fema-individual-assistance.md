@@ -5,6 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - national-emergency-and-disaster
+  - financial-hardship
 source:
   name: fema-individual-assistance.source.name
   link: fema-individual-assistance.source.link
