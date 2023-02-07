@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: va-dependency-and-indemnity-compensation-child.source.name
   link: va-dependency-and-indemnity-compensation-child.source.link

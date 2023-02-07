@@ -3,8 +3,9 @@
   "va-pension-with-disability.headline": "Veteran's Pension with Disability",
   "va-pension-with-disability.source.name": "U.S. Department of Veteran Affairs",
   "va-pension-with-disability.source.link": "https://www.va.gov/pension/how-to-apply/",
-  "va-pension-with-disability.summary": "Monthly payments to wartime veterans who meet certain age or disability requirements, and who have income and net worth within certain limits.",
+  "va-pension-with-disability.summary": "Monthly payments are available to wartime veterans who meet certain age or disability requirements, and who have income and net worth within certain limits.",
   "va-pension-with-disability.eligibility.label": "You are under 65 years old.",
   "va-pension-with-disability.eligibility.acceptableValues": "yes",
+  "va-pension-with-disability.eligibility.label1": "You served in the active military, naval or air service.",
   "va-pension-with-disability.eligibility.acceptableValues1": "discharged under conditions other than dishonorable"
 }

@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: va-health-care-program-for-surviving-child.source.name
   link: va-health-care-program-for-surviving-child.source.link
