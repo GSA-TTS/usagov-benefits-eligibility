@@ -195,11 +195,7 @@
         </div>
       </div>
     </section>
-    <CrossSell
-      v-if="$config.oneEventVersion === false"
-      :cards="lifeEvent.related"
-      :title="$t('crossSell.title')"
-      class="print:display-none" />
+    <!-- CrossSell goes here. -->
   </div>
 </template>
 
