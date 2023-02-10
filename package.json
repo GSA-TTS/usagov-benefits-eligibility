@@ -17,7 +17,7 @@
     "test:pa11y": "pa11y http://localhost:3000/",
     "federalist:nuxtjsbug": "open https://github.com/nuxt/nuxt.js/issues/8973",
     "federalist:local": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/url\\(\\/fonts/url\\(..\\/fonts/g' *.css && cd ../../.. && ls -lhR _site && nuxt start",
-    "federalist": "gulp && nuxt generate ; cd ./_site/_nuxt/css && if [ \"${BRANCH}\" = \"main\" ]; then sed -i~ -Ee 's|(/?)fonts/|\\1../fonts/|g' *.css; elif [ \"${BRANCH}\" = \"release\" ]; then sed -i~ -Ee 's|(/?)fonts/|\\1../fonts/|g' *.css; else perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css; fi && cd ../../.. && ls -lhR _site",
+    "federalist": "gulp && nuxt generate ; cd ./_site/_nuxt/css && if [ \"${BRANCH}\" = \"main\" ] || [ \"${BRANCH}\" = \"release\" ]; then sed -i~ -Ee 's|(/?)fonts/|\\1../fonts/|g' *.css; else perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css; fi && cd ../../.. && ls -lhR _site",
     "format": "prettier --write \"./**/*.{js,jsx,json,vue,md,css}\""
   },
   "dependencies": {
