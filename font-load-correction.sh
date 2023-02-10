@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[  \"${BRANCH}\" == \"main\" ]] ; 
+if [[  "${BRANCH}" == "main" ]] ; 
 then 
-    echo \"true\"; 
+    echo "true"; 
 else 
-    echo \"false\";  
+    echo "false";  
 fi
