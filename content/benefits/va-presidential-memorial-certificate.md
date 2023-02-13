@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: va-presidential-memorial-certificate.source.name
   link: va-presidential-memorial-certificate.source.link

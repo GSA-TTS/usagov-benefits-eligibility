@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: va-life-insurance-for-survivors.source.name
   link: va-life-insurance-for-survivors.source.link

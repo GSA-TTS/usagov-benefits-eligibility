@@ -5,6 +5,7 @@ tags:
   - housing
 lifeEvents:
   - military-service
+  - financial-hardship
 source:
   name: va-home-loan-program.source.name
   link: va-home-loan-program.source.link

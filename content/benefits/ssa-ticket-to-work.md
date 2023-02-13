@@ -5,6 +5,7 @@ tags:
   - training and jobs
 lifeEvents:
   - disability
+  - financial-hardship
 source:
   name: ssa-ticket-to-work.source.name
   link: ssa-ticket-to-work.source.link

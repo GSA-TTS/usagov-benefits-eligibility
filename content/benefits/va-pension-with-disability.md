@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - disability
   - military-service
+  - financial-hardship
 source:
   name: va-pension-with-disability.source.name
   link: va-pension-with-disability.source.link
@@ -19,6 +20,7 @@ eligibility:
     label: va-pension-with-disability.eligibility.label
     acceptableValues: ["<65years"]
   - criteriaKey: applicant_served_in_active_military
+    label: va-pension-with-disability.eligibility.label1
     acceptableValues: [va-pension-with-disability.eligibility.acceptableValues]
   - criteriaKey: applicant_service_status
     acceptableValues: [va-pension-with-disability.eligibility.acceptableValues1]

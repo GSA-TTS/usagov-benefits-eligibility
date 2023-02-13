@@ -4,8 +4,8 @@ headline: cms-medicaid.headline
 tags:
   - healthcare
 lifeEvents:
-  - loss-of-job-and-low-income
-  - pregnancy-and-baby
+  - financial-hardship
+  - becoming-a-parent
 source:
   name: cms-medicaid.source.name
   link: cms-medicaid.source.link

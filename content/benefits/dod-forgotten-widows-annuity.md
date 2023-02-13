@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: dod-forgotten-widows-annuity.source.name
   link: dod-forgotten-widows-annuity.source.link

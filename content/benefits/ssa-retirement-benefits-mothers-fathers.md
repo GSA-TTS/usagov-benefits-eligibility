@@ -5,8 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - retirement
-  - late-adulthood
-  - loss-of-job-and-low-income
+  - financial-hardship
 source:
   name: ssa-retirement-benefits-mothers-fathers.source.name
   link: ssa-retirement-benefits-mothers-fathers.source.link

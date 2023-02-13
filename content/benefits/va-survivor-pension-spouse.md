@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: va-survivor-pension-spouse.source.name
   link: va-survivor-pension-spouse.source.link

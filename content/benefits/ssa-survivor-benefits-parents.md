@@ -5,6 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - death-of-a-loved-one
+  - financial-hardship
 source:
   name: ssa-survivor-benefits-parents.source.name
   link: ssa-survivor-benefits-parents.source.link
