@@ -194,4 +194,4 @@ Current todos as we are working in the code:
 - Remove "API" or $content calls from vue components to API call to be
   loaded by store.
 - Rename Components to be easier to follow.
-- Revisit Vuex store to align with benefit cards vs criteria selections..
+- Revisit Vuex store to align with benefit cards vs criteria selections...
