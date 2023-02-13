@@ -84,6 +84,15 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~/assets/styles/index.scss"],
 
+  // Add custom JS that is not ignored by gitignore.
+  script: [
+    {
+      type: "text/javascript",
+      src: "~/assets/custom-js/footer-nav-accordions.js",
+      body: true,
+    },
+  ],
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ["~/plugins/uswds.client.js", "~/plugins/axe.client.js", "~/plugins/i18n.js"],
 

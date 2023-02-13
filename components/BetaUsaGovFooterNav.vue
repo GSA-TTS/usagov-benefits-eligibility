@@ -1,10 +1,21 @@
 <template>
   <div class="grid-row grid-gap-4">
-    <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+    <div class="tablet:grid-col-6 desktop:grid-col-3 accordion-wrap">
+      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible usa-accordion">
         <!-- footer nav column 1-->
-        <h2 class="usa-gov-footer__primary-link">{{ $t("beta.footer.column1Title") }}</h2>
-        <ul class="usa-list usa-list--unstyled">
+        <h2 class="usa-gov-footer__primary-link usa-accordion__heading">
+          <button
+            type="button"
+            class="usa-accordion__button"
+            aria-expanded="true"
+            aria-controls="col-1">
+            {{ $t("beta.footer.column1Title") }}
+          </button>
+        </h2>
+
+        <ul
+          id="col-1"
+          class="usa-list usa-list--unstyled usa-accordion__content">
           <li
             v-for="item in $t('beta.footer.column1')"
             :id="`item-id-${item.linkID}`"
@@ -16,11 +27,22 @@
       </section>
     </div>
 
-    <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+    <div class="tablet:grid-col-6 desktop:grid-col-3 accordion-wrap">
+      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible usa-accordion">
         <!-- footer nav column 1-->
-        <h2 class="usa-gov-footer__primary-link">{{ $t("beta.footer.column2Title") }}</h2>
-        <ul class="usa-list usa-list--unstyled">
+        <h2 class="usa-gov-footer__primary-link usa-accordion__heading">
+          <button
+            type="button"
+            class="usa-accordion__button"
+            aria-expanded="true"
+            aria-controls="col-2">
+            {{ $t("beta.footer.column2Title") }}
+          </button>
+        </h2>
+
+        <ul
+          id="col-2"
+          class="usa-list usa-list--unstyled usa-accordion__content">
           <li
             v-for="item in $t('beta.footer.column2')"
             :id="`item-id-${item.linkID}`"
@@ -32,11 +54,22 @@
       </section>
     </div>
 
-    <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+    <div class="tablet:grid-col-6 desktop:grid-col-3 accordion-wrap">
+      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible usa-accordion">
         <!-- footer nav column 1-->
-        <h2 class="usa-gov-footer__primary-link">{{ $t("beta.footer.column3Title") }}</h2>
-        <ul class="usa-list usa-list--unstyled">
+        <h2 class="usa-gov-footer__primary-link usa-accordion__heading">
+          <button
+            type="button"
+            class="usa-accordion__button"
+            aria-expanded="true"
+            aria-controls="col-3">
+            {{ $t("beta.footer.column3Title") }}
+          </button>
+        </h2>
+
+        <ul
+          id="col-3"
+          class="usa-list usa-list--unstyled usa-accordion__content">
           <li
             v-for="item in $t('beta.footer.column3')"
             :id="`item-id-${item.linkID}`"
@@ -48,11 +81,22 @@
       </section>
     </div>
 
-    <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+    <div class="tablet:grid-col-6 desktop:grid-col-3 accordion-wrap">
+      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible usa-accordion">
         <!-- footer nav column 1-->
-        <h2 class="usa-gov-footer__primary-link">{{ $t("beta.footer.column4Title") }}</h2>
-        <ul class="usa-list usa-list--unstyled">
+        <h2 class="usa-gov-footer__primary-link usa-accordion__heading">
+          <button
+            type="button"
+            class="usa-accordion__button"
+            aria-expanded="true"
+            aria-controls="col-4">
+            {{ $t("beta.footer.column4Title") }}
+          </button>
+        </h2>
+
+        <ul
+          id="col-4"
+          class="usa-list usa-list--unstyled usa-accordion__content">
           <li
             v-for="item in $t('beta.footer.column4')"
             :id="`item-id-${item.linkID}`"
@@ -68,6 +112,7 @@
 
 <script>
 import sanitizeUrl from "~/mixins/SanitizeBears"
+import "@/assets/js-custom/footer-nav-accordions.js"
 
 export default {
   name: "BetaUsaGovFooterNav",
