@@ -1,10 +1,11 @@
-// Mobile accordion for footer.
-
+/**
+ * Footer navigation accordions.
+ */
 if (typeof window !== "undefined") {
-  const accordionWraps = document.querySelectorAll(".accordion-wrap")
+  // Define all the accordion wraps.
+  const accordionWraps = document.querySelectorAll(".footer-nav-accordion-wrap")
   // Spread the array to get all iterable items.
   const accordionWrap = [...accordionWraps]
-
   // Loop through each accordion wrap.
   accordionWrap.forEach((item) => {
     // Define the media query.
@@ -13,29 +14,16 @@ if (typeof window !== "undefined") {
     mq640.addListener(WidthChange640)
     // Define the width change.
     WidthChange640(mq640)
-
-    // element that will be wrapped
-    const el = document.querySelector("div.wrap_me")
-    // create wrapper container
-    const wrapper = document.createElement("button")
-    // insert wrapper before el in the DOM tree
-    el.parentNode.insertBefore(wrapper, el)
-    // move el into wrapper
-    wrapper.appendChild(el)
-
     // Media query change function for width specific functions.
-
     function WidthChange640(mq) {
-      const accordionButton = item.querySelector(".usa-accordion__button")
+      // Define the accordion content within.
+      const accordionContent = item.querySelector(".usa-list")
       if (mq640.matches) {
-        // If wider than 640px
-        accordionButton.style.display = "none"
-
-        console.log("heloooooooo", accordionButton)
+        // If wider than 640px.
+        accordionContent.removeAttribute("hidden")
       } else {
         // If narrower than 640px.
-        console.log("narrow")
-        accordionButton.style.display = "block"
+        accordionContent.setAttribute("hidden", "hidden")
       }
     }
   })
