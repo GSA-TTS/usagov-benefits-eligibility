@@ -131,8 +131,10 @@
 </template>
 
 <script>
+// matchMedia mixin for altering the DOM at different viewports.
 import { MatchMedia } from "~/mixins/MatchMedia"
 import sanitizeUrl from "~/mixins/SanitizeBears"
+// Custom JS to alter attributes at different viewports.
 import "@/assets/js-custom/footer-nav-accordions.js"
 
 export default {

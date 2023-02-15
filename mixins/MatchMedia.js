@@ -1,4 +1,8 @@
-// theme object mock
+/**
+ *
+ */
+
+// Set the breakpoints that can be used. (add more as needed).
 const theme = {
   screens: {
     narrow: "320px",
@@ -9,11 +13,7 @@ const theme = {
 }
 
 /**
- * Mixin
- * In order to use multiple instances of the mixin (ie multiple queries)
- * we need to use the name param to make the mixin options unique - if they
- * all have the same method names or whatever registering a new mixin instance would
- * overwrite the previous ones options - maybe we could use Symbols to be 100% safe?
+ * matchMedia Mixin.
  */
 export const MatchMedia = (query, name = query) => ({
   data() {
