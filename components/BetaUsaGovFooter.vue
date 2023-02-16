@@ -44,6 +44,7 @@
             </span>
           </div>
           <!-- Footer social component. -->
+          <BetaUsaGovFooterSocial />
         </div>
       </div>
     </div>

@@ -411,7 +411,7 @@
           },
           {
             "socialID": "s-20",
-            "socialURL": "https://www.facebook.com/USAgov",
+            "socialURL": "https://twitter.com/USAgov",
             "name": "Twitter USAGov",
             "icon": "icon_twitter",
             "width": "39",
@@ -419,7 +419,7 @@
           },
           {
             "socialID": "s-30",
-            "socialURL": "https://www.facebook.com/USAgov",
+            "socialURL": "https://www.youtube.com/usagov1",
             "name": "YouTube USAGov",
             "icon": "icon_youtube",
             "width": "40",
@@ -427,7 +427,7 @@
           },
           {
             "socialID": "s-40",
-            "socialURL": "https://www.facebook.com/USAgov",
+            "socialURL": "https://www.instagram.com/usagov/",
             "name": "Instagram USAGov",
             "icon": "icon_instagram",
             "width": "32",
