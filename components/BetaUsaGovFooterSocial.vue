@@ -5,18 +5,14 @@
     <div class="usa-footer__social-links en-links grid-row grid-gap-1">
       <!-- Footer social links loop. -->
       <div
-        v-for="item in $t('beta.footer.social.icons')"
-        :id="`social-id-${item.socialID}`"
-        :key="`social-id-${item.socialID}`"
+        v-for="(item, index) in $t('beta.footer.social.icons')"
+        :id="`item-${index}-${cid}`"
+        :key="`item-${index}-${cid}`"
         class="grid-col-auto">
+        {{ `key-${index}-${cid}` }}
         <a
           class="usa-social-link"
           :href="sanitizedBearsUrl(item.socialURL)">
-          <img
-            :src="require(`@/assets/img/${item.icon}.svg`)"
-            :alt="item.name"
-            :width="item.width"
-            :height="item.height" />
           <span class="is-hidden">{{ item.name }}</span>
         </a>
       </div>
@@ -25,11 +21,20 @@
 </template>
 
 <script>
+import _ from "lodash"
 import sanitizeUrl from "~/mixins/SanitizeBears"
 
 export default {
   name: "BetaUsaGovFooterSocial",
   mixins: [sanitizeUrl],
+  data() {
+    return {
+      cid: _.uniqueId("c"),
+    }
+  },
+  beforeCreate() {
+    this.cid = _.uniqueId("c")
+  },
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
       if (benefitUrl && benefitUrl.length > 0) {
