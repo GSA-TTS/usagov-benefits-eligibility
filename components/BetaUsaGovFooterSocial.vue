@@ -12,7 +12,7 @@
           class="usa-social-link"
           :href="sanitizedBearsUrl(item.socialURL)">
           <img
-            src="~/assets/img/icon_facebook.svg"
+            :src="require(`@/assets/img/${item.icon}.svg`)"
             :alt="item.name"
             :width="item.width"
             :height="item.height" />
