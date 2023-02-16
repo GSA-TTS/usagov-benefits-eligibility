@@ -24,22 +24,11 @@
 </template>
 
 <script>
-import _ from "lodash"
 import sanitizeUrl from "~/mixins/SanitizeBears"
 
 export default {
   name: "BetaUsaGovFooterSocial",
   mixins: [sanitizeUrl],
-  data() {
-    return {
-      accordionInit: false,
-      cid: _.uniqueId("c"),
-      lifeEventCriteriaKeys: [],
-    }
-  },
-  beforeCreate() {
-    this.cid = _.uniqueId("c")
-  },
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
       if (benefitUrl && benefitUrl.length > 0) {
