@@ -5,9 +5,12 @@
     <div class="usa-footer__social-links en-links grid-row grid-gap-1">
       <!-- Footer social links loop. -->
 
-      <img
-        src="@/assets/img/icon_facebook.svg"
-        alt="test" />
+      <svg
+        class="usa-icon"
+        aria-labelledby="testing"
+        role="img">
+        <use xlink:href="~/img/icon_facebook.svg" />
+      </svg>
 
       <div
         v-for="item in $t('beta.footer.social.icons')"
