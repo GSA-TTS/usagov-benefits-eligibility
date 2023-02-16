@@ -134,14 +134,13 @@
 // matchMedia mixin for altering the DOM at different viewports.
 import { MatchMedia } from "~/mixins/MatchMedia"
 import sanitizeUrl from "~/mixins/SanitizeBears"
-// Custom JS to alter attributes at different viewports.
-import "@/assets/js-custom/footer-nav-accordions.js"
+import FooterAccordion from "~/mixins/FooterAccordion"
 
 export default {
   name: "BetaUsaGovFooterNav",
 
   // Register the MatchMedia mixin with the queries we want plus optional names.
-  mixins: [sanitizeUrl, MatchMedia("narrow", "isNarrow"), MatchMedia("narrowPlus", "isNarrowPlus")],
+  mixins: [sanitizeUrl, FooterAccordion, MatchMedia("narrow", "isNarrow"), MatchMedia("narrowPlus", "isNarrowPlus")],
 
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
