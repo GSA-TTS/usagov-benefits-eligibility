@@ -30,7 +30,7 @@ function validateDateAgainstAcceptance({ criterion, userInputDate }) {
       ) {
         acceptanceDate = figureOutAcceptanceDate(encodedDate, determiner)
       } else {
-        acceptanceDate = toDate(Date.parse(encodedDate))
+        acceptanceDate = toDate(dateParse(encodedDate))
       }
       checkResult = checkUserDate(userInputDate, determiner, operator, acceptanceDate)
       // checking to see if the inputted date is valid / complete
@@ -139,4 +139,12 @@ function checkDateValid(month, day, year) {
   return validityCheck === INCOMPLETE ? "" : validityCheck
 }
 
-export { validateDateAgainstAcceptance, checkDateValid }
+function dateParse(inputDate) {
+  const m = inputDate.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/)
+  if (m) {
+    inputDate = m[1] + "/" + m[2] + "/" + m[3]
+  }
+  return Date.parse(inputDate)
+}
+
+export { validateDateAgainstAcceptance, checkDateValid, dateParse }
