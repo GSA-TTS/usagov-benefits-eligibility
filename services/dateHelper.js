@@ -140,7 +140,7 @@ function checkDateValid(month, day, year) {
 }
 
 function dateParse(inputDate) {
-  const m = inputDate.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/)
+  const m = String(inputDate).match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/)
   if (m) {
     inputDate = m[1] + "/" + m[2] + "/" + m[3]
   }
