@@ -123,6 +123,23 @@ $AZ-button-disabled: #859cba;
   .usa-list--unstyled > li {
     @include u-margin-bottom(1);
   }
+
+  &__primary-content {
+    @include at-media(mobile-lg) {
+      @include u-border-top(1px, "solid", "base-light");
+    }
+
+    @include at-media(tablet) {
+      border: 0;
+    }
+  }
+}
+
+.usa-footer--big .usa-footer__primary-content--collapsible .usa-list--unstyled {
+  @include at-media-max("tablet") {
+    @include u-padding-x(2);
+    @include u-padding-y(2);
+  }
 }
 
 .usa-button-group__item,
