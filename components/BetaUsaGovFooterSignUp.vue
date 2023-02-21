@@ -5,7 +5,11 @@
       <h2 class="usa-sign-up__heading">{{ $t("footer.GroupThree.header") }}</h2>
       <form
         class="usa-form"
-        action="https://connect.usa.gov/subscribe"
+        :action="
+          $i18n.locale === 'en'
+            ? 'https://connect.usa.gov/subscribe'
+            : 'https://conectate.gobiernousa.gov/suscripciones'
+        "
         method="get">
         <label
           class="usa-label"
