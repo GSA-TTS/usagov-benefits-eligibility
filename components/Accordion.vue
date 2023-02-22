@@ -78,7 +78,7 @@ import _ from "lodash"
 import { mapGetters } from "vuex"
 import mapTags from "~/mixins/MapTags"
 import sanitizeUrl from "~/mixins/SanitizeBears"
-console.log("hello")
+console.log("hello there")
 
 let USWDS
 let accordion

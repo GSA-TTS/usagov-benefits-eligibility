@@ -21,7 +21,6 @@ module.exports = {
   rules: {
     "comma-dangle": 0,
     semi: ["off"],
-    "no-console": 1,
     quotes: ["off"],
     indent: ["off"],
     "jsx-a11y/click-events-have-key": "off",
