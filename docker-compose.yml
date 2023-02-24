@@ -7,10 +7,10 @@ services:
     ports:
       - 3000
     healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:3000"]
-        interval: 30s
-        timeout: 10s
-        retries: 5
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   pa11y:
     image: outrigger/pa11y:1
@@ -21,6 +21,6 @@ services:
       bears:
         condition: service_healthy
     cap_add:
-      - SYS_ADMIN  
-    links: 
+      - SYS_ADMIN
+    links:
       - bears
