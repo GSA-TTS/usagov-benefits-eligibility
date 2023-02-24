@@ -144,6 +144,22 @@ to build an image of the BEARS software and run it as a container.
 docker build -t bears . \
 && docker run --rm -it -p 3000:3000 bears
 ```
+### Pa11y testing locally
+
+To implement the pa11y testing locally in a containerized environment, use the following command:
+
+```bash
+(
+  cd "$(git rev-parse --show-toplevel)" \
+  && docker compose up
+)
+```
+You may use the following command to close the running containers:
+
+```bash
+(
+  docker compose down
+)
 
 ### Useful links
 
