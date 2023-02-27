@@ -85,6 +85,19 @@ $AZ-button-disabled: #859cba;
 
 .usa-social-link {
   background-color: transparent;
+  @include u-border(2px, "solid", "transparent");
+  @include u-padding(1);
+
+  &:focus {
+    @include u-outline("black");
+    background-color: transparent;
+    outline-width: units(1px);
+  }
+
+  &:hover {
+    @include u-border(2px, "solid", "black");
+    background-color: transparent;
+  }
 }
 
 @media (min-width: 64em) {
@@ -109,6 +122,23 @@ $AZ-button-disabled: #859cba;
 
   .usa-list--unstyled > li {
     @include u-margin-bottom(1);
+  }
+
+  &__primary-content {
+    @include at-media(mobile-lg) {
+      @include u-border-top(1px, "solid", "base-light");
+    }
+
+    @include at-media(tablet) {
+      border: 0;
+    }
+  }
+}
+
+.usa-footer--big .usa-footer__primary-content--collapsible .usa-list--unstyled {
+  @include at-media-max("tablet") {
+    @include u-padding-x(2);
+    @include u-padding-y(2);
   }
 }
 

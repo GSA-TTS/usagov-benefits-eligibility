@@ -3,8 +3,10 @@
     <div
       :class="match_isNarrowPlus ? '' : 'footer-nav-accordion-wrap'"
       class="tablet:grid-col-6 desktop:grid-col-3">
-      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible usa-accordion">
-        <!-- footer nav column 1-->
+      <section
+        :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
+        class="usa-footer__primary-content">
+        <!-- footer nav column 1.-->
         <h2 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
           <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column1Title") }}</span>
           <button
@@ -35,8 +37,10 @@
     <div
       :class="match_isNarrowPlus ? '' : 'footer-nav-accordion-wrap'"
       class="tablet:grid-col-6 desktop:grid-col-3">
-      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible usa-accordion">
-        <!-- footer nav column 1-->
+      <section
+        :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
+        class="usa-footer__primary-content">
+        <!-- footer nav column 2.-->
         <h2 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
           <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column2Title") }}</span>
           <button
@@ -67,8 +71,10 @@
     <div
       :class="match_isNarrowPlus ? '' : 'footer-nav-accordion-wrap'"
       class="tablet:grid-col-6 desktop:grid-col-3">
-      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible usa-accordion">
-        <!-- footer nav column 1-->
+      <section
+        :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
+        class="usa-footer__primary-content">
+        <!-- footer nav column 3.-->
         <h2 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
           <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column3Title") }}</span>
           <button
@@ -99,8 +105,10 @@
     <div
       :class="match_isNarrowPlus ? '' : 'footer-nav-accordion-wrap'"
       class="tablet:grid-col-6 desktop:grid-col-3">
-      <section class="usa-footer__primary-content usa-footer__primary-content--collapsible usa-accordion">
-        <!-- footer nav column 1-->
+      <section
+        :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
+        class="usa-footer__primary-content">
+        <!-- footer nav column 4.-->
         <h2 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
           <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column4Title") }}</span>
           <button
