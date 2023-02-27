@@ -139,6 +139,7 @@ export default {
     },
     terser: {
       // https://github.com/terser/terser#compress-options
+      // Exclude console.logs from prod builds. ( drop_console: true).
       terserOptions: {
         compress: {
           drop_console: true,
