@@ -137,6 +137,14 @@ export default {
         config.output.publicPath = sitePrefix
       }
     },
+    terser: {
+      // https://github.com/terser/terser#compress-options
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+    },
   },
 
   generate: {
