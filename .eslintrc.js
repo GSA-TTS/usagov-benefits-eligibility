@@ -23,6 +23,7 @@ module.exports = {
     semi: ["off"],
     quotes: ["off"],
     indent: ["off"],
+    "no-console": 0,
     "jsx-a11y/click-events-have-key": "off",
     "padded-blocks": ["off"],
     "vue/singleline-html-element-content-newline": 0,
