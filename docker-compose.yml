@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  bears:
+    build: .
+    container_name: bears
+    ports:
+      - 3000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  pa11y:
+    image: outrigger/pa11y:1
+    container_name: pa11y
+    command: http://bears:3000/
+    restart: on-failure
+    depends_on:
+      bears:
+        condition: service_healthy
+    cap_add:
+      - SYS_ADMIN
+    links:
+      - bears
