@@ -79,8 +79,6 @@ import { mapGetters } from "vuex"
 import mapTags from "~/mixins/MapTags"
 import sanitizeUrl from "~/mixins/SanitizeBears"
 
-console.log("This will only be logged in the local development environment.")
-
 let USWDS
 let accordion
 /* istanbul ignore if */
