@@ -29,18 +29,14 @@
         <div
           class="language-switcher-language-url"
           role="navigation">
-          <ul class="links usa-nav__primary usa-accordion flex-justify-end">
-            <li
-              hreflang="es"
-              class="usa-nav__primary-item">
-              <button
-                class="language-link usa-button"
-                hreflang="es"
-                @click="switchLanguage">
-                {{ $t("beta.header.languageToggle") }}
-              </button>
-            </li>
-          </ul>
+          <div class="links display-flex flex-justify-end usa-list">
+            <a
+              :href="currentLang === 'en' ? `/es/${langPath}` : `/${langPath}`"
+              :hreflang="currentLang === 'en' ? 'es' : 'en'"
+              class="usa-button">
+              {{ currentLang === "en" ? "Español" : "English" }}
+            </a>
+          </div>
         </div>
 
         <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
@@ -154,6 +150,27 @@ import sanitizeUrl from "~/mixins/SanitizeBears"
 
 export default {
   mixins: [sanitizeUrl],
+  data() {
+    // Define empty variables for use in the template.
+    return {
+      currentLang: "en",
+      pageUrl: "",
+      langPath: "",
+    }
+  },
+  mounted() {
+    // Define pathnames and languages.
+    const fullPath = window.location.pathname
+    this.langPath = fullPath.substring(1)
+    console.log("hello", fullPath.substring(1))
+    // We make an exception for spanish which will always have /es in the url.
+    if (this.langPath.startsWith("es/")) {
+      this.langPath = this.langPath.substring(3)
+      this.currentLang = "es"
+    }
+    // Else if english, don't put the language in.
+    this.pageUrl = this.langPath.split("/").pop()
+  },
   methods: {
     sanitizedHeadingUrl(benefitUrl, defaultValue = "#") {
       if (benefitUrl && benefitUrl.length > 0) {
@@ -162,6 +179,7 @@ export default {
         return defaultValue
       }
     },
+
     skipLink() {
       const skipLink = document.getElementById("main-content")
       if (skipLink) {
@@ -170,19 +188,6 @@ export default {
           behavior: "smooth",
         })
       }
-    },
-    switchLanguage() {
-      let route = ""
-      const locale = this.$i18n.locale
-
-      if (locale === "en") {
-        route = `/es/`
-        this.$i18n.setLocale("es")
-      } else {
-        // route = `/`
-        this.$i18n.setLocale("en")
-      }
-      this.$router.push(route)
     },
   },
 }
