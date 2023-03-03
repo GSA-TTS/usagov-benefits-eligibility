@@ -307,18 +307,33 @@
     "header": {
       "languageToggle": "Español",
       "menu": "Menu",
-      "nav": {
-        "linkOneText": "All topics and services",
-        "linkOneUrl": "https://beta.usa.gov/#all_topics",
-        "linkTwoText": "About the U.S. and its government",
-        "linkTwoUrl": "https://beta.usa.gov/about-the-us/",
-        "linkThreeText": "Money",
-        "linkThreeUrl": "https://beta.usa.gov/money/",
-        "linkFourText": "Laws and legal issues",
-        "linkFourUrl": "https://beta.usa.gov/laws-and-legal-issues/",
-        "linkFiveText": "Scams and fraud",
-        "linkFiveUrl": "https://beta.usa.gov/scams-and-fraud/"
-      },
+      "navMain": [
+        {
+          "linkID": "mnav-10",
+          "linkText": "All topics and services",
+          "linkURL": "https://beta.usa.gov/#all_topics"
+        },
+        {
+          "linkID": "mnav-20",
+          "linkText": "About the U.S. and its government",
+          "linkURL": "https://beta.usa.gov/about-the-us/"
+        },
+        {
+          "linkID": "mnav-30",
+          "linkText": "Money",
+          "linkURL": "https://beta.usa.gov/money/"
+        },
+        {
+          "linkID": "mnav-40",
+          "linkText": "Laws and legal issues",
+          "linkURL": "https://beta.usa.gov/laws-and-legal-issues/"
+        },
+        {
+          "linkID": "mnav-50",
+          "linkText": "Scams and fraud",
+          "linkURL": "https://beta.usa.gov/scams-and-fraud/"
+        }
+      ],
       "secondaryNav": {
         "linkOneText": "Call us at 1-844-USAGOV1",
         "linkOneUrl": "https://beta.usa.gov/phone/"

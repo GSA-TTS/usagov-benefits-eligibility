@@ -79,50 +79,19 @@
 
               <!-- Start main navigation. -->
               <ul class="usa-nav__primary usa-accordion">
-                <li class="usa-nav__primary-item">
-                  <a
-                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkOneUrl'))"
-                    class="usa-nav__link"
-                    ><span>{{ $t("beta.header.nav.linkOneText") }}</span></a
-                  >
-                </li>
                 <li
-                  id="usa-nav__about"
+                  v-for="item in $t('beta.header.navMain')"
+                  :id="`item-id-${item.linkID}`"
+                  :key="`item-id-${item.linkID}`"
                   class="usa-nav__primary-item">
                   <a
-                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkTwoUrl'))"
                     class="usa-nav__link"
-                    ><span>{{ $t("beta.header.nav.linkTwoText") }}</span></a
-                  >
-                </li>
-                <li
-                  id="usa-nav__money"
-                  class="usa-nav__primary-item">
-                  <a
-                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkThreeUrl'))"
-                    class="usa-nav__link"
-                    ><span>{{ $t("beta.header.nav.linkThreeText") }}</span></a
-                  >
-                </li>
-                <li
-                  id="usa-nav__law"
-                  class="usa-nav__primary-item">
-                  <a
-                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkFourUrl'))"
-                    class="usa-nav__link"
-                    ><span>{{ $t("beta.header.nav.linkFourText") }}</span></a
-                  >
-                </li>
-                <li
-                  id="usa-nav__scams"
-                  class="usa-nav__primary-item">
-                  <a
-                    :href="sanitizedHeadingUrl($t('beta.header.nav.linkFiveUrl'))"
-                    class="usa-nav__link"
-                    ><span>{{ $t("beta.header.nav.linkFiveText") }}</span></a
-                  >
+                    :href="sanitizedHeadingUrl(item.linkURL)">
+                    {{ item.linkText }}
+                  </a>
                 </li>
               </ul>
+
               <div class="usa-nav__secondary">
                 <span class="usa-nav__secondary-links">
                   <span

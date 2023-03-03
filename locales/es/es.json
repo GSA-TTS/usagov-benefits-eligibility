@@ -289,18 +289,33 @@
     "header": {
       "languageToggle": "English",
       "menu": "MENÚ",
-      "nav": {
-        "linkOneText": "Todos los temas y servicios",
-        "linkOneUrl": "https://beta.usa.gov/es#all_topics",
-        "linkTwoText": "Acerca de EE. UU. y directorios del Gobierno",
-        "linkTwoUrl": "https://beta.usa.gov/es/acerca-de-estados-unidos/",
-        "linkThreeText": "Dinero",
-        "linkThreeUrl": "https://beta.usa.gov/es/dinero",
-        "linkFourText": "Leyes y asuntos legales",
-        "linkFourUrl": "https://beta.usa.gov/es/leyes-y-asuntos-legales/",
-        "linkFiveText": "Estafas y fraudes",
-        "linkFiveUrl": "https://beta.usa.gov/es/estafas-y-fraudes/"
-      },
+      "navMain": [
+        {
+          "linkID": "mnav-10",
+          "linkText": "Todos los temas y servicios",
+          "linkURL": "https://beta.usa.gov/es#all_topics"
+        },
+        {
+          "linkID": "mnav-20",
+          "linkText": "Acerca de EE. UU. y directorios del Gobierno",
+          "linkURL": "https://beta.usa.gov/es/acerca-de-estados-unidos/"
+        },
+        {
+          "linkID": "mnav-30",
+          "linkText": "Dinero",
+          "linkURL": "https://beta.usa.gov/es/dinero"
+        },
+        {
+          "linkID": "mnav-40",
+          "linkText": "Leyes y asuntos legales",
+          "linkURL": "https://beta.usa.gov/es/leyes-y-asuntos-legales/"
+        },
+        {
+          "linkID": "mnav-50",
+          "linkText": "Estafas y fraudes",
+          "linkURL": "https://beta.usa.gov/es/estafas-y-fraudes/"
+        }
+      ],
       "secondaryNav": {
         "linkOneText": "Llámenos al 1-844-USAGOV1",
         "linkOneUrl": "https://beta.usa.gov/es/centro-de-llamadas"
