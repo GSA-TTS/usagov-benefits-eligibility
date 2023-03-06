@@ -33,9 +33,10 @@
             <a
               :href="switchLanguageRoute"
               :hreflang="$i18n.locale === 'en' ? 'es' : 'en'"
-              @click.prevent="switchLanguage()"
-              >Switch Language</a
-            >
+              class="usa-button"
+              @click.prevent="switchLanguage()">
+              {{ $i18n.locale === "en" ? "Español" : "English" }}
+            </a>
           </div>
         </div>
 
