@@ -50,6 +50,12 @@ $ npm run test:watch
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+## Local development tips
+
+1. You can enable console.log by copying `.env.txt` and renaming it to `.env`. This file is already ignored in `.gitignore` so you do not need to worry about committing this.
+2. Use the provided pre-commit hooks. To install, [see the documentation in this repo](docs/pre-commit.md).
+3. When switching branches, it may be necessary at times to run `npm i` to ensure you get matching npms for the branch. The best way is to stop `npm run dev`, install and then start `npm run dev` again.
+
 ## Using Docker
 
 If one does not wish to use / install the build requirements on their
@@ -145,6 +151,24 @@ docker build -t bears . \
 && docker run --rm -it -p 3000:3000 bears
 ```
 
+### Pa11y testing locally
+
+To implement the pa11y testing locally in a containerized environment, use the following command:
+
+```bash
+(
+  cd "$(git rev-parse --show-toplevel)" \
+  && docker compose up
+)
+```
+
+You may use the following command to close the running containers:
+
+```bash
+(
+  docker compose down
+)
+
 ### Useful links
 
 - [https://nuxtjs.org/](https://nuxtjs.org/)
@@ -195,3 +219,4 @@ Current todos as we are working in the code:
   loaded by store.
 - Rename Components to be easier to follow.
 - Revisit Vuex store to align with benefit cards vs criteria selections..
+```
