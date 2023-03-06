@@ -31,9 +31,10 @@
           role="navigation">
           <div class="links display-flex flex-justify-end usa-list">
             <a
-              :href="switchLanguageUrl"
-              :hreflang="switchLanguageHreflang"
-              >{{ switchLanguageText }}</a
+              :href="switchLanguageRoute"
+              :hreflang="$i18n.locale === 'en' ? 'es' : 'en'"
+              @click.prevent="switchLanguage()"
+              >Switch Language</a
             >
           </div>
         </div>
@@ -147,31 +148,12 @@
 <script>
 import sanitizeUrl from "~/mixins/SanitizeBears"
 
-function addLeadingSlashIfNecessary(path) {
-  return path.startsWith("/") ? path : `/${path}`
-}
-
 export default {
   mixins: [sanitizeUrl],
 
   computed: {
-    switchLanguageText() {
-      return this.$route.path.includes("/es/") ? "English" : "Spanish"
-    },
-    switchLanguageUrl() {
-      const currentPath = this.$route.path
-      const hasEsSegment = currentPath.includes("/es/")
-
-      if (hasEsSegment) {
-        const pathWithoutEs = currentPath.replace(/\/es(\/|$)/, "$1")
-        return addLeadingSlashIfNecessary(pathWithoutEs)
-      } else {
-        const pathWithEs = `/es${addLeadingSlashIfNecessary(currentPath)}`
-        return addLeadingSlashIfNecessary(pathWithEs)
-      }
-    },
-    switchLanguageHreflang() {
-      return this.$route.path.includes("/es/") ? "en" : "es"
+    switchLanguageRoute() {
+      return this.$i18n.locale === "en" ? "/es/" : "/"
     },
   },
 
@@ -183,7 +165,6 @@ export default {
         return defaultValue
       }
     },
-
     skipLink() {
       const skipLink = document.getElementById("main-content")
       if (skipLink) {
@@ -192,6 +173,18 @@ export default {
           behavior: "smooth",
         })
       }
+    },
+    switchLanguage() {
+      let route = ""
+      const locale = this.$i18n.locale
+      if (locale === "en") {
+        route = `/es/`
+        this.$i18n.setLocale("es")
+      } else {
+        // route = `/`
+        this.$i18n.setLocale("en")
+      }
+      this.$router.push(route)
     },
   },
 }
