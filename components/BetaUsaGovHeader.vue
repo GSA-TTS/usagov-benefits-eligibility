@@ -31,11 +31,10 @@
           role="navigation">
           <div class="links display-flex flex-justify-end usa-list">
             <a
-              :href="currentLang === 'en' ? `/es/${langPath}` : `/${langPath}`"
-              :hreflang="currentLang === 'en' ? 'es' : 'en'"
-              class="usa-button">
-              {{ currentLang === "en" ? "Español" : "English" }}
-            </a>
+              :href="switchLanguageUrl"
+              :hreflang="switchLanguageHreflang"
+              >{{ switchLanguageText }}</a
+            >
           </div>
         </div>
 
@@ -150,27 +149,20 @@ import sanitizeUrl from "~/mixins/SanitizeBears"
 
 export default {
   mixins: [sanitizeUrl],
-  data() {
-    // Define empty variables for use in the template.
-    return {
-      currentLang: "en",
-      pageUrl: "",
-      langPath: "",
-    }
+
+  computed: {
+    switchLanguageText() {
+      return this.$route.path.includes("/es") ? "English" : "Spanish"
+    },
+    switchLanguageUrl() {
+      const currentPath = this.$route.path
+      return currentPath.includes("/es") ? currentPath.replace("/es", "") : `/es${currentPath}`
+    },
+    switchLanguageHreflang() {
+      return this.$route.path.includes("/es") ? "en" : "es"
+    },
   },
-  mounted() {
-    // Define pathnames and languages.
-    const fullPath = window.location.pathname
-    this.langPath = fullPath.substring(1)
-    console.log("hello", fullPath.substring(1))
-    // We make an exception for spanish which will always have /es in the url.
-    if (this.langPath.startsWith("es/")) {
-      this.langPath = this.langPath.substring(3)
-      this.currentLang = "es"
-    }
-    // Else if english, don't put the language in.
-    this.pageUrl = this.langPath.split("/").pop()
-  },
+
   methods: {
     sanitizedHeadingUrl(benefitUrl, defaultValue = "#") {
       if (benefitUrl && benefitUrl.length > 0) {
