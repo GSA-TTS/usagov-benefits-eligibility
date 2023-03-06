@@ -163,7 +163,7 @@ export default {
       const hasEsSegment = currentPath.includes("/es/")
 
       if (hasEsSegment) {
-        const pathWithoutEs = currentPath.replace("/es/", "/")
+        const pathWithoutEs = currentPath.replace(/\/es(\/|$)/, "$1")
         return addLeadingSlashIfNecessary(pathWithoutEs)
       } else {
         const pathWithEs = `/es${addLeadingSlashIfNecessary(currentPath)}`
