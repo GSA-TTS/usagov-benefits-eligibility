@@ -29,11 +29,11 @@
         <div
           class="language-switcher-language-url"
           role="navigation">
-          <div class="links display-flex flex-justify-end usa-list">
+          <div class="display-flex flex-justify-end usa-list">
             <a
               :href="switchLanguageRoute"
               :hreflang="$i18n.locale === 'en' ? 'es' : 'en'"
-              class="usa-button"
+              class="usa-button language-link"
               @click.prevent="switchLanguage()">
               {{ $i18n.locale === "en" ? "Español" : "English" }}
             </a>
@@ -154,7 +154,9 @@ export default {
 
   computed: {
     switchLanguageRoute() {
-      return this.$i18n.locale === "en" ? "/es/" : "/"
+      const currentPath = this.$route.path
+      const langSegment = this.$i18n.locale === "en" ? "es" : "en"
+      return `/${langSegment}${currentPath}`
     },
   },
 
@@ -179,10 +181,10 @@ export default {
       let route = ""
       const locale = this.$i18n.locale
       if (locale === "en") {
-        route = `/es/`
+        route = `/${this.$i18n.locale}${this.$route.path}`
         this.$i18n.setLocale("es")
       } else {
-        // route = `/`
+        route = this.$route.path.replace(/^\/[a-z]{2}/, "")
         this.$i18n.setLocale("en")
       }
       this.$router.push(route)
