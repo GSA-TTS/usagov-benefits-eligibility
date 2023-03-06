@@ -147,6 +147,10 @@
 <script>
 import sanitizeUrl from "~/mixins/SanitizeBears"
 
+function addLeadingSlashIfNecessary(path) {
+  return path.startsWith("/") ? path : `/${path}`
+}
+
 export default {
   mixins: [sanitizeUrl],
 
@@ -156,18 +160,14 @@ export default {
     },
     switchLanguageUrl() {
       const currentPath = this.$route.path
-      const segments = currentPath.split("/").filter(Boolean)
-      const hasEsSegment = segments.includes("es") !== -1
+      const hasEsSegment = currentPath.includes("/es/")
 
       if (hasEsSegment) {
-        const esIndex = segments.indexOf("es")
-        const pathWithoutEs = segments
-          .slice(0, esIndex)
-          .concat(segments.slice(esIndex + 1))
-          .join("/")
-        return `/${pathWithoutEs}`
+        const pathWithoutEs = currentPath.replace("/es/", "/")
+        return addLeadingSlashIfNecessary(pathWithoutEs)
       } else {
-        return `/es/${currentPath}`
+        const pathWithEs = `/es${addLeadingSlashIfNecessary(currentPath)}`
+        return addLeadingSlashIfNecessary(pathWithEs)
       }
     },
     switchLanguageHreflang() {
