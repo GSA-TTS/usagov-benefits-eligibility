@@ -154,9 +154,7 @@ export default {
 
   computed: {
     switchLanguageRoute() {
-      const currentPath = this.$route.path
-      const langSegment = this.$i18n.locale === "en" ? "es" : "en"
-      return `/${langSegment}${currentPath}`
+      return this.$i18n.locale === "en" ? "/es/" : "/"
     },
   },
 
@@ -181,10 +179,10 @@ export default {
       let route = ""
       const locale = this.$i18n.locale
       if (locale === "en") {
-        route = `/${this.$i18n.locale}${this.$route.path}`
+        route = `/es/`
         this.$i18n.setLocale("es")
       } else {
-        route = this.$route.path.replace(/^\/[a-z]{2}/, "")
+        // route = `/`
         this.$i18n.setLocale("en")
       }
       this.$router.push(route)
