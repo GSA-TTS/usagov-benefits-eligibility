@@ -152,14 +152,26 @@ export default {
 
   computed: {
     switchLanguageText() {
-      return this.$route.path.includes("/es") ? "English" : "Spanish"
+      return this.$route.path.includes("/es/") ? "English" : "Spanish"
     },
     switchLanguageUrl() {
       const currentPath = this.$route.path
-      return currentPath.includes("/es") ? currentPath.replace("/es", "") : `/es${currentPath}`
+      const segments = currentPath.split("/").filter(Boolean)
+      const hasEsSegment = segments.includes("es") !== -1
+
+      if (hasEsSegment) {
+        const esIndex = segments.indexOf("es")
+        const pathWithoutEs = segments
+          .slice(0, esIndex)
+          .concat(segments.slice(esIndex + 1))
+          .join("/")
+        return `/${pathWithoutEs}`
+      } else {
+        return `/es/${currentPath}`
+      }
     },
     switchLanguageHreflang() {
-      return this.$route.path.includes("/es") ? "en" : "es"
+      return this.$route.path.includes("/es/") ? "en" : "es"
     },
   },
 
