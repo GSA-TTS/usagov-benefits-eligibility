@@ -72,7 +72,7 @@ export default {
   },
   mounted() {
     // redirect to usagov benefits page
-    window.location.href = this.$config.redirectUrl
+    //  window.location.href = this.$config.redirectUrl
 
     if (this.$config.oneEventVersion !== false) {
       this.$router.push(this.$route.fullPath.split("types")[0] + this.$config.oneEventVersion)

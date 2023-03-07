@@ -56,6 +56,7 @@
 import { tObj } from "~/services/translation"
 export default {
   layout: "default",
+  middleware: "redirect",
   async asyncData({ $content }) {
     const lifeEvents = await $content("life-events").sortBy("title").fetch()
     const landingPage = await $content("landing-page").fetch()
@@ -69,7 +70,7 @@ export default {
   },
   mounted() {
     // redirect to usagov benefits page
-    window.location.href = this.$config.redirectUrl
+    // window.location.href = this.$config.redirectUrl
 
     if (this.$config.oneEventVersion !== false) {
       this.$router.replace(this.$route.fullPath + this.$config.oneEventVersion)
