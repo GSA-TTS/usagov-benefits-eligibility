@@ -3,7 +3,9 @@
  * was agreed there would be no "BEARS" landing page.
  * This solves the issue of having unreliable redirects in place
  * that go to https://beta.usa.gov/life-experiences at unexpected times.
- * Usage in pages/index.vue -> middleware: "redirect",
+ * Usage in pages/index.vue -> middleware: "redirect"
+ * all other pages in the mutllife event version still work as expected
+ * and this does not intercede upon those pages.
  * @returns
  */
 export default function ({ store, redirect, app }) {
