@@ -37,5 +37,6 @@ export default Object.assign(
   require("./es/criteria.json"),
   require("./es/landing-page.json"),
   require("./es/disclaimer.json"),
-  require("./es/es.json")
+  require("./es/es.json"),
+  require("./es/life-events/retirement.json")
 )
