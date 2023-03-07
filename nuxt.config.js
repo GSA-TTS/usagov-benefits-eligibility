@@ -33,7 +33,6 @@ export default {
     languageToggleActive: true,
     branchName: process.env.BRANCH,
     oneEventVersion: false,
-    redirectUrl: "https://beta.usa.gov/life-experiences",
   },
 
   // Target: https://go.nuxtjs.dev/config-target
