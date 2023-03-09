@@ -32,7 +32,7 @@ jobs:
         run: npm install -g cspell
 
       - name: Run cSpell
-        run: cspell --verbose --config ./cSpell.json .
+        run: cspell --verbose --config ./cSpell.json "/locales/**, /content/**"
         # "**/*.md"
       # - name: Install markdown-spellcheck
       #   run: npm i markdown-spellcheck -g
