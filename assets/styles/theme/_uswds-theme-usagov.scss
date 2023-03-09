@@ -220,3 +220,7 @@ h1.text-secondary {
 .usa-identifier__section {
   @include u-padding-bottom(0);
 }
+
+.language-link {
+  font-size: size("ui", 3);
+}
