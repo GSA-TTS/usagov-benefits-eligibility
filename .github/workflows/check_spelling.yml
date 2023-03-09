@@ -28,8 +28,13 @@ jobs:
         with:
           node-version: "${{ steps.nvm.outputs.NVMRC }}"
 
-      - name: Install cSpell
-        run: npm install -g cspell
+      # - name: Install cSpell
+      #   run: npm install -g cspell
 
-      - name: Run cSpell
-        run: cspell --config ./cSpell.json "**/*.md"
+      # - name: Run cSpell
+      #   run: cspell --config ./cSpell.json "**/*.md"
+      - name: Install markdown-spellcheck
+        run: npm i markdown-spellcheck -g
+
+      - name: Run markdown-spellcheck
+        run: mdspell "**/*.md"
