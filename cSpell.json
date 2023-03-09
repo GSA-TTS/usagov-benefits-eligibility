@@ -1,10 +1,10 @@
 {
     "version": "0.2",
-    "language": "en",
+    "language": "spanish",
     "dictionaries": ["spanish"],
-    "dictionaryDefinitions": [
-        { "name": "spanish", "path": "./spanish-words.txt"}
-    ],
+    // "dictionaryDefinitions": [
+    //     { "name": "spanish", "path": "./spanish-words.txt"}
+    // ],
     "words": [
         "Ad-Trav",
         "AdTrav",
