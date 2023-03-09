@@ -1,7 +1,7 @@
 {
     "version": "0.2",
-    "language": "en, es",
-    "dictionaries": ["spanish", "fonts"],
+    "language": "en",
+    "dictionaries": ["spanish"],
     "words": [
         "Ad-Trav",
         "AdTrav",
@@ -51,6 +51,8 @@
         "Fedramp",
         "Fedrooms",
         "FEHB",
+        "FEMA",
+        "fema",
         "FERS",
         "FEVS",
         "findability",
