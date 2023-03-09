@@ -1,7 +1,7 @@
 {
     "version": "0.2",
-    "language": "spanish",
-    "dictionaries": ["spanish"],
+    "language": "en",
+    // "dictionaries": ["spanish"],
     // "dictionaryDefinitions": [
     //     { "name": "spanish", "path": "./spanish-words.txt"}
     // ],
