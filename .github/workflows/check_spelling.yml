@@ -37,4 +37,4 @@ jobs:
         run: npm i markdown-spellcheck -g
 
       - name: Run markdown-spellcheck
-        run: mdspell "**/*.md"
+        run: mdspell -r "**/*.md"
