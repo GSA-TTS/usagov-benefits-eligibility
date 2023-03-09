@@ -1,6 +1,6 @@
 {
     "version": "0.2",
-    "language": "en",
+    "language": "en, es",
     "words": [
         "Ad-Trav",
         "AdTrav",
@@ -114,6 +114,7 @@
         "neurodiversity",
         "NFFE",
         "numeronym",
+        "nvmrc",
         "OCFO",
         "OCIO",
         "OCISO",
