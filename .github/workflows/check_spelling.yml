@@ -38,4 +38,4 @@ jobs:
         run: cspell link add @cspell/dict-es-es
 
       - name: Run cSpell
-        run: cspell --config ./cSpell-es.json  "./locales/**" "./content/**"
+        run: cspell --config ./cSpell.json  "./locales/**" "./content/**"
