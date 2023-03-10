@@ -31,5 +31,12 @@ jobs:
       - name: Install cSpell
         run: npm install -g cspell
 
+      # Below 2 steps install Spanish dictionary.
+      - name: Install @cspell/dict-es-es
+        run: npm install -g @cspell/dict-es-es
+
+      - name: link add @cspell/dict-es-es
+        run: cspell link add @cspell/dict-es-es
+
       - name: Run cSpell
         run: cspell --config ./cSpell.json "**/*.md"
