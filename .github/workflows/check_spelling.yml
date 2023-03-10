@@ -12,7 +12,7 @@ on:
       - prod
 
 jobs:
-  check_spelling:
+  check_spelling-en:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,10 +32,26 @@ jobs:
         run: npm install -g cspell
 
       - name: Run cSpell
-        run: cspell --config ./cSpell.json  "./locales/**" "./content/**"
-        # "**/*.md"
-      # - name: Install markdown-spellcheck
-      #   run: npm i markdown-spellcheck -g
+        run: cspell --config ./cSpell-en.json  "./locales/en/**" "./content/**"
 
-      # - name: Run markdown-spellcheck
-      #   run: mdspell -r "**/*.md"
+  check_spelling-es:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
+
+      - name: Use Node.js (.nvmrc)
+        uses: actions/setup-node@v3
+        with:
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+
+      - name: Install cSpell
+        run: npm install -g cspell
+
+      - name: Run cSpell
+        run: cspell --config ./cSpell-es.json  "./locales/es/**"
