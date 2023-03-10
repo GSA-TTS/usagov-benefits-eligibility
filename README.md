@@ -188,8 +188,7 @@ You may use the following command to close the running containers:
 ### Github Actions
 
 - .github/workflows/main.yml - Builds, tests the BEARS site.
-- .github/workflows/codeql-analysis.yml - Scans for code quality and
-  security issues in the BEARS site and it's dependencies.
+- .github/workflows/codeql-analysis.yml - Scans for code quality and security issues in the BEARS site and it's dependencies.
 
 ### Federalist builds
 
