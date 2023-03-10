@@ -39,4 +39,4 @@ jobs:
         run: cspell link add @cspell/dict-es-es
 
       - name: Run cSpell
-        run: cspell --config ./cSpell.json "**/*.md"
+        run: cspell --config ./cSpell.json  "./locales/**" "./content/**"

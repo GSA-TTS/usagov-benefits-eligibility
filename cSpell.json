@@ -1,6 +1,6 @@
 {
     "version": "0.2",
-    "language": "en",
+    "language": "es, en",
     "words": [
         "Ad-Trav",
         "AdTrav",
@@ -28,6 +28,7 @@
         "Cloudlock",
         "CODEOWNERS",
         "coworking",
+        "covid",
         "CPARS",
         "crowdsourcing",
         "CSRA",
@@ -50,6 +51,8 @@
         "Fedramp",
         "Fedrooms",
         "FEHB",
+        "FEMA",
+        "fema",
         "FERS",
         "FEVS",
         "findability",
@@ -114,6 +117,7 @@
         "neurodiversity",
         "NFFE",
         "numeronym",
+        "nvmrc",
         "OCFO",
         "OCIO",
         "OCISO",
@@ -160,6 +164,7 @@
         "routable",
         "screenshare",
         "SDLC",
+        "Semgrep",
         "Servicedesk",
         "servicemember",
         "SFMTA",
@@ -197,6 +202,7 @@
         "Uptrends",
         "USDS",
         "USGSA",
+        "USAGOV",
         "USWDS",
         "Ventra",
         "videoconference",
@@ -204,6 +210,7 @@
         "VLTP",
         "vuln",
         "vulns",
+        "Vuex",
         "walkthrough",
         "WCAG",
         "Webex",
@@ -289,7 +296,6 @@
         "Liquid Syntax 2"
     ],
     "ignorePaths": [
-        "_posts/2021-09-16-a_day_in_the_life_-_ingeniero_en_18f.md",
-        "README.md"
+        "_posts/2021-09-16-a_day_in_the_life_-_ingeniero_en_18f.md"
     ]
 }
