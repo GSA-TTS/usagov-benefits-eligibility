@@ -146,7 +146,7 @@
     },
     "meta": {
       "search": "Busque en USAGov en Español",
-      "placeholder": "Busque en USAGov",
+      "placeholder": "Busque en el Gobierno...",
       "back": "Beneficios, Subvenciones, Préstamos",
       "backUrl": "https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios",
       "language": "English"
@@ -293,12 +293,12 @@
         {
           "linkID": "mnav-10",
           "linkText": "Todos los temas y servicios",
-          "linkURL": "https://beta.usa.gov/es#all_topics"
+          "linkURL": "https://beta.usa.gov/es/es#all-topics-header"
         },
         {
           "linkID": "mnav-20",
           "linkText": "Acerca de EE. UU. y directorios del Gobierno",
-          "linkURL": "https://beta.usa.gov/es/acerca-de-estados-unidos/"
+          "linkURL": "https://beta.usa.gov/es/acerca-de-estados-unidos"
         },
         {
           "linkID": "mnav-30",

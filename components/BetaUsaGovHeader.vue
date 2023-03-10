@@ -8,7 +8,7 @@
     >
     <TheBanner />
     <!-- NOTE: Alert -->
-    <div class="bg-info-lighter padding-y-05 margin-0">
+    <div class="bg-info-lighter usa-alert usa-alert--slim margin-top-0">
       <div class="grid-container display-flex flex-align-center flex-align-start">
         <img
           src="@/assets/img/usa-icons/info.svg"
@@ -29,7 +29,7 @@
         <div
           class="language-switcher-language-url"
           role="navigation">
-          <div class="display-flex flex-justify-end usa-list">
+          <div class="display-flex flex-justify-end usa-list language-switcher-wrap">
             <a
               :href="switchLanguageRoute"
               :hreflang="$i18n.locale === 'en' ? 'es' : 'en'"
@@ -272,7 +272,7 @@ export default {
   padding-bottom: 0.4rem;
 }
 .usa-logo {
-  margin: 0.5rem 0 0.2em;
+  margin: 0.2rem 0 0.2em;
 }
 
 // SPANISH TWEAKS

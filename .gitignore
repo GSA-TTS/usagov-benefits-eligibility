@@ -48,3 +48,4 @@ report/
 # Don't grab Megalinter reports
 /megalinter-reports/
 /reports/
+cspell.json

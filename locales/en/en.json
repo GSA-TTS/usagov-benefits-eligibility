@@ -316,22 +316,32 @@
         {
           "linkID": "mnav-20",
           "linkText": "About the U.S. and its government",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
+          "linkURL": "https://beta.usa.gov/about-the-us"
         },
         {
           "linkID": "mnav-30",
-          "linkText": "Money",
-          "linkURL": "https://beta.usa.gov/money/"
+          "linkText": "Government benefits",
+          "linkURL": "https://beta.usa.gov/benefits"
         },
         {
           "linkID": "mnav-40",
-          "linkText": "Laws and legal issues",
-          "linkURL": "https://beta.usa.gov/laws-and-legal-issues/"
+          "linkText": "Housing help",
+          "linkURL": "https://beta.usa.gov/housing-help"
+        },
+        {
+          "linkID": "mnav-44",
+          "linkText": "Immigration and U.S. citizenship",
+          "linkURL": "https://beta.usa.gov/immigration-and-citizenship"
         },
         {
           "linkID": "mnav-50",
           "linkText": "Scams and fraud",
-          "linkURL": "https://beta.usa.gov/scams-and-fraud/"
+          "linkURL": "https://beta.usa.gov/scams-and-fraud"
+        },
+        {
+          "linkID": "mnav-60",
+          "linkText": "Taxes",
+          "linkURL": "https://beta.usa.gov/taxes"
         }
       ],
       "secondaryNav": {
@@ -341,7 +351,7 @@
       "form": {
         "label": "Search",
         "searchUrl": "https://search.usa.gov/search/",
-        "placeholder": "Search for a topic or service",
+        "placeholder": "Search all government",
         "affliate": "usagov_all_gov"
       }
     },

@@ -169,13 +169,6 @@ h1.text-secondary {
   background-color: #02bfe7;
 }
 
-@include at-media(tablet) {
-  .usa-header--extended .usa-nav__primary-item > .usa-current::after,
-  .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover::after {
-    height: 0.5rem;
-  }
-}
-
 .usa-search [type="submit"] {
   @include u-padding-x(1);
 }
@@ -223,4 +216,14 @@ h1.text-secondary {
 
 .language-link {
   font-size: size("ui", 3);
+  margin-right: 0;
+}
+
+.usa-alert--slim {
+  border-left: 0;
+  @include u-margin-bottom("05");
+}
+
+.language-switcher-wrap {
+  @include u-margin-top(1);
 }
