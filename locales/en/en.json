@@ -361,11 +361,11 @@
         {
           "linkID": "c1-10",
           "linkText": "All topics and services",
-          "linkURL": "https://beta.usa.gov/#all_topics"
+          "linkURL": "https://beta.usa.gov/#all-topics-header"
         },
         {
           "linkID": "c1-20",
-          "linkText": "About the U.S. and its government",
+          "linkText": "Directory of U.S. government agencies and departments",
           "linkURL": "https://www.usa.gov/federal-agencies"
         },
         {
@@ -407,12 +407,12 @@
         {
           "linkID": "c3-10",
           "linkText": "Partner with us",
-          "linkURL": "https://beta.usa.gov/#all_topics"
+          "linkURL": "https://beta.usa.gov/partner-with-usagov"
         },
         {
           "linkID": "c3-20",
           "linkText": "USAGov blog",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
+          "linkURL": "https://blog.usa.gov"
         }
       ],
       "column4Title": "For media",
@@ -420,7 +420,7 @@
         {
           "linkID": "c4-10",
           "linkText": "Feature articles",
-          "linkURL": "https://beta.usa.gov/#all_topics"
+          "linkURL": "https://beta.usa.gov/features"
         }
       ],
       "social": {
