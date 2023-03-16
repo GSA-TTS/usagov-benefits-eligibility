@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - feature/693-adding-spell-checker
+      - 674-Disability-es-Translation
   pull_request:
     branches:
       - main
