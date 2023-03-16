@@ -24,6 +24,7 @@
         "Cheatsheet",
         "Chicanx",
         "CISA",
+        "CRDP",
         "CLIN",
         "Cloudlock",
         "CODEOWNERS",
@@ -188,6 +189,7 @@
         "timeframes",
         "timesheet",
         "timesheets",
+        "TANF",
         "Tock",
         "Tocked",
         "Tocking",
@@ -219,7 +221,11 @@
         "wireframes",
         "womxn",
         "workshopping",
-        "XKCD"
+        "XKCD",
+        "nbsp",
+        "medallón",
+        "medallón",
+        "nbsp"
     ],
     "ignoreWords": [],
     "patterns": [
