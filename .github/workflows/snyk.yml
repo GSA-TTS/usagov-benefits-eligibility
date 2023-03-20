@@ -8,11 +8,17 @@ on:
   schedule:
     - cron: "15 12 * * 1"
 
-# permissions: read-all
+permissions: read-all
 
 jobs:
   security:
     runs-on: ubuntu-latest
+    permissions:
+      # required for all workflows
+      security-events: write
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
     steps:
       - name: checkout code
         uses: actions/checkout@v3
