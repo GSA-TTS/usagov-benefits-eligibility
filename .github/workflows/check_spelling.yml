@@ -6,11 +6,10 @@ on:
     branches:
       - feature/693-adding-spell-checker
       - 674-Disability-es-Translation
+      - 'content/**'
   pull_request:
     branches:
       - main
-      - release
-      - prod
 
 jobs:
   check_spelling:
