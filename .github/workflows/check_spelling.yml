@@ -4,8 +4,6 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - feature/693-adding-spell-checker
-      - 674-Disability-es-Translation
       - content/**
   pull_request:
     branches:
