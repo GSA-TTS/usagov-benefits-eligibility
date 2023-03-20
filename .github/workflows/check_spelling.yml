@@ -6,7 +6,7 @@ on:
     branches:
       - feature/693-adding-spell-checker
       - 674-Disability-es-Translation
-      - 'content/**'
+      - content/**
   pull_request:
     branches:
       - main
