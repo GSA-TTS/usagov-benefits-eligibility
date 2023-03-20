@@ -293,27 +293,32 @@
         {
           "linkID": "mnav-10",
           "linkText": "Todos los temas y servicios",
-          "linkURL": "https://beta.usa.gov/es/es#all-topics-header"
+          "linkURL": "https://beta.usa.gov/es#all-topics-header"
         },
         {
           "linkID": "mnav-20",
-          "linkText": "Acerca de EE. UU. y directorios del Gobierno",
+          "linkText": "Acerca de Estados Unidos y su Gobierno",
           "linkURL": "https://beta.usa.gov/es/acerca-de-estados-unidos"
         },
         {
           "linkID": "mnav-30",
-          "linkText": "Dinero",
-          "linkURL": "https://beta.usa.gov/es/dinero"
+          "linkText": "Ayuda económica y beneficios del Gobierno",
+          "linkURL": "https://beta.usa.gov/es/beneficios-gobierno"
         },
         {
           "linkID": "mnav-40",
-          "linkText": "Leyes y asuntos legales",
-          "linkURL": "https://beta.usa.gov/es/leyes-y-asuntos-legales/"
+          "linkText": "Impuestos",
+          "linkURL": "https://beta.usa.gov/es/impuestos"
         },
         {
           "linkID": "mnav-50",
-          "linkText": "Estafas y fraudes",
-          "linkURL": "https://beta.usa.gov/es/estafas-y-fraudes/"
+          "linkText": "Inmigración y ciudadanía",
+          "linkURL": "https://beta.usa.gov/es/inmigracion-ciudadania-estados-unidos"
+        },
+        {
+          "linkID": "mnav-60",
+          "linkText": "Viajes",
+          "linkURL": "https://beta.usa.gov/es/viajes"
         }
       ],
       "secondaryNav": {

@@ -311,7 +311,7 @@
         {
           "linkID": "mnav-10",
           "linkText": "All topics and services",
-          "linkURL": "https://beta.usa.gov/#all_topics"
+          "linkURL": "https://beta.usa.gov/#all-topics-header"
         },
         {
           "linkID": "mnav-20",
@@ -329,11 +329,6 @@
           "linkURL": "https://beta.usa.gov/housing-help"
         },
         {
-          "linkID": "mnav-44",
-          "linkText": "Immigration and U.S. citizenship",
-          "linkURL": "https://beta.usa.gov/immigration-and-citizenship"
-        },
-        {
           "linkID": "mnav-50",
           "linkText": "Scams and fraud",
           "linkURL": "https://beta.usa.gov/scams-and-fraud"
@@ -342,6 +337,11 @@
           "linkID": "mnav-60",
           "linkText": "Taxes",
           "linkURL": "https://beta.usa.gov/taxes"
+        },
+        {
+          "linkID": "mnav-70",
+          "linkText": "Travel",
+          "linkURL": "https://beta.usa.gov/travel"
         }
       ],
       "secondaryNav": {
