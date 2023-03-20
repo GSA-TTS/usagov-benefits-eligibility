@@ -157,7 +157,7 @@ docker build -t bears . \
 cSpell is set to check `/locales/` and `/content/` folders for both English and Spanish languages. If there are any words that need to be considered always `true`, they need to be added to the `word` list in the `cSpell.json` file in the root of the directory.
 
 
-cSpell action is currently set to work only in PRs into `main`, `release` and `prod` branches.
+cSpell action is currently set to work only in PRs into `main` and when there is a `push` on the branches that starts with `content/**`.
 
 ### Pa11y testing locally
 
