@@ -6,7 +6,7 @@ on:
     branches:
       - content/**
       - multi-life-event-2023**
-      
+
   pull_request:
     branches:
       - main
