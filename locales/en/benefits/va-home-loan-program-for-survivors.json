@@ -3,6 +3,7 @@
   "va-home-loan-program-for-survivors.headline": "Home Loan Program for Survivors",
   "va-home-loan-program-for-survivors.source.name": "U.S. Department of Veteran Affairs",
   "va-home-loan-program-for-survivors.source.link": "https://www.va.gov/housing-assistance/home-loans/surviving-spouse/",
+  "va-home-loan-program-for-survivors.source.linkIsEnglish": "true",
   "va-home-loan-program-for-survivors.summary": "A VA-backed home loan may be available to the surviving spouse of a veteran.",
   "va-home-loan-program-for-survivors.eligibility.acceptableValues": "yes",
   "va-home-loan-program-for-survivors.eligibility.label": "The deceased served in the active military, naval, or air service.",
