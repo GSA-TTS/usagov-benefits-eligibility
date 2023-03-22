@@ -3,6 +3,7 @@
   "va-burial-in-national-cemetery.headline": "Burial in VA National Cemetery",
   "va-burial-in-national-cemetery.source.name": "U.S. Department of Veteran Affairs",
   "va-burial-in-national-cemetery.source.link": "https://www.va.gov/burials-memorials/eligibility/",
+  "va-burial-in-national-cemetery.source.linkIsEnglish": "true",
   "va-burial-in-national-cemetery.summary": "Veterans, service members, and some family members may be eligible for burial in a VA national cemetery.",
   "va-burial-in-national-cemetery.eligibility.acceptableValues": "yes",
   "va-burial-in-national-cemetery.eligibility.label": "The deceased served in the active military, naval, or air service.",

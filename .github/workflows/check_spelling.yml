@@ -1,0 +1,42 @@
+name: check_spelling
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - content/**
+      - multi-life-event-2023**
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check_spelling:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
+
+      - name: Use Node.js (.nvmrc)
+        uses: actions/setup-node@v3
+        with:
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+
+      - name: Install cSpell
+        run: npm install -g cspell
+
+      # Below 2 steps install Spanish dictionary.
+      - name: Install @cspell/dict-es-es
+        run: npm install -g @cspell/dict-es-es
+
+      - name: link add @cspell/dict-es-es
+        run: cspell link add @cspell/dict-es-es
+
+      - name: Run cSpell
+        run: cspell --config ./cSpell.json  "./locales/**" "./content/**"
