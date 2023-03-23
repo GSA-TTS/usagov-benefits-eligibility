@@ -7,9 +7,7 @@ on:
       - content/**
       - multi-life-event-2023**
 
-  pull_request:
-    branches:
-      - main
+permissions: read-all
 
 jobs:
   check_spelling:
