@@ -1,4 +1,5 @@
 <template>
+  <!-- To match usa.gov-->
   <footer class="usa-footer usa-footer--big">
     <div class="usa-footer__primary-section">
       <div class="grid-container">
