@@ -7,7 +7,7 @@
         :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
         class="usa-footer__primary-content">
         <!-- footer nav column 1.-->
-        <h2 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
+        <h3 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
           <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column1Title") }}</span>
           <button
             v-else
@@ -17,7 +17,7 @@
             aria-controls="col-1">
             {{ $t("beta.footer.column1Title") }}
           </button>
-        </h2>
+        </h3>
 
         <ul
           id="col-1"
@@ -41,7 +41,7 @@
         :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
         class="usa-footer__primary-content">
         <!-- footer nav column 2.-->
-        <h2 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
+        <h3 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
           <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column2Title") }}</span>
           <button
             v-else
@@ -51,7 +51,7 @@
             aria-controls="col-2">
             {{ $t("beta.footer.column2Title") }}
           </button>
-        </h2>
+        </h3>
 
         <ul
           id="col-2"
@@ -75,7 +75,7 @@
         :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
         class="usa-footer__primary-content">
         <!-- footer nav column 3.-->
-        <h2 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
+        <h3 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
           <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column3Title") }}</span>
           <button
             v-else
@@ -85,7 +85,7 @@
             aria-controls="col-3">
             {{ $t("beta.footer.column3Title") }}
           </button>
-        </h2>
+        </h3>
 
         <ul
           id="col-3"
@@ -109,7 +109,7 @@
         :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
         class="usa-footer__primary-content">
         <!-- footer nav column 4.-->
-        <h2 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
+        <h3 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
           <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column4Title") }}</span>
           <button
             v-else
@@ -119,7 +119,7 @@
             aria-controls="col-4">
             {{ $t("beta.footer.column4Title") }}
           </button>
-        </h2>
+        </h3>
 
         <ul
           id="col-4"

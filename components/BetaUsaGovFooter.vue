@@ -25,7 +25,7 @@
           <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
             <span id="bottom-phone">
               <div class="mobile-lg:grid-col-auto">
-                <h2 class="usa-footer__logo-heading">{{ $t("footer.GroupTwo.header") }}</h2>
+                <h4 class="usa-footer__logo-heading">{{ $t("footer.GroupTwo.header") }}</h4>
               </div>
 
               <div class="mobile-lg:grid-col-auto">

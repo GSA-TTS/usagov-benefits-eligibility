@@ -2,7 +2,7 @@
   <!-- Subscribe to the newsletter. -->
   <div class="tablet:grid-col-4">
     <div class="usa-sign-up">
-      <h2 class="usa-sign-up__heading">{{ $t("footer.GroupThree.header") }}</h2>
+      <h4 class="usa-sign-up__heading">{{ $t("footer.GroupThree.header") }}</h4>
       <form
         class="usa-form"
         :action="
