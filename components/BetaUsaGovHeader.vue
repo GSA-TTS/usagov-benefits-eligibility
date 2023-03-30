@@ -26,124 +26,121 @@
     <header
       id="header"
       class="usa-header usa-header--extended">
-      <div class="usa-banner-inner">
-        <div
-          class="language-switcher-language-url"
-          role="navigation">
-          <div class="display-flex flex-justify-end usa-list language-switcher-wrap">
-            <a
-              :href="switchLanguageRoute"
-              :hreflang="$i18n.locale === 'en' ? 'es' : 'en'"
-              class="usa-button language-link"
-              :title="`${$i18n.locale === 'en' ? 'Cambiar a Español' : 'Switch to English'}`"
-              @click.prevent="switchLanguage()">
-              {{ $i18n.locale === "en" ? "Español" : "English" }}
-            </a>
-          </div>
-        </div>
-
-        <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
-          <div class="usa-navbar">
-            <div
-              id="extended-logo"
-              class="usa-logo">
-              <em class="usa-logo-text">
-                <a
-                  href="https://beta.usa.gov/life-experiences"
-                  title="USAGov Logo">
-                  <img
-                    v-if="$i18n.locale === 'en'"
-                    src="~/assets/img/logo-beta.png"
-                    alt="USAGov Logo"
-                    class="maxw-10 logo" />
-                  <img
-                    v-if="$i18n.locale === 'es'"
-                    src="~/assets/img/logo-beta-es.png"
-                    alt="USAGov en Español Logo"
-                    class="es margin-left-1 tablet:margin-left-0 maxw-196" />
-                </a>
-              </em>
-            </div>
-            <button class="usa-menu-btn">{{ $t("beta.header.menu") }}</button>
-          </div>
-          <nav
-            aria-label="Primary navigation"
-            class="usa-nav">
-            <div class="usa-nav__inner">
-              <button class="usa-nav__close">
-                <img
-                  src="@/assets/img/usa-icons/close.svg"
-                  alt="Close" />
-              </button>
-
-              <!-- Start main navigation. -->
-              <ul class="usa-nav__primary usa-accordion">
-                <li
-                  v-for="item in $t('beta.header.navMain')"
-                  :id="`item-id-${item.linkID}`"
-                  :key="`item-id-${item.linkID}`"
-                  class="usa-nav__primary-item">
-                  <a
-                    class="usa-nav__link"
-                    :href="sanitizedHeadingUrl(item.linkURL)">
-                    {{ item.linkText }}
-                  </a>
-                </li>
-              </ul>
-
-              <div class="usa-nav__secondary">
-                <span class="usa-nav__secondary-links">
-                  <span
-                    id="top-phone"
-                    class="usa-nav__secondary-item">
-                    <a :href="sanitizedHeadingUrl($t('beta.header.secondaryNav.linkOneUrl'))">{{
-                      $t("beta.header.secondaryNav.linkOneText")
-                    }}</a>
-                  </span>
-                </span>
-
-                <form
-                  class="usa-search usa-search--small"
-                  :action="sanitizedHeadingUrl($t('beta.header.form.searchUrl'))"
-                  method="get"
-                  name="search_form"
-                  accept-charset="UTF-8"
-                  role="search">
-                  <label
-                    id="top-srch"
-                    class="usa-sr-only"
-                    for="search-field-small"
-                    >{{ $t("beta.header.form.label") }}</label
-                  >
-                  <input
-                    id="affiliate"
-                    name="affiliate"
-                    type="hidden"
-                    :value="$t('beta.header.form.affliate')" />
-                  <input
-                    id="search-field-small"
-                    class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
-                    type="search"
-                    name="query"
-                    :placeholder="$t('beta.header.form.placeholder')"
-                    onfocus="this.placeholder = ''"
-                    autocomplete="off"
-                    aria-autocomplete="list"
-                    aria-haspopup="true" />
-                  <button
-                    class="usa-button"
-                    type="submit">
-                    <img
-                      src="@/assets/img/search-dark.svg"
-                      class="usa-search__submit-icon"
-                      :alt="$t('beta.header.form.label')" />
-                  </button>
-                </form>
-              </div>
-            </div>
-          </nav>
+      <div
+        class="language-switcher-language-url"
+        role="navigation">
+        <div class="display-flex flex-justify-end usa-list language-switcher-wrap">
+          <a
+            :href="switchLanguageRoute"
+            :hreflang="$i18n.locale === 'en' ? 'es' : 'en'"
+            class="usa-button language-link"
+            :title="`${$i18n.locale === 'en' ? 'Cambiar a Español' : 'Switch to English'}`"
+            @click.prevent="switchLanguage()">
+            {{ $i18n.locale === "en" ? "Español" : "English" }}
+          </a>
         </div>
       </div>
+
+      <div class="usa-navbar">
+        <div
+          id="extended-logo"
+          class="usa-logo">
+          <em class="usa-logo-text">
+            <a
+              href="https://beta.usa.gov/life-experiences"
+              title="USAGov Logo">
+              <img
+                v-if="$i18n.locale === 'en'"
+                src="~/assets/img/logo-beta.png"
+                alt="USAGov Logo"
+                class="maxw-10 logo" />
+              <img
+                v-if="$i18n.locale === 'es'"
+                src="~/assets/img/logo-beta-es.png"
+                alt="USAGov en Español Logo"
+                class="es margin-left-1 tablet:margin-left-0 maxw-196" />
+            </a>
+          </em>
+        </div>
+        <button class="usa-menu-btn">{{ $t("beta.header.menu") }}</button>
+      </div>
+
+      <nav
+        aria-label="Primary navigation"
+        class="usa-nav">
+        <div class="usa-nav__inner">
+          <button class="usa-nav__close">
+            <img
+              src="@/assets/img/usa-icons/close.svg"
+              alt="Close" />
+          </button>
+
+          <!-- Start main navigation. -->
+          <ul class="usa-nav__primary usa-accordion">
+            <li
+              v-for="item in $t('beta.header.navMain')"
+              :id="`item-id-${item.linkID}`"
+              :key="`item-id-${item.linkID}`"
+              class="usa-nav__primary-item">
+              <a
+                class="usa-nav__link"
+                :href="sanitizedHeadingUrl(item.linkURL)">
+                {{ item.linkText }}
+              </a>
+            </li>
+          </ul>
+
+          <div class="usa-nav__secondary">
+            <span class="usa-nav__secondary-links">
+              <span
+                id="top-phone"
+                class="usa-nav__secondary-item">
+                <a :href="sanitizedHeadingUrl($t('beta.header.secondaryNav.linkOneUrl'))">{{
+                  $t("beta.header.secondaryNav.linkOneText")
+                }}</a>
+              </span>
+            </span>
+
+            <form
+              class="usa-search usa-search--small"
+              :action="sanitizedHeadingUrl($t('beta.header.form.searchUrl'))"
+              method="get"
+              name="search_form"
+              accept-charset="UTF-8"
+              role="search">
+              <label
+                id="top-srch"
+                class="usa-sr-only"
+                for="search-field-small"
+                >{{ $t("beta.header.form.label") }}</label
+              >
+              <input
+                id="affiliate"
+                name="affiliate"
+                type="hidden"
+                :value="$t('beta.header.form.affliate')" />
+              <input
+                id="search-field-small"
+                class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
+                type="search"
+                name="query"
+                :placeholder="$t('beta.header.form.placeholder')"
+                onfocus="this.placeholder = ''"
+                autocomplete="off"
+                aria-autocomplete="list"
+                aria-haspopup="true" />
+              <button
+                class="usa-button"
+                type="submit">
+                <img
+                  src="@/assets/img/search-dark.svg"
+                  class="usa-search__submit-icon"
+                  :alt="$t('beta.header.form.label')" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
   </div>
 </template>
