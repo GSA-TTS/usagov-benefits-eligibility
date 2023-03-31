@@ -26,10 +26,10 @@
     <header
       id="header"
       class="usa-header usa-header--extended">
-      <div
+      <ul
         class="language-switcher-language-url"
         role="navigation">
-        <div class="display-flex flex-justify-end usa-list language-switcher-wrap">
+        <li class="display-flex flex-justify-end usa-list language-switcher-wrap">
           <a
             :href="switchLanguageRoute"
             :hreflang="$i18n.locale === 'en' ? 'es' : 'en'"
@@ -38,8 +38,8 @@
             @click.prevent="switchLanguage()">
             {{ $i18n.locale === "en" ? "Español" : "English" }}
           </a>
-        </div>
-      </div>
+        </li>
+      </ul>
 
       <div class="usa-navbar">
         <div
@@ -62,7 +62,11 @@
             </a>
           </em>
         </div>
-        <button class="usa-menu-btn">{{ $t("beta.header.menu") }}</button>
+        <button
+          class="usa-menu-btn"
+          :style="buttonStyle">
+          {{ $t("beta.header.menu") }}
+        </button>
       </div>
 
       <nav
@@ -154,6 +158,12 @@ export default {
   computed: {
     switchLanguageRoute() {
       return this.$i18n.locale === "en" ? "/es/" : "/"
+    },
+    buttonStyle() {
+      const image = require("@/assets/img-custom/Button_header_open_mobile-menu.svg")
+      return {
+        "background-image": `url(${image})`,
+      }
     },
   },
 
