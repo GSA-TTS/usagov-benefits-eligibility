@@ -86,7 +86,7 @@ $AZ-button-disabled: #859cba;
 .usa-social-link {
   background-color: transparent;
   @include u-border(1px, "solid", "transparent");
-  @include u-padding(0);
+  @include u-padding(1px);
   width: inherit;
   height: inherit;
 
@@ -94,11 +94,11 @@ $AZ-button-disabled: #859cba;
     @include u-outline("black");
     background-color: transparent;
     outline-width: units(1px);
+    outline-offset: units(1px);
   }
 
   &:hover {
     @include u-border(1px, "solid", "black");
-    background-color: transparent;
   }
 }
 
@@ -232,6 +232,7 @@ h1.text-secondary {
 
 .usa-menu-btn {
   background-color: transparent;
+  background-repeat: no-repeat;
   color: #112f4e;
   background-size: 2.8rem;
   background-position: 1px 0;
@@ -241,7 +242,13 @@ h1.text-secondary {
   font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
-  background-repeat: no-repeat;
+  @include u-border(1px, "solid", "white");
+
+  &:hover {
+    @include u-border(1px, "solid", "black");
+    background-color: transparent;
+    color: color("black");
+  }
 
   @include at-media(mobile-lg) {
     margin-right: 6px;
