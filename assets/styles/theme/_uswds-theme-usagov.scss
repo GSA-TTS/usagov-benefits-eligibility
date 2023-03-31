@@ -86,7 +86,9 @@ $AZ-button-disabled: #859cba;
 .usa-social-link {
   background-color: transparent;
   @include u-border(1px, "solid", "transparent");
-  @include u-padding(1px);
+  @include u-padding-x(2px);
+  @include u-padding-bottom(1px);
+  @include u-padding-top(2px);
   width: inherit;
   height: inherit;
 
@@ -99,6 +101,7 @@ $AZ-button-disabled: #859cba;
 
   &:hover {
     @include u-border(1px, "solid", "black");
+    background-color: transparent;
   }
 }
 
