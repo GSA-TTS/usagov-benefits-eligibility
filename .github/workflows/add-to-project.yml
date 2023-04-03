@@ -1,0 +1,19 @@
+name: Add all issues to project board
+
+on:
+  issues:
+    types:
+      - opened
+permissions: read-all
+
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - uses: actions/add-to-project@v0.5.0
+        with:
+          project-url: https://github.com/orgs/GSA/projects/48
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
