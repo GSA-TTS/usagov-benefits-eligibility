@@ -167,10 +167,10 @@
       "linkFiveUrl": "https://www.usa.gov/espanol/#tpcs"
     },
     "GroupTwo": {
-      "header": "Centro de contacto de USAGov en Español",
+      "header": "Centro de llamadas de USAGov",
       "subHeader": "Haga una pregunta a USAGov en Español al",
       "linkOne": "1-844-USAGOV1 (1-844-872-4681)",
-      "linkOneUrl": "https://www.usa.gov/espanol/centro-de-llamadas",
+      "linkOneUrl": "https://beta.usa.gov/es/centro-de-llamadas",
       "linkTwo": "In English",
       "linkTwoUrl": "https://www.usa.gov/contact"
     },
@@ -398,16 +398,16 @@
             "socialURL": "https://www.facebook.com/usagovespanol",
             "name": "Facebook USAGov",
             "icon": "icon_facebook",
-            "width": "32",
-            "height": "32"
+            "width": "40",
+            "height": "40"
           },
           {
             "socialID": "s-20",
             "socialURL": "https://twitter.com/usagovespanol",
             "name": "Twitter USAGov",
             "icon": "icon_twitter",
-            "width": "39",
-            "height": "32"
+            "width": "40",
+            "height": "40"
           },
           {
             "socialID": "s-30",
@@ -415,7 +415,7 @@
             "name": "YouTube USAGov",
             "icon": "icon_youtube",
             "width": "40",
-            "height": "32"
+            "height": "40"
           }
         ]
       }

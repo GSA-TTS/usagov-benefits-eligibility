@@ -30,7 +30,7 @@
               </div>
 
               <div class="mobile-lg:grid-col-auto">
-                <p>{{ $t("footer.GroupTwo.subHeader") }}</p>
+                <p class="margin-bottom-0">{{ $t("footer.GroupTwo.subHeader") }}</p>
 
                 <address class="usa-footer__address">
                   <div class="usa-footer__contact-info">
