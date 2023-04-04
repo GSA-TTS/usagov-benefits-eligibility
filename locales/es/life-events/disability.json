@@ -1,5 +1,5 @@
 {
-  "disability.title": "¿Tiene una discapacidad o enfermedad?",
+  "disability.title": "¿Tiene una discapacidad o una enfermedad?",
   "disability.summary": "Existen beneficios para personsas con discapacidades recientes o permanentes, incluyendo ayuda financiera",
   "disability.lede": "",
   "disability.secondaryHeadline": "Asistencia para personas con discapacidades o enfermedades",
@@ -8,8 +8,8 @@
   "disability.topLevelFilter.label1": "",
   "disability.topLevelFilter.disableGroupWhen": "no",
   "disability.topLevelFilter.label2": "",
-  "disability.eligibilityCriteria.label": "Acerca de usted (la/el aplicante)",
+  "disability.eligibilityCriteria.label": "Acerca de usted (el solicitante)",
   "disability.eligibilityCriteria.description": "",
-  "disability.eligibilityCriteria.label1": "Acerca del servicio militar (de la/el aplicante)",
+  "disability.eligibilityCriteria.label1": "Acerca del servicio militar (del solicitante)",
   "disability.eligibilityCriteria.description1": ""
 }
