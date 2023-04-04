@@ -70,7 +70,7 @@
       </div>
 
       <nav
-        aria-label="Primary navigation"
+        aria-label="Header Primary"
         class="usa-nav">
         <div class="usa-nav__inner">
           <button class="usa-nav__close">

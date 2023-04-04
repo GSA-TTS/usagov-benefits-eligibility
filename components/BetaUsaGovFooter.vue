@@ -8,7 +8,7 @@
             <!-- start Footer navigation. -->
             <nav
               class="usa-footer__nav"
-              aria-label="Footer navigation">
+              aria-label="Footer">
               <!-- Footer navigation component. -->
               <BetaUsaGovFooterNav />
             </nav>
