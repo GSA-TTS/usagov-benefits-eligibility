@@ -46,7 +46,6 @@ export default Object.assign(
   require("./es/benefits/ssa-disability-insurance.json"),
   require("./es/benefits/ssa-disability-insurance-child.json"),
 
-  
   require("./es/life-events/death-of-a-loved-one.json"),
   require("./es/life-events/disability.json"),
   require("./es/life-events/retirement.json"),
