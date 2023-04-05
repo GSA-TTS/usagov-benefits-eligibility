@@ -1,10 +1,9 @@
 {
-  "ssa-disability-insurance-child.title": "Seguro de discapacidad del Seguro Social para hijas/os",
-  "ssa-disability-insurance-child.headline": "Seguro de discapacidad del Seguro Social para hijas/os",
-  "ssa-disability-insurance-child.source.name": "Administración del Seguro Social (SSA)",
-  "ssa-disability-insurance-child.source.link": "https://www.ssa.gov/benefits/disability/",
-  "ssa-disability-insurance-child.summary": "El seguro de discapacidad del Seguro Social ofrece ayuda económica a hijas/os menores cuyos padres reciben prestaciones por discapacidad. Complete una sola solicitud para aplicar a todos los beneficios administrados por la Administración del Seguro Social.",
-  "ssa-disability-insurance-child.eligibility.label": "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school).",
-  "ssa-disability-insurance-child.eligibility.label": "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school).",
-  "ssa-disability-insurance-child.eligibility.acceptableValues": "not married"
+    "ssa-disability-insurance-child.title": "Seguro de discapacidad del Seguro Social para hijas/os",
+    "ssa-disability-insurance-child.headline": "Seguro de discapacidad del Seguro Social para hijas/os",
+    "ssa-disability-insurance-child.source.name": "Administración del Seguro Social (SSA)",
+    "ssa-disability-insurance-child.source.link": "https://www.ssa.gov/espanol/beneficios/incapacidad/",
+    "ssa-disability-insurance-child.summary": "El seguro de discapacidad del Seguro Social ofrece ayuda económica a hijas/os menores cuyos padres reciben prestaciones por discapacidad. Complete una sola solicitud para aplicar a todos los beneficios administrados por la Administración del Seguro Social.",    "ssa-disability-insurance-child.eligibility.label": "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school).",
+    "ssa-disability-insurance-child.eligibility.label": "Usted es menor de 18 años (menor de 19 años si es estudiante de tiempo completo de primaria o secundaria).",
+    "ssa-disability-insurance-child.eligibility.acceptableValues": "no casada/o"
 }
