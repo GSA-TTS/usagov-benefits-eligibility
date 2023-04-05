@@ -34,6 +34,7 @@ export default Object.assign(
   require("./es/benefits/doi-financial-assistance-social-services-burial.json"),
   require("./es/benefits/dol-division-of-coal-mine-workers-compensation-spouse.json"),
   require("./es/life-events/death-of-a-loved-one.json"),
+  require("./es/benefits/cms-medicare-disability.json"),
   require("./es/criteria.json"),
   require("./es/landing-page.json"),
   require("./es/disclaimer.json"),
