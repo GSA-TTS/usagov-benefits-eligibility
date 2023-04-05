@@ -105,4 +105,4 @@ export default Object.assign(
   require("./es/es.json"),
   require("./es/landing-page.json"),
   require("./es/disclaimer.json")
-  )
+)
