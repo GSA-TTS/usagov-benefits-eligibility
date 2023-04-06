@@ -1,9 +1,8 @@
 {
-    "ssa-supplemental-security-income_adult.title": "Seguridad de ingreso suplementario (SSI)",
-    "ssa-supplemental-security-income_adult.headline": "Seguridad de ingreso suplementario (SSI)",
-    "ssa-supplemental-security-income_adult.source.name": "Administración del Seguro Social (SSA)",
-    "ssa-supplemental-security-income_adult.source.link": "https://www.ssa.gov/espanol/beneficios/ssi/adultos.html",
-    "ssa-supplemental-security-income_adult.summary": "El programa Seguridad de ingreso suplementario (SSI, sigla en inglés) brinda asistencia financiera a adultos y niños con discapacidades, y a personas mayores de 65 años sin discapacidades que cumplen con límites financieros específicos. Complete una sola solicitud para aplicar a todos los beneficios administrados por la Administración del Seguro Social.",
-    "ssa-supplemental-security-income_adult.eligibility.label": "Usted tiene de 18 a 64 años."
-  }
-  
+  "ssa-supplemental-security-income_adult.title": "Seguridad de ingreso suplementario (SSI)",
+  "ssa-supplemental-security-income_adult.headline": "Seguridad de ingreso suplementario (SSI)",
+  "ssa-supplemental-security-income_adult.source.name": "Administración del Seguro Social (SSA)",
+  "ssa-supplemental-security-income_adult.source.link": "https://www.ssa.gov/espanol/beneficios/ssi/adultos.html",
+  "ssa-supplemental-security-income_adult.summary": "El programa Seguridad de ingreso suplementario (SSI, sigla en inglés) brinda asistencia financiera a adultos y niños con discapacidades, y a personas mayores de 65 años sin discapacidades que cumplen con límites financieros específicos. Complete una sola solicitud para aplicar a todos los beneficios administrados por la Administración del Seguro Social.",
+  "ssa-supplemental-security-income_adult.eligibility.label": "Usted tiene de 18 a 64 años."
+}
