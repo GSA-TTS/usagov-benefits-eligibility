@@ -1,11 +1,11 @@
 {
-    "va-veteran-readiness-and-employment.title": "Preparación y empleo de veteranos (VR&E)",
-    "va-veteran-readiness-and-employment.headline": "Preparación y empleo de veteranos (VR&E)",
-    "va-veteran-readiness-and-employment.source.name": "Departamento de Asuntos de los Veteranos de EE.UU. (VA)",
-    "va-veteran-readiness-and-employment.source.link": "https://www.va.gov/careers-employment/vocational-rehabilitation/eligibility/",
-    "va-veteran-readiness-and-employment.summary": "Si usted es miembro del servicio militar o veterano y tiene una discapacidad que limita su capacidad para trabajar o le impide trabajar, es posible que pueda obtener apoyo para su empleabilidad o servicios que le ayuden a vivir de la forma más independiente posible.",
-    "va-veteran-readiness-and-employment.eligibility.acceptableValues": "sí",
-    "va-veteran-readiness-and-employment.eligibility.label": "Usted prestó servicio activo en el ejército, la marina o la fuerza aérea.",
-    "va-veteran-readiness-and-employment.eligibility.acceptableValues1": "miembro del servicio activo",
-    "va-veteran-readiness-and-employment.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas"
-  }
+  "va-veteran-readiness-and-employment.title": "Preparación y empleo de veteranos (VR&E)",
+  "va-veteran-readiness-and-employment.headline": "Preparación y empleo de veteranos (VR&E)",
+  "va-veteran-readiness-and-employment.source.name": "Departamento de Asuntos de los Veteranos de EE.UU. (VA)",
+  "va-veteran-readiness-and-employment.source.link": "https://www.va.gov/careers-employment/vocational-rehabilitation/eligibility/",
+  "va-veteran-readiness-and-employment.summary": "Si usted es miembro del servicio militar o veterano y tiene una discapacidad que limita su capacidad para trabajar o le impide trabajar, es posible que pueda obtener apoyo para su empleabilidad o servicios que le ayuden a vivir de la forma más independiente posible.",
+  "va-veteran-readiness-and-employment.eligibility.acceptableValues": "sí",
+  "va-veteran-readiness-and-employment.eligibility.label": "Usted prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "va-veteran-readiness-and-employment.eligibility.acceptableValues1": "miembro del servicio activo",
+  "va-veteran-readiness-and-employment.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas"
+}
