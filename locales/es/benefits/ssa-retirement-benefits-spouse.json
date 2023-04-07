@@ -1,0 +1,11 @@
+{
+    "ssa-retirement-benefits-spouse.title": "Beneficios de jubilación para cónyuge",
+    "ssa-retirement-benefits-spouse.headline": "Beneficios de jubilación para cónyuge",
+    "ssa-retirement-benefits-spouse.source.name": "Administración del Seguro Social (SSA)",
+    "ssa-retirement-benefits-spouse.source.link": "https://www.ssa.gov/benefits/retirement/",
+    "ssa-retirement-benefits-spouse.summary": "Este beneficio ofrece ingresos de reemplazo para jubilados calificados y sus familias. Complete solo una solicitud para ser considerado para todos los beneficios administrados por la Administración del Seguro Social.",
+    "ssa-retirement-benefits-spouse.eligibility.label": "Usted tiene al menos 62 años.",
+    "ssa-retirement-benefits-spouse.eligibility.acceptableValues": "casado",
+    "ssa-retirement-benefits-spouse.eligibility.acceptableValues1": "divorciado"
+  }
+  
