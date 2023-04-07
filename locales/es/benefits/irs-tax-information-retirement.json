@@ -1,9 +1,8 @@
 {
-    "irs-tax-information-retirement.title": "Información sobre planes de jubilación con ventajas fiscales",
-    "irs-tax-information-retirement.headline": "Información sobre planes de jubilación con ventajas fiscales",
-    "irs-tax-information-retirement.source.name": "Servicio de Impuestos Internos (IRS)",
-    "irs-tax-information-retirement.source.link": "https://www.irs.gov/retirement-plans",
-    "irs-tax-information-retirement.summary": "Es posible que haya planes de jubilación con ventajas tributarias disponibles para usted. Revise las opciones de jubilación disponibles y cómo administrar sus ahorros para la jubilación durante cambios importantes en su vida.",
-    "irs-tax-information-retirement.eligibility.label": "Usted tiene al menos 65 años."
-  }
-  
+  "irs-tax-information-retirement.title": "Información sobre planes de jubilación con ventajas fiscales",
+  "irs-tax-information-retirement.headline": "Información sobre planes de jubilación con ventajas fiscales",
+  "irs-tax-information-retirement.source.name": "Servicio de Impuestos Internos (IRS)",
+  "irs-tax-information-retirement.source.link": "https://www.irs.gov/retirement-plans",
+  "irs-tax-information-retirement.summary": "Es posible que haya planes de jubilación con ventajas tributarias disponibles para usted. Revise las opciones de jubilación disponibles y cómo administrar sus ahorros para la jubilación durante cambios importantes en su vida.",
+  "irs-tax-information-retirement.eligibility.label": "Usted tiene al menos 65 años."
+}
