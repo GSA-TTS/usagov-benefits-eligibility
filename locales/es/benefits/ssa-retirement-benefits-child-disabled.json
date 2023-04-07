@@ -1,10 +1,9 @@
 {
-    "ssa-retirement-benefits-child-disabled.title": "Beneficios de jubilación para niñas/os con discapacidades",
-    "ssa-retirement-benefits-child-disabled.headline": "Beneficios de jubilación para niñas/os con discapacidades",
-    "ssa-retirement-benefits-child-disabled.source.name": "Administración del Seguro Social (SSA)",
-    "ssa-retirement-benefits-child-disabled.source.link": "https://www.ssa.gov/benefits/retirement/",
-    "ssa-retirement-benefits-child-disabled.summary": "El Seguro Social es parte del plan de jubilación de casi todos los trabajadores estadounidenses. Este beneficio puede proporcionar una ayuda económica a hijos adultos con discapacidad que no pueden trabajar y cuyos padres reciben beneficios de jubilación. Complete una sola solicitud para ser considerado para todas las prestaciones administradas por la Administración del Seguro Social.",
-    "ssa-retirement-benefits-child-disabled.eligibility.label": "Usted tiene al menos 18 años.",
-    "ssa-retirement-benefits-child-disabled.eligibility.acceptableValues": "no casado"
-  }
-  
+  "ssa-retirement-benefits-child-disabled.title": "Beneficios de jubilación para niñas/os con discapacidades",
+  "ssa-retirement-benefits-child-disabled.headline": "Beneficios de jubilación para niñas/os con discapacidades",
+  "ssa-retirement-benefits-child-disabled.source.name": "Administración del Seguro Social (SSA)",
+  "ssa-retirement-benefits-child-disabled.source.link": "https://www.ssa.gov/benefits/retirement/",
+  "ssa-retirement-benefits-child-disabled.summary": "El Seguro Social es parte del plan de jubilación de casi todos los trabajadores estadounidenses. Este beneficio puede proporcionar una ayuda económica a hijos adultos con discapacidad que no pueden trabajar y cuyos padres reciben beneficios de jubilación. Complete una sola solicitud para ser considerado para todas las prestaciones administradas por la Administración del Seguro Social.",
+  "ssa-retirement-benefits-child-disabled.eligibility.label": "Usted tiene al menos 18 años.",
+  "ssa-retirement-benefits-child-disabled.eligibility.acceptableValues": "no casado"
+}
