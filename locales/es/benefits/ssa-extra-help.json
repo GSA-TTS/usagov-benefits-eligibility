@@ -1,9 +1,8 @@
 {
-    "ssa-extra-help.title": "Ayuda adicional para costos de medicamentos recetados por Medicare",
-    "ssa-extra-help.headline": "Ayuda adicional para costos de medicamentos recetados por Medicare",
-    "ssa-extra-help.source.name": "Administración del Seguro Social (SSA)",
-    "ssa-extra-help.source.link": "https://www.ssa.gov/espanol/beneficios/medicare/ayudamedicamentos.html",
-    "ssa-extra-help.summary": "Si usted está inscrito en un plan de medicamentos de Medicare, es posible que pueda obtener ayuda adicional para pagar las primas mensuales, los deducibles anuales y los copagos relacionados con el Programa de medicamentos recetados por Medicare.",
-    "ssa-extra-help.eligibility.label": "Usted tiene al menos 65 años o tiene una discapacidad."
-  }
-  
+  "ssa-extra-help.title": "Ayuda adicional para costos de medicamentos recetados por Medicare",
+  "ssa-extra-help.headline": "Ayuda adicional para costos de medicamentos recetados por Medicare",
+  "ssa-extra-help.source.name": "Administración del Seguro Social (SSA)",
+  "ssa-extra-help.source.link": "https://www.ssa.gov/espanol/beneficios/medicare/ayudamedicamentos.html",
+  "ssa-extra-help.summary": "Si usted está inscrito en un plan de medicamentos de Medicare, es posible que pueda obtener ayuda adicional para pagar las primas mensuales, los deducibles anuales y los copagos relacionados con el Programa de medicamentos recetados por Medicare.",
+  "ssa-extra-help.eligibility.label": "Usted tiene al menos 65 años o tiene una discapacidad."
+}
