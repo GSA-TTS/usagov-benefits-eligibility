@@ -1,10 +1,10 @@
 {
-    "dod-thrift-savings-plan.title": "Plan de ahorro (TSP)",
-    "dod-thrift-savings-plan.headline": "Plan de ahorro (TSP)",
-    "dod-thrift-savings-plan.source.name": "Departamento de Defensa",
-    "dod-thrift-savings-plan.source.link": "https://www.tsp.gov/",
-    "dod-thrift-savings-plan.summary": "El Plan de ahorro (TSP, sigla en inglés) es un plan de ahorro e inversión para la jubilación patrocinado por el gobierno federal para los miembros de los servicios uniformados.",
-    "dod-thrift-savings-plan.eligibility.label": "Usted tiene al menos 65 años.",
-    "dod-thrift-savings-plan.eligibility.label1": "Usted prestó servicio activo en el ejército, la marina o la fuerza aérea.",
-    "dod-thrift-savings-plan.eligibility.acceptableValues": "sí"
+  "dod-thrift-savings-plan.title": "Plan de ahorro (TSP)",
+  "dod-thrift-savings-plan.headline": "Plan de ahorro (TSP)",
+  "dod-thrift-savings-plan.source.name": "Departamento de Defensa",
+  "dod-thrift-savings-plan.source.link": "https://www.tsp.gov/",
+  "dod-thrift-savings-plan.summary": "El Plan de ahorro (TSP, sigla en inglés) es un plan de ahorro e inversión para la jubilación patrocinado por el gobierno federal para los miembros de los servicios uniformados.",
+  "dod-thrift-savings-plan.eligibility.label": "Usted tiene al menos 65 años.",
+  "dod-thrift-savings-plan.eligibility.label1": "Usted prestó servicio activo en el ejército, la marina o la fuerza aérea.",
+  "dod-thrift-savings-plan.eligibility.acceptableValues": "sí"
 }
