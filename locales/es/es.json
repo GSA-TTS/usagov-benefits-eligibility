@@ -343,7 +343,7 @@
         {
           "linkID": "c1-20",
           "linkText": "Directorios de agencias y departamentos del Gobierno de EE. UU.",
-          "linkURL": "https://www.usa.gov/espanol/agencias-federales"
+          "linkURL": "https://www.usa.gov/es/indice-agencias"
         },
         {
           "linkID": "c1-30",
@@ -355,13 +355,13 @@
       "column2": [
         {
           "linkID": "c2-10",
-          "linkText": "Nuestra historia y misión",
-          "linkURL": "https://www.usa.gov/espanol/quienes-somos"
+          "linkText": "Acerca de USAGov en Español",
+          "linkURL": "https://www.usa.gov/es/acerca-de-usagov-en-espanol"
         },
         {
           "linkID": "c2-20",
           "linkText": "Políticas de privacidad y seguridad",
-          "linkURL": "https://www.usa.gov/es/privacidad-seguridad"
+          "linkURL": "https://www.usa.gov/es/politicas-privacidad"
         },
         {
           "linkID": "c2-30",
@@ -374,11 +374,11 @@
         {
           "linkID": "c3-10",
           "linkText": "Colabore con nosotros",
-          "linkURL": "https://www.usa.gov/espanol/colabore-con-nosotros#item-211505"
+          "linkURL": "https://www.usa.gov/es/colabore-con-nosotros"
         },
         {
           "linkID": "c3-20",
-          "linkText": "Blog de USAGov",
+          "linkText": "Lea nuestro blog (en inglés)",
           "linkURL": "https://blog.usa.gov/"
         }
       ],
@@ -386,6 +386,11 @@
       "column4": [
         {
           "linkID": "c4-10",
+          "linkText": "Promoción del programa USAGov",
+          "linkURL": "https://www.usa.gov/es/promocion-programa-usagov"
+        },
+        {
+          "linkID": "c4-20",
           "linkText": "Artículos de interés",
           "linkURL": "https://www.usa.gov/es/articulos"
         }
