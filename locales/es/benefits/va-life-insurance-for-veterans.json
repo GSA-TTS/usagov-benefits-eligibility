@@ -1,12 +1,11 @@
 {
-    "va-life-insurance-for-veterans.title": "Seguro de vida (elegible de compra para veteranos)",
-    "va-life-insurance-for-veterans.headline": "Seguro de vida (elegible de compra para veteranos)",
-    "va-life-insurance-for-veterans.source.name": "Departamento de Asuntos de los Veteranos de EE.UU. (VA)",
-    "va-life-insurance-for-veterans.source.link": "https://www.va.gov/life-insurance/options-eligibility/",
-    "va-life-insurance-for-veterans.summary": "Los programas de seguro de vida VA están disponibles para veteranos, miembros del servicio y sus cónyuges e hijos dependientes.",
-    "va-life-insurance-for-veterans.eligibility.acceptableValues": "sí",
-    "va-life-insurance-for-veterans.eligibility.acceptableValues1": "miembro del servicio activo",
-    "va-life-insurance-for-veterans.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas",
-    "va-life-insurance-for-veterans.eligibility.acceptableValues3": "retirado del servicio"
-  }
-  
+  "va-life-insurance-for-veterans.title": "Seguro de vida (elegible de compra para veteranos)",
+  "va-life-insurance-for-veterans.headline": "Seguro de vida (elegible de compra para veteranos)",
+  "va-life-insurance-for-veterans.source.name": "Departamento de Asuntos de los Veteranos de EE.UU. (VA)",
+  "va-life-insurance-for-veterans.source.link": "https://www.va.gov/life-insurance/options-eligibility/",
+  "va-life-insurance-for-veterans.summary": "Los programas de seguro de vida VA están disponibles para veteranos, miembros del servicio y sus cónyuges e hijos dependientes.",
+  "va-life-insurance-for-veterans.eligibility.acceptableValues": "sí",
+  "va-life-insurance-for-veterans.eligibility.acceptableValues1": "miembro del servicio activo",
+  "va-life-insurance-for-veterans.eligibility.acceptableValues2": "dada de baja en condiciones que no son deshonrosas",
+  "va-life-insurance-for-veterans.eligibility.acceptableValues3": "retirado del servicio"
+}
