@@ -51,12 +51,12 @@
               title="USAGov Logo">
               <img
                 v-if="$i18n.locale === 'en'"
-                src="~/assets/img/logo-beta.png"
+                src="~/assets/img-custom/Logo_USAGov.png"
                 alt="USAGov Logo"
                 class="maxw-10 logo" />
               <img
                 v-if="$i18n.locale === 'es'"
-                src="~/assets/img/logo-beta-es.png"
+                src="~/assets/img-custom/Logo_USAGov_Spanish.png"
                 alt="USAGov en Español Logo"
                 class="es margin-left-1 tablet:margin-left-0 maxw-196" />
             </a>
