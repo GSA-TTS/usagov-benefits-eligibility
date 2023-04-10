@@ -1,6 +1,6 @@
 {
   "retirement.title": "Prepárese para su jubilación",
-  "retirement.summary": "Encuentre los beneficios que podría obtener en esta etapa de su vida, incluyendo financieros, de asistencia médica, y otros .",
+  "retirement.summary": "Encuentre los beneficios que podría obtener en esta etapa de su vida, incluyendo financieros, de asistencia médica, y otros.",
   "retirement.lede": "",
   "retirement.secondaryHeadline": "Asistencia para su jubilación",
   "retirement.eligibilityCriteriaDescription": "Seleccione las opciones que mejor describen su situación. Una lista mostrará los beneficios a los que podría calificar.",
@@ -8,8 +8,8 @@
   "retirement.topLevelFilter.label1": "",
   "retirement.topLevelFilter.disableGroupWhen": "no",
   "retirement.topLevelFilter.label2": "",
-  "retirement.eligibilityCriteria.label": "Acerca de usted (la/el aplicante)",
+  "retirement.eligibilityCriteria.label": "Acerca de usted (el solicitante)",
   "retirement.eligibilityCriteria.description": "",
-  "retirement.eligibilityCriteria.label1": "Acerca del servicio militar de la/el aplicante",
+  "retirement.eligibilityCriteria.label1": "Acerca del servicio militar (del solicitante)",
   "retirement.eligibilityCriteria.description1": ""
 }
