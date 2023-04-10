@@ -81,6 +81,7 @@ export default Object.assign(
   require("./es/life-events/death-of-a-loved-one.json"),
   require("./es/life-events/disability.json"),
   require("./es/life-events/retirement.json"),
+  require("./es/criteria.json"),
   require("./es/es.json"),
   require("./es/landing-page.json"),
   require("./es/disclaimer.json")
