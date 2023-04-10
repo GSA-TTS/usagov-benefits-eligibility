@@ -170,7 +170,7 @@
       "header": "Centro de llamadas de USAGov",
       "subHeader": "Haga una pregunta a USAGov en Español al",
       "linkOne": "1-844-USAGOV1 (1-844-872-4681)",
-      "linkOneUrl": "https://beta.usa.gov/es/centro-de-llamadas",
+      "linkOneUrl": "https://www.usa.gov/es/centro-de-llamadas",
       "linkTwo": "In English",
       "linkTwoUrl": "https://www.usa.gov/contact"
     },
@@ -293,37 +293,37 @@
         {
           "linkID": "mnav-10",
           "linkText": "Todos los temas y servicios",
-          "linkURL": "https://beta.usa.gov/es#all-topics-header"
+          "linkURL": "https://www.usa.gov/es#all-topics-header"
         },
         {
           "linkID": "mnav-20",
           "linkText": "Acerca de Estados Unidos y su Gobierno",
-          "linkURL": "https://beta.usa.gov/es/acerca-de-estados-unidos"
+          "linkURL": "https://www.usa.gov/es/acerca-de-estados-unidos"
         },
         {
           "linkID": "mnav-30",
           "linkText": "Ayuda económica y beneficios del Gobierno",
-          "linkURL": "https://beta.usa.gov/es/beneficios-gobierno"
+          "linkURL": "https://www.usa.gov/es/beneficios-gobierno"
         },
         {
           "linkID": "mnav-40",
           "linkText": "Impuestos",
-          "linkURL": "https://beta.usa.gov/es/impuestos"
+          "linkURL": "https://www.usa.gov/es/impuestos"
         },
         {
           "linkID": "mnav-50",
           "linkText": "Inmigración y ciudadanía",
-          "linkURL": "https://beta.usa.gov/es/inmigracion-ciudadania-estados-unidos"
+          "linkURL": "https://www.usa.gov/es/inmigracion-ciudadania-estados-unidos"
         },
         {
           "linkID": "mnav-60",
           "linkText": "Viajes",
-          "linkURL": "https://beta.usa.gov/es/viajes"
+          "linkURL": "https://www.usa.gov/es/viajes"
         }
       ],
       "secondaryNav": {
         "linkOneText": "Llámenos al 1-844-USAGOV1",
-        "linkOneUrl": "https://beta.usa.gov/es/centro-de-llamadas"
+        "linkOneUrl": "https://www.usa.gov/es/centro-de-llamadas"
       },
       "form": {
         "label": "Buscar",
@@ -338,7 +338,7 @@
         {
           "linkID": "c1-10",
           "linkText": "Todos los temas y servicios",
-          "linkURL": "https://beta.usa.gov/es#all-topics-header"
+          "linkURL": "https://www.usa.gov/es#all-topics-header"
         },
         {
           "linkID": "c1-20",
@@ -348,7 +348,7 @@
         {
           "linkID": "c1-30",
           "linkText": "Ramas del Gobierno",
-          "linkURL": "https://beta.usa.gov/es/ramas-gobierno-estados-unidos"
+          "linkURL": "https://www.usa.gov/es/ramas-gobierno-estados-unidos"
         }
       ],
       "column2Title": "Sobre nosotros",
@@ -361,12 +361,12 @@
         {
           "linkID": "c2-20",
           "linkText": "Políticas de privacidad y seguridad",
-          "linkURL": "https://beta.usa.gov/es/privacidad-seguridad"
+          "linkURL": "https://www.usa.gov/es/privacidad-seguridad"
         },
         {
           "linkID": "c2-30",
           "linkText": "Política de accesibilidad",
-          "linkURL": "https://beta.usa.gov/es/accesibilidad"
+          "linkURL": "https://www.usa.gov/es/accesibilidad"
         }
       ],
       "column3Title": "Para agencias federales",
@@ -387,7 +387,7 @@
         {
           "linkID": "c4-10",
           "linkText": "Artículos de interés",
-          "linkURL": "https://beta.usa.gov/es/articulos"
+          "linkURL": "https://www.usa.gov/es/articulos"
         }
       ],
       "social": {

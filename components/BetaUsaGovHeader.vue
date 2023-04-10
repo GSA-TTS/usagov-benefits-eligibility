@@ -47,7 +47,7 @@
           class="usa-logo">
           <em class="usa-logo-text">
             <a
-              href="https://beta.usa.gov/life-experiences"
+              href="https://www.usa.gov/life-experiences"
               title="USAGov Logo">
               <img
                 v-if="$i18n.locale === 'en'"
