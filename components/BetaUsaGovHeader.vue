@@ -8,21 +8,6 @@
       >{{ $t("skipnav") }}</a
     >
     <TheBanner />
-    <!-- NOTE: Alert -->
-    <div class="bg-info-lighter usa-alert usa-alert--slim margin-top-0">
-      <div class="grid-container display-flex flex-align-center flex-align-start">
-        <img
-          src="@/assets/img/usa-icons/info.svg"
-          alt="usa gov logo" />
-        <div class="font-sans-xxs">
-          <strong>{{ $t("beta.alert.site") }}</strong>
-          {{ $t("beta.alert.status") }}
-          <a :href="sanitizedHeadingUrl($t('beta.alert.statusLink'))">{{ $t("beta.alert.usaGov") }}</a>
-          {{ $t("beta.alert.main") }}
-        </div>
-      </div>
-    </div>
-
     <header
       id="header"
       class="usa-header usa-header--extended">
