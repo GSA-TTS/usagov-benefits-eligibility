@@ -269,3 +269,9 @@ h1.text-secondary {
 .usa-header {
   position: relative;
 }
+
+.usa-logo .logo {
+  @include at-media-max("desktop") {
+    margin-left: 20px;
+  }
+}
