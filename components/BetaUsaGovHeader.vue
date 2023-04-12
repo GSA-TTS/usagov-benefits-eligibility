@@ -31,16 +31,22 @@
           id="extended-logo"
           class="usa-logo">
           <em class="usa-logo-text">
+            <!-- English link and logo. -->
             <a
-              href="https://www.usa.gov/life-experiences"
+              v-if="$i18n.locale === 'en'"
+              href="https://www.usa.gov"
               title="USAGov Logo">
               <img
-                v-if="$i18n.locale === 'en'"
                 src="~/assets/img-custom/Logo_USAGov.png"
                 alt="USAGov Logo"
                 class="maxw-10 logo" />
+            </a>
+            <!-- Spanish link and logo. -->
+            <a
+              v-if="$i18n.locale === 'es'"
+              href="https://www.usa.gov/es"
+              title="USAGov Logo">
               <img
-                v-if="$i18n.locale === 'es'"
                 src="~/assets/img-custom/Logo_USAGov_Spanish.png"
                 alt="USAGov en Español Logo"
                 class="es margin-left-1 tablet:margin-left-0 maxw-196" />
