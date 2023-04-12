@@ -49,7 +49,7 @@
               <img
                 src="~/assets/img-custom/Logo_USAGov_Spanish.png"
                 alt="USAGov en Español Logo"
-                class="es margin-left-1 tablet:margin-left-0 maxw-196" />
+                class="es margin-left-1 tablet:margin-left-0 maxw-196 logo" />
             </a>
           </em>
         </div>

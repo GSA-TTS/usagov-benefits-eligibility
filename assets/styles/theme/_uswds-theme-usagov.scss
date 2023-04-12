@@ -260,7 +260,7 @@ h1.text-secondary {
 .language-switcher-language-url {
   @include at-media-max("desktop") {
     position: absolute;
-    right: 64px;
+    right: 30px;
     bottom: 0px;
   }
 }
