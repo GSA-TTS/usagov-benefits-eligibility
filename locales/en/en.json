@@ -206,7 +206,7 @@
     "GroupOne": {
       "header": "About USA.gov",
       "linkOne": "About Us and Site Notices",
-      "linkOneUrl": "https://www.usa.gov/about",
+      "linkOneUrl": "https://www.usa.gov/phone",
       "linkTwo": "For the Media",
       "linkTwoUrl": "https://www.usa.gov/media",
       "linkThree": "For Developers",
@@ -313,42 +313,42 @@
         {
           "linkID": "mnav-10",
           "linkText": "All topics and services",
-          "linkURL": "https://beta.usa.gov/#all-topics-header"
+          "linkURL": "https://www.usa.gov/#all-topics-header"
         },
         {
           "linkID": "mnav-20",
           "linkText": "About the U.S. and its government",
-          "linkURL": "https://beta.usa.gov/about-the-us"
+          "linkURL": "https://www.usa.gov/about-the-us#skip-to-h1"
         },
         {
           "linkID": "mnav-30",
           "linkText": "Government benefits",
-          "linkURL": "https://beta.usa.gov/benefits"
+          "linkURL": "https://www.usa.gov/benefits"
         },
         {
           "linkID": "mnav-40",
           "linkText": "Housing help",
-          "linkURL": "https://beta.usa.gov/housing-help"
+          "linkURL": "https://www.usa.gov/housing-help"
         },
         {
           "linkID": "mnav-50",
           "linkText": "Scams and fraud",
-          "linkURL": "https://beta.usa.gov/scams-and-fraud"
+          "linkURL": "https://www.usa.gov/scams-and-fraud"
         },
         {
           "linkID": "mnav-60",
           "linkText": "Taxes",
-          "linkURL": "https://beta.usa.gov/taxes"
+          "linkURL": "https://www.usa.gov/taxes"
         },
         {
           "linkID": "mnav-70",
           "linkText": "Travel",
-          "linkURL": "https://beta.usa.gov/travel"
+          "linkURL": "https://www.usa.gov/travel"
         }
       ],
       "secondaryNav": {
         "linkOneText": "Call us at 1-844-USAGOV1",
-        "linkOneUrl": "https://beta.usa.gov/phone/"
+        "linkOneUrl": "https://www.usa.gov/phone/"
       },
       "form": {
         "label": "Search",
@@ -363,45 +363,41 @@
         {
           "linkID": "c1-10",
           "linkText": "All topics and services",
-          "linkURL": "https://beta.usa.gov/#all-topics-header"
+          "linkURL": "https://www.usa.gov/#all-topics-header"
         },
         {
           "linkID": "c1-20",
           "linkText": "Directory of U.S. government agencies and departments",
-          "linkURL": "https://www.usa.gov/federal-agencies"
+          "linkURL": "https://www.usa.gov/agency-index"
         },
         {
           "linkID": "c1-30",
           "linkText": "Branches of government",
-          "linkURL": "https://beta.usa.gov/branches-of-government"
+          "linkURL": "https://www.usa.gov/branches-of-government"
         }
       ],
+
       "column2Title": "About Us",
       "column2": [
         {
           "linkID": "c2-10",
-          "linkText": "Our mission and history",
-          "linkURL": "https://beta.usa.gov/#all_topics"
+          "linkText": "About USAGov",
+          "linkURL": "https://www.usa.gov/about"
         },
         {
           "linkID": "c2-20",
           "linkText": "Privacy and security policies",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
+          "linkURL": "https://www.usa.gov/privacy-security"
         },
         {
           "linkID": "c2-30",
           "linkText": "Accessibility policy",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
+          "linkURL": "https://www.usa.gov/accessibility"
         },
         {
           "linkID": "c2-40",
-          "linkText": "How to cite USA.gov",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
-        },
-        {
-          "linkID": "c2-50",
-          "linkText": "Real-time website data",
-          "linkURL": "https://beta.usa.gov/about-the-us/"
+          "linkText": "Website usage data",
+          "linkURL": "https://www.usa.gov/website-analytics/"
         }
       ],
       "column3Title": "For federal agencies",
@@ -409,7 +405,7 @@
         {
           "linkID": "c3-10",
           "linkText": "Partner with us",
-          "linkURL": "https://beta.usa.gov/partner-with-usagov"
+          "linkURL": "https://www.usa.gov/partner-with-usagov"
         },
         {
           "linkID": "c3-20",
@@ -421,8 +417,13 @@
       "column4": [
         {
           "linkID": "c4-10",
+          "linkText": "USAGov Outreach",
+          "linkURL": "https://www.usa.gov/outreach"
+        },
+        {
+          "linkID": "c4-20",
           "linkText": "Feature articles",
-          "linkURL": "https://beta.usa.gov/features"
+          "linkURL": "https://www.usa.gov/features"
         }
       ],
       "social": {
@@ -433,16 +434,16 @@
             "socialURL": "https://www.facebook.com/USAgov",
             "name": "Facebook USAGov",
             "icon": "icon_facebook",
-            "width": "32",
-            "height": "32"
+            "width": "40",
+            "height": "40"
           },
           {
             "socialID": "s-20",
             "socialURL": "https://twitter.com/USAgov",
             "name": "Twitter USAGov",
             "icon": "icon_twitter",
-            "width": "39",
-            "height": "32"
+            "width": "40",
+            "height": "40"
           },
           {
             "socialID": "s-30",
@@ -450,15 +451,15 @@
             "name": "YouTube USAGov",
             "icon": "icon_youtube",
             "width": "40",
-            "height": "32"
+            "height": "40"
           },
           {
             "socialID": "s-40",
             "socialURL": "https://www.instagram.com/usagov/",
             "name": "Instagram USAGov",
             "icon": "icon_instagram",
-            "width": "32",
-            "height": "32"
+            "width": "40",
+            "height": "40"
           }
         ]
       }

@@ -1,4 +1,5 @@
 <template>
+  <!-- To match usa.gov-->
   <footer class="usa-footer usa-footer--big">
     <div class="usa-footer__primary-section">
       <div class="grid-container">
@@ -7,7 +8,7 @@
             <!-- start Footer navigation. -->
             <nav
               class="usa-footer__nav"
-              aria-label="Footer navigation">
+              aria-label="Footer">
               <!-- Footer navigation component. -->
               <BetaUsaGovFooterNav />
             </nav>
@@ -25,11 +26,11 @@
           <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
             <span id="bottom-phone">
               <div class="mobile-lg:grid-col-auto">
-                <h2 class="usa-footer__logo-heading">{{ $t("footer.GroupTwo.header") }}</h2>
+                <h4 class="usa-footer__logo-heading">{{ $t("footer.GroupTwo.header") }}</h4>
               </div>
 
               <div class="mobile-lg:grid-col-auto">
-                <p>{{ $t("footer.GroupTwo.subHeader") }}</p>
+                <p class="margin-bottom-0">{{ $t("footer.GroupTwo.subHeader") }}</p>
 
                 <address class="usa-footer__address">
                   <div class="usa-footer__contact-info">

@@ -85,17 +85,22 @@ $AZ-button-disabled: #859cba;
 
 .usa-social-link {
   background-color: transparent;
-  @include u-border(2px, "solid", "transparent");
-  @include u-padding(1);
+  @include u-border(1px, "solid", "transparent");
+  @include u-padding-x(2px);
+  @include u-padding-bottom(1px);
+  @include u-padding-top(2px);
+  width: inherit;
+  height: inherit;
 
   &:focus {
     @include u-outline("black");
     background-color: transparent;
     outline-width: units(1px);
+    outline-offset: units(1px);
   }
 
   &:hover {
-    @include u-border(2px, "solid", "black");
+    @include u-border(1px, "solid", "black");
     background-color: transparent;
   }
 }
@@ -204,7 +209,6 @@ h1.text-secondary {
 
 .usa-sign-up__heading {
   @include u-font-family("ui");
-  font-size: size("ui", 8);
 }
 
 .usa-sign-up {
@@ -216,7 +220,6 @@ h1.text-secondary {
 }
 
 .language-link {
-  font-size: size("ui", 3);
   margin-right: 0;
 }
 
@@ -227,4 +230,47 @@ h1.text-secondary {
 
 .language-switcher-wrap {
   @include u-margin-top(1);
+}
+
+.usa-menu-btn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  color: #112f4e;
+  background-size: 2.8rem;
+  background-position: 1px 0;
+  padding: 0;
+  padding-top: 2rem;
+  height: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  @include u-border(1px, "solid", "white");
+
+  &:hover {
+    @include u-border(1px, "solid", "black");
+    background-color: transparent;
+    color: color("black");
+  }
+
+  @include at-media(mobile-lg) {
+    margin-right: 6px;
+  }
+}
+
+.language-switcher-language-url {
+  @include at-media-max("desktop") {
+    position: absolute;
+    right: 30px;
+    bottom: 0px;
+  }
+}
+
+.usa-header {
+  position: relative;
+}
+
+.usa-logo .logo {
+  @include at-media-max("desktop") {
+    margin-left: 20px;
+  }
 }
