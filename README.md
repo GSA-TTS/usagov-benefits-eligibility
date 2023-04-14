@@ -8,6 +8,8 @@
 [![Snyk Scan](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml)
 [![OWASP ZAP Full Scan](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml)
 [![pa11y tests](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml)
+[![check_spelling](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/check_spelling.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/check_spelling.yml)
+
 
 BEARS (Benefits Eligibility Awareness Resources)
 will be a proactive notification service that provides
@@ -150,6 +152,12 @@ to build an image of the BEARS software and run it as a container.
 docker build -t bears . \
 && docker run --rm -it -p 3000:3000 bears
 ```
+### Spell Checking in both English and Spanish Languages
+
+cSpell is set to check `/locales/` and `/content/` folders for both English and Spanish languages. If there are any words that need to be considered always `true`, they need to be added to the `word` list in the `cSpell.json` file in the root of the directory.
+
+
+cSpell action is currently set to work only in PRs into `main` and when there is a `push` on the branches that starts with `content/**`.
 
 ### Pa11y testing locally
 
@@ -180,8 +188,7 @@ You may use the following command to close the running containers:
 ### Github Actions
 
 - .github/workflows/main.yml - Builds, tests the BEARS site.
-- .github/workflows/codeql-analysis.yml - Scans for code quality and
-  security issues in the BEARS site and it's dependencies.
+- .github/workflows/codeql-analysis.yml - Scans for code quality and security issues in the BEARS site and it's dependencies.
 
 ### Federalist builds
 
