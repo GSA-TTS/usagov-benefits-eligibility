@@ -8,6 +8,8 @@
 [![Snyk Scan](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/snyk.yml)
 [![OWASP ZAP Full Scan](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/owasp_zap_full.yml)
 [![pa11y tests](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/pa11y.yml)
+[![check_spelling](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/check_spelling.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/check_spelling.yml)
+
 
 BEARS (Benefits Eligibility Awareness Resources)
 will be a proactive notification service that provides
@@ -49,6 +51,12 @@ $ npm run test:watch
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Local development tips
+
+1. You can enable console.log by copying `.env.txt` and renaming it to `.env`. This file is already ignored in `.gitignore` so you do not need to worry about committing this.
+2. Use the provided pre-commit hooks. To install, [see the documentation in this repo](docs/pre-commit.md).
+3. When switching branches, it may be necessary at times to run `npm i` to ensure you get matching npms for the branch. The best way is to stop `npm run dev`, install and then start `npm run dev` again.
 
 ## Using Docker
 
@@ -144,6 +152,30 @@ to build an image of the BEARS software and run it as a container.
 docker build -t bears . \
 && docker run --rm -it -p 3000:3000 bears
 ```
+### Spell Checking in both English and Spanish Languages
+
+cSpell is set to check `/locales/` and `/content/` folders for both English and Spanish languages. If there are any words that need to be considered always `true`, they need to be added to the `word` list in the `cSpell.json` file in the root of the directory.
+
+
+cSpell action is currently set to work only in PRs into `main` and when there is a `push` on the branches that starts with `content/**`.
+
+### Pa11y testing locally
+
+To implement the pa11y testing locally in a containerized environment, use the following command:
+
+```bash
+(
+  cd "$(git rev-parse --show-toplevel)" \
+  && docker compose up
+)
+```
+
+You may use the following command to close the running containers:
+
+```bash
+(
+  docker compose down
+)
 
 ### Useful links
 
@@ -156,8 +188,7 @@ docker build -t bears . \
 ### Github Actions
 
 - .github/workflows/main.yml - Builds, tests the BEARS site.
-- .github/workflows/codeql-analysis.yml - Scans for code quality and
-  security issues in the BEARS site and it's dependencies.
+- .github/workflows/codeql-analysis.yml - Scans for code quality and security issues in the BEARS site and it's dependencies.
 
 ### Federalist builds
 
@@ -194,4 +225,5 @@ Current todos as we are working in the code:
 - Remove "API" or $content calls from vue components to API call to be
   loaded by store.
 - Rename Components to be easier to follow.
-- Revisit Vuex store to align with benefit cards vs criteria selections.
+- Revisit Vuex store to align with benefit cards vs criteria selections..
+```

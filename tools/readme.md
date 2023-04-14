@@ -29,4 +29,4 @@ Python 3 required.
 
 ## `createJson.py`
 
-- Reads through the `content` directory and all subdirectories and reads the nessecary variables that need to be translated and pulls them into a corresponding `json` file for that `markdown` file and then writes that json to a file and then rewrites the markdown file to follow a dotted notation.
+- Reads through the `content` directory and all subdirectories and reads the necessary variables that need to be translated and pulls them into a corresponding `json` file for that `markdown` file and then writes that json to a file and then rewrites the markdown file to follow a dotted notation.

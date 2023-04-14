@@ -3,6 +3,7 @@
   "dol-division-of-coal-mine-workers-compensation-spouse.headline": "División de Compensación para Trabajadores de Minas de Carbón (Beneficios por Pulmón Negro) para Cónyuge Sobreviviente",
   "dol-division-of-coal-mine-workers-compensation-spouse.source.name": "Departamento de Trabajo",
   "dol-division-of-coal-mine-workers-compensation-spouse.source.link": "https://www.dol.gov/agencies/owcp/dcmwc/filing_guide_survivor",
+  "dol-division-of-coal-mine-workers-compensation-spouse.source.linkIsEnglish": "true",
   "dol-division-of-coal-mine-workers-compensation-spouse.summary": "Hay una compensación disponible para los sobrevivientes de los mineros del carbón cuyas muertes son atribuibles a la neumoconiosis que surge del empleo en las minas de carbón.",
   "dol-division-of-coal-mine-workers-compensation-spouse.eligibility.acceptableValues": "cónyuge"
 }
