@@ -3,7 +3,7 @@
   "ssa-retirement-benefits-spouse.headline": "Retirement Benefits for Spouse",
   "ssa-retirement-benefits-spouse.source.name": "Social Security Administration",
   "ssa-retirement-benefits-spouse.source.link": "https://www.ssa.gov/benefits/retirement/",
-  "ssa-retirement-benefits-spouse.summary": "This benefit provides replacement income for qualified retirees and their families. Social Security is part of the retirement plan for almost every American worker.",
+  "ssa-retirement-benefits-spouse.summary": "This benefit provides replacement income for qualified retirees and their families.",
   "ssa-retirement-benefits-spouse.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.",
   "ssa-retirement-benefits-spouse.eligibility.label": "You are at least 62 years old.",
   "ssa-retirement-benefits-spouse.eligibility.acceptableValues": "married",
