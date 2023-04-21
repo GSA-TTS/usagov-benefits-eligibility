@@ -4,7 +4,7 @@
   "ssa-disability-insurance-mothers-fathers.source.name": "Social Security Administration",
   "ssa-disability-insurance-mothers-fathers.source.link": "https://www.ssa.gov/benefits/disability/",
   "ssa-disability-insurance-mothers-fathers.summary": "Social Security Disability Insurance provides financial assistance to people with disabilities and their family members.",
-  "ssa-disability-insurance-mothers-fathers.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.", 
+  "ssa-disability-insurance-mothers-fathers.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.",
   "ssa-disability-insurance-mothers-fathers.eligibility.acceptableValues": "not married",
   "ssa-disability-insurance-mothers-fathers.eligibility.acceptableValues1": "divorced"
 }
