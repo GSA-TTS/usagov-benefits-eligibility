@@ -4,5 +4,6 @@
   "ssa-extra-help.source.name": "Social Security Administration",
   "ssa-extra-help.source.link": "https://www.ssa.gov/benefits/medicare/prescriptionhelp.html",
   "ssa-extra-help.summary": "If you are enrolled in a Medicare Prescription Drug plan, you may be able to get extra help to pay for the monthly premiums, annual deductibles, and co-payments related to the Medicare Prescription Drug program.",
+  "ssa-extra-help.summary.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.", 
   "ssa-extra-help.eligibility.label": "You are at least 65 years old or disabled."
 }
