@@ -3,7 +3,8 @@
   "ssa-disability-insurance-child-disabled.headline": "Seguro de discapacidad del Seguro Social para hijas/os con discapacidades",
   "ssa-disability-insurance-child-disabled.source.name": "Administración del Seguro Social (SSA)",
   "ssa-disability-insurance-child-disabled.source.link": "https://www.ssa.gov/espanol/beneficios/incapacidad/",
-  "ssa-disability-insurance-child-disabled.summary": "El seguro de discapacidad del Seguro Social ofrece ayuda económica a hijas e hijos adultos que no pueden trabajar debido a sus discapacidades y cuyos padres reciben prestaciones por incapacidad. Complete una sola solicitud para aplicar a todos los beneficios administrados por la Administración del Seguro Social.",
+  "ssa-disability-insurance-child-disabled.summary": "El seguro de discapacidad del Seguro Social ofrece ayuda económica a hijas e hijos adultos que no pueden trabajar debido a sus discapacidades y cuyos padres reciben prestaciones por incapacidad.",
+  "ssa-disability-insurance-child-disabled.criticalApplicationInformation": "Presente sólo una solicitud y será considerada para todos los beneficios ofrecidos por el Seguro Social (SSA).",
   "ssa-disability-insurance-child-disabled.eligibility.label": "Usted tiene al menos 18 años.",
   "ssa-disability-insurance-child-disabled.eligibility.acceptableValues": "no casado"
 }
