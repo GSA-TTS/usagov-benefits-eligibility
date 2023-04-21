@@ -4,7 +4,7 @@
   "ssa-disability-insurance-child.source.name": "Social Security Administration",
   "ssa-disability-insurance-child.source.link": "https://www.ssa.gov/benefits/disability/",
   "ssa-disability-insurance-child.summary": "Social Security Disability Insurance provides financial assistance to minor children whose parents receive disability benefits.",
-  "ssa-disability-insurance-child.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.", 
+  "ssa-disability-insurance-child.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.",
   "ssa-disability-insurance-child.eligibility.label": "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school).",
   "ssa-disability-insurance-child.eligibility.acceptableValues": "not married"
 }
