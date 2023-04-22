@@ -160,12 +160,11 @@ export default {
 
   methods: {
     sanitizedHeadingUrl(benefitUrl, defaultValue = "#") {
-      if (benefitUrl) {
-        if (benefitUrl.length > 0) {
-          return this.sanitizeUrl(benefitUrl)
-        }
+      if (benefitUrl && benefitUrl.length > 0) {
+        return this.sanitizeUrl(benefitUrl)
+      } else {
+        return defaultValue
       }
-      return defaultValue
     },
     skipLink() {
       const skipLink = document.getElementById("main-content")
