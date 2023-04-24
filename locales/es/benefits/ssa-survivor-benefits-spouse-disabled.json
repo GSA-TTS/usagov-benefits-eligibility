@@ -5,6 +5,7 @@
   "ssa-survivor-benefits-spouse-disabled.source.link": "https://www.ssa.gov/espanol/beneficios/sobrevivientes/si-usted.html#h2",
   "ssa-survivor-benefits-spouse-disabled.source.linkIsEnglish": "false",
   "ssa-survivor-benefits-spouse-disabled.summary": "Los beneficios del Seguro Social para sobrevivientes se pagan al cónyuge sobreviviente de un trabajador elegible y, en ciertas circunstancias, al cónyuge divorciado sobreviviente de un trabajador elegible.",
+  "ssa-survivor-benefits-spouse-disabled.criticalApplicationInformation": "Se utilizará una sola solicitud para solicitar todos los beneficios de la Administración del Seguro Social (SSA, por sus siglas en inglés), pero la elegibilidad y la aprobación de cada beneficio será determinada individualmente.",
   "ssa-survivor-benefits-spouse-disabled.eligibility.acceptableValues": "cónyuge",
   "ssa-survivor-benefits-spouse-disabled.eligibility.label": "Usted tiene al menos 50 años.",
   "ssa-survivor-benefits-spouse-disabled.eligibility.acceptableValues1": "viudo",

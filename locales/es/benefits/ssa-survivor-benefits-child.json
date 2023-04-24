@@ -5,6 +5,7 @@
   "ssa-survivor-benefits-child.source.link": "https://www.ssa.gov/espanol/beneficios/sobrevivientes/si-usted.html#h4",
   "ssa-survivor-benefits-child.source.linkIsEnglish": "false",
   "ssa-survivor-benefits-child.summary": "Los beneficios del Seguro Social para sobrevivientes se pagan a un hijo/hija, hijastro/hijastra, nieto/nieta o hijo/hija adoptado de trabajadores elegibles.",
+  "ssa-survivor-benefits-child.criticalApplicationInformation": "Se utilizará una sola solicitud para solicitar todos los beneficios de la Administración del Seguro Social (SSA, por sus siglas en inglés), pero la elegibilidad y la aprobación de cada beneficio será determinada individualmente.",
   "ssa-survivor-benefits-child.eligibility.acceptableValues": "hijo/hija",
   "ssa-survivor-benefits-child.eligibility.label": "Usted tiene menos de 18 años (menos de 19 años si es alumno a tiempo completo en una escuela primaria o secundaria).",
   "ssa-survivor-benefits-child.eligibility.acceptableValues1": "no casado"

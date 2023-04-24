@@ -12,6 +12,7 @@ source:
   isEnglish: ssa-survivor-benefits-mothers-fathers.source.linkIsEnglish
 
 summary: ssa-survivor-benefits-mothers-fathers.summary
+criticalApplicationInformation: ssa-survivor-benefits-mothers-fathers.criticalApplicationInformation
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
@@ -22,7 +23,7 @@ eligibility:
   - criteriaKey: applicant_care_for_child
     acceptableValues: [true]
   - criteriaKey: applicant_marital_status
-    acceptableValues: [ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues1, 
+    acceptableValues: [ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues1,
     ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues2]
   - criteriaKey: applicant_citizen_status
     acceptableValues: [true]

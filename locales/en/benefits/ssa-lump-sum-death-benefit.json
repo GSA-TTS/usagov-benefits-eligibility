@@ -5,6 +5,7 @@
   "ssa-lump-sum-death-benefit.source.link": "https://www.ssa.gov/benefits/survivors/ifyou.html#h7",
   "ssa-lump-sum-death-benefit.source.linkIsEnglish": "true",
   "ssa-lump-sum-death-benefit.summary": "The surviving spouse of a deceased person who qualified for Social Security benefits may be eligible for a $255 financial assistance.",
+  "ssa-lump-sum-death-benefit.criticalApplicationInformation": "A single SSA benefit application will be used to apply to all SSA benefits, but eligibility and approval will be determined for individual benefits.",
   "ssa-lump-sum-death-benefit.eligibility.label": "The deceased died within the last two years.",
   "ssa-lump-sum-death-benefit.eligibility.acceptableValues": "spouse",
   "ssa-lump-sum-death-benefit.eligibility.acceptableValues1": "child"
