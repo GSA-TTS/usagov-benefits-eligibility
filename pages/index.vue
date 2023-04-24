@@ -56,8 +56,6 @@
 import { tObj } from "~/services/translation"
 export default {
   layout: "default",
-  // Implement the middleware redirect.js routine.
-  middleware: "redirect",
   async asyncData({ $content }) {
     const lifeEvents = await $content("life-events").sortBy("title").fetch()
     const landingPage = await $content("landing-page").fetch()
