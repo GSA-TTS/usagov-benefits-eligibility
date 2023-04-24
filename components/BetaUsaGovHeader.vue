@@ -15,14 +15,12 @@
         class="language-switcher-language-url"
         role="navigation">
         <li class="display-flex flex-justify-end usa-list language-switcher-wrap">
-          <a
-            :href="switchLanguageRoute"
-            :hreflang="$i18n.locale === 'en' ? 'es' : 'en'"
-            class="usa-button language-link"
+          <nuxt-link
+            v-for="locale in availableLocales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
             :title="`${$i18n.locale === 'en' ? 'Cambiar a Español' : 'Switch to English'}`"
-            @click.prevent="switchLanguage()">
-            {{ $i18n.locale === "en" ? "Español" : "English" }}
-          </a>
+            class="usa-button language-link">{{ locale.name }}</nuxt-link>
         </li>
       </ul>
 
@@ -147,8 +145,8 @@ export default {
   mixins: [sanitizeUrl],
 
   computed: {
-    switchLanguageRoute() {
-      return this.$i18n.locale === "en" ? "/es/" : "/"
+    availableLocales () {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
     },
     buttonStyle() {
       const image = require("@/assets/img-custom/Button_header_open_mobile-menu.svg")
