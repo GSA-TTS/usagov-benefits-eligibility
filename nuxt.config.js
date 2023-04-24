@@ -95,7 +95,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n","@nuxtjs/dotenv", "@nuxtjs/gtm"],
+  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n", "@nuxtjs/dotenv", "@nuxtjs/gtm"],
   gtm: {
     id: "GTM-P2F6CBK",
   },
@@ -104,22 +104,21 @@ export default {
       {
         code: "en",
         file: "en.js",
-        name: "English"
+        name: "English",
       },
       {
         code: "es",
         file: "es.js",
-        name: 'Español'
+        name: "Español",
       },
     ],
     lazy: true,
     langDir: "locales",
     defaultLocale: "en",
-    rootRedirect: 
-      {
-        statusCode: 301, 
-        path: 'death-of-a-loved-one',
-      }
+    rootRedirect: {
+      statusCode: 301,
+      path: "death-of-a-loved-one",
+    },
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
