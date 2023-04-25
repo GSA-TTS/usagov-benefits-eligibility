@@ -200,8 +200,7 @@
         </div>
       </div>
     </section>
-    <!-- CrossSell goes here. -->
-    <CrossSell
+     <CrossSell
       v-if="$config.oneEventVersion === false"
       :cards="lifeEvent.related"
       :title="$t('crossSell.title')"
