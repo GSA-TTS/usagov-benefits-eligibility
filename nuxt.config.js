@@ -104,15 +104,21 @@ export default {
       {
         code: "en",
         file: "en.js",
+        name: "English",
       },
       {
         code: "es",
         file: "es.js",
+        name: "Español",
       },
     ],
     lazy: true,
     langDir: "locales",
     defaultLocale: "en",
+    rootRedirect: {
+      statusCode: 301,
+      path: "death-of-a-loved-one",
+    },
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
