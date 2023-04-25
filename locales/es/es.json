@@ -234,6 +234,9 @@
     "eligible": "usted podría ser elegible",
     "unknown": "se necesita más información"
   },
+  "crossSell": {
+    "title": "Otros beneficios que podrían ser para usted."
+  },
   "criteria_group": {
     "non_selected": "No se seleccionaron criterios de elegibilidad"
   },
