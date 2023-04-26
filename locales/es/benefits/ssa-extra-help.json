@@ -4,6 +4,6 @@
   "ssa-extra-help.source.name": "Administración del Seguro Social (SSA)",
   "ssa-extra-help.source.link": "https://www.ssa.gov/espanol/beneficios/medicare/ayudamedicamentos.html",
   "ssa-extra-help.summary": "Si usted está inscrito en un plan de medicamentos de Medicare, es posible que pueda obtener ayuda adicional para pagar las primas mensuales, los deducibles anuales y los copagos relacionados con el programa de medicamentos recetados por Medicare.",
-  "ssa-extra-help.summary.criticalApplicationInformation": "Presente una sola solicitud y será considerado para todos los beneficios ofrecidos por el Seguro Social (SSA).",
+  "ssa-extra-help.criticalApplicationInformation": "Presente una sola solicitud y será considerado para todos los beneficios ofrecidos por el Seguro Social (SSA).",
   "ssa-extra-help.eligibility.label": "Usted tiene al menos 65 años o tiene una discapacidad."
 }
