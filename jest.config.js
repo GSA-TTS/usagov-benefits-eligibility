@@ -3,6 +3,7 @@ module.exports = {
     "^@/(.*)$": "<rootDir>/$1",
     "^~/(.*)$": "<rootDir>/$1",
     "^vue$": "vue/dist/vue.common.js",
+    ".+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
   },
   moduleFileExtensions: ["js", "vue", "json"],
 
@@ -27,5 +28,5 @@ module.exports = {
   },
   setupFiles: ["<rootDir>/jest.setup.js"],
   testEnvironment: "jsdom",
-  coverageProvider: "babel",
+  coverageProvider: "v8",
 }
