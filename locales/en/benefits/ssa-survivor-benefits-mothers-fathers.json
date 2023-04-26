@@ -4,8 +4,8 @@
   "ssa-survivor-benefits-mothers-fathers.source.name": "Social Security Administration",
   "ssa-survivor-benefits-mothers-fathers.source.link": "https://www.ssa.gov/forms/ssa-5.html",
   "ssa-survivor-benefits-mothers-fathers.source.linkIsEnglish": "true",
-  "ssa-survivor-benefits-mothers-fathers.summary": "Social Security survivors benefits might be available to the spouse or divorced spouse providing care for the deceased worker's child. Complete just one application to be considered for all benefits administered by the Social Security Administration.",
-  "ssa-survivor-benefits-mothers-fathers.criticalApplicationInformation": "A single SSA benefit application will be used to apply to all SSA benefits, but eligibility and approval will be determined for individual benefits.",
+  "ssa-survivor-benefits-mothers-fathers.summary": "Social Security survivors benefits might be available to the spouse or divorced spouse providing care for the deceased worker's child.",
+  "ssa-survivor-benefits-mothers-fathers.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.",
   "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues": "spouse",
   "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues1": "widowed",
   "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues2": "divorced"

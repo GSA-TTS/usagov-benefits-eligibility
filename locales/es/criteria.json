@@ -69,7 +69,7 @@
   "criteria.applicant_paid_funeral_expenses.label": "Usted pagó los gastos de funeral/entierro.",
   "criteria.applicant_funeral_reimbursment.label": "NO fue reembolsado por el costo del funeral/entierro por ninguna organización ni agencia del Gobierno.",
   "criteria.applicant-military.label": "",
-  "criteria.applicant_served_in_active_military.label": "¿Prestó usted servicio activo en el ejército, la marina o la fuerza aérea?",
+  "criteria.applicant_served_in_active_military.label": "¿Usted prestó servicio activo en el ejército, la marina o la fuerza aérea?",
   "criteria.applicant_served_in_active_military.values1": "sí",
   "criteria.applicant_served_in_active_military.values2": "no",
   "criteria.applicant_service_status.label": "Una de las siguientes opciones describe su situación de servicio:",
