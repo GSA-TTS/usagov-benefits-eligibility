@@ -1,0 +1,13 @@
+{
+  "dod-retirement-and-disability-payments.title": "Pagos Concurrentes de Jubilación y de Discapacidad (CRDP)",
+  "dod-retirement-and-disability-payments.headline": "Pagos Concurrentes de Jubilación y de Discapacidad (CRDP)",
+  "dod-retirement-and-disability-payments.source.name": "Departamento de Defensa",
+  "dod-retirement-and-disability-payments.source.link": "https://militarypay.defense.gov/Benefits/New-Retired-Benefits-Program/",
+  "dod-retirement-and-disability-payments.summary": "El programa de Pagos de Jubilación y Discapacidad Concurrentes (CRDP, sigla en inglés) ofrece una reducción gradual de 10 años de la compensación de paga militar de jubilación que recibió por discapacidad de la Oficina de Asuntos de los Veteranos (VA, sigla en inglés). Si usted cree que califica, pero no recibe los pagos, comuníquese con su departamento militar para conocer la razón.",
+  "dod-retirement-and-disability-payments.criticalApplicationInformation": "Las solicitudes para el programa CRDP no son necesarias ni son aceptadas. Los beneficios de CRDP se determinan automáticamente.",
+  "dod-retirement-and-disability-payments.eligibility.label": "Usted tiene al menos 60 años.",
+  "dod-retirement-and-disability-payments.eligibility.label1": "Usted prestó servicio activo en el ejército, la marina o la fuerza aérea",
+  "dod-retirement-and-disability-payments.eligibility.acceptableValues": "sí",
+  "dod-retirement-and-disability-payments.eligibility.acceptableValues1": "retirada/o del servicio",
+  "dod-retirement-and-disability-payments.eligibility.acceptableValues2": "miembro de la Guardia Nacional/Reserva"
+}

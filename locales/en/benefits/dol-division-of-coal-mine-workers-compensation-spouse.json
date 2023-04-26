@@ -4,6 +4,7 @@
   "dol-division-of-coal-mine-workers-compensation-spouse.source.name": "Department of Labor",
   "dol-division-of-coal-mine-workers-compensation-spouse.source.link": "https://www.dol.gov/agencies/owcp/dcmwc/filing_guide_survivor",
   "dol-division-of-coal-mine-workers-compensation-spouse.source.linkIsEnglish": "true",
-  "dol-division-of-coal-mine-workers-compensation-spouse.summary": "A compensation is available to survivors of coal miners whose deaths are attributable to pneumoconiosis arising out of coal mine employment.",
+  "dol-division-of-coal-mine-workers-compensation-spouse.summary": "A compensation is available to surviving spouses of coal miners who were totally disabled by pneumoconiosis arising out of coal mine employment, and to survivors of coal miners whose deaths are attributable to the disease.",
+  "dol-division-of-coal-mine-workers-compensation-spouse.criticalApplicationInformation": "The program also provides eligible miners with medical coverage for the treatment of lung diseases related to pneumoconiosis.",
   "dol-division-of-coal-mine-workers-compensation-spouse.eligibility.acceptableValues": "spouse"
 }
