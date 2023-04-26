@@ -176,7 +176,7 @@ export default {
 
     /* istanbul ignore next */
     email() {
-      window.location.href = `mailto:?subject=Results%20from%20benefits%20elibibility%20awareness%20resource&body=Results%20${encodeURIComponent(
+      window.location.href = `mailto:?subject=Results%20from%20benefits%20eligibility%20awareness%20resource&body=Here%20are%20the%20potential%20federal%20benefits%20from%20your%20search%20results%20${encodeURIComponent(
         this.url
       )}`
     },
