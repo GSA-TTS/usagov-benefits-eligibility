@@ -18,6 +18,7 @@ export default function beforeAllTests() {
     oneEventVersion: false,
   }
   config.mocks.$i18n = {
+    locale: "en",
     locales: [
       {
         code: "en",
