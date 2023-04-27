@@ -1,6 +1,6 @@
 {
   "name": "usagov-benefits-eligibility",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "BEARS will be a proactive notification service that provides timely and personalized information about benefits eligibility, contextualized by life events.",
   "license": "See license in CONTRIBUTING.md",
   "repository": "https://github.com/GSA/usagov-benefits-eligibility",
