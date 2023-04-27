@@ -32,7 +32,7 @@ export default function beforeAllTests() {
       },
     ],
     setLocale: (locale) => {
-      config.mocks.$i18n.locales.code = locale
+      config.mocks.$i18n.locale = locale
     },
   }
   Vue.use(Vuex)
