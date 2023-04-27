@@ -125,8 +125,33 @@ export default {
   },
 
   sitemap: {
-    hostname: `${SITE_URLPREFIX}${SITE_PREFIX}`,
-    routes: getLifeEvents().map((le) => `/${le}`),
+    hostname: "https://benefits-tool.usa.gov",
+    routes: [
+      '/becoming-a-parent',
+      '/es/becoming-a-parent',
+      '/death-of-a-loved-one',
+      '/es/death-of-a-loved-one',
+      '/disability',
+      '/es/disability',
+      '/financial-hardship',
+      '/es/financial-hardship',
+      '/military-service',
+      '/es/military-service',
+      '/national-emergency-and-disaster',
+      '/es/national-emergency-and-disaster',
+      '/retirement',
+      '/es/retirement',
+      '/school-and-education',
+      '/es/school-and-education',
+      '/404',
+      '/es/404',
+      '/agencies',
+      '/es/agencies',
+      '/types',
+      '/es/types',
+      '/',
+      '/es'
+    ],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
