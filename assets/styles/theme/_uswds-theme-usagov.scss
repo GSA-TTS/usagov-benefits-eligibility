@@ -124,26 +124,55 @@ $AZ-button-disabled: #859cba;
     cursor: unset;
     text-decoration: none;
   }
-
-  .usa-list--unstyled > li {
-    @include u-margin-bottom(1);
-  }
-
-  &__primary-content {
-    @include at-media(mobile-lg) {
-      @include u-border-top(1px, "solid", "base-light");
-    }
-
-    @include at-media(tablet) {
-      border: 0;
-    }
-  }
 }
 
-.usa-footer--big .usa-footer__primary-content--collapsible .usa-list--unstyled {
-  @include at-media-max("tablet") {
-    @include u-padding-x(2);
-    @include u-padding-y(2);
+.usa-footer--big .usa-footer__primary-section {
+  // more specified styles to align with parent web property usa.gov
+  h3 {
+    margin-top: 0;
+  }
+
+  .usa-list--unstyled {
+    padding-bottom: 2rem;
+    padding-top: .75rem;
+    margin-top: 1rem;
+  
+    .usa-footer__secondary-link {
+      margin-bottom: 0;
+    }  
+  }
+  // this keeps links aligned because title lengths are different
+  @include at-media(desktop) {
+    #col-2,
+    #col-4 {
+      > li:first-of-type {
+        padding-top: 22.4px;
+      }
+    }
+  }
+
+  .usa-accordion {
+    &__content{
+      background-color: initial;
+    }
+
+    &__button {
+      background-color: #efefef;
+      font-size: 19.2px;
+      padding: 16px 16px 16px 40px;
+    }
+
+    &__button[aria-expanded=false],
+    &__button[aria-expanded=true] {
+      background-image: url("../../assets/img/usa-icons/navigate_next.svg");
+      background-position: left 1rem center;
+      background-size: 20px;
+    }
+
+    &__button[aria-expanded=true] {
+      background-image: url("../../assets/img/usa-icons/expand_more.svg");
+      text-decoration: underline;
+    }
   }
 }
 
@@ -153,6 +182,7 @@ $AZ-button-disabled: #859cba;
   .usa-button {
     background-color: color("cyan-30v");
     color: $black;
+    border: 1px $black solid;
 
     &:hover {
       background-color: #00a6d2;
@@ -203,7 +233,6 @@ h1.text-secondary {
 }
 
 .usa-gov-footer__primary-link {
-  min-height: units(6);
   font-size: size("ui", 7);
 }
 
@@ -212,7 +241,7 @@ h1.text-secondary {
 }
 
 .usa-sign-up {
-  @include u-padding-top(5);
+  @include u-padding-top(3);
 }
 
 .usa-identifier__section {
