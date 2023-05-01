@@ -21,7 +21,7 @@
 
     <!-- Lower contact info block. -->
     <div class="usa-footer__secondary-section">
-      <div class="grid-container">
+      <div class="grid-container padding-bottom-4">
         <div class="grid-row grid-gap">
           <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
             <span id="bottom-phone">
