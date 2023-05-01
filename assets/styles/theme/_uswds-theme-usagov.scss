@@ -112,6 +112,7 @@ $AZ-button-disabled: #859cba;
 }
 
 .usa-footer {
+  // more specified styles to align with parent web property usa.gov
   &__primary-section {
     @include u-bg("gray-cool-10");
   }
@@ -123,6 +124,21 @@ $AZ-button-disabled: #859cba;
   &__primary-link:hover {
     cursor: unset;
     text-decoration: none;
+  }
+
+  &__contact-links {
+    margin-top: 0;
+  }
+
+  &__contact-heading {
+    margin-bottom: .5rem;
+  }
+
+  #bottom-phone {
+    p,
+    a {
+      font-size: 17.6px;
+    }
   }
 }
 
