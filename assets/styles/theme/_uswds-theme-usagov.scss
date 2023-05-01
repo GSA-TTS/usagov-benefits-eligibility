@@ -165,18 +165,19 @@ h1.text-secondary {
   color: #c61f0c;
 }
 
+.usa-header--extended .usa-nav {
+  border-top: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+}
+
 .usa-nav__primary > .usa-nav__primary-item > a {
-  color: #154285;
+  color: #1a4480;
   padding: 0.8rem;
 }
 
 .usa-header--extended .usa-nav__primary-item > .usa-current::after,
 .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover::after {
   background-color: #02bfe7;
-}
-
-.usa-search [type="submit"] {
-  @include u-padding-x(1);
 }
 
 .usa-accordion {
