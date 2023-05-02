@@ -52,6 +52,7 @@
               href="#"
               title="Top"
               class="stuck"
+              :style="backgroundImageStyle"
               @click.prevent="scrollToTop">
               {{ $t("returnToTop") }}
             </a>
@@ -81,6 +82,16 @@ import sanitizeUrl from "~/mixins/SanitizeBears"
 export default {
   name: "BetaUsaGovFooter",
   mixins: [sanitizeUrl],
+
+  computed: {
+    backgroundImageStyle() {
+      const image = require("@/assets/img-custom/Icon_Back_to_Top_Blue.png")
+      return {
+        "background-image": `url(${image})`,
+      }
+    },
+  },
+
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
       if (benefitUrl && benefitUrl.length > 0) {
@@ -105,7 +116,6 @@ export default {
   bottom: 80px;
   background: #e8f0f7;
   transition: right .5s;
-  background-image: url("~/assets/img-custom/Icon_Back_to_Top_Blue.png");
   background-size: 45px;
   background-position: 2px;
   background-repeat: no-repeat;
