@@ -128,5 +128,6 @@ export default {
 }
 #back-to-top.stuck {
   right: 0
+  white-space: nowrap
 }
 </style>
