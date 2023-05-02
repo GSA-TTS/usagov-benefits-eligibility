@@ -127,7 +127,7 @@ export default {
   z-index: 1
 }
 #back-to-top.stuck {
-  right: 0
+  right: 0;
   white-space: nowrap
 }
 </style>
