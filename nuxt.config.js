@@ -130,9 +130,21 @@ export default {
     csv: {},
   },
 
+  // sitemap
   sitemap: {
-    hostname: `${SITE_URLPREFIX}${SITE_PREFIX}`,
-    routes: getLifeEvents().map((le) => `/${le}`),
+    hostname: "https://benefits-tool-beta.usa.gov",
+    routes: [
+      "/death-of-a-loved-one",
+      "/es/death-of-a-loved-one",
+      "/disability",
+      "/es/disability",
+      "/retirement",
+      "/es/retirement",
+      "/404",
+      "/es/404",
+      "/",
+      "/es",
+    ],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
