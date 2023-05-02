@@ -6,6 +6,7 @@
 const theme = {
   screens: {
     narrow: "320px",
+    narrowMedium: "480px",
     narrowPlus: "640px",
     medium: "768px",
     mediumPlus: "840px",
