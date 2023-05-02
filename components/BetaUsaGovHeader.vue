@@ -67,22 +67,7 @@
               src="@/assets/img/usa-icons/close.svg"
               alt="Close" />
           </button>
-
-          <!-- Start main navigation. -->
-          <ul class="usa-nav__primary usa-accordion">
-            <li
-              v-for="item in $t('beta.header.navMain')"
-              :id="`item-id-${item.linkID}`"
-              :key="`item-id-${item.linkID}`"
-              class="usa-nav__primary-item">
-              <a
-                class="usa-nav__link"
-                :href="sanitizedHeadingUrl(item.linkURL)">
-                {{ item.linkText }}
-              </a>
-            </li>
-          </ul>
-
+          
           <div class="usa-nav__secondary">
             <span class="usa-nav__secondary-links">
               <span
@@ -132,6 +117,21 @@
               </button>
             </form>
           </div>
+
+          <!-- Start main navigation. -->
+          <ul class="usa-nav__primary usa-accordion">
+            <li
+              v-for="item in $t('beta.header.navMain')"
+              :id="`item-id-${item.linkID}`"
+              :key="`item-id-${item.linkID}`"
+              class="usa-nav__primary-item">
+              <a
+                class="usa-nav__link"
+                :href="sanitizedHeadingUrl(item.linkURL)">
+                {{ item.linkText }}
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>

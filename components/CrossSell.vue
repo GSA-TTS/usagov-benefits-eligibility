@@ -1,7 +1,7 @@
 <template>
   <section
     v-if="cards && cards.length"
-    class="grid-container margin-top-8">
+    class="grid-container margin-top-8 margin-bottom-8">
     <div class="grid-row grid-gap">
       <h2 class="font-heading-lg tablet:font-heading-xl margin-y-5">
         {{ title }}
