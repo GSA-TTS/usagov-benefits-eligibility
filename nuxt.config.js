@@ -127,16 +127,16 @@ export default {
   sitemap: {
     hostname: "https://benefits-tool-beta.usa.gov",
     routes: [
-      '/death-of-a-loved-one',
-      '/es/death-of-a-loved-one',
-      '/disability',
-      '/es/disability',
-      '/retirement',
-      '/es/retirement',
-      '/404',
-      '/es/404',
-      '/',
-      '/es'
+      "/death-of-a-loved-one",
+      "/es/death-of-a-loved-one",
+      "/disability",
+      "/es/disability",
+      "/retirement",
+      "/es/retirement",
+      "/404",
+      "/es/404",
+      "/",
+      "/es",
     ],
   },
 
