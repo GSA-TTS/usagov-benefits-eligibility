@@ -210,9 +210,8 @@ export default {
 
 // LANUAGE BUTTON
 .language-switcher-language-url {
-  margin-right: auto;
+  margin: 0 auto;
   max-width: 64rem;
-  margin-left: auto;
   padding-left: 2rem;
   padding-right: 2rem;
   display: block;
@@ -224,21 +223,34 @@ export default {
     margin-left: 0;
   }
 }
+
+// specified for matching with usa.gov
+@media screen and (max-width: 1024px) {
+  .language-switcher-language-url {
+    bottom: 18px;
+  }
+
+  .usa-search {
+    max-width: 200px;
+  }
+}
+
 .language-link {
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
   background-color: #112f4e;
+  font-size: .93rem;
+  font-weight: 700;
+  line-height: 1.1;
+  border-radius: 5px;
+
   &:hover {
     color: #fff;
     background-color: #112f4e;
   }
 }
 
-// nav
-.usa-nav {
-  border-bottom: 1px solid #dfe1e2;
-}
 .usa-nav__secondary {
   flex-direction: row;
   align-items: flex-end;
