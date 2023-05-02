@@ -132,7 +132,7 @@ export default {
 
   // sitemap
   sitemap: {
-    hostname: "https://benefits-tool-beta.usa.gov",
+    hostname: "https://benefits-tool.usa.gov",
     exclude: ["**/agencies", "**/types", "**/404"],
     routes: [
       "/death-of-a-loved-one",
