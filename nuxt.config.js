@@ -124,6 +124,7 @@ export default {
     csv: {},
   },
 
+  // Sitemap
   sitemap: {
     hostname: "https://benefits-tool-beta.usa.gov",
     routes: [
