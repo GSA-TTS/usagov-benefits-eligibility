@@ -2,6 +2,28 @@
   <!-- To match usa.gov-->
   <footer class="usa-footer usa-footer--big">
     <div class="usa-footer__primary-section">
+      <div class="grid-container usa-footer__return-to-top">
+        <a
+          v-if="$i18n.locale === 'en'"
+          id="back-to-top"
+          href="#"
+          title="Back to top"
+          class="stuck"
+          :style="backgroundImageStyle"
+          @click.prevent="scrollToTop">
+          {{ $t("returnToTop") }}
+        </a>
+        <a
+          v-if="$i18n.locale === 'es'"
+          id="back-to-top"
+          href="#"
+          title="Subir a la parte superior"
+          class="stuck"
+          :style="backgroundImageStyle"
+          @click.prevent="scrollToTop">
+          {{ $t("returnToTop") }}
+        </a>
+      </div>
       <div class="grid-container">
         <div class="grid-row grid-gap">
           <div class="tablet:grid-col-8">
@@ -70,6 +92,16 @@ import sanitizeUrl from "~/mixins/SanitizeBears"
 export default {
   name: "BetaUsaGovFooter",
   mixins: [sanitizeUrl],
+
+  computed: {
+    backgroundImageStyle() {
+      const image = require("@/assets/img-custom/Icon_Back_to_Top_Blue.png")
+      return {
+        "background-image": `url(${image})`,
+      }
+    },
+  },
+
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
       if (benefitUrl && benefitUrl.length > 0) {
@@ -78,6 +110,34 @@ export default {
         return defaultValue
       }
     },
+    scrollToTop() {
+      window.scrollTo(0, 0)
+    },
   },
 }
 </script>
+
+<style lang="scss" scoped>
+#back-to-top {
+  position: fixed;
+  height: 50px;
+  width: 90px;
+  right: -100px;
+  bottom: 80px;
+  background: #e8f0f7;
+  transition: right .5s;
+  background-size: 45px;
+  background-position: 2px;
+  background-repeat: no-repeat;
+  padding: 0 15px 0 50px;
+  border-radius: 25px 0 0 25px;
+  line-height: 50px;
+  display: inline-block;
+  text-align: center;
+  z-index: 1
+}
+#back-to-top.stuck {
+  right: 0;
+  white-space: nowrap
+}
+</style>
