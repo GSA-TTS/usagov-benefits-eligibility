@@ -135,7 +135,8 @@ export default {
     hostname: "https://benefits-tool-beta.usa.gov",
     exclude: [
       '**/agencies',
-      '**/types'
+      '**/types',
+      '**/404'
     ],
     routes: [
       "/death-of-a-loved-one",
@@ -144,8 +145,6 @@ export default {
       "/es/disability",
       "/retirement",
       "/es/retirement",
-      "/404",
-      "/es/404",
       "/",
       "/es",
     ],
