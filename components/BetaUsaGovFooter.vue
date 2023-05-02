@@ -2,6 +2,17 @@
   <!-- To match usa.gov-->
   <footer class="usa-footer usa-footer--big">
     <div class="usa-footer__primary-section">
+      <div class="grid-container usa-footer__return-to-top">
+        <a
+          id="back-to-top"
+          href="#"
+          title="Top"
+          class="stuck"
+          :style="backgroundImageStyle"
+          @click.prevent="scrollToTop">
+          {{ $t("returnToTop") }}
+        </a>
+      </div>
       <div class="grid-container">
         <div class="grid-row grid-gap">
           <div class="tablet:grid-col-8">
@@ -46,17 +57,6 @@
           </div>
           <!-- Footer social component. -->
           <BetaUsaGovFooterSocial />
-          <div class="grid-container usa-footer__return-to-top">
-            <a
-              id="back-to-top"
-              href="#"
-              title="Top"
-              class="stuck"
-              :style="backgroundImageStyle"
-              @click.prevent="scrollToTop">
-              {{ $t("returnToTop") }}
-            </a>
-          </div>
         </div>
       </div>
     </div>
