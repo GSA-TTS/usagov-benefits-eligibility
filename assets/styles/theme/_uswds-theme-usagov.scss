@@ -229,10 +229,6 @@ h1.text-secondary {
   @include u-margin-bottom("05");
 }
 
-.language-switcher-wrap {
-  @include u-margin-top(1);
-}
-
 .usa-menu-btn {
   background-color: transparent;
   background-repeat: no-repeat;
@@ -256,6 +252,10 @@ h1.text-secondary {
   @include at-media(mobile-lg) {
     margin-right: 6px;
   }
+}
+
+.language-switcher-wrap {
+  @include u-margin-top(1);
 }
 
 .language-switcher-language-url {
