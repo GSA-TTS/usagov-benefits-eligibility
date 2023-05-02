@@ -225,12 +225,12 @@
       "linkTwoUrl": "https://usa.gov/espanol/contactenos"
     },
     "GroupThree": {
-      "header": "Sign Up to Receive Email Updates",
+      "header": "Sign up to receive email updates",
       "formLabel": "Enter your email",
       "buttonText": "Sign Up"
     },
     "subFooterLabel": "USAGov tagline",
-    "subFooter": "USAGov is the Official Guide to Government Information and Services"
+    "subFooter": "USAGov is the official guide to government information and services"
   },
   "crossSell": {
     "title": "Other benefits that might be relevant to you."

@@ -1,14 +1,14 @@
 <template>
   <div class="grid-row grid-gap-4">
     <div
-      :class="match_isNarrowPlus ? '' : 'footer-nav-accordion-wrap'"
-      class="tablet:grid-col-6 desktop:grid-col-3">
+      :class="match_isNarrowMedium ? '' : 'footer-nav-accordion-wrap'"
+      class="mobile-lg:grid-col-6 desktop:grid-col-3">
       <section
-        :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
+        :class="match_isNarrowMedium ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
         class="usa-footer__primary-content">
         <!-- footer nav column 1.-->
-        <h3 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
-          <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column1Title") }}</span>
+        <h3 :class="match_isNarrowMedium ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
+          <span v-if="match_isNarrowMedium">{{ $t("beta.footer.column1Title") }}</span>
           <button
             v-else
             type="button"
@@ -21,7 +21,7 @@
 
         <ul
           id="col-1"
-          :class="match_isNarrowPlus ? '' : 'usa-accordion__content'"
+          :class="match_isNarrowMedium ? '' : 'usa-accordion__content'"
           class="usa-list usa-list--unstyled">
           <li
             v-for="item in $t('beta.footer.column1')"
@@ -35,14 +35,14 @@
     </div>
 
     <div
-      :class="match_isNarrowPlus ? '' : 'footer-nav-accordion-wrap'"
-      class="tablet:grid-col-6 desktop:grid-col-3">
+      :class="match_isNarrowMedium ? '' : 'footer-nav-accordion-wrap'"
+      class="mobile-lg:grid-col-6 desktop:grid-col-3">
       <section
-        :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
+        :class="match_isNarrowMedium ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
         class="usa-footer__primary-content">
         <!-- footer nav column 2.-->
-        <h3 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
-          <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column2Title") }}</span>
+        <h3 :class="match_isNarrowMedium ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
+          <span v-if="match_isNarrowMedium">{{ $t("beta.footer.column2Title") }}</span>
           <button
             v-else
             type="button"
@@ -55,7 +55,7 @@
 
         <ul
           id="col-2"
-          :class="match_isNarrowPlus ? '' : 'usa-accordion__content'"
+          :class="match_isNarrowMedium ? '' : 'usa-accordion__content'"
           class="usa-list usa-list--unstyled">
           <li
             v-for="item in $t('beta.footer.column2')"
@@ -69,14 +69,14 @@
     </div>
 
     <div
-      :class="match_isNarrowPlus ? '' : 'footer-nav-accordion-wrap'"
-      class="tablet:grid-col-6 desktop:grid-col-3">
+      :class="match_isNarrowMedium ? '' : 'footer-nav-accordion-wrap'"
+      class="mobile-lg:grid-col-6 desktop:grid-col-3">
       <section
-        :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
+        :class="match_isNarrowMedium ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
         class="usa-footer__primary-content">
         <!-- footer nav column 3.-->
-        <h3 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
-          <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column3Title") }}</span>
+        <h3 :class="match_isNarrowMedium ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
+          <span v-if="match_isNarrowMedium">{{ $t("beta.footer.column3Title") }}</span>
           <button
             v-else
             type="button"
@@ -89,7 +89,7 @@
 
         <ul
           id="col-3"
-          :class="match_isNarrowPlus ? '' : 'usa-accordion__content'"
+          :class="match_isNarrowMedium ? '' : 'usa-accordion__content'"
           class="usa-list usa-list--unstyled">
           <li
             v-for="item in $t('beta.footer.column3')"
@@ -103,14 +103,14 @@
     </div>
 
     <div
-      :class="match_isNarrowPlus ? '' : 'footer-nav-accordion-wrap'"
-      class="tablet:grid-col-6 desktop:grid-col-3">
+      :class="match_isNarrowMedium ? '' : 'footer-nav-accordion-wrap'"
+      class="mobile-lg:grid-col-6 desktop:grid-col-3">
       <section
-        :class="match_isNarrowPlus ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
+        :class="match_isNarrowMedium ? '' : 'usa-footer__primary-content--collapsible usa-accordion'"
         class="usa-footer__primary-content">
         <!-- footer nav column 4.-->
-        <h3 :class="match_isNarrowPlus ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
-          <span v-if="match_isNarrowPlus">{{ $t("beta.footer.column4Title") }}</span>
+        <h3 :class="match_isNarrowMedium ? 'usa-gov-footer__primary-link' : 'usa-accordion__heading'">
+          <span v-if="match_isNarrowMedium">{{ $t("beta.footer.column4Title") }}</span>
           <button
             v-else
             type="button"
@@ -123,7 +123,7 @@
 
         <ul
           id="col-4"
-          :class="match_isNarrowPlus ? '' : 'usa-accordion__content'"
+          :class="match_isNarrowMedium ? '' : 'usa-accordion__content'"
           class="usa-list usa-list--unstyled">
           <li
             v-for="item in $t('beta.footer.column4')"
@@ -148,7 +148,11 @@ export default {
   name: "BetaUsaGovFooterNav",
 
   // Register the MatchMedia mixin with the queries we want plus optional names.
-  mixins: [sanitizeUrl, FooterAccordion, MatchMedia("narrow", "isNarrow"), MatchMedia("narrowPlus", "isNarrowPlus")],
+  mixins: [
+    sanitizeUrl, 
+    FooterAccordion, 
+    MatchMedia("narrowMedium", "isNarrowMedium"),
+  ],
 
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {

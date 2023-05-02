@@ -95,7 +95,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/sitemap", "nuxt-i18n", "@nuxtjs/dotenv", "@nuxtjs/gtm"],
+  modules: ["@nuxtjs/axios", "@nuxt/content", "nuxt-i18n", "@nuxtjs/dotenv", "@nuxtjs/gtm", "@nuxtjs/sitemap"],
   gtm: {
     id: "GTM-P2F6CBK",
   },
@@ -130,9 +130,20 @@ export default {
     csv: {},
   },
 
+  // sitemap
   sitemap: {
-    hostname: `${SITE_URLPREFIX}${SITE_PREFIX}`,
-    routes: getLifeEvents().map((le) => `/${le}`),
+    hostname: "https://benefits-tool.usa.gov",
+    exclude: ["**/agencies", "**/types", "**/404"],
+    routes: [
+      "/death-of-a-loved-one",
+      "/es/death-of-a-loved-one",
+      "/disability",
+      "/es/disability",
+      "/retirement",
+      "/es/retirement",
+      "/",
+      "/es",
+    ],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

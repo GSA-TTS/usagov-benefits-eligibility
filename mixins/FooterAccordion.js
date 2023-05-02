@@ -11,16 +11,16 @@ export default {
       // Loop through each accordion wrap.
       accordionWrap.forEach((item) => {
         // Define the media query.
-        const mq640 = window.matchMedia("(min-width: 640px)")
+        const mq480 = window.matchMedia("(min-width: 480px)")
         // Add a Listener.
-        mq640.addListener(WidthChange640)
+        mq480.addListener(WidthChange640)
         // Define the width change.
-        WidthChange640(mq640)
+        WidthChange640(mq480)
         // Media query change function for width specific functions.
         function WidthChange640(mq) {
           // Define the accordion content within.
           const accordionContent = item.querySelector(".usa-list")
-          if (mq640.matches) {
+          if (mq480.matches) {
             // If wider than 640px.
             accordionContent.removeAttribute("hidden")
           } else {
