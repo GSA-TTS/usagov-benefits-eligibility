@@ -4,9 +4,20 @@
     <div class="usa-footer__primary-section">
       <div class="grid-container usa-footer__return-to-top">
         <a
+          v-if="$i18n.locale === 'en'"
           id="back-to-top"
           href="#"
-          title="Top"
+          title="Back to top"
+          class="stuck"
+          :style="backgroundImageStyle"
+          @click.prevent="scrollToTop">
+          {{ $t("returnToTop") }}
+        </a>
+        <a
+          v-if="$i18n.locale === 'es'"
+          id="back-to-top"
+          href="#"
+          title="Subir a la parte superior"
           class="stuck"
           :style="backgroundImageStyle"
           @click.prevent="scrollToTop">
