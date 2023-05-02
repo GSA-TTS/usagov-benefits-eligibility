@@ -92,13 +92,6 @@ $AZ-button-disabled: #859cba;
   width: inherit;
   height: inherit;
 
-  &:focus {
-    @include u-outline("black");
-    background-color: transparent;
-    outline-width: units(1px);
-    outline-offset: units(1px);
-  }
-
   &:hover {
     @include u-border(1px, "solid", "black");
     background-color: transparent;
