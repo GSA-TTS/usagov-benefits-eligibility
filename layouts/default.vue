@@ -17,8 +17,6 @@
       <main id="main-content">
         <Nuxt />
       </main>
-      <!--Footer Disclaimer. /-->
-      <FooterDisclaimer />
       <!-- Beta USA Footer. /-->
       <BetaUsaGovFooter />
     </div>
