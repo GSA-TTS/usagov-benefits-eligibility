@@ -126,7 +126,18 @@ export default {
 
   sitemap: {
     hostname: "https://benefits-tool.usa.gov",
-    routes: [
+    routes: [ 
+      "/death-of-a-loved-one",
+      "/es/death-of-a-loved-one",
+      "/disability",
+      "/es/disability",
+      "/retirement",
+      "/es/retirement",
+      "/404",
+      "/es/404",
+      "/",
+      "/es",
+    ],
       "/becoming-a-parent",
       "/es/becoming-a-parent",
       "/death-of-a-loved-one",
