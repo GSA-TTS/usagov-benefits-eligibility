@@ -44,7 +44,7 @@
     "noMatch": "You did not provide info for this criterion"
   },
   "skipnav": "Skip to main content",
-  "returnToTop": "Return to top",
+  "returnToTop": "Top",
   "utilityNav": {
     "linkOne": "Benefits by life events",
     "linkTwo": "Benefits by type",
@@ -206,7 +206,7 @@
     "GroupOne": {
       "header": "About USA.gov",
       "linkOne": "About Us and Site Notices",
-      "linkOneUrl": "https://www.usa.gov/about",
+      "linkOneUrl": "https://www.usa.gov/phone",
       "linkTwo": "For the Media",
       "linkTwoUrl": "https://www.usa.gov/media",
       "linkThree": "For Developers",
@@ -217,18 +217,23 @@
       "linkFiveUrl": "https://www.usa.gov/#tpcs"
     },
     "GroupTwo": {
-      "header": "Ask USA.gov a Question",
-      "linkOne": "Call 1-844-USAGOV1 (1-844-872-4681)",
+      "header": "USAGov Contact Center",
+      "subHeader": "Ask USA.gov a question at",
+      "linkOne": "1-844-USAGOV1 (1-844-872-4681)",
       "linkOneUrl": "https://www.usa.gov/phone",
       "linkTwo": "En Español",
       "linkTwoUrl": "https://usa.gov/espanol/contactenos"
     },
     "GroupThree": {
-      "header": "Sign Up to Receive Email Updates",
+      "header": "Sign up to receive email updates",
       "formLabel": "Enter your email",
       "buttonText": "Sign Up"
     },
-    "subFooter": "USAGov is the Official Guide to Government Information and Services"
+    "subFooterLabel": "USAGov tagline",
+    "subFooter": "USAGov is the official guide to government information and services"
+  },
+  "crossSell": {
+    "title": "Other benefits that might be relevant to you."
   },
   "lifeEvent": {
     "buttonLabel1": "Open All",
@@ -289,5 +294,175 @@
     "match": "You match",
     "benefits": "benefits",
     "clear": "Selections cleared"
+  },
+  "beta": {
+    "alert": {
+      "site": "This is a beta site.",
+      "status": "It's an early, in-progress version of an improved",
+      "statusLink": "https://www.usa.gov/",
+      "usaGov": "USA.gov",
+      "main": ". If you don't find what you're looking for, return to the main site."
+    },
+
+    "subheader": "Life experiences can be stressful. Finding benefits shouldn’t be. Learn about potential Federal benefits in one place.",
+
+    "header": {
+      "languageToggle": "Español",
+      "menu": "Menu",
+      "navMain": [
+        {
+          "linkID": "mnav-10",
+          "linkText": "All topics and services",
+          "linkURL": "https://www.usa.gov/#all-topics-header"
+        },
+        {
+          "linkID": "mnav-20",
+          "linkText": "About the U.S. and its government",
+          "linkURL": "https://www.usa.gov/about-the-us"
+        },
+        {
+          "linkID": "mnav-30",
+          "linkText": "Government benefits",
+          "linkURL": "https://www.usa.gov/benefits"
+        },
+        {
+          "linkID": "mnav-40",
+          "linkText": "Housing help",
+          "linkURL": "https://www.usa.gov/housing-help"
+        },
+        {
+          "linkID": "mnav-50",
+          "linkText": "Scams and fraud",
+          "linkURL": "https://www.usa.gov/scams-and-fraud"
+        },
+        {
+          "linkID": "mnav-60",
+          "linkText": "Taxes",
+          "linkURL": "https://www.usa.gov/taxes"
+        },
+        {
+          "linkID": "mnav-70",
+          "linkText": "Travel",
+          "linkURL": "https://www.usa.gov/travel"
+        }
+      ],
+      "secondaryNav": {
+        "linkOneText": "Call us at 1-844-USAGOV1",
+        "linkOneUrl": "https://www.usa.gov/phone/"
+      },
+      "form": {
+        "label": "Search",
+        "searchUrl": "https://search.usa.gov/search/",
+        "placeholder": "Search all government",
+        "affliate": "usagov_all_gov"
+      }
+    },
+    "footer": {
+      "column1Title": "Government information",
+      "column1": [
+        {
+          "linkID": "c1-10",
+          "linkText": "All topics and services",
+          "linkURL": "https://www.usa.gov/#all-topics-header"
+        },
+        {
+          "linkID": "c1-20",
+          "linkText": "Directory of U.S. government agencies and departments",
+          "linkURL": "https://www.usa.gov/agency-index"
+        },
+        {
+          "linkID": "c1-30",
+          "linkText": "Branches of government",
+          "linkURL": "https://www.usa.gov/branches-of-government"
+        }
+      ],
+
+      "column2Title": "About Us",
+      "column2": [
+        {
+          "linkID": "c2-10",
+          "linkText": "About USAGov",
+          "linkURL": "https://www.usa.gov/about"
+        },
+        {
+          "linkID": "c2-20",
+          "linkText": "Privacy and security policies",
+          "linkURL": "https://www.usa.gov/privacy-security"
+        },
+        {
+          "linkID": "c2-30",
+          "linkText": "Accessibility policy",
+          "linkURL": "https://www.usa.gov/accessibility"
+        },
+        {
+          "linkID": "c2-40",
+          "linkText": "Website usage data",
+          "linkURL": "https://www.usa.gov/website-analytics/"
+        }
+      ],
+      "column3Title": "For federal agencies",
+      "column3": [
+        {
+          "linkID": "c3-10",
+          "linkText": "Partner with us",
+          "linkURL": "https://www.usa.gov/partner-with-usagov"
+        },
+        {
+          "linkID": "c3-20",
+          "linkText": "USAGov blog",
+          "linkURL": "https://blog.usa.gov"
+        }
+      ],
+      "column4Title": "For media",
+      "column4": [
+        {
+          "linkID": "c4-10",
+          "linkText": "USAGov Outreach",
+          "linkURL": "https://www.usa.gov/outreach"
+        },
+        {
+          "linkID": "c4-20",
+          "linkText": "Feature articles",
+          "linkURL": "https://www.usa.gov/features"
+        }
+      ],
+      "social": {
+        "title": "Find us on social media",
+        "icons": [
+          {
+            "socialID": "s-10",
+            "socialURL": "https://www.facebook.com/USAgov",
+            "name": "Facebook USAGov",
+            "icon": "icon_facebook",
+            "width": "40",
+            "height": "40"
+          },
+          {
+            "socialID": "s-20",
+            "socialURL": "https://twitter.com/USAgov",
+            "name": "Twitter USAGov",
+            "icon": "icon_twitter",
+            "width": "40",
+            "height": "40"
+          },
+          {
+            "socialID": "s-30",
+            "socialURL": "https://www.youtube.com/usagov1",
+            "name": "YouTube USAGov",
+            "icon": "icon_youtube",
+            "width": "40",
+            "height": "40"
+          },
+          {
+            "socialID": "s-40",
+            "socialURL": "https://www.instagram.com/usagov/",
+            "name": "Instagram USAGov",
+            "icon": "icon_instagram",
+            "width": "40",
+            "height": "40"
+          }
+        ]
+      }
+    }
   }
 }

@@ -3,7 +3,8 @@
   "ssa-retirement-benefits-child.headline": "Retirement Benefits for Child",
   "ssa-retirement-benefits-child.source.name": "Social Security Administration",
   "ssa-retirement-benefits-child.source.link": "https://www.ssa.gov/benefits/retirement/",
-  "ssa-retirement-benefits-child.summary": "Social Security is part of the retirement plan for almost every American worker. It may provide income support for minor children of parents who receive retirement benefits. Complete just one application to be considered for all benefits administered by the Social Security Administration.",
+  "ssa-retirement-benefits-child.summary": "This benefit provides replacement income for qualified retirees and their families.",
+  "ssa-retirement-benefits-child.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.",
   "ssa-retirement-benefits-child.eligibility.label": "You are under 18 years old (under 19 years old if you are a full-time student in an elementary or secondary school).",
   "ssa-retirement-benefits-child.eligibility.acceptableValues": "not married"
 }

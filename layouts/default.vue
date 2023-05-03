@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- One life event version. -->
     <div v-if="isUsaGov">
       <div>
         <UsaGovHeader />
@@ -9,12 +10,15 @@
         <UsaGovFooter />
       </div>
     </div>
+    <!-- Multi life event version. (uses beta site design) -->
     <div v-else>
-      <Header />
+      <!-- Beta USA Header. /-->
+      <BetaUsaGovHeader />
       <main id="main-content">
         <Nuxt />
       </main>
-      <Footer />
+      <!-- Beta USA Footer. /-->
+      <BetaUsaGovFooter />
     </div>
   </div>
 </template>
@@ -24,6 +28,13 @@ export default {
   data() {
     return {
       isUsaGov: this.$config.oneEventVersion !== false,
+    }
+  },
+  head() {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale,
+      },
     }
   },
 }

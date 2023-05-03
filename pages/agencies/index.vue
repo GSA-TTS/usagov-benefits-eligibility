@@ -71,6 +71,7 @@ export default {
       title: "Benefits by agency",
     }
   },
+
   mounted() {
     if (this.$config.oneEventVersion !== false) {
       this.$router.push(this.$route.fullPath.split("agencies")[0] + this.$config.oneEventVersion)

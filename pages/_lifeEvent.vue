@@ -8,6 +8,11 @@
             class="font-heading-lg tablet:font-heading-xl tablet:margin-top-4 text-secondary print:text-black">
             {{ lifeEvent.secondaryHeadline }}
           </h1>
+          
+          <h2 class="text-normal">
+          {{$t("beta.subheader")}}
+          </h2>
+          
           <p
             v-if="lifeEvent.lede"
             class="tablet:font-heading-lg line-height-serif-6 text-normal measure-6">
@@ -195,10 +200,10 @@
         </div>
       </div>
     </section>
-    <cross-sell
+     <CrossSell
       v-if="$config.oneEventVersion === false"
-      title="Other benefits that might be relevant to you."
       :cards="lifeEvent.related"
+      :title="$t('crossSell.title')"
       class="print:display-none" />
   </div>
 </template>
