@@ -9,6 +9,7 @@
           href="#"
           title="Back to top"
           class="stuck"
+          :class="{ show: isHidden }"
           :style="backgroundImageStyle"
           @click.prevent="scrollToTop">
           {{ $t("returnToTop") }}
@@ -19,6 +20,7 @@
           href="#"
           title="Subir a la parte superior"
           class="stuck"
+          :class="{ show: isHidden }"
           :style="backgroundImageStyle"
           @click.prevent="scrollToTop">
           {{ $t("returnToTop") }}
@@ -92,7 +94,11 @@ import sanitizeUrl from "~/mixins/SanitizeBears"
 export default {
   name: "BetaUsaGovFooter",
   mixins: [sanitizeUrl],
-
+  data() {
+    return{
+      isHidden: true
+    }
+  },
   computed: {
     backgroundImageStyle() {
       const image = require("@/assets/img-custom/Icon_Back_to_Top_Blue.png")
@@ -101,7 +107,12 @@ export default {
       }
     },
   },
-
+  mounted () {
+    window.addEventListener('scroll', this.toggleScrollToTop);
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.toggleScrollToTop);
+  },
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
       if (benefitUrl && benefitUrl.length > 0) {
@@ -110,10 +121,13 @@ export default {
         return defaultValue
       }
     },
+    toggleScrollToTop() {
+      this.isHidden = document.documentElement.scrollTop < window.innerHeight
+    },
     scrollToTop() {
       window.scrollTo(0, 0)
     },
-  },
+  }
 }
 </script>
 
@@ -134,8 +148,24 @@ export default {
   line-height: 50px;
   display: inline-block;
   text-align: center;
-  z-index: 1
+  z-index: 1;
+  /* This timing applies on the way OUT */
+  transition-timing-function: ease-in;
+  /* Quick on the way out */
+  transition: 0.25s;
+  /* Hide thing by pushing it outside by default */
+  transform: translateX(0);
 }
+
+#back-to-top.show {
+  /* This timing applies on the way IN */
+  transition-timing-function: ease-out;
+  /* A litttttle slower on the way in */
+  transition: 0.3s;
+  /* Move into place */
+  transform: translateX(130%);
+}
+
 #back-to-top.stuck {
   right: 0;
   white-space: nowrap
