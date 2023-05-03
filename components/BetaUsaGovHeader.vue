@@ -295,7 +295,7 @@ export default {
   padding-bottom: 0.4rem;
 }
 .usa-logo {
-  margin: 0.2rem 0 0.2em;
+  margin: 0.5rem 0 0.2em;
 }
 
 // SPANISH TWEAKS
