@@ -250,12 +250,18 @@ export default {
   background-color: #112f4e;
   font-size: .93rem;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: .9;
   border-radius: 5px;
 
   &:hover {
     color: #fff;
     background-color: #112f4e;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .language-link {
+    line-height: 1.1;
   }
 }
 
