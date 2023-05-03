@@ -75,3 +75,28 @@ describe("sanitizedBenefitUrl tests", () => {
     expect(url).toBe("#")
   })
 })
+
+describe("skip link", () => {
+  let wrapper
+
+  beforeEach(() => {
+    const stub = { scrollIntoView: jest.fn() }
+    global.document.getElementById = jest.fn().mockReturnValue(stub)
+
+    wrapper = shallowMount(UsaGovHeader)
+  })
+
+  afterEach(() => {
+    global.document.getElementById.mockReset()
+  })
+
+  it("calls scrollIntoView on the main content element", () => {
+    wrapper.vm.skipLink()
+
+    expect(global.document.getElementById).toHaveBeenCalledWith("main-content")
+    expect(global.document.getElementById().scrollIntoView).toHaveBeenCalledWith({
+      block: "start",
+      behavior: "smooth",
+    })
+  })
+})

@@ -3,8 +3,8 @@
   "ssa-disability-insurance-child-disabled.headline": "Social Security Disability Insurance for Child with Disabilities",
   "ssa-disability-insurance-child-disabled.source.name": "Social Security Administration",
   "ssa-disability-insurance-child-disabled.source.link": "https://www.ssa.gov/benefits/disability/",
-  "ssa-disability-insurance-child-disabled.summary": "Social Security Disability Insurance provides financial assistance to adult children with disabilities who are unable to work and whose parents receive disability benefits. Complete just one application to be considered for all benefits administered by the Social Security Administration.",
-  "ssa-disability-insurance-child-disabled.criticalApplicationInformation": "A single SSA benefit application will be used to apply to all SSA benefits, but eligibility and approval will be determined for individual benefits.",
+  "ssa-disability-insurance-child-disabled.summary": "Social Security Disability Insurance provides financial assistance to adult children with disabilities who are unable to work and whose parents receive disability benefits.",
+  "ssa-disability-insurance-child-disabled.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.",
   "ssa-disability-insurance-child-disabled.eligibility.label": "You are at least 18 years old.",
   "ssa-disability-insurance-child-disabled.eligibility.acceptableValues": "not married"
 }

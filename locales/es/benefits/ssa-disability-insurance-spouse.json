@@ -1,0 +1,11 @@
+{
+  "ssa-disability-insurance-spouse.title": "Seguro de discapacidad del Seguro Social para cónyuge",
+  "ssa-disability-insurance-spouse.headline": "Seguro de discapacidad del Seguro Social para cónyuge",
+  "ssa-disability-insurance-spouse.source.name": "Administración del Seguro Social (SSA)",
+  "ssa-disability-insurance-spouse.source.link": "https://www.ssa.gov/espanol/beneficios/incapacidad/",
+  "ssa-disability-insurance-spouse.summary": "El seguro de discapacidad del Seguro Social brinda asistencia financiera a las personas con discapacidades y a sus familiares.",
+  "ssa-disability-insurance-spouse.criticalApplicationInformation": "Presente una sola solicitud y será considerado para todos los beneficios ofrecidos por el Seguro Social (SSA).",
+  "ssa-disability-insurance-spouse.eligibility.label": "Usted tiene al menos 62 años.",
+  "ssa-disability-insurance-spouse.eligibility.acceptableValues": "casado",
+  "ssa-disability-insurance-spouse.eligibility.acceptableValues1": "divorciado"
+}

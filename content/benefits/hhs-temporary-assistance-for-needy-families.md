@@ -12,6 +12,7 @@ source:
   isEnglish: hhs-temporary-assistance-for-needy-families.source.linkIsEnglish
 
 summary: hhs-temporary-assistance-for-needy-families.summary
+criticalApplicationInformation: hhs-temporary-assistance-for-needy-families.criticalApplicationInformation
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.

@@ -4,8 +4,8 @@
   "ssa-survivor-benefits-child-disabled.source.name": "Social Security Administration",
   "ssa-survivor-benefits-child-disabled.source.link": "https://www.ssa.gov/benefits/survivors/ifyou.html#h4",
   "ssa-survivor-benefits-child-disabled.source.linkIsEnglish": "true",
-  "ssa-survivor-benefits-child-disabled.summary": "Social Security survivors benefits are paid to a child, stepchild, grandchild, or adopted child of eligible workers. Complete just one application to be considered for all benefits administered by the Social Security Administration.",
-  "ssa-survivor-benefits-child-disabled.criticalApplicationInformation": "A single SSA benefit application will be used to apply to all SSA benefits, but eligibility and approval will be determined for individual benefits.",
+  "ssa-survivor-benefits-child-disabled.summary": "Social Security survivor benefits are paid to a child, stepchild, grandchild, or adopted child of eligible workers.",
+  "ssa-survivor-benefits-child-disabled.criticalApplicationInformation": "Only one application is needed to apply for all the benefits offered by SSA.",
   "ssa-survivor-benefits-child-disabled.eligibility.acceptableValues": "child",
   "ssa-survivor-benefits-child-disabled.eligibility.label": "You are at least 18 years old.",
   "ssa-survivor-benefits-child-disabled.eligibility.acceptableValues1": "not married"
