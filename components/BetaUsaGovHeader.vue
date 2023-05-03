@@ -224,13 +224,21 @@ export default {
   }
 }
 
+.usa-button {
+  border: none;
+}
+
 // specified for matching with usa.gov
+.usa-search {
+  border: none;
+}
+
 @media screen and (max-width: 1024px) {
   .language-switcher-language-url {
     bottom: 18px;
   }
 
-  .usa-search {
+  .usa-button {
     max-width: 200px;
   }
 }
