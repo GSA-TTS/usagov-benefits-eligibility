@@ -207,10 +207,15 @@ h1.text-secondary {
 .usa-header--extended .usa-nav {
   border-top: 1px solid #c9c9c9;
   border-bottom: 1px solid #c9c9c9;
+  min-width: 320px;
+
+  input[type=search] {
+    max-width: 245px;
+  }
 }
 
 .usa-nav__primary > .usa-nav__primary-item > a {
-  color: #1a4480;
+  color: #192f4e;
   padding: 0.7rem;
 }
 
