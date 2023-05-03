@@ -204,6 +204,13 @@ h1.text-secondary {
   color: #d83933;
 }
 
+@include at-media-max(tablet) {
+  h2.text-normal {
+    font-size: 1.3rem;
+  }
+}
+
+
 .usa-header--extended .usa-nav {
   border-top: 1px solid #c9c9c9;
   border-bottom: 1px solid #c9c9c9;
