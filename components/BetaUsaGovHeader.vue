@@ -306,6 +306,7 @@ export default {
 
 .usa-nav__secondary:lang(es) {
   width: 33rem;
+  bottom: 6.8rem;
   .usa-nav__secondary-links:lang(es) {
     width: 17rem;
   }
