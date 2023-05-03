@@ -26,7 +26,7 @@
     "noMatch": "Usted no brindó información para este criterio"
   },
   "skipnav": "Ir al contenido principal",
-  "returnToTop": "Volver al principio",
+  "returnToTop": "Subir a la parte superior",
   "utilityNav": {
     "linkOne": "Beneficios por acontecimientos de vida",
     "linkTwo": "Beneficios por tipo",
@@ -146,7 +146,7 @@
     },
     "meta": {
       "search": "Busque en USAGov en Español",
-      "placeholder": "Busque en USAGov",
+      "placeholder": "Busque en el Gobierno...",
       "back": "Beneficios, Subvenciones, Préstamos",
       "backUrl": "https://www.usa.gov/espanol/ayuda-financiera-becas-beneficios",
       "language": "English"
@@ -167,9 +167,10 @@
       "linkFiveUrl": "https://www.usa.gov/espanol/#tpcs"
     },
     "GroupTwo": {
-      "header": "Envíenos sus preguntas",
-      "linkOne": "Llame al 1-844-USAGOV1 (1-844-872-4681)",
-      "linkOneUrl": "https://www.usa.gov/espanol/centro-de-llamadas",
+      "header": "Centro de llamadas de USAGov",
+      "subHeader": "Haga una pregunta a USAGov en Español al",
+      "linkOne": "1-844-USAGOV1 (1-844-872-4681)",
+      "linkOneUrl": "https://www.usa.gov/es/centro-de-llamadas",
       "linkTwo": "In English",
       "linkTwoUrl": "https://www.usa.gov/contact"
     },
@@ -233,6 +234,9 @@
     "eligible": "usted podría ser elegible",
     "unknown": "se necesita más información"
   },
+  "crossSell": {
+    "title": "Otros beneficios que podrían ser para usted."
+  },
   "criteria_group": {
     "non_selected": "No se seleccionaron criterios de elegibilidad"
   },
@@ -276,5 +280,156 @@
     "match": "Coincides con",
     "benefits": "beneficios",
     "clear": "Selecciones borradas"
+  },
+  "beta": {
+    "alert": {
+      "site": "Este es un sitio beta.",
+      "status": "Es una nueva versión de",
+      "statusLink": "https://www.usa.gov/espanol/",
+      "usaGov": "USAGov en Español",
+      "main": "que aún se está construyendo. Si no encuentra lo que busca, regrese al sitio principal."
+    },
+
+    "subheader": "Las etapas importantes de la vida pueden ser estresantes. Encontrar beneficios no tiene que serlo. Conozca de posibles beneficios federales en un solo lugar.",
+
+    "header": {
+      "languageToggle": "English",
+      "menu": "MENÚ",
+      "navMain": [
+        {
+          "linkID": "mnav-10",
+          "linkText": "Todos los temas y servicios",
+          "linkURL": "https://www.usa.gov/es#all-topics-header"
+        },
+        {
+          "linkID": "mnav-20",
+          "linkText": "Acerca de Estados Unidos y su Gobierno",
+          "linkURL": "https://www.usa.gov/es/acerca-de-estados-unidos"
+        },
+        {
+          "linkID": "mnav-30",
+          "linkText": "Ayuda económica y beneficios del Gobierno",
+          "linkURL": "https://www.usa.gov/es/beneficios-gobierno"
+        },
+        {
+          "linkID": "mnav-40",
+          "linkText": "Impuestos",
+          "linkURL": "https://www.usa.gov/es/impuestos"
+        },
+        {
+          "linkID": "mnav-50",
+          "linkText": "Inmigración y ciudadanía",
+          "linkURL": "https://www.usa.gov/es/inmigracion-ciudadania-estados-unidos"
+        },
+        {
+          "linkID": "mnav-60",
+          "linkText": "Viajes",
+          "linkURL": "https://www.usa.gov/es/viajes"
+        }
+      ],
+      "secondaryNav": {
+        "linkOneText": "Llámenos al 1-844-USAGOV1",
+        "linkOneUrl": "https://www.usa.gov/es/centro-de-llamadas"
+      },
+      "form": {
+        "label": "Buscar",
+        "searchUrl": "https://search.usa.gov/search/",
+        "placeholder": "Busque en el Gobierno ...",
+        "affliate": "usagov_es_all_gov"
+      }
+    },
+    "footer": {
+      "column1Title": "Información del Gobierno",
+      "column1": [
+        {
+          "linkID": "c1-10",
+          "linkText": "Todos los temas y servicios",
+          "linkURL": "https://www.usa.gov/es#all-topics-header"
+        },
+        {
+          "linkID": "c1-20",
+          "linkText": "Directorios de agencias y departamentos del Gobierno de EE. UU.",
+          "linkURL": "https://www.usa.gov/es/indice-agencias"
+        },
+        {
+          "linkID": "c1-30",
+          "linkText": "Ramas del Gobierno",
+          "linkURL": "https://www.usa.gov/es/ramas-gobierno-estados-unidos"
+        }
+      ],
+      "column2Title": "Sobre nosotros",
+      "column2": [
+        {
+          "linkID": "c2-10",
+          "linkText": "Acerca de USAGov en Español",
+          "linkURL": "https://www.usa.gov/es/acerca-de-usagov-en-espanol"
+        },
+        {
+          "linkID": "c2-20",
+          "linkText": "Políticas de privacidad y seguridad",
+          "linkURL": "https://www.usa.gov/es/politicas-privacidad"
+        },
+        {
+          "linkID": "c2-30",
+          "linkText": "Política de accesibilidad",
+          "linkURL": "https://www.usa.gov/es/accesibilidad"
+        }
+      ],
+      "column3Title": "Para agencias federales",
+      "column3": [
+        {
+          "linkID": "c3-10",
+          "linkText": "Colabore con nosotros",
+          "linkURL": "https://www.usa.gov/es/colabore-con-nosotros"
+        },
+        {
+          "linkID": "c3-20",
+          "linkText": "Lea nuestro blog (en inglés)",
+          "linkURL": "https://blog.usa.gov/"
+        }
+      ],
+      "column4Title": "Para medios de comunicación",
+      "column4": [
+        {
+          "linkID": "c4-10",
+          "linkText": "Promoción del programa USAGov",
+          "linkURL": "https://www.usa.gov/es/promocion-programa-usagov"
+        },
+        {
+          "linkID": "c4-20",
+          "linkText": "Artículos de interés",
+          "linkURL": "https://www.usa.gov/es/articulos"
+        }
+      ],
+      "social": {
+        "title": "Encuéntrenos en las redes sociales",
+        "icons": [
+          {
+            "socialID": "s-10",
+            "socialURL": "https://www.facebook.com/usagovespanol",
+            "name": "Facebook USAGov",
+            "icon": "icon_facebook",
+            "width": "40",
+            "height": "40"
+          },
+          {
+            "socialID": "s-20",
+            "socialURL": "https://twitter.com/usagovespanol",
+            "name": "Twitter USAGov",
+            "icon": "icon_twitter",
+            "width": "40",
+            "height": "40"
+          },
+          {
+            "socialID": "s-30",
+            "socialURL": "https://www.youtube.com/USAgovespanol",
+            "name": "YouTube USAGov",
+            "icon": "icon_youtube",
+            "width": "40",
+            "height": "40"
+          }
+        ]
+      }
+    }
   }
 }

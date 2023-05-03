@@ -4,7 +4,8 @@
   "ssa-survivor-benefits-mothers-fathers.source.name": "Administración del Seguro Social",
   "ssa-survivor-benefits-mothers-fathers.source.link": "https://www.ssa.gov/forms/ssa-5.html",
   "ssa-survivor-benefits-mothers-fathers.source.linkIsEnglish": "true",
-  "ssa-survivor-benefits-mothers-fathers.summary": "Puede haber beneficios del Seguro Social para sobrevivientes disponibles para la persona a cargo del cuidado del hijo/hija del trabajador fallecido.",
+  "ssa-survivor-benefits-mothers-fathers.summary": "Puede haber beneficios del Seguro Social para sobrevivientes disponibles para la persona a cargo del cuidado del hijo/a del trabajador fallecido.",
+  "ssa-survivor-benefits-mothers-fathers.criticalApplicationInformation": "Presente una sola solicitud y será considerado para todos los beneficios ofrecidos por el Seguro Social (SSA).",
   "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues": "cónyuge",
   "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues1": "viudo",
   "ssa-survivor-benefits-mothers-fathers.eligibility.acceptableValues2": "divorciado"

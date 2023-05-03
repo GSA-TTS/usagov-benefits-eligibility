@@ -17,10 +17,10 @@ topLevelFilter:
     criteriaKey: applicant_served_in_active_military
     disableGroupKey: applicant-military
     disableGroupWhen: [disability.topLevelFilter.disableGroupWhen]
-    
+
   - label: disability.topLevelFilter.label2
     criteriaKey: applicant_american_indian
-    disableGroupKey: 
+    disableGroupKey:
     disableGroupWhen:
 
 

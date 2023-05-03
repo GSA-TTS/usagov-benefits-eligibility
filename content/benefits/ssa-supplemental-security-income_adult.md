@@ -12,6 +12,7 @@ source:
   isEnglish: ssa-supplemental-security-income_adult.source.linkIsEnglish
 
 summary: ssa-supplemental-security-income_adult.summary
+criticalApplicationInformation: ssa-supplemental-security-income_adult.criticalApplicationInformation
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
