@@ -50,6 +50,7 @@
   "criteria.applicant_high-school_diploma.label": "Usted tiene título de educación secundaria o equivalente.",
   "criteria.applicant_degree_cerificate_program.label": "Usted está inscrito o fue aceptado como alumno en un programa de grado o certificado elegible.",
   "criteria.applicant_disaster_zone.label": "¿Cuál es su código postal?",
+  "criteria.applicant_miner.label": "Usted trabajó en la industria minera del carbón y sufre de una enfermedad causada por neumoconiosis (enfermedad del pulmón negro).",
   "criteria.applicant-relatonships.label": "",
   "criteria.applicant_lost_a_family_member.label": "¿Perdió recientemente a un ser querido?",
   "criteria.applicant_lost_a_family_member.values1": "sí",
