@@ -63,12 +63,20 @@
         aria-label="Header Primary"
         class="usa-nav">
         <div class="usa-nav__inner">
-          <button class="usa-nav__close">
-            <img
-              src="@/assets/img/usa-icons/close.svg"
-              alt="Close" />
-          </button>
-          
+          <div class="usa-nav__inner-top">   
+            <a class="usa-button usa-nav__home" href="https://www.usa.gov/" tabindex="0">
+              <img
+                src="@/assets/img/usa-icons/home.svg"
+                alt="Home" />
+                Home
+            </a>       
+            <button class="usa-nav__close">
+              <img
+                src="@/assets/img/usa-icons/highlight_off.svg"
+                alt="Close" />
+                Close
+            </button>
+          </div>  
           <div class="usa-nav__secondary">
             <span class="usa-nav__secondary-links">
               <span
@@ -235,10 +243,6 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
-  // .language-switcher-language-url {
-  //   bottom: 18px;
-  // }
-
   .usa-button {
     max-width: 200px;
   }
@@ -272,29 +276,7 @@ export default {
   bottom: 6rem;
   width: 32rem;
 }
-.usa-nav__secondary-links {
-  width: 15rem;
-  line-height: 1.1rem;
-  a {
-    color: #000;
-    display: inline-block;
-    text-decoration: none;
-    font-size: 1.13rem;
-    padding-left: 0.5rem;
-    padding-top: 0.2rem;
-    &:hover {
-      text-decoration: revert;
-    }
-  }
-}
-.usa-nav__secondary-item::after {
-  float: right;
-  color: #dfe1e2;
-  content: "|";
-  padding-right: 1rem;
-  font-size: 2rem;
-  padding-bottom: 0.4rem;
-}
+
 .usa-logo {
   margin: 0.5rem 0 0.2em;
 }
