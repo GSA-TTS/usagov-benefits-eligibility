@@ -6,6 +6,7 @@
 import { tObj } from "~/services/translation"
 export default {
   layout: "default",
+  middleware: ['middleware'],
   async asyncData({ $content }) {
     const lifeEvents = await $content("life-events").sortBy("title").fetch()
     const landingPage = await $content("landing-page").fetch()
