@@ -22,12 +22,12 @@ describe("<UsaGovHeader />", () => {
         },
         $config: {
           languageToggleActive: true,
-          oneEventVersion: "death-of-a-loved-one",
+          oneEventVersion: false,
         },
       },
     })
     expect(wrapper.vm).toBeTruthy()
-    const esButton = wrapper.find("#language-toggle-button")
+    const esButton = wrapper.find(".language-link")
     esButton.trigger("click")
     config.mocks.$i18n.locale = "es"
     esButton.trigger("click")
@@ -45,7 +45,7 @@ describe("<UsaGovHeader />", () => {
       },
     })
     expect(wrapper.vm).toBeTruthy()
-    const esButton = wrapper.find("#language-toggle-button")
+    const esButton = wrapper.find(".language-link")
     esButton.trigger("click")
     config.mocks.$i18n.locale = "es"
     esButton.trigger("click")
