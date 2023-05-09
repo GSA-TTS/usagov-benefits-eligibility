@@ -1,5 +1,5 @@
 import { config, mount, shallowMount } from "@vue/test-utils"
-import BetaUsaGovHeader from "@/components/BetaUsaGovHeader.vue"
+import UsaGovHeader from "@/components/UsaGovHeader.vue"
 import beforeAllTests from "@/test/beforeAllTests"
 
 describe("<UsaGovHeader />", () => {
@@ -8,14 +8,14 @@ describe("<UsaGovHeader />", () => {
   })
 
   it("is a Vue instance", () => {
-    const wrapper = mount(BetaUsaGovHeader, {
+    const wrapper = mount(UsaGovHeader, {
       $i18n: { locale: "en" },
     })
     expect(wrapper.vm).toBeTruthy()
   })
 
   it("does toggle lang", () => {
-    const wrapper = mount(BetaUsaGovHeader, {
+    const wrapper = mount(UsaGovHeader, {
       mocks: {
         $router: {
           push: jest.fn(),
@@ -34,7 +34,7 @@ describe("<UsaGovHeader />", () => {
   })
 
   it("does toggle lang full", () => {
-    const wrapper = mount(BetaUsaGovHeader, {
+    const wrapper = mount(UsaGovHeader, {
       mocks: {
         $router: {
           push: jest.fn(),
@@ -53,7 +53,7 @@ describe("<UsaGovHeader />", () => {
 })
 
 it("test skipLink function", () => {
-  const wrapper = shallowMount(BetaUsaGovHeader, {})
+  const wrapper = shallowMount(UsaGovHeader, {})
   const skipLinkEl = wrapper.find(".usa-skipnav")
   skipLinkEl.trigger("click")
   expect(wrapper.vm.skipLink).toBeTruthy()
@@ -61,12 +61,12 @@ it("test skipLink function", () => {
 
 describe("sanitizedBenefitUrl tests", () => {
   it("text example.com", () => {
-    const wrapper = shallowMount(BetaUsaGovHeader, {})
+    const wrapper = shallowMount(UsaGovHeader, {})
     const url = wrapper.vm.sanitizedHeadingUrl("http://www.example.com")
     expect(url).toBe("http://www.example.com")
   })
   it("sanitizedBenefitUrl about:blank if javascript is injected", () => {
-    const wrapper = shallowMount(BetaUsaGovHeader, {})
+    const wrapper = shallowMount(UsaGovHeader, {})
     const url = wrapper.vm.sanitizedHeadingUrl({
       source: {
         link: "javascript:somethingBad('dd')",
@@ -83,7 +83,7 @@ describe("skip link", () => {
     const stub = { scrollIntoView: jest.fn() }
     global.document.getElementById = jest.fn().mockReturnValue(stub)
 
-    wrapper = shallowMount(BetaUsaGovHeader)
+    wrapper = shallowMount(UsaGovHeader)
   })
 
   afterEach(() => {
