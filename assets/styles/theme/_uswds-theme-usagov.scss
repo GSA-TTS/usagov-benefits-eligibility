@@ -210,14 +210,54 @@ h1.text-secondary {
   }
 }
 
-
+// navigation styles
 .usa-header--extended .usa-nav {
   border-top: 1px solid #c9c9c9;
   border-bottom: 1px solid #c9c9c9;
-  min-width: 320px;
+}
 
-  input[type=search] {
-    max-width: 245px;
+@include at-media-max(desktop) {
+
+  .usa-overlay.is-visible {
+    z-index: 1;
+  }
+
+  .usa-header--extended .usa-nav {
+    width: 100%;
+    max-width: 30rem;
+    padding: 0;
+    overflow: scroll;
+
+    .usa-nav__inner {
+      background: #f3f3f3;
+    }
+
+    .usa-nav__primary-item {
+      border: none;
+      background: #ffffff;
+    }
+
+    .usa-nav__secondary {
+      width: auto;
+    }
+
+    .usa-nav__link {
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-weight: 400;
+      padding-left: 1rem;
+      color: #1a4480;
+    }
+
+    .usa-nav__link:hover {
+      background-color: initial;
+    }
+  
+    // input[type=search] {
+    //   // max-width: 245px;
+    // }
   }
 }
 
@@ -292,6 +332,7 @@ h1.text-secondary {
   font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
+  margin-right: 6px;
   @include u-border(1px, "solid", "white");
 
   &:hover {
@@ -300,9 +341,9 @@ h1.text-secondary {
     color: color("black");
   }
 
-  @include at-media(mobile-lg) {
-    margin-right: 6px;
-  }
+  // @include at-media(mobile-lg) {
+  //   margin-right: 6px;
+  // }
 }
 
 .language-switcher-wrap {
@@ -310,16 +351,21 @@ h1.text-secondary {
 }
 
 .language-switcher-language-url {
-  @include at-media-max("desktop") {
+
+  @include at-media-max(desktop) {
     position: absolute;
     right: 30px;
-    bottom: 0px;
+    top: 25px;
+  }
+
+  @include at-media-max(tablet) {
+    top: 50px;
   }
 }
 
-.usa-header {
-  position: relative;
-}
+// .usa-header {
+//   position: relative;
+// }
 
 .usa-logo .logo {
   @include at-media-max("desktop") {
