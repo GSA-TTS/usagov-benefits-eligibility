@@ -1,4 +1,6 @@
 <template>
+  <!-- this page should never be accessible in route -->
+  <!-- only life event landing and content should render -->
   <div></div>
 </template>
 
