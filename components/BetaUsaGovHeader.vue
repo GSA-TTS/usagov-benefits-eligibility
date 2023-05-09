@@ -7,6 +7,7 @@
       @click.prevent="skipLink"
       >{{ $t("skipnav") }}</a
     >
+    <div class="usa-overlay" aria-hidden="true" data-nav-hidden=""></div>
     <TheBanner />
     <header
       id="header"
@@ -234,9 +235,9 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
-  .language-switcher-language-url {
-    bottom: 18px;
-  }
+  // .language-switcher-language-url {
+  //   bottom: 18px;
+  // }
 
   .usa-button {
     max-width: 200px;
