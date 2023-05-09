@@ -7,32 +7,12 @@ const getLifeEvents = function () {
 // https://federalist.18f.gov/documentation/env-vars-on-federalist-builds/#default-environment-variables
 const sitePrefix = process.env.BASEURL ? `${process.env.BASEURL}/` : ""
 
-const SITE_URLPREFIX =
-  process.env.SITE_URLPREFIX || "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.app.cloud.gov"
-const SITE_PREFIX = process.env.SITE_PREFIX || ""
-
-if (process.env.NODE_ENV !== "test") {
-  console.log("SITE_URLPREFIX:", SITE_URLPREFIX)
-  console.log("SITE_PREFIX:", SITE_PREFIX)
-}
-
 // Figure out one life event version
-const landingPageMd = fs.readFileSync("./content/landing-page.md", "utf8")
-const oneEventVersion = () => {
-  if (landingPageMd.includes("lifeEvent:")) {
-    return landingPageMd.split("lifeEvent:")[1].split("\n")[0].trim()
-  } else {
-    return false
-  }
-}
-const oneEvent = oneEventVersion()
-
 export default {
   publicRuntimeConfig: {
     // This is used to toggle whether or not internationalization is enabled
     languageToggleActive: true,
     branchName: process.env.BRANCH,
-    oneEventVersion: false,
   },
 
   // Target: https://go.nuxtjs.dev/config-target
