@@ -14,9 +14,6 @@ export default function beforeAllTests() {
   config.stubs.NuxtLink = { template: "<a><slot /></a>" }
   config.stubs.NuxtContent = { template: "<div><slot /></div>" }
   config.stubs.ClientOnly = { template: "<div><slot /></div>" }
-  config.mocks.$config = {
-    oneEventVersion: false,
-  }
   config.mocks.$i18n = {
     locale: "en",
     locales: [

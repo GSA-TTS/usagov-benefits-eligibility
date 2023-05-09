@@ -114,9 +114,6 @@ describe("Life Event page", () => {
         dispatchEvent: jest.fn(),
       })),
     })
-    config.mocks.$config = {
-      oneEventVersion: false,
-    }
     config.mocks.lifeEvent = {}
     await beforeAllTests()
   })

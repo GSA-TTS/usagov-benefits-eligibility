@@ -51,24 +51,6 @@ describe("LifeEventsPage", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
-  it("is a Vue instance (one-event-version)", () => {
-    config.mocks.$config = {
-      oneEventVersion: "death-of-a-loved-one",
-    }
-    const wrapper = shallowMount(LifeEventsPage)
-    expect(wrapper.vm).toBeTruthy()
-    config.mocks.$config = {
-      oneEventVersion: false,
-    }
-  })
-
-  it("displays a list of one life event", async () => {
-    const wrapper = shallowMount(LifeEventsPage)
-    await wrapper.setData(mockContent2)
-    expect(wrapper.find(".usa-card-group").exists()).toBeTruthy()
-    expect(wrapper.findAll(".usa-card").length).toBe(1)
-  })
-
   it("asyncData() fetches the given data", async () => {
     let contentRequest
     const contentMock = {
