@@ -21,7 +21,7 @@ describe("<UsaGovHeader />", () => {
           push: jest.fn(),
         },
         $config: {
-          languageToggleActive: true
+          languageToggleActive: true,
         },
       },
     })
