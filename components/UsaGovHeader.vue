@@ -1,4 +1,5 @@
 <template>
+  <!-- To match usa.gov-->
   <div>
     <a
       class="usa-skipnav"
@@ -8,665 +9,153 @@
     >
     <TheBanner />
     <header
-      class="usa-header usa-header--extended"
-      data-stickyheight="22">
+      id="header"
+      class="usa-header usa-header--extended">
+      <ul
+        class="language-switcher-language-url"
+        role="navigation">
+        <li class="display-flex flex-justify-end usa-list language-switcher-wrap">
+          <nuxt-link
+            v-for="locale in availableLocales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
+            :title="`${$i18n.locale === 'en' ? 'Cambiar a Español' : 'Switch to English'}`"
+            class="usa-button language-link">{{ locale.name }}</nuxt-link>
+        </li>
+      </ul>
+
       <div class="usa-navbar">
         <div
-          id="extended-mega-logo"
+          id="extended-logo"
           class="usa-logo">
-          <em class="usa-logo__text">
+          <em class="usa-logo-text">
+            <!-- English link and logo. -->
             <a
-              href="https://www.usa.gov/"
+              v-if="$i18n.locale === 'en'"
+              href="https://www.usa.gov"
               title="USAGov Logo">
               <img
-                v-if="$i18n.locale === 'en'"
-                class="circle-5 desktop:circle-10 margin-right-2 tablet:margin-right-1"
-                src="@/assets/img/logo-img-usagov.png"
+                src="~/assets/img-custom/Logo_USAGov.png"
                 alt="USAGov Logo"
-                width="80" />
+                class="maxw-10 logo" />
+            </a>
+            <!-- Spanish link and logo. -->
+            <a
+              v-if="$i18n.locale === 'es'"
+              href="https://www.usa.gov/es"
+              title="USAGov Logo">
               <img
-                v-if="$i18n.locale === 'es'"
-                class="margin-right-2 tablet:margin-right-1 width-10 tablet:width-card"
-                src="@/assets/img/logo_usagov_spanish.png"
-                alt="USAGov Logo" />
+                src="~/assets/img-custom/Logo_USAGov_Spanish.png"
+                alt="USAGov en Español Logo"
+                class="es margin-left-1 tablet:margin-left-0 maxw-196 logo" />
             </a>
           </em>
         </div>
-        <button class="usa-menu-btn print:display-none">{{ $t("header.menu") }}</button>
+        <button
+          class="usa-menu-btn"
+          :style="buttonStyle">
+          {{ $t("beta.header.menu") }}
+        </button>
       </div>
 
       <nav
-        aria-labelledby="navi"
-        class="usa-nav border-base-lighter border-bottom-1px"
-        aria-hidden="false">
-        <div
-          id="navi"
-          class="usa-sr-only">
-          {{ $t("header.main") }}
-        </div>
+        aria-label="Header Primary"
+        class="usa-nav">
         <div class="usa-nav__inner">
           <button class="usa-nav__close">
             <img
-              src="@/assets/img/close.svg"
+              src="@/assets/img/usa-icons/close.svg"
               alt="Close" />
           </button>
-          <div class="usa-nav__secondary flex-row">
+          
+          <div class="usa-nav__secondary">
+            <span class="usa-nav__secondary-links">
+              <span
+                id="top-phone"
+                class="usa-nav__secondary-item">
+                <a :href="sanitizedHeadingUrl($t('beta.header.secondaryNav.linkOneUrl'))">{{
+                  $t("beta.header.secondaryNav.linkOneText")
+                }}</a>
+              </span>
+            </span>
+
             <form
-              action="https://search.usa.gov/search"
+              class="usa-search usa-search--small"
+              :action="sanitizedHeadingUrl($t('beta.header.form.searchUrl'))"
               method="get"
               name="search_form"
               accept-charset="UTF-8"
-              class="usa-search usa-search--small">
-              <div
-                role="search"
-                aria-labelledby="top-srch">
-                <label
-                  id="top-srch"
-                  class="usa-sr-only"
-                  for="search-field-small"
-                  >{{ $t("header.meta.search") }}</label
-                >
-                <input
-                  v-if="$i18n.locale === 'en'"
-                  id="affiliate"
-                  name="affiliate"
-                  type="hidden"
-                  value="usagov" />
-                <input
-                  v-if="$i18n.locale === 'es'"
-                  id="affiliate"
-                  name="affiliate"
-                  type="hidden"
-                  value="gobiernousa_only" />
-                <input
-                  id="search-field-small"
-                  type="search"
-                  name="query"
-                  :placeholder="$t('header.meta.placeholder')"
-                  onfocus="this.placeholder = ''"
-                  class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
-                  autocomplete="off"
-                  aria-autocomplete="list"
-                  aria-haspopup="true" />
-                <button
-                  class="usa-button"
-                  type="submit">
-                  <img
-                    src="@/assets/img/search-dark.svg"
-                    class="usa-search__submit-icon"
-                    alt="Search" />
-                </button>
-              </div>
+              role="search">
+              <label
+                id="top-srch"
+                class="usa-sr-only"
+                for="search-field-small"
+                >{{ $t("beta.header.form.label") }}</label
+              >
+              <input
+                id="affiliate"
+                name="affiliate"
+                type="hidden"
+                :value="$t('beta.header.form.affliate')" />
+              <input
+                id="search-field-small"
+                class="usa-input text usagov-search-autocomplete ui-autocomplete-input"
+                type="search"
+                name="query"
+                :placeholder="$t('beta.header.form.placeholder')"
+                onfocus="this.placeholder = ''"
+                autocomplete="off"
+                aria-autocomplete="list"
+                aria-haspopup="true" />
+              <button
+                class="usa-button"
+                type="submit">
+                <img
+                  src="@/assets/img/search-dark.svg"
+                  class="usa-search__submit-icon"
+                  :alt="$t('beta.header.form.label')" />
+              </button>
             </form>
-            <ul class="usa-nav__secondary-links width-full">
-              <li class="usa-nav__secondary-item">
-                <a href="https://www.usa.gov/phone">1-844-USA-GOV1</a>
-              </li>
-            </ul>
           </div>
-          <ul class="usa-nav__primary usa-accordion usa-accordion-escapable">
-            <li class="usa-nav__primary-item">
+
+          <!-- Start main navigation. -->
+          <ul class="usa-nav__primary usa-accordion">
+            <li
+              v-for="item in $t('beta.header.navMain')"
+              :id="`item-id-${item.linkID}`"
+              :key="`item-id-${item.linkID}`"
+              class="usa-nav__primary-item">
               <a
                 class="usa-nav__link"
-                :href="sanitizedHeadingUrl($t('header.GroupOne.titleUrl'))">
-                <span>{{ $t("header.GroupOne.title") }}</span>
+                :href="sanitizedHeadingUrl(item.linkURL)">
+                {{ item.linkText }}
               </a>
-            </li>
-            <li class="usa-nav__primary-item">
-              <button
-                class="usa-accordion__button usa-nav__link initialized"
-                aria-expanded="false"
-                aria-controls="megamenu-1">
-                <span>{{ $t("header.GroupTwo.title") }}</span>
-              </button>
-              <div
-                id="megamenu-1"
-                class="usa-nav__submenu usa-megamenu"
-                hidden>
-                <div class="grid-row grid-gap-4">
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkOneUrl'))">
-                          {{ $t("header.GroupTwo.linkOne") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkTwoUrl'))">
-                          {{ $t("header.GroupTwo.linkTwo") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkThreeUrl'))">
-                          {{ $t("header.GroupTwo.linkThree") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkFourUrl'))">
-                          {{ $t("header.GroupTwo.linkFour") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkFiveUrl'))">
-                          {{ $t("header.GroupTwo.linkFive") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkSixUrl'))">
-                          {{ $t("header.GroupTwo.linkSix") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkSevenUrl'))">
-                          {{ $t("header.GroupTwo.linkSeven") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkEightUrl'))">
-                          {{ $t("header.GroupTwo.linkEight") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupTwo.linkNineUrl'))">
-                          {{ $t("header.GroupTwo.linkNine") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div
-                    v-if="$i18n.locale === 'es'"
-                    class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a href="https://www.usa.gov/espanol/vivienda-accesible">
-                          {{ $t("header.GroupTwo.linkTen") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="topic-link topic-nav-flag">
-                  <img
-                    v-if="$i18n.locale === 'en'"
-                    src="@/assets/img/Topic_Icon_About_USA_White.svg"
-                    alt="U.S. Flag"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <img
-                    v-if="$i18n.locale === 'es'"
-                    src="@/assets/img/Topic_Icon_Benefit_White.svg"
-                    alt="Dinero"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-
-                  <a
-                    :href="sanitizedHeadingUrl($t('header.GroupTwo.titleUrl'))"
-                    class="usa-button">
-                    {{ $t("header.GroupTwo.title") }}
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="usa-nav__primary-item">
-              <button
-                class="usa-accordion__button usa-nav__link initialized"
-                aria-expanded="false"
-                aria-controls="megamenu-2">
-                <span>{{ $t("header.GroupThree.title") }}</span>
-              </button>
-              <div
-                id="megamenu-2"
-                class="usa-nav__submenu usa-megamenu"
-                hidden>
-                <div class="grid-row grid-gap-4">
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkOneUrl'))">
-                          {{ $t("header.GroupThree.linkOne") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkTwoUrl'))">
-                          {{ $t("header.GroupThree.linkTwo") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkThreeUrl'))">
-                          {{ $t("header.GroupThree.linkThree") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkFourUrl'))">
-                          {{ $t("header.GroupThree.linkFour") }}</a
-                        >
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkFiveUrl'))">
-                          {{ $t("header.GroupThree.linkFive") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkSixUrl'))">
-                          {{ $t("header.GroupThree.linkSix") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkSevenUrl'))">
-                          {{ $t("header.GroupThree.linkSeven") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkEightUrl'))">
-                          {{ $t("header.GroupThree.linkEight") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkNineUrl'))">
-                          {{ $t("header.GroupThree.linkNine") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div
-                    v-if="$i18n.locale === 'en'"
-                    class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkTenUrl'))">
-                          {{ $t("header.GroupThree.linkTen") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupThree.linkElevenUrl'))">
-                          {{ $t("header.GroupThree.linkEleven") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="topic-link topic-nav-benefit">
-                  <img
-                    v-if="$i18n.locale === 'en'"
-                    src="@/assets/img/Topic_Icon_Benefit_White.svg"
-                    alt="U.S. Money"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <img
-                    v-if="$i18n.locale === 'es'"
-                    src="@/assets/img/Topic_Icon_Immigration_White.svg"
-                    alt="World Globe"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <a
-                    class="usa-button"
-                    :href="sanitizedHeadingUrl($t('header.GroupThree.titleUrl'))">
-                    {{ $t("header.GroupThree.title") }}
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="usa-nav__primary-item">
-              <button
-                class="usa-accordion__button usa-nav__link initialized"
-                aria-expanded="false"
-                aria-controls="megamenu-3">
-                <span>{{ $t("header.GroupFour.title") }}</span>
-              </button>
-              <div
-                id="megamenu-3"
-                class="usa-nav__submenu usa-megamenu"
-                hidden>
-                <div class="grid-row grid-gap-4">
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFour.linkOneUrl'))">
-                          {{ $t("header.GroupFour.linkOne") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFour.linkTwoUrl'))">
-                          {{ $t("header.GroupFour.linkTwo") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFour.linkThreeUrl'))">
-                          {{ $t("header.GroupFour.linkThree") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFour.linkFourUrl'))">
-                          {{ $t("header.GroupFour.linkFour") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFour.linkFiveUrl'))">
-                          {{ $t("header.GroupFour.linkFive") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFour.linkSixUrl'))">
-                          {{ $t("header.GroupFour.linkSix") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFour.linkSevenUrl'))">
-                          {{ $t("header.GroupFour.linkSeven") }}
-                        </a>
-                      </li>
-                      <li
-                        v-if="$i18n.locale === 'en'"
-                        class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFour.linkEightUrl'))">
-                          {{ $t("header.GroupFour.linkEight") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="topic-link topic-nav-agencies">
-                  <img
-                    v-if="$i18n.locale === 'en'"
-                    src="@/assets/img/Topic_Icon_Elected_Officials_White.svg"
-                    alt="person in front of government building"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <img
-                    v-if="$i18n.locale === 'es'"
-                    src="@/assets/img/Topic_Icon_Money_White.svg"
-                    alt="person in front of government building"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <a
-                    :href="sanitizedHeadingUrl($t('header.GroupFour.titleUrl'))"
-                    class="usa-button">
-                    {{ $t("header.GroupFour.title") }}
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="usa-nav__primary-item">
-              <button
-                class="usa-accordion__button usa-nav__link initialized"
-                aria-expanded="false"
-                aria-controls="megamenu-4">
-                <span>{{ $t("header.GroupFive.title") }}</span>
-              </button>
-              <div
-                id="megamenu-4"
-                class="usa-nav__submenu usa-megamenu"
-                hidden>
-                <div class="grid-row grid-gap-4">
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkOneUrl'))">
-                          {{ $t("header.GroupFive.linkOne") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkTwoUrl'))">
-                          {{ $t("header.GroupFive.linkTwo") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkThreeUrl'))">
-                          {{ $t("header.GroupFive.linkThree") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkFourUrl'))">
-                          {{ $t("header.GroupFive.linkFour") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkFiveUrl'))">
-                          {{ $t("header.GroupFive.linkFive") }}
-                        </a>
-                      </li>
-                      <li
-                        v-if="$i18n.locale === 'en'"
-                        class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupFive.linkSixUrl'))">
-                          {{ $t("header.GroupFive.linkSix") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="topic-link topic-nav-job">
-                  <img
-                    v-if="$i18n.locale === 'en'"
-                    src="@/assets/img/Topic_Icon_Job_White.svg"
-                    alt="suitcase"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <img
-                    v-if="$i18n.locale === 'es'"
-                    src="@/assets/img/Topic_Icon_Elected_Officials_White.svg"
-                    alt="building with people"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <a
-                    class="usa-button"
-                    :href="sanitizedHeadingUrl($t('header.GroupFive.titleUrl'))">
-                    {{ $t("header.GroupFive.title") }}
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="usa-nav__primary-item">
-              <button
-                class="usa-accordion__button usa-nav__link initialized"
-                aria-expanded="false"
-                aria-controls="megamenu-5">
-                <span>{{ $t("header.GroupSix.title") }}</span>
-              </button>
-              <div
-                id="megamenu-5"
-                class="usa-nav__submenu usa-megamenu"
-                hidden>
-                <div class="grid-row grid-gap-4">
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkOneUrl'))">
-                          {{ $t("header.GroupSix.linkOne") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkTwoUrl'))">
-                          {{ $t("header.GroupSix.linkTwo") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkThreeUrl'))">
-                          {{ $t("header.GroupSix.linkThree") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkFourUrl'))">
-                          {{ $t("header.GroupSix.linkFour") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkFiveUrl'))">
-                          {{ $t("header.GroupSix.linkFive") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkSixUrl'))">
-                          {{ $t("header.GroupSix.linkSix") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div
-                    v-if="$i18n.locale === 'en'"
-                    class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkSevenUrl'))">
-                          {{ $t("header.GroupSix.linkSeven") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkEightUrl'))">
-                          {{ $t("header.GroupSix.linkEight") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSix.linkNineUrl'))">
-                          {{ $t("header.GroupSix.linkNine") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="topic-link topic-nav-tax">
-                  <img
-                    v-if="$i18n.locale === 'en'"
-                    src="@/assets/img/Topic_Icon_Money_White.svg"
-                    alt="money sign"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <img
-                    v-if="$i18n.locale === 'es'"
-                    src="@/assets/img/Topic_Icon_Consumer_White.svg"
-                    alt="hand holding a credit card"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <a
-                    class="usa-button"
-                    :href="sanitizedHeadingUrl($t('header.GroupSix.titleUrl'))">
-                    {{ $t("header.GroupSix.title") }}
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="usa-nav__primary-item">
-              <button
-                class="usa-accordion__button usa-nav__link initialized"
-                aria-expanded="false"
-                aria-controls="megamenu-6">
-                <span>{{ $t("header.GroupSeven.title") }}</span>
-              </button>
-              <div
-                id="megamenu-6"
-                class="usa-nav__submenu usa-megamenu"
-                hidden>
-                <div class="grid-row grid-gap-4">
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSeven.linkOneUrl'))">
-                          {{ $t("header.GroupSeven.linkOne") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSeven.linkTwoUrl'))">
-                          {{ $t("header.GroupSeven.linkTwo") }}
-                        </a>
-                      </li>
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSeven.linkThreeUrl'))">
-                          {{ $t("header.GroupSeven.linkThree") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="usa-col">
-                    <ul class="usa-nav__submenu-list">
-                      <li class="usa-nav__submenu-item">
-                        <a :href="sanitizedHeadingUrl($t('header.GroupSeven.linkFourUrl'))">
-                          {{ $t("header.GroupSeven.linkFour") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="topic-link topic-nav-globe">
-                  <img
-                    v-if="$i18n.locale === 'en'"
-                    src="@/assets/img/Topic_Icon_Immigration_White.svg"
-                    alt="earth globe"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <img
-                    v-if="$i18n.locale === 'es'"
-                    src="@/assets/img/Topic_Icon_Job_White.svg"
-                    alt="briefcase"
-                    width="55"
-                    class="display-none tablet:display-inline va-middle" />
-                  <a
-                    class="usa-button"
-                    :href="sanitizedHeadingUrl($t('header.GroupSeven.titleUrl'))">
-                    {{ $t("header.GroupSeven.title") }}
-                  </a>
-                </div>
-              </div>
             </li>
           </ul>
         </div>
       </nav>
     </header>
-    <nav
-      class="grid-container margin-y-2 print:display-none"
-      aria-label="secondary navigation">
-      <div class="display-row display-flex flex-justify flex-align-center">
-        <a
-          :href="sanitizedHeadingUrl($t('header.meta.backUrl'))"
-          class="back-benefit font-serif-md text-bold">
-          {{ $t("header.meta.back") }}
-        </a>
-        <button
-          v-if="$config.languageToggleActive"
-          id="language-toggle-button"
-          class="language-toggle-mobile"
-          @click="switchLanguage">
-          {{ $t("header.meta.language") }}
-        </button>
-      </div>
-    </nav>
   </div>
 </template>
+
 <script>
 import sanitizeUrl from "~/mixins/SanitizeBears"
+
 export default {
   mixins: [sanitizeUrl],
+
+  computed: {
+    availableLocales () {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+    },
+    buttonStyle() {
+      const image = require("@/assets/img-custom/Button_header_open_mobile-menu.svg")
+      return {
+        "background-image": `url(${image})`,
+      }
+    },
+  },
+
   methods: {
     sanitizedHeadingUrl(benefitUrl, defaultValue = "#") {
       if (benefitUrl && benefitUrl.length > 0) {
@@ -687,12 +176,11 @@ export default {
     switchLanguage() {
       let route = ""
       const locale = this.$i18n.locale
-      const oneEventString = !this.$config.oneEventVersion ? this.$config.oneEventVersion : ""
       if (locale === "en") {
-        route = `/es/${oneEventString}`
+        route = `/es/`
         this.$i18n.setLocale("es")
       } else {
-        route = `/${oneEventString}`
+        // route = `/`
         this.$i18n.setLocale("en")
       }
       this.$router.push(route)
@@ -700,112 +188,147 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" scoped>
-// Primary Colors
-$dark-blue: #11385b; //NOTE not currently in our code
-$aqua-blue: #02bfe7; //highlights action items and key areas (buttons, borders, etc)
-$white: #ffffff; //site background, text on dark
-// Supporting Colors
-$dark-gray: #4b4b4d; //footer primary
-$light-gray: #d9d9d9; //footer secondary
-$beige: #ebe6de; //leftnav
-$red: #c61f0c; //h1, leftnav current item, featurebox h2
-$blue: #154285; //standard links, h2, leftnav header
-$black: #000000; //standard text, h3
-// Other Colors
-$h3: $dark-gray;
-$button-text: $black;
-$aqua-darker: #00a6d2; //hover
-$lang-toggle: $dark-blue;
-$AZ-button: $blue;
-$AZ-button-disabled: #859cba;
-.va-middle {
-  vertical-align: middle;
+// HELPERS
+.maxw-196 {
+  max-width: 12.3rem;
 }
-.back-benefit {
-  color: #154285;
-  text-decoration: none;
-  &:before {
-    content: "< ";
-    font-weight: normal;
-  }
-  &:hover {
-    text-decoration: underline;
-  }
+.maxw-1024 {
+  max-width: 64rem;
 }
-.language-toggle-mobile {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 20px 5px 20px;
-  background: $dark-blue;
-  font-size: 90%;
+.maxw-6-2 {
+  max-width: 6.2rem;
 }
-// NAVIGATION
-.usa-header-extended .usa-nav-primary {
-  background-color: $dark-blue;
+.font-sans-xxs {
+  font-size: 0.9rem;
 }
-.usa-nav__submenu-list {
-  background-color: $dark-blue;
-}
-.usa-nav__submenu.usa-megamenu {
-  background-color: $dark-blue;
-}
-.usa-nav__primary button[aria-expanded="true"] {
-  background-color: $dark-blue;
-}
-.usa-nav__primary button[aria-expanded="true"] span {
-  color: white;
-}
-.topic-link {
-  margin-top: 1rem;
-}
-.topic-link .usa-button {
-  background-color: $aqua-blue;
-  color: $black;
+// BANNER
+.usa-banner {
+  background-color: #f3f3f3;
 }
 
-// SEARCH
-@media only screen and (min-width: 60em) {
-  header [role="search"] {
-    min-width: 20rem;
+// LANUAGE BUTTON
+.language-switcher-language-url {
+  margin: 0 auto;
+  max-width: 64rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: block;
+
+  ul.links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.3rem;
+    margin-left: 0;
   }
 }
-@media only screen and (min-width: 30em) {
-  input#search-field-small {
-    width: calc(100% - 4.5rem);
+
+.usa-button {
+  border: none;
+}
+
+// specified for matching with usa.gov
+.usa-search {
+  border: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .language-switcher-language-url {
+    bottom: 18px;
+  }
+
+  .usa-button {
+    max-width: 200px;
   }
 }
-@media only screen and (min-width: 64em) {
-  .usa-megamenu.usa-nav__submenu::before,
-  .usa-megamenu.usa-nav__submenu::after {
-    background-color: $dark-blue;
-    border-bottom: 3px solid $aqua-blue;
-    margin-bottom: -3px;
-  }
-  .usa-nav__submenu {
-    border-bottom: 3px solid $aqua-blue;
-  }
-  .usa-nav__primary .usa-accordion__button span {
-    color: #154285;
+
+.language-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #112f4e;
+  font-size: .93rem;
+  font-weight: 700;
+  line-height: .9;
+  border-radius: 5px;
+
+  &:hover {
+    color: #fff;
+    background-color: #112f4e;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .language-link {
+    line-height: 1.1;
+  }
+}
+
+.usa-nav__secondary {
+  flex-direction: row;
+  align-items: flex-end;
+  bottom: 6rem;
+  width: 32rem;
+}
+.usa-nav__secondary-links {
+  width: 15rem;
+  line-height: 1.1rem;
+  a {
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.13rem;
+    padding-left: 0.5rem;
+    padding-top: 0.2rem;
+    &:hover {
+      text-decoration: revert;
+    }
+  }
+}
+.usa-nav__secondary-item::after {
+  float: right;
+  color: #dfe1e2;
+  content: "|";
+  padding-right: 1rem;
+  font-size: 2rem;
+  padding-bottom: 0.4rem;
+}
+.usa-logo {
+  margin: 0.5rem 0 0.2em;
+}
+
+// SPANISH TWEAKS
+.usa-header--extended [hreflang|="es"] {
+  border-radius: 5px;
+  border: 0;
+}
+
+.usa-nav__secondary:lang(es) {
+  width: 33rem;
+  bottom: 6.8rem;
+  .usa-nav__secondary-links:lang(es) {
+    width: 17rem;
+  }
+  .usa-nav__secondary-item {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 64em) {
+  .usa-logo img.es {
+    max-width: 6.2rem;
+  }
+}
+
+// MEDIA QUERIES
 @media only screen and (max-width: 64em) {
-  .usa-nav__primary a:not(.usa-button):not(.usa-current):not(.usa-nav__link) {
-    color: white;
+  .usa-header--extended .usa-navbar {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
   }
-}
-@media (min-width: 64em) {
-  .usa-nav__primary button {
-    padding-right: 2rem;
-    padding-bottom: 1.9rem;
-    padding-left: 1rem;
-    color: #4b4b4d;
-    font-size: 1rem;
-    font-weight: 700;
-    width: initial;
-  }
-  .usa-nav__primary > .usa-nav__primary-item {
-    font-size: 1rem;
+  .logo {
+    max-width: 2.5rem;
   }
 }
 </style>

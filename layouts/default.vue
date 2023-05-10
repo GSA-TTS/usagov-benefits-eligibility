@@ -13,12 +13,12 @@
     <!-- Multi life event version. (uses beta site design) -->
     <div v-else>
       <!-- Beta USA Header. /-->
-      <BetaUsaGovHeader />
+      <UsaGovHeader />
       <main id="main-content">
         <Nuxt />
       </main>
       <!-- Beta USA Footer. /-->
-      <BetaUsaGovFooter />
+      <UsaGovFooter />
     </div>
   </div>
 </template>
