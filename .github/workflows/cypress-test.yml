@@ -1,0 +1,22 @@
+name: Run Cypress Tests
+on: [push]
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        containers: [1,2,3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install modules
+        uses: npi ci
+      - name: Cypress run
+        uses: cypress-io/github-action@v3
+        with:
+          browser: chrome
+          headless: true
+          start: npm run dev
+          wait-on: "http://localhost:3000/"
+          parellel: true

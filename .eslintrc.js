@@ -15,6 +15,7 @@ module.exports = {
     "plugin:vuejs-accessibility/recommended",
     "plugin:sonarjs/recommended",
     "prettier",
+    "plugin:cypress/recommended"
   ],
   plugins: ["vuejs-accessibility", "promise", "sonarjs", "jest"],
   // add your custom rules here

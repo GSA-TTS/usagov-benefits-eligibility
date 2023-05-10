@@ -18,7 +18,9 @@
     "federalist:nuxtjsbug": "open https://github.com/nuxt/nuxt.js/issues/8973",
     "federalist:local": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/url\\(\\/fonts/url\\(..\\/fonts/g' *.css && cd ../../.. && ls -lhR _site && nuxt start",
     "federalist": "gulp && nuxt generate ; cd ./_site/_nuxt/css && if [ \"${BRANCH}\" = \"prod\" ] || [ \"${BRANCH}\" = \"release\" ]; then sed -i~ -Ee 's|(/?)fonts/|\\1../fonts/|g' *.css; else perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css; fi && cd ../../.. && ls -lhR _site",
-    "format": "prettier --write \"./**/*.{js,jsx,json,vue,md,css}\""
+    "format": "prettier --write \"./**/*.{js,jsx,json,vue,md,css}\"",
+    "cypress:open": "npx cypress open",
+    "cypress:run": "npx cypress run"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.17.0",
@@ -53,6 +55,7 @@
     "axe-core": "^4.4.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^28.0.2",
+    "cypress": "^12.11.0",
     "eslint": "8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
