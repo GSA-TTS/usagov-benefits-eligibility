@@ -136,8 +136,8 @@ export default {
     exclude: ["**/404"],
     i18n: true,
     i18n: {
-      locales: ['es']
-    }
+      locales: ["es"],
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
