@@ -63,12 +63,20 @@
         aria-label="Header Primary"
         class="usa-nav">
         <div class="usa-nav__inner">
-          <button class="usa-nav__close">
-            <img
-              src="@/assets/img/usa-icons/close.svg"
-              alt="Close" />
-          </button>
-          
+          <div class="usa-nav__inner-top">   
+            <a class="usa-button usa-nav__home" href="https://www.usa.gov/" tabindex="0">
+              <img
+                src="@/assets/img/usa-icons/home.svg"
+                alt="Home" />
+                Home
+            </a>       
+            <button class="usa-nav__close">
+              <img
+                src="@/assets/img/usa-icons/highlight_off.svg"
+                alt="Close" />
+                Close
+            </button>
+          </div>  
           <div class="usa-nav__secondary">
             <span class="usa-nav__secondary-links">
               <span
