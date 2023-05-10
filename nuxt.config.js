@@ -133,17 +133,11 @@ export default {
   // sitemap
   sitemap: {
     hostname: "https://benefits-tool.usa.gov",
-    exclude: ["**/agencies", "**/types", "**/404"],
-    routes: [
-      "/death-of-a-loved-one",
-      "/es/death-of-a-loved-one",
-      "/disability",
-      "/es/disability",
-      "/retirement",
-      "/es/retirement",
-      "/",
-      "/es",
-    ],
+    exclude: ["**/404"],
+    i18n: true,
+    i18n: {
+      locales: ['es']
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
