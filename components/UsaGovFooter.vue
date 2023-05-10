@@ -1,186 +1,117 @@
 <template>
-  <div>
-    <footer class="usa-footer usa-footer--slim print:display-none">
+  <!-- To match usa.gov-->
+  <footer class="usa-footer usa-footer--big">
+    <div class="usa-footer__primary-section">
       <div class="grid-container usa-footer__return-to-top">
         <a
-          id="return-to-top-link"
+          v-if="$i18n.locale === 'en'"
+          id="back-to-top"
           href="#"
+          title="Back to top"
+          class="stuck"
+          :class="{ show: isHidden }"
+          :style="backgroundImageStyle"
+          @click.prevent="scrollToTop">
+          {{ $t("returnToTop") }}
+        </a>
+        <a
+          v-if="$i18n.locale === 'es'"
+          id="back-to-top"
+          href="#"
+          title="Subir a la parte superior"
+          class="stuck"
+          :class="{ show: isHidden }"
+          :style="backgroundImageStyle"
           @click.prevent="scrollToTop">
           {{ $t("returnToTop") }}
         </a>
       </div>
-      <div class="usa-footer__primary-section padding-bottom-7">
-        <div class="usa-footer__primary-container grid-row">
-          <div class="mobile-lg:grid-col-8 desktop:grid-col-12">
+      <div class="grid-container">
+        <div class="grid-row grid-gap">
+          <div class="tablet:grid-col-8">
+            <!-- start Footer navigation. -->
             <nav
               class="usa-footer__nav"
-              aria-label="Footer navigation,,">
-              <div class="grid-row grid-gap-4">
-                <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
-                  <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                    <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
-                      {{ $t("footer.GroupOne.header") }}
-                    </h2>
-                    <ul class="usa-list usa-list--unstyled">
-                      <li class="usa-footer__secondary-link">
-                        <a
-                          class="margin-bottom-3"
-                          :href="sanitizedBearsUrl($t('footer.GroupOne.linkOneUrl'))">
-                          {{ $t("footer.GroupOne.linkOne") }}
-                        </a>
-                      </li>
-                      <li class="usa-footer__secondary-link">
-                        <a :href="sanitizedBearsUrl($t('footer.GroupOne.linkTwoUrl'))">
-                          {{ $t("footer.GroupOne.linkTwo") }}
-                        </a>
-                      </li>
-                      <li class="usa-footer__secondary-link">
-                        <a :href="sanitizedBearsUrl($t('footer.GroupOne.linkThreeUrl'))">
-                          {{ $t("footer.GroupOne.linkThree") }}
-                        </a>
-                      </li>
-                      <li class="usa-footer__secondary-link">
-                        <a :href="sanitizedBearsUrl($t('footer.GroupOne.linkFourUrl'))">
-                          {{ $t("footer.GroupOne.linkFour") }}
-                        </a>
-                      </li>
-                      <li class="usa-footer__secondary-link">
-                        <a :href="sanitizedBearsUrl($t('footer.GroupOne.linkFiveUrl'))">
-                          {{ $t("footer.GroupOne.linkFive") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </section>
-                </div>
-
-                <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
-                  <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                    <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
-                      {{ $t("footer.GroupTwo.header") }}
-                    </h2>
-                    <ul class="usa-list usa-list--unstyled">
-                      <li class="usa-footer__secondary-link">
-                        <a :href="sanitizedBearsUrl($t('footer.GroupTwo.linkOneUrl'))">
-                          {{ $t("footer.GroupTwo.linkOne") }}
-                        </a>
-                      </li>
-
-                      <li class="usa-footer__secondary-link">
-                        <a :href="sanitizedBearsUrl($t('footer.GroupTwo.linkTwoUrl'))">
-                          {{ $t("footer.GroupTwo.linkTwo") }}
-                        </a>
-                      </li>
-                    </ul>
-                  </section>
-                </div>
-
-                <div class="mobile-lg:grid-col-6 desktop:grid-col-4">
-                  <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                    <h2 class="usa-footer__primary-link font-family-serif font-heading-lg margin-bottom-1">
-                      {{ $t("footer.GroupThree.header") }}
-                    </h2>
-                    <form
-                      action="https://connect.usa.gov/subscribe"
-                      method="get">
-                      <label
-                        class="usa-label text-white margin-top-1"
-                        for="email-2"
-                        >{{ $t("footer.GroupThree.formLabel") }}</label
-                      >
-                      <input
-                        id="email-2"
-                        name="email"
-                        type="email"
-                        class="usa-input margin-bottom-3 width-mobile" />
-                      <button
-                        class="usa-button width-card"
-                        type="submit">
-                        {{ $t("footer.GroupThree.buttonText") }}
-                      </button>
-                    </form>
-                  </section>
-                </div>
-              </div>
+              aria-label="Footer">
+              <!-- Footer navigation component. -->
+              <UsaGovFooterNav />
             </nav>
           </div>
+          <!-- Newsletter signup component-->
+          <UsaGovFooterSignUp />
         </div>
       </div>
-      <div class="usa-footer__secondary-section padding-y-1">
-        <div class="grid-container margin-y-2">
-          <div class="display-flex flex-row flex-justify tablet:flex-justify-end">
-            <a
-              class="usa-social-link usa-social-link-a11y tablet:margin-right-1 radius-lg"
-              href="https://www.facebook.com/USAgov">
-              <img
-                alt="Facebook"
-                src="~/assets/img/social-icons/Icon_Connect_Facebook.png" />
-            </a>
+    </div>
 
-            <a
-              class="usa-social-link usa-social-link-a11y tablet:margin-right-1 radius-lg"
-              href="https://twitter.com/USAgov">
-              <img
-                alt="Twitter"
-                src="~/assets/img/social-icons/Icon_Connect_Twitter.png" />
-            </a>
+    <!-- Lower contact info block. -->
+    <div class="usa-footer__secondary-section">
+      <div class="grid-container padding-bottom-4">
+        <div class="grid-row grid-gap">
+          <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
+            <span id="bottom-phone">
+              <div class="mobile-lg:grid-col-auto">
+                <h4 class="usa-footer__logo-heading">{{ $t("footer.GroupTwo.header") }}</h4>
+              </div>
 
-            <a
-              class="usa-social-link usa-social-link-a11y tablet:margin-right-1 radius-lg"
-              href="https://www.youtube.com/usagov1">
-              <img
-                alt="YouTube"
-                src="~/assets/img/social-icons/Icon_Connect_Youtube.png" />
-            </a>
+              <div class="mobile-lg:grid-col-auto">
+                <p>{{ $t("footer.GroupTwo.subHeader") }}</p>
 
-            <a
-              class="usa-social-link usa-social-link-a11y radius-lg"
-              href="https://www.instagram.com/usagov/">
-              <img
-                alt="Instagram"
-                src="~/assets/img/social-icons/Icon_Connect_Instragram.png" />
-            </a>
+                <address class="usa-footer__address">
+                  <div class="usa-footer__contact-info">
+                    <a
+                      :href="sanitizedBearsUrl($t('footer.GroupOne.linkOneUrl'))">
+                      {{ $t("footer.GroupTwo.linkOne") }}
+                    </a>
+                  </div>
+                </address>
+              </div>
+            </span>
           </div>
+          <!-- Footer social component. -->
+          <UsaGovFooterSocial />
         </div>
       </div>
-    </footer>
+    </div>
 
-    <div class="usa-identifier bg-black print:display-none">
+    <!-- Footer usa identifier
+    "USAGov is the Official Guide..."
+    -->
+    <div class="usa-identifier">
       <section
         class="usa-identifier__section usa-identifier__section--masthead"
-        aria-label="Agency identifier">
-        <div class="usa-identifier__container">
-          <div
-            class="usa-identifier__identity"
-            aria-label="Agency description">
-            <p class="usa-identifier__identity-disclaimer text-normal margin-y-3">
-              {{ $t("footer.subFooter") }}
-            </p>
-          </div>
+        :aria-label="$t('footer.subFooterLabel')">
+        <div class="usa-identifier__container flex-justify-center">
+          {{ $t("footer.subFooter") }}
         </div>
       </section>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
-import { tObj } from "~/services/translation"
 import sanitizeUrl from "~/mixins/SanitizeBears"
+
 export default {
+  name: "UsaGovFooter",
   mixins: [sanitizeUrl],
-  props: {
-    testEnv: {
-      type: Boolean,
-      default: false,
-      required: false,
-    },
-  },
   data() {
-    return {
-      disclaimer: {},
+    return{
+      isHidden: true
     }
   },
-  async fetch() {
-    this.disclaimer = tObj.call(this, await this.$content("disclaimer").fetch())
+  computed: {
+    backgroundImageStyle() {
+      const image = require("@/assets/img-custom/Icon_Back_to_Top_Blue.png")
+      return {
+        "background-image": `url(${image})`,
+      }
+    },
+  },
+  mounted () {
+    window.addEventListener('scroll', this.toggleScrollToTop);
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.toggleScrollToTop);
   },
   methods: {
     sanitizedBearsUrl(benefitUrl, defaultValue = "#") {
@@ -190,15 +121,53 @@ export default {
         return defaultValue
       }
     },
+    toggleScrollToTop() {
+      this.isHidden = document.documentElement.scrollTop < window.innerHeight
+    },
     scrollToTop() {
       window.scrollTo(0, 0)
     },
-  },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.usa-social-link {
-  background-color: transparent;
+#back-to-top {
+  position: fixed;
+  height: 50px;
+  width: 90px;
+  right: -100px;
+  bottom: 80px;
+  background: #e8f0f7;
+  transition: right .5s;
+  background-size: 45px;
+  background-position: 2px;
+  background-repeat: no-repeat;
+  padding: 0 15px 0 50px;
+  border-radius: 25px 0 0 25px;
+  line-height: 50px;
+  display: inline-block;
+  text-align: center;
+  z-index: 1;
+  /* This timing applies on the way OUT */
+  transition-timing-function: ease-in;
+  /* Quick on the way out */
+  transition: 0.25s;
+  /* Hide thing by pushing it outside by default */
+  transform: translateX(0);
+}
+
+#back-to-top.show {
+  /* This timing applies on the way IN */
+  transition-timing-function: ease-out;
+  /* A litttttle slower on the way in */
+  transition: 0.3s;
+  /* Move into place */
+  transform: translateX(130%);
+}
+
+#back-to-top.stuck {
+  right: 0;
+  white-space: nowrap
 }
 </style>
