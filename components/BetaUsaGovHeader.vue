@@ -67,12 +67,14 @@
             <a class="usa-button usa-nav__home" href="https://www.usa.gov/" tabindex="0">
               <img
                 src="@/assets/img/usa-icons/home.svg"
+                role="img"
                 alt="Home" />
                 Home
             </a>       
             <button class="usa-nav__close">
               <img
                 src="@/assets/img/usa-icons/highlight_off.svg"
+                role="img"
                 alt="Close" />
                 Close
             </button>
