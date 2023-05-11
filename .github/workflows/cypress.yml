@@ -20,7 +20,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install modules
+      - name: Install gulp
+        run: npm install --global gulp-cli
+
+      - name: Build the app
+        run: npm build
+
+      - name: Start the app
         run: npm start
 
       - name: Cypress run
