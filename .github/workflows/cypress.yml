@@ -17,27 +17,21 @@ jobs:
     environment: ${{ github.head_ref || github.ref_name }}
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Node version
-        run: |
-          pwd && ls -l
-          cd ~
-          nvm use
+      - name: Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
 
-      - name: Install gulp
-        run: npm install --global gulp-cli
+      - name: Use Node.js (.nvmrc)
+        uses: actions/setup-node@v3
+        with:
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
 
-      # - name: Install Modules
-      #   run: npm install
-
-      # - name: Build the app
-      #   run: npm run build
-
-      - name: Start the app
-        run: npm run start
-
+      - name: Install dependencies
+        run: npm ci
+       
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
