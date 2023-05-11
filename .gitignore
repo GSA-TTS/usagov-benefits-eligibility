@@ -49,3 +49,6 @@ report/
 /megalinter-reports/
 /reports/
 cspell.json
+
+#cypress
+/cypress/results/
