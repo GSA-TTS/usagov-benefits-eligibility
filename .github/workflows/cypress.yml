@@ -38,5 +38,16 @@ jobs:
           browser: chrome
           headless: true
           start: npm run dev
-          wait-on: "http://localhost:3000/"
-          parellel: true
+          # wait-on: "http://localhost:3000/"
+          # parellel: true
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      # Test run video was always captured, so this action uses "always()" condition
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
