@@ -12,10 +12,11 @@
     <header
       id="header"
       class="usa-header usa-header--extended">
+      <div class="language-switcher-wrap">
       <ul
         class="language-switcher-language-url"
         role="navigation">
-        <li class="display-flex flex-justify-end usa-list language-switcher-wrap">
+        <li class="display-flex flex-justify-end usa-list">
           <nuxt-link
             v-for="locale in availableLocales"
             :key="locale.code"
@@ -24,6 +25,7 @@
             class="usa-button language-link">{{ locale.name }}</nuxt-link>
         </li>
       </ul>
+      </div>
 
       <div class="usa-navbar">
         <div
@@ -63,20 +65,20 @@
         aria-label="Header Primary"
         class="usa-nav">
         <div class="usa-nav__inner">
-          <div class="usa-nav__inner-top">   
+          <div class="usa-nav__inner-top">
             <a class="usa-button usa-nav__home" href="https://www.usa.gov/" tabindex="0">
               <img
                 src="@/assets/img/usa-icons/home.svg"
                 alt="Home" />
                 Home
-            </a>       
+            </a>
             <button class="usa-nav__close">
               <img
                 src="@/assets/img/usa-icons/highlight_off.svg"
                 alt="Close" />
                 Close
             </button>
-          </div>  
+          </div>
           <div class="usa-nav__secondary">
             <span class="usa-nav__secondary-links">
               <span
@@ -217,22 +219,6 @@ export default {
   background-color: #f3f3f3;
 }
 
-// LANUAGE BUTTON
-.language-switcher-language-url {
-  margin: 0 auto;
-  max-width: 64rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  display: block;
-
-  ul.links {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 0.3rem;
-    margin-left: 0;
-  }
-}
-
 .usa-button {
   border: none;
 }
@@ -243,10 +229,6 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
-  .language-switcher-language-url {
-    bottom: 18px;
-  }
-
   .usa-button {
     max-width: 200px;
   }
