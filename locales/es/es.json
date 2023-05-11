@@ -170,7 +170,7 @@
       "header": "Centro de llamadas de USAGov",
       "subHeader": "Haga una pregunta a USAGov en Español al",
       "linkOne": "1-844-USAGOV1 (1-844-872-4681)",
-      "linkOneUrl": "https://www.usa.gov/es/centro-de-llamadas",
+      "linkOneUrl": "https://www.usa.gov/es/llamenos",
       "linkTwo": "In English",
       "linkTwoUrl": "https://www.usa.gov/contact"
     },
@@ -329,7 +329,7 @@
       ],
       "secondaryNav": {
         "linkOneText": "Llámenos al 1-844-USAGOV1",
-        "linkOneUrl": "https://www.usa.gov/es/centro-de-llamadas"
+        "linkOneUrl": "https://www.usa.gov/es/llamenos"
       },
       "form": {
         "label": "Buscar",
