@@ -12,9 +12,9 @@ jobs:
     #   fail-fast: true
     #   matrix:
     #     containers: [1, 2, 3]
-    container:
-      image: cypress/included:10.7.0
-    environment: ${{ github.head_ref || github.ref_name }}
+    # container:
+    #   image: cypress/included:10.7.0
+    # environment: ${{ github.head_ref || github.ref_name }}
 
     steps:
       - name: Checkout
