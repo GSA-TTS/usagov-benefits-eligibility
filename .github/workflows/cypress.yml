@@ -1,6 +1,6 @@
-name: Run Cypress Tests
-on:
-  workflow_dispatch:
+name: Run Cypress Automated Tests
+permissions: read-all
+on: [push]
 jobs:
   install:
     runs-on: ubuntu-latest
