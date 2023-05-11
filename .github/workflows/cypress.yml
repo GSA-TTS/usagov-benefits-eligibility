@@ -32,18 +32,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
        
-
-      - name: testing......
-        run: echo "${SITE_URLPREFIX}"
-
-
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
           browser: chrome
           headless: true
-          start: npm run dev
-          wait-on: "${SITE_URLPREFIX}"
+          start: npm run federalist
+          # wait-on: 
           parellel: true
       - uses: actions/upload-artifact@v3
         if: failure()
