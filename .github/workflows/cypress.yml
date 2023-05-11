@@ -34,9 +34,9 @@ jobs:
        
 
       - name: testing......
-        run: echo $SITE_URLPREFIX
+        run: echo "${SITE_URLPREFIX}"
 
-        
+
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
