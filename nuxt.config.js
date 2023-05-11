@@ -1,8 +1,13 @@
 import fs from "fs"
 
-const getLifeEvents = function () {
+const getLifeEvents = () => {
   const files = fs.readdirSync("./content/life-events/")
-  return files.map((f) => f.replace(/.md$/gi, ""))
+  const paths = [];
+
+  files.forEach((le) => paths.push(`/${le}`))
+  files.forEach((le) => paths.push(`/es/${le}`))
+
+  return paths.map((f) => f.replace(/.md$/gi, ""))
 }
 // https://federalist.18f.gov/documentation/env-vars-on-federalist-builds/#default-environment-variables
 const sitePrefix = process.env.BASEURL ? `${process.env.BASEURL}/` : ""
@@ -133,11 +138,7 @@ export default {
   // sitemap
   sitemap: {
     hostname: "https://benefits-tool.usa.gov",
-    exclude: ["**/404"],
-    i18n: true,
-    i18n: {
-      locales: ["es"],
-    },
+    exclude: ["**/404"]
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -161,7 +162,7 @@ export default {
 
   generate: {
     dir: "_site",
-    routes: getLifeEvents().map((le) => `/${le}`),
+    routes: getLifeEvents().map((le) => le),
   },
 
   router: {
