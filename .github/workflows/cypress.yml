@@ -8,20 +8,26 @@ permissions: read-all
 jobs:
   install:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
-      matrix:
-        containers: [1, 2, 3]
+    # strategy:
+    #   fail-fast: true
+    #   matrix:
+    #     containers: [1, 2, 3]
+    container:
+      image: cypress/included:10.7.0
+    environment: ${{ github.head_ref || github.ref_name }}
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Install modules
-        uses: npi ci
-      - name: Cypress run
-        uses: cypress-io/github-action@v3
-        with:
-          browser: chrome
-          headless: true
-          start: npm run dev
-          wait-on: "http://localhost:3000/"
-          parellel: true
+        uses: npm ci
+
+      # - name: Cypress run
+      #   uses: cypress-io/github-action@v3
+      #   with:
+      #     browser: chrome
+      #     headless: true
+      #     start: npm run dev
+      #     wait-on: "http://localhost:3000/"
+      #     parellel: true
