@@ -2,7 +2,7 @@ import fs from "fs"
 
 const getLifeEvents = () => {
   const files = fs.readdirSync("./content/life-events/")
-  const paths = [];
+  const paths = []
 
   files.forEach((le) => paths.push(`/${le}`))
   files.forEach((le) => paths.push(`/es/${le}`))
@@ -138,7 +138,7 @@ export default {
   // sitemap
   sitemap: {
     hostname: "https://benefits-tool.usa.gov",
-    exclude: ["**/404"]
+    exclude: ["**/404"],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
