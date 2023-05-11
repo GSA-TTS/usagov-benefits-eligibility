@@ -24,10 +24,10 @@ jobs:
         run: npm install --global gulp-cli
 
       - name: Build the app
-        run: npm build
+        run: npm run build
 
       - name: Start the app
-        run: npm start
+        run: npm run start
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
