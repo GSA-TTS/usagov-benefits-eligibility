@@ -13,7 +13,7 @@ module.exports = defineConfig({
     "openMode": 1
   },
   e2e: {
-    baseUrl: 'https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.sites.pages.cloud.gov/preview/gsa/usagov-benefits-eligibility/feature/cypress-pipeline-fatma/death-of-a-loved-one/?',
+    baseUrl: 'https://benefits-tool-demo.usa.gov/death-of-a-loved-one/?',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     testIsolation: false,
     setupNodeEvents(on, config) {
