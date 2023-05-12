@@ -32,8 +32,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: pwd & list files
-        run: pwd && ls -l
+      - name: Replace cypress config file
+        run: |
+          pwd && ls -l
+          rm -rf cypress.config.js
+          mv pipeline-cypress.config.js cypress.config.js
+          echo "listing the files again...."
+          ls -l
        
       - name: Cypress run
         uses: cypress-io/github-action@v3
