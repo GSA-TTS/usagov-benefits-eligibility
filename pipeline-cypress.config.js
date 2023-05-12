@@ -13,7 +13,7 @@ module.exports = defineConfig({
     "openMode": 1
   },
   e2e: {
-    baseUrl: 'https://benefits-tool-demo.usa.gov/death-of-a-loved-one/?',
+    baseUrl: 'https://benefits-tool-demo.usa.gov/',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     testIsolation: false,
     setupNodeEvents(on, config) {
