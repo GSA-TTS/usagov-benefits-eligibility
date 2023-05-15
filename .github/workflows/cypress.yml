@@ -41,11 +41,11 @@ jobs:
           if ${{ github.head_ref || github.ref_name }} = "prod"; then sed -i "s#^    baseUrl: .*#    baseUrl: 'https://benefits-tool.usa.gov/',#" cypress.config.js; elif ${{ github.head_ref || github.ref_name }} = "release"; then sed -i "s#^    baseUrl: .*#    baseUrl: 'https://benefits-tool-demo.usa.gov/',#" cypress.config.js; else sed -i "s#^    baseUrl: .*#    baseUrl: '${SITE_PREFIX}${{ github.head_ref || github.ref_name }}',#" cypress.config.js; fi
 
 
-      - name: Change cypress config file
-        run: |
-          pwd 
-          rm -rf cypress.config.js
-          mv pipeline-cypress.config.js cypress.config.js
+      # - name: Change cypress config file
+      #   run: |
+      #     pwd 
+      #     rm -rf cypress.config.js
+      #     mv pipeline-cypress.config.js cypress.config.js
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
