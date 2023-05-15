@@ -3,6 +3,7 @@
   "va-special-disability-benefits.headline": "Beneficios adicionales para veteranos",
   "va-special-disability-benefits.source.name": "Departamento de Asuntos de los Veteranos de EE.UU. (VA)",
   "va-special-disability-benefits.source.link": "https://www.va.gov/disability/eligibility/special-claims/",
+  "va-special-disability-benefits.source.linkIsEnglish": "true",
   "va-special-disability-benefits.summary": "Si usted tiene una discapacidad relacionada con su servicio militar, es posible que pueda obtener compensación y beneficios por discapacidad, como becas para la compra de dispositivos de asistencia, cambiar su vehículo, o comprar un vehículo especialmente equipado, bonos para ropa especial o asistencia financiera para atención dental.",
   "va-special-disability-benefits.eligibility.acceptableValues": "sí",
   "va-special-disability-benefits.eligibility.label": "¿Usted prestó servicio activo en el ejército, la marina o la fuerza aérea?",
