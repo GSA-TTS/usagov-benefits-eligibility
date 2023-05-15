@@ -47,12 +47,17 @@ jobs:
       #     rm -rf cypress.config.js
       #     mv pipeline-cypress.config.js cypress.config.js
 
+      - name: Test if cypress config file is configured correctly
+        run: |
+        pwd
+        cat cypress.config.js
+
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
           browser: chrome
           headless: true
-          start: npm run dev
+          start: npm run federalist
           # wait-on: "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.sites.pages.cloud.gov/preview/gsa/usagov-benefits-eligibility/feature/cypress-pipeline-fatma/death-of-a-loved-one/?"
           # parellel: true
       - uses: actions/upload-artifact@v3
