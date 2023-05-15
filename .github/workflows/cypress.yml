@@ -49,8 +49,8 @@ jobs:
 
       - name: Test if cypress config file is configured correctly
         run: |
-        pwd
-        cat cypress.config.js
+          pwd
+          cat cypress.config.js
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
