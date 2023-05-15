@@ -36,7 +36,7 @@ jobs:
         env: 
          SITE_PREFIX: ${{ secrets.SITE_PREFIX }}
         run: |
-        echo "writing site_prefix..... $SITE_PREFIX"
+          echo "writing site_prefix..... $SITE_PREFIX"
 
       - name: Change cypress config file
         run: |
