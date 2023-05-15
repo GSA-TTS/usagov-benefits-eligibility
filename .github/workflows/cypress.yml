@@ -2,6 +2,7 @@ name: Run Cypress Tests
 
 on:
   workflow_dispatch:
+  pull_request:
 
 permissions: read-all
 
@@ -32,11 +33,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Change cypress config file
+      - name: Set Branch Based Cypress Config file
+        env:
+          SITE_PREFIX: ${{ secrets.SITE_PREFIX }}
         run: |
-          pwd 
-          rm -rf cypress.config.js
-          mv pipeline-cypress.config.js cypress.config.js
+          if ${{ github.head_ref || github.ref_name }} = "prod"; then sed -i "s#^    baseUrl: .*#    baseUrl: 'https://benefits-tool.usa.gov/',#" cypress.config.js; elif ${{ github.head_ref || github.ref_name }} = "release"; then sed -i "s#^    baseUrl: .*#    baseUrl: 'https://benefits-tool-demo.usa.gov/',#" cypress.config.js; else sed -i "s#^    baseUrl: .*#    baseUrl: '${SITE_PREFIX}${{ github.head_ref || github.ref_name }}',#" cypress.config.js; fi
+
+      # - name: Change cypress config file
+      #   run: |
+      #     pwd
+      #     rm -rf cypress.config.js
+      #     mv pipeline-cypress.config.js cypress.config.js
+
+      - name: Test if cypress config file is configured correctly
+        run: |
+          pwd
+          cat cypress.config.js
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
@@ -44,11 +56,10 @@ jobs:
           browser: chrome
           headless: true
           start: npm run federalist
-          # wait-on: "https://federalist-edd11e6f-8be2-4dc2-a85e-1782e0bcb08e.sites.pages.cloud.gov/preview/gsa/usagov-benefits-eligibility/feature/cypress-pipeline-fatma/death-of-a-loved-one/?"
+          # wait-on: ""
           # parellel: true
       - uses: actions/upload-artifact@v3
         if: always ()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-
