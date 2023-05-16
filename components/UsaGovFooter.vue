@@ -59,7 +59,7 @@
                 <address class="usa-footer__address">
                   <div class="usa-footer__contact-info">
                     <a
-                      :href="sanitizedBearsUrl($t('footer.GroupOne.linkOneUrl'))">
+                      :href="sanitizedBearsUrl($t('footer.GroupTwo.linkOneUrl'))">
                       {{ $t("footer.GroupTwo.linkOne") }}
                     </a>
                   </div>
