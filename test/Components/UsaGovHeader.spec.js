@@ -22,7 +22,6 @@ describe("<UsaGovHeader />", () => {
         },
         $config: {
           languageToggleActive: true,
-          oneEventVersion: false,
         },
       },
     })
