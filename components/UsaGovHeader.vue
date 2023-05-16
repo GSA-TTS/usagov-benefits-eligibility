@@ -85,7 +85,9 @@
                 id="top-phone"
                 class="usa-nav__secondary-item">
                 <a :href="sanitizedHeadingUrl($t('beta.header.secondaryNav.linkOneUrl'))">{{
-                  $t("beta.header.secondaryNav.linkOneText")
+                  match_isLarge ?
+                    $t("beta.header.secondaryNav.linkOneText") :
+                    "1-844-USAGOV1"
                 }}</a>
               </span>
             </span>
@@ -151,9 +153,10 @@
 
 <script>
 import sanitizeUrl from "~/mixins/SanitizeBears"
+import { MatchMedia } from "~/mixins/MatchMedia"
 
 export default {
-  mixins: [sanitizeUrl],
+  mixins: [sanitizeUrl, MatchMedia("large", "isLarge")],
 
   computed: {
     availableLocales () {
