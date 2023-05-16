@@ -334,7 +334,7 @@
       "form": {
         "label": "Buscar",
         "searchUrl": "https://search.usa.gov/search/",
-        "placeholder": "Busque en el Gobierno ...",
+        "placeholder": "Busque en este sitio...",
         "affliate": "usagov_es_all_gov"
       }
     },
