@@ -330,7 +330,9 @@
       "secondaryNav": {
         "linkOneText": "Llámenos al 1-844-USAGOV1",
         "linkOneTextMobile": "1-844-USAGOV1",
-        "linkOneUrl": "https://www.usa.gov/es/llamenos"
+        "linkOneUrl": "https://www.usa.gov/es/llamenos",
+        "homeButtonText" : "Página principal",
+        "closeButtonText" : "Cerrar"
       },
       "form": {
         "label": "Buscar",

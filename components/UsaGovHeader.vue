@@ -70,13 +70,13 @@
               <img
                 src="@/assets/img/usa-icons/home.svg"
                 alt="Home" />
-                Home
+                {{$t("beta.header.secondaryNav.homeButtonText")}}
             </a>
             <button class="usa-nav__close">
               <img
                 src="@/assets/img/usa-icons/highlight_off.svg"
                 alt="Close" />
-                Close
+                {{$t("beta.header.secondaryNav.closeButtonText")}}
             </button>
           </div>
           <div class="usa-nav__secondary">
