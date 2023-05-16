@@ -87,7 +87,7 @@
                 <a :href="sanitizedHeadingUrl($t('beta.header.secondaryNav.linkOneUrl'))">{{
                   match_isLarge ?
                     $t("beta.header.secondaryNav.linkOneText") :
-                    "1-844-USAGOV1"
+                    $t("beta.header.secondaryNav.linkOneTextMobile")
                 }}</a>
               </span>
             </span>
