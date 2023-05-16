@@ -310,6 +310,10 @@ export default {
 }
 
 @media screen and (max-width: 64em) {
+
+  .usa-nav__secondary:lang(es) {
+    width: auto;
+  }
   .usa-logo img.es {
     max-width: 6.2rem;
   }
