@@ -33,6 +33,6 @@
 
 <script>
 export default {
-  name: "BetaUsaGovFooterSignUp",
+  name: "UsaGovFooterSignUp",
 }
 </script>

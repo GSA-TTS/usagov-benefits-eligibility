@@ -145,7 +145,7 @@ import sanitizeUrl from "~/mixins/SanitizeBears"
 import FooterAccordion from "~/mixins/FooterAccordion"
 
 export default {
-  name: "BetaUsaGovFooterNav",
+  name: "UsaGovFooterNav",
 
   // Register the MatchMedia mixin with the queries we want plus optional names.
   mixins: [
