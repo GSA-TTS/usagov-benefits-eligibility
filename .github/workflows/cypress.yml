@@ -9,14 +9,7 @@ permissions: read-all
 jobs:
   install:
     runs-on: ubuntu-latest
-    # strategy:
-    #   fail-fast: true
-    #   matrix:
-    #     containers: [1, 2, 3]
-    # container:
-    #   image: cypress/included:10.7.0
-    # environment: ${{ github.head_ref || github.ref_name }}
-
+   
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -39,12 +32,6 @@ jobs:
         run: |
           if ${{ github.head_ref || github.ref_name }} = "prod"; then sed -i "s#^    baseUrl: .*#    baseUrl: 'https://benefits-tool.usa.gov/',#" cypress.config.js; elif ${{ github.head_ref || github.ref_name }} = "release"; then sed -i "s#^    baseUrl: .*#    baseUrl: 'https://benefits-tool-demo.usa.gov/',#" cypress.config.js; else sed -i "s#^    baseUrl: .*#    baseUrl: '${SITE_PREFIX}${{ github.head_ref || github.ref_name }}',#" cypress.config.js; fi
 
-      # - name: Change cypress config file
-      #   run: |
-      #     pwd
-      #     rm -rf cypress.config.js
-      #     mv pipeline-cypress.config.js cypress.config.js
-
       - name: Test if cypress config file is configured correctly
         run: |
           pwd
@@ -56,8 +43,7 @@ jobs:
           browser: chrome
           headless: true
           start: npm run federalist
-          # wait-on: ""
-          # parellel: true
+
       - uses: actions/upload-artifact@v3
         if: always ()
         with:
