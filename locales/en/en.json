@@ -348,7 +348,10 @@
       ],
       "secondaryNav": {
         "linkOneText": "Call us at 1-844-USAGOV1",
-        "linkOneUrl": "https://www.usa.gov/phone/"
+        "linkOneTextMobile": "1-844-USAGOV1",
+        "linkOneUrl": "https://www.usa.gov/phone/",
+        "homeButtonText" : "Home",
+        "closeButtonText" : "Close"
       },
       "form": {
         "label": "Search",

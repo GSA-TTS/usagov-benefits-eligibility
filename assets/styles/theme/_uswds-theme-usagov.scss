@@ -350,6 +350,10 @@ h1.text-secondary {
       }
     }
 
+    &__primary a:not(.usa-button):not(.usa-current) {
+      color: #1a4480;
+    }
+
     .usa-nav__primary-item {
       border: none;
       background: #ffffff;
