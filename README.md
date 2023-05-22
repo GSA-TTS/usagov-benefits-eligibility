@@ -12,16 +12,16 @@
 
 
 The BEARS (Benefits Eligibility Awareness Resources)
-is an interactive tool that enables the public to learn 
+is an interactive tool that enables the public to learn
 about benefits available to them depending on their life
-experiences. BEARS aims to simplify the experience of 
+experiences. BEARS aims to simplify the experience of
 finding and understanding life experience based benefits,
-in both English and Spanish. 
+in both English and Spanish.
 
-Currently, the only supported life experience is death of 
-a loved one. We plan on introducing additional life 
-experiences over time, including approaching retirement, 
-living with a disability, having a child, recovering from 
+Currently, the only supported life experience is death of
+a loved one. We plan on introducing additional life
+experiences over time, including approaching retirement,
+living with a disability, having a child, recovering from
 a disaster, and more.
 
 
