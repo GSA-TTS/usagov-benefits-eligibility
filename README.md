@@ -18,11 +18,11 @@ experiences. BEARS aims to simplify the experience of
 finding and understanding life experience based benefits,
 in both English and Spanish.
 
-Currently, the only supported life experience is death of
-a loved one. We plan on introducing additional life
-experiences over time, including approaching retirement,
-living with a disability, having a child, recovering from
-a disaster, and more.
+Currently, the supported life experiences include death of
+a loved one, disability, and retirement. We plan to 
+introduce additional life experiences over time, including 
+financial hardship, becoming a parent, recovering 
+from a disaster, and more.
 
 
 ## Build Setup
