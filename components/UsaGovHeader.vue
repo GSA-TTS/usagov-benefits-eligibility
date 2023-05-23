@@ -70,13 +70,13 @@
               <img
                 src="@/assets/img/usa-icons/home.svg"
                 alt="Home" />
-                Home
+                {{$t("beta.header.secondaryNav.homeButtonText")}}
             </a>
             <button class="usa-nav__close">
               <img
                 src="@/assets/img/usa-icons/highlight_off.svg"
                 alt="Close" />
-                Close
+                {{$t("beta.header.secondaryNav.closeButtonText")}}
             </button>
           </div>
           <div class="usa-nav__secondary">
@@ -85,7 +85,9 @@
                 id="top-phone"
                 class="usa-nav__secondary-item">
                 <a :href="sanitizedHeadingUrl($t('beta.header.secondaryNav.linkOneUrl'))">{{
-                  $t("beta.header.secondaryNav.linkOneText")
+                  match_isLarge ?
+                    $t("beta.header.secondaryNav.linkOneText") :
+                    $t("beta.header.secondaryNav.linkOneTextMobile")
                 }}</a>
               </span>
             </span>
@@ -151,9 +153,10 @@
 
 <script>
 import sanitizeUrl from "~/mixins/SanitizeBears"
+import { MatchMedia } from "~/mixins/MatchMedia"
 
 export default {
-  mixins: [sanitizeUrl],
+  mixins: [sanitizeUrl, MatchMedia("large", "isLarge")],
 
   computed: {
     availableLocales () {
@@ -307,6 +310,10 @@ export default {
 }
 
 @media screen and (max-width: 64em) {
+
+  .usa-nav__secondary:lang(es) {
+    width: auto;
+  }
   .usa-logo img.es {
     max-width: 6.2rem;
   }

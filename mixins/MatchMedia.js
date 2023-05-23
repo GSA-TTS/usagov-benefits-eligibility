@@ -10,6 +10,7 @@ const theme = {
     narrowPlus: "640px",
     medium: "768px",
     mediumPlus: "840px",
+    large: "1024px"
   },
 }
 

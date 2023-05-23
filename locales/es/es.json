@@ -329,12 +329,15 @@
       ],
       "secondaryNav": {
         "linkOneText": "Llámenos al 1-844-USAGOV1",
-        "linkOneUrl": "https://www.usa.gov/es/llamenos"
+        "linkOneTextMobile": "1-844-USAGOV1",
+        "linkOneUrl": "https://www.usa.gov/es/llamenos",
+        "homeButtonText" : "Página principal",
+        "closeButtonText" : "Cerrar"
       },
       "form": {
         "label": "Buscar",
         "searchUrl": "https://search.usa.gov/search/",
-        "placeholder": "Busque en el Gobierno ...",
+        "placeholder": "Busque en este sitio...",
         "affliate": "usagov_es_all_gov"
       }
     },
