@@ -19,9 +19,9 @@ finding and understanding life experience based benefits,
 in both English and Spanish.
 
 Currently, the supported life experiences include death of
-a loved one, disability, and retirement. We plan to 
-introduce additional life experiences over time, including 
-financial hardship, becoming a parent, recovering 
+a loved one, disability, and retirement. We plan to
+introduce additional life experiences over time, including
+financial hardship, becoming a parent, recovering
 from a disaster, and more.
 
 
