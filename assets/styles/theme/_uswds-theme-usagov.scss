@@ -99,6 +99,9 @@ $AZ-button-disabled: #859cba;
 }
 
 .usa-footer {
+  &__return-to-top {
+    position: absolute;
+  }
   // more specified styles to align with parent web property usa.gov
   &__primary-section {
     @include u-bg("gray-cool-10");
