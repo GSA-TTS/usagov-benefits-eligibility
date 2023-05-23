@@ -133,6 +133,7 @@ $AZ-button-disabled: #859cba;
   // more specified styles to align with parent web property usa.gov
   h3 {
     margin-top: 0;
+    min-height: 0;
   }
 
   .usa-list--unstyled {
@@ -146,11 +147,9 @@ $AZ-button-disabled: #859cba;
   }
   // this keeps links aligned because title lengths are different
   @include at-media(desktop) {
-    #col-2,
-    #col-4 {
-      > li:first-of-type {
-        padding-top: 22.4px;
-      }
+    h3 {
+      margin-top: 0;
+      min-height: 42px;
     }
   }
 
