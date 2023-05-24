@@ -231,3 +231,11 @@ Current todos as we are working in the code:
 - Rename Components to be easier to follow.
 - Revisit Vuex store to align with benefit cards vs criteria selections..
 ```
+### Cypress Test Automation
+```bash
+# To run cypress tests headlessly
+$ npm run cypress:run_chrome --browser chrome
+
+# To open Cypress Test Runner and manually run tests
+$ npm run cypress:open
+```
