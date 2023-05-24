@@ -12,8 +12,6 @@ module.exports = defineConfig({
     baseUrl: "https://benefits-tool-demo.usa.gov/",
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx}",
     testIsolation: false,
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    supportFile: false
   },
 })
