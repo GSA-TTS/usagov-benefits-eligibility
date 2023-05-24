@@ -75,10 +75,8 @@ when that image is run, it starts a "container."
 To build an image of the BEARS software, use the following command:
 
 ```bash
-(
   cd "$(git rev-parse --show-toplevel)" \
   && bash build_docker_image.bash
-)
 ```
 
 This will create a Docker image named "bears" that may be run as a
@@ -168,18 +166,26 @@ cSpell action is currently set to work only in PRs into `main` and when there is
 To implement the pa11y testing locally in a containerized environment, use the following command:
 
 ```bash
-(
-  cd "$(git rev-parse --show-toplevel)" \
-  && docker compose up
-)
+cd "$(git rev-parse --show-toplevel)" \
+&& docker compose up
 ```
 
 You may use the following command to close the running containers:
 
 ```bash
-(
-  docker compose down
-)
+docker compose down
+```
+
+### Cypress Test Automation
+
+```bash
+# To run cypress tests headlessly
+$ npm run cypress:run_chrome
+
+# To open Cypress Test Runner and manually run tests
+$ npm run cypress:open
+```
+
 
 ### Useful links
 
@@ -191,8 +197,18 @@ You may use the following command to close the running containers:
 
 ### Github Actions
 
-- .github/workflows/main.yml - Builds, tests the BEARS site.
-- .github/workflows/codeql-analysis.yml - Scans for code quality and security issues in the BEARS site and it's dependencies.
+- [Main Workflows](.github/workflows) - Builds, tests the BEARS site.
+- [Check Spelling](.github/workflows/check_spelling.yml) - Uses [cspell](https://cspell.org/) to install language libraries for spell check code.
+- [Code Scanning](.github/workflows/codeql-analysis.yml) - Scans for code quality and security issues in the BEARS site and it's dependencies.
+- [Cypress](.github/workflows/cypress.yml) - Allows to manually run e2e test on a branch.
+- [Megalinter](.github/workflows/megalinter.yml) - Verifies code consistency.
+- [OWASP](.github/workflows/codeql-analysis.yml) - Cron job to scan our application for security coverage.
+- [Accessibility](.github/workflows/pa11y.yml) - Leverages [pa11y](https://pa11y.org/
+) to scan code for accessibility.
+- [SNYK](.github/workflows/snyk.yml) - Alerts us to vulnerabilities in our dependencies.
+- [Unit Tests](.github/workflows/test.yml) - Runs our unit tests in a node environment.
+- [Woke](.github/workflows/woke.yml) - Let's us run woke commands in our actions.
+- [Dependabot](.github/workflows/woke.yml) - Creates Pull Requests weekly for available dependency updates.
 
 ### Federalist builds
 
@@ -200,42 +216,5 @@ You may use the following command to close the running containers:
 
 ## Design considerations
 
-- Some items we only render client-side this is because the data
-  relationships are not fully captured by [Nuxt.js](<(<https://nuxtjs.org>)>)
-  and by moving them client-side [Vue.js](https://vuejs.org/)
-  is able to track those relationships.
-- The current print philosophy is that print is a different
-  artifact than a web page, be sure to test printing after any
-  website changes.
-- There are some integration issues between
-  [USWDS](https://designsystem.digital.gov/) components and
-  [Vue.js](https://vuejs.org/). The current approach tries
-  to use each framework by it's public API's as much as possible.
-
-### Application Structure
-
-As we move from phase 3 project to a production ready MVP in phase 4, we need
-to think more about application structure as the application grows. Here are
-some useful links on areas we can improve.
-
-The first post is more useful for nuxt/vuex structure. The second link is
-more general but also a decent read.
-
-- <https://dykraf.com/blog/nuxtjs-static-content-using-vuex#using-store-in-pages-with-disp>
-- <https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-js-application/>
-
-Current todos as we are working in the code:
-
-- Remove "API" or $content calls from vue components to API call to be
-  loaded by store.
-- Rename Components to be easier to follow.
-- Revisit Vuex store to align with benefit cards vs criteria selections..
-```
-### Cypress Test Automation
-```bash
-# To run cypress tests headlessly
-$ npm run cypress:run_chrome --browser chrome
-
-# To open Cypress Test Runner and manually run tests
-$ npm run cypress:open
-```
+- Some items we only render client-side this is because the data relationships are not fully captured by [Nuxt.js](https://nuxtjs.org) and by moving them client-side [Vue.js](https://vuejs.org/) is able to track those relationships.
+- There are some integration issues between [USWDS](https://designsystem.digital.gov/) components and [Vue.js](https://vuejs.org/). The current approach tries to use each framework by it's public API's as much as possible.
