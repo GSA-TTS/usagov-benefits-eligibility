@@ -176,6 +176,17 @@ You may use the following command to close the running containers:
 docker compose down
 ```
 
+### Cypress Test Automation
+
+```bash
+# To run cypress tests headlessly
+$ npm run cypress:run_chrome
+
+# To open Cypress Test Runner and manually run tests
+$ npm run cypress:open
+```
+
+
 ### Useful links
 
 - [https://nuxtjs.org/](https://nuxtjs.org/)
@@ -198,9 +209,6 @@ docker compose down
 - [Unit Tests](.github/workflows/test.yml) - Runs our unit tests in a node environment.
 - [Woke](.github/workflows/woke.yml) - Let's us run woke commands in our actions.
 - [Dependabot](.github/workflows/woke.yml) - Creates Pull Requests weekly for available dependency updates.
-
-
-
 
 ### Federalist builds
 
