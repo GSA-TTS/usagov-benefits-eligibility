@@ -1,4 +1,4 @@
-# 🐻 Benefits Eligibility - Phase 4
+# 📄 Benefits Eligibility
 
 [![Test](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/test.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/test.yml)
 [![CodeQL](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/codeql-analysis.yml)
@@ -11,15 +11,19 @@
 [![check_spelling](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/check_spelling.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/check_spelling.yml)
 
 
-BEARS (Benefits Eligibility Awareness Resources)
-will be a proactive notification service that provides
-timely and personalized information about benefits
-eligibility, contextualized by life events. Before we can
-do notifications and potentially proactive notifications,
-we need to be able to estimate eligibility and figure out a
-way to get people to sign up and store their information.
-We also need to establish relationships with benefits
-programs so we can keep eligibility information up to date.
+The BEARS (Benefits Eligibility Awareness Resources)
+is an interactive tool that enables the public to learn
+about benefits available to them depending on their life
+experiences. BEARS aims to simplify the experience of
+finding and understanding life experience based benefits,
+in both English and Spanish.
+
+Currently, the supported life experiences include death of
+a loved one, disability, and retirement. We plan to
+introduce additional life experiences over time, including
+financial hardship, becoming a parent, recovering
+from a disaster, and more.
+
 
 ## Build Setup
 
