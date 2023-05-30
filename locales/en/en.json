@@ -350,8 +350,8 @@
         "linkOneText": "Call us at 1-844-USAGOV1",
         "linkOneTextMobile": "1-844-USAGOV1",
         "linkOneUrl": "https://www.usa.gov/phone/",
-        "homeButtonText" : "Home",
-        "closeButtonText" : "Close"
+        "homeButtonText": "Home",
+        "closeButtonText": "Close"
       },
       "form": {
         "label": "Search",
@@ -399,6 +399,11 @@
         },
         {
           "linkID": "c2-40",
+          "linkText": "Report a website issue",
+          "linkURL": "https://www.usa.gov/site-issue-report-form"
+        },
+        {
+          "linkID": "c2-50",
           "linkText": "Website usage data",
           "linkURL": "https://www.usa.gov/website-analytics/"
         }
@@ -412,7 +417,7 @@
         },
         {
           "linkID": "c3-20",
-          "linkText": "USAGov blog",
+          "linkText": "Read our blog",
           "linkURL": "https://blog.usa.gov"
         }
       ],

@@ -331,8 +331,8 @@
         "linkOneText": "Llámenos al 1-844-USAGOV1",
         "linkOneTextMobile": "1-844-USAGOV1",
         "linkOneUrl": "https://www.usa.gov/es/llamenos",
-        "homeButtonText" : "Página principal",
-        "closeButtonText" : "Cerrar"
+        "homeButtonText": "Página principal",
+        "closeButtonText": "Cerrar"
       },
       "form": {
         "label": "Buscar",
@@ -376,6 +376,11 @@
           "linkID": "c2-30",
           "linkText": "Política de accesibilidad",
           "linkURL": "https://www.usa.gov/es/accesibilidad"
+        },
+        {
+          "linkID": "c2-40",
+          "linkText": "Reporte problemas en este sitio",
+          "linkURL": "https://www.usa.gov/es/reporte-problemas-en-este-sitio-web"
         }
       ],
       "column3Title": "Para agencias federales",
