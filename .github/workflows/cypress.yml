@@ -33,7 +33,7 @@ jobs:
 
       - name: Test script
         run: |
-          if ${{ github.head_ref || github.ref_name }} == "release"; then echo "yes it worked"; fi
+          if [[ ${{ github.head_ref || github.ref_name }} == "release" ]]; then echo "yes it worked"; fi
 
       - name: Set Branch Based Cypress Config file
         env:
