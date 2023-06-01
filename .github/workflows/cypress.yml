@@ -26,15 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Echo Branch name
-        run: |
-          echo ${{ github.head_ref }}
-          echo ${{ github.ref_name}}
-
-      - name: Test script
-        run: |
-          if [[ ${{ github.head_ref || github.ref_name }} == "release" ]]; then echo "yes it worked"; fi
-
       - name: Set Branch Based Cypress Config file
         env:
           SITE_PREFIX: ${{ secrets.SITE_PREFIX }}
