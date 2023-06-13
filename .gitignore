@@ -52,4 +52,3 @@ cspell.json
 
 #cypress
 /cypress/results/
-/cypress/fixtures/
