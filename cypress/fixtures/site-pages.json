@@ -21,6 +21,6 @@
   },
   {
     "name": "Retirement Spanish page",
-    "route": "es/retirement"
+    "route": "/es/retirement"
   }
 ]
