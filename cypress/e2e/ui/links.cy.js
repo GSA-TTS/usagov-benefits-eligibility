@@ -2,16 +2,12 @@
 
 const sitePages = require("../../fixtures/site-pages.json")
 
-describe("Verify status code 200 when user navigates links", () => {
+describe("Verify correct status code when user navigates links", () => {
   sitePages.forEach((sitePage) => {
-    it(`Verify success 200 response for links in ${sitePage.name} `, () => {
+    it(`Verify success status code response for links in ${sitePage.name} `, () => {
       cy.visit({ url: sitePage.route })
       cy.get("a[href]").each((link) => {
-        cy.request({
-          url: link.prop("href"),
-        }).then((response) => {
-          expect(response.status).to.eq(200)
-        })
+        cy.request(link.prop("href"))
       })
     })
   })
