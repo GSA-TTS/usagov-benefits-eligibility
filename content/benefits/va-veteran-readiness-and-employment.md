@@ -7,6 +7,7 @@ lifeEvents:
   - school-and-education
   - military-service
   - disability
+  - financial-hardship
 source:
   name: va-veteran-readiness-and-employment.source.name
   link: va-veteran-readiness-and-employment.source.link
@@ -17,6 +18,7 @@ summary: va-veteran-readiness-and-employment.summary
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_served_in_active_military
+    label: va-veteran-readiness-and-employment.eligibility.label
     acceptableValues: [va-veteran-readiness-and-employment.eligibility.acceptableValues]
   - criteriaKey: applicant_service_status
     acceptableValues: [va-veteran-readiness-and-employment.eligibility.acceptableValues1, 

@@ -1,6 +1,6 @@
 import Vue from "vue"
 import stringToHash from "../services/stringToHash"
-import { validateDateAgainstAcceptance } from "~/services/dateHelper"
+import { validateDateAgainstAcceptance, dateParse } from "~/services/dateHelper"
 
 export const state = () => ({
   eligibilityCriteria: {},
@@ -75,8 +75,8 @@ export const getters = {
     }
     // need this to be swapped if passing in a state I.E. testing
     const userInputDate = criterion.test
-      ? Date.parse(theGetters.getResponseByEligibilityKey(theState)(criterion.criteriaKey))
-      : Date.parse(theGetters.getResponseByEligibilityKey(criterion.criteriaKey))
+      ? dateParse(theGetters.getResponseByEligibilityKey(theState)(criterion.criteriaKey))
+      : dateParse(theGetters.getResponseByEligibilityKey(criterion.criteriaKey))
     return validateDateAgainstAcceptance({
       criterion,
       userInputDate,

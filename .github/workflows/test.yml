@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
   push:
 
+permissions: read-all
+
 jobs:
   test_frontend:
     name: test frontend

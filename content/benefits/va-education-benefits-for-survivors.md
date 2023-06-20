@@ -7,6 +7,7 @@ lifeEvents:
   - death-of-a-loved-one
   - school-and-education
   - military-service
+  - financial-hardship
 source:
   name: va-education-benefits-for-survivors.source.name
   link: va-education-benefits-for-survivors.source.link

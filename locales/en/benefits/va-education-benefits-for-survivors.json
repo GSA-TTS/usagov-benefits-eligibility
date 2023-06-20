@@ -3,6 +3,7 @@
   "va-education-benefits-for-survivors.headline": "Education Benefits (GI Bill) for Survivors",
   "va-education-benefits-for-survivors.source.name": "U.S. Department of Veteran Affairs",
   "va-education-benefits-for-survivors.source.link": "https://www.va.gov/education/survivor-dependent-benefits/",
+  "va-education-benefits-for-survivors.source.linkIsEnglish": "true",
   "va-education-benefits-for-survivors.summary": "VA education benefits (also called Chapter 35 benefits) or job training through a GI Bill program may be available for dependents and survivors of a veteran.",
   "va-education-benefits-for-survivors.eligibility.acceptableValues": "yes",
   "va-education-benefits-for-survivors.eligibility.label": "The deceased served in the active military, naval, or air service.",

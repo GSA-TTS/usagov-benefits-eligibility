@@ -8,3 +8,6 @@ config.mocks.$config = {
 config.mocks.$t = (key) => internationalizaiton[key]
 config.mocks.switchLocalePath = (msg) => msg
 config.mocks.localePath = (i) => i
+// fixes scrollTo error
+const noop = () => {}
+Object.defineProperty(window, "scrollTo", { value: noop, writable: true })

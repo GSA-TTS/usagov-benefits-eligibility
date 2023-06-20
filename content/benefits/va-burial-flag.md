@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: va-burial-flag.source.name
   link: va-burial-flag.source.link

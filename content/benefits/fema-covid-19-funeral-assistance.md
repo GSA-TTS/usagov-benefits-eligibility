@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - national-emergency-and-disaster
+  - financial-hardship
 source:
   name: fema-covid-19-funeral-assistance.source.name
   link: fema-covid-19-funeral-assistance.source.link

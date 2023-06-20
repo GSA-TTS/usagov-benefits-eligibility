@@ -23,6 +23,11 @@ topLevelFilter:
     disableGroupKey: deceased-military
     disableGroupWhen: [death-of-a-loved-one.topLevelFilter.disableGroupWhen]
 
+  - label: death-of-a-loved-one.topLevelFilter.label3
+    criteriaKey: deceased_american_indian
+    disableGroupKey:
+    disableGroupWhen:
+
 eligibilityCriteria:
   - label: death-of-a-loved-one.eligibilityCriteria.label
     description: death-of-a-loved-one.eligibilityCriteria.description
@@ -32,6 +37,7 @@ eligibilityCriteria:
       - deceased_died_of_COVID
       - deceased_death_location_is_US
       - deceased_public_safety_officer
+      - deceased_miner
       - deceased_date_of_death
       - deceased_date_of_funeral
 
@@ -51,9 +57,10 @@ eligibilityCriteria:
       - applicant_care_for_child
       - applicant_paid_funeral_expenses
       - applicant_funeral_reimbursment
-      - applicant_citizen_status	
+      - applicant_citizen_status
 
 relatedKeys:
   - disability
-  - late-adulthood
+  - retirement
+
 ---

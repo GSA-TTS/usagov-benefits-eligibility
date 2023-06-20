@@ -5,6 +5,7 @@ tags:
   - healthcare
 lifeEvents:
   - military-service
+  - financial-hardship
 source:
   name: va-health-care-program-for-dependent.source.name
   link: va-health-care-program-for-dependent.source.link

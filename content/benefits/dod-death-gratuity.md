@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: dod-death-gratuity.source.name
   link: dod-death-gratuity.source.link

@@ -4,6 +4,7 @@ ARG APPHOME=/usr/src/app
 ARG HOST=0.0.0.0
 ARG PORT=3000
 ARG NODE_ENVIRONMENT=production
+ARG RUNNER=runner
 
 FROM ${IMAGE_NAME}:${IMAGE_TAG}
 
@@ -13,10 +14,18 @@ ARG APPHOME
 ARG HOST
 ARG PORT
 ARG NODE_ENVIRONMENT
+ARG RUNNER
 
 RUN mkdir -p ${APPHOME}
 
 WORKDIR ${APPHOME}
+
+RUN getent passwd "${RUNNER}" > /dev/null \
+    || adduser ${RUNNER} \
+    && chown -R ${RUNNER} ${APPHOME}
+
+
+USER ${RUNNER}
 
 COPY . ${APPHOME}
 

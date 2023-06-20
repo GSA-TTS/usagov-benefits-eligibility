@@ -6,7 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
-  - disability
+  - financial-hardship
 source:
   name: va-survivor-pension-child-disabled.source.name
   link: va-survivor-pension-child-disabled.source.link

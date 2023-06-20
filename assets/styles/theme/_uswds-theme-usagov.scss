@@ -70,17 +70,26 @@ $AZ-button-disabled: #859cba;
   }
 }
 
-.usa-nav__secondary {
-  @include at-media($theme-header-min-width) {
-    bottom: 6rem;
-  }
-}
-
 .usa-social-link-a11y > img {
   display: block;
   margin: 0 auto;
   width: 65%;
   transform: translate(0, 25%);
+}
+
+.usa-social-link {
+  background-color: transparent;
+  @include u-border(1px, "solid", "transparent");
+  @include u-padding-x(2px);
+  @include u-padding-bottom(1px);
+  @include u-padding-top(2px);
+  width: inherit;
+  height: inherit;
+
+  &:hover {
+    @include u-border(1px, "solid", "black");
+    background-color: transparent;
+  }
 }
 
 @media (min-width: 64em) {
@@ -90,19 +99,16 @@ $AZ-button-disabled: #859cba;
 }
 
 .usa-footer {
+  &__return-to-top {
+    position: absolute;
+  }
+  // more specified styles to align with parent web property usa.gov
   &__primary-section {
-    background-color: $dark-gray;
+    @include u-bg("gray-cool-10");
   }
 
   &__secondary-section {
-    background-color: $light-gray;
-  }
-
-  &__primary-link,
-  &__secondary-link > a,
-  &__secondary-link > a:visited,
-  &__secondary-link > a:hover {
-    color: color("white");
+    @include u-bg("cyan-10");
   }
 
   &__primary-link:hover {
@@ -110,8 +116,68 @@ $AZ-button-disabled: #859cba;
     text-decoration: none;
   }
 
-  .usa-list--unstyled > li {
-    @include u-margin-bottom(1);
+  &__contact-links {
+    margin-top: 0;
+  }
+
+  &__contact-heading {
+    margin-bottom: .5rem;
+  }
+
+  #bottom-phone {
+    p,
+    a {
+      font-size: 17.6px;
+    }
+  }
+}
+
+.usa-footer--big .usa-footer__primary-section {
+  // more specified styles to align with parent web property usa.gov
+  h3 {
+    margin-top: 0;
+    min-height: 0;
+  }
+
+  .usa-list--unstyled {
+    padding-bottom: 2rem;
+    padding-top: .75rem;
+    margin-top: 1rem;
+
+    .usa-footer__secondary-link {
+      margin-bottom: 0;
+    }
+  }
+  // this keeps links aligned because title lengths are different
+  @include at-media(desktop) {
+    h3 {
+      margin-top: 0;
+      min-height: 42px;
+    }
+  }
+
+  .usa-accordion {
+    &__content{
+      background-color: initial;
+    }
+
+    &__button {
+      background-color: #efefef;
+      font-size: 19.2px;
+      padding: 16px 16px 16px 40px;
+    }
+
+    &__button[aria-expanded=false],
+    &__button[aria-expanded=true] {
+      background-image: url("../../assets/img/usa-icons/navigate_next.svg");
+      background-position: left 1rem center;
+      background-size: 20px;
+    }
+
+    &__button[aria-expanded=true] {
+      background-image: url("../../assets/img/usa-icons/expand_more.svg");
+      text-decoration: underline;
+    }
   }
 }
 
@@ -121,6 +187,7 @@ $AZ-button-disabled: #859cba;
   .usa-button {
     background-color: color("cyan-30v");
     color: $black;
+    border: 1px $black solid;
 
     &:hover {
       background-color: #00a6d2;
@@ -130,27 +197,222 @@ $AZ-button-disabled: #859cba;
 }
 
 h1.text-secondary {
-  color: #c61f0c;
+  color: #d83933;
+}
+
+@include at-media-max(tablet) {
+  h2.text-normal {
+    font-size: 1.3rem;
+  }
+}
+
+// navigation styles
+.usa-header--extended .usa-nav {
+  border-top: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.usa-nav__secondary {
+  @include at-media($theme-header-min-width) {
+    bottom: 6rem;
+  }
+}
+
+.usa-nav__secondary-links {
+  width: 15rem;
+  line-height: 1.1rem;
+  a {
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.13rem;
+    padding-left: 0.5rem;
+    padding-top: 0.2rem;
+    &:hover {
+      text-decoration: revert;
+    }
+  }
+}
+
+.usa-nav__secondary-item::after {
+  float: right;
+  color: #dfe1e2;
+  content: "|";
+  padding-right: 1rem;
+  font-size: 2rem;
+  padding-bottom: 0.4rem;
+}
+
+.usa-nav__home {
+  display: none;
+}
+
+// LANUAGE BUTTON
+.language-switcher-language-url {
+  margin: 0 auto;
+  max-width: 64rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: block;
+
+  ul.links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.3rem;
+    margin-left: 0;
+  }
+}
+
+.language-switcher-language-url {
+  .usa-list {
+   margin-top: .3rem;
+  }
+}
+
+// mobile menu styles
+@include at-media-max(desktop) {
+
+  .usa-overlay.is-visible {
+    z-index: 1;
+  }
+
+  .language-switcher-wrap {
+    position: relative;
+  }
+
+  .language-switcher-language-url {
+    position: absolute;
+    right: 30px;
+    top: -7px;
+
+    .usa-list {
+      margin: 0;
+    }
+  }
+
+  .usa-header--extended .usa-nav {
+    width: 100%;
+    max-width: 30rem;
+    padding: 0;
+
+    .usa-nav__inner {
+      background: #f3f3f3;
+
+      .usa-nav__inner-top {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 16px 0 16px;
+      }
+
+      .usa-nav__home {
+        display: block;
+        position: relative;
+        border: none;
+        font-size: larger;
+        font-weight: 700;
+        padding: 0;
+        padding: 8px 8px 8px 40px;
+        background: none;
+        color: #000000;
+        border-radius: 0;
+        text-align: left;
+
+        a {
+          text-decoration: none;
+        }
+
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          padding: 0.16rem;
+          margin: 0.1rem;
+          border: 3px solid #000;
+          border-radius: 100%;
+          height: 2.16rem;
+        }
+      }
+
+      .usa-nav__close {
+        position: relative;
+        margin: 0;
+        text-decoration: none;
+        width: auto;
+        height: auto;
+        font-size: larger;
+        font-weight: 700;
+        padding: 8px 8px 8px 40px;
+
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 2.5rem;
+        }
+      }
+    }
+
+    &__primary a:not(.usa-button):not(.usa-current) {
+      color: #1a4480;
+    }
+
+    .usa-nav__primary-item {
+      border: none;
+      background: #ffffff;
+    }
+
+    .usa-nav__secondary {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 1rem 1rem;
+      margin: 0;
+
+      .usa-nav__secondary-links {
+        margin: 1rem 0 0 1rem;
+        order: 2;
+
+        a {
+          font-size: .93rem;
+          padding: 0;
+        }
+
+        .usa-nav__secondary-item::after {
+          display: none;
+        }
+      }
+
+      .usa-search--small {
+        order: 1
+      }
+
+    }
+
+    .usa-nav__link {
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-weight: 400;
+      padding-left: 1rem;
+      color: #1a4480;
+    }
+
+    .usa-nav__link:hover {
+      background-color: initial;
+    }
+  }
 }
 
 .usa-nav__primary > .usa-nav__primary-item > a {
-  color: #154285;
+  color: #192f4e;
+  padding: 0.7rem;
 }
 
 .usa-header--extended .usa-nav__primary-item > .usa-current::after,
 .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover::after {
   background-color: #02bfe7;
-}
-
-@include at-media(tablet) {
-  .usa-header--extended .usa-nav__primary-item > .usa-current::after,
-  .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover::after {
-    height: 0.5rem;
-  }
-}
-
-.usa-search [type="submit"] {
-  @include u-padding-x(1);
 }
 
 .usa-accordion {
@@ -167,4 +429,65 @@ h1.text-secondary {
 
 .usagov-heading--blue {
   color: $blue;
+}
+
+// visibility: hidden utility class.
+.is-hidden {
+  visibility: hidden;
+  opacity: opacity(0);
+  position: fixed;
+}
+
+.usa-gov-footer__primary-link {
+  font-size: size("ui", 7);
+}
+
+.usa-sign-up__heading {
+  @include u-font-family("ui");
+}
+
+.usa-sign-up {
+  @include u-padding-top(3);
+}
+
+.usa-identifier__section {
+  text-align: center;
+  @include u-padding-bottom(0);
+}
+
+.language-link {
+  margin-right: 0;
+}
+
+.usa-alert--slim {
+  border-left: 0;
+  @include u-margin-bottom("05");
+}
+
+.usa-menu-btn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  color: #112f4e;
+  background-size: 2.8rem;
+  background-position: 1px 0;
+  padding: 0;
+  padding-top: 2rem;
+  height: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  margin-right: 6px;
+  @include u-border(1px, "solid", "white");
+
+  &:hover {
+    @include u-border(1px, "solid", "black");
+    background-color: transparent;
+    color: color("black");
+  }
+}
+
+.usa-logo .logo {
+  @include at-media-max("desktop") {
+    margin-left: 20px;
+  }
 }
