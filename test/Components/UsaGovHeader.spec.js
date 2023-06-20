@@ -4,7 +4,21 @@ import beforeAllTests from "@/test/beforeAllTests"
 
 describe("<UsaGovHeader />", () => {
   beforeAll(() => {
-    beforeAllTests()
+    beforeAllTests(),
+    // workaround since not in JSDOM https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: jest.fn().mockImplementation(query => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(), // Deprecated
+        removeListener: jest.fn(), // Deprecated
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+      }))
+    });
   })
 
   it("is a Vue instance", () => {
@@ -22,12 +36,11 @@ describe("<UsaGovHeader />", () => {
         },
         $config: {
           languageToggleActive: true,
-          oneEventVersion: "death-of-a-loved-one",
         },
       },
     })
     expect(wrapper.vm).toBeTruthy()
-    const esButton = wrapper.find("#language-toggle-button")
+    const esButton = wrapper.find(".language-link")
     esButton.trigger("click")
     config.mocks.$i18n.locale = "es"
     esButton.trigger("click")
@@ -45,7 +58,7 @@ describe("<UsaGovHeader />", () => {
       },
     })
     expect(wrapper.vm).toBeTruthy()
-    const esButton = wrapper.find("#language-toggle-button")
+    const esButton = wrapper.find(".language-link")
     esButton.trigger("click")
     config.mocks.$i18n.locale = "es"
     esButton.trigger("click")
@@ -73,5 +86,30 @@ describe("sanitizedBenefitUrl tests", () => {
       },
     })
     expect(url).toBe("#")
+  })
+})
+
+describe("skip link", () => {
+  let wrapper
+
+  beforeEach(() => {
+    const stub = { scrollIntoView: jest.fn() }
+    global.document.getElementById = jest.fn().mockReturnValue(stub)
+
+    wrapper = shallowMount(UsaGovHeader)
+  })
+
+  afterEach(() => {
+    global.document.getElementById.mockReset()
+  })
+
+  it("calls scrollIntoView on the main content element", () => {
+    wrapper.vm.skipLink()
+
+    expect(global.document.getElementById).toHaveBeenCalledWith("main-content")
+    expect(global.document.getElementById().scrollIntoView).toHaveBeenCalledWith({
+      block: "start",
+      behavior: "smooth",
+    })
   })
 })

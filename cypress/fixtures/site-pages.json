@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Death of a loved one English page",
+    "route": "/death-of-a-loved-one"
+  },
+  {
+    "name": "Death of a loved one Spanish page",
+    "route": "/es/death-of-a-loved-one"
+  },
+  {
+    "name": "Disability English page",
+    "route": "/disability"
+  },
+  {
+    "name": "Disability Spanish page",
+    "route": "/es/disability"
+  },
+  {
+    "name": "Retirement English page",
+    "route": "/retirement"
+  },
+  {
+    "name": "Retirement Spanish page",
+    "route": "/es/retirement"
+  }
+]

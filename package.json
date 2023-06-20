@@ -1,6 +1,6 @@
 {
   "name": "usagov-benefits-eligibility",
-  "version": "0.0.1",
+  "version": "1.2.0",
   "description": "BEARS will be a proactive notification service that provides timely and personalized information about benefits eligibility, contextualized by life events.",
   "license": "See license in CONTRIBUTING.md",
   "repository": "https://github.com/GSA/usagov-benefits-eligibility",
@@ -17,8 +17,10 @@
     "test:pa11y": "pa11y http://localhost:3000/",
     "federalist:nuxtjsbug": "open https://github.com/nuxt/nuxt.js/issues/8973",
     "federalist:local": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/url\\(\\/fonts/url\\(..\\/fonts/g' *.css && cd ../../.. && ls -lhR _site && nuxt start",
-    "federalist": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css && cd ../../.. && ls -lhR _site",
-    "format": "prettier --write \"./**/*.{js,jsx,json,vue,md,css}\""
+    "federalist": "gulp && nuxt generate ; cd ./_site/_nuxt/css && if [ \"${BRANCH}\" = \"prod\" ] || [ \"${BRANCH}\" = \"release\" ]; then sed -i~ -Ee 's|(/?)fonts/|\\1../fonts/|g' *.css; else perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css; fi && cd ../../.. && ls -lhR _site",
+    "format": "prettier --write \"./**/*.{js,jsx,json,vue,md,css}\"",
+    "cypress:run_chrome": "npx cypress run --browser chrome",
+    "cypress:open": "npx cypress open"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.17.0",
@@ -27,6 +29,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/gtm": "^2.4.0",
+    "@nuxtjs/i18n": "^7.3.1",
     "@nuxtjs/sitemap": "^2.4.0",
     "ansi-html": "^0.0.9",
     "ansi-regex": ">=6.0.1",
@@ -36,6 +39,7 @@
     "eslint-plugin-jest": "^26.2.2",
     "glob-parent": ">=6.0.2",
     "jest-environment-jsdom": "^28.1.0",
+    "loader-utils": "^1.4.1",
     "nth-check": ">=2.1.0",
     "nuxt": "^2.15.8",
     "prismjs": "^1.27.0"
@@ -52,6 +56,7 @@
     "axe-core": "^4.4.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^28.0.2",
+    "cypress": "^12.11.0",
     "eslint": "8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
@@ -62,8 +67,8 @@
     "fibers": "^5.0.1",
     "gulp": "^4.0.2",
     "jest": "^28.1.0",
+    "jest-transform-stub": "^2.0.0",
     "lodash": "^4.17.21",
-    "nuxt-i18n": "^6.28.1",
     "pa11y": "^6.2.3",
     "path-parse": ">=1.0.7",
     "prettier": "^2.6.2",

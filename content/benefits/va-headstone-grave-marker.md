@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - death-of-a-loved-one
   - military-service
+  - financial-hardship
 source:
   name: va-headstone-grave-marker.source.name
   link: va-headstone-grave-marker.source.link

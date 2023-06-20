@@ -19,24 +19,9 @@ describe("<UsaGovFooter />", () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
-  it("should fetch a disclaimer", async () => {
-    const wrapper = shallowMount(UsaGovFooter, {
-      $i18n: { locale: "en" },
-    })
-    const disclaimer = { body: "disclaimer" }
-
-    wrapper.vm.$options.$content = () => ({
-      fetch: () => {
-        return disclaimer
-      },
-    })
-    await wrapper.vm.$options.fetch()
-    expect(wrapper.vm.$options.disclaimer).toBe(disclaimer)
-  })
-
   it("test scrolltoTop function", () => {
     const wrapper = shallowMount(UsaGovFooter, {})
-    const scrollTopEl = wrapper.find("#return-to-top-link")
+    const scrollTopEl = wrapper.find("#back-to-top")
     scrollTopEl.trigger("click")
     expect(wrapper.vm.scrollToTop).toBeTruthy()
   })

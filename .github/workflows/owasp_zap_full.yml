@@ -7,6 +7,8 @@ on:
   schedule:
     - cron: "30 3 * * SAT" # every Saturday at 3:30am
 
+permissions: read-all
+
 jobs:
   ZAP:
     name: OWASP ZAP Full Scan

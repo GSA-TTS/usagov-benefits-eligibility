@@ -5,6 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - death-of-a-loved-one
+  - financial-hardship
 source:
   name: doj-public-safety-officers-death-benefit.source.name
   link: doj-public-safety-officers-death-benefit.source.link

@@ -5,6 +5,7 @@ tags:
   - life insurance
 lifeEvents:
   - military-service
+  - financial-hardship
 source:
   name: va-life-insurance-for-veterans.source.name
   link: va-life-insurance-for-veterans.source.link

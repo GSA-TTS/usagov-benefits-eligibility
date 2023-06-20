@@ -3,9 +3,12 @@
   "national-emergency-and-disaster.summary": "If you have experience a national emergency or a disaster, help may be available, including temporary housing and financial help.",
   "national-emergency-and-disaster.lede": "",
   "national-emergency-and-disaster.secondaryHeadline": "Government assistance after surviving natural disaster",
-  "national-emergency-and-disaster.eligibilityCriteriaDescription": "Please check the boxes and select the options that best describe your situation. Answer as many questions as possible for the most accurate results.",
-  "national-emergency-and-disaster.eligibilityCriteria.label": "About you (the person applying for benefits)",
+  "national-emergency-and-disaster.eligibilityCriteriaDescription": "For the most accurate results, select the options that best describe your or the person applying for benefits situation. The list of benefits will reorder to prioritize the benefits you are most likely eligible for.",
+  "national-emergency-and-disaster.topLevelFilter.label": "Start here",
+  "national-emergency-and-disaster.topLevelFilter.label1": "",
+  "national-emergency-and-disaster.topLevelFilter.disableGroupWhen": "no",
+  "national-emergency-and-disaster.eligibilityCriteria.label": "About you (the applicant)",
   "national-emergency-and-disaster.eligibilityCriteria.description": "",
-  "national-emergency-and-disaster.eligibilityCriteria.label1": "Did you lose a loved one due to national emergency or disaster?",
+  "national-emergency-and-disaster.eligibilityCriteria.label1": "About the person who died",
   "national-emergency-and-disaster.eligibilityCriteria.description1": ""
 }

@@ -5,6 +5,7 @@ tags:
   - healthcare
 lifeEvents:
   - military-service
+  - financial-hardship
 source:
   name: va-health-care-benefits.source.name
   link: va-health-care-benefits.source.link

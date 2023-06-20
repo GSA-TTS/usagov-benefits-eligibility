@@ -5,13 +5,14 @@ tags:
   - financial assistance
 lifeEvents:
   - retirement
-  - late-adulthood
+  - financial-hardship
 source:
   name: ssa-retirement-benefits.source.name
   link: ssa-retirement-benefits.source.link
   isEnglish: ssa-retirement-benefits.source.linkIsEnglish
 
 summary: ssa-retirement-benefits.summary
+criticalApplicationInformation: ssa-retirement-benefits.criticalApplicationInformation
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.

@@ -5,7 +5,7 @@ tags:
   - financial assistance
 lifeEvents:
   - disability
-  - loss-of-job-and-low-income
+  - financial-hardship
 source:
   name: ssa-supplemental-security-income-child.source.name
   link: ssa-supplemental-security-income-child.source.link

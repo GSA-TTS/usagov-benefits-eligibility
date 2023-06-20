@@ -15,6 +15,7 @@ module.exports = {
     "plugin:vuejs-accessibility/recommended",
     "plugin:sonarjs/recommended",
     "prettier",
+    "plugin:cypress/recommended",
   ],
   plugins: ["vuejs-accessibility", "promise", "sonarjs", "jest"],
   // add your custom rules here
@@ -23,6 +24,7 @@ module.exports = {
     semi: ["off"],
     quotes: ["off"],
     indent: ["off"],
+    "no-console": 0,
     "jsx-a11y/click-events-have-key": "off",
     "padded-blocks": ["off"],
     "vue/singleline-html-element-content-newline": 0,

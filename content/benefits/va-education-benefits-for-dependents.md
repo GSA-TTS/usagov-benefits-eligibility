@@ -6,6 +6,7 @@ tags:
 lifeEvents:
   - school-and-education
   - military-service
+  - financial-hardship
 source:
   name: va-education-benefits-for-dependents.source.name
   link: va-education-benefits-for-dependents.source.link

@@ -4,8 +4,8 @@ headline: cms-medicare-disability.headline
 tags:
   - healthcare
 lifeEvents:
-  - late-adulthood
   - disability
+  - financial-hardship
 source:
   name: cms-medicare-disability.source.name
   link: cms-medicare-disability.source.link

@@ -3,6 +3,7 @@
   "va-dependency-and-indemnity-compensation-child.headline": "Dependency and Indemnity Compensation (DIC) for Child",
   "va-dependency-and-indemnity-compensation-child.source.name": "U.S. Department of Veteran Affairs",
   "va-dependency-and-indemnity-compensation-child.source.link": "https://www.va.gov/disability/dependency-indemnity-compensation/",
+  "va-dependency-and-indemnity-compensation-child.source.linkIsEnglish": "true",
   "va-dependency-and-indemnity-compensation-child.summary": "Tax-free financial assistance may be available to surviving family members of a service member or a veteran.",
   "va-dependency-and-indemnity-compensation-child.eligibility.acceptableValues": "yes",
   "va-dependency-and-indemnity-compensation-child.eligibility.label": "The deceased served in the active military, naval, or air service.",

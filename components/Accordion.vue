@@ -45,6 +45,13 @@
             style="max-width: unset">
             {{ benefit.summary }}
           </legend>
+
+          <div
+            v-if="benefit.criticalApplicationInformation"
+            class="text-bold margin-top-2">
+            {{ benefit.criticalApplicationInformation }}
+          </div>
+
           <EligibilityList
             :benefit-eligibility-criteria="benefit.eligibility"
             :benefit-source="sanitizedBenefitUrl(benefit, '')"

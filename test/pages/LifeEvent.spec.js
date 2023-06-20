@@ -114,9 +114,6 @@ describe("Life Event page", () => {
         dispatchEvent: jest.fn(),
       })),
     })
-    config.mocks.$config = {
-      oneEventVersion: false,
-    }
     config.mocks.lifeEvent = {}
     await beforeAllTests()
   })
@@ -271,16 +268,19 @@ describe("Life Event page", () => {
     })
     wrapper.vm.lifeEventBenefits = wrapper.vm.allLifeEventBenefits = [
       {
+        slug: "slugTwo",
         title: "two",
         eligibility: [{}, {}, {}],
         tags: ["tagOne"],
       },
       {
+        slug: "slugOne",
         title: "one",
         eligibility: [{}, {}, {}],
         tags: ["tagOne", "tagTwo"],
       },
       {
+        slug: "slugThree",
         title: "three",
         eligibility: [{}, {}, {}],
         tags: ["tagThree"],
