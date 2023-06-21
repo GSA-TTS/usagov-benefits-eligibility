@@ -29,21 +29,20 @@ describe("Footer Tests", () => {
           .and("contain", "Promoción del programa USAGov")
           .and("contain", "Artículos de interés")
 
-          footer.signUpHeading().should("contain", "Subscríbase para recibir información actualizada")
-          footer.signUpEmailInputField().should("exist")
-          footer.signUpButton().should("exist")
-  
-          footer.secondaryFooter().should("contain", "Centro de llamadas de USAGov")
-          footer.secondaryFooter().should("contain", "Haga una pregunta a USAGov en Español al")
-          footer.secondaryFooter().should("contain", "1-844-USAGOV1 (1-844-872-4681)")
-  
-          footer
-            .secondaryFooterSocialMedia()
-            .should("contain", "Instagram USAGov")
-            .should("contain", "Facebook USAGov")
-            .and("contain", "Twitter USAGov")
-            .and("contain", "YouTube USAGov")
-     
+        footer.signUpHeading().should("contain", "Subscríbase para recibir información actualizada")
+        footer.signUpEmailInputField().should("exist")
+        footer.signUpButton().should("exist")
+
+        footer.secondaryFooter().should("contain", "Centro de llamadas de USAGov")
+        footer.secondaryFooter().should("contain", "Haga una pregunta a USAGov en Español al")
+        footer.secondaryFooter().should("contain", "1-844-USAGOV1 (1-844-872-4681)")
+
+        footer
+          .secondaryFooterSocialMedia()
+          .should("contain", "Instagram USAGov")
+          .should("contain", "Facebook USAGov")
+          .and("contain", "Twitter USAGov")
+          .and("contain", "YouTube USAGov")
       } else {
         footer
           .primaryFooterHeading()
