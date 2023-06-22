@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import { header } from "../../support/page-objects/header.js"
+import { pages } from "../../support/page-objects/pages.js"
 
 describe("Header Tests", () => {
   before(() => {
@@ -8,16 +8,16 @@ describe("Header Tests", () => {
   })
 
   it("Validate USA banner header text", () => {
-    header.usaBanner().should("contain", "An official website of the United States government")
+    pages.usaBanner().should("contain", "An official website of the United States government")
   })
 
   it("Validate USA banner flag", () => {
-    header.usaBannerFlag().should("be.visible")
+    pages.usaBannerFlag().should("be.visible")
   })
 
   it("Validate expanded banner accordion", () => {
-    header.usaBannerAccordion().click()
-    header
+    pages.usaBannerAccordion().click()
+    pages
       .usaBannerExpandedAccordion()
       .should("contain", "Official websites use .gov")
       .and("contain", "website belongs to an official government organization in the United States")
@@ -25,7 +25,7 @@ describe("Header Tests", () => {
   })
 
   it("Validate main navigation link text", () => {
-    header
+    pages
       .mainNavigation()
       .should("contain", "All topics and services")
       .and("contain", "About the U.S. and its government")
@@ -37,8 +37,8 @@ describe("Header Tests", () => {
   })
 
   it("Validate language switcher", () => {
-    header.languageSwitcher().click()
-    header.usaBanner().should("contain", "Un sitio oficial del Gobierno de Estados Unidos")
-    header.languageSwitcher().should("contain", "English")
+    pages.languageSwitcher().click()
+    pages.usaBanner().should("contain", "Un sitio oficial del Gobierno de Estados Unidos")
+    pages.languageSwitcher().should("contain", "English")
   })
 })
