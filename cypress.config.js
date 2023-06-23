@@ -10,7 +10,7 @@ module.exports = defineConfig({
   },
   e2e: {
     baseUrl: "https://benefits-tool-demo.usa.gov/",
-    specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx}",
+    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
     testIsolation: false,
     supportFile: false,
   },

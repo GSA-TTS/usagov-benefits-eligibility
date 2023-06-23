@@ -1,86 +1,91 @@
 /// <reference types="Cypress" />
 
-import { footer } from "../../support/page-objects/footer.js"
+import { pages } from "../../support/page-objects/pages.js"
+import * as ES_DATA from "../../../locales/es/es.json"
+import * as EN_DATA from "../../../locales/en/en.json"
 
 const sitePages = require("../../fixtures/site-pages.json")
+const betaFooterContentES = ES_DATA.beta.footer
+const betaFooterContentEN = EN_DATA.beta.footer
+const footerContentES = ES_DATA.footer
+const footerContentEN = EN_DATA.footer
 
 describe("Footer Tests", () => {
   sitePages.forEach((sitePage) => {
-    it(`Validate footer in ${sitePage.name}`, () => {
+    it(`Validate footer content mapping in ${sitePage.name}`, () => {
       cy.visit({ url: sitePage.route })
       if (sitePage.route.includes("/es/")) {
-        footer
+        pages
           .primaryFooterHeading()
-          .should("contain", "Información del Gobierno")
-          .and("contain", "Sobre nosotros")
-          .and("contain", "Para agencias federales")
-          .and("contain", "Para medios de comunicación")
+          .should("contain", betaFooterContentES.column1Title)
+          .and("contain", betaFooterContentES.column2Title)
+          .and("contain", betaFooterContentES.column3Title)
+          .and("contain", betaFooterContentES.column4Title)
 
-        footer
+        pages
           .primaryFooterLinks()
-          .should("contain", "Todos los temas y servicios")
-          .and("contain", "Directorios de agencias y departamentos del Gobierno de EE. UU.")
-          .and("contain", "Ramas del Gobierno")
-          .and("contain", "Acerca de USAGov en Español")
-          .and("contain", "Políticas de privacidad y seguridad")
-          .and("contain", "Reporte problemas en este sitio")
-          .and("contain", "Colabore con nosotros")
-          .and("contain", "Lea nuestro blog (en inglés)")
-          .and("contain", "Promoción del programa USAGov")
-          .and("contain", "Artículos de interés")
+          .should("contain", betaFooterContentES.column1[0].linkText)
+          .and("contain", betaFooterContentES.column1[1].linkText)
+          .and("contain", betaFooterContentES.column1[2].linkText)
+          .and("contain", betaFooterContentES.column2[0].linkText)
+          .and("contain", betaFooterContentES.column2[1].linkText)
+          .and("contain", betaFooterContentES.column2[2].linkText)
+          .and("contain", betaFooterContentES.column2[3].linkText)
+          .and("contain", betaFooterContentES.column3[0].linkText)
+          .and("contain", betaFooterContentES.column3[1].linkText)
+          .and("contain", betaFooterContentES.column4[0].linkText)
+          .and("contain", betaFooterContentES.column4[1].linkText)
 
-          footer.signUpHeading().should("contain", "Subscríbase para recibir información actualizada")
-          footer.signUpEmailInputField().should("exist")
-          footer.signUpButton().should("exist")
-  
-          footer.secondaryFooter().should("contain", "Centro de llamadas de USAGov")
-          footer.secondaryFooter().should("contain", "Haga una pregunta a USAGov en Español al")
-          footer.secondaryFooter().should("contain", "1-844-USAGOV1 (1-844-872-4681)")
-  
-          footer
-            .secondaryFooterSocialMedia()
-            .should("contain", "Instagram USAGov")
-            .should("contain", "Facebook USAGov")
-            .and("contain", "Twitter USAGov")
-            .and("contain", "YouTube USAGov")
-     
-      } else {
-        footer
-          .primaryFooterHeading()
-          .should("contain", "Government information")
-          .and("contain", "About Us")
-          .and("contain", "For federal agencies")
-          .and("contain", "For media")
+        pages.footerSignUpHeading().should("contain", footerContentES.GroupThree.header)
+        pages.footerSignUpEmailInputField().should("exist")
+        pages.footerSignUpButton().should("exist")
 
-        footer
-          .primaryFooterLinks()
-          .should("contain", "All topics and services")
-          .and("contain", "Directory of U.S. government agencies and departments")
-          .and("contain", "Branches of government")
-          .and("contain", "About USAGov")
-          .and("contain", "Privacy and security policies")
-          .and("contain", "Accessibility policy")
-          .and("contain", "Report a website issue")
-          .and("contain", "Website usage data")
-          .and("contain", "Partner with us")
-          .and("contain", "Read our blog")
-          .and("contain", "USAGov Outreach")
-          .and("contain", "Feature articles")
+        pages.secondaryFooterHeader().should("contain", footerContentES.GroupTwo.header)
+        pages.secondaryFooterSubHeader().should("contain", footerContentES.GroupTwo.subHeader)
+        pages.secondaryFooterContact().should("contain", footerContentES.GroupTwo.linkOne)
 
-        footer.signUpHeading().should("contain", "Sign up to receive email updates")
-        footer.signUpEmailInputField().should("exist")
-        footer.signUpButton().should("exist")
-
-        footer.secondaryFooter().should("contain", "USAGov Contact Center")
-        footer.secondaryFooter().should("contain", "Ask USA.gov a question at")
-        footer.secondaryFooter().should("contain", "1-844-USAGOV1 (1-844-872-4681)")
-
-        footer
+        pages
           .secondaryFooterSocialMedia()
-          .should("contain", "Instagram USAGov")
-          .should("contain", "Facebook USAGov")
-          .and("contain", "Twitter USAGov")
-          .and("contain", "YouTube USAGov")
+          .should("contain", betaFooterContentES.social.icons[0].name)
+          .and("contain", betaFooterContentES.social.icons[1].name)
+          .and("contain", betaFooterContentES.social.icons[2].name)
+      } else {
+        pages
+          .primaryFooterHeading()
+          .should("contain", betaFooterContentEN.column1Title)
+          .and("contain", betaFooterContentEN.column2Title)
+          .and("contain", betaFooterContentEN.column3Title)
+          .and("contain", betaFooterContentEN.column4Title)
+
+        pages
+          .primaryFooterLinks()
+          .should("contain", betaFooterContentEN.column1[0].linkText)
+          .and("contain", betaFooterContentEN.column1[1].linkText)
+          .and("contain", betaFooterContentEN.column1[2].linkText)
+          .and("contain", betaFooterContentEN.column2[0].linkText)
+          .and("contain", betaFooterContentEN.column2[1].linkText)
+          .and("contain", betaFooterContentEN.column2[2].linkText)
+          .and("contain", betaFooterContentEN.column2[3].linkText)
+          .and("contain", betaFooterContentEN.column2[4].linkText)
+          .and("contain", betaFooterContentEN.column3[0].linkText)
+          .and("contain", betaFooterContentEN.column3[1].linkText)
+          .and("contain", betaFooterContentEN.column4[0].linkText)
+          .and("contain", betaFooterContentEN.column4[1].linkText)
+
+        pages.footerSignUpHeading().should("contain", footerContentEN.GroupThree.header)
+        pages.footerSignUpEmailInputField().should("exist")
+        pages.footerSignUpButton().should("exist")
+
+        pages.secondaryFooterHeader().should("contain", footerContentEN.GroupTwo.header)
+        pages.secondaryFooterSubHeader().should("contain", footerContentEN.GroupTwo.subHeader)
+        pages.secondaryFooterContact().should("contain", footerContentEN.GroupTwo.linkOne)
+
+        pages
+          .secondaryFooterSocialMedia()
+          .should("contain", betaFooterContentEN.social.icons[0].name)
+          .and("contain", betaFooterContentEN.social.icons[1].name)
+          .and("contain", betaFooterContentEN.social.icons[2].name)
+          .and("contain", betaFooterContentEN.social.icons[3].name)
       }
     })
   })
