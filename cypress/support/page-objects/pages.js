@@ -34,7 +34,6 @@ class Pages {
   otherBenefitsUsaCardGroup() {
     return cy.get(".usa-card-group li")
   }
-
 }
 
 export const pages = new Pages()
