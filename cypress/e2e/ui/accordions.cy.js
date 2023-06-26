@@ -10,7 +10,6 @@ import * as ES_BENEFITS_SSA_RETIREMENT_BENEFITS_CHILD_DISABLED from "../../../lo
 import * as EN_LIFE_EVENTS_DISABILITY from "../../../locales/en/life-events/disability.json"
 import * as EN_LIFE_EVENTS_RETIREMENT from "../../../locales/en/life-events/retirement.json"
 
-
 describe("Validate opening and closing of accordion cards", () => {
   beforeEach(() => {
     cy.visit("/")
@@ -66,13 +65,19 @@ describe("Validate opening and closing of accordion cards", () => {
   it("Validate opening and closing of Social Security Disability Insurance for Spouse accordion card in Disabilites Spanish page", () => {
     pages.otherBenefitsUsaCardGroup().contains(EN_LIFE_EVENTS_DISABILITY["disability.title"]).click()
     pages.languageSwitcher().click()
-    pages.accordions().contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"]).click()
+    pages
+      .accordions()
+      .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
+      .click()
     pages
       .accordions()
       .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
       .invoke("prop", "ariaExpanded")
       .should("eq", "true")
-    pages.accordions().contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"]).click()
+    pages
+      .accordions()
+      .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
+      .click()
     pages
       .accordions()
       .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
