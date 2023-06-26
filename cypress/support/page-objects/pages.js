@@ -31,6 +31,10 @@ class Pages {
   checkboxLabels() {
     return cy.get(".usa-checkbox__label")
   }
+  otherBenefitsUsaCardGroup() {
+    return cy.get(".usa-card-group li")
+  }
+
 }
 
 export const pages = new Pages()
