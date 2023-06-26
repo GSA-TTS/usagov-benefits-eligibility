@@ -7,48 +7,55 @@ import * as EN_BENEFITS_COVID_19 from "../../../locales/en/benefits/fema-covid-1
 const criteriaEn = EN_CRITERIA
 const benefitsCovid19En = EN_BENEFITS_COVID_19
 
-
 describe("Sort benefits accordion list using Covid 19 filter", () => {
-    beforeEach(() => {
-        cy.visit("/")
+  beforeEach(() => {
+    cy.visit("/")
+  })
+
+  it("Validate benefits are sorted by Relevance by default", () => {
+    pages.checkboxLabels().contains(criteriaEn["criteria.deceased_died_of_COVID.label"]).click()
+    const benefitsList = []
+
+    pages
+      .accordions()
+      .each(($el) => {
+        benefitsList.push($el.text().trim())
       })
+      .then(() => {
+        expect(benefitsList[0]).to.include(benefitsCovid19En["fema-covid-19-funeral-assistance.title"])
+      })
+  })
 
-    it("Validate benefits are sorted by Relevance by default", ()=> {
-        pages.checkboxLabels().contains(criteriaEn["criteria.deceased_died_of_COVID.label"]).click()
-        const benefitsList = []
-        
-        pages.accordions().each(($el) => {
-            benefitsList.push($el.text().trim())
-        }).then(() => {
-            expect(benefitsList[0]).to.include(benefitsCovid19En["fema-covid-19-funeral-assistance.title"])
-        })
-    })
+  it("Validate benefits are sorted alphabetically when using benefit sorted by Title A-Z", () => {
+    pages.benefitSortDropDown().select("Title (A-Z)")
+    pages.checkboxLabels().contains(criteriaEn["criteria.deceased_died_of_COVID.label"]).click()
+    const benefitsList = []
+    const benefitsListSorted = []
 
-    it("Validate benefits are sorted alphabetically when using benefit sorted by Title A-Z", ()=> {
-        pages.benefitSortDropDown().select("Title (A-Z)")
-        pages.checkboxLabels().contains(criteriaEn["criteria.deceased_died_of_COVID.label"]).click()
-        const benefitsList = []
-        const benefitsListSorted = []
+    pages
+      .accordions()
+      .each(($el) => {
+        benefitsList.push($el.text().trim())
+        benefitsListSorted.push($el.text().trim())
+      })
+      .then(() => {
+        expect(benefitsList).to.deep.equal(benefitsListSorted.sort())
+      })
+  })
 
-        pages.accordions().each(($el) => {
-            benefitsList.push($el.text().trim())
-            benefitsListSorted.push($el.text().trim())
-        }).then(() => {
-            expect(benefitsList).to.deep.equal(benefitsListSorted.sort())
-        })
-    })
+  it("Validate benefits are sorted by Relevance when user changes sort by Title A-Z to sort by Relevance", () => {
+    pages.benefitSortDropDown().select("Title (A-Z)")
+    pages.checkboxLabels().contains(criteriaEn["criteria.deceased_died_of_COVID.label"]).click()
+    pages.benefitSortDropDown().select("Relevance")
+    const benefitsList = []
 
-    it("Validate benefits are sorted by Relevance when user changes sort by Title A-Z to sort by Relevance", ()=> {
-        pages.benefitSortDropDown().select("Title (A-Z)")
-        pages.checkboxLabels().contains(criteriaEn["criteria.deceased_died_of_COVID.label"]).click()
-        pages.benefitSortDropDown().select("Relevance")
-        const benefitsList = []
-
-        pages.accordions().each(($el) => {
-            benefitsList.push($el.text().trim())
-        }).then(() => {
-            expect(benefitsList[0]).to.include(benefitsCovid19En["fema-covid-19-funeral-assistance.title"])
-        })
-    })
-
+    pages
+      .accordions()
+      .each(($el) => {
+        benefitsList.push($el.text().trim())
+      })
+      .then(() => {
+        expect(benefitsList[0]).to.include(benefitsCovid19En["fema-covid-19-funeral-assistance.title"])
+      })
+  })
 })
