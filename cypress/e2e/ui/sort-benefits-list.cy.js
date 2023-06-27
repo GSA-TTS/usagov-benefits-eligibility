@@ -11,7 +11,7 @@ describe("Sort benefits accordion list using Covid 19 filter", () => {
 
   it("Validate benefits are sorted by Relevance by default", () => {
     pages.checkboxLabels().contains(EN_CRITERIA["criteria.deceased_died_of_COVID.label"]).click()
-   
+
     const benefitsList = []
 
     pages
@@ -27,7 +27,7 @@ describe("Sort benefits accordion list using Covid 19 filter", () => {
   it("Validate benefits are sorted alphabetically when using benefit sorted by Title A-Z", () => {
     pages.benefitSortDropDown().select("Title (A-Z)")
     pages.checkboxLabels().contains(EN_CRITERIA["criteria.deceased_died_of_COVID.label"]).click()
-    
+
     const benefitsList = []
     const benefitsListSorted = []
 
@@ -47,7 +47,7 @@ describe("Sort benefits accordion list using Covid 19 filter", () => {
     pages.checkboxLabels().contains(EN_CRITERIA["criteria.deceased_died_of_COVID.label"]).click()
     pages.benefitSortDropDown().select("Relevance")
     cy.wait(1500)
-    
+
     const benefitsList = []
 
     pages
