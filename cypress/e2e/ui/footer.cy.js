@@ -9,7 +9,7 @@ const betaFooterContentES = ES_DATA.beta.footer
 const betaFooterContentEN = EN_DATA.beta.footer
 const footerContentES = ES_DATA.footer
 const footerContentEN = EN_DATA.footer
-const sitePages =  SITE_PAGES_DATA.sitePages
+const sitePages = SITE_PAGES_DATA.sitePages
 
 describe("Footer Tests", () => {
   sitePages.forEach((sitePage) => {
