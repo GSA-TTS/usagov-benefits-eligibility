@@ -67,6 +67,9 @@ class Pages {
   secondaryFooterSocialMedia() {
     return cy.get(".usa-footer__social-links .usa-social-link")
   }
+  buttons() {
+    return cy.get(".usa-button")
+  }
 }
 
 export const pages = new Pages()
