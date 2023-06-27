@@ -31,6 +31,9 @@ class Pages {
   checkboxLabels() {
     return cy.get(".usa-checkbox__label")
   }
+  benefitSortDropDown() {
+    return cy.get("select#benefitSort")
+  }
   primaryFooter() {
     return cy.get(".usa-footer__primary-section")
   }
