@@ -1,7 +1,9 @@
 /// <reference types="cypress"/>
 
 import { pages } from "../../support/page-objects/pages.js"
-const sitePages = require("../../fixtures/site-pages.json")
+import * as SITE_PAGES_DATA from "../../fixtures/site-pages.json"
+
+const sitePages = SITE_PAGES_DATA.sitePages
 
 describe("Validate Open All button functionality", () => {
   sitePages.forEach((sitePage) => {
