@@ -48,3 +48,8 @@ report/
 # Don't grab Megalinter reports
 /megalinter-reports/
 /reports/
+cspell.json
+
+#cypress
+/cypress/results/
+/cypress/screenshots

@@ -13,6 +13,7 @@ source:
 
 
 summary: ssa-survivor-benefits-spouse-disabled.summary
+criticalApplicationInformation: ssa-survivor-benefits-spouse-disabled.criticalApplicationInformation
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
@@ -24,7 +25,7 @@ eligibility:
     label: ssa-survivor-benefits-spouse-disabled.eligibility.label
     acceptableValues: [">50years"]
   - criteriaKey: applicant_marital_status
-    acceptableValues: [ssa-survivor-benefits-spouse-disabled.eligibility.acceptableValues1, 
+    acceptableValues: [ssa-survivor-benefits-spouse-disabled.eligibility.acceptableValues1,
     ssa-survivor-benefits-spouse-disabled.eligibility.acceptableValues2]
   - criteriaKey: applicant_disability
     acceptableValues: [true]

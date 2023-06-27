@@ -12,11 +12,12 @@ source:
   isEnglish: ssa-retirement-benefits-mothers-fathers.source.linkIsEnglish
 
 summary: ssa-retirement-benefits-mothers-fathers.summary
+criticalApplicationInformation: ssa-retirement-benefits-mothers-fathers.criticalApplicationInformation
 
 eligibility:
   # In the order you want the criteria to display, list criteriaKeys from the csv here, each followed by a comma-separated list of which values indicate eligibility for that criteria. Wrap individual values in quotes if they have inner commas.
   - criteriaKey: applicant_marital_status
-    acceptableValues: [ssa-retirement-benefits-mothers-fathers.eligibility.acceptableValues, 
+    acceptableValues: [ssa-retirement-benefits-mothers-fathers.eligibility.acceptableValues,
     ssa-retirement-benefits-mothers-fathers.eligibility.acceptableValues1]
   - criteriaKey: applicant_care_for_child
     acceptableValues: [true]

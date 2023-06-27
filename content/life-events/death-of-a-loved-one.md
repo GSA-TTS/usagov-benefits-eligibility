@@ -22,11 +22,11 @@ topLevelFilter:
     criteriaKey: deceased_served_in_active_military
     disableGroupKey: deceased-military
     disableGroupWhen: [death-of-a-loved-one.topLevelFilter.disableGroupWhen]
-    
+
   - label: death-of-a-loved-one.topLevelFilter.label3
     criteriaKey: deceased_american_indian
-    disableGroupKey: 
-    disableGroupWhen: 
+    disableGroupKey:
+    disableGroupWhen:
 
 eligibilityCriteria:
   - label: death-of-a-loved-one.eligibilityCriteria.label
@@ -57,7 +57,7 @@ eligibilityCriteria:
       - applicant_care_for_child
       - applicant_paid_funeral_expenses
       - applicant_funeral_reimbursment
-      - applicant_citizen_status	
+      - applicant_citizen_status
 
 relatedKeys:
   - disability

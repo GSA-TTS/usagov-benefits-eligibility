@@ -1,29 +1,22 @@
 <template>
   <div>
-    <div v-if="isUsaGov">
-      <div>
-        <UsaGovHeader />
-        <main id="main-content">
-          <Nuxt />
-        </main>
-        <UsaGovFooter />
-      </div>
-    </div>
-    <div v-else>
-      <Header />
+    <div>
+      <UsaGovHeader />
       <main id="main-content">
         <Nuxt />
       </main>
-      <Footer />
+      <UsaGovFooter />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
+  head() {
     return {
-      isUsaGov: this.$config.oneEventVersion !== false,
+      htmlAttrs: {
+        lang: this.$i18n.locale,
+      },
     }
   },
 }
