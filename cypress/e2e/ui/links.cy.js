@@ -1,6 +1,8 @@
 /// <reference types="cypress"/>
 
-const sitePages = require("../../fixtures/site-pages.json")
+import * as SITE_PAGES_DATA from "../../fixtures/site-pages.json"
+
+const sitePages = SITE_PAGES_DATA.sitePages
 
 describe("Verify correct status code when user navigates links", () => {
   sitePages.forEach((sitePage) => {

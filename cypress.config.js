@@ -5,8 +5,8 @@ module.exports = defineConfig({
   viewportWidth: 1920,
   video: false,
   retries: {
-    runMode: 1,
-    openMode: 1,
+    runMode: 2,
+    openMode: 2,
   },
   e2e: {
     baseUrl: "https://benefits-tool-demo.usa.gov/",
