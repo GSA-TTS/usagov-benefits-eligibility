@@ -31,6 +31,45 @@ class Pages {
   checkboxLabels() {
     return cy.get(".usa-checkbox__label")
   }
+  otherBenefitsUsaCardGroup() {
+    return cy.get(".usa-card-group li")
+  }
+  benefitSortDropDown() {
+    return cy.get("select#benefitSort")
+  }
+  primaryFooter() {
+    return cy.get(".usa-footer__primary-section")
+  }
+  primaryFooterHeading() {
+    return cy.get(".usa-footer__primary-section h3")
+  }
+  primaryFooterLinks() {
+    return cy.get(".usa-footer__primary-section .usa-footer__secondary-link")
+  }
+  footerSignUpHeading() {
+    return cy.get(".usa-footer__primary-section .usa-sign-up__heading")
+  }
+  footerSignUpEmailInputField() {
+    return cy.get("input#signup-email")
+  }
+  footerSignUpButton() {
+    return cy.get(".usa-sign-up .usa-button")
+  }
+  secondaryFooterHeader() {
+    return cy.get(".usa-footer__logo-heading")
+  }
+  secondaryFooterSubHeader() {
+    return cy.get("#bottom-phone p")
+  }
+  secondaryFooterContact() {
+    return cy.get(".usa-footer__secondary-section")
+  }
+  secondaryFooterSocialMedia() {
+    return cy.get(".usa-footer__social-links .usa-social-link")
+  }
+  buttons() {
+    return cy.get(".usa-button")
+  }
 }
 
 export const pages = new Pages()
