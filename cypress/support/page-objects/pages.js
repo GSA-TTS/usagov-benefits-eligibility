@@ -31,6 +31,9 @@ class Pages {
   checkboxLabels() {
     return cy.get(".usa-checkbox__label")
   }
+  otherBenefitsUsaCardGroup() {
+    return cy.get(".usa-card-group li")
+  }
   benefitSortDropDown() {
     return cy.get("select#benefitSort")
   }
