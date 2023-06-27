@@ -3,12 +3,13 @@
 import { pages } from "../../support/page-objects/pages.js"
 import * as ES_DATA from "../../../locales/es/es.json"
 import * as EN_DATA from "../../../locales/en/en.json"
+import * as SITE_PAGES_DATA from "../../fixtures/site-pages.json"
 
-const sitePages = require("../../fixtures/site-pages.json")
 const betaFooterContentES = ES_DATA.beta.footer
 const betaFooterContentEN = EN_DATA.beta.footer
 const footerContentES = ES_DATA.footer
 const footerContentEN = EN_DATA.footer
+const sitePages =  SITE_PAGES_DATA.sitePages
 
 describe("Footer Tests", () => {
   sitePages.forEach((sitePage) => {
