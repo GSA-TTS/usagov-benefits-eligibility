@@ -20,5 +20,6 @@
         "cache-control": "public, max-age=60, must-revalidate"
       }
     }
-  ]
+  ],
+  "cache": false
 }
