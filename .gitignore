@@ -52,4 +52,4 @@ cspell.json
 
 #cypress
 /cypress/results/
-/cypress/fixtures/
+/cypress/screenshots
