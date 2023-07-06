@@ -80,7 +80,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxt/content", "@nuxtjs/i18n", "@nuxtjs/dotenv", "@nuxtjs/gtm", "@nuxtjs/sitemap"],
+  modules: ["@nuxt/content", "@nuxtjs/i18n", "@nuxtjs/dotenv", "@nuxtjs/gtm", "@nuxtjs/sitemap"],
   gtm: {
     id: "GTM-P2F6CBK",
   },
@@ -105,9 +105,6 @@ export default {
       path: "death-of-a-loved-one",
     },
   },
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
