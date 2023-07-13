@@ -82,7 +82,7 @@ class Pages {
   retirementAndDisabilityPaymentsCard() {
     return cy.get("#acc-content-dod-retirement-and-disability-payments")
   }
-  thriftSavingsPlanCard(){
+  thriftSavingsPlanCard() {
     return cy.get("#acc-content-dod-thrift-savings-plan")
   }
   housingImprovementProgramCard() {
