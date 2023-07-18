@@ -41,7 +41,7 @@ jobs:
         uses: cypress-io/github-action@v3
         with:
           browser: chrome
-          headless: true
+          headed: true
           start: npm run federalist
 
       - uses: actions/upload-artifact@v3
