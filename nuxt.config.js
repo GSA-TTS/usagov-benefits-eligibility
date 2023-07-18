@@ -101,7 +101,6 @@ export default {
     langDir: "locales",
     defaultLocale: "en",
     rootRedirect: {
-      statusCode: 301,
       path: "death-of-a-loved-one",
     },
   },
