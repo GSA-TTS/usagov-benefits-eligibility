@@ -7,13 +7,13 @@ on:
 permissions: read-all
 
 jobs:
-  install:
+  job1:
+    name: cypress-run
     runs-on: ubuntu-latest
-
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2, 3]
+        containers: [chrome, firefox, edge]
 
     steps:
       - name: Checkout
@@ -45,15 +45,11 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          command: npm run cy:run:cross-browser
-          parallel: true
+          browser: ${{ matrix.containers }}
           start: npm run federalist
-        env:
-          SPLIT: ${{ strategy.job-total }}
-          SPLIT_INDEX: ${{ strategy.job-index }}
-
+       
       - uses: actions/upload-artifact@v3
-        if: always ()
+        if: failure() 
         with:
           name: cypress-screenshots
-          path: cypress/screenshots
+          path: .cypress/screenshots
