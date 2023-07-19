@@ -20,14 +20,12 @@ describe("Validate opening and closing of accordion cards", () => {
     pages
       .accordions()
       .contains(EN_BENEFITS_COVID_19["fema-covid-19-funeral-assistance.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "true")
+      .should("have.attr", "aria-expanded", "true")
     pages.accordions().contains(EN_BENEFITS_COVID_19["fema-covid-19-funeral-assistance.title"]).click()
     pages
       .accordions()
       .contains(EN_BENEFITS_COVID_19["fema-covid-19-funeral-assistance.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "false")
+      .should("have.attr", "aria-expanded", "false")
   })
 
   it("Validate opening and closing of Veteran's Burial Allowance accordion card in Death of a loved one Spanish page", () => {
@@ -36,14 +34,12 @@ describe("Validate opening and closing of accordion cards", () => {
     pages
       .accordions()
       .contains(ES_BENEFITS_VA_BURIAL_ALLOWANCE["va-burial-allowance.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "true")
+      .should("have.attr", "aria-expanded", "true")
     pages.accordions().contains(ES_BENEFITS_VA_BURIAL_ALLOWANCE["va-burial-allowance.title"]).click()
     pages
       .accordions()
       .contains(ES_BENEFITS_VA_BURIAL_ALLOWANCE["va-burial-allowance.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "false")
+      .should("have.attr", "aria-expanded", "false")
   })
 
   it("Validate opening and closing of Tax Relief Programs for People with Disabilites accordion card in Disabilites English page", () => {
@@ -52,14 +48,12 @@ describe("Validate opening and closing of accordion cards", () => {
     pages
       .accordions()
       .contains(EN_BENEFITS_IRS_TAX_HELP_DISABILITY["irs-tax-help-disability.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "true")
+      .should("have.attr", "aria-expanded", "true")
     pages.accordions().contains(EN_BENEFITS_IRS_TAX_HELP_DISABILITY["irs-tax-help-disability.title"]).click()
     pages
       .accordions()
       .contains(EN_BENEFITS_IRS_TAX_HELP_DISABILITY["irs-tax-help-disability.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "false")
+      .should("have.attr", "aria-expanded", "false")
   })
 
   it("Validate opening and closing of Social Security Disability Insurance for Spouse accordion card in Disabilites Spanish page", () => {
@@ -72,8 +66,7 @@ describe("Validate opening and closing of accordion cards", () => {
     pages
       .accordions()
       .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "true")
+      .should("have.attr", "aria-expanded", "true")
     pages
       .accordions()
       .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
@@ -81,8 +74,7 @@ describe("Validate opening and closing of accordion cards", () => {
     pages
       .accordions()
       .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "false")
+      .should("have.attr", "aria-expanded", "false")
   })
 
   it("Validate opening and closing of Veteran's Pension accordion card in Retirement English page", () => {
@@ -91,14 +83,12 @@ describe("Validate opening and closing of accordion cards", () => {
     pages
       .accordions()
       .contains(EN_BENEFITS_VA_PENSION["va-pension.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "true")
+      .should("have.attr", "aria-expanded", "true")
     pages.accordions().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).click()
     pages
       .accordions()
       .contains(EN_BENEFITS_VA_PENSION["va-pension.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "false")
+      .should("have.attr", "aria-expanded", "false")
   })
 
   it("Validate opening and closing of Retirement Benefits for Child with Disabilities accordion card in Retirement Spanish page", () => {
@@ -111,8 +101,7 @@ describe("Validate opening and closing of accordion cards", () => {
     pages
       .accordions()
       .contains(ES_BENEFITS_SSA_RETIREMENT_BENEFITS_CHILD_DISABLED["ssa-retirement-benefits-child-disabled.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "true")
+      .should("have.attr", "aria-expanded", "true")
     pages
       .accordions()
       .contains(ES_BENEFITS_SSA_RETIREMENT_BENEFITS_CHILD_DISABLED["ssa-retirement-benefits-child-disabled.title"])
@@ -120,7 +109,6 @@ describe("Validate opening and closing of accordion cards", () => {
     pages
       .accordions()
       .contains(ES_BENEFITS_SSA_RETIREMENT_BENEFITS_CHILD_DISABLED["ssa-retirement-benefits-child-disabled.title"])
-      .invoke("prop", "ariaExpanded")
-      .should("eq", "false")
+      .should("have.attr", "aria-expanded", "false")
   })
 })
