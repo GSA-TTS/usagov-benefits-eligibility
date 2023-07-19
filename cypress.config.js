@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress")
+const cypressSplit = require('cypress-split')
 
 module.exports = defineConfig({
   viewportHeight: 1080,
@@ -13,5 +14,9 @@ module.exports = defineConfig({
     specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
     testIsolation: false,
     supportFile: false,
+    setupNodeEvents(on, config) {
+      cypressSplit(on, config)
+      return config
+    },
   },
 })
