@@ -7,7 +7,7 @@ on:
 permissions: read-all
 
 jobs:
-  install:
+  job1:
     runs-on: ubuntu-latest
 
     strategy:
