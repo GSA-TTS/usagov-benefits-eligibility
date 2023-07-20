@@ -7,9 +7,9 @@ on:
 permissions: read-all
 
 jobs:
-  job1:
-    name: cypress-run
+  install:
     runs-on: ubuntu-latest
+
     strategy:
       fail-fast: false
       matrix:
@@ -47,9 +47,9 @@ jobs:
         with:
           browser: ${{ matrix.containers }}
           start: npm run federalist
-       
+
       - uses: actions/upload-artifact@v3
-        if: failure() 
+        if: failure ()
         with:
           name: cypress-screenshots
-          path: .cypress/screenshots
+          path: cypress/screenshots
