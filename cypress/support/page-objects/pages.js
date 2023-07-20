@@ -70,6 +70,24 @@ class Pages {
   buttons() {
     return cy.get(".usa-button")
   }
+  survivorBenefitsChildCard() {
+    return cy.get("#acc-content-ssa-survivor-benefits-child")
+  }
+  survivorBenefitsParentCard() {
+    return cy.get("#acc-content-ssa-survivor-benefits-parents")
+  }
+  medicareSavingsProgramsCard() {
+    return cy.get("#acc-content-cms-medicare-savings-programs")
+  }
+  retirementAndDisabilityPaymentsCard() {
+    return cy.get("#acc-content-dod-retirement-and-disability-payments")
+  }
+  thriftSavingsPlanCard() {
+    return cy.get("#acc-content-dod-thrift-savings-plan")
+  }
+  housingImprovementProgramCard() {
+    return cy.get("#acc-content-doi-housing-improvement-program")
+  }
 }
 
 export const pages = new Pages()
