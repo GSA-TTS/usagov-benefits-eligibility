@@ -19,7 +19,10 @@
     "federalist:local": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/url\\(\\/fonts/url\\(..\\/fonts/g' *.css && cd ../../.. && ls -lhR _site && nuxt start",
     "federalist": "gulp && nuxt generate ; cd ./_site/_nuxt/css && if [ \"${BRANCH}\" = \"prod\" ] || [ \"${BRANCH}\" = \"release\" ]; then sed -i~ -Ee 's|(/?)fonts/|\\1../fonts/|g' *.css; else perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css; fi && cd ../../.. && ls -lhR _site",
     "format": "prettier --write \"./**/*.{js,jsx,json,vue,md,css}\"",
-    "cypress:run_chrome": "npx cypress run --browser chrome",
+    "cy:run:chrome": "npx cypress run --browser chrome",
+    "cy:run:edge": "npx cypress run --browser edge",
+    "cy:run:firefox": "npx cypress run --browser firefox",
+    "cy:run:cross-browser": "npm run cy:run:chrome && npm run cy:run:edge && npm run cy:run:firefox",
     "cypress:open": "npx cypress open"
   },
   "dependencies": {},

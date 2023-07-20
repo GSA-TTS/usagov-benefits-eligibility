@@ -8,7 +8,13 @@ permissions: read-all
 
 jobs:
   install:
+    name: cypress-e2e-run
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [chrome, firefox, edge]
 
     steps:
       - name: Checkout
@@ -38,14 +44,13 @@ jobs:
           cat cypress.config.js
 
       - name: Cypress run
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v5
         with:
-          browser: chrome
-          headless: true
+          browser: ${{ matrix.containers }}
           start: npm run federalist
 
       - uses: actions/upload-artifact@v3
-        if: always ()
+        if: failure ()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
