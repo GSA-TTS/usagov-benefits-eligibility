@@ -1,6 +1,6 @@
 {
   "name": "usagov-benefits-eligibility",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "BEARS will be a proactive notification service that provides timely and personalized information about benefits eligibility, contextualized by life events.",
   "license": "See license in CONTRIBUTING.md",
   "repository": "https://github.com/GSA/usagov-benefits-eligibility",
@@ -19,7 +19,10 @@
     "federalist:local": "gulp && nuxt generate && cd ./_site/_nuxt/css && perl -pi -e 's/url\\(\\/fonts/url\\(..\\/fonts/g' *.css && cd ../../.. && ls -lhR _site && nuxt start",
     "federalist": "gulp && nuxt generate ; cd ./_site/_nuxt/css && if [ \"${BRANCH}\" = \"prod\" ] || [ \"${BRANCH}\" = \"release\" ]; then sed -i~ -Ee 's|(/?)fonts/|\\1../fonts/|g' *.css; else perl -pi -e 's/\\/fonts\\//\\/_nuxt\\/fonts\\//g' *.css; fi && cd ../../.. && ls -lhR _site",
     "format": "prettier --write \"./**/*.{js,jsx,json,vue,md,css}\"",
-    "cypress:run_chrome": "npx cypress run --browser chrome",
+    "cy:run:chrome": "npx cypress run --browser chrome",
+    "cy:run:edge": "npx cypress run --browser edge",
+    "cy:run:firefox": "npx cypress run --browser firefox",
+    "cy:run:cross-browser": "npm run cy:run:chrome && npm run cy:run:edge && npm run cy:run:firefox",
     "cypress:open": "npx cypress open"
   },
   "dependencies": {},
@@ -47,7 +50,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^28.0.2",
     "core-js": "^3.23.5",
-    "cypress": "^12.11.0",
+    "cypress": "^12.17.1",
     "date-fns": "^2.28.0",
     "eslint": "8.20.0",
     "eslint-plugin-jest": "^26.2.2",
