@@ -8,6 +8,7 @@ permissions: read-all
 
 jobs:
   job1:
+    name: cypress-run
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
