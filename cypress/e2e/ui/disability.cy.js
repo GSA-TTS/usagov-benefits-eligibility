@@ -9,9 +9,7 @@ import * as EN_SSA_DISABILITY_INSURANCE_CHILD_DISABLED_DATA from "../../../local
 import * as ES_DOD_RETIREMENT_AND_DISABILITY_PAYMENTS_DATA from "../../../locales/es/benefits/dod-retirement-and-disability-payments.json"
 import * as EN_CMS_MEDICARE_SAVINGS_PROGRAMS_DATA from "../../../locales/en/benefits/cms-medicare-savings-programs.json"
 
-
 describe("Tests for Disability English Page", () => {
-
   beforeEach(() => {
     cy.visit("/")
     cy.wait(1000)
@@ -28,11 +26,13 @@ describe("Tests for Disability English Page", () => {
     pages.checkboxLabels().contains(EN_CRITERIA_DATA["criteria.applicant_ability_to_work.label"]).click()
     pages.checkboxLabels().contains(EN_CRITERIA_DATA["criteria.applicant_child_spouse_SS.label"]).click()
     pages.checkboxLabels().contains(EN_CRITERIA_DATA["criteria.applicant_citizen_status.label"]).click()
-    pages.applicantMaritalStatus().select(
-      EN_SSA_DISABILITY_INSURANCE_CHILD_DISABLED_DATA[
-        "ssa-disability-insurance-child-disabled.eligibility.acceptableValues"
-      ]
-    )
+    pages
+      .applicantMaritalStatus()
+      .select(
+        EN_SSA_DISABILITY_INSURANCE_CHILD_DISABLED_DATA[
+          "ssa-disability-insurance-child-disabled.eligibility.acceptableValues"
+        ]
+      )
 
     pages
       .accordionHeadings()
@@ -83,12 +83,18 @@ describe("Tests for Disability English Page", () => {
 
   it("Validate content on Medicare Savings Programs (MSP) accordion is displaying correctly", () => {
     pages.otherBenefitsUsaCardGroup().contains(EN_LIFE_EVENTS_DISABILITY_DATA["disability.title"]).click()
-    pages.accordionButtons().contains(EN_CMS_MEDICARE_SAVINGS_PROGRAMS_DATA["cms-medicare-savings-programs.title"]).click()
+    pages
+      .accordionButtons()
+      .contains(EN_CMS_MEDICARE_SAVINGS_PROGRAMS_DATA["cms-medicare-savings-programs.title"])
+      .click()
     pages
       .medicareSavingsProgramsCard()
       .should("contain", EN_CMS_MEDICARE_SAVINGS_PROGRAMS_DATA["cms-medicare-savings-programs.source.name"])
       .and("contain", EN_CMS_MEDICARE_SAVINGS_PROGRAMS_DATA["cms-medicare-savings-programs.summary"])
-      .and("contain", EN_CMS_MEDICARE_SAVINGS_PROGRAMS_DATA["cms-medicare-savings-programs.criticalApplicationInformation"])
+      .and(
+        "contain",
+        EN_CMS_MEDICARE_SAVINGS_PROGRAMS_DATA["cms-medicare-savings-programs.criticalApplicationInformation"]
+      )
       .and("contain", EN_CMS_MEDICARE_SAVINGS_PROGRAMS_DATA["cms-medicare-savings-programs.eligibility.label"])
       .and("contain", EN_CMS_MEDICARE_SAVINGS_PROGRAMS_DATA["cms-medicare-savings-programs.source.link"])
   })
@@ -115,20 +121,14 @@ describe("Tests for Disability Spanish Page", () => {
       .contains("sí")
       .click()
     pages.checkboxLabels().contains(ES_CRITERIA_DATA["criteria.applicant_disability.label"]).click()
-    pages
-      .applicantServiceStatusDropdown()
-      .select(
-        ES_CRITERIA_DATA[
-          "criteria.applicant_service_status.values3"
-        ]
-      )
+    pages.applicantServiceStatusDropdown().select(ES_CRITERIA_DATA["criteria.applicant_service_status.values3"])
 
     pages
       .accordionButtons()
       .contains(ES_DOD_RETIREMENT_AND_DISABILITY_PAYMENTS_DATA["dod-retirement-and-disability-payments.title"])
       .click()
-    
-      pages
+
+    pages
       .retirementAndDisabilityPaymentsCard()
       .should(
         "contain",
@@ -162,8 +162,8 @@ describe("Tests for Disability Spanish Page", () => {
         ]
       )
 
-      pages.retirementAndDisabilityPaymentsIcons().each(($icon) => {
-        cy.wrap($icon).parent().should("have.class", "text-success-dark")
-      })
+    pages.retirementAndDisabilityPaymentsIcons().each(($icon) => {
+      cy.wrap($icon).parent().should("have.class", "text-success-dark")
+    })
   })
 })

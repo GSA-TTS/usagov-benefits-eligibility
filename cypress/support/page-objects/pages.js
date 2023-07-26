@@ -77,7 +77,7 @@ class Pages {
     return cy.get("#acc-content-ssa-survivor-benefits-child")
   }
   survivorBenefitsChildIcons() {
-    return cy.get('#acc-content-ssa-survivor-benefits-child .print\\:display-none .usa-icon')
+    return cy.get("#acc-content-ssa-survivor-benefits-child .print\\:display-none .usa-icon")
   }
   survivorBenefitsParentCard() {
     return cy.get("#acc-content-ssa-survivor-benefits-parents")
@@ -103,30 +103,30 @@ class Pages {
   housingImprovementProgramIcons() {
     return cy.get("#acc-content-doi-housing-improvement-program .print\\:display-none .usa-icon")
   }
- 
+
   disabilityInsuranceChildDisabled() {
     return cy.get("#acc-content-ssa-disability-insurance-child-disabled")
   }
-  
+
   disabilityInsuranceChildDisabledEligibilityIcons() {
     return cy.get("#acc-content-ssa-disability-insurance-child-disabled  .print\\:display-none .usa-icon")
   }
   retirementAndDisabilityPaymentsIcons() {
     return cy.get("#acc-content-dod-retirement-and-disability-payments .print\\:display-none .usa-icon")
   }
-  applicantDateOfBirthMonth(){
+  applicantDateOfBirthMonth() {
     return cy.get("input[name$='applicant_date_of_birth-month']")
   }
   applicantDateOfBirthDay() {
-    return  cy.get("input[name$='applicant_date_of_birth-day']")
+    return cy.get("input[name$='applicant_date_of_birth-day']")
   }
   applicantDateOfBirthYear() {
-    return  cy.get("input[name$='applicant_date_of_birth-year']")
+    return cy.get("input[name$='applicant_date_of_birth-year']")
   }
   legend() {
     return cy.get(".usa-legend")
   }
-  applicantServiceStatusDropdown(){
+  applicantServiceStatusDropdown() {
     return cy.get("select[name$='applicant_service_status-applicant-military']")
   }
   applicantRelationshipDropdown() {
@@ -135,7 +135,6 @@ class Pages {
   applicantMaritalStatus() {
     return cy.get("select[name$='applicant_marital_status-applicant']")
   }
-
 }
 
 export const pages = new Pages()

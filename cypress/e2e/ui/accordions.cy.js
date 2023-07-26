@@ -80,7 +80,10 @@ describe("Validate opening and closing of accordion cards", () => {
   it("Validate opening and closing of Veteran's Pension accordion card in Retirement English page", () => {
     pages.otherBenefitsUsaCardGroup().contains(EN_LIFE_EVENTS_RETIREMENT["retirement.title"]).click()
     pages.accordionButtons().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).click()
-    pages.accordionButtons().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).should("have.attr", "aria-expanded", "true")
+    pages
+      .accordionButtons()
+      .contains(EN_BENEFITS_VA_PENSION["va-pension.title"])
+      .should("have.attr", "aria-expanded", "true")
     pages.accordionButtons().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).click()
     pages
       .accordionButtons()

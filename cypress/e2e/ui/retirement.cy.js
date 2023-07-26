@@ -9,7 +9,6 @@ import * as EN_LIFE_EVENTS_RETIREMENT_DATA from "../../../locales/en/life-events
 import * as ES_DOI_HOUSING_IMPROVEMENT_PROGRAM_DATA from "../../../locales/es/benefits/doi-housing-improvement-program.json"
 
 describe("Tests for Retirement English Page", () => {
-
   beforeEach(() => {
     cy.visit("/")
     cy.wait(1000)
@@ -54,7 +53,6 @@ describe("Tests for Retirement English Page", () => {
 })
 
 describe("Tests for Retirement Spanish Page", () => {
-
   beforeEach(() => {
     cy.visit("/")
     pages.otherBenefitsUsaCardGroup().contains(EN_LIFE_EVENTS_RETIREMENT_DATA["retirement.title"]).click()
@@ -85,8 +83,8 @@ describe("Tests for Retirement Spanish Page", () => {
       .and("contain", ES_DOI_HOUSING_IMPROVEMENT_PROGRAM_DATA["doi-housing-improvement-program.eligibility.label"])
       .and("contain", ES_DOI_HOUSING_IMPROVEMENT_PROGRAM_DATA["doi-housing-improvement-program.source.link"])
 
-      pages.housingImprovementProgramIcons().each(($icon) => {
-        cy.wrap($icon).parent().should("have.class", "text-success-dark")
-      })
+    pages.housingImprovementProgramIcons().each(($icon) => {
+      cy.wrap($icon).parent().should("have.class", "text-success-dark")
+    })
   })
 })

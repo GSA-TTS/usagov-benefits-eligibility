@@ -16,4 +16,3 @@ describe("Verify UI is rendering content correctly", () => {
     })
   })
 })
-
