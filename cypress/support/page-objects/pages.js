@@ -25,7 +25,10 @@ class Pages {
   closeAllButton() {
     return cy.get(".flex-row .close-all")
   }
-  accordions() {
+  accordionHeadings() {
+    return cy.get(".usa-accordion__heading")
+  }
+  accordionButtons() {
     return cy.get(".usa-accordion__heading .usa-accordion__button")
   }
   checkboxLabels() {
@@ -73,8 +76,14 @@ class Pages {
   survivorBenefitsChildCard() {
     return cy.get("#acc-content-ssa-survivor-benefits-child")
   }
+  survivorBenefitsChildIcons() {
+    return cy.get('#acc-content-ssa-survivor-benefits-child .print\\:display-none .usa-icon')
+  }
   survivorBenefitsParentCard() {
     return cy.get("#acc-content-ssa-survivor-benefits-parents")
+  }
+  survivorBenefitsParentIcons() {
+    return cy.get("#acc-content-ssa-survivor-benefits-parents .print\\:display-none .usa-icon")
   }
   medicareSavingsProgramsCard() {
     return cy.get("#acc-content-cms-medicare-savings-programs")
@@ -85,9 +94,48 @@ class Pages {
   thriftSavingsPlanCard() {
     return cy.get("#acc-content-dod-thrift-savings-plan")
   }
+  thriftSavingsPlanIcons() {
+    return cy.get("#acc-content-dod-thrift-savings-plan .print\\:display-none .usa-icon")
+  }
   housingImprovementProgramCard() {
     return cy.get("#acc-content-doi-housing-improvement-program")
   }
+  housingImprovementProgramIcons() {
+    return cy.get("#acc-content-doi-housing-improvement-program .print\\:display-none .usa-icon")
+  }
+ 
+  disabilityInsuranceChildDisabled() {
+    return cy.get("#acc-content-ssa-disability-insurance-child-disabled")
+  }
+  
+  disabilityInsuranceChildDisabledEligibilityIcons() {
+    return cy.get("#acc-content-ssa-disability-insurance-child-disabled  .print\\:display-none .usa-icon")
+  }
+  retirementAndDisabilityPaymentsIcons() {
+    return cy.get("#acc-content-dod-retirement-and-disability-payments .print\\:display-none .usa-icon")
+  }
+  applicantDateOfBirthMonth(){
+    return cy.get("input[name$='applicant_date_of_birth-month']")
+  }
+  applicantDateOfBirthDay() {
+    return  cy.get("input[name$='applicant_date_of_birth-day']")
+  }
+  applicantDateOfBirthYear() {
+    return  cy.get("input[name$='applicant_date_of_birth-year']")
+  }
+  legend() {
+    return cy.get(".usa-legend")
+  }
+  applicantServiceStatusDropdown(){
+    return cy.get("select[name$='applicant_service_status-applicant-military']")
+  }
+  applicantRelationshipDropdown() {
+    return cy.get("select[name$='applicant_relationship-criteriaGroup']")
+  }
+  applicantMaritalStatus() {
+    return cy.get("select[name$='applicant_marital_status-applicant']")
+  }
+
 }
 
 export const pages = new Pages()

@@ -16,42 +16,42 @@ describe("Validate opening and closing of accordion cards", () => {
   })
 
   it("Validate opening and closing of COVID 19 Funeral Assistance accordion card in Death of a loved one English page", () => {
-    pages.accordions().contains(EN_BENEFITS_COVID_19["fema-covid-19-funeral-assistance.title"]).click()
+    pages.accordionButtons().contains(EN_BENEFITS_COVID_19["fema-covid-19-funeral-assistance.title"]).click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(EN_BENEFITS_COVID_19["fema-covid-19-funeral-assistance.title"])
       .should("have.attr", "aria-expanded", "true")
-    pages.accordions().contains(EN_BENEFITS_COVID_19["fema-covid-19-funeral-assistance.title"]).click()
+    pages.accordionButtons().contains(EN_BENEFITS_COVID_19["fema-covid-19-funeral-assistance.title"]).click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(EN_BENEFITS_COVID_19["fema-covid-19-funeral-assistance.title"])
       .should("have.attr", "aria-expanded", "false")
   })
 
   it("Validate opening and closing of Veteran's Burial Allowance accordion card in Death of a loved one Spanish page", () => {
     pages.languageSwitcher().click()
-    pages.accordions().contains(ES_BENEFITS_VA_BURIAL_ALLOWANCE["va-burial-allowance.title"]).click()
+    pages.accordionButtons().contains(ES_BENEFITS_VA_BURIAL_ALLOWANCE["va-burial-allowance.title"]).click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_VA_BURIAL_ALLOWANCE["va-burial-allowance.title"])
       .should("have.attr", "aria-expanded", "true")
-    pages.accordions().contains(ES_BENEFITS_VA_BURIAL_ALLOWANCE["va-burial-allowance.title"]).click()
+    pages.accordionButtons().contains(ES_BENEFITS_VA_BURIAL_ALLOWANCE["va-burial-allowance.title"]).click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_VA_BURIAL_ALLOWANCE["va-burial-allowance.title"])
       .should("have.attr", "aria-expanded", "false")
   })
 
   it("Validate opening and closing of Tax Relief Programs for People with Disabilites accordion card in Disabilites English page", () => {
     pages.otherBenefitsUsaCardGroup().contains(EN_LIFE_EVENTS_DISABILITY["disability.title"]).click()
-    pages.accordions().contains(EN_BENEFITS_IRS_TAX_HELP_DISABILITY["irs-tax-help-disability.title"]).click()
+    pages.accordionButtons().contains(EN_BENEFITS_IRS_TAX_HELP_DISABILITY["irs-tax-help-disability.title"]).click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(EN_BENEFITS_IRS_TAX_HELP_DISABILITY["irs-tax-help-disability.title"])
       .should("have.attr", "aria-expanded", "true")
-    pages.accordions().contains(EN_BENEFITS_IRS_TAX_HELP_DISABILITY["irs-tax-help-disability.title"]).click()
+    pages.accordionButtons().contains(EN_BENEFITS_IRS_TAX_HELP_DISABILITY["irs-tax-help-disability.title"]).click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(EN_BENEFITS_IRS_TAX_HELP_DISABILITY["irs-tax-help-disability.title"])
       .should("have.attr", "aria-expanded", "false")
   })
@@ -60,30 +60,30 @@ describe("Validate opening and closing of accordion cards", () => {
     pages.otherBenefitsUsaCardGroup().contains(EN_LIFE_EVENTS_DISABILITY["disability.title"]).click()
     pages.languageSwitcher().click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
       .click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
       .should("have.attr", "aria-expanded", "true")
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
       .click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_SSA_DISABILITY_INSURANCE_SPOUSE["ssa-disability-insurance-spouse.title"])
       .should("have.attr", "aria-expanded", "false")
   })
 
   it("Validate opening and closing of Veteran's Pension accordion card in Retirement English page", () => {
     pages.otherBenefitsUsaCardGroup().contains(EN_LIFE_EVENTS_RETIREMENT["retirement.title"]).click()
-    pages.accordions().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).click()
-    pages.accordions().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).should("have.attr", "aria-expanded", "true")
-    pages.accordions().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).click()
+    pages.accordionButtons().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).click()
+    pages.accordionButtons().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).should("have.attr", "aria-expanded", "true")
+    pages.accordionButtons().contains(EN_BENEFITS_VA_PENSION["va-pension.title"]).click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(EN_BENEFITS_VA_PENSION["va-pension.title"])
       .should("have.attr", "aria-expanded", "false")
   })
@@ -92,19 +92,19 @@ describe("Validate opening and closing of accordion cards", () => {
     pages.otherBenefitsUsaCardGroup().contains(EN_LIFE_EVENTS_RETIREMENT["retirement.title"]).click()
     pages.languageSwitcher().click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_SSA_RETIREMENT_BENEFITS_CHILD_DISABLED["ssa-retirement-benefits-child-disabled.title"])
       .click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_SSA_RETIREMENT_BENEFITS_CHILD_DISABLED["ssa-retirement-benefits-child-disabled.title"])
       .should("have.attr", "aria-expanded", "true")
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_SSA_RETIREMENT_BENEFITS_CHILD_DISABLED["ssa-retirement-benefits-child-disabled.title"])
       .click()
     pages
-      .accordions()
+      .accordionButtons()
       .contains(ES_BENEFITS_SSA_RETIREMENT_BENEFITS_CHILD_DISABLED["ssa-retirement-benefits-child-disabled.title"])
       .should("have.attr", "aria-expanded", "false")
   })

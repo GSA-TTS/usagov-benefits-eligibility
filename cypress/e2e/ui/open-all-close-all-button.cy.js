@@ -10,7 +10,7 @@ describe("Validate Open All button functionality", () => {
     it(`Verify Open All button should open all accordion cards in ${sitePage.name}`, () => {
       cy.visit({ url: sitePage.route })
       pages.openAllButton().click()
-      pages.accordions().each((accordion) => {
+      pages.accordionButtons().each((accordion) => {
         cy.wrap(accordion).should("have.attr", "aria-expanded", "true")
       })
     })
@@ -23,7 +23,7 @@ describe("Validate Close All button functionality", () => {
       cy.visit({ url: sitePage.route })
       pages.openAllButton().click()
       pages.closeAllButton().click()
-      pages.accordions().each((accordion) => {
+      pages.accordionButtons().each((accordion) => {
         cy.wrap(accordion).should("have.attr", "aria-expanded", "false")
       })
     })
