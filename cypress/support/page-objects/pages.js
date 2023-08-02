@@ -74,7 +74,7 @@ class Pages {
     return cy.get("#acc-content-ssa-survivor-benefits-child")
   }
   survivorBenefitsChildIcons() {
-    return cy.get('#acc-content-ssa-survivor-benefits-child .print\\:display-none .usa-icon')
+    return cy.get("#acc-content-ssa-survivor-benefits-child .print\\:display-none .usa-icon")
   }
   survivorBenefitsParentCard() {
     return cy.get("#acc-content-ssa-survivor-benefits-parents")
