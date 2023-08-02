@@ -6,7 +6,7 @@ module.exports = defineConfig({
   video: false,
   retries: {
     runMode: 2,
-    openMode: 2,
+    openMode: 1,
   },
   e2e: {
     baseUrl: "https://benefits-tool-demo.usa.gov/",
