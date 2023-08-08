@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Install WebKit browser dependencies
-        if: ${{ matrix.containers }} == "webkit"
+        if: ${{ matrix.containers == "webkit" }}
         uses: cypress-io/github-action@v5
         with:
           build: npx playwright install-deps webkit
