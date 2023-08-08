@@ -14,5 +14,5 @@ module.exports = defineConfig({
     testIsolation: false,
     supportFile: false,
   },
-  experimentalWebKitSupport: true
+  experimentalWebKitSupport: true,
 })
