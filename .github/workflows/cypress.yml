@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [chrome, firefox, edge]
+        containers: [chrome, firefox, edge, webkit]
 
     steps:
       - name: Checkout
@@ -31,6 +31,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install WebKit browser dependencies
+        uses: cypress-io/github-action@v5
+        with:
+          build: npx playwright install-deps webkit
+          runTests: false
 
       - name: Set Branch Based Cypress Config file
         env:
