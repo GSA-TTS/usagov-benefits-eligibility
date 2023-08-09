@@ -70,6 +70,42 @@ class Pages {
   buttons() {
     return cy.get(".usa-button")
   }
+  survivorBenefitsChildCard() {
+    return cy.get("#acc-content-ssa-survivor-benefits-child")
+  }
+  survivorBenefitsChildIcons() {
+    return cy.get("#acc-content-ssa-survivor-benefits-child .print\\:display-none .usa-icon")
+  }
+  survivorBenefitsParentCard() {
+    return cy.get("#acc-content-ssa-survivor-benefits-parents")
+  }
+  survivorBenefitsParentIcons() {
+    return cy.get("#acc-content-ssa-survivor-benefits-parents .print\\:display-none .usa-icon")
+  }
+  medicareSavingsProgramsCard() {
+    return cy.get("#acc-content-cms-medicare-savings-programs")
+  }
+  retirementAndDisabilityPaymentsCard() {
+    return cy.get("#acc-content-dod-retirement-and-disability-payments")
+  }
+  retirementAndDisabilityPaymentsIcons() {
+    return cy.get("#acc-content-dod-retirement-and-disability-payments .print\\:display-none .usa-icon")
+  }
+  thriftSavingsPlanCard() {
+    return cy.get("#acc-content-dod-thrift-savings-plan")
+  }
+  thriftSavingsPlanIcons() {
+    return cy.get("#acc-content-dod-thrift-savings-plan .print\\:display-none .usa-icon")
+  }
+  housingImprovementProgramCard() {
+    return cy.get("#acc-content-doi-housing-improvement-program")
+  }
+  housingImprovementProgramIcons() {
+    return cy.get("#acc-content-doi-housing-improvement-program .print\\:display-none .usa-icon")
+  }
+  disabilityInsuranceChildDisabledIcons() {
+    return cy.get("#acc-content-ssa-disability-insurance-child-disabled  .print\\:display-none .usa-icon")
+  }
 }
 
 export const pages = new Pages()
