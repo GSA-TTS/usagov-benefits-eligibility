@@ -54,7 +54,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           browser: ${{ matrix.containers }}
-          # start: npm run federalist
+          start: npm run federalist
 
       - uses: actions/upload-artifact@v3
         if: failure ()
