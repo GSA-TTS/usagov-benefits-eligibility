@@ -180,7 +180,7 @@ docker compose down
 
 ```bash
 # To run cypress tests headlessly
-$ npm run cypress:run_chrome
+$ npm run cy:run:chrome
 
 # To open Cypress Test Runner and manually run tests
 $ npm run cypress:open

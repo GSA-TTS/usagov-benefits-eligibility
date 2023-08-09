@@ -11,7 +11,7 @@ describe("Validate Open All button functionality", () => {
       cy.visit({ url: sitePage.route })
       pages.openAllButton().click()
       pages.accordions().each((accordion) => {
-        cy.wrap(accordion).invoke("prop", "ariaExpanded").should("eq", "true")
+        cy.wrap(accordion).should("have.attr", "aria-expanded", "true")
       })
     })
   })
@@ -24,7 +24,7 @@ describe("Validate Close All button functionality", () => {
       pages.openAllButton().click()
       pages.closeAllButton().click()
       pages.accordions().each((accordion) => {
-        cy.wrap(accordion).invoke("prop", "ariaExpanded").should("eq", "false")
+        cy.wrap(accordion).should("have.attr", "aria-expanded", "false")
       })
     })
   })
