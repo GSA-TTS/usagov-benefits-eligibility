@@ -56,8 +56,8 @@ jobs:
           browser: ${{ matrix.containers }}
           start: npm run federalist
 
-      - uses: actions/upload-artifact@v3
-        if: failure ()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+      # - uses: actions/upload-artifact@v3
+      #   if: failure ()
+      #   with:
+      #     name: cypress-screenshots
+      #     path: cypress/screenshots
