@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [webkit, chrome, firefox, edge]
+        containers: [chrome, firefox, edge, webkit]
 
     steps:
       - name: Checkout
