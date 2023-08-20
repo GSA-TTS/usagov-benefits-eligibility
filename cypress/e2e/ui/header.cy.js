@@ -3,7 +3,7 @@
 import { pages } from "../../support/page-objects/pages.js"
 
 describe("Header Tests", { browser: '!webkit' }, () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit("/")
   })
 
