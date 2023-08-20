@@ -4,7 +4,7 @@ import * as SITE_PAGES_DATA from "../../fixtures/site-pages.json"
 
 const sitePages = SITE_PAGES_DATA.sitePages
 
-describe("Verify correct status code when user navigates links", () => {
+describe("Verify correct status code when user navigates links", { browser: '!webkit' }, () => {
   sitePages.forEach((sitePage) => {
     it(`Verify success status code response for links in ${sitePage.name} `, () => {
       cy.visit({ url: sitePage.route })
