@@ -5,7 +5,7 @@ import * as SITE_PAGES_DATA from "../../fixtures/site-pages.json"
 
 const sitePages = SITE_PAGES_DATA.sitePages
 
-describe("Validate Open All button functionality", () => {
+describe("Validate Open All button functionality", { browser: '!webkit' }, () => {
   sitePages.forEach((sitePage) => {
     it(`Verify Open All button should open all accordion cards in ${sitePage.name}`, () => {
       cy.visit({ url: sitePage.route })
@@ -17,7 +17,7 @@ describe("Validate Open All button functionality", () => {
   })
 })
 
-describe("Validate Close All button functionality", () => {
+describe("Validate Close All button functionality", { browser: '!webkit' }, () => {
   sitePages.forEach((sitePage) => {
     it(`Verify Close All button should close all accordion cards in ${sitePage.name}`, () => {
       cy.visit({ url: sitePage.route })

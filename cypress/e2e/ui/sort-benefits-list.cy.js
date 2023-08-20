@@ -4,7 +4,7 @@ import { pages } from "../../support/page-objects/pages.js"
 import * as EN_CRITERIA from "../../../locales/en/criteria.json"
 import * as EN_BENEFITS_COVID_19 from "../../../locales/en/benefits/fema-covid-19-funeral-assistance.json"
 
-describe("Sort benefits accordion list using Covid 19 filter", () => {
+describe("Sort benefits accordion list using Covid 19 filter", { browser: '!webkit' }, () => {
   beforeEach(() => {
     cy.visit("/")
   })

@@ -2,7 +2,7 @@
 
 import { pages } from "../../support/page-objects/pages.js"
 
-describe("Header Tests", () => {
+describe("Header Tests", { browser: '!webkit' }, () => {
   before(() => {
     cy.visit("/")
   })

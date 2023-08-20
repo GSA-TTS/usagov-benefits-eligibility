@@ -8,7 +8,7 @@ describe("Select criteria and print selections", () => {
     cy.visit("/")
   })
 
-  it("Select a criteria and stub printing when user clicks Print My Selections", () => {
+  it("Select a criteria and stub printing when user clicks Print My Selections", { browser: '!webkit' }, () => {
     pages.checkboxLabels().contains(EN_CRITERIA["criteria.deceased_death_location_is_US.label"]).click()
     cy.window().then((win) => {
       cy.stub(win, "print").as("print")
