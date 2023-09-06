@@ -11,7 +11,7 @@ const footerContentES = ES_DATA.footer
 const footerContentEN = EN_DATA.footer
 const sitePages = SITE_PAGES_DATA.sitePages
 
-describe("Footer Tests", { browser: '!webkit' }, () => {
+describe("Footer Tests", { browser: "!webkit" }, () => {
   sitePages.forEach((sitePage) => {
     it(`Validate footer content mapping in ${sitePage.name}`, () => {
       cy.visit({ url: sitePage.route })

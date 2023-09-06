@@ -10,7 +10,7 @@ import * as ES_BENEFITS_SSA_RETIREMENT_BENEFITS_CHILD_DISABLED from "../../../lo
 import * as EN_LIFE_EVENTS_DISABILITY from "../../../locales/en/life-events/disability.json"
 import * as EN_LIFE_EVENTS_RETIREMENT from "../../../locales/en/life-events/retirement.json"
 
-describe("Validate opening and closing of accordion cards", { browser: '!webkit' }, () => {
+describe("Validate opening and closing of accordion cards", { browser: "!webkit" }, () => {
   beforeEach(() => {
     cy.visit("/")
   })

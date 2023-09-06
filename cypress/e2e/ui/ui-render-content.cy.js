@@ -13,7 +13,7 @@ import * as EN_LIFE_EVENTS_RETIREMENT from "../../../locales/en/life-events/reti
 
 const sitePages = SITE_PAGES_DATA.sitePages
 
-describe("Verify UI is rendering content correctly", { browser: '!webkit' }, () => {
+describe("Verify UI is rendering content correctly", { browser: "!webkit" }, () => {
   sitePages.forEach((sitePage) => {
     it(`Verify ${sitePage.name} is rendering content correctly instead of dot notation value on checkbox labels`, () => {
       cy.visit({ url: sitePage.route })
@@ -25,7 +25,7 @@ describe("Verify UI is rendering content correctly", { browser: '!webkit' }, () 
   })
 })
 
-describe("Verify Benefits Card content is displaying correctly", { browser: '!webkit' }, () => {
+describe("Verify Benefits Card content is displaying correctly", { browser: "!webkit" }, () => {
   beforeEach(() => {
     cy.visit("/")
   })

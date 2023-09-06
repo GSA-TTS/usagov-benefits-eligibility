@@ -3,7 +3,7 @@
 import { pages } from "../../support/page-objects/pages.js"
 import * as EN_CRITERIA from "../../../locales/en/criteria.json"
 
-describe("Select criteria and print selections", { browser: '!webkit' }, () => {
+describe("Select criteria and print selections", { browser: "!webkit" }, () => {
   beforeEach(() => {
     cy.visit("/")
   })
