@@ -118,16 +118,18 @@ describe("Tests for Death of a loved one Spanish Page", () => {
   })
 
   it("Validate Beneficios para padre/madre sobreviviente accordion is rendered correctly based on selected criteria options", () => {
-     //62 years ago plus one day - applicant is at least 62 years old
+    //62 years ago plus one day - applicant is at least 62 years old
     //1 day = 365.2425 (accounts for leap year)
     const dateOfBirth = utils.getDateByOffset(-(62 * 365.2425 + 1))
 
     cy.enterApplicantDateOfBirth(dateOfBirth.month, dateOfBirth.day, dateOfBirth.year)
-    pages.applicantRelationshipDropdown().select(ES_SURVIVOR_BENEFITS_PARENTS_DATA["ssa-survivor-benefits-parents.eligibility.acceptableValues"])
+    pages
+      .applicantRelationshipDropdown()
+      .select(ES_SURVIVOR_BENEFITS_PARENTS_DATA["ssa-survivor-benefits-parents.eligibility.acceptableValues"])
     pages.checkboxLabels().contains(ES_CRITERIA_DATA["criteria.deceased_paid_into_SS.label"]).click()
     pages.checkboxLabels().contains("Usted es ciudadano de").click()
     pages.accordionButtons().contains(ES_SURVIVOR_BENEFITS_PARENTS_DATA["ssa-survivor-benefits-parents.title"]).click()
-    
+
     pages
       .survivorBenefitsParentCard()
       .should("contain", ES_SURVIVOR_BENEFITS_PARENTS_DATA["ssa-survivor-benefits-parents.source.name"])
@@ -136,8 +138,8 @@ describe("Tests for Death of a loved one Spanish Page", () => {
       .and("contain", ES_SURVIVOR_BENEFITS_PARENTS_DATA["ssa-survivor-benefits-parents.eligibility.acceptableValues"])
       .and("contain", ES_SURVIVOR_BENEFITS_PARENTS_DATA["ssa-survivor-benefits-parents.eligibility.label"])
 
-      pages.survivorBenefitsParentIcons().each(($icon) => {
-        cy.wrap($icon).parent().should("have.class", "text-success-dark")
-      })
+    pages.survivorBenefitsParentIcons().each(($icon) => {
+      cy.wrap($icon).parent().should("have.class", "text-success-dark")
+    })
   })
 })
