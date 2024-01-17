@@ -100,9 +100,6 @@ export default {
     lazy: true,
     langDir: "locales",
     defaultLocale: "en",
-    rootRedirect: {
-      path: "death-of-a-loved-one",
-    },
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
