@@ -5,9 +5,9 @@
   "license": "See license in CONTRIBUTING.md",
   "repository": "https://github.com/GSA/usagov-benefits-eligibility",
   "scripts": {
-    "dev": "gulp && nuxt",
-    "build": "gulp && nuxt build",
-    "start": "gulp && nuxt start",
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider gulp && nuxt",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider gulp && nuxt build",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider gulp && nuxt start",
     "generate": "gulp && nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "sonarqube": "npm test && ./sonar_scanner_cli.bash",
