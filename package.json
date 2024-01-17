@@ -8,7 +8,7 @@
     "dev": "export NODE_OPTIONS=--openssl-legacy-provider gulp && nuxt",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider gulp && nuxt build",
     "start": "export NODE_OPTIONS=--openssl-legacy-provider gulp && nuxt start",
-    "generate": "gulp && nuxt generate",
+    "generate": "export NODE_OPTIONS=--openssl-legacy-provider gulp && nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "sonarqube": "npm test && ./sonar_scanner_cli.bash",
     "lint": "npm run lint:js",
