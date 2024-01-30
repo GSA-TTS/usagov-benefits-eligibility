@@ -64,7 +64,7 @@
     "glob-parent": ">=6.0.2",
     "gulp": "^4.0.2",
     "jest": "^28.1.0",
-    "jest-environment-jsdom": "^28.1.0",
+    "jest-environment-jsdom": "^29.7.0",
     "jest-transform-stub": "^2.0.0",
     "loader-utils": "^1.4.1",
     "lodash": "^4.17.21",
