@@ -1,3 +1,5 @@
+> This project has been archived. The latest iteration of the application can be found at [px-benefit-finder](https://github.com/GSA/px-benefit-finder) repo.
+
 # 📄 Benefits Eligibility
 
 [![Test](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/test.yml/badge.svg)](https://github.com/GSA/usagov-benefits-eligibility/actions/workflows/test.yml)
