@@ -50,7 +50,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^28.0.2",
     "core-js": "^3.23.5",
-    "cypress": "^12.17.3",
+    "cypress": "^13.6.6",
     "date-fns": "^2.28.0",
     "eslint": "8.20.0",
     "eslint-config-prettier": "^8.5.0",
